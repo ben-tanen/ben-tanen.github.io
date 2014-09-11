@@ -1,4 +1,4 @@
-ben-tanen.github.io
+Ben Tanen: COMP-20
 ===================
 
-Main Website
+Main Website with links to resume and biography
