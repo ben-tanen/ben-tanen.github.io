@@ -1,4 +1,4 @@
-Ben Tanen: COMP-20
+## Ben Tanen, Personal Website
 ===================
 
-Main Website with links to resume and biography
+My personal website. It is currently structured to fulfill an assignment for COMP-20. Otherwise, it's underconstruction.
