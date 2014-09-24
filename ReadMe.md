@@ -1,7 +1,5 @@
 ## Ben Tanen, Personal Website
 
-* * *
-
 This is my personal page. It's current interation is for the use of COMP-20. However, once the assignment is completed, an index to my Jekyll-based blog will be added (it'll likely use absolute URLs which are no-no's).
 
 #### Website To-Do:
