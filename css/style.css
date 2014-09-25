@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+@font-face {
+    font-family: 'Canter';
+    src: url('files/Canter Bold.otf');
+}
+
 body {
 	height: 1000px;
 	font-family: "Avenir", "Lato", sans-serif;
