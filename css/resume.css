@@ -81,6 +81,18 @@ ul {
 	font-weight: bold;
 }
 
-ul {
+.other ul {
 	margin: 0;
 }
+
+/* Back Section */
+
+.back_button {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}
+
+	.back_button p {
+		margin: 0;
+	}
