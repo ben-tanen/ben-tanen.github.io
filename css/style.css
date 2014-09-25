@@ -9,12 +9,12 @@ body {
 }
 
 a {
-	color: black;
+	color: #3aceff;
 	text-decoration: none;
 }
 
 	a:hover {
-		color: #3aceff;
+		text-decoration: underline;
 	}
 
 .sect_title {
