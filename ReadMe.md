@@ -4,9 +4,9 @@ This is my personal page. It's current interation is for the use of COMP-20. How
 
 #### Website To-Do:
 
-- [ ] Fulfill COMP-20 Requirements
-	- [ ] Add `resume.html` and `biography.html` pages
-	- [ ] Check HTML5/CSS Validation (when complete)
+- [x] Fulfill COMP-20 Requirements
+	- [x] Add `resume.html` and `biography.html` pages
+	- [x] Check HTML5/CSS Validation (when complete)
 - [ ] Write a better "This is Me" section
 - [ ] Add Jekyll-based Blog (general)
 	- [ ] Add index of most recent two posts on page
