@@ -5,34 +5,9 @@
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>http://ben-tanen.github.io/blog/</link>
     <atom:link href="http://ben-tanen.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 14 Dec 2014 16:16:10 -0500</pubDate>
-    <lastBuildDate>Sun, 14 Dec 2014 16:16:10 -0500</lastBuildDate>
+    <pubDate>Sun, 14 Dec 2014 16:26:05 -0500</pubDate>
+    <lastBuildDate>Sun, 14 Dec 2014 16:26:05 -0500</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
-    
-      <item>
-        <title>Grub: The Command-line GrubHub</title>
-        <description>&lt;p&gt;GitHub is built on the fantastically useful Git. A lot of people prefer to use the desktop/online UI (GitHub desktop app or through GitHub directly). However, some people prefer to use Git directly from the command-line. So what if there was an equivalent for sites like GrubHub? The answer to that question is the (thus far imaginary idea) Grub, the command-line version of GrubHub.&lt;/p&gt;
-
-&lt;p&gt;Basically, using similar syntax to Git, users can search and order food from local resturants using the command line. Examples include:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;burrito&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burrito&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chicken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cheese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// add chicken burrito with cheese &amp;amp; sour cream&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pickles&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// add burger without pickles&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 30 Nov 2014 10:05:41 -0500</pubDate>
-        <link>http://ben-tanen.github.io/blog/2014/11/30/grub.html</link>
-        <guid isPermaLink="true">http://ben-tanen.github.io/blog/2014/11/30/grub.html</guid>
-        
-        
-        <category>grubhub</category>
-        
-        <category>git</category>
-        
-        <category>food</category>
-        
-      </item>
     
       <item>
         <title>Random Project: Base64 Decoder</title>
