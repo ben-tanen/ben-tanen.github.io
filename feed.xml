@@ -3,10 +3,10 @@
   <channel>
     <title>Ben Tanen</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
-    <link>http://ben-tanen.github.io/blog/</link>
-    <atom:link href="http://ben-tanen.github.io/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 14 Dec 2014 16:52:32 -0500</pubDate>
-    <lastBuildDate>Sun, 14 Dec 2014 16:52:32 -0500</lastBuildDate>
+    <link>http://ben-tanen.github.io/</link>
+    <atom:link href="http://ben-tanen.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 14 Dec 2014 17:09:35 -0500</pubDate>
+    <lastBuildDate>Sun, 14 Dec 2014 17:09:35 -0500</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -35,8 +35,8 @@
 
 </description>
         <pubDate>Sun, 30 Nov 2014 10:05:41 -0500</pubDate>
-        <link>http://ben-tanen.github.io/blog/2014/11/30/grub.html</link>
-        <guid isPermaLink="true">http://ben-tanen.github.io/blog/2014/11/30/grub.html</guid>
+        <link>http://ben-tanen.github.io/2014/11/30/grub.html</link>
+        <guid isPermaLink="true">http://ben-tanen.github.io/2014/11/30/grub.html</guid>
         
         
         <category>grubhub</category>
@@ -69,8 +69,8 @@
 
 </description>
         <pubDate>Wed, 12 Nov 2014 10:05:41 -0500</pubDate>
-        <link>http://ben-tanen.github.io/blog/2014/11/12/base64.html</link>
-        <guid isPermaLink="true">http://ben-tanen.github.io/blog/2014/11/12/base64.html</guid>
+        <link>http://ben-tanen.github.io/2014/11/12/base64.html</link>
+        <guid isPermaLink="true">http://ben-tanen.github.io/2014/11/12/base64.html</guid>
         
         
         <category>github</category>
@@ -87,7 +87,7 @@
 
 &lt;p&gt;Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of &lt;a href=&quot;http://www.IFTTT.com&quot;&gt;IFTTT&lt;/a&gt;, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/img/posts/infographics_ex.png&quot; alt=&quot;Infographic Example&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/posts/infographics_ex.png&quot; alt=&quot;Infographic Example&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.&lt;/p&gt;
 
@@ -95,8 +95,8 @@
 
 </description>
         <pubDate>Sat, 01 Nov 2014 11:05:41 -0400</pubDate>
-        <link>http://ben-tanen.github.io/blog/2014/11/01/infographics.html</link>
-        <guid isPermaLink="true">http://ben-tanen.github.io/blog/2014/11/01/infographics.html</guid>
+        <link>http://ben-tanen.github.io/2014/11/01/infographics.html</link>
+        <guid isPermaLink="true">http://ben-tanen.github.io/2014/11/01/infographics.html</guid>
         
         
         <category>jekyll</category>
@@ -111,7 +111,7 @@
 
 &lt;p&gt;In his post, &lt;a href=&quot;http://experiments.undercurrent.com/&quot;&gt;The Largest Vocabulary in Hip Hop&lt;/a&gt;, Daniels analyzed the discography of 85 rappers (he added another 19 in his &lt;a href=&quot;http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/&quot;&gt;updated version&lt;/a&gt; of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/img/posts/rap_vocab.png&quot; alt=&quot;Screenshot from the Post&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/posts/rap_vocab.png&quot; alt=&quot;Screenshot from the Post&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Daniels does some interesting analysis of the data in the actual post (ex: examining how Wu-Tang Clan holds up) and it’s worth checking out. Note: after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: &lt;/p&gt;
 
@@ -127,8 +127,8 @@
 
 </description>
         <pubDate>Fri, 31 Oct 2014 11:05:41 -0400</pubDate>
-        <link>http://ben-tanen.github.io/blog/2014/10/31/rap-data-design.html</link>
-        <guid isPermaLink="true">http://ben-tanen.github.io/blog/2014/10/31/rap-data-design.html</guid>
+        <link>http://ben-tanen.github.io/2014/10/31/rap-data-design.html</link>
+        <guid isPermaLink="true">http://ben-tanen.github.io/2014/10/31/rap-data-design.html</guid>
         
         
         <category>jekyll</category>
