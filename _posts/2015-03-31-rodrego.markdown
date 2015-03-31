@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "RodRego: The Simple Register Machine Simulator"
-date:   2015-03-31 15:05:41
+date:   2015-03-31 15:06:41
 categories: project rodrego code
 ---
 
