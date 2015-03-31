@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "RodRego: The Simple Register Machine Simulator"
+date:   2015-03-31 15:05:41
+categories: project rodrego code
+---
+
+![RodRego's Original Banner](http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif)
+
+For the past few months, I've been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don't understand what that means, that's okay because I didn't either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of [Brainfuck](http://en.wikipedia.org/wiki/Brainfuck) without IO).
+
+![Comparison of RodRego's Versions](/img/posts/rodrego.png)
+
+My assignment for this project was to build a web application that emulates (and fixes any problems of) the existing desktop application. With little instruction on how the original application worked, building something that would recreate it was interesting, but ultimately doable. Specific data validation (which was necessary to check commands / script format) was also a pain in JavaScript but that's just JavaScript.
+
+Overall, it was a fun project. This was my first major web development assignment (outside of random personal projects) so it was a good learning experience. It was also pretty cool to work on someone's legacy project. And at the end of the day, you've always got to remember and appreciate your first. &hearts; RodRego &hearts;
+
+If you want to try it out, you can find the site [here](http://proto.atech.tufts.edu/RodRego/). You can also find the code on [GitHub](https://github.com/ben-tanen/RodRego).
+
+
+

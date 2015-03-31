@@ -1,0 +1,12 @@
+# Site settings
+title: Ben Tanen
+email: benjamin.tanen@tufts.edu
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+baseurl: ""
+url: "http://ben-tanen.github.io"
+twitter_username: ben_tanen
+github_username:  ben-tanen
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title.html
