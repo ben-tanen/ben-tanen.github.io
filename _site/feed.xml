@@ -5,15 +5,15 @@
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
     <link>http://ben-tanen.github.io/</link>
     <atom:link href="http://ben-tanen.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Apr 2015 11:28:39 -0400</pubDate>
-    <lastBuildDate>Mon, 13 Apr 2015 11:28:39 -0400</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2015 11:34:08 -0400</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2015 11:34:08 -0400</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
         <title>RodRego: The Simple Register Machine Simulator</title>
         <description>&lt;p&gt;&lt;img src=&quot;http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif&quot; alt=&quot;RodRego&#39;s Original Banner&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of &lt;a href=&quot;http://en.wikipedia.org/wiki/Brainfuck&quot;&gt;Brainfuck&lt;/a&gt; without IO).&lt;/p&gt;
+&lt;p&gt;For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of &lt;a href=&quot;http://en.wikipedia.org/wiki/Brainfuck&quot;&gt;Brainf**k&lt;/a&gt; without IO).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/posts/rodrego.png&quot; alt=&quot;Comparison of RodRego&#39;s Versions&quot; /&gt;&lt;/p&gt;
 
