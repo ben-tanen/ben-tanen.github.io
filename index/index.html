@@ -6,7 +6,7 @@ title: index
 {% for post in site.posts %}
 	<li>
 		<p id='index_date'>{{ post.date | date_to_string }}</p>
-		<p id='index_title'><a href='{{ site.url }}/{{ post.url }}'>{{ post.title }}</a></p>
+		<p id='index_title'><a href='http://ben-tanen.github.io/{{ post.url }}'>{{ post.title }}</a></p>
 	</li>
 {% endfor %}
 </ul>
