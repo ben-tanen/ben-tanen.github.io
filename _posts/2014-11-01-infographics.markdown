@@ -3,7 +3,7 @@ layout: post
 title:  "Up-to-Date Infographics"
 date:   2014-11-01 15:05:41
 categories: jekyll update
-permalink: /2014/11/01/infographics.html
+permalink: 2014/11/01/infographics.html
 ---
 
 When I first started working with web design, [Kerem Suer’s](http://www.kerem.co) website had a lot of features that inspired me. One of these features was his use of [infographics](https://web.archive.org/web/20130114231739/http://kerem.co/). It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.
