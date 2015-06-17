@@ -3,6 +3,7 @@ layout: post
 title:  "Random Project: Base64 Decoder"
 date:   2014-11-12 15:05:41
 categories: github base64
+permalink: /2014/11/12/base64.html
 ---
 
 In the past couple months I've become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking "Woahhh, revision control and free project hosting" but GH is pretty remarkable. A project I've always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found [Jekyll](http://jekyllrb.com/), but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text using the base64 decoder, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn't stop me from making the base64 decoder in C++, because why not.

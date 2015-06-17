@@ -3,6 +3,7 @@ layout: post
 title:  "Rap, Data, and Design"
 date:   2014-10-31 15:05:41
 categories: jekyll update
+permalink: /2014/10/31/rap-data-design.html
 ---
 
 A genre of music I don’t find myself particularly well-versed in is Hip-Hop and Rap. I’ll listen to it on occasion when [my more rap-inclined friend](http://www.headroommusic.org/) suggests some, but for the most part, I really only know the highlights. One thing I very much do like, though, is beautiful representation of data, and Matt Daniels did the wonderful task of combining the two.

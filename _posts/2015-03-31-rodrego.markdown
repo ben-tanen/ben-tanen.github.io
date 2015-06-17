@@ -3,6 +3,7 @@ layout: post
 title:  "RodRego: The Simple Register Machine Simulator"
 date:   2015-03-31 15:06:41
 categories: project rodrego code
+permalink: /2015/03/31/rodrego.html
 ---
 
 ![RodRego's Original Banner](http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif)
