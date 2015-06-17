@@ -3,6 +3,7 @@ layout: post
 title:  "Retro Post: iOS Upgrades (Circa 2013)"
 date:   2015-06-17 15:06:41
 categories: ios upgrade UI UX
+permalink: 2015/03/31/retro-ios-update.html
 ---
 
 Before moving to Github and using Jekyll, I hosted a [blog on Tumblr](http://ben-tanen.tumblr.com/). I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I'd post some original content. As I try and fill out this site a bit, I might go back and do some *retro posts*, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS. I'd like to point out that three of these four upgrades have been implemented in someway or another, so I guess you could say I'm an accurate futurist...
