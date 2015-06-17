@@ -9,4 +9,4 @@ github_username:  ben-tanen
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title.html
+permalink: /:month/:day/:title.html
