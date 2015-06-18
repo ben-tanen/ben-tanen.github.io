@@ -1,4 +1,4 @@
-<img src="{{include.src}}" alt="{{include.caption}}" />
+<img src="{{include.src}}" alt="{{include.caption}}" {% if include.width %}width="{{include.width}}"{% endif %} />
 <figcaption>
 {{include.caption}}
 </figcaption>
