@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-What's up? I'm Ben. I'm a student currently studying Computer Science Engineering and Entrepreneurial / Engineering Management at Tufts University. I love working and thinking with data, particularly when relating to finance and economic models. After I graduate, I plan to go into data-driven software consulting in finance.
+What's up? I'm Ben. I'm a student currently studying Computer Science Engineering and Entrepreneurial / Engineering Management at Tufts University. I love working and thinking with data, particularly when relating to finance and economic models. I'm also particularly interested in clean, simple web design (as can be seen by this site). After I graduate, I plan to go into data-driven software consulting in finance.
 
 That's all for now, but maybe I'll add more stuff later on. In the meantime, feel free to checkout out the rest of the site or my [Github](https://github.com/ben-tanen).
 
