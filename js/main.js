@@ -7,15 +7,11 @@ function pageResize() {
 	// main width resize
 	if (window_width - 250 > 800) {
 		$('.main').css('width', 800 + 'px');
-		$('.post img').css
 	} else if (window_width - 250 < 500){
 		$('.main').css('width', 500 + 'px');
 	} else {
 		$('.main').css('width', window_width - 250 + 'px');
 	}
-
-
-	
 }
 
 $(document).ready(function() {
