@@ -10,7 +10,7 @@ function pageResize() {
 	} else if (window_width - 250 < 500){
 		$('.main').css('width', 500 + 'px');
 	} else {
-		$('.main').css('width', window_width - 240 + 'px');
+		$('.main').css('width', window_width - 275 + 'px');
 	}
 }
 
