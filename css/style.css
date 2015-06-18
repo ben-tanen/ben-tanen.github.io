@@ -120,6 +120,11 @@ figcaption {
 
 	.post {
 		margin: 0 70px 100px 0;
+		width: 100%;
+	}
+
+	.post-content {
+		width: 100%;
 	}
 
 	.main p {
