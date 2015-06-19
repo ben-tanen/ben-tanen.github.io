@@ -14,7 +14,7 @@ This is a test for a gallery object:
 
 <div class='gallery-name'>
 {% for item in page.gallery %}
-  <div><img src={{ item.img_link }} /></div>
+  <div><img src="{{ item.img_link }}" /></div>
 {% endfor %}
 </div>
 
