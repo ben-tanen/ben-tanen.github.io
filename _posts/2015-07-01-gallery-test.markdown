@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Retro Post: Game Theory, The Game"
-date:   2015-06-26 15:05:41
-categories: game_theory economics model game
+title:  "Gallery Test"
+date:   2015-07-02 15:05:41
+categories: test Gallery
 gallery:
     - caption: "this is a test"
       img_link: "heyyy"
@@ -12,6 +12,14 @@ gallery:
 
 This is a test for a gallery object:
 
+<div class='gallery-name'>
 {% for item in page.gallery %}
-  <p>{{ item.caption }} | {{ item.img_link }}</p>
+  <div><p>{{ item.caption }} | {{ item.img_link }}</p></div>
 {% endfor %}
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.gallery-name').slick();
+});
+</script>
