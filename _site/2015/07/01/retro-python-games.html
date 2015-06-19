@@ -7,7 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/main.js"></script>
-    <title>Grub: The Command-line GrubHub | Ben Tanen</title>
+    <title>Old Python Games / Projects | Ben Tanen</title>
 </head>
 
 
@@ -63,32 +63,25 @@
 		<div class="post">
 
   <header class="post-header">
-    <h1>Grub: The Command-line GrubHub</h1>
-    <p class="meta">Nov 30, 2014</p>
+    <h1>Old Python Games / Projects</h1>
+    <p class="meta">Jul 1, 2015</p>
   </header>
 
   <article class="post-content">
-  <p>GitHub is built on the fantastically useful Git. A lot of people prefer to use the desktop/online UI (GitHub desktop app or through GitHub directly). However, some people prefer to use Git directly from the command-line. So what if there was an equivalent for sites like GrubHub? The answer to that question is the (thus far imaginary idea) Grub, the command-line version of GrubHub.</p>
+  <p>After posting my two most recent retro posts, I thought I’d post some of my older projects. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.</p>
 
-<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
+<p>The first project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I’m not sure how or why… Either way, here is the <a href="https://github.com/ben-tanen/PythonGames/blob/master/battleship.py">code on Github</a>.</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">&quot;burrito&quot;</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">&quot;Bob&#39;s Burgers&quot;</span>
+<p><img src="/img/posts/python_game_minesweeper.png" alt="Good Ol' Unix Terminal Games" /></p>
+<figcaption>
+Good Ol' Unix Terminal Games
+</figcaption>
 
-<span class="c1">// add chicken burrito with cheese &amp; sour cream</span>
-<span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
+<p>This next project was my first original game, Minesweeper! It was built very much like Battleship but the logic was a little more complicated. As you can see, it’s not expertly written since this was after like a month of knowing Python. I might consider re-writting / refactoring the code not that I’m a tad more experienced. Here is the <a href="https://github.com/ben-tanen/PythonGames/blob/master/minesweeper.py">original code on GH</a>.</p>
 
-<span class="c1">// add burger without pickles</span>
-<span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
+<p>A year later than my other games, I decided to build a blackjack game. This was made with the knowledge of classes so I decided to go down that route instead of a constant single chunk of code (see other games). It’s not much better written, but it does include the ability to “count cards” which is cool. Again, <a href="https://github.com/ben-tanen/PythonGames/blob/master/blackjack.py">here’s the code</a>.</p>
 
-<span class="c1">// go to checkout and add payment information </span>
-<span class="n">grub</span> <span class="n">checkout</span>
-
-<span class="c1">// place order</span>
-<span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></div>
-
-<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service. </p>
+<p>When / if I have the chance, I’ll probably try and beef these up with some more game play and probably some better code. If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.</p>
 
 
   </article>

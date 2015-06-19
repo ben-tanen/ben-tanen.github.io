@@ -6,5 +6,6 @@ This is my personal website. It includes a home page featuring blog posts and ot
 **To Do:**
 - [ ] Include RSS Feed
 - [ ] Add more posts
-
+- [x] Add draft capability
+- [ ] Add multi-image figure
 

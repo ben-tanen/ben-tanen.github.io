@@ -5,9 +5,9 @@ function pageResize() {
 	// side bar heigh resize
 
 	// main width resize
-	if (window_width - 250 > 800) {
+	if (window_width - 275 > 800) {
 		$('.main').css('width', 800 + 'px');
-	} else if (window_width - 250 < 500){
+	} else if (window_width - 275 < 500){
 		$('.main').css('width', 500 + 'px');
 	} else {
 		$('.main').css('width', window_width - 275 + 'px');

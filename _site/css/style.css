@@ -120,6 +120,11 @@ figcaption {
 
 	.post {
 		margin: 0 70px 100px 0;
+		width: 100%;
+	}
+
+	.post-content {
+		width: 100%;
 	}
 
 	.main p {
@@ -163,6 +168,7 @@ figcaption {
 		padding: 0 30px 0 15px;
 		margin-left: 30px;
 		border-left: 3px #a9a9a9 solid;
+		color: #888888;
 	}
 
 
@@ -252,6 +258,13 @@ figcaption {
 	.highlight .vg { color: #008080 } /* Name.Variable.Global */
 	.highlight .vi { color: #008080 } /* Name.Variable.Instance */
 	.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+	.youtube_vid {
+		display: block;
+		margin: auto;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
 
 @media (max-width: 600px) {
 	.side {

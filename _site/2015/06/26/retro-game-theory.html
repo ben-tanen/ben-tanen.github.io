@@ -7,7 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/main.js"></script>
-    <title>Grub: The Command-line GrubHub | Ben Tanen</title>
+    <title>Retro Post: Game Theory, The Game | Ben Tanen</title>
 </head>
 
 
@@ -63,33 +63,44 @@
 		<div class="post">
 
   <header class="post-header">
-    <h1>Grub: The Command-line GrubHub</h1>
-    <p class="meta">Nov 30, 2014</p>
+    <h1>Retro Post: Game Theory, The Game</h1>
+    <p class="meta">Jun 26, 2015</p>
   </header>
 
   <article class="post-content">
-  <p>GitHub is built on the fantastically useful Git. A lot of people prefer to use the desktop/online UI (GitHub desktop app or through GitHub directly). However, some people prefer to use Git directly from the command-line. So what if there was an equivalent for sites like GrubHub? The answer to that question is the (thus far imaginary idea) Grub, the command-line version of GrubHub.</p>
+  <p>This retro post came from my senior year of high school when I was taking AP Economics. Who doesn’t love turning economics into drinking games?</p>
 
-<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
+<p><em>[Beginning of Post]</em></p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">&quot;burrito&quot;</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">&quot;Bob&#39;s Burgers&quot;</span>
+<p>In my AP Economics class, we have started discussing game theory. This is the study of different behaviors in economic “games”. The most basic game is between two firms, or actors, playing together, and they have two options, for which each firm will pick the option that will give them the best output.</p>
 
-<span class="c1">// add chicken burrito with cheese &amp; sour cream</span>
-<span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
+<p>Eventually, my teacher showed us a clip from a game show that uses the concepts of game theory. The show, called Golden Balls, pits two players against each other to win a pot of money. If they both choose to split, they will share the money 50/50. If one chooses to steal while the other splits, the stealer will win all of the money, while the other is left with zero. Finally, if they both chose to steal, they will both end up with zero.</p>
 
-<span class="c1">// add burger without pickles</span>
-<span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
+<iframe class="youtube_vid" width="420" height="315" src="https://www.youtube.com/embed/p3Uos2fzIJ0" frameborder="0" allowfullscreen=""></iframe>
 
-<span class="c1">// go to checkout and add payment information </span>
-<span class="n">grub</span> <span class="n">checkout</span>
+<iframe class="youtube_vid" width="420" height="315" src="https://www.youtube.com/embed/S0qjK3TWZE8" frameborder="0" allowfullscreen=""></iframe>
 
-<span class="c1">// place order</span>
-<span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></div>
+<p>After watching the clip, my classmates and I felt the need to design our own version of the game. However, as a fairly poor teenager, I felt the prize shouldn’t be monetary. And then we came to our dilemma. What to make the prize?</p>
 
-<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service. </p>
+<p>One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.</p>
 
+<p><img src="http://31.media.tumblr.com/db94e4091e01a7c511daf77683c3f2f5/tumblr_inline_mg31ubjILA1r5qffu.png" alt="Playful violence is always fun" /></p>
+<figcaption>
+Playful violence is always fun
+</figcaption>
+
+<p>This game/version relies on the idea that both players want to slap the other person, so I guess this would preferably be played with an enemy (or a close friend).</p>
+
+<p>Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.</p>
+
+<p><img src="http://33.media.tumblr.com/59f9423a505e6d7d9c5d0f1d1b40cd92/tumblr_inline_mg31vo3B8J1r5qffu.png" alt="Who doesn't love economic-based drinking games?" /></p>
+<figcaption>
+Who doesn't love economic-based drinking games?
+</figcaption>
+
+<p>Eventually, I’d assume both parties would be drunk enough to lose track of the dilemma and implications of their choices, but I imagine that this game would serve as an interesting way to get drunk for economists.</p>
+
+<p>Any other potential prizes/punishments?</p>
 
   </article>
 
