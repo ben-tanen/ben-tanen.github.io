@@ -1,5 +1,45 @@
-<script src='js/gallery.js'></script>
+<script>
+    $(document).ready(function() {
+    gallery_width = {{ include.width }};
+    gallery_height = {{ include.height }};
+
+    for (i = 0; i < $('.gallery ul').children('li').length; i++) {
+        img_hgt = $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').height();
+        $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').css({'margin-top': '-' + (img_hgt / 2) + 'px'});
+    }
+
+    $('#gallery_forward').click(function() {
+        if (parseInt($('.gallery ul').css('left').replace('px','')) - (gallery_width + 9) <= $('.gallery ul').children('li').length * (gallery_width) * -1) {
+            $('.gallery ul').animate({left: '0px'});
+        } else {
+            $('.gallery ul').animate({left: '-=' + (gallery_width + 9) + 'px'});
+        }
+    });
+
+    $('#gallery_back').click(function() {
+        console.log(parseInt($('.gallery ul').css('left').replace('px','')));
+        if (parseInt($('.gallery ul').css('left').replace('px','')) >= 0 || parseInt($('.gallery ul').css('left').replace('px','')) == NaN) {
+            $('.gallery ul').animate({left: ($('.gallery ul').children('li').length - 1) * (gallery_width + 9) * -1 + 'px'});
+        } else {
+            $('.gallery ul').animate({left: '+=' + (gallery_width + 9) + 'px'});
+        }
+    });
+});
+</script>
+
 <div class='gallery' style='width: {{ include.width }}px;'>
+    <ul>
+        {% for item in page.gallery_images %}
+            <li style='width: {{ include.width }}px; height: {{ include.height }}px'>
+                <img src='{{ item.img_link }}' style='width: {{ item.img_width }}px; margin-left: -{{ item.img_width | divided_by: 2 }}px;'>
+                {% if item.img_caption %}<p style='width: {{ include.width | minus: 10 }}px'>{{ item.img_caption }}</p>{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button id='gallery_back'><</button>
+    <button id='gallery_forward'>></button> 
+
     <!--    
     <ul>
     <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ullam amet doloribus aperiam quasi similique, alias quo ipsum facere, dolor accusamus eos deleniti temporibus odio suscipit quos qui libero. Earum.</p></li>
@@ -9,6 +49,5 @@
     </ul>
     -->
 
-    <button id='gallery_back'><</button>
-    <button id='gallery_forward'>></button> 
+    
 </div>

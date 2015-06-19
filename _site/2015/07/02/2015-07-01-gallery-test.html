@@ -10,7 +10,7 @@
 
     <script src="/js/main.js"></script>
 
-    <title>Grub: The Command-line GrubHub | Ben Tanen</title>
+    <title>Gallery Test | Ben Tanen</title>
 </head>
 
 
@@ -66,33 +66,76 @@
 		<div class="post">
 
   <header class="post-header">
-    <h1>Grub: The Command-line GrubHub</h1>
-    <p class="meta">Nov 30, 2014</p>
+    <h1>Gallery Test</h1>
+    <p class="meta">Jul 2, 2015</p>
   </header>
 
   <article class="post-content">
-  <p>GitHub is built on the fantastically useful Git. A lot of people prefer to use the desktop/online UI (GitHub desktop app or through GitHub directly). However, some people prefer to use Git directly from the command-line. So what if there was an equivalent for sites like GrubHub? The answer to that question is the (thus far imaginary idea) Grub, the command-line version of GrubHub.</p>
+  <p>This is a test for a gallery object:</p>
 
-<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
+<script>
+    $(document).ready(function() {
+    gallery_width = 600;
+    gallery_height = 450;
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">&quot;burrito&quot;</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">&quot;Bob&#39;s Burgers&quot;</span>
+    for (i = 0; i < $('.gallery ul').children('li').length; i++) {
+        img_hgt = $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').height();
+        $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').css({'margin-top': '-' + (img_hgt / 2) + 'px'});
+    }
 
-<span class="c1">// add chicken burrito with cheese &amp; sour cream</span>
-<span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
+    $('#gallery_forward').click(function() {
+        if (parseInt($('.gallery ul').css('left').replace('px','')) - (gallery_width + 9) <= $('.gallery ul').children('li').length * (gallery_width) * -1) {
+            $('.gallery ul').animate({left: '0px'});
+        } else {
+            $('.gallery ul').animate({left: '-=' + (gallery_width + 9) + 'px'});
+        }
+    });
 
-<span class="c1">// add burger without pickles</span>
-<span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
+    $('#gallery_back').click(function() {
+        console.log(parseInt($('.gallery ul').css('left').replace('px','')));
+        if (parseInt($('.gallery ul').css('left').replace('px','')) >= 0 || parseInt($('.gallery ul').css('left').replace('px','')) == NaN) {
+            $('.gallery ul').animate({left: ($('.gallery ul').children('li').length - 1) * (gallery_width + 9) * -1 + 'px'});
+        } else {
+            $('.gallery ul').animate({left: '+=' + (gallery_width + 9) + 'px'});
+        }
+    });
+});
+</script>
 
-<span class="c1">// go to checkout and add payment information </span>
-<span class="n">grub</span> <span class="n">checkout</span>
+<div class="gallery" style="width: 600px;">
+    <ul>
+        
+            <li style="width: 600px; height: 450px">
+                <img src="http://farm4.staticflickr.com/3834/9170402067_4c6bff3d56_b.jpg" style="width: 500px; margin-left: -250px;" />
+                
+            </li>
+        
+            <li style="width: 600px; height: 450px">
+                <img src="http://farm4.staticflickr.com/3699/9170397689_ca0c93bbc0_b.jpg" style="width: 500px; margin-left: -250px;" />
+                
+            </li>
+        
+            <li style="width: 600px; height: 450px">
+                <img src="http://farm8.staticflickr.com/7130/7862028888_15e77bcf90_b.jpg" style="width: 450px; margin-left: -225px;" />
+                
+            </li>
+        
+    </ul>
 
-<span class="c1">// place order</span>
-<span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></div>
+    <button id="gallery_back">&lt;</button>
+    <button id="gallery_forward">&gt;</button> 
 
-<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service. </p>
+    <!--    
+    <ul>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ullam amet doloribus aperiam quasi similique, alias quo ipsum facere, dolor accusamus eos deleniti temporibus odio suscipit quos qui libero. Earum.</p></li>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #3</p></li>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
+    </ul>
+    -->
 
+    
+</div>
 
   </article>
 

@@ -330,15 +330,16 @@ figcaption {
 
 /* gallery CSS */
 .gallery {
-    margin: 10px;
     position: relative;
     overflow: hidden;
+    margin: auto;
 }
 
 .gallery ul {
     position: relative;
     width: 10000px;
     left: 0;
+    padding: 0;
 }
 
 .gallery li {
@@ -350,7 +351,7 @@ figcaption {
 
 .gallery li img {
     position: relative;
-    max-width: 80%;
+    max-width: 95%;
     left: 50%;
     top: 50%;
 }
