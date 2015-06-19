@@ -20,6 +20,9 @@ This is a test for a gallery object:
 
 <script>
 $(document).ready(function(){
-  $('.gallery-name').slick();
+  $('.gallery-name').slick({
+    setting-name: setting-value,
+    arrows: true
+  });
 });
 </script>
