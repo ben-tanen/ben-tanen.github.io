@@ -5,23 +5,22 @@ date:   2015-07-02 15:05:41
 categories: test Gallery
 gallery:
     - caption: "this is a test"
-      img_link: "heyyy"
+      img_link: "/img/posts/infographics_ex.png"
     - caption: "test #2"
-      img_link: "heoje;kele"
+      img_link: "/img/posts/infographics_ex.png"
 ---
 
 This is a test for a gallery object:
 
 <div class='gallery-name'>
 {% for item in page.gallery %}
-  <div><p>{{ item.caption }} | {{ item.img_link }}</p></div>
+  <div><img src={{ item.img_link }} /></div>
 {% endfor %}
 </div>
 
 <script>
 $(document).ready(function(){
   $('.gallery-name').slick({
-    setting-name: setting-value,
     arrows: true
   });
 });
