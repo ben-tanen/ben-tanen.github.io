@@ -2,8 +2,6 @@ function pageResize() {
 	var window_width = $(window).width();
 	var window_height = $('.side').height();
 
-	// side bar heigh resize
-
 	// main width resize
 	if (window_width - 250 > 800) {
 		$('.main').css('width', 800 + 'px');
