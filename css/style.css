@@ -328,4 +328,50 @@ figcaption {
 	text-align: left;
 }
 
+/* gallery CSS */
+.gallery {
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery ul {
+    position: relative;
+    width: 10000px;
+    left: 0;
+}
+
+.gallery li {
+    display: inline-block;
+    vertical-align:top;
+    margin-right: 5px;
+    background-color: #F0F0F0; 
+}
+
+.gallery li img {
+    position: relative;
+    max-width: 80%;
+    left: 50%;
+    top: 50%;
+}
+
+.gallery li p {
+    position: absolute;
+    bottom: 0;
+    padding: 0 5px 12px 5px;
+    text-align: center;
+}
+
+#gallery_forward, #gallery_back {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    box-shadow: none;
+    background-color: #a9a9a9;
+    outline: none;
+}
 
