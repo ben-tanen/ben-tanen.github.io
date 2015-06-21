@@ -15,6 +15,8 @@ This next project was my first original game, Minesweeper! It was built very muc
 
 A year later than my other games, I decided to build a blackjack game. This was made with the knowledge of classes so I decided to go down that route instead of a constant single chunk of code (see other games). It's not much better written, but it does include the ability to "count cards" which is cool. Again, [here's the code](https://github.com/ben-tanen/PythonGames/blob/master/blackjack.py).
 
-When / if I have the chance, I'll probably try and beef these up with some more game play and probably some better code. If you're at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say "objectively" I think they're pretty fun.
+And because I was bored, I also threw in some better versions of the first two games with some serious refactoring / feature improvement (minesweeper reveals sections of 0s now!). I noticed I was doing some weird sort of logical boolean using a string of spaces. It was weird. I took it out. It's better now.
+
+If you're at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say "objectively" I think they're pretty fun.
 
 
