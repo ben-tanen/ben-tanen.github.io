@@ -317,6 +317,7 @@ figcaption {
 	width: 250px;
 	height: 150px;
 	display: inline-block;
+	vertical-align: top;
 	text-align: left;
 }
 

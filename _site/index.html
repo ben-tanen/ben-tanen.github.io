@@ -64,82 +64,13 @@
 	<div class='main'>
 		
 <div class='post'>
-	<h1>Gallery Test</h1>
-	<p>This is a test for a gallery object:</p>
-
-<script>
-    $(document).ready(function() {
-    gallery_width = 600;
-    gallery_height = 450;
-
-    for (i = 0; i < $('.gallery ul').children('li').length; i++) {
-        img_hgt = $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').height();
-        $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').css({'margin-top': '-' + (img_hgt / 2) + 'px'});
-    }
-
-    $('#gallery_forward').click(function() {
-        if (parseInt($('.gallery ul').css('left').replace('px','')) - (gallery_width + 9) <= $('.gallery ul').children('li').length * (gallery_width) * -1) {
-            $('.gallery ul').animate({left: '0px'});
-        } else {
-            $('.gallery ul').animate({left: '-=' + (gallery_width + 9) + 'px'});
-        }
-    });
-
-    $('#gallery_back').click(function() {
-        console.log(parseInt($('.gallery ul').css('left').replace('px','')));
-        if (parseInt($('.gallery ul').css('left').replace('px','')) >= 0 || parseInt($('.gallery ul').css('left').replace('px','')) == NaN) {
-            $('.gallery ul').animate({left: ($('.gallery ul').children('li').length - 1) * (gallery_width + 9) * -1 + 'px'});
-        } else {
-            $('.gallery ul').animate({left: '+=' + (gallery_width + 9) + 'px'});
-        }
-    });
-});
-</script>
-
-<div class="gallery" style="width: 600px;">
-    <ul>
-        
-            <li style="width: 600px; height: 450px">
-                <img src="http://farm4.staticflickr.com/3834/9170402067_4c6bff3d56_b.jpg" style="width: 500px; margin-left: -250px;" />
-                
-            </li>
-        
-            <li style="width: 600px; height: 450px">
-                <img src="http://farm4.staticflickr.com/3699/9170397689_ca0c93bbc0_b.jpg" style="width: 500px; margin-left: -250px;" />
-                
-            </li>
-        
-            <li style="width: 600px; height: 450px">
-                <img src="http://farm8.staticflickr.com/7130/7862028888_15e77bcf90_b.jpg" style="width: 450px; margin-left: -225px;" />
-                
-            </li>
-        
-    </ul>
-
-    <button id="gallery_back">&lt;</button>
-    <button id="gallery_forward">&gt;</button> 
-
-    <!--    
-    <ul>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ullam amet doloribus aperiam quasi similique, alias quo ipsum facere, dolor accusamus eos deleniti temporibus odio suscipit quos qui libero. Earum.</p></li>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #3</p></li>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
-    </ul>
-    -->
-
-    
-</div>
-
-</div>
-
-<div class='post'>
 	<h1>Old Python Games / Projects</h1>
 	<p>After posting my two most recent retro posts, I thought I’d post some of my older projects. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.</p>
 
 <p>The first project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I’m not sure how or why… Either way, here is the <a href="https://github.com/ben-tanen/PythonGames/blob/master/battleship.py">code on Github</a>.</p>
 
 <p><img src="/img/posts/python_game_minesweeper.png" alt="Good Ol' Unix Terminal Games" /></p>
+
 <figcaption>
 Good Ol' Unix Terminal Games
 </figcaption>
@@ -148,7 +79,9 @@ Good Ol' Unix Terminal Games
 
 <p>A year later than my other games, I decided to build a blackjack game. This was made with the knowledge of classes so I decided to go down that route instead of a constant single chunk of code (see other games). It’s not much better written, but it does include the ability to “count cards” which is cool. Again, <a href="https://github.com/ben-tanen/PythonGames/blob/master/blackjack.py">here’s the code</a>.</p>
 
-<p>When / if I have the chance, I’ll probably try and beef these up with some more game play and probably some better code. If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.</p>
+<p>And because I was bored, I also threw in some better versions of the first two games with some serious refactoring / feature improvement into <a href="https://github.com/ben-tanen/PythonGames">the repo</a>. Minesweeper reveals sections of 0s now! I noticed I was also doing some weird sort of logical boolean using a string of spaces. It was weird. I took it out. It’s better now.</p>
+
+<p>If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.</p>
 
 
 </div>
@@ -172,6 +105,7 @@ Good Ol' Unix Terminal Games
 <p>One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.</p>
 
 <p><img src="http://31.media.tumblr.com/db94e4091e01a7c511daf77683c3f2f5/tumblr_inline_mg31ubjILA1r5qffu.png" alt="Playful violence is always fun" /></p>
+
 <figcaption>
 Playful violence is always fun
 </figcaption>
@@ -181,6 +115,7 @@ Playful violence is always fun
 <p>Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.</p>
 
 <p><img src="http://33.media.tumblr.com/59f9423a505e6d7d9c5d0f1d1b40cd92/tumblr_inline_mg31vo3B8J1r5qffu.png" alt="Who doesn't love economic-based drinking games?" /></p>
+
 <figcaption>
 Who doesn't love economic-based drinking games?
 </figcaption>
@@ -202,6 +137,7 @@ Who doesn't love economic-based drinking games?
 <p><strong>Priority Messages:</strong> Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed. <em>[Retrospective Update: A lot of this functionality can be used for group chats now in iOS. So if you want to mute a group conversation, it’s totally possible]</em></p>
 
 <p><img src="http://1.bp.blogspot.com/-d-PrL-77qwc/Ug-3ivG8nqI/AAAAAAAAAcY/pltqErR0Bbo/s1600/Text-Delay---iOS.gif" alt="Delay a text to send a few minutes (or even a few hours)" width="230px" /></p>
+
 <figcaption>
 Delay a text to send a few minutes (or even a few hours)
 </figcaption>
@@ -211,6 +147,7 @@ Delay a text to send a few minutes (or even a few hours)
 <p><strong>In-App Text Response:</strong> While the Multi-tasking on iOS is helpful, responding to a text still requires you to switch to the Messages app, which sometimes closes/disrupts certain other apps (Netflix, games). Instead, an option for In-App texting would simply have a pop-up screen in which the user can send a quick text. This capability is featured on many non-iOS devices, and it should be brought to the iPhone. <em>[Retrospective Update #3: This is also available now, woohoo!]</em></p>
 
 <p><img src="http://3.bp.blogspot.com/-VsZmM5eUY_g/UhA40FqwQzI/AAAAAAAAAco/0IZdZCZJ13g/s1600/iOS-Upgrade---InAppText.gif" alt="[Retro Update: More or less is exactly what the actual implementation looks like]" width="230px" /></p>
+
 <figcaption>
 [Retro Update: More or less is exactly what the actual implementation looks like]
 </figcaption>
@@ -235,6 +172,7 @@ Delay a text to send a few minutes (or even a few hours)
 </ul>
 
 <p><img src="/img/posts/spotify_sync.png" alt="Swap between your phone and your computer instantly" /></p>
+
 <figcaption>
 Swap between your phone and your computer instantly
 </figcaption>
@@ -244,6 +182,7 @@ Swap between your phone and your computer instantly
 </ul>
 
 <p><img src="/img/posts/spotify_mobile.png" alt="Spotify didn't waste an inch of space on the mobile app" /></p>
+
 <figcaption>
 Spotify didn't waste an inch of space on the mobile app
 </figcaption>
