@@ -64,6 +64,82 @@
 	<div class='main'>
 		
 <div class='post'>
+	<h1>Random Project: Censor Machine</h1>
+	<p>Do you ever need / want a simple Internet tool and it seems like it would be easier code it than find it? That is exactly what happened when I needed a beeping censor. Sometimes bands like to swear and I need a button / website to defend the honor of the FCC. Thus, I made this really <a href="http://ben-tanen.github.io/CensorMachine/">stupid site</a>. But hey, now I have it.</p>
+
+</div>
+
+<div class='post'>
+	<h1>Gallery Test</h1>
+	<p>This is a test for a gallery object:</p>
+
+<script>
+    $(document).ready(function() {
+    gallery_width = 600;
+    gallery_height = 450;
+
+    for (i = 0; i < $('.gallery ul').children('li').length; i++) {
+        img_hgt = $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').height();
+        $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').css({'margin-top': '-' + (img_hgt / 2) + 'px'});
+    }
+
+    $('#gallery_forward').click(function() {
+        if (parseInt($('.gallery ul').css('left').replace('px','')) - (gallery_width + 9) <= $('.gallery ul').children('li').length * (gallery_width) * -1) {
+            $('.gallery ul').animate({left: '0px'});
+        } else {
+            $('.gallery ul').animate({left: '-=' + (gallery_width + 9) + 'px'});
+        }
+    });
+
+    $('#gallery_back').click(function() {
+        console.log(parseInt($('.gallery ul').css('left').replace('px','')));
+        if (parseInt($('.gallery ul').css('left').replace('px','')) >= 0 || parseInt($('.gallery ul').css('left').replace('px','')) == NaN) {
+            $('.gallery ul').animate({left: ($('.gallery ul').children('li').length - 1) * (gallery_width + 9) * -1 + 'px'});
+        } else {
+            $('.gallery ul').animate({left: '+=' + (gallery_width + 9) + 'px'});
+        }
+    });
+});
+</script>
+
+<div class="gallery" style="width: 600px;">
+    <ul>
+        
+            <li style="width: 600px; height: 450px">
+                <img src="http://farm4.staticflickr.com/3834/9170402067_4c6bff3d56_b.jpg" style="width: 500px; margin-left: -250px;" />
+                
+            </li>
+        
+            <li style="width: 600px; height: 450px">
+                <img src="http://farm4.staticflickr.com/3699/9170397689_ca0c93bbc0_b.jpg" style="width: 500px; margin-left: -250px;" />
+                
+            </li>
+        
+            <li style="width: 600px; height: 450px">
+                <img src="http://farm8.staticflickr.com/7130/7862028888_15e77bcf90_b.jpg" style="width: 450px; margin-left: -225px;" />
+                
+            </li>
+        
+    </ul>
+
+    <button id="gallery_back">&lt;</button>
+    <button id="gallery_forward">&gt;</button> 
+
+    <!--    
+    <ul>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ullam amet doloribus aperiam quasi similique, alias quo ipsum facere, dolor accusamus eos deleniti temporibus odio suscipit quos qui libero. Earum.</p></li>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #3</p></li>
+    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
+    </ul>
+    -->
+
+    
+</div>
+
+</div>
+
+<div class='post'>
 	<h1>Old Python Games / Projects</h1>
 	<p>After posting my two most recent retro posts, I thought I’d post some of my older projects. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.</p>
 
