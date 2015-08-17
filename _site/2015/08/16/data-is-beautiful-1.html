@@ -10,7 +10,7 @@
 
     <script src="/js/main.js"></script>
 
-    <title>Gallery Test | Ben Tanen</title>
+    <title>Best Of "Data is Beautiful" #1 | Ben Tanen</title>
 </head>
 
 
@@ -66,76 +66,43 @@
 		<div class="post">
 
   <header class="post-header">
-    <h1>Gallery Test</h1>
-    <p class="meta">Jul 2, 2015</p>
+    <h1>Best Of "Data is Beautiful" #1</h1>
+    <p class="meta">Aug 16, 2015</p>
   </header>
 
   <article class="post-content">
-  <p>This is a test for a gallery object:</p>
+  <p>As I briefly mentioned in a <a href="/2014/10/31/rap-data-design.html">previous post</a>, I am a big fan of well-designed representations of data. If you’re also a fan of this “art form” then you should be an avid follower of the subreddit <a href="https://www.reddit.com/r/dataisbeautiful">/r/dataisbeautiful</a>. If you’ve never seen it, it’s a must read.</p>
 
-<script>
-    $(document).ready(function() {
-    gallery_width = 600;
-    gallery_height = 450;
+<p>Pretty much all of the posts are cool but there are a few that are definitely a cut above. I decided every once in awhile I’d highlight my personal favorites. So without further ado…</p>
 
-    for (i = 0; i < $('.gallery ul').children('li').length; i++) {
-        img_hgt = $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').height();
-        $('.gallery ul li:nth-of-type(' + (i + 1) + ') img').css({'margin-top': '-' + (img_hgt / 2) + 'px'});
-    }
+<h3 id="nba-shot-chartshttpsavvastjortjogloucomnba-shot-shartshtml"><a href="http://savvastjortjoglou.com/nba-shot-sharts.html">NBA Shot Charts</a></h3>
 
-    $('#gallery_forward').click(function() {
-        if (parseInt($('.gallery ul').css('left').replace('px','')) - (gallery_width + 9) <= $('.gallery ul').children('li').length * (gallery_width) * -1) {
-            $('.gallery ul').animate({left: '0px'});
-        } else {
-            $('.gallery ul').animate({left: '-=' + (gallery_width + 9) + 'px'});
-        }
-    });
+<p><img src="/img/posts/dib_basketball.png" width="600px" /></p>
 
-    $('#gallery_back').click(function() {
-        console.log(parseInt($('.gallery ul').css('left').replace('px','')));
-        if (parseInt($('.gallery ul').css('left').replace('px','')) >= 0 || parseInt($('.gallery ul').css('left').replace('px','')) == NaN) {
-            $('.gallery ul').animate({left: ($('.gallery ul').children('li').length - 1) * (gallery_width + 9) * -1 + 'px'});
-        } else {
-            $('.gallery ul').animate({left: '+=' + (gallery_width + 9) + 'px'});
-        }
-    });
-});
-</script>
+<p>I’m not a huge NBA fan but I do know there is a crazy amount of data available about the game - maybe second only to <a href="http://fivethirtyeight.com/features/rich-data-poor-data/">baseball</a>. I guess Savvas Tjortjoglou decided to map that data to show a very comprehensive shot chart. The post is well-done, especially the way that he actually goes about mapping the data onto the court as singular points and heat maps.</p>
 
-<div class="gallery" style="width: 600px;">
-    <ul>
-        
-            <li style="width: 600px; height: 450px">
-                <img src="http://farm4.staticflickr.com/3834/9170402067_4c6bff3d56_b.jpg" style="width: 500px; margin-left: -250px;" />
-                
-            </li>
-        
-            <li style="width: 600px; height: 450px">
-                <img src="http://farm4.staticflickr.com/3699/9170397689_ca0c93bbc0_b.jpg" style="width: 500px; margin-left: -250px;" />
-                
-            </li>
-        
-            <li style="width: 600px; height: 450px">
-                <img src="http://farm8.staticflickr.com/7130/7862028888_15e77bcf90_b.jpg" style="width: 450px; margin-left: -225px;" />
-                
-            </li>
-        
-    </ul>
+<h3 id="mapping-the-uk-via-pubshttpramiroorgnotebookmapping-pubs"><a href="http://ramiro.org/notebook/mapping-pubs/">Mapping the UK via Pubs</a></h3>
 
-    <button id="gallery_back">&lt;</button>
-    <button id="gallery_forward">&gt;</button> 
+<p><img src="/img/posts/dib_pubs.png" width="600px" /></p>
 
-    <!--    
-    <ul>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ullam amet doloribus aperiam quasi similique, alias quo ipsum facere, dolor accusamus eos deleniti temporibus odio suscipit quos qui libero. Earum.</p></li>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/infographics_ex.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #3</p></li>
-    <li style='width: 800px; height: 400px'><img src='../img/posts/rap_vocab.png' style='width: 600px; margin-left: -300px;'><p style='width: 790px'>Caption #2</p></li>
-    </ul>
-    -->
+<p>This is just one of those things that will make you LQTY (laugh quietly to yourself, the truer form of LOL). Of course the United Kingdom can be be well mapped through all of its pubs. While not a dense as, Ireland does a good job of dispersing its drinking establishments. Scotland is just lacking though - come on Scotland! The actual data work being done here is pretty simple but it’s cool nonetheless.</p>
 
-    
-</div>
+<h3 id="swearing-across-americahttpwwwhuffingtonpostcomentrywhich-curse-words-are-popular-in-your-state55a80662e4b04740a3df54b8"><a href="http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8">Swearing Across America</a></h3>
+
+<p><img src="http://img.huffingtonpost.com//asset/scalefit_630_noupscale/55a9001d1900002500b86ee1.png" width="500px" /></p>
+
+<p>I particularly enjoy this one and everything it has to say about the different regions of the US. Coming from the Northeast, I have to generally agree with the maps - I don’t remember the last time I heard someone say “Gosh” seriously. I was also quite amused by the tiny spike in the use of “Bitch” in Fairfield County Connecticut. Fairfield reppin’!</p>
+
+<p>Rather than using API access like the others, this post also had a pretty interesting way of gathering the data. While I’m still slightly unsure of utilizing Twitter / Geolocation for accurate data science, for the matter of this post I’ll accept their method. </p>
+
+<h3 id="randomly-finding-someonehttpemptypipesorg20150803random-finding"><a href="http://emptypipes.org/2015/08/03/random-finding/">Randomly Finding Someone</a></h3>
+
+<p><img src="/img/posts/dib_randomfinding.gif" /></p>
+
+<p>Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation (hurray for pretty gifs). He even built a tool for anyone to try out tool / animation. </p>
+
+<p>While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use FindMyFriends or a good ol’ phone call.</p>
+
 
   </article>
 
