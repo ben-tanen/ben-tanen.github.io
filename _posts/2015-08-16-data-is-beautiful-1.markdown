@@ -33,7 +33,7 @@ Rather than using API access like the others, this post also had a pretty intere
 
 {% include figure.html src="/img/posts/dib_randomfinding.gif" %}
 
-Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation (hurray for pretty gifs). He even built a tool for anyone to try out tool / animation. 
+Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the "randomly searching" process - hurray for pretty gifs. He even built a tool for anyone to try out tool / animation. 
 
 While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use FindMyFriends or a good ol' phone call.
 
