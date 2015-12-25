@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Minimizing Risk For An Optimal Portfolio'
-date:   2015-10-30 15:05:41
+date:   2015-12-12 15:05:41
 categories: project internship finance data
 ---
 
