@@ -10,7 +10,7 @@
 
     <script src="/js/main.js"></script>
 
-    <title>Post Index | Ben Tanen</title>
+    <title>Minimizing Risk For An Optimal Portfolio | Ben Tanen</title>
 </head>
 
 
@@ -76,83 +76,31 @@
 		<div class="post">
 
   <header class="post-header">
-    <h1>Post Index</h1>
+    <h1>Minimizing Risk For An Optimal Portfolio</h1>
+    <p class="meta">Oct 30, 2015</p>
   </header>
 
   <article class="post-content">
-  <ul class='index_list'>
+  <p>For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. Because of my time working in the risk management department of a hedge fund, I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
 
-	<li>
-		<p id='index_date'>30 Oct 2015</p>
-		<p id='index_title'><a href='/2015/10/30/optimizing-hedge-ratio.html'>Minimizing Risk For An Optimal Portfolio</a></p>
-	</li>
+<p>The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.</p>
 
-	<li>
-		<p id='index_date'>30 Oct 2015</p>
-		<p id='index_title'><a href='/2015/10/30/jumboadvisor.html'>Tufts Polyhack 2015: JumboAdvisor</a></p>
-	</li>
+<p>In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “<a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.</p>
 
-	<li>
-		<p id='index_date'>01 Sep 2015</p>
-		<p id='index_title'><a href='/2015/09/01/lastfm-scrobble-graphs.html'>Visualizing My Spotify History</a></p>
-	</li>
+<p><img src="/img/posts/portfolio_bullet.png" alt="Markowitz bullets showing possible portfolios " width="800px" /></p>
 
-	<li>
-		<p id='index_date'>16 Aug 2015</p>
-		<p id='index_title'><a href='/2015/08/16/data-is-beautiful-1.html'>Best Of "Data is Beautiful" #1</a></p>
-	</li>
+<figcaption>
+Markowitz bullets showing possible portfolios 
+</figcaption>
 
-	<li>
-		<p id='index_date'>06 Jul 2015</p>
-		<p id='index_title'><a href='/2015/07/06/censor-machine.html'>Random Project: Censor Machine</a></p>
-	</li>
+<p>I found this optimized weight allocation by looping over a bunch of different allocations and searching for optimized performance. First I looped through allocations in increments of 0.1 and then examined closer at the region(s) that performed the best. I repeated this process again with increments of 0.025 and 0.005 to find the best weighting. All of these trials can be seen in the bullets above, as well as the final optimized portfolio in red (at the tip).</p>
 
-	<li>
-		<p id='index_date'>01 Jul 2015</p>
-		<p id='index_title'><a href='/2015/07/01/retro-python-games.html'>Old Python Games / Projects</a></p>
-	</li>
+<p>Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.</p>
 
-	<li>
-		<p id='index_date'>26 Jun 2015</p>
-		<p id='index_title'><a href='/2015/06/26/retro-game-theory.html'>Retro Post: Game Theory, The Game</a></p>
-	</li>
+<p><img src="/img/posts/portfolio_return.png" width="600px" /></p>
 
-	<li>
-		<p id='index_date'>17 Jun 2015</p>
-		<p id='index_title'><a href='/2015/06/17/retro-ios-update.html'>Retro Post: iOS Upgrades (Circa 2013)</a></p>
-	</li>
+<p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing_portfolio.html">here</a>.</p>
 
-	<li>
-		<p id='index_date'>21 May 2015</p>
-		<p id='index_title'><a href='/2015/05/21/spotify.html'>Why Everyone Should Use (Or At Least Try) Spotify</a></p>
-	</li>
-
-	<li>
-		<p id='index_date'>31 Mar 2015</p>
-		<p id='index_title'><a href='/2015/03/31/rodrego.html'>RodRego: The Simple Register Machine Simulator</a></p>
-	</li>
-
-	<li>
-		<p id='index_date'>30 Nov 2014</p>
-		<p id='index_title'><a href='/2014/11/30/grub.html'>Grub: The Command-line GrubHub</a></p>
-	</li>
-
-	<li>
-		<p id='index_date'>12 Nov 2014</p>
-		<p id='index_title'><a href='/2014/11/12/base64.html'>Random Project: Base64 Decoder</a></p>
-	</li>
-
-	<li>
-		<p id='index_date'>01 Nov 2014</p>
-		<p id='index_title'><a href='/2014/11/01/infographics.html'>Up-to-Date Infographics</a></p>
-	</li>
-
-	<li>
-		<p id='index_date'>31 Oct 2014</p>
-		<p id='index_title'><a href='/2014/10/31/rap-data-design.html'>Rap, Data, and Design</a></p>
-	</li>
-
-</ul>
 
   </article>
 
