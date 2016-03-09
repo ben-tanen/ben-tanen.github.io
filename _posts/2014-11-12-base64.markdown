@@ -16,8 +16,6 @@ So, by reversing [Wikipedia's algorithm](http://en.wikipedia.org/wiki/Base64#Exa
 4. Convert 8-bit strings back into Ascii values
 5. Convert to decoded character
 
-<br />
-
 Nothing groundbreaking but it was a fun little project. And who wouldn't prefer doing little projects instead of sleeping? 
 
 Link to GitHub Repo [Here](https://github.com/ben-tanen/Base64Decode)
