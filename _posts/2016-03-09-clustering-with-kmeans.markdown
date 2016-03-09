@@ -5,7 +5,7 @@ date:   2016-03-09 15:05:41
 categories: project data matlab clustering
 ---
 
-This semester, I'm taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind PCA analysis. However, we are starting to move onto look at new types of data analysis / clustering and today's topic was **k-means clustering**. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student's perspective, is much easier to rationalize. It's a fairly simple algorithm and it does have some cool results.
+This semester, I'm taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind [PCA analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). However, we are starting to move onto look at new types of data analysis / clustering and today's topic was **k-means clustering**. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student's perspective, is much easier to rationalize. It's a fairly simple algorithm and it does have some cool results.
 
 For a brief explanation, the algorithm simply works by taking data (lets say *n* data points) and attempts to form them into *k* clusters (*k* is chosen by the user). *k* initial cluster centroids are picked (perhaps by random). From here, the following is done on every iteration:
 
@@ -23,7 +23,7 @@ The first iteration is done by making a random guesses for the location of the *
 
 {% include figure.html src="/img/posts/kmeans_cluster.gif" width="450px" %}
 
-If you have any interest in playing around, you can find my MATLAB code here in a new GitHub repo for my data mining work. It should work for all reasonable values of *k* (clusters) and *r* (data points per cluster). I'll be honest and say that my MATLAB code leaves a bit to be desired but it's working so that's mostly all that matters. 
+If you have any interest in playing around, you can find my MATLAB code [here](https://github.com/ben-tanen/data-mining/tree/master/kmeans) in [a new GitHub repo](https://github.com/ben-tanen/data-mining) for my data mining work. It should work for all reasonable values of *k* (clusters) and *r* (data points per cluster). I'll be honest and say that my MATLAB code leaves a bit to be desired but it's working so that's mostly all that matters. 
 
 If you have any questions / comments, feel free to shoot me a message. I'll follow up with any major changes / updates in the data mining world of Ben Tanen.
 
