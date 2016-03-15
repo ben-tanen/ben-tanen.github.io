@@ -106,13 +106,15 @@ h3 {
 	color: #77bdee;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 20px;
-	padding-left: 140px;
+	padding-left: 145px;
 }
 
 #index_date {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 20px;
 	position: absolute;
+	text-align: right;
+	width: 130px;
 	top: 50%;
 	margin-top: -8px;
 }
