@@ -115,8 +115,7 @@ h3 {
 	position: absolute;
 	text-align: right;
 	width: 130px;
-	top: 50%;
-	margin-top: -8px;
+	vertical-align: top;
 }
 
 .main {
@@ -279,7 +278,7 @@ h3 {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .project-content-box {
