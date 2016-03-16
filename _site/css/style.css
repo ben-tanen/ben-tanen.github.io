@@ -300,9 +300,7 @@ h3 {
 .project-img-box {
     width: 175px;
     height: 100px;
-    background-color: blue;
     vertical-align: top;
-
     display: inline-block;
 }
 
