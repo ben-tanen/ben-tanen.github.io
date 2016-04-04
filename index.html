@@ -1,9 +1,20 @@
 ---
 layout: index
 ---
-{% for post in site.posts %}
+
+{% for post in paginator.posts %}
 <div class='post'>
 	<h1>{{ post.title }}</h1>
 	{{ post.content }}
 </div>
 {% endfor %}
+
+<div class='pagination'>
+{% if paginator.previous_page %}
+    <p id='pagination_previous'><a href='{{ paginator.previous_page_path }}'>&#8592; Newer Posts</a></p>
+{% endif %}
+
+{% if paginator.next_page %}
+    <p id='pagination_next'><a href='{{ paginator.next_page_path }}'>Older Posts &#8594;</a></p>
+{% endif %}
+</div>

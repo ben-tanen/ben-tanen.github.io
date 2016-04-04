@@ -177,6 +177,18 @@ h3 {
 		color: #888888;
 	}
 
+    .pagination {
+        margin-top: -65px;
+    }
+
+    #pagination_next {
+        float: right;
+    }
+
+    #pagination_previous {
+        float: left;
+    }
+
 
 	.highlight {
 		border-radius: 5px;

@@ -10,7 +10,7 @@
 
     <script src="/js/main.js"></script>
 
-    <title>Projects | Ben Tanen</title>
+    <title>Ben Tanen</title>
 </head>
 
 
@@ -20,8 +20,7 @@
     <img id='face' src='/img/face.jpg' alt='A picture of my head' />
     
     <h1 id='title'>
-    <a href='/' style='color: black;text-decoration:none;'>Howdy</a>
-    
+    Howdy
     </h1>
 
     <div class='links'>
@@ -75,131 +74,77 @@
 </div>
 
 	<div class='main'>
-		<div class="post">
+		
+<div class='post'>
+	<h1>Random Project: Base64 Decoder</h1>
+	<p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text using the base64 decoder, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base64 decoder in C++, because why not.</p>
 
-  <header class="post-header">
-    <h1>Projects</h1>
-  </header>
+<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
 
-  <article class="post-content">
-  <div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/data-projects.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='/projects/data'>Analysis & Visualization</a></h1>
-        <p>Various smaller data analysis and visualization projects</p>
-        <p class='project-links'>View: 
-            <a href='/projects/data'>Site</a>
-        </p>
-    </div>
+<ol>
+  <li>Convert each encoded character to Ascii values</li>
+  <li>String together 6-bit strings of Ascii values</li>
+  <li>Break string up into 8-bit strings</li>
+  <li>Convert 8-bit strings back into Ascii values</li>
+  <li>Convert to decoded character</li>
+</ol>
+
+<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? </p>
+
+<p>Link to GitHub Repo <a href="https://github.com/ben-tanen/Base64Decode">Here</a></p>
+
+
 </div>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/rodrego.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://ben-tanen.github.io/RodRego'>RodRego</a></h1>
-        <p>Web app version of a simple register machine simulator</p>
-        <p class='project-links'>View: 
-            <a href='https://ben-tanen.github.io/RodRego'>Site</a>
-            //
-            <a href='/2015/03/31/rodrego.html'>Blog</a>
-            //
-            <a href='https://github.com/ben-tanen/RodRego'>GitHub</a>
-        </p>
-    </div>
+<div class='post'>
+	<h1>Up-to-Date Infographics</h1>
+	<p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
+
+<p>For my infographics, I was attempting to display what I was currently up to (currently reading, listening to, watching). I never thought that it could be live updates, but more so descriptions of the book, album, and show/movie that I was into that week. However, the struggle with this was it was not easy to update the information. I had hard-coded into my HTML file, and accessing, changing, and uploading this was generally a pain, leaving my information drastically out-of-date.</p>
+
+<p>Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of <a href="http://www.IFTTT.com">IFTTT</a>, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.</p>
+
+<p><img src="/img/posts/infographics_ex.png" alt="Infographic Example" /></p>
+
+<p>The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.</p>
+
+<p>It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. </p>
+
+
 </div>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/asllex.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/ASLLex'>ASLLex</a></h1>
-        <p>American Sign Language data visualization and teaching tool</p>
-        <p class='project-links'>View: 
-            <a href='https://ben-tanen.github.io/ASLLex'>Site</a>
-            //
-            <a href='https://github.com/ben-tanen/ASLLex'>GitHub</a>
-        </p>
-    </div>
-</div>
+<div class='post'>
+	<h1>Rap, Data, and Design</h1>
+	<p>A genre of music I don’t find myself particularly well-versed in is Hip-Hop and Rap. I’ll listen to it on occasion when <a href="http://www.headroommusic.org/">my more rap-inclined friend</a> suggests some, but for the most part, I really only know the highlights. One thing I very much do like, though, is beautiful representation of data, and Matt Daniels did the wonderful task of combining the two.</p>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/jumboadvisor.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/JumboAdvisor'>JumboAdvisor</a></h1>
-        <p>Course advisement application for Tufts SIS (from Polyhack 2015)</p>
-        <p class='project-links'>View: 
-            <a href='https://ben-tanen.github.io/JumboAdvisor'>Site</a>
-            // 
-            <a href='/2015/10/30/jumboadvisor.html'>Blog</a>
-            // 
-            <a href='https://github.com/ben-tanen/JumboAdvisor'>GitHub</a>
-        </p>
-    </div>
-</div>
+<p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/drumtab.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/DrumTabVisualizer'>Drum Tab Visualizer</a></h1>
-        <p>A "Rock Band"-style visualization for drum tab made in C++ / Python</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/DrumTabVisualizer'>GitHub</a>
-        </p>
-    </div>
-</div>
+<p><img src="/img/posts/rap_vocab.png" alt="Screenshot from the Post" /></p>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/songsearch.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/SongSearch'>Song Search</a></h1>
-        <p>Large-scale lyrical search database in C++ (from COMP-15)</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/SongSearch'>GitHub</a>
-        </p>
-    </div>
-</div>
+<p>Daniels does some interesting analysis of the data in the actual post (ex: examining how Wu-Tang Clan holds up) and it’s worth checking out. Note: after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: </p>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/pygames.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/PythonGames'>PyGames</a></h1>
-        <p>ASCII versions of Minesweeper, Blackjack, and Battleship in Python</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/PythonGames'>GitHub</a>
-        </p>
-    </div>
-</div>
+<blockquote>
+  <p>“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”</p>
+</blockquote>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/simfishy.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1>SimFishy</a></h1>
-        <p>Simple ASCII sprite simulator built in C++ (from COMP-11)</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/Tufts/tree/master/SimFishy'>GitHub</a>
-        </p>
-    </div>
+<p>From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion. </p>
+
+<p>Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.</p>
+
+<p>By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.</p>
+
+
 </div>
 
 
-  </article>
+<div class='pagination'>
+
+    <p id='pagination_previous'><a href='/blog/3'>&#8592; Newer Posts</a></p>
+
+
 
 </div>
+
 	</div>
 	
 </body>
