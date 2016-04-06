@@ -9,3 +9,5 @@ What's up? I'm Ben. I'm a student currently studying Computer Science Engineerin
 That's all for now, but maybe I'll add more stuff later on. In the meantime, feel free to checkout out the rest of the site or my [Github](https://github.com/ben-tanen).
 
 If you would like to contact me, you can [send me a message](mailto:ben.tanen@gmail.com).
+
+{% include currently.html %}

@@ -1,0 +1,47 @@
+#currently_title {
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.currently {
+    vertical-align: top;
+    text-align: left;
+    position: relative;
+    display: none;
+    margin-bottom: 5px;
+    width: 500px;
+}
+
+.currently_img {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+}
+
+.currently img {
+    display: inline-block;
+    width: 120px;
+    padding: 0;
+    margin: 0;
+}
+
+.currently_text, .currently_img {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.currently_text {
+    position: absolute;
+    padding: 17px 0 0 10px;
+}
+
+.currently_text p {
+    font-size: 20px;
+}
+
+.currently_text p:nth-child(1) {
+    font-weight: 700;
+    color: #77bdee;
+    margin-bottom: 7px;
+}
