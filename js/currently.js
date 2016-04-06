@@ -1,6 +1,5 @@
 function outputListening(data) {
     if (Object.keys(data).length >= 1) {
-        console.log('listening: ', data);
 
         if (data.song_name == null || data.song_name == "" && data.song_album != null) {
             $('#listening_song').html(data.song_album);
@@ -18,13 +17,12 @@ function outputListening(data) {
 
         $('.currently.listening').css({'display': 'inherit'});
     } else {
-        console.log('empty');
+        // console.log('empty');
     }
 }
 
 function outputWatching(data) {
     if (Object.keys(data).length >= 1) {
-        console.log('watching: ', data);
 
         $('#watching_title').html(data.show_title);
 
@@ -36,13 +34,12 @@ function outputWatching(data) {
 
         $('.currently.watching').css({'display': 'inherit'});
     } else {
-        console.log('empty');
+        // console.log('empty');
     }
 }
 
 function outputReading(data) {
     if (Object.keys(data).length >= 1) {
-        console.log('reading: ', data);
 
         $('#reading_name').html(data.book_name);
         $('#reading_author').html(data.book_author);
@@ -55,7 +52,7 @@ function outputReading(data) {
 
         $('.currently.reading').css({'display': 'inherit'});
     } else {
-        console.log('empty');
+        // console.log('empty');
     }
 }
 
