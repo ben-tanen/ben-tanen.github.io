@@ -1,7 +1,5 @@
 function outputListening(data) {
     if (Object.keys(data).length >= 1) {
-        console.log('listening: ', data);
-
         if (data.song_name == null || data.song_name == "" && data.song_album != null) {
             $('#listening_song').html(data.song_album);
             $('#listening_artist').html(data.song_artist);
@@ -17,14 +15,14 @@ function outputListening(data) {
         }
 
         $('.currently.listening').css({'display': 'inherit'});
+        $('#currently_loading').css({'display': 'none'});
     } else {
-        console.log('empty');
+        // console.log('empty');
     }
 }
 
 function outputWatching(data) {
     if (Object.keys(data).length >= 1) {
-        console.log('watching: ', data);
 
         $('#watching_title').html(data.show_title);
 
@@ -35,14 +33,14 @@ function outputWatching(data) {
         }
 
         $('.currently.watching').css({'display': 'inherit'});
+        $('#currently_loading').css({'display': 'none'});
     } else {
-        console.log('empty');
+        // console.log('empty');
     }
 }
 
 function outputReading(data) {
     if (Object.keys(data).length >= 1) {
-        console.log('reading: ', data);
 
         $('#reading_name').html(data.book_name);
         $('#reading_author').html(data.book_author);
@@ -54,8 +52,9 @@ function outputReading(data) {
         }
 
         $('.currently.reading').css({'display': 'inherit'});
+        $('#currently_loading').css({'display': 'none'});
     } else {
-        console.log('empty');
+        // console.log('empty');
     }
 }
 
@@ -63,7 +62,7 @@ $(document).ready(function() {
         // get listening
         $.ajax({
             url: "http://bt-currently.herokuapp.com/getListening",
-            data: { 'section': 'listening' }
+            data: null
         }).done(function(data) {
             outputListening(data);
         });
@@ -71,7 +70,7 @@ $(document).ready(function() {
         // get watching
         $.ajax({
             url: "http://bt-currently.herokuapp.com/getWatching",
-            data: { 'section': 'listening' }
+            data: null
         }).done(function(data) {
             outputWatching(data);
         });
@@ -79,7 +78,7 @@ $(document).ready(function() {
         // get reading
         $.ajax({
             url: "http://bt-currently.herokuapp.com/getReading",
-            data: { 'section': 'listening' }
+            data: null
         }).done(function(data) {
             outputReading(data);
         });
@@ -87,7 +86,7 @@ $(document).ready(function() {
         // get working
         $.ajax({
             url: "http://bt-currently.herokuapp.com/getWorking",
-            data: { 'section': 'listening' }
+            data: null
         }).done(function(data) {
             // outputWorking(data);
         });
