@@ -10,7 +10,7 @@
 
     <script src="/js/main.js"></script>
 
-    <title>Lots of Light Painting | Ben Tanen</title>
+    <title>Support Vector Machines and Poetry | Ben Tanen</title>
 </head>
 
 
@@ -78,62 +78,39 @@
 		<div class="post">
 
   <header class="post-header">
-    <h1>Lots of Light Painting</h1>
-    <p class="meta">Mar 6, 2016</p>
+    <h1>Support Vector Machines and Poetry</h1>
+    <p class="meta">May 3, 2016</p>
   </header>
 
   <article class="post-content">
-  <p>Before I became all lame, I use to be fairly into photography. I was never superb myself but I loved to experiment with things. I adored light painting and spent hours trying to make cool patterns with some fancy glow sticks.</p>
+  <p>My tales of data mining continue and this time, they’re about <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">support vector machines</a>. These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a> which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn’t a fantastic method.</p>
 
-<p>I haven’t been able to take many photos recently but I felt like sharing some of my personal favorites from the past few years. I hope to maybe add some more as time goes on.</p>
+<p>As an alternative, SVMs are pretty great at providing classifications that work for existing data <em>and</em> future data. An example that I found particular interesting was used to distinguish between poems written in English and poems written in German. For example, take the following two excerpts:</p>
 
-<style>
-    .photo_container {
-    }
+<blockquote>
+  <p><em>What happens to a dream deferred? Does it dry up</em></p>
+</blockquote>
 
-    .photo_container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
+<blockquote>
+  <p><em>Aktenstose nachts verschlingen, Schwatzen nach der Welt</em></p>
+</blockquote>
 
-    .sub_photo_container {
-        width: 49.5%;
-        display: inline-block;
-        vertical-align: top;
-    }
+<p>It’s pretty obvious to anyone who speaks English or German which language these poems are written in. But to a naive computer, these are just strings of characters. To aid in distinguishing, let’s consider two features of these 50-character excerpts: the number of complete words and the number of times the letter “i” occurs.</p>
 
-</style>
+<p>Using this information as the main “features” of our data, we can compute and define a hyperplane (or in this case, a line) to find if there is a meaningful division between English and German given the “features” we are analyzing (for more on the math behind this, see <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">here</a>). If we compute and plot this for ten different excerpts, we get the following:</p>
 
-<div class="photo_container">
-    <div class="sub_photo_container">
-        <img src="/img/photography/pic1.jpg" />
-        <img src="/img/photography/pic3.jpg" />
-    </div>
+<p><img src="/img/posts/svm_poems.png" width="400px" /></p>
 
-    <div class="sub_photo_container">
-        <img src="/img/photography/pic2.jpg" />
-    </div>
+<p>We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another <em>new</em> excerpt: </p>
 
-    <div class="sub_photo_container">
-        <img src="/img/photography/pic4.jpg" />
-        <img src="/img/photography/pic5.jpg" />
-    </div>
+<blockquote>
+  <p><em>Hat der alte Hexenmeister sich doch einmal wegbege</em></p>
+</blockquote>
 
-    <div class="sub_photo_container">
-        <img src="/img/photography/pic6.jpg" />
-        <img src="/img/photography/pic7.jpg" />
-    </div>
+<p>If we go ahead and plot this (seen above in magenta), we can see that this obviously German poem is again partitioned as expected without needing to update our hyperplane. Hurray, math works!</p>
 
-    <div class="sub_photo_container">
-        <img src="/img/photography/pic8.jpg" />
-        <img src="/img/photography/pic9.jpg" />
-    </div>
+<p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/svm-poems">here</a> and other data mining projects <a href="https://github.com/ben-tanen/data-mining">here</a>.</p>
 
-    <div class="sub_photo_container">
-        <img src="/img/photography/pic10.jpg" />
-        <img src="/img/photography/pic11.jpg" />
-    </div>
-</div>
 
   </article>
 

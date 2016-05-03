@@ -10,7 +10,7 @@
 
     <script src="/js/main.js"></script>
 
-    <title>Analysis & Visualization | Ben Tanen</title>
+    <title>Ben Tanen</title>
 </head>
 
 
@@ -20,8 +20,7 @@
     <img id='face' src='/img/face2.jpg' alt='A picture of my head' />
     
     <h1 id='title'>
-    <a href='/' style='color: black;text-decoration:none;'>Howdy</a>
-    
+    Howdy
     </h1>
 
     <div class='links'>
@@ -75,87 +74,39 @@
 </div>
 
 	<div class='main'>
-		<ul class='index_list'>
+		
+<div class='post'>
+	<h1>Rap, Data, and Design</h1>
+	<p>A genre of music I don’t find myself particularly well-versed in is Hip-Hop and Rap. I’ll listen to it on occasion when <a href="http://www.headroommusic.org/">my more rap-inclined friend</a> suggests some, but for the most part, I really only know the highlights. One thing I very much do like, though, is beautiful representation of data, and Matt Daniels did the wonderful task of combining the two.</p>
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>03 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/05/03/svm-poetry.html'>Support Vector Machines and Poetry</a></p>
-            <div/>
-            <p><p>My tales of data mining continue and this time, they’re about <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">support vector machines</a>. These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a> which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn’t a fantastic method.</p>
+<p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
 
-</p>
-            <a href='/2016/05/03/svm-poetry.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
+<p><img src="/img/posts/rap_vocab.png" alt="Screenshot from the Post" /></p>
 
-    
+<p>Daniels does some interesting analysis of the data in the actual post (ex: examining how Wu-Tang Clan holds up) and it’s worth checking out. Note: after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: </p>
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>09 Mar 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/03/09/clustering-with-kmeans.html'>Clustering Using K-Means</a></p>
-            <div/>
-            <p><p>This semester, I’m taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA analysis</a>. However, we are starting to move onto look at new types of data analysis / clustering and today’s topic was <strong>k-means clustering</strong>. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student’s perspective, is much easier to rationalize. It’s a fairly simple algorithm and it does have some cool results.</p>
+<blockquote>
+  <p>“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”</p>
+</blockquote>
 
-</p>
-            <a href='/2016/03/09/clustering-with-kmeans.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
+<p>From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion. </p>
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>12 Dec 2015</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2015/12/12/optimizing-hedge-ratio.html'>Minimizing Risk For An Optimal Portfolio</a></p>
-            <div/>
-            <p><p>I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. Because of my time working in the risk management department of a hedge fund, I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
+<p>Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.</p>
 
-</p>
-            <a href='/2015/12/12/optimizing-hedge-ratio.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
+<p>By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.</p>
 
-    
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>01 Sep 2015</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2015/09/01/lastfm-scrobble-graphs.html'>Visualizing My Spotify History</a></p>
-            <div/>
-            <p><p>As most people do, I go through phases of musical interests. I’ll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm’s scrobbling data, <a href="https://gist.github.com/bitmorse/5201491">this handy script</a>, and some Python / pandas, I was able to see just what I was listening over the past few years.</p>
+</div>
 
-</p>
-            <a href='/2015/09/01/lastfm-scrobble-graphs.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
 
-    
+<div class='pagination'>
 
-    
+    <p id='pagination_previous'><a href='/blog/4'>&#8592; Newer Posts</a></p>
 
-    
 
-    
 
-    
+</div>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-</ul>
 	</div>
 	
 </body>
