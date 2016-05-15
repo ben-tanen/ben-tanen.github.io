@@ -10,7 +10,7 @@
 
     <script src="/js/main.js"></script>
 
-    <title>Analysis & Visualization | Ben Tanen</title>
+    <title>Visualizing My (Unhealthy) Netflix History | Ben Tanen</title>
 </head>
 
 
@@ -75,100 +75,27 @@
 </div>
 
 	<div class='main'>
-		<ul class='index_list'>
+		<div class="post">
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>13 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/05/13/netflix-history.html'>Visualizing My (Unhealthy) Netflix History</a></p>
-            <div/>
-            <p><p>TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.</p>
+  <header class="post-header">
+    <h1>Visualizing My (Unhealthy) Netflix History</h1>
+    <p class="meta">May 13, 2016</p>
+  </header>
 
-</p>
-            <a href='/2016/05/13/netflix-history.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
+  <article class="post-content">
+  <p>TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.</p>
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>03 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/05/03/svm-poetry.html'>Support Vector Machines and Poetry</a></p>
-            <div/>
-            <p><p>My tales of data mining continue and this time, they’re about <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">support vector machines</a>. These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a> which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn’t a fantastic method.</p>
+<p>Getting the information was pretty simple. I just had to scrape the data via Netflix’s own viewing history page, clean it a bit, and then pipe it into MATLAB.</p>
 
-</p>
-            <a href='/2016/05/03/svm-poetry.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
+<p><img src="/img/posts/netflix_history.png" /></p>
 
-    
+<p>I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside… One thing is for sure, I definitely watch a lot of TV.</p>
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>09 Mar 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/03/09/clustering-with-kmeans.html'>Clustering Using K-Means</a></p>
-            <div/>
-            <p><p>This semester, I’m taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA analysis</a>. However, we are starting to move onto look at new types of data analysis / clustering and today’s topic was <strong>k-means clustering</strong>. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student’s perspective, is much easier to rationalize. It’s a fairly simple algorithm and it does have some cool results.</p>
+<p><strong>Note</strong>: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc). </p>
 
-</p>
-            <a href='/2016/03/09/clustering-with-kmeans.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
+  </article>
 
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>12 Dec 2015</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2015/12/12/optimizing-hedge-ratio.html'>Minimizing Risk For An Optimal Portfolio</a></p>
-            <div/>
-            <p><p>I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. Because of my time working in the risk management department of a hedge fund, I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
-
-</p>
-            <a href='/2015/12/12/optimizing-hedge-ratio.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>01 Sep 2015</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2015/09/01/lastfm-scrobble-graphs.html'>Visualizing My Spotify History</a></p>
-            <div/>
-            <p><p>As most people do, I go through phases of musical interests. I’ll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm’s scrobbling data, <a href="https://gist.github.com/bitmorse/5201491">this handy script</a>, and some Python / pandas, I was able to see just what I was listening over the past few years.</p>
-
-</p>
-            <a href='/2015/09/01/lastfm-scrobble-graphs.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-</ul>
+</div>
 	</div>
 	
 </body>
