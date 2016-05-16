@@ -368,6 +368,34 @@ h3 {
     outline: none;
 }
 
+th {
+    padding: 5px;
+    color: #77bdee;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+tbody tr:nth-of-type(1) td {
+    border-top: solid 2px gray;
+    border-color: rgba(128, 128, 128, 0.4);
+    padding-top: 3px;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: rgba(119, 189, 238, 0.3);
+}
+
+table {
+    text-align: center;
+    border: 1px solid gray;
+    border-color: rgba(128, 128, 128, 0.4);
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
 @media (max-width: 600px), (orientation : portrait) {
 	.side {
 		position: fixed;

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Visualizing My (Unhealthy) Netflix History'
-date:   2016-05-13 15:05:41
+date:   2016-05-08 15:05:41
 categories: project data matlab netflix
 ---
 
