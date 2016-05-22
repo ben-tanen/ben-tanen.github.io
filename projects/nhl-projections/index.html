@@ -1,0 +1,38 @@
+---
+layout: index
+title: NHL Projections
+---
+
+<link rel="stylesheet" href="nhl-projections.css">
+<script src='nhl-proj.js'></script>
+
+<h1>NHL Projections</h1>
+
+<div id='nhl-about' class='expand'>
+<h2>About</h2>
+
+<p>Projections, predictions, and analysis derived from NHL season simulations in MATLAB.
+
+<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/NHLPlayoffProjections'>here</a>.</p>
+
+<p style='color: #E61F1F;'><u>NOTE</u>: Project site under construction.</p>
+
+<img id='about-gradient' src='files/about-gradient.png' />
+<img id='expand-img' src='files/down-arrow.png' />
+</div>
+
+<h2>Recent Work</h2>
+<ul class='index_list' style='padding-left: 0;'>
+{% for post in site.posts %}
+    {% if post.categories contains 'nhl-projections' %}
+        <li style='margin-bottom: 45px; margin-left: 0px;'>
+            <div>
+                <p id='index_date' style='text-align: left;'>{{ post.date | date_to_string }}</p>
+                <p id='index_title' style='font-size: 20px;'><a href='{{ post.url }}'>{{ post.title }}</a></p>
+            <div/>
+            <p>{{ post.excerpt }}</p>
+            <a href='{{ post.url }}'><p style='margin-top: -5px;'>Read More</p></a>
+        </li>
+    {% endif %}
+{% endfor %}
+</ul>

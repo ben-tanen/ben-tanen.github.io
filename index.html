@@ -3,10 +3,12 @@ layout: index
 ---
 
 {% for post in paginator.posts %}
+{% unless post.categories contains 'hidden' %}
 <div class='post'>
 	<h1>{{ post.title }}</h1>
 	{{ post.content }}
 </div>
+{% endunless %}
 {% endfor %}
 
 <div class='pagination'>
