@@ -29,3 +29,7 @@
 #nhl-about.expand #expand-img {
     display: none;
 }
+
+.nhl_current_projection {
+    margin-bottom: 50px;
+}

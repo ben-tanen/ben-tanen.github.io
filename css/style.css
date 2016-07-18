@@ -66,8 +66,6 @@ h3 {
 	}
 
 /* Social Links */
-
-
 	.social {
         width: 100%;
         margin-top: 10px;
@@ -412,7 +410,7 @@ table {
 
 	.side h1 {
 		position: absolute;
-		top: 35px;
+		top: 30px;
 		left: 10px;
 		font-family: 'Quicksand', sans-serif;
 		margin: 0px 0 0px 0;
