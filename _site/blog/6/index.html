@@ -77,208 +77,25 @@
 		
 
 <div class='post'>
-	<h1>Everything is a Remix</h1>
-	<iframe src="https://player.vimeo.com/video/139094998" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+	<h1>Rap, Data, and Design</h1>
+	<p>A genre of music I don’t find myself particularly well-versed in is Hip-Hop and Rap. I’ll listen to it on occasion when <a href="http://www.headroommusic.org/">my more rap-inclined friend</a> suggests some, but for the most part, I really only know the highlights. One thing I very much do like, though, is beautiful representation of data, and Matt Daniels did the wonderful task of combining the two.</p>
 
-<p>Back in 2012, I was exceptionally impressed with this video series “Everything is a Remix” by <a href="https://vimeo.com/kirbyferguson">Kirby Ferguson</a>. I re-discovered the series again recently and thought it was a worthy share.</p>
+<p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
 
-<p>An additional bonus - a new<em>-ish</em> episode from Kirby on the remixing of The Force Awakens.</p>
+<p><img src="/img/posts/rap_vocab.png" alt="Screenshot from the Post" /></p>
 
-<iframe src="https://player.vimeo.com/video/167069783?badge=0" width="350" height="197" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p>Daniels does some interesting analysis of the data in the actual post (ex: examining how Wu-Tang Clan holds up) and it’s worth checking out. Note: after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: </p>
 
+<blockquote>
+  <p>“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”</p>
+</blockquote>
 
-</div>
+<p>From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion. </p>
 
+<p>Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.</p>
 
+<p>By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.</p>
 
-
-
-<div class='post'>
-	<h1>PCA and K-Means on NHL Stats</h1>
-	<p>After all this learning of PCA and <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
-
-<p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs, so that makes sense, given the context. Math continues to prevail!</p>
-
-<p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/nhl-clustering">here</a>.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Team</th>
-      <th>In Playoffs</th>
-      <th>K-means Cluster</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ANA</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>ARI</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>BOS</td>
-      <td>NO</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>BUF</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CAR</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CBJ</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CGY</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CHI</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>COL</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>DAL</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>DET</td>
-      <td>YES</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>EDM</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>FLA</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>LAK</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>MIN</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>MTL</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>NJD</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>NSH</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>NYI</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>NYR</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>OTT</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>PHI</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>PIT</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>SJS</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>STL</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>TBL</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>TOR</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>VAN</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>WSH</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>WPG</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Visualizing My (Unhealthy) Netflix History</h1>
-	<p>TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.</p>
-
-<p>Getting the information was pretty simple. I just had to scrape the data via Netflix’s own viewing history page, clean it a bit, and then pipe it into MATLAB.</p>
-
-<p><img src="/img/posts/netflix_history.png" /></p>
-
-<p>I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside… One thing is for sure, I definitely watch a lot of TV.</p>
-
-<p><strong>Note</strong>: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc). </p>
 
 </div>
 
@@ -286,9 +103,9 @@
 
 <div class='pagination'>
 
+    <p id='pagination_previous'><a href='/blog/5'>&#8592; Newer Posts</a></p>
 
 
-    <p id='pagination_next'><a href='/blog/2'>Older Posts &#8594;</a></p>
 
 </div>
 

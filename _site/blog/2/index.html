@@ -77,6 +77,41 @@
 		
 
 <div class='post'>
+	<h1>Support Vector Machines and Poetry</h1>
+	<p>My tales of data mining continue and this time, they’re about <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">support vector machines</a>. These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a> which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn’t a fantastic method.</p>
+
+<p>As an alternative, SVMs are pretty great at providing classifications that work for existing data <em>and</em> future data. An example that I found particular interesting was used to distinguish between poems written in English and poems written in German. For example, take the following two excerpts:</p>
+
+<blockquote>
+  <p><em>What happens to a dream deferred? Does it dry up</em></p>
+</blockquote>
+
+<blockquote>
+  <p><em>Aktenstose nachts verschlingen, Schwatzen nach der Welt</em></p>
+</blockquote>
+
+<p>It’s pretty obvious to anyone who speaks English or German which language these poems are written in. But to a naive computer, these are just strings of characters. To aid in distinguishing, let’s consider two features of these 50-character excerpts: the number of complete words and the number of times the letter “i” occurs.</p>
+
+<p>Using this information as the main “features” of our data, we can compute and define a hyperplane (or in this case, a line) to find if there is a meaningful division between English and German given the “features” we are analyzing (for more on the math behind this, see <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">here</a>). If we compute and plot this for ten different excerpts, we get the following:</p>
+
+<p><img src="/img/posts/svm_poems.png" width="500px" /></p>
+
+<p>We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another <em>new</em> excerpt: </p>
+
+<blockquote>
+  <p><em>Hat der alte Hexenmeister sich doch einmal wegbege</em></p>
+</blockquote>
+
+<p>If we go ahead and plot this (seen above in magenta), we can see that this obviously German poem is again partitioned as expected without needing to update our hyperplane. Hurray, math works!</p>
+
+<p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/svm-poems">here</a> and other data mining projects <a href="https://github.com/ben-tanen/data-mining">here</a>.</p>
+
+
+</div>
+
+
+
+<div class='post'>
 	<h1>Lots of Light Painting</h1>
 	<p>Before I became all lame, I use to be fairly into photography. I was never superb myself but I loved to experiment with things. I adored light painting and spent hours trying to make cool patterns with some fancy glow sticks.</p>
 
@@ -186,27 +221,6 @@ Markowitz bullets showing possible portfolios
 <p><img src="/img/posts/portfolio_return.png" width="600px" /></p>
 
 <p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing_portfolio.html">here</a>.</p>
-
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Tufts Polyhack 2015: JumboAdvisor</h1>
-	<p>Figuring out what courses to take as a college student can be a slightly confusing process. What classes count for what requirements? What requirements do I even need for my major? What will my college career look like with all these courses?</p>
-
-<p>Tufts (and the lovely people over at PeopleSoft) attempted to offer a tool called the Advisement Report which would help guide students through these questions. However, this tool is incredibly stupid, offering zero flexibility in terms of moving things around your “degree sheet”. If you want to move one course from one requirement to another, too bad. If you want to check out another major to see if switching majors is possible, you’re out of luck. Trying out minors or double majors? No way.</p>
-
-<p>This is where <a href="http://ben-tanen.github.io/JumboAdvisor/">JumboAdvisor</a> comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart’s content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.</p>
-
-<p><img src="/img/posts/jumboadvisor.png" width="600px" /></p>
-
-<p>This was a joint effort including work from <a href="https://github.com/agolin95">Alex Golin</a>, <a href="https://github.com/menlonoma">Nolan Martin</a>, <a href="https://github.com/swelch01">Samantha Welch</a>, <a href="https://github.com/mseltzer94">Michael Seltzer</a>, and <a href="https://github.com/jclaw">Jackson Clawson</a>. The site is built with pretty simple HTML, CSS, and JS with no real tricks involved. The original intention was to use something like Angular.js to build drag and droppable sections but hackathons…</p>
-
-<p>Due to the typical woes of a 24-hour hackathon, the site is not fully built. It is more intended as a proof of concept to show the capabilities and functionality that an advisement report <em>should</em> have. The next steps for this project include pitching it successfully to Tufts and building out all the desired features (including data connectivity, better validation, and minors and double majors).</p>
-
-<p>For more, you can see current site <a href="http://ben-tanen.github.io/JumboAdvisor/">here</a> and the source code <a href="https://github.com/ben-tanen/JumboAdvisor">here</a>. Any updates on this project will likely be posted here but you can also check the GitHub repo.</p>
 
 
 </div>

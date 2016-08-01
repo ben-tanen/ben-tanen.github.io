@@ -1,10 +1,38 @@
 var teamLogos = {
-    'NYR': 'http://delroccofloors.com/wp-content/uploads/2016/05/new-york-rangers-logo-png-new-york-rangers-logo-png-newyorkrangers.jpg',
-    'WSH': 'https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Washington_Caps_Alternate.svg/1280px-Washington_Caps_Alternate.svg.png' 
+    'ANA': 'http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/anaheim-ducks.png',
+    'ARI': null,
+    'BOS': 'http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/boston-bruins.png',
+    'BUF': null,
+    'CGY': null,
+    'CAR': null,
+    'CHI': 'http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/chicago-blackhawks.png',
+    'COL': null,
+    'CBJ': null,
+    'DAL': null,
+    'DET': null,
+    'EDM': null,
+    'FLA': 'http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/florida-panthers.png',
+    'LAK': null,
+    'MIN': null,
+    'MTL': null,
+    'NSH': null,
+    'NJD': null,
+    'NYI': null,
+    'NYR': 'http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/new-york-rangers.png',
+    'OTT': null,
+    'PHI': null,
+    'PIT': null,
+    'SJS': null,
+    'STL': null,
+    'TBL': null,
+    'TOR': null,
+    'VAN': null,
+    'WSH': 'http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/washington-capitals.png',
+    'WPG': null,
 };
 
 function parseTeamData(line) {
-    keys = ['team', 'actual_pts', 'current_proj', 'current_diff', 'original_proj'];
+    keys = ['team', 'actual_pts', 'current_proj', 'current_diff', 'original_proj', 'original_diff'];
     obj  = { };
 
     for (var i = 0; i < keys.length; i++){
@@ -46,6 +74,7 @@ function updatePoints(data) {
         $(obj.children()[3]).html(teams[i]['current_proj']);
         $(obj.children()[4]).html(teams[i]['current_diff']);
         $(obj.children()[5]).html(teams[i]['original_proj']);
+        $(obj.children()[6]).html(teams[i]['original_diff']);
     }
 }
 
@@ -53,6 +82,11 @@ $(document).ready(function() {
     $('#nhl-about #expand-img').click(function() {
         $('#nhl-about').toggleClass('min');
         $('#nhl-about').toggleClass('expand');
+    });
+
+    $('.nhl_current_projection #expand-img').click(function() {
+        $('.nhl_current_projection').toggleClass('min');
+        $('.nhl_current_projection').toggleClass('expand');
     });
 
     $.ajax({
