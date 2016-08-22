@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/img/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- jquery and js files -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
     <title>Ben Tanen</title>
@@ -15,6 +18,11 @@
 
 
 <body>
+
+    <!-- adding support for mathjx -->
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 
 	<div class='side'>
     <img id='face' src='/img/face2.jpg' alt='A picture of my head' />
@@ -75,6 +83,22 @@
 
 	<div class='main'>
 		
+
+<div class='post'>
+	<h1>Visualizing My (Unhealthy) Netflix History</h1>
+	<p>TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.</p>
+
+<p>Getting the information was pretty simple. I just had to scrape the data via Netflix’s own viewing history page, clean it a bit, and then pipe it into MATLAB.</p>
+
+<p><img src="/img/posts/netflix_history.png" /></p>
+
+<p>I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside… One thing is for sure, I definitely watch a lot of TV.</p>
+
+<p><strong>Note</strong>: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc). </p>
+
+</div>
+
+
 
 <div class='post'>
 	<h1>Support Vector Machines and Poetry</h1>
@@ -194,33 +218,6 @@
 <p>If you have any interest in playing around, you can find my MATLAB code <a href="https://github.com/ben-tanen/data-mining/tree/master/kmeans">here</a> in <a href="https://github.com/ben-tanen/data-mining">a new GitHub repo</a> for my data mining work. It should work for all reasonable values of <em>k</em> (clusters) and <em>r</em> (data points per cluster). I’ll be honest and say that my MATLAB code leaves a bit to be desired but it’s working so that’s mostly all that matters. </p>
 
 <p>If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.</p>
-
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Minimizing Risk For An Optimal Portfolio</h1>
-	<p>I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. Because of my time working in the risk management department of a hedge fund, I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
-
-<p>The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.</p>
-
-<p>In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “<a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.</p>
-
-<p><img src="/img/posts/portfolio_bullet.png" alt="Markowitz bullets showing possible portfolios " width="800px" /></p>
-
-<figcaption>
-Markowitz bullets showing possible portfolios 
-</figcaption>
-
-<p>I found this optimized weight allocation by looping over a bunch of different allocations and searching for optimized performance. First I looped through allocations in increments of 0.1 and then examined closer at the region(s) that performed the best. I repeated this process again with increments of 0.025 and 0.005 to find the best weighting. All of these trials can be seen in the bullets above, as well as the final optimized portfolio in red (at the tip).</p>
-
-<p>Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.</p>
-
-<p><img src="/img/posts/portfolio_return.png" width="600px" /></p>
-
-<p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing_portfolio.html">here</a>.</p>
 
 
 </div>

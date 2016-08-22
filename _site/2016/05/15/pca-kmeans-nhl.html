@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/img/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- jquery and js files -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
     <title>PCA and K-Means on NHL Stats | Ben Tanen</title>
@@ -15,6 +18,11 @@
 
 
 <body>
+
+    <!-- adding support for mathjx -->
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 
 	<div class='side'>
     <img id='face' src='/img/face2.jpg' alt='A picture of my head' />
@@ -85,7 +93,7 @@
   <article class="post-content">
   <p>After all this learning of PCA and <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
 
-<p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs, so that makes sense, given the context. Math continues to prevail!</p>
+<p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!</p>
 
 <p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/nhl-clustering">here</a>.</p>
 

@@ -5,9 +5,9 @@ date:   2016-07-31 15:05:41
 categories: video remix art media
 ---
 
-<iframe src="https://player.vimeo.com/video/139094998" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
 Back in 2012, I was exceptionally impressed with this video series "Everything is a Remix" by [Kirby Ferguson](https://vimeo.com/kirbyferguson). I re-discovered the series again recently and thought it was a worthy share.
+
+<iframe src="https://player.vimeo.com/video/139094998" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 An additional bonus - a new*-ish* episode from Kirby on the remixing of The Force Awakens.
 
