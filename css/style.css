@@ -387,7 +387,7 @@ tbody tr:nth-of-type(1) td {
     padding-top: 3px;
 }
 
-tbody tr:nth-of-type(even) {
+tbody tr:nth-of-type(odd) {
     background-color: rgba(119, 189, 238, 0.3);
 }
 
@@ -397,8 +397,8 @@ table {
     border-color: rgba(128, 128, 128, 0.4);
     border-collapse: collapse;
     margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 14px;
 }
 

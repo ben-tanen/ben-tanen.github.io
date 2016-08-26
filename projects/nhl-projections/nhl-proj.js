@@ -62,12 +62,12 @@ function updatePoints(data) {
     // update table
     for (var i = 0; i < teams.length; i++) {
         var row_str = '<tr><td><img style="width: 50px; padding: 3px 5px 3px 10px;" />';
-        for (var j = 0; j < $('#projections_table tr:nth-child(1)').children().length; j++) row_str += '<td></td>';
+        for (var j = 0; j < $('#projections_table thead tr:nth-child(1)').children().length - 1; j++) row_str += '<td></td>';
         row_str += '</tr>'; 
-        $('#projections_table').append(row_str);
+        $('#projections_table tbody').append(row_str);
 
         var url = teams[i]['logo']
-        var obj = $('#projections_table tr:nth-child(' + (2 + i) + ')');
+        var obj = $('#projections_table tbody tr:nth-child(' + (1 + i) + ')');
         $(obj.children()[0]).children().attr('src',teams[i]['logo']);
         $(obj.children()[1]).html(teams[i]['team']);
         $(obj.children()[2]).html(teams[i]['actual_pts']);

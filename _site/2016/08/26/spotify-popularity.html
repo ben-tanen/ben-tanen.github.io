@@ -13,7 +13,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="/js/main.js"></script>
 
-    <title>Random Project: Base64 Decoder | Ben Tanen</title>
+    <title>Am I Becoming More or Less Hipster? | Ben Tanen</title>
 </head>
 
 
@@ -85,27 +85,20 @@
 		<div class="post">
 
   <header class="post-header">
-    <h1>Random Project: Base64 Decoder</h1>
-    <p class="meta">Nov 12, 2014</p>
+    <h1>Am I Becoming More or Less Hipster?</h1>
+    <p class="meta">Aug 26, 2016</p>
   </header>
 
   <article class="post-content">
-  <p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text using the base64 decoder, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base64 decoder in C++, because why not.</p>
+  <p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
 
-<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
+<p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted base on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
 
-<ol>
-  <li>Convert each encoded character to Ascii values</li>
-  <li>String together 6-bit strings of Ascii values</li>
-  <li>Break string up into 8-bit strings</li>
-  <li>Convert 8-bit strings back into Ascii values</li>
-  <li>Convert to decoded character</li>
-</ol>
+<p><img src="/img/posts/spotify_popularity.png" /></p>
 
-<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? </p>
+<p>While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify’s eyes. Therefore, I’m willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I’m just as cool as I’ve ever.</p>
 
-<p>Link to GitHub Repo <a href="https://github.com/ben-tanen/Base64Decode">Here</a></p>
-
+<p>Additional side note on my “hipster-ness”, of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
 
   </article>
 
