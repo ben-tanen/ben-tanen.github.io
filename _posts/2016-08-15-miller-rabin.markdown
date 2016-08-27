@@ -21,19 +21,19 @@ For anyone interested, I've included a sample implementation in Python of the al
 # takes in a number n and a number of iterations iters
 # to test if n is prime with (1 - (1 / 4^iters)) certainty
 def miller_rabin(n, iters):
-    # find s and d
-    # such that: n = (2^s)d + 1
-    d = n - 1
-    s = 0
-    while d % 2 == 0:
-        d = d / 2
-        s += 1
+    # find r and s
+    # such that: n = (2^r)s + 1
+    s = n - 1
+    r = 0
+    while s % 2 == 0:
+        s = s / 2
+        r += 1
 
     # test n multiple times
     for i in range(iters):
-        r = random.randint(1, n - 1)
-        for j in range(s):
-            x = r**(d * 2**j) % n
+        a = random.randint(1, n - 1)
+        for j in range(r):
+            x = a**(s * 2**j) % n
             if ((j == 0 and x == 1) or (x == n - 1)):
                 break
             elif (j == s - 1):
