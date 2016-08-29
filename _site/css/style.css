@@ -102,6 +102,10 @@ h3 {
     	width: 30px;
     }
 
+.index_list {
+    margin-left: -50px;
+}
+
 .index_list li {
 	list-style: none;
 	position: relative;
