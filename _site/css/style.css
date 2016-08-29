@@ -465,4 +465,10 @@ table {
 		margin: 0;
 		margin-bottom: 100px;
 	}
+
+    .pagination {
+        margin-top: -65px;
+        padding-bottom: 70px;
+        font-size: 25px;
+    }
 }

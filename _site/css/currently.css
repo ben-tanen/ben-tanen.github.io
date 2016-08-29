@@ -28,7 +28,7 @@
 
 .currently_text, .currently_img {
     display: inline-block;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .currently_text {
@@ -36,12 +36,8 @@
     padding: 15px 0 0 10px;
 }
 
-.currently_text p {
-    font-size: 20px;
-}
-
 .currently_text p:nth-child(1) {
     font-weight: 700;
     color: #77bdee;
-    margin-bottom: 7px;
+    margin-bottom: 3px;
 }
