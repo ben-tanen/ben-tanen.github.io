@@ -117,6 +117,7 @@ h3 {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 20px;
 	padding-left: 145px;
+    margin-bottom: -5px;
 }
 
 #index_date {
@@ -126,6 +127,7 @@ h3 {
 	text-align: right;
 	width: 130px;
 	vertical-align: top;
+    margin-bottom: -5px;
 }
 
 .main {
