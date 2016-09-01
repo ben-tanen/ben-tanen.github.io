@@ -16,6 +16,7 @@
     position: absolute;
     top: 112px;
     width: 25px;
+    margin: auto;
 }
 
 #nhl-about.expand {
@@ -49,7 +50,8 @@
 
 .nhl_current_projection #expand-img {
     position: absolute;
-    top: 470px;
+    top: 465px;
+    left: 10px;
     width: 25px;
 }
 
