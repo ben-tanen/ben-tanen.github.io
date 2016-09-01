@@ -61,7 +61,7 @@ function updatePoints(data) {
 
     // update table
     for (var i = 0; i < teams.length; i++) {
-        var row_str = '<tr><td><img style="width: 30px; padding-bottom: 4px; padding-left: 15px;" />';
+        var row_str = '<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" />';
         for (var j = 0; j < $('#projections_table thead tr:nth-child(1)').children().length - 1; j++) row_str += '<td></td>';
         row_str += '</tr>'; 
         $('#projections_table tbody').append(row_str);
