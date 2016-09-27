@@ -4,7 +4,9 @@ function pageResize() {
 
 	// main width resize
 	if (window_width - 275 > 800) {
+		console.log($('.wrapper').css('margin-left'));
 		$('.main').css('width', 800 + 'px');
+		$('.side').css('left', $('.wrapper').css('margin-left'))
 	} else if (window_width - 275 < 500){
 		$('.main').css('width', 500 + 'px');
 	} else {
