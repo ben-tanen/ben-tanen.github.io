@@ -7,7 +7,7 @@ This is my personal website. It includes a home page featuring blog posts and ot
 - [x] Update "About"
 - [x] Improve mobile viewing
 - [x] Pagination
+- [x] Add functional multi-image figure
 - [ ] Add RSS feed
-- [ ] Add functional multi-image figure
 - [ ] Add column option
 
