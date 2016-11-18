@@ -1,0 +1,251 @@
+Event,Location,Type,Semester,Day,Start Time,End Time,Length (min)
+Home,Haskell Hall,Home,F13,Mon,12:00 AM,9:00 AM,540
+PHY-11 Lecture,Robinson Hall,School,F13,Mon,9:30 AM,10:20 AM,50
+Home,Haskell Hall,Home,F13,Mon,10:30 AM,12:30 PM,120
+Lunch,Dewick Hall,Food,F13,Mon,12:30 PM,1:15 PM,45
+ES-93 Lecture,Halligan Hall,School,F13,Mon,1:30 PM,2:45 PM,75
+EC-6 Lecture,Braker Hall,School,F13,Mon,4:30 PM,5:45 PM,75
+Dinner,Dewick Hall,Food,F13,Tue,6:30 PM,7:30 PM,60
+Home,Haskell Hall,Home,F13,Tue,12:00 AM,9:00 AM,540
+ENG-1 Lecture,Miner Hall,School,F13,Tue,9:30 AM,10:20 AM,50
+PHY-11 Lecture,Robinson Hall,School,F13,Tue,10:30 AM,11:20 AM,50
+Lunch,Dewick Hall,Food,F13,Tue,12:00 PM,1:00 PM,60
+MATH-42 Lecture,Bromfield-Pearson Hall,School,F13,Tue,1:30 PM,2:20 PM,50
+Home,Haskell Hall,Home,F13,Tue,3:00 PM,6:00 PM,180
+Dinner,Dewick Hall,Food,F13,Tue,6:30 PM,7:30 PM,60
+Home,Haskell Hall,Home,F13,Wed,12:00 AM,9:00 AM,540
+ENG-1 Lecture,Miner Hall,School,F13,Wed,9:30 AM,10:20 AM,50
+Home,Haskell Hall,Home,F13,Wed,10:30 AM,12:00 PM,90
+Lunch,Dewick Hall,Food,F13,Wed,12:00 PM,1:30 PM,90
+ES-93 Lecture,Halligan Hall,School,F13,Wed,1:30 PM,2:45 PM,75
+PHY-11 Recitation,Robinson Hall,School,F13,Wed,3:00 PM,3:50 PM,50
+EC-6 Lecture,Braker Hall,School,F13,Wed,4:30 PM,5:45 PM,75
+Dinner,Dewick Hall,Food,F13,Tue,6:30 PM,7:30 PM,60
+Home,Haskell Hall,Home,F13,Tue,12:00 AM,9:00 AM,540
+PHY-11 Lecture,Robinson Hall,School,F13,Thu,10:30 AM,11:20 AM,50
+Lunch,Dewick Hall,Food,F13,Wed,12:00 PM,1:30 PM,90
+MATH-42 Lecture,Bromfield-Pearson Hall,School,F13,Thu,1:30 PM,2:20 PM,50
+Home,Haskell Hall,Home,F13,Thu,2:30 PM,5:00 PM,150
+Dinner,Dewick Hall,Food,F13,Thu,5:30 PM,6:30 PM,60
+PHY-11 Lab,Robinson Hall,School,F13,Thu,6:30 PM,9:00 PM,150
+Home,Haskell Hall,Home,F13,Tue,12:00 AM,9:00 AM,540
+ENG-1 Lecture,Miner Hall,School,F13,Fri,9:30 AM,10:20 AM,50
+Home,Haskell Hall,Home,F13,Fri,10:30 AM,1:00 PM,150
+Lunch,Dewick Hall,Food,F13,Fri,1:00 PM,2:00 PM,60
+MATH-42 Lecture,Bromfield-Pearson Hall,School,F13,Fri,2:30 PM,3:20 PM,50
+Dinner,Dewick Hall,Food,F13,Fri,5:30 PM,6:30 PM,60
+Home,Haskell Hall,Home,S14,Mon,12:00 AM,9:30 AM,570
+Breakfast,Dewick Hall,Food,S14,Mon,9:30 AM,10:30 AM,60
+ES-2 Lab,Anderson Hall,School,S14,Mon,10:30 AM,11:45 AM,75
+Lunch,Dewick Hall,Food,S14,Mon,12:00 PM,1:00 PM,60
+Home,Haskell Hall,Home,S14,Mon,1:00 PM,5:00 PM,240
+Dinner,Dewick Hall,Food,S14,Mon,5:00 PM,6:00 PM,60
+Home,Haskell Hall,Home,S14,Tue,12:00 AM,8:00 AM,480
+CHEM-1 Lecture,Pearson Hall,School,S14,Tue,8:30 AM,9:20 AM,50
+MATH-51 Lecture,Bromfield-Pearson Hall,School,S14,Tue,9:30 AM,10:45 AM,75
+Home,Haskell Hall,Home,S14,Tue,11:00 AM,12:15 PM,75
+Lunch,Dewick Hall,Food,S14,Tue,12:30 PM,1:30 PM,60
+ES-2 Lecture,Cabot Auditorium,School,S14,Tue,1:30 PM,2:45 PM,75
+COMP-11 Lecture,Robinson Hall,School,S14,Tue,3:00 PM,4:15 PM,75
+Dinner,Dewick Hall,Food,S14,Tue,5:30 PM,6:30 PM,60
+Home,Haskell Hall,Home,S14,Wed,12:00 AM,8:30 AM,510
+Breakfast,Dewick Hall,Food,S14,Wed,8:30 AM,9:30 AM,60
+MATH-51 Lecture,Bromfield-Pearson Hall,School,S14,Wed,9:30 AM,10:45 AM,75
+COMP-11 Lab,Halligan Hall,School,S14,Wed,10:30 AM,11:45 AM,75
+Lunch,Dewick Hall,Food,S14,Wed,12:00 PM,1:00 PM,60
+CHEM-1 Lab,Pearson Hall,School,S14,Wed,1:20 PM,4:20 PM,180
+Dinner,Dewick Hall,Food,S14,Wed,5:30 PM,6:30 PM,60
+Home,Haskell Hall,Home,S14,Thu,12:00 AM,8:00 AM,480
+CHEM-1 Lecture,Pearson Hall,School,S14,Thu,8:30 AM,9:20 AM,50
+Home,Haskell Hall,Home,S14,Thu,9:30 AM,12:00 PM,150
+Lunch,Dewick Hall,Food,S14,Thu,12:00 PM,1:00 PM,60
+ES-2 Lecture,Cabot Auditorium,School,S14,Thu,1:30 PM,2:45 PM,75
+COMP-11 Lecture,Robinson Hall,School,S14,Thu,3:00 PM,4:15 PM,75
+Dinner,Dewick Hall,Food,S14,Thu,4:30 PM,6:00 PM,90
+Home,Haskell Hall,Home,S14,Fri,12:00 AM,8:00 AM,480
+CHEM-1 Lecture,Pearson Hall,School,S14,Fri,8:30 AM,9:20 AM,50
+MATH-51 Lecture,Bromfield-Pearson Hall,School,S14,Fri,9:30 AM,10:45 AM,75
+Lunch,Dewick Hall,Food,S14,Fri,12:00 PM,1:00 PM,60
+Home,Haskell Hall,Home,S14,Fri,1:00 PM,11:59 PM,659
+WMFO Show,Curtis Hall,Clubs,S14,Sat,2:00 AM,3:00 AM,60
+Home,West Hall,Home,F14,Mon,12:00 AM,9:00 AM,540
+AT Fellows Hours,108 Bromfield Rd,Work,F14,Mon,9:00 AM,1:00 PM,240
+Lunch,Carmichael Hall,Food,F14,Mon,1:00 PM,1:30 PM,30
+COMP-15 Lecture,Barnum Hall,School,F14,Mon,1:30 PM,2:45 PM,75
+ES-3 Lecture,Cohen Auditorium,School,F14,Mon,3:00 PM,4:15 PM,75
+ES-5 Lecture,Anderson Hall,School,F14,Mon,4:30 PM,5:45 PM,75
+Dinner,Carmichael Hall,Food,F14,Mon,6:00 PM,7:00 PM,60
+Home,West Hall,Home,F14,Tue,12:00 AM,10:00 AM,600
+COMP-61 Lecture,Bromfield-Pearson Hall,School,F14,Tue,10:30 AM,11:45 AM,75
+COMP-15 Lab,Halligan Hall,School,F14,Tue,12:00 PM,1:15 PM,75
+Lunch,Dewick Hall,Food,F14,Tue,1:30 PM,3:00 PM,90
+ES-3 Lab,Halligan Hall,School,F14,Tue,3:00 PM,4:15 PM,75
+COMP-20 Lecture,Braker Hall,School,F14,Tue,4:30 PM,5:45 PM,75
+Dinner,Dewick Hall,Food,F14,Tue,6:00 PM,7:00 PM,60
+ES-5 Recitation,Anderson Hall,School,F14,Tue,7:30 PM,8:20 PM,50
+Home,West Hall,Home,F14,Wed,12:00 AM,11:00 AM,660
+Lunch,Carmichael Hall,School,F14,Wed,11:00 AM,12:00 PM,60
+AT Fellows Meeting,108 Bromfield Rd,Work,F14,Wed,12:00 PM,1:00 PM,60
+COMP-15 Lecture,Barnum Hall,School,F14,Wed,1:30 PM,2:45 PM,75
+ES-3 Lecture,Cohen Auditorium,School,F14,Wed,3:00 PM,4:15 PM,75
+ES-5 Lecture,Anderson Hall,School,F14,Wed,4:30 PM,5:45 PM,75
+Dinner,Dewick Hall,Food,F14,Wed,6:00 PM,7:00 PM,60
+Home,West Hall,Home,F14,Thu,12:00 AM,10:00 AM,600
+COMP-61 Lecture,Bromfield-Pearson Hall,School,F14,Thu,10:30 AM,11:45 AM,75
+AT Fellows Hours,108 Bromfield Rd,Work,F14,Thu,12:00 PM,2:00 PM,120
+Lunch,Dewick Hall,Food,F14,Thu,2:00 PM,3:00 PM,60
+ES-3 Recitiation,Halligan Hall,School,F14,Thu,3:00 PM,3:50 PM,50
+COMP-20 Lecture,Braker Hall,School,F14,Thu,4:30 PM,5:45 PM,75
+WMFO Show,Curtis Hall,Clubs,F14,Fri,9:00 AM,10:00 AM,60
+Home,West Hall,Home,F14,Fri,10:00 AM,11:59 PM,839
+Home,West Hall,Home,S15,Mon,12:00 AM,9:00 AM,540
+AT Fellows Hours,108 Bromfield Rd,Work,S15,Mon,9:00 AM,12:00 PM,180
+Food,Dewick Hall,Food,S15,Mon,12:00 PM,1:30 PM,90
+MUS-44 Lecture,Granoff Music Center,School,S15,Mon,1:30 PM,2:45 PM,75
+COMP-40 Lecture,Braker Hall,School,S15,Mon,3:00 PM,4:15 PM,75
+Food,Carmichael Hall,Food,S15,Mon,5:00 PM,6:00 PM,60
+Home,West Hall,Home,S15,Tue,12:00 AM,9:00 AM,540
+AT Fellows Hours,108 Bromfield Rd,Work,S15,Tue,9:00 AM,12:00 PM,180
+Lunch,Dewick Hall,Food,S15,Tue,12:00 PM,1:00 PM,60
+Home,West Hall,Home,S15,Tue,1:00 PM,5:00 PM,240
+Dinner,Dewick Hall,Food,S15,Tue,5:00 PM,6:00 PM,60
+EM-51 Lecture,Anderson Hall,School,S15,Tue,6:00 PM,9:00 PM,180
+TFG Meeting,Cabot Auditorium,Clubs,S15,Tue,9:00 PM,10:00 PM,60
+Home,West Hall,Home,S15,Wed,12:00 AM,12:30 PM,750
+Lunch,Dewick Hall,Food,S15,Wed,12:30 PM,1:30 PM,60
+MUS-44 Lecture,Granoff Music Center,School,S15,Wed,1:30 PM,2:45 PM,75
+COMP-40 Lecture,Braker Hall,School,S15,Wed,3:00 PM,4:15 PM,75
+Dinner,Dewick Hall,Food,S15,Wed,5:00 PM,6:00 PM,60
+Home,West Hall,Home,S15,Thu,12:00 AM,12:30 PM,750
+Lunch,Carmichael Hall,Food,S15,Thu,12:30 PM,1:00 PM,30
+EM-155 Lecture,200 Boston Ave,School,S15,Thu,1:20 PM,4:20 PM,180
+Dinner,Dewick Hall,Food,S15,Thu,6:00 PM,7:00 PM,60
+TFG Sector,Eaton Hall,Clubs,S15,Thu,7:00 PM,8:00 PM,60
+Home,West Hall,Home,S15,Fri,12:00 AM,9:00 AM,540
+WMFO Show,Curtis Hall,Clubs,S15,Fri,9:00 AM,10:00 AM,60
+COMP-40 Lab,Halligan Hall,School,S15,Fri,10:30 AM,12:15 PM,105
+Home,74 Bromfield Road,Home,F15,Sun,12:00 AM,12:00 PM,720
+Lunch,74 Bromfield Road,Food,F15,Sun,12:00 PM,1:00 PM,60
+WMFO Exec Meeting,Curtis Hall,Clubs,F15,Sun,1:00 PM,2:00 PM,60
+Home,74 Bromfield Road,Home,F15,Sun,2:00 PM,6:00 PM,240
+Dinner,74 Bromfield Road,Food,F15,Sun,6:00 PM,7:00 PM,60
+TEM Exec Meeting,Aidekman Hall,Clubs,F15,Sun,8:00 PM,9:00 PM,60
+Home,74 Bromfield Road,Home,F15,Mon,12:00 AM,10:00 AM,600
+Breakfast,74 Bromfield Road,Food,F15,Mon,10:00 AM,10:30 AM,30
+ES-56 Lecture,Anderson Hall,School,F15,Mon,10:30 AM,11:45 AM,75
+Lunch,74 Bromfield Road,Food,F15,Mon,12:00 PM,1:00 PM,60
+Home,74 Bromfield Road,Home,F15,Mon,1:00 PM,6:00 PM,300
+Dinner,74 Bromfield Road,Home,F15,Mon,6:00 PM,7:00 PM,60
+Home,74 Bromfield Road,Home,F15,Tue,12:00 AM,9:00 AM,540
+COMP-105 Lecture,Braker Hall,School,F15,Tue,9:00 AM,10:15 AM,75
+MATH-70 Lecture,Bromfield-Pearson Hall,School,F15,Tue,10:30 AM,11:45 AM,75
+Lunch,74 Bromfield Road,Food,F15,Tue,12:00 PM,1:00 PM,60
+Home,74 Bromfield Road,Home,F15,Tue,1:00 PM,4:00 PM,180
+EM-54 Lecture,Anderson Hall,School,F15,Tue,4:30 PM,5:45 PM,75
+Dinner,74 Bromfield Road,Food,F15,Tue,6:00 PM,7:00 PM,60
+Home,74 Bromfield Road,Home,F15,Tue,7:00 PM,8:00 PM,60
+WMFO Show,Curtis Hall,Clubs,F15,Tue,10:00 PM,11:00 PM,60
+Home,74 Bromfield Road,Home,F15,Wed,12:00 AM,10:00 AM,600
+Breakfast,74 Bromfield Road,Food,F15,Wed,10:00 AM,10:30 AM,30
+ES-56 Lecture,Anderson Hall,School,F15,Wed,10:30 AM,11:45 AM,75
+Lunch,74 Bromfield Road,Food,F15,Wed,12:00 PM,1:00 PM,60
+ELS-101 Lecture,574 Boston Ave,School,F15,Wed,1:20 PM,4:20 PM,180
+Home,74 Bromfield Road,Home,F15,Wed,5:00 PM,6:00 PM,60
+Dinner,74 Bromfield Road,Home,F15,Wed,6:00 PM,7:00 PM,60
+Home,74 Bromfield Road,Home,F15,Thu,12:00 AM,9:00 AM,540
+COMP-105 Lecture,Braker Hall,School,F15,Thu,9:00 AM,10:15 AM,75
+MATH-70 Lecture,Bromfield-Pearson Hall,School,F15,Thu,10:30 AM,11:45 AM,75
+Lunch,74 Bromfield Road,Food,F15,Thu,12:00 PM,1:00 PM,60
+Home,74 Bromfield Road,Home,F15,Thu,1:00 PM,4:00 PM,180
+EM-54 Lecture,Anderson Hall,School,F15,Thu,4:30 PM,5:45 PM,75
+ES-56 Recitation,Anderson Hall,School,F15,Thu,6:00 PM,7:15 PM,75
+Dinner,74 Bromfield Road,Food,F15,Thu,7:30 PM,9:00 PM,90
+Home,74 Bromfield Road,Home,S16,Sun,12:00 AM,12:00 PM,720
+Lunch,74 Bromfield Road,Food,S16,Sun,12:00 PM,1:00 PM,60
+WMFO Exec Meeting,Curtis Hall,Clubs,S16,Sun,1:00 PM,2:00 PM,60
+Home,74 Bromfield Road,Home,S16,Sun,2:00 PM,7:00 PM,300
+Dinner,74 Bromfield Road,Food,S16,Sun,7:00 PM,8:00 PM,60
+TEM Exec Meeting,Aidekman Hall,Clubs,S16,Sun,8:00 PM,9:00 PM,60
+Home,74 Bromfield Road,Home,S16,Mon,12:00 AM,10:00 AM,600
+ENG-80 Lecture,Tisch Library,School,S16,Mon,10:30 AM,11:45 AM,75
+Lunch,74 Bromfield Road,Food,S16,Mon,12:00 PM,1:00 PM,60
+ES-4 Lecture,Anderson Hall,School,S16,Mon,1:30 PM,2:45 PM,75
+ES-4 Lab,Halligan Hall,School,S16,Mon,3:00 PM,5:00 PM,120
+Dinner,74 Bromfield Road,Food,S16,Mon,6:00 PM,7:00 PM,60
+Home,74 Bromfield Road,Home,S16,Tue,12:00 AM,7:00 AM,420
+Gym,Tisch Gym,Athletics,S16,Tue,7:00 AM,8:00 AM,60
+Breakfast,74 Bromfield Road,Food,S16,Tue,8:00 AM,10:00 AM,120
+MATH-150 Lecture,Bromfield-Pearson Hall,School,S16,Tue,10:30 AM,11:45 AM,75
+MATH-87 Lecture,Bromfield-Pearson Hall,School,S16,Tue,12:00 PM,12:50 PM,50
+Lunch,74 Bromfield Road,Food,S16,Tue,1:00 PM,2:00 PM,60
+Home,74 Bromfield Road,Home,S16,Tue,2:00 PM,4:00 PM,120
+COMP-160 Lecture,Braker Hall,School,S16,Tue,4:30 PM,5:45 PM,75
+Dinner,74 Bromfield Road,Food,S16,Tue,6:00 PM,7:00 PM,60
+Home,74 Bromfield Road,Home,S16,Tue,7:00 PM,10:00 PM,180
+WMFO Show,Curtis Hall,Clubs,S16,Tue,10:00 PM,11:00 PM,60
+Home,74 Bromfield Road,Home,S16,Wed,12:00 AM,7:00 AM,420
+Gym,Tisch Gym,Athletics,S16,Wed,7:00 AM,8:00 AM,60
+Breakfast,74 Bromfield Road,Food,S16,Wed,8:00 AM,10:00 AM,120
+ENG-80 Lecture,Tisch Library,School,S16,Wed,10:30 AM,11:45 AM,75
+Lunch,74 Bromfield Road,Food,S16,Wed,12:00 PM,1:00 PM,60
+ES-4 Lecture,Anderson Hall,School,S16,Wed,1:30 PM,2:45 PM,75
+Dinner,74 Bromfield Road,Food,S16,Wed,6:00 PM,7:00 PM,60
+Home,74 Bromfield Road,Home,S16,Thu,12:00 AM,7:00 AM,420
+Gym,Tisch Gym,Athletics,S16,Thu,7:00 AM,8:00 AM,60
+Home,74 Bromfield Road,Home,S16,Thu,8:00 AM,10:00 AM,120
+MATH-150 Lecture,Bromfield-Pearson Hall,School,S16,Thu,10:30 AM,11:45 AM,75
+MATH-87 Lecture,Bromfield-Pearson Hall,School,S16,Thu,12:00 PM,12:50 PM,50
+Lunch,74 Bromfield Road,Food,S16,Thu,1:00 PM,2:00 PM,60
+Home,74 Bromfield Road,Home,S16,Thu,2:00 PM,4:00 PM,120
+COMP-160 Lecture,Braker Hall,School,S16,Thu,4:30 PM,5:45 PM,75
+Home,74 Bromfield Road,Home,S16,Fri,12:00 AM,7:00 AM,420
+Gym,Tisch Gym,Athletics,S16,Fri,7:30 AM,8:30 AM,60
+Breakfast,74 Bromfield Road,Food,S16,Fri,9:00 AM,12:00 PM,180
+MATH-87 Lecture,Bromfield-Pearson Hall,School,S16,Fri,12:00 PM,12:50 PM,50
+Home,74 Bromfield Road,Home,F16,Sun,12:00 AM,12:00 PM,720
+Lunch,74 Bromfield Road,Food,F16,Sun,12:00 PM,1:00 PM,60
+WMFO Exec Meeting,Curtis Hall,Clubs,F16,Sun,1:00 PM,2:00 PM,60
+Home,74 Bromfield Road,Home,F16,Sun,2:00 PM,6:00 PM,240
+Dinner,74 Bromfield Road,Food,F16,Sun,6:00 PM,7:00 PM,60
+TEM Exec Meeting,Aidekman Hall,Clubs,F16,Sun,8:00 PM,9:00 PM,60
+Home,74 Bromfield Road,Home,F16,Mon,12:00 AM,12:00 PM,720
+Lunch,74 Bromfield Road,Food,F16,Mon,12:00 PM,3:00 PM,180
+WMFO Show,Curtis Hall,Clubs,F16,Mon,3:00 PM,4:00 PM,60
+TA Office Hours,Halligan Hall,Work,F16,Mon,4:30 PM,5:30 PM,60
+Dinner,74 Bromfield Road,Food,F16,Mon,6:00 PM,7:00 PM,60
+Home,74 Bromfield Road,Home,F16,Mon,7:00 PM,9:00 PM,120
+Hockey Practice,Flynn Rink,Athletics,F16,Mon,9:00 PM,11:00 PM,120
+Home,74 Bromfield Road,Home,F16,Tue,12:00 AM,9:00 AM,540
+MATH-145 Lecture,574 Boston Ave,School,F16,Tue,9:30 AM,10:20 AM,50
+COMP-177 Lecture,Halligan Hall,School,F16,Tue,10:30 AM,11:45 AM,75
+COMP-97 Lecture,Halligan Hall,School,F16,Tue,12:00 PM,1:15 PM,75
+Lunch,74 Bromfield Road,Food,F16,Tue,1:30 PM,3:00 PM,90
+AST-31 Lecture,574 Boston Ave,School,F16,Tue,3:00 PM,4:15 PM,75
+Home,74 Bromfield Road,Home,F16,Tue,4:30 PM,6:30 PM,120
+Dinner,74 Bromfield Road,Food,F16,Tue,6:30 PM,7:30 PM,60
+COMP-163 Lecture,Pearson Hall,School,F16,Tue,7:30 PM,8:45 PM,75
+Home,74 Bromfield Road,Home,F16,Wed,12:00 AM,9:00 AM,540
+MATH-145 Lecture,574 Boston Ave,School,F16,Wed,9:30 AM,10:20 AM,50
+Home,74 Bromfield Road,Home,F16,Wed,10:30 AM,12:00 PM,90
+AT Fellows Meeting,16 Dearborn Road,Work,F16,Wed,12:00 PM,1:00 PM,60
+Lunch,74 Bromfield Road,Food,F16,Wed,1:00 PM,2:00 PM,60
+Home,74 Bromfield Road,Home,F16,Wed,2:00 PM,4:00 PM,120
+Work at 574 Desk,574 Boston Ave,Work,F16,Wed,4:00 PM,6:00 PM,120
+TA Office Hours,Halligan Hall,Work,F16,Wed,6:30 PM,8:30 PM,120
+Dinner,74 Bromfield Road,Food,F16,Wed,9:00 PM,10:00 PM,60
+Hockey Practice,Flynn Rink,Athletics,F16,Wed,10:00 PM,11:59 PM,119
+Home,74 Bromfield Road,Home,F16,Thu,12:00 AM,10:00 AM,600
+COMP-177 Lecture,Halligan Hall,School,F16,Thu,10:30 AM,11:45 AM,75
+COMP-97 Lecture,Halligan Hall,School,F16,Thu,12:00 PM,1:15 PM,75
+Lunch,74 Bromfield Road,Food,F16,Thu,1:30 PM,3:00 PM,90
+AST-31 Lecture,574 Boston Ave,School,F16,Thu,3:00 PM,4:15 PM,75
+Home,74 Bromfield Road,Home,F16,Thu,4:30 PM,6:30 PM,120
+Dinner,74 Bromfield Road,Food,F16,Thu,6:30 PM,7:30 PM,60
+COMP-163 Lecture,Pearson Hall,School,F16,Thu,7:30 PM,8:45 PM,75
+Home,74 Bromfield Road,Home,F16,Fri,12:00 AM,9:00 AM,540
+Pick-up Hockey,Veterans Rink,Athletics,F16,Fri,6:30 AM,8:00 AM,90
+Breakfast,74 Bromfield Road,Food,F16,Fri,8:00 AM,9:00 AM,60
+MATH-145 Lecture,574 Boston Ave,School,F16,Fri,9:30 AM,10:20 AM,50
+Home,74 Bromfield Road,Home,F16,Fri,10:30 AM,1:00 PM,150
+Lunch,74 Bromfield Road,Food,F16,Fri,1:00 PM,2:00 PM,60
+Work at 574 Desk,574 Boston Ave,Work,F16,Fri,2:00 PM,4:00 PM,120

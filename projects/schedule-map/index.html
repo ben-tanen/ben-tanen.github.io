@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include head.html %}
+    <title>Schedule Map</title>
+</head>
+<body>
+    <!-- css and javascript includes -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYYbQJxmT3xqIdpkDwtHi8TyyJPtncbE4" type="text/javascript"></script>
+    <script src="js/data.js"></script>
+    <script src="js/map.js"></script>
+
+    <div id="map-wrapper">
+        <div id="map"></div>
+        <div id="legend"><h4></h4></div>
+    </div>
+
+    <div id="checks">
+        <div id="activity-checks" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+            <div class="check activity" id="Athletics">
+                <p>Athletics</p>
+            </div>
+
+            <div class="check activity" id="Clubs">
+                <p>Clubs</p>
+            </div>
+
+            <div class="check activity on" id="Food">
+                <p>Food</p>
+            </div>
+
+            <div class="check activity on" id="Home">
+                <p>Home</p>
+            </div>
+
+            <div class="check activity on" id="School">
+                <p>School</p>
+            </div>
+
+            <div class="check activity" id="Work">
+                <p>Work</p>
+            </div>
+        </div>
+
+        <div id="semester-checks">
+            <div class="check semester on" id="F13">
+                <p>F13</p>
+            </div>
+
+            <div class="check semester" id="S14">
+                <p>S14</p>
+            </div>
+
+            <div class="check semester" id="F14">
+                <p>F14</p>
+            </div>
+
+            <div class="check semester" id="S15">
+                <p>S15</p>
+            </div>
+
+            <div class="check semester" id="F15">
+                <p>F15</p>
+            </div>
+
+            <div class="check semester" id="S16">
+                <p>S16</p>
+            </div>
+
+            <div class="check semester on" id="F16">
+                <p>F16</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

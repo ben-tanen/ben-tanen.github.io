@@ -14,7 +14,7 @@
     <script src="/js/lib/d3.v4.min.js"></script>
     <script src="/js/main.js"></script>
 
-    <title>Minimizing Risk For An Optimal Portfolio | Ben Tanen</title>
+    <title>St. Paul and the Broken Bones | Ben Tanen</title>
 </head>
 
 
@@ -87,31 +87,52 @@
     		<div class="post">
 
   <header class="post-header">
-    <h1>Minimizing Risk For An Optimal Portfolio</h1>
-    <p class="meta">Dec 12, 2015</p>
+    <h1>St. Paul and the Broken Bones</h1>
+    <p class="meta">Nov 10, 2016</p>
   </header>
 
   <article class="post-content">
-  <p>I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. Because of my time working in the risk management department of a hedge fund, I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
+  <p>Through some killer <a href="http://www.wmfo.org/">freeform radio hook ups</a>, I was very fortunately connected with the publicity manager for the always fantastic St. Paul and the Broken Bones. Through this connection, I was able to score <a href="https://www.wmfo.org/?p=3043">an interview with Jesse Phillip</a>, the lead Broken Bone, as well as a photo pass to their most recent show at the Royale in Boston. They are currently on tour promoting their newest EP <em>Sea of Noise</em>, which is <a href="http://www.npr.org/2016/09/01/491941924/first-listen-st-paul-the-broken-bones-sea-of-noise">quite the album</a>. If you haven’t heard of them before or you haven’t heard their latest album, I’ve put together a little playlist of my personal favorites so feel free to take a listen. My top three have got to be “Is It Me” from <em>Sea of Noise</em>, “Call Me” from their first album <em>Half the City</em>, and their cover of Sam Cooke’s incredible “A Change Is Gonna Come” at SXSW.</p>
 
-<p>The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.</p>
+<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A129874447%3Aplaylist%3A7hGQWWVIqtbsSQ0zyxk7FN" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true" style="margin-bottom:10px"></iframe>
 
-<p>In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “<a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.</p>
+<p>Since I was lucky enough to get a photo pass to their show, I thought I’d also share some of personal favorite photos. I’d like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!</p>
 
-<p><img src="/img/posts/portfolio_bullet.png" alt="Markowitz bullets showing possible portfolios " width="800px" /></p>
+<style>
+    .photo_container {
+    }
 
-<figcaption>
-Markowitz bullets showing possible portfolios 
-</figcaption>
+    .photo_container img {
+        margin: 0;
+        padding: 5px 5px 0 0;
+    }
 
-<p>I found this optimized weight allocation by looping over a bunch of different allocations and searching for optimized performance. First I looped through allocations in increments of 0.1 and then examined closer at the region(s) that performed the best. I repeated this process again with increments of 0.025 and 0.005 to find the best weighting. All of these trials can be seen in the bullets above, as well as the final optimized portfolio in red (at the tip).</p>
+    .sub_photo_container {
+        width: 49.5%;
+        display: inline-block;
+        vertical-align: top;
+    }
 
-<p>Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.</p>
+</style>
 
-<p><img src="/img/posts/portfolio_return.png" width="600px" /></p>
+<div class="photo_container">
+    <div class="sub_photo_container">
+        <img src="/img/photography/SPABB4.jpg" />
+    </div>
 
-<p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing_portfolio.html">here</a>.</p>
+    <div class="sub_photo_container">
+        <img src="/img/photography/SPABB2.jpg" />
+    </div>
 
+    <div class="sub_photo_container">
+        <img src="/img/photography/SPABB3.jpg" />
+        <img src="/img/photography/SPABB5.jpg" />
+    </div>
+
+    <div class="sub_photo_container">
+        <img src="/img/photography/SPABB1.jpg" />
+    </div>
+</div>
 
   </article>
 
