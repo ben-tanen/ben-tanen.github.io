@@ -108,7 +108,7 @@ function draw_paths(semesters) {
         }
     }
 
-    if (semesters.length > 0 && markers.length == 0) $('#legend h4').html('<i style="font-size: 15px;">An error appears to have occurred, please refresh the page</i>');
+    if (semesters.length > 0 && markers.length == 0 && (function() { for (k in includes) { if (includes[k] == true) return true; }})()) $('#legend h4').html('<i style="font-size: 15px;">An error appears to have occurred, please refresh the page</i>');
 }
 
 function add_marker(location, dlat, dlng, color) {
