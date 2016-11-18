@@ -69,6 +69,8 @@ function update_paths() {
 }
 
 function draw_paths(semesters) {
+    $('#legend h4').html('');
+
     for (var j = 0; j < semesters.length; j++){
         var semester = semesters[j];
         var color    = colors[semester];
