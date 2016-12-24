@@ -14,7 +14,7 @@
     <script src="/js/lib/d3.v4.min.js"></script>
     <script src="/js/main.js"></script>
 
-    <title>NHL Projections | Ben Tanen</title>
+    <title>Visualizing Our Drunken World | Ben Tanen</title>
 </head>
 
 
@@ -84,119 +84,30 @@
 </div>
 
     	<div class='main'>
-    		<link rel="stylesheet" href="nhl-projections.css">
-<script src='nhl-proj.js'></script>
+    		<div class="post">
 
-<h1>NHL Projections</h1>
+  <header class="post-header">
+    <h1>Visualizing Our Drunken World</h1>
+    <p class="meta">Dec 21, 2016</p>
+  </header>
 
-<div id='nhl-about' class='expand'>
-<h2>About</h2>
+  <article class="post-content">
+  <p>For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. We wanted to build a platform to either confirm or debunk these stereotypes and in a greater sense explore when and how alcohol has been part of culture and history.</p>
 
-<p>Projections, predictions, and analysis derived from NHL season simulations in MATLAB.
+<p>And thus, <a href="https://jadeyychan.github.io/DrunkenWorld/">Our Drunken World</a> was born!</p>
 
-<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/NHLPlayoffProjections'>here</a>.</p>
-
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+<div style="margin: auto; text-align: center; margin-bottom: 8px;">
+    <iframe width="500" height="281" src="https://www.youtube.com/embed/O-eeiWZ7WRY" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-<h2>Current Projections</h2>
-<div class='nhl_current_projection min'>
-<p>The table below outlines how the season projections (current and original) compares to the actual season. <br /><i>Model Updated:</i> 10/11/16</p>
+<p>We used data for over 200 countries that was collected and compiled by the World Health Organization from 1960 - 2010. The visualization is built with D3.js, which is pretty awesome. I’m very glad I finally <a href="/2016/09/28/random-d3-fun.html">tried it out</a>.</p>
 
-<table id='projections_table'>
-<thead>
-<tr><th></th><th width='50px'>Team</th><th width='95px'>Actual Points (To Date)</th><th width='95px'>Points Projected <br> (To Date)</th><th width='95px'>Point Differential</th><th width='95px'>Current Whole Season Projection</th><th width='95px'>Original Whole Seaon Projection</th></tr>
-</thead>
-<tbody>
+<p>If you’re interested in exploring this world of alcohol, you can find <a href="https://jadeyychan.github.io/DrunkenWorld/">the visualization here</a>. You can also find <a href="https://github.com/jadeyychan/DrunkenWorld">the code here</a>. Huge thanks to my team members, <a href="https://jadeyychan.github.io/">Jade</a> and <a href="https://github.com/rlrlarson">Rebecca</a>!</p>
 
-</tbody>
-</table>
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+  </article>
+
 </div>
-
-<h2 style='margin-bottom: 10px;'>Recent Work</h2>
-<ul style='padding-left: 0; list-style: none;'>
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>11 Oct 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
-            <div/>
-            <p><p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="http://localhost:4000/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/NHLPlayoffProjections" target="_blank">the code</a>.</p>
-
-</p>
-            <a href='/2016/10/11/introducing-nhl-projections.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>15 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
-            <div/>
-            <p><p>After all this learning of PCA and <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
-
-</p>
-            <a href='/2016/05/15/pca-kmeans-nhl.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-</ul>
     	</div>
     </div>
 	

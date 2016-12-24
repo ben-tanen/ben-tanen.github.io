@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  'Mapping My Life at Tufts'
-date:   2016-11-18 15:05:41
+title: 'Mapping My Life at Tufts'
+date: 2016-11-18 15:05:41
 categories: project data tufts school visualization
 ---
 

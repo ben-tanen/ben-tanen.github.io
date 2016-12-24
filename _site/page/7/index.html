@@ -87,6 +87,29 @@
     		
 
 <div class='post'>
+	<h1>Random Project: Base64 Decoder</h1>
+	<p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text using the base64 decoder, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base64 decoder in C++, because why not.</p>
+
+<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
+
+<ol>
+  <li>Convert each encoded character to Ascii values</li>
+  <li>String together 6-bit strings of Ascii values</li>
+  <li>Break string up into 8-bit strings</li>
+  <li>Convert 8-bit strings back into Ascii values</li>
+  <li>Convert to decoded character</li>
+</ol>
+
+<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? </p>
+
+<p>Link to GitHub Repo <a href="https://github.com/ben-tanen/Base64Decode">Here</a></p>
+
+
+</div>
+
+
+
+<div class='post'>
 	<h1>Up-to-Date Infographics</h1>
 	<p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
 
