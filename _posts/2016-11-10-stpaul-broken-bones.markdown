@@ -9,7 +9,7 @@ Through some killer [freeform radio hook ups](http://www.wmfo.org/), I was very 
 
 <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A129874447%3Aplaylist%3A7hGQWWVIqtbsSQ0zyxk7FN" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true" style="margin-bottom:10px"></iframe>
 
-Since I was lucky enough to get a photo pass to their show, I thought I'd also share some of personal favorite photos. I'd like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!
+Since I was lucky enough to get a photo pass to their show, I thought I'd also share some of my personal favorite photos. I'd like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!
 
 <style>
     .photo_container {

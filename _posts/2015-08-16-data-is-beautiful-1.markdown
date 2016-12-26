@@ -19,7 +19,7 @@ I'm not a huge NBA fan but I do know there is a crazy amount of data available a
 
 {% include figure.html src="/img/posts/dib_pubs.png" width="600px" %}
 
-This is just one of those things that will make you LQTY (laugh quietly to yourself, the truer form of LOL). Of course the United Kingdom can be be well mapped through all of its pubs. While not a dense as, Ireland does a good job of dispersing its drinking establishments. Scotland is just lacking though - come on Scotland! The actual data work being done here is pretty simple but it's cool nonetheless.
+This is just one of those things that will make you LQTY (laugh quietly to yourself, the truer form of LOL). Of course the United Kingdom can be be well mapped through all of its pubs. While not as dense as London, Ireland does a good job of dispersing its drinking establishments. Scotland is just lacking though - come on Scotland! The actual data work being done here is pretty simple but it's cool nonetheless.
 
 ### [Swearing Across America](http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8)
 
@@ -33,9 +33,9 @@ Rather than using API access like the others, this post also had a pretty intere
 
 {% include figure.html src="/img/posts/dib_randomfinding.gif" %}
 
-Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the "randomly searching" process - hurray for pretty gifs. He even built a tool for anyone to try out tool / animation. 
+Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the "randomly searching" process - hurray for pretty gifs. He even built a tool for anyone to try out the tool / animation. 
 
-While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use FindMyFriends or a good ol' phone call.
+While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use Find My Friends or a good ol' phone call.
 
 
 

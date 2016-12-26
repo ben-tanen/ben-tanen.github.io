@@ -6,13 +6,15 @@ categories: jekyll update
 permalink: 2014/10/31/rap-data-design.html
 ---
 
-A genre of music I don’t find myself particularly well-versed in is Hip-Hop and Rap. I’ll listen to it on occasion when [my more rap-inclined friend](http://www.headroommusic.org/) suggests some, but for the most part, I really only know the highlights. One thing I very much do like, though, is beautiful representation of data, and Matt Daniels did the wonderful task of combining the two.
+A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.
 
 In his post, [The Largest Vocabulary in Hip Hop](http://experiments.undercurrent.com/), Daniels analyzed the discography of 85 rappers (he added another 19 in his [updated version](http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/) of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.
 
 ![Screenshot from the Post](/img/posts/rap_vocab.png)
 
-Daniels does some interesting analysis of the data in the actual post (ex: examining how Wu-Tang Clan holds up) and it’s worth checking out. Note: after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: 
+Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.
+
+A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: 
 
 > “In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”
 

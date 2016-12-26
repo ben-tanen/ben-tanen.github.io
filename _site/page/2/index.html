@@ -183,7 +183,7 @@
 	<h1>Am I Becoming More or Less Hipster?</h1>
 	<p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
 
-<p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted base on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
+<p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
 
 <p><img src="/img/posts/spotify_popularity.png" /></p>
 
@@ -237,14 +237,174 @@
 
 
 <div class='post'>
-	<h1>Everything is a Remix</h1>
-	<p>Back in 2012, I was exceptionally impressed with this video series “Everything is a Remix” by <a href="https://vimeo.com/kirbyferguson">Kirby Ferguson</a>. I re-discovered the series again recently and thought it was a worthy share.</p>
+	<h1>PCA and K-Means on NHL Stats</h1>
+	<p>After all this learning of PCA and <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
 
-<iframe src="https://player.vimeo.com/video/139094998" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!</p>
 
-<p>An additional bonus - a new<em>-ish</em> episode from Kirby on the remixing of The Force Awakens.</p>
+<p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/nhl-clustering">here</a>.</p>
 
-<iframe src="https://player.vimeo.com/video/167069783?badge=0" width="350" height="197" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>In Playoffs</th>
+      <th>K-means Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANA</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>ARI</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>BOS</td>
+      <td>NO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>BUF</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CAR</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CBJ</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CGY</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CHI</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>COL</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>DAL</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>DET</td>
+      <td>YES</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>EDM</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>FLA</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>LAK</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>MIN</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>MTL</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>NJD</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>NSH</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>NYI</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>NYR</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>OTT</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>PHI</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>PIT</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>SJS</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>STL</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>TBL</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>TOR</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VAN</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>WSH</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>WPG</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
 
 
 </div>

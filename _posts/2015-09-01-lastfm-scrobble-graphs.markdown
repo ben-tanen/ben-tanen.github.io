@@ -5,7 +5,7 @@ date:   2015-09-01 15:05:41
 categories: project data spotify
 ---
 
-As most people do, I go through phases of musical interests. I'll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm's scrobbling data, [this handy script](https://gist.github.com/bitmorse/5201491), and some Python / pandas, I was able to see just what I was listening over the past few years.
+As most people do, I go through phases of musical interests. I'll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm's scrobbling data, [this handy script](https://gist.github.com/bitmorse/5201491), and some Python / pandas, I was able to see just what I was listening to over the past few years.
 
 {% include figure.html src="/img/posts/lastfm_linegraph.png" width="600px" %}
 

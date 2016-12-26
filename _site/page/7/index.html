@@ -87,41 +87,26 @@
     		
 
 <div class='post'>
-	<h1>Random Project: Base64 Decoder</h1>
-	<p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text using the base64 decoder, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base64 decoder in C++, because why not.</p>
-
-<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
-
-<ol>
-  <li>Convert each encoded character to Ascii values</li>
-  <li>String together 6-bit strings of Ascii values</li>
-  <li>Break string up into 8-bit strings</li>
-  <li>Convert 8-bit strings back into Ascii values</li>
-  <li>Convert to decoded character</li>
-</ol>
-
-<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? </p>
-
-<p>Link to GitHub Repo <a href="https://github.com/ben-tanen/Base64Decode">Here</a></p>
-
-
-</div>
-
-
-
-<div class='post'>
 	<h1>Up-to-Date Infographics</h1>
 	<p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
+
+<p><img src="/img/posts/infographics_kerem.png" alt="Examples of Kerem's use of infographics" /></p>
+
+<figcaption>
+Examples of Kerem's use of infographics
+</figcaption>
 
 <p>For my infographics, I was attempting to display what I was currently up to (currently reading, listening to, watching). I never thought that it could be live updates, but more so descriptions of the book, album, and show/movie that I was into that week. However, the struggle with this was it was not easy to update the information. I had hard-coded into my HTML file, and accessing, changing, and uploading this was generally a pain, leaving my information drastically out-of-date.</p>
 
 <p>Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of <a href="http://www.IFTTT.com">IFTTT</a>, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.</p>
 
-<p><img src="/img/posts/infographics_ex.png" alt="Infographic Example" /></p>
+<p><img src="/img/posts/infographics_ex.png" /></p>
 
 <p>The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.</p>
 
 <p>It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. </p>
+
+<p><strong>Update</strong> - I have since moved onto a different system that is not built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the infographics on <a href="/about/">my about page</a>.</p>
 
 
 </div>
@@ -130,13 +115,15 @@
 
 <div class='post'>
 	<h1>Rap, Data, and Design</h1>
-	<p>A genre of music I don’t find myself particularly well-versed in is Hip-Hop and Rap. I’ll listen to it on occasion when <a href="http://www.headroommusic.org/">my more rap-inclined friend</a> suggests some, but for the most part, I really only know the highlights. One thing I very much do like, though, is beautiful representation of data, and Matt Daniels did the wonderful task of combining the two.</p>
+	<p>A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.</p>
 
 <p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
 
 <p><img src="/img/posts/rap_vocab.png" alt="Screenshot from the Post" /></p>
 
-<p>Daniels does some interesting analysis of the data in the actual post (ex: examining how Wu-Tang Clan holds up) and it’s worth checking out. Note: after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: </p>
+<p>Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.</p>
+
+<p>A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: </p>
 
 <blockquote>
   <p>“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”</p>

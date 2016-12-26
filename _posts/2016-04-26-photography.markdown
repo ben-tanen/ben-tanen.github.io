@@ -29,7 +29,7 @@ I haven't been able to take many photos recently but I felt like sharing some of
 <div class='photo_container'>
     <div class='sub_photo_container'>
         <img src='/img/photography/pic1.jpg' />
-        <img src='/img/photography/pic3.jpg' />
+        <img src='/img/photography/pic11.jpg' />
     </div>
 
     <div class='sub_photo_container'>
@@ -47,12 +47,12 @@ I haven't been able to take many photos recently but I felt like sharing some of
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/img/photography/pic8.jpg' />
         <img src='/img/photography/pic9.jpg' />
+        <img src='/img/photography/pic8.jpg' />
     </div>
 
     <div class='sub_photo_container'>
         <img src='/img/photography/pic10.jpg' />
-        <img src='/img/photography/pic11.jpg' />
+        <img src='/img/photography/pic3.jpg' />
     </div>
 </div>
