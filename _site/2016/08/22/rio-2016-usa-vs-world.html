@@ -14,7 +14,7 @@
     <script src="/js/lib/d3.v4.min.js"></script>
     <script src="/js/main.js"></script>
 
-    <title>Ben Tanen</title>
+    <title>United States vs. the World in Rio 2016 | Ben Tanen</title>
 </head>
 
 
@@ -84,120 +84,15 @@
 </div>
 
     	<div class='main'>
-    		
+    		<div class="post">
 
-<div class='post'>
-	<h1>Random D3 Fun</h1>
-	<p>I’m currently taking (and loving) a data visualization course, so naturally, I’m learning a little D3.js to make some <em>sick</em> visualizations. Below is my first experiment with some SVG animation (likely more to come). Clearly it is art. Have fun clicking away!</p>
+  <header class="post-header">
+    <h1>United States vs. the World in Rio 2016</h1>
+    <p class="meta">Aug 22, 2016</p>
+  </header>
 
-<div id="d3-sample-container" style="margin: auto; width: 300px; cursor: pointer;">
-</div>
-<script>
-    /* make that d3 svg canvas */
-    var dimension = 300;
-    var svg = d3.select('#d3-sample-container').append('svg')
-        .attr('width', dimension)
-        .attr('height', dimension)
-        .style('background-color', 'black');
-
-    /* declare some helper functions */
-    var get_group = function(i, j) {
-        return (4 - i) + j;
-    }
-
-    var get_radius = function(n) {
-        return (dimension / 10) * Math.pow(87 / 100, n + 1);
-    }
-
-    var get_rand_pos = function() {
-        return Math.random() * dimension;
-    }
-
-    /* initialize some vars */
-    var isAligned = false;
-    var circles   = [ ];
-    var cxs = [dimension * (1 / 10), 
-               dimension * (3 / 10),
-               dimension * (5 / 10),
-               dimension * (7 / 10),
-               dimension * (9 / 10)
-              ];
-    var cys = [dimension * (1 / 10), 
-               dimension * (3 / 10),
-               dimension * (5 / 10),
-               dimension * (7 / 10),
-               dimension * (9 / 10)
-              ];
-    var fill = ["#0081ff", 
-                "#5791ff", 
-                "#779fff", 
-                "#98b1ff", 
-                "#aec0ff", 
-                "#c7d1ff", 
-                "#d9dfff", 
-                "#ecefff", 
-                "#ffffff"
-               ];
-
-    /* generate those circles */
-    for (var i = 0; i < 5; i++) {
-        for (var j = 0; j < 5; j++) {
-            var group_n = get_group(i,j);
-            var c_i = svg.append("circle")
-                .attr("cx", get_rand_pos())
-                .attr("cy", get_rand_pos())
-                .attr("r",  get_radius(group_n))
-                .attr("fill", fill[group_n])
-                .attr("ci", i)
-                .attr("cj", j)
-                .attr("group", group_n);
-            circles.push(c_i);
-        }
-    }
-
-    /* toggle alignment */
-    svg.on("click", function() {
-        for (var i = 0; i < circles.length; i++) {
-            var c    = circles[i];
-            var cn   = parseInt(c.attr("group"));
-            var ci   = parseInt(c.attr("ci"));
-            var cj   = parseInt(c.attr("cj"));
-            var cx   = (isAligned ? get_rand_pos() : cxs[ci]);
-            var cy   = (isAligned ? get_rand_pos() : cys[cj]);
-
-            c.transition()
-             .duration(1000)
-             .attr("cx", cx)
-             .attr("cy", cy);
-        }
-        isAligned = !isAligned;
-    });
-</script>
-
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Am I Becoming More or Less Hipster?</h1>
-	<p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
-
-<p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
-
-<p><img src="/img/posts/spotify_popularity.png" /></p>
-
-<p>While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify’s eyes. Therefore, I’m willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I’m just as cool as I’ve ever.</p>
-
-<p>Additional side note on my “hipster-ness”, of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
-
-</div>
-
-
-
-<div class='post'>
-	<h1>United States vs. the World in Rio 2016</h1>
-	<p>The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn’t a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.</p>
+  <article class="post-content">
+  <p>The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn’t a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.</p>
 
 <p>I’ve heard a few people refer to the size of the United States’ Olympic team as a likely contributor. It would make sense that the U.S. would get more medals if they had more athletes participating in each event. However, on the surface, this doesn’t quite explain it since most events have a cap on the number of athletes that each country can send. For example, each country is only allowed to send three athletes per track &amp; field event. If there is a limit on the number of athletes per event then there must be further explanation of the United States’ success.</p>
 
@@ -413,61 +308,9 @@
 <p><strong>*</strong> These numbers do not include marathon swimming <br /> <strong>**</strong> These numbers do not include rhythmic or trampoline gymnastics</p>
 
 
-</div>
-
-
-
-<div class='post'>
-	<h1>Miller-Rabin Primality Test</h1>
-	<p>Back when I started messing around with code, I was told to try out <a href="https://projecteuler.net/">Project Euler</a> to improve my coding skills (something I suggest everyone do). I was able to progress fairly well along but I always struggled with the questions involving prime numbers because I could never get my code to run efficiently on them.</p>
-
-<p>I looked for a solution and repeatedly only found mention to the <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a>, which is fairly intuitive and appeared to be the go-to primality test. However, in my early days of programming, I still struggled to implement the algorithm so I ultimately pushed those prime-based questions off to the side.</p>
-
-<p>Years later, while reading Brian Christian’s and Tom Griffiths’ <a href="https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365">Algorithms to Live By</a>, I happened across the <strong>Miller-Rabin Primality Test</strong>, an alternative to the Sieve of Eratosthenes. The algorithm works as follows: say you wanted to test if <script type="math/tex">n</script> (an odd integer) is a prime number. To do so, we can first find <script type="math/tex">r</script> and <script type="math/tex">s</script> such that <script type="math/tex">n = 2^r s + 1</script>. Next, we can pick a random integer <script type="math/tex">a</script> such that <script type="math/tex">1 \leq a \leq n - 1</script>. With <script type="math/tex">a, r, s</script> all defined, we next test if <script type="math/tex">a^s = 1 \textrm{  mod  } n</script> or <script type="math/tex">a^{2js} = -1 \textrm{  mod  } n</script> for some <script type="math/tex">0 \leq j \leq r - 1</script>. If either of these equalities are true, then we can say that <script type="math/tex">n</script> passes the test and any prime number will pass the test. It is fairly trivial to test this for pretty much any <script type="math/tex">n</script>. However, the trick with this algorithm is that non-prime numbers will also pass this test (return a false-positive) <script type="math/tex">\frac{1}{4}</script> of the time.</p>
-
-<p>To correct for this, we can try the test again with a new randomly-selected <script type="math/tex">a</script>. If <script type="math/tex">n</script> again passes the test, we know that there is a <script type="math/tex">\frac{1}{4} \cdot \frac{1}{4} = \frac{1}{16}</script> chance that <script type="math/tex">n</script> is not actually a prime. Therefore, if we repeated the test <script type="math/tex">N</script> times successfully, we can say that there is a <script type="math/tex">\frac{1}{4^N}</script> chance that <script type="math/tex">n</script> is not actually a prime number. Using this method, we can determine if a particular number is prime with fairly high certainty after only a few iterations. For example, if we repeat the test <script type="math/tex">N = 5</script> times, we can declare <script type="math/tex">n</script> to be prime with 99.9% certainty. If <script type="math/tex">n</script> passes after <script type="math/tex">N = 10</script> iterations, we know with 99.9999% certainty.</p>
-
-<p>Using this, I took another crack at those pesky prime-based Project Euler problems and what do you know, it worked like a charm! While there is a very, very, very slim chance that this still returns a false-positive (I’m using <script type="math/tex">N = 8</script> so a 0.00153% chance), given the non-critical context of the application, I’ll definitely take the speed increase over the non-100% certainty.</p>
-
-<p>For anyone interested, I’ve included a sample implementation in Python of the algorithm below.</p>
-
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># takes in a number n and a number of iterations iters</span>
-<span class="c"># to test if n is prime with (1 - (1 / 4^iters)) certainty</span>
-<span class="k">def</span> <span class="nf">miller_rabin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">iters</span><span class="p">):</span>
-    <span class="c"># find r and s</span>
-    <span class="c"># such that: n = (2^r)s + 1</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">s</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="mi">2</span>
-        <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="c"># test n multiple times</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">**</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">j</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
-            <span class="k">if</span> <span class="p">((</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
-                <span class="k">break</span>
-            <span class="k">elif</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">s</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-                <span class="k">return</span> <span class="bp">False</span>
-    <span class="k">return</span> <span class="bp">True</span></code></pre></div>
-
+  </article>
 
 </div>
-
-
-
-<div class='pagination'>
-
-    <p id='pagination_previous'><a href='/index.html'>&#8592; Newer Posts</a></p>
-
-
-
-    <p id='pagination_next'><a href='/page/3'>Older Posts &#8594;</a></p>
-
-</div>
-
     	</div>
     </div>
 	

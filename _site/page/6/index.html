@@ -87,6 +87,56 @@
     		
 
 <div class='post'>
+	<h1>Retro Post: iOS Upgrades (Circa 2013)</h1>
+	<p>Before moving to Github and using Jekyll, I hosted a <a href="http://ben-tanen.tumblr.com/">blog on Tumblr</a>. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some <em>retro posts</em> from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6). </p>
+
+<p>I’d like to point out that since then, three of these four upgrades have been implemented in someway or another so I guess you could say I’m an accurate futurist. I’d also like to say that I spent a fair amount of time building these mockup screens in Adobe After Effects and they’re actually pretty awesome. Overall success for 18 year old me!</p>
+
+<p><em>[Beginning of Post]</em></p>
+
+<p>I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone itself lacks some capabilities. Here are a few ideas that I have for improvements to the software.</p>
+
+<p><strong>Priority Messages:</strong> Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed. </p>
+
+<blockquote>
+  <p><strong>Retrospective Update</strong> - Apple decided to basically implement this but in reverse. If you want to mute specific people, you can and then the rest of your messages will come through.</p>
+</blockquote>
+
+<p><img src="/img/posts/ios_updates_textdelay.gif" alt="Delay a text to send a few minutes (or even a few hours)" width="230px" /></p>
+
+<figcaption>
+Delay a text to send a few minutes (or even a few hours)
+</figcaption>
+
+<p><strong>Text Delay:</strong> On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time. </p>
+
+<blockquote>
+  <p><strong>Retrospective Update #2</strong> - This change has not yet been implemented, but it 100% should be. Still one of my top desired features</p>
+</blockquote>
+
+<p><strong>In-App Text Response:</strong> While the Multi-tasking on iOS is helpful, responding to a text still requires you to switch to the Messages app, which sometimes closes/disrupts certain other apps (Netflix, games). Instead, an option for In-App texting would simply have a pop-up screen in which the user can send a quick text. This capability is featured on many non-iOS devices, and it should be brought to the iPhone.</p>
+
+<blockquote>
+  <p><strong>Retrospective Update #3</strong> - This is also available now, woohoo!</p>
+</blockquote>
+
+<p><img src="/img/posts/ios_updates_inapptext.gif" alt="Update - More or less is exactly what the actual implementation looks like" width="230px" /></p>
+
+<figcaption>
+Update - More or less is exactly what the actual implementation looks like
+</figcaption>
+
+<p><strong>Voice Activated Siri:</strong> Siri is particularly useful, especially when you can’t (or shouldn’t) be using your hands (driving, shower, etc.). However, turning on Siri requires manual activation with a hand. Instead, there should be an option to start Siri using one’s voice. For example, Siri could be activated by either saying “Siri” (though that presents certain issues in a crowd of people saying the same thing) or a keyword that the user picks (ex: “Pterodactyl”).</p>
+
+<blockquote>
+  <p><strong>Retrospective Update #4</strong> - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.</p>
+</blockquote>
+
+</div>
+
+
+
+<div class='post'>
 	<h1>Why Everyone Should Use (Or At Least Try) Spotify</h1>
 	<p>For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.</p>
 
@@ -175,26 +225,6 @@ Spotify didn't waste an inch of space on the mobile app
 
 <p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future. </p>
 
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Random Project: Base64 Decoder</h1>
-	<p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
-
-<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
-
-<ol>
-  <li>Convert each encoded character to Ascii values</li>
-  <li>String together 6-bit strings of Ascii values</li>
-  <li>Break string up into 8-bit strings</li>
-  <li>Convert 8-bit strings back into Ascii values</li>
-  <li>Convert to decoded character</li>
-</ol>
-
-<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code <a href="https://github.com/ben-tanen/Base64Decode">here</a>.</p>
 
 </div>
 
