@@ -87,6 +87,23 @@
     		
 
 <div class='post'>
+	<h1>Visualizing My Spotify History</h1>
+	<p>As most people do, I go through phases of musical interests. I’ll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm’s scrobbling data, <a href="https://gist.github.com/bitmorse/5201491">this handy script</a>, and some Python / pandas, I was able to see just what I was listening to over the past few years.</p>
+
+<p><img src="/img/posts/lastfm_linegraph.png" width="600px" /></p>
+
+<p>The process was pretty simple. Once I found the existing script (link above), I simply had to parse through the text, load it into a pandas DataFrame, and do some simple analysis. Knowing that, I plan on going a little deeper and seeing what cool stuff I can find.</p>
+
+<p><strong>Quick Note</strong>: This data only reflects my listening history on computer. For some reason Spotify Mobile is set to scrobble my listening history but is refusing to actually do so. Oh well…</p>
+
+<p>For more, you can see the whole iPython notebook <a href="/notebooks/lastfm_scrobble.html">here</a> (Hurray for iPython notebooks, they’re awesome).</p>
+
+
+</div>
+
+
+
+<div class='post'>
 	<h1>Best Of "Data is Beautiful" #1</h1>
 	<p>As I briefly mentioned in a <a href="/2014/10/31/rap-data-design.html">previous post</a>, I am a big fan of well-designed representations of data. If you’re also a fan of this “art form” then you should be an avid follower of the subreddit <a href="https://www.reddit.com/r/dataisbeautiful">/r/dataisbeautiful</a>. If you’ve never seen it, it’s a must read.</p>
 
@@ -153,48 +170,6 @@ Good Ol' Unix Terminal Games
 
 <p>If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.</p>
 
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Retro Post: Game Theory, The Game</h1>
-	<p>This retro post came from my senior year of high school when I was taking AP Economics. Who doesn’t love turning economics into drinking games?</p>
-
-<p><em>[Beginning of Post]</em></p>
-
-<p>In my AP Economics class, we have started discussing game theory. This is the study of different behaviors in economic “games”. The most basic game is between two firms, or actors, playing together, and they have two options, for which each firm will pick the option that will give them the best output.</p>
-
-<p>Eventually, my teacher showed us a clip from a game show that uses the concepts of game theory. The show, called Golden Balls, pits two players against each other to win a pot of money. If they both choose to split the money, they will share the pot 50/50. If one chooses to steal the money while the other splits, the stealer will win all of the money, while the other is left with zero. Finally, if they both chose to steal, everyone ends up with zero.</p>
-
-<iframe class="youtube_vid" width="420" height="315" src="https://www.youtube.com/embed/p3Uos2fzIJ0" frameborder="0" allowfullscreen=""></iframe>
-
-<iframe class="youtube_vid" width="420" height="315" src="https://www.youtube.com/embed/S0qjK3TWZE8" frameborder="0" allowfullscreen=""></iframe>
-
-<p>After watching the clip, my classmates and I felt the need to design our own version of the game. However, as a fairly poor teenager, I felt the prize shouldn’t be monetary. And then we came to our dilemma. What to make the prize?</p>
-
-<p>One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.</p>
-
-<p><img src="/img/posts/gametheorygames_slaps.png" alt="Playful violence is always fun" /></p>
-
-<figcaption>
-Playful violence is always fun
-</figcaption>
-
-<p>This game/version relies on the idea that both players want to slap the other person, so I guess this would preferably be played with an enemy (or a close friend).</p>
-
-<p>Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.</p>
-
-<p><img src="/img/posts/gametheorygames_drinks.png" alt="Who doesn't love economic-based drinking games?" /></p>
-
-<figcaption>
-Who doesn't love economic-based drinking games?
-</figcaption>
-
-<p>Eventually, I’d assume both parties would be drunk enough to lose track of the dilemma and implications of their choices, but I imagine that this game would serve as an interesting way to get drunk for economists.</p>
-
-<p>Any other potential prizes/punishments?</p>
 
 </div>
 

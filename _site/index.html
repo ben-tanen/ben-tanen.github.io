@@ -87,6 +87,21 @@
     		
 
 <div class='post'>
+	<h1>Understanding the Kirkpatrick-Seidel Algorithm</h1>
+	<p>After <a href="/2016/12/21/drunken-world.html">posting the final project</a> for my visualization course, I thought I’d share the final project for my computational geometry class as well. The course was an extended algorithms class focused on different multi-dimensional geometric problems. One of the main problems of the course deals with finding the <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;ved=0ahUKEwiu3ZevhLPRAhVqjVQKHaydD5sQFggiMAI&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FConvex_hull&amp;usg=AFQjCNHY-Q21jGIY6WB3-f_T_UOeqEdizA&amp;sig2=kVnHSPSGaReTmQc8N-kBRA&amp;bvm=bv.142059868,d.cGw">convex hull</a> of a set of points. There are <a href="https://www.youtube.com/watch?v=ZnTiWcIznEQ">a number ways</a> to tackle the problem but one of the best approaches is the Kirkpatrick-Seidel Ultimate Planar Convex Hull Algorithm. In order to help teach the algorithm, I made <a href="http://ben-tanen.github.io/UltimateConvexHull/">a visualization tool</a> to walk-through the steps.</p>
+
+<p><img src="/img/posts/ultimate_ch.png" width="600px" /></p>
+
+<p>The algorithm is a bit on the complicated side but I hope that this offers some help in figuring out what exactly goes into it. While the walk-through is complete, I plan on adding a bit more detail to explain the algorithmic time complexity that allows it to work in <script type="math/tex">O(n \log n)</script> time so keep an eye out for that.</p>
+
+<p>Feel free to check it out and let me know what you think. If anything seems confusing, unclear, or (heaven forbid) incorrect, feel free to shoot me a message. Also, if you are interested, you can find the code for the visualization <a href="https://github.com/ben-tanen/UltimateConvexHull">here on GitHub</a>.</p>
+
+
+</div>
+
+
+
+<div class='post'>
 	<h1>Visualizing Our Drunken World</h1>
 	<p>For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. - and we wanted to build a platform to either confirm or debunk these stereotypes. In a greater sense, we hoped to explore when and how alcohol has been part of culture and history. And thus, <a href="https://jadeyychan.github.io/DrunkenWorld/">Our Drunken World</a> was born!</p>
 
@@ -230,49 +245,6 @@
         <img src="/img/photography/SPABB1.jpg" />
     </div>
 </div>
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Introducing 2016-17 NHL Projections</h1>
-	<p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="http://localhost:4000/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/NHLPlayoffProjections" target="_blank">the code</a>.</p>
-
-<p>Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).</p>
-
-<p><img src="/img/posts/nhl_proj_10_11_16.png" width="650px" /></p>
-
-<p>So, over the course of the next few months, I’ll be comparing each team’s expected performance (as speculated by the model) to their actual performance. I’ll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out <a href="/projects/nhl-projections/">the new project site here</a>. </p>
-
-<p>For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don’t have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.</p>
-
-<table id="projections_table">
-<thead>
-<tr><th></th><th width="50px">Team</th><th width="150px">Projected Points (2016-17)</th><th width="100px">Actual Points (2015-16)</th></tr>
-</thead>
-<tbody>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/dallas-stars.png" /></td><td>DAL</td><td>96.31</td><td>109</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/pittsburgh-penguins.png" /></td><td>PIT</td><td>95.53</td><td>104</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/chicago-blackhawks.png" /></td><td>CHI</td><td>94.76</td><td>103</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/san-jose-sharks.png" /></td><td>SJS</td><td>94.06</td><td>98</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/new-york-rangers.png" /></td><td>NYR</td><td>93.33</td><td>101</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/tampa-bay-lightning.png" /></td><td>TBL</td><td>93.24</td><td>97</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/boston-bruins.png" /></td><td>BOS</td><td>92.53</td><td>93</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/st-louis-blues.png" /></td><td>STL</td><td>91.82</td><td>107</td></tr>
-
-</tbody>
-</table>
-
-<p>Here’s to an exciting 2016-17 season and <a href="https://twitter.com/search?q=lgr" target="_blank">#LGR</a>!</p>
 
 </div>
 
