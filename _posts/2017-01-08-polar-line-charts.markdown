@@ -33,15 +33,15 @@ Since [D3 and Mike Bostock](https://bost.ocks.org/mike/){:target="_blank"} have 
 }
 </style>
 
-<div id='d3-polar-container' style='margin: auto; width: 400px;'>
-    <svg id="polar-line-chart" width="400" height="400"></svg>
+<div id='d3-polar-container' style='margin: auto; width: 450px;'>
+    <svg id="polar-line-chart" width="450" height="450"></svg>
 </div>
 <script src="http://d3js.org/d3.v4.min.js"></script>
 <script>
 
 /* initialize svg and variables */
 var svg = d3.select("#polar-line-chart"),
-    margin = {top: 25, left: 25, bottom: 25, right: 25, center: 75},
+    margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
     width = svg.attr("width") - margin.left - margin.right;
     height = svg.attr("height") - margin.top - margin.bottom;
 
@@ -115,11 +115,35 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
         .attr("height", 20)
         .attr("fill", "#ececec");
 
-    /* render center year, "play", and title text */
+    /* render center year, "play", title, and month text */
     svg.append("text")
         .attr("class", "year-text")
         .attr("transform", "translate(" + (margin.left + width / 2 - 15) + "," + (margin.top + height / 2 + 5) + ")")
         .text("1850");
+
+    svg.append("text")
+        .attr("transform", "translate(" + 10 + "," + 15 + ")")
+        .text("Global Temperature Change in °C (1850 - 2016)");
+
+    svg.append("text")
+        .style("font-size", "12px")
+        .attr("transform", "translate(" + (width + margin.left + 10) + "," + (height / 2 + margin.top - 8) + ") rotate(90)")
+        .text("Jan");
+
+    svg.append("text")
+        .style("font-size", "12px")
+        .attr("transform", "translate(" + (width / 2 + margin.left - 8) + "," + (margin.top - 8) + ")")
+        .text("Apr");
+
+    svg.append("text")
+        .style("font-size", "12px")
+        .attr("transform", "translate(" + (margin.left - 8) + "," + (height / 2 + margin.top + 8) + ") rotate(270)")
+        .text("Jul");
+
+    svg.append("text")
+        .style("font-size", "12px")
+        .attr("transform", "translate(" + (width / 2 + margin.left + 8) + "," + (height + margin.top + 8) + ") rotate(180)")
+        .text("Oct");
 
     $(document).ready(function() {
         svg.append("text")
@@ -128,10 +152,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
             .text("Play");
     });
 
-    svg.append("text")
-        .attr("transform", "translate(" + 10 + "," + 15 + ")")
-        .text("Global Temperature Change in °C (1850 - 2016)");
-
+    /* animate on click */
     svg.select(".play-text").on("click", function() {
         /* clear paths and axis */
         svg.selectAll(".line").remove();
