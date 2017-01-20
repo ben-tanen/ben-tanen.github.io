@@ -1,5 +1,5 @@
 function outputListening(data) {
-    if (Object.keys(data).length >= 1) {
+    if (Object.keys(data).length >= 1 && data.song_artist != "") {
         if (data.song_name == null || data.song_name == "" && data.song_album != null) {
             $('#listening_song').html(data.song_album);
             $('#listening_artist').html(data.song_artist);
@@ -22,7 +22,7 @@ function outputListening(data) {
 }
 
 function outputWatching(data) {
-    if (Object.keys(data).length >= 1) {
+    if (Object.keys(data).length >= 1 && data.show_title != "") {
 
         $('#watching_title').html(data.show_title);
 
@@ -40,7 +40,7 @@ function outputWatching(data) {
 }
 
 function outputReading(data) {
-    if (Object.keys(data).length >= 1) {
+    if (Object.keys(data).length >= 1 && data.book_name != "") {
 
         $('#reading_name').html(data.book_name);
         $('#reading_author').html(data.book_author);
