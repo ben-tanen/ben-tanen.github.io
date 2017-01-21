@@ -53,7 +53,7 @@ It seems like my suspicion was true - I've become a little hermit holed up at my
         </div>
     </div>
 
-    <div id="activity-checks" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+    <div id="activity-checks">
         <div class="check activity" id="Athletics">
             <p>Athletics</p>
         </div>
