@@ -1,4 +1,7 @@
 function pageResize() {
+	$('.side').css('left', $('.wrapper').css('margin-left'));
+
+	/*
 	var window_width = $(window).width();
 
 	// main width resize
@@ -10,6 +13,7 @@ function pageResize() {
 	} else {
 		$('.main').css('width', window_width - 275 + 'px');
 	}
+	*/
 }
 
 $(document).ready(function() {
