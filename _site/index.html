@@ -141,8 +141,8 @@ $("#d3-polar-container").css("height", c_width);
 /* initialize svg and variables */
 var svg = d3.select("#polar-line-chart"),
     margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
-    width = parseInt(svg.style("width").replace("px","")) - margin.left - margin.right;
-    height = parseInt(svg.style("height").replace("px","")) - margin.top - margin.bottom;
+    width = c_width - margin.left - margin.right;
+    height = c_width - margin.top - margin.bottom;
 
 alert(width + " " + height);
 
