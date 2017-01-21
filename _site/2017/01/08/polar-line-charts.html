@@ -148,7 +148,7 @@ var svg = d3.select("#polar-line-chart"),
     width = parseInt(svg.style("width").replace("px","")) - margin.left - margin.right;
     height = parseInt(svg.style("height").replace("px","")) - margin.top - margin.bottom;
 
-alert(height);
+alert(width + " " + height);
 
 // polar scales
 var t = d3.scaleTime().range([0, 2 * Math.PI]),
