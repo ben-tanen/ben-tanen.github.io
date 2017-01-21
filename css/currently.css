@@ -36,7 +36,7 @@
 }
 
 .currently_text p:nth-child(1) {
-    font-weight: 700;
+    font-weight: 600;
     color: #77bdee;
     margin-bottom: 3px;
 }
