@@ -10,6 +10,17 @@ A few weeks ago, I came across [this very interesting (and very scary) visualiza
 Since [D3 and Mike Bostock](https://bost.ocks.org/mike/){:target="_blank"} have generally implemented every type of chart imaginable, I was surprised that I couldn't find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.
 
 <style>
+#d3-polar-container {
+    width: 90%;
+    max-width: 450px;
+    height: 450px;
+}
+
+#polar-line-chart {
+    width: 100%;
+    height: 100%;
+}
+
 #polar-line-chart .line {
     fill: none;
     stroke: steelblue;
@@ -33,17 +44,20 @@ Since [D3 and Mike Bostock](https://bost.ocks.org/mike/){:target="_blank"} have 
 }
 </style>
 
-<div id='d3-polar-container' style='margin: auto; width: 450px;'>
-    <svg id="polar-line-chart" width="450" height="450"></svg>
+<div id='d3-polar-container' style='margin: auto;'>
+    <svg id="polar-line-chart"></svg>
 </div>
 <script src="http://d3js.org/d3.v4.min.js"></script>
 <script>
+/* resize svg height if needed */
+var c_width = $("#d3-polar-container").width();
+$("#d3-polar-container").css("height", c_width);
 
 /* initialize svg and variables */
 var svg = d3.select("#polar-line-chart"),
     margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
-    width = svg.attr("width") - margin.left - margin.right;
-    height = svg.attr("height") - margin.top - margin.bottom;
+    width = parseInt(svg.style("width").replace("px","")) - margin.left - margin.right;
+    height = parseInt(svg.style("height").replace("px","")) - margin.top - margin.bottom;
 
 // polar scales
 var t = d3.scaleTime().range([0, 2 * Math.PI]),
@@ -116,38 +130,43 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
         .attr("fill", "#ececec");
 
     /* render center year, "play", title, and month text */
+    var text_size = (c_width == 450 ? 1 : 0.8);
+
     svg.append("text")
         .attr("class", "year-text")
+        .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (margin.left + width / 2 - 15) + "," + (margin.top + height / 2 + 5) + ")")
         .text("1850");
 
     svg.append("text")
+        .style("font-size", text_size + "em")
         .attr("transform", "translate(" + 10 + "," + 15 + ")")
         .text("Global Temperature Change in °C (1850 - 2016)");
 
     svg.append("text")
-        .style("font-size", "12px")
+        .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (width + margin.left + 10) + "," + (height / 2 + margin.top - 8) + ") rotate(90)")
         .text("Jan");
 
     svg.append("text")
-        .style("font-size", "12px")
+        .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (width / 2 + margin.left - 8) + "," + (margin.top - 8) + ")")
         .text("Apr");
 
     svg.append("text")
-        .style("font-size", "12px")
+        .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (margin.left - 8) + "," + (height / 2 + margin.top + 8) + ") rotate(270)")
         .text("Jul");
 
     svg.append("text")
-        .style("font-size", "12px")
+        .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (width / 2 + margin.left + 8) + "," + (height + margin.top + 8) + ") rotate(180)")
         .text("Oct");
 
     $(document).ready(function() {
         svg.append("text")
             .attr("class", "play-text")
+            .style("font-size", text_size + "em")
             .attr("transform", "translate(" + 10 + "," + 35 + ")")
             .text("Play");
     });
@@ -194,6 +213,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
                     .attr("transform", "translate(" + (margin.left + width / 2 - 15) + "," + (margin.top + height / 2 + 5) + ")")
                     .text(data[i - 1].year)
                     .style("opacity", 0)
+                    .style("font-size", text_size - 0.1 + "em")
                     .transition()
                     .duration(0)
                     .delay(1000 + 5 * i)
@@ -205,6 +225,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
         svg.append("g")
             .attr("id", "axis")
             .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
+            .style("font-size", (c_width == 450 ? 0.6 : 0.5) + "em")
             .call(axis);
     });
 
@@ -212,6 +233,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
     svg.append("g")
         .attr("id", "axis")
         .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
+        .style("font-size", (c_width == 450 ? 0.6 : 0.5) + "em")
         .call(axis);
 });
 </script>
