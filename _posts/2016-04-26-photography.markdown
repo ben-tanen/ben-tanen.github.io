@@ -19,7 +19,7 @@ I haven't been able to take many photos recently but I felt like sharing some of
     }
 
     .sub_photo_container {
-        width: 49.5%;
+        width: 49%;
         display: inline-block;
         vertical-align: top;
     }

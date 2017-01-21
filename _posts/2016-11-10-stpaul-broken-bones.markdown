@@ -21,7 +21,7 @@ Since I was lucky enough to get a photo pass to their show, I thought I'd also s
     }
 
     .sub_photo_container {
-        width: 49.5%;
+        width: 49%;
         display: inline-block;
         vertical-align: top;
     }
