@@ -84,10 +84,12 @@ $(document).ready(function() {
         });
 
         // get working
+        /*
         $.ajax({
             url: "http://bt-currently.herokuapp.com/getWorking",
             data: null
         }).done(function(data) {
-            // outputWorking(data);
+            outputWorking(data);
         });
+        */
 });
