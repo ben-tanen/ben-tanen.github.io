@@ -59,8 +59,6 @@ var svg = d3.select("#polar-line-chart"),
     width = c_width - margin.left - margin.right;
     height = c_width - margin.top - margin.bottom;
 
-alert(width + " " + height);
-
 // polar scales
 var t = d3.scaleTime().range([0, 2 * Math.PI]),
     r = d3.scaleLinear().range([0, (width - margin.center) / 2]);
