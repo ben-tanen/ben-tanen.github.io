@@ -425,13 +425,9 @@ table {
 }
 
 @media (max-width: 775px), (orientation : portrait) {
-    /*
-    .wrapper {
-        width: 500px;
-        margin: auto;
-        position: relative;
+    html {
+        -webkit-text-size-adjust: 80%;
     }
-    */
 
 	.side {
 		position: fixed;
@@ -439,8 +435,6 @@ table {
 		height: 120px;
 		background-color: white;
 		z-index: 10;
-		/*margin-bottom: 50px;*/
-        /*transform: translateX(0);*/
 	}
 
 	#face {
