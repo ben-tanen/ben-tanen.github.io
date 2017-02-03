@@ -64,6 +64,10 @@ h3 {
         color: #77bdee;
     }
 
+    .links {
+    	padding: 5px;
+    }
+
 	#about {
 		font-family: 'Quicksand', sans-serif;
 		text-align: center;
@@ -460,6 +464,7 @@ table {
 	}
 
 	.links {
+		padding: 0;
 		position: absolute;
 		top: 16px;
 		right: 10px;
