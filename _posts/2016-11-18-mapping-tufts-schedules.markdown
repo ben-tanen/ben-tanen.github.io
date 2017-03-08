@@ -44,12 +44,16 @@ It seems like my suspicion was true - I've become a little hermit holed up at my
             <p>F15</p>
         </div>
 
-        <div class="check semester" id="S16">
+        <div class="check semester on" id="S16">
             <p>S16</p>
         </div>
 
-        <div class="check semester on" id="F16">
+        <div class="check semester" id="F16">
             <p>F16</p>
+        </div>
+
+        <div class="check semester on" id="S17">
+            <p>S17</p>
         </div>
     </div>
 

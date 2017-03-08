@@ -1,0 +1,60 @@
+---
+layout: index
+title: Story Time with Papa T
+---
+
+<style>
+    .playlist-date {
+        display: inline-block;
+        vertical-align: top;
+        width: 55px;
+        text-align: center !important;
+        font-size: 18px;
+        margin-top: 4px !important;
+        color: #77bdee;
+    }
+
+    .playlist-container {
+        width: calc(100% - 58px);
+        display: inline-block;
+    }
+</style>
+
+<script>
+    var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+    ];
+
+    $.ajax({
+        type: "GET",
+        url: "/projects/story-time/data/story-time-playlists.csv",
+        dataType: "text",
+        success: function(data) {
+            var lines = data.split(/\r\n|\n/);
+            for (var i = 1; i < lines.length; i++) {
+                var line = lines[i].split(',');
+                var date = new Date(line[0]);
+                console.log(date);
+                var m    = monthNames[date.getMonth()].slice(0,3);
+                var s    = date.getDate() + " " + m + " " + date.getFullYear();
+                var uri  = encodeURIComponent(line[1]);
+                var spotify_url = "https://embed.spotify.com/?uri=" + uri;
+                var playlist_html = '<li><p class="playlist-date">' + s + '</p><div class="playlist-container"><iframe src="' + spotify_url + '" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true" style="margin-bottom:10px"></iframe></div></li>';
+
+                $('#playlist-list').append(playlist_html);
+            }
+            
+        }
+    });
+</script>
+
+<h1 style='margin-bottom: 0px;'>Story Time with Papa</h1>
+<h3 style='margin-top: 0px; margin-bottom: 20px;'>Only on 91.5 WMFO, Tufts' Freeform Radio</h3>
+
+<!--
+<ul id='playlist-list' style='padding-left: 0; list-style: none; position: relative;'>
+</ul>
+-->

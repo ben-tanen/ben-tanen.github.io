@@ -16,13 +16,14 @@ includes = {
 }
 
 colors = {
-    "F13": "#872f9c", // purple
+    "F13": "#872f9c", // purple 
     "S14": "#ffa83c", // light pink
     "F14": "#328DDF", // darker blue
     "S15": "#49E9E7", // teal
-    "F15": "#ff4cc8", // green
+    "F15": "#ff4cc8", // magenta
     "S16": "#FF6E6C", // orange-red
-    "F16": "#23CE6B", // magenta
+    "F16": "#ffe565", // yellow
+    "S17": "#23CE6B", // green
 };
 
 function init_map() {
