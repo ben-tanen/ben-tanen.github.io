@@ -90,16 +90,25 @@
     .playlist-date {
         display: inline-block;
         vertical-align: top;
-        width: 55px;
+        width: 85px;
         text-align: center !important;
         font-size: 18px;
-        margin-top: 4px !important;
+        margin-top: 12px !important;
         color: #77bdee;
     }
 
     .playlist-container {
-        width: calc(100% - 58px);
+        width: calc(100% - 95px);
         display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .playlist-loading {
+        width: 80px;
+        position: absolute;
+        margin: 0 !important;
+        margin-left: calc((100% / 2) - 100px) !important;
+        z-index: -1;
     }
 </style>
 
@@ -117,15 +126,18 @@
         dataType: "text",
         success: function(data) {
             var lines = data.split(/\r\n|\n/);
+            var today = new Date();
             for (var i = 1; i < lines.length; i++) {
                 var line = lines[i].split(',');
                 var date = new Date(line[0]);
-                console.log(date);
+                if (date >= today) continue;
+
                 var m    = monthNames[date.getMonth()].slice(0,3);
-                var s    = date.getDate() + " " + m + " " + date.getFullYear();
-                var uri  = encodeURIComponent(line[1]);
+                var m_st = date.getDate() + " " + m + " " + date.getFullYear();
+                var uri  = encodeURIComponent(line[1].trim());
                 var spotify_url = "https://embed.spotify.com/?uri=" + uri;
-                var playlist_html = '<li><p class="playlist-date">' + s + '</p><div class="playlist-container"><iframe src="' + spotify_url + '" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true" style="margin-bottom:10px"></iframe></div></li>';
+
+                var playlist_html = '<li><p class="playlist-date">' + m_st + '</p><div class="playlist-container"><img class="playlist-loading" src="/img/loading.gif" /><iframe src="' + spotify_url + '" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true"></iframe></div></li>';
 
                 $('#playlist-list').append(playlist_html);
             }
@@ -137,10 +149,8 @@
 <h1 style='margin-bottom: 0px;'>Story Time with Papa</h1>
 <h3 style='margin-top: 0px; margin-bottom: 20px;'>Only on 91.5 WMFO, Tufts' Freeform Radio</h3>
 
-<!--
 <ul id='playlist-list' style='padding-left: 0; list-style: none; position: relative;'>
 </ul>
--->
     	</div>
     </div>
 	
