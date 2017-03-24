@@ -28,11 +28,17 @@
 .currently_text, .currently_img {
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
+    vertical-align: middle;
+
 }
 
 .currently_text {
-    position: absolute;
-    padding: 15px 0 0 10px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 100px);
+}
+
+.currently_text p {
+    margin: 0;
 }
 
 .currently_text p:nth-child(1) {
