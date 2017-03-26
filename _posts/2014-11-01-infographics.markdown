@@ -20,5 +20,5 @@ The set-up works like this: I send a text with the category I’m updating (read
 
 It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. 
 
-**Update** - I have since moved onto a different system that is not built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the infographics on [my about page](/about/).
+**Update** - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on [my about page](/about/).
 
