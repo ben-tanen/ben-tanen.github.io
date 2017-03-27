@@ -29,7 +29,9 @@
 
     <div class='wrapper'>
     	<div class='side'>
-    <img id='face' src='/img/face2.jpg' alt='A picture of my head' />
+    <a href="/">
+        <img id='face' src='/img/face2.jpg' alt='A picture of my head' />
+    </a>
     
     <h1 id='title'>
     <a href='/' id='title-link'>Howdy</a>
@@ -93,10 +95,10 @@
 <p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
 
 <ol>
-  <li>Convert each encoded character to Ascii values</li>
-  <li>String together 6-bit strings of Ascii values</li>
+  <li>Convert each encoded character to ASCII values</li>
+  <li>String together 6-bit strings of ASCII values</li>
   <li>Break string up into 8-bit strings</li>
-  <li>Convert 8-bit strings back into Ascii values</li>
+  <li>Convert 8-bit strings back into ASCII values</li>
   <li>Convert to decoded character</li>
 </ol>
 

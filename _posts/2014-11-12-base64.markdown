@@ -10,10 +10,10 @@ In the past couple months I've become increasingly more interested and fascinate
 
 So, by reversing [Wikipedia's algorithm](http://en.wikipedia.org/wiki/Base64#Examples) for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:
 
-1. Convert each encoded character to Ascii values
-2. String together 6-bit strings of Ascii values
+1. Convert each encoded character to ASCII values
+2. String together 6-bit strings of ASCII values
 3. Break string up into 8-bit strings
-4. Convert 8-bit strings back into Ascii values
+4. Convert 8-bit strings back into ASCII values
 5. Convert to decoded character
 
 Nothing groundbreaking but it was a fun little project. And who wouldn't prefer doing little projects instead of sleeping? You can find the code [here](https://github.com/ben-tanen/Base64Decode).
