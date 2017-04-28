@@ -86,11 +86,7 @@
 
 <div class='post'>
 	<h1>The Chaos Game</h1>
-	<p>After watching <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">this recent video from Numberphile</a>, I decided to throw together my own little chaos game visualizer. I included colors for the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.</p>
-
-<p>I’m in the works of implementing it for four, five, etc. bases, but for now, here is a fully functional triangle base game!</p>
-
-<style>
+	<style>
 #chaos-game-container {
     width: 300px;
     margin: auto;
@@ -131,6 +127,10 @@
 }
 </style>
 
+<p>After watching <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">this recent video from Numberphile</a>, I decided to throw together my own little visualizer of <a href="https://en.wikipedia.org/wiki/Chaos_game">the chaos game</a>.</p>
+
+<p>To briefly explain the game, we basically start by randomly place some “bases” on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a <a href="https://en.wikipedia.org/wiki/Fractal">fractal</a>!</p>
+
 <div id="chaos-game-container">
 </div>
 
@@ -142,6 +142,10 @@
     </form> -->
     <p><span id="chaos-game-start">Start</span>, i = <span id="chaos-game-i">0</span></p>
 </div>
+
+<p>I always enjoy funky little phenomenon like this so I decided to make my own representation of it in D3. I also decided to include colors for each of the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.</p>
+
+<p>I’m in the works of implementing it for four, five, etc. bases, but for now, here is the triangular chaos game!</p>
 
 <script>
     /* make that d3 svg canvas */
