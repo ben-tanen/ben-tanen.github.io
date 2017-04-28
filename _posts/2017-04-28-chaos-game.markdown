@@ -48,7 +48,7 @@ categories: project data visualization math
 
 After watching [this recent video from Numberphile](https://www.youtube.com/watch?v=kbKtFN71Lfs), I decided to throw together my own little visualizer of [the chaos game](https://en.wikipedia.org/wiki/Chaos_game).
 
-To briefly explain the game, we basically start by randomly place some "bases" on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a [fractal](https://en.wikipedia.org/wiki/Fractal)!
+To briefly explain the game, we basically start by randomly placing some "bases" on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a [fractal](https://en.wikipedia.org/wiki/Fractal)!
 
 <div id='chaos-game-container'>
 </div>
