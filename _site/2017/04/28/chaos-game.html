@@ -16,7 +16,7 @@
     <script src="/js/lib/d3.v4.min.js"></script>
     <script src="/js/main.js"></script>
 
-    <title>Grub: The Command-line GrubHub | Ben Tanen</title>
+    <title>The Chaos Game | Ben Tanen</title>
 </head>
 
 
@@ -85,32 +85,157 @@
     		<div class="post">
 
   <header class="post-header">
-    <h1>Grub: The Command-line GrubHub</h1>
-    <p class="meta">Nov 30, 2014</p>
+    <h1>The Chaos Game</h1>
+    <p class="meta">Apr 28, 2017</p>
   </header>
 
   <article class="post-content">
-  <p>GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.</p>
+  <p>After watching <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">this recent video from Numberphile</a>, I decided to throw together my own little chaos game visualizer. I included colors for the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.</p>
 
-<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
+<p>I’m in the works of implementing it for four, five, etc. bases, but for now, here is a fully functional triangle base game!</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant
-</span><span class="n">grub</span> <span class="n">search</span> <span class="s">"burrito"</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">"Bob's Burgers"</span>
+<style>
+#chaos-game-container {
+    width: 300px;
+    margin: auto;
+    cursor: pointer;
+}
 
-<span class="c1">// add chicken burrito with cheese &amp; sour cream
-</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
+#chaos-game-options {
+    width: 300px;
+    margin: auto;
+}
 
-<span class="c1">// add burger without pickles
-</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
+#chaos-game-options form {
+    width: 205px;
+    margin: auto;
+    padding-top: 5px;
+}
 
-<span class="c1">// go to checkout and add payment information 
-</span><span class="n">grub</span> <span class="n">checkout</span>
+#chaos-game-options form input {
+    cursor: pointer;
+}
 
-<span class="c1">// place order
-</span><span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></figure>
+#chaos-game-options form input:nth-of-type(n+2) {
+    margin-left: 20px;
+}
 
-<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future. </p>
+#chaos-game-options p {
+    font-size: 20px;
+    text-align: center;
+}
+
+#chaos-game-start {
+    color: #77bdee;
+    cursor: pointer;
+}
+
+#chaos-game-start:hover {
+    text-decoration: underline;
+}
+</style>
+
+<div id="chaos-game-container">
+</div>
+
+<div id="chaos-game-options">
+    <!-- <form action="" id="num_bases">
+        <input type="radio" name="num_bases" value="3" checked> Tri
+        <input type="radio" name="num_bases" value="4"> Quad
+        <input type="radio" name="num_bases" value="5"> Penta
+    </form> -->
+    <p><span id="chaos-game-start">Start</span>, i = <span id="chaos-game-i">0</span></p>
+</div>
+
+<script>
+    /* make that d3 svg canvas */
+    var dimension = 300;
+    var chaos_svg = d3.select('#chaos-game-container').append('svg')
+        .attr('width', dimension)
+        .attr('height', dimension);
+
+    /* declare some helper functions */
+    var randomize_pos = function() {
+        return Math.random() * (dimension / 10) - (dimension / 20);
+    }
+
+    var generate_bases = function(ix) {
+        for (var i = 0; i < bases[ix].length; i++) {
+            var cx  = bases[ix][i][0] + randomize_pos();
+            var cy  = bases[ix][i][1] + randomize_pos();
+            var c_i = chaos_svg.append("circle")
+                         .attr("cx", cx)
+                         .attr("cy", cy)
+                         .attr("r",  5)
+                         .attr("fill", base_colors[i]);
+            a_bases.push(c_i);
+        }
+    }
+
+    var pick_rand_base = function(bases) {
+        var scale = d3.scaleQuantize().domain([0, 1]).range(bases);
+        return scale(Math.random());
+    }
+
+    var midpoint = function(p1, p2) {
+        return [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
+    }
+
+    var place_new_point = function() {
+        var b  = pick_rand_base(a_bases);
+        var bi = a_bases.indexOf(b);
+        var mp = midpoint(p_curr, [parseFloat(b.attr("cx")), parseFloat(b.attr("cy"))]);
+        
+        chaos_svg.append("circle")
+            .attr("cx", mp[0])
+            .attr("cy", mp[1])
+            .attr("r", 2)
+            .attr("fill", base_colors[bi]);
+        p_curr = mp;
+    }
+
+
+    /* initialize some vars */
+    var bases = [
+        [[dimension * (1/2), dimension * (1/10)], [dimension * (1/10), dimension * (9/10)], [dimension * (9/10), dimension * (9/10)]], // triangle
+        [[dimension * (2/10), dimension * (2/10)], [dimension * (2/10), dimension * (8/10)], [dimension * (8/10), dimension * (2/10)], [dimension * (8/10), dimension * (8/10)]], // square
+    ];
+    var a_bases = [ ];
+    var base_colors = ["#49E9E7", "#FF4CC8", "#23CE6B", "#872F9C", "#328DDF"]
+
+    /* generate bases */
+    generate_bases(0);
+
+    $('#num_bases').change(function() {
+        // clear current circles
+        chaos_svg.selectAll("circle").remove();
+        a_bases = [ ];
+
+        // regenerate bases
+        generate_bases(parseInt($("input:radio[name='num_bases']:checked").val()) - 3);
+    });
+
+    $('#chaos-game-start').click(function() {
+        // clear all points
+        chaos_svg.selectAll("circle").filter(function(d) { return d3.select(this).attr("r") < 5 }).remove();
+
+        // draw first point
+        var c1 = chaos_svg.append("circle")
+            .attr("cx", (dimension / 2) + randomize_pos() * 1.25)
+            .attr("cy", (dimension / 2) + randomize_pos() * 1.25)
+            .attr("r", 2)
+            .attr("fill", "#808080");
+        p_curr = [parseFloat(c1.attr("cx")), parseFloat(c1.attr("cy"))];
+
+        for (var i = 0; i < 2500; i++) {
+            setTimeout(function() {
+                place_new_point(); 
+                $('#chaos-game-i').html(chaos_svg.selectAll("circle").size() - 4);
+            }, i * 3)
+            
+        }
+    });
+</script>
 
 
   </article>

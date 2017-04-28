@@ -85,6 +85,160 @@
     		
 
 <div class='post'>
+	<h1>The Chaos Game</h1>
+	<p>After watching <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">this recent video from Numberphile</a>, I decided to throw together my own little chaos game visualizer. I included colors for the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.</p>
+
+<p>I’m in the works of implementing it for four, five, etc. bases, but for now, here is a fully functional triangle base game!</p>
+
+<style>
+#chaos-game-container {
+    width: 300px;
+    margin: auto;
+    cursor: pointer;
+}
+
+#chaos-game-options {
+    width: 300px;
+    margin: auto;
+}
+
+#chaos-game-options form {
+    width: 205px;
+    margin: auto;
+    padding-top: 5px;
+}
+
+#chaos-game-options form input {
+    cursor: pointer;
+}
+
+#chaos-game-options form input:nth-of-type(n+2) {
+    margin-left: 20px;
+}
+
+#chaos-game-options p {
+    font-size: 20px;
+    text-align: center;
+}
+
+#chaos-game-start {
+    color: #77bdee;
+    cursor: pointer;
+}
+
+#chaos-game-start:hover {
+    text-decoration: underline;
+}
+</style>
+
+<div id="chaos-game-container">
+</div>
+
+<div id="chaos-game-options">
+    <!-- <form action="" id="num_bases">
+        <input type="radio" name="num_bases" value="3" checked> Tri
+        <input type="radio" name="num_bases" value="4"> Quad
+        <input type="radio" name="num_bases" value="5"> Penta
+    </form> -->
+    <p><span id="chaos-game-start">Start</span>, i = <span id="chaos-game-i">0</span></p>
+</div>
+
+<script>
+    /* make that d3 svg canvas */
+    var dimension = 300;
+    var chaos_svg = d3.select('#chaos-game-container').append('svg')
+        .attr('width', dimension)
+        .attr('height', dimension);
+
+    /* declare some helper functions */
+    var randomize_pos = function() {
+        return Math.random() * (dimension / 10) - (dimension / 20);
+    }
+
+    var generate_bases = function(ix) {
+        for (var i = 0; i < bases[ix].length; i++) {
+            var cx  = bases[ix][i][0] + randomize_pos();
+            var cy  = bases[ix][i][1] + randomize_pos();
+            var c_i = chaos_svg.append("circle")
+                         .attr("cx", cx)
+                         .attr("cy", cy)
+                         .attr("r",  5)
+                         .attr("fill", base_colors[i]);
+            a_bases.push(c_i);
+        }
+    }
+
+    var pick_rand_base = function(bases) {
+        var scale = d3.scaleQuantize().domain([0, 1]).range(bases);
+        return scale(Math.random());
+    }
+
+    var midpoint = function(p1, p2) {
+        return [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
+    }
+
+    var place_new_point = function() {
+        var b  = pick_rand_base(a_bases);
+        var bi = a_bases.indexOf(b);
+        var mp = midpoint(p_curr, [parseFloat(b.attr("cx")), parseFloat(b.attr("cy"))]);
+        
+        chaos_svg.append("circle")
+            .attr("cx", mp[0])
+            .attr("cy", mp[1])
+            .attr("r", 2)
+            .attr("fill", base_colors[bi]);
+        p_curr = mp;
+    }
+
+
+    /* initialize some vars */
+    var bases = [
+        [[dimension * (1/2), dimension * (1/10)], [dimension * (1/10), dimension * (9/10)], [dimension * (9/10), dimension * (9/10)]], // triangle
+        [[dimension * (2/10), dimension * (2/10)], [dimension * (2/10), dimension * (8/10)], [dimension * (8/10), dimension * (2/10)], [dimension * (8/10), dimension * (8/10)]], // square
+    ];
+    var a_bases = [ ];
+    var base_colors = ["#49E9E7", "#FF4CC8", "#23CE6B", "#872F9C", "#328DDF"]
+
+    /* generate bases */
+    generate_bases(0);
+
+    $('#num_bases').change(function() {
+        // clear current circles
+        chaos_svg.selectAll("circle").remove();
+        a_bases = [ ];
+
+        // regenerate bases
+        generate_bases(parseInt($("input:radio[name='num_bases']:checked").val()) - 3);
+    });
+
+    $('#chaos-game-start').click(function() {
+        // clear all points
+        chaos_svg.selectAll("circle").filter(function(d) { return d3.select(this).attr("r") < 5 }).remove();
+
+        // draw first point
+        var c1 = chaos_svg.append("circle")
+            .attr("cx", (dimension / 2) + randomize_pos() * 1.25)
+            .attr("cy", (dimension / 2) + randomize_pos() * 1.25)
+            .attr("r", 2)
+            .attr("fill", "#808080");
+        p_curr = [parseFloat(c1.attr("cx")), parseFloat(c1.attr("cy"))];
+
+        for (var i = 0; i < 2500; i++) {
+            setTimeout(function() {
+                place_new_point(); 
+                $('#chaos-game-i').html(chaos_svg.selectAll("circle").size() - 4);
+            }, i * 3)
+            
+        }
+    });
+</script>
+
+
+</div>
+
+
+
+<div class='post'>
 	<h1>Polar Line Charts in D3</h1>
 	<p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
 
@@ -358,94 +512,6 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
 
 <p>If you’re interested in exploring this world of alcohol, you can find <a href="https://jadeyychan.github.io/DrunkenWorld/">the visualization here</a>. You can also find <a href="https://github.com/jadeyychan/DrunkenWorld">the code here</a>. Huge thanks to my team members, <a href="https://jadeyychan.github.io/">Jade</a> and <a href="https://github.com/rlrlarson">Rebecca</a>!</p>
 
-
-</div>
-
-
-
-<div class='post'>
-	<h1>Mapping My Life at Tufts</h1>
-	<p>Over the last view years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.</p>
-
-<p>It seems like my suspicion was true - I’ve become a little hermit holed up at my home, the CS department (my second home), or at 574 Boston Ave. Maybe I should explore some more…</p>
-
-<!-- css and javascript includes -->
-<link rel="stylesheet" href="/projects/schedule-map/css/style.css" />
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYYbQJxmT3xqIdpkDwtHi8TyyJPtncbE4" type="text/javascript"></script>
-
-<script src="/projects/schedule-map/js/data.js"></script>
-
-<script src="/projects/schedule-map/js/map.js"></script>
-
-<div id="map-wrapper">
-    <div id="map"></div>
-    <div id="legend"><h4></h4></div>
-</div>
-
-<div id="checks">
-    <h4 style="margin-top: 10px;">Choose which data to include:</h4>
-
-    <div id="semester-checks">
-        <div class="check semester on" id="F13">
-            <p>F13</p>
-        </div>
-
-        <div class="check semester" id="S14">
-            <p>S14</p>
-        </div>
-
-        <div class="check semester on" id="F14">
-            <p>F14</p>
-        </div>
-
-        <div class="check semester" id="S15">
-            <p>S15</p>
-        </div>
-
-        <div class="check semester" id="F15">
-            <p>F15</p>
-        </div>
-
-        <div class="check semester on" id="S16">
-            <p>S16</p>
-        </div>
-
-        <div class="check semester" id="F16">
-            <p>F16</p>
-        </div>
-
-        <div class="check semester on" id="S17">
-            <p>S17</p>
-        </div>
-    </div>
-
-    <div id="activity-checks">
-        <div class="check activity" id="Athletics">
-            <p>Athletics</p>
-        </div>
-
-        <div class="check activity" id="Clubs">
-            <p>Clubs</p>
-        </div>
-
-        <div class="check activity on" id="Food">
-            <p>Food</p>
-        </div>
-
-        <div class="check activity on" id="Home">
-            <p>Home</p>
-        </div>
-
-        <div class="check activity on" id="School">
-            <p>School</p>
-        </div>
-
-        <div class="check activity" id="Work">
-            <p>Work</p>
-        </div>
-    </div>
-</div>
 
 </div>
 

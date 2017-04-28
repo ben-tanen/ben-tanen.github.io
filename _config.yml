@@ -8,7 +8,9 @@ twitter_username: ben_tanen
 github_username:  ben-tanen
 
 # Build settings
+gems: [jekyll-paginate]
 markdown: kramdown
 permalink: /:year/:month/:day/:title.html
 paginate_path: "/page/:num"
 paginate: 4
+
