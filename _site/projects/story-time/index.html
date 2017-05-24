@@ -113,48 +113,14 @@
     }
 </style>
 
-<!--
-<script>
-    var monthNames = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-    ];
-
-    $.ajax({
-        type: "GET",
-        url: "/projects/story-time/data/story-time-playlists.csv",
-        dataType: "text",
-        success: function(data) {
-            var lines = data.split(/\r\n|\n/);
-            var today = new Date();
-            for (var i = 1; i < lines.length; i++) {
-                var line = lines[i].split(',');
-                var date = new Date(line[0]);
-                if (date >= today) continue;
-
-                var m    = monthNames[date.getMonth()].slice(0,3);
-                var m_st = date.getDate() + " " + m + " " + date.getFullYear();
-                var uri  = encodeURIComponent(line[1].trim());
-                var spotify_url = "https://embed.spotify.com/?uri=" + uri;
-
-                var playlist_html = '<li><p class="playlist-date">' + m_st + '</p><div class="playlist-container"><img class="playlist-loading" src="/img/loading.gif" /><iframe src="' + spotify_url + '" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true"></iframe></div></li>';
-
-                $('#playlist-list').append(playlist_html);
-            }   
-        }
-    });
-</script>
--->
-
 <h1 style='margin-bottom: 0px;'>Story Time with Papa T</h1>
 <h3 style='margin-top: 0px; margin-bottom: 15px;'><span style="font-weight: normal;">A collection of shows from over the years on </span>91.5 WMFO, Tufts' Freeform Radio</h3>
 
-<!--
-<ul id='playlist-list' style='padding-left: 0; list-style: none; position: relative;'>
-</ul>
--->
+<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-05-22-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+
+<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-05-08-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+
+<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-05-01-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
 
 <iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-04-17-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
 
