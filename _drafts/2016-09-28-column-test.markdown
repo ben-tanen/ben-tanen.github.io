@@ -2,7 +2,7 @@
 layout: post
 title:  'Column Test'
 date:   2016-09-28 16:05:41
-categories: test hidden
+categories: test
 ---
 
 <style>
