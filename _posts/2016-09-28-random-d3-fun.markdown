@@ -12,7 +12,7 @@ I'm currently taking (and loving) a data visualization course, so naturally, I'm
 <script>
     /* make that d3 svg canvas */
     var dimension = 300;
-    var svg = d3.select('#d3-sample-container').append('svg')
+    var random_svg = d3.select('#d3-sample-container').append('svg')
         .attr('width', dimension)
         .attr('height', dimension)
         .style('background-color', 'black');
@@ -60,7 +60,7 @@ I'm currently taking (and loving) a data visualization course, so naturally, I'm
     for (var i = 0; i < 5; i++) {
         for (var j = 0; j < 5; j++) {
             var group_n = get_group(i,j);
-            var c_i = svg.append("circle")
+            var c_i = random_svg.append("circle")
                 .attr("cx", get_rand_pos())
                 .attr("cy", get_rand_pos())
                 .attr("r",  get_radius(group_n))
@@ -73,7 +73,7 @@ I'm currently taking (and loving) a data visualization course, so naturally, I'm
     }
 
     /* toggle alignment */
-    svg.on("click", function() {
+    random_svg.on("click", function() {
         for (var i = 0; i < circles.length; i++) {
             var c    = circles[i];
             var cn   = parseInt(c.attr("group"));

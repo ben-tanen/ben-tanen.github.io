@@ -47,14 +47,14 @@ Since [D3 and Mike Bostock](https://bost.ocks.org/mike/){:target="_blank"} have 
 <div id='d3-polar-container' style='margin: auto;'>
     <svg id="polar-line-chart"></svg>
 </div>
-<script src="http://d3js.org/d3.v4.min.js"></script>
+
 <script>
 /* resize svg height if needed */
 var c_width = $("#d3-polar-container").width();
 $("#d3-polar-container").css("height", c_width);
 
 /* initialize svg and variables */
-var svg = d3.select("#polar-line-chart"),
+var polar_svg = d3.select("#polar-line-chart"),
     margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
     width = c_width - margin.left - margin.right;
     height = c_width - margin.top - margin.bottom;
@@ -64,8 +64,8 @@ var t = d3.scaleTime().range([0, 2 * Math.PI]),
     r = d3.scaleLinear().range([0, (width - margin.center) / 2]);
 
 // cartesian conversion
-var x = function(t, r) { return (margin.left) + (width / 2) + ((r + (margin.center / 2)) * Math.cos(t)); },
-    y = function(t, r) { return (margin.top) + (height / 2) - ((r + (margin.center / 2)) * Math.sin(t)); }
+var x = function(t, r) { return (margin.left) + (width / 2) + ((r + (margin.center / 2)) *  Math.sin(t)); },
+    y = function(t, r) { return (margin.top) + (height / 2) - ((r + (margin.center / 2)) *  Math.cos(t)); }
 
 var line = d3.line()
     .x(function(d) { return x(t(d.month), r(d.value)); })
@@ -75,7 +75,7 @@ var color = d3.scaleLinear()
     .range(["#2a96e8", "#fb6767"]);
 
 /* draw polar background */
-svg.append('circle')
+polar_svg.append('circle')
     .attr("r", width / 2)
     .attr("cx", margin.left + width / 2)
     .attr("cy", margin.top + height / 2)
@@ -83,7 +83,7 @@ svg.append('circle')
     .style("stroke", "#000")
     .style("stroke-width", "0.5px");
 
-svg.append('circle')
+polar_svg.append('circle')
     .attr("r", margin.center / 2)
     .attr("cx", margin.left + width / 2)
     .attr("cy", margin.top + height / 2)
@@ -112,7 +112,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
     var ticks = r.ticks(5).splice(1);
     var axis  = d3.axisBottom(r).tickValues(ticks).tickSize(0).tickFormat(d3.format(".1f"));
 
-    svg.selectAll("g")
+    polar_svg.selectAll("g")
         .data(ticks).enter()
         .append("circle")
         .attr("cx", margin.left + width / 2)
@@ -122,7 +122,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
         .attr("stroke", "#000")
         .attr("stroke-width", "0.25px");
 
-    svg.append("rect")
+    polar_svg.append("rect")
         .attr("x", margin.left + (margin.center + width) / 2 + 5)
         .attr("y", margin.top + height / 2 - 10)
         .attr("width", (width - margin.center) / 2 - 7)
@@ -132,39 +132,39 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
     /* render center year, "play", title, and month text */
     var text_size = (c_width == 450 ? 1 : 0.8);
 
-    svg.append("text")
+    polar_svg.append("text")
         .attr("class", "year-text")
         .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (margin.left + width / 2 - 15) + "," + (margin.top + height / 2 + 5) + ")")
         .text("1850");
 
-    svg.append("text")
+    polar_svg.append("text")
         .style("font-size", text_size + "em")
         .attr("transform", "translate(" + 10 + "," + 15 + ")")
         .text("Global Temperature Change in °C (1850 - 2016)");
 
-    svg.append("text")
+    polar_svg.append("text")
         .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (width + margin.left + 10) + "," + (height / 2 + margin.top - 8) + ") rotate(90)")
-        .text("Jan");
-
-    svg.append("text")
-        .style("font-size", text_size - 0.1 + "em")
-        .attr("transform", "translate(" + (width / 2 + margin.left - 8) + "," + (margin.top - 8) + ")")
         .text("Apr");
 
-    svg.append("text")
+    polar_svg.append("text")
+        .style("font-size", text_size - 0.1 + "em")
+        .attr("transform", "translate(" + (width / 2 + margin.left - 8) + "," + (margin.top - 8) + ")")
+        .text("Jan");
+
+    polar_svg.append("text")
         .style("font-size", text_size - 0.1 + "em")
         .attr("transform", "translate(" + (margin.left - 8) + "," + (height / 2 + margin.top + 8) + ") rotate(270)")
-        .text("Jul");
-
-    svg.append("text")
-        .style("font-size", text_size - 0.1 + "em")
-        .attr("transform", "translate(" + (width / 2 + margin.left + 8) + "," + (height + margin.top + 8) + ") rotate(180)")
         .text("Oct");
 
+    polar_svg.append("text")
+        .style("font-size", text_size - 0.1 + "em")
+        .attr("transform", "translate(" + (width / 2 + margin.left + 8) + "," + (height + margin.top + 8) + ") rotate(180)")
+        .text("Jul");
+
     $(document).ready(function() {
-        svg.append("text")
+        polar_svg.append("text")
             .attr("class", "play-text")
             .style("font-size", text_size + "em")
             .attr("transform", "translate(" + 10 + "," + 35 + ")")
@@ -172,17 +172,17 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
     });
 
     /* animate on click */
-    svg.select(".play-text").on("click", function() {
+    polar_svg.select(".play-text").on("click", function() {
         /* clear paths and axis */
-        svg.selectAll(".line").remove();
-        svg.select("#axis").remove();
-        svg.selectAll(".year-text.added").remove();
-        svg.selectAll(".year-text").text("1850");
-        svg.selectAll(".year-text-cover").remove();
+        polar_svg.selectAll(".line").remove();
+        polar_svg.select("#axis").remove();
+        polar_svg.selectAll(".year-text.added").remove();
+        polar_svg.selectAll(".year-text").text("1850");
+        polar_svg.selectAll(".year-text-cover").remove();
 
         for (var i = 1; i < data.length; i++) {
             /* draw new path */
-            svg.append("path")
+            polar_svg.append("path")
                 .attr("class", "line")
                 .attr("d", line([data[i - 1], data[i]]))
                 .style("stroke", color(data[i - 1].year))
@@ -194,7 +194,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
 
             /* update center text */
             if (data[i - 1].month == 1) {
-                svg.append("rect")
+                polar_svg.append("rect")
                     .attr("class", "year-text-cover")
                     .attr("x", margin.left + width / 2 - margin.center / 2 + 15)
                     .attr("y", margin.left + width / 2 - margin.center / 2 + 25)
@@ -207,7 +207,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
                     .delay(1000 + 5 * i)
                     .style("opacity", 1);
 
-                svg.append("text")
+                polar_svg.append("text")
                     .classed("year-text", true)
                     .classed("added", true)
                     .attr("transform", "translate(" + (margin.left + width / 2 - 15) + "," + (margin.top + height / 2 + 5) + ")")
@@ -222,7 +222,7 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
         }
 
         /* re-render axis */
-        svg.append("g")
+        polar_svg.append("g")
             .attr("id", "axis")
             .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
             .style("font-size", (c_width == 450 ? 0.6 : 0.5) + "em")
@@ -230,12 +230,13 @@ d3.csv("/data/d3-radial-temp.csv", function(d) {
     });
 
     /* render radial ticks */
-    svg.append("g")
+    polar_svg.append("g")
         .attr("id", "axis")
         .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
         .style("font-size", (c_width == 450 ? 0.6 : 0.5) + "em")
         .call(axis);
 });
+
 </script>
 
 Now that I have the chart ready to go, I'll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I'll post it here.

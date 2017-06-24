@@ -30,7 +30,7 @@
     <div class='wrapper'>
     	<div class='side'>
     <a href="/">
-        <img id='face' src='/img/face2.jpg' alt='A picture of my head' />
+        <img id='face' src='/img/me/face-a.jpg' alt='A picture of my head' />
     </a>
     
     <h1 id='title'>
@@ -83,6 +83,35 @@
 
     	<div class='main'>
     		
+
+<div class='post'>
+	<h1>Grub: The Command-line GrubHub</h1>
+	<p>GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.</p>
+
+<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant
+</span><span class="n">grub</span> <span class="n">search</span> <span class="s">"burrito"</span>
+<span class="n">grub</span> <span class="n">search</span> <span class="s">"Bob's Burgers"</span>
+
+<span class="c1">// add chicken burrito with cheese &amp; sour cream
+</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
+
+<span class="c1">// add burger without pickles
+</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
+
+<span class="c1">// go to checkout and add payment information 
+</span><span class="n">grub</span> <span class="n">checkout</span>
+
+<span class="c1">// place order
+</span><span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></figure>
+
+<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future. </p>
+
+
+</div>
+
+
 
 <div class='post'>
 	<h1>Random Project: Base64 Decoder</h1>
