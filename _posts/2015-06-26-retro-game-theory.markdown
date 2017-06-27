@@ -21,13 +21,13 @@ After watching the clip, my classmates and I felt the need to design our own ver
 
 One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.
 
-{% include figure.html src="/img/posts/gametheorygames_slaps.png" caption="Playful violence is always fun" %}
+{% include figure.html src="/assets/img/posts/gametheorygames_slaps.png" alt="A payoff matrix for the slapping game" caption="Playful violence is always fun" %}
 
 This game/version relies on the idea that both players want to slap the other person, so I guess this would preferably be played with an enemy (or a close friend).
 
 Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.
 
-{% include figure.html src="/img/posts/gametheorygames_drinks.png" caption="Who doesn't love economic-based drinking games?" %}
+{% include figure.html src="/assets/img/posts/gametheorygames_drinks.png" alt="A payoff matrix for the drinking game" caption="Who doesn't love economic-based drinking games?" %}
 
 Eventually, I’d assume both parties would be drunk enough to lose track of the dilemma and implications of their choices, but I imagine that this game would serve as an interesting way to get drunk for economists.
 

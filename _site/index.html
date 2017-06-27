@@ -4,43 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
 
     <!-- jquery and js files -->
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/lib/d3.v4.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <title>Ben Tanen</title>
 </head>
 
 
 <body>
-
     <!-- adding support for mathjx -->
     <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <div class='wrapper'>
     	<div class='side'>
     
-        <img id='face' src='/img/me/face-a.jpg' alt='A picture of my head' />
+        <img id='face' src='/assets/img/me/face-a.jpg' alt='A picture of my head' />
     
     
     <h1 id='title'>
-    <a href='/' id='title-link'>Howdy</a>
+        
+            Howdy
+        
     </h1>
 
     <div class='links'>
         <p id='about'><a href='/about/'>About</a></p>
         <p id='about'><a href='/projects/'>Projects</a></p>
-        <p id='about'><a href='/img/btanen_resume.pdf'>Resume</a></p>
+        <p id='about'><a href='/assets/BenjaminTanen_Resume.pdf'>Resume</a></p>
         <p id='about'><a href='/index/'>Index</a></p>
     </div>
     <div class='social'>
@@ -53,7 +54,7 @@
                 </a>
             </li>
 
-            <!--
+            
             <li id='twitter'>
                 <a href='https://twitter.com/ben_tanen'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -61,8 +62,8 @@
                     </svg>
                 </a>
             </li>
-            -->
-
+            
+            <!--
             <li id='spotify'>
                 <a href='https://play.spotify.com/user/129874447'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -70,6 +71,7 @@
                     </svg>
                 </a>
             </li>
+            -->
 
             <li id='linkedin'>
                 <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'>
@@ -86,30 +88,30 @@
 
 <div class='post'>
 	<h1>Random Brain Fun with Illustrator</h1>
-	<p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because on my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">Wired</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
+	<p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because on my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">WIRED</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
 
 <p>In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we’ve all got to start somewhere. Expect more to come…</p>
 
 <style>
-#brain_viz_container {
-    width: 325px;
-    margin: auto;
-}
+    #brain_viz_container {
+        width: 325px;
+        margin: auto;
+    }
 
-#brain_viz {
-    width: 325px;
-    height: 325px;
-}
+    #brain_viz {
+        width: 100%;
+        height: auto;
+    }
 
-#brain_viz line {
-    fill: none;
-    stroke: #77bdee;
-    stroke-width: 3;
-}
+    #brain_viz line {
+        fill: none;
+        stroke: #77bdee;
+        stroke-width: 3;
+    }
 
-#brain_viz circle:not(#background_circle) {
-    fill: #77bdee;
-}
+    #brain_viz circle:not(#background_circle) {
+        fill: #77bdee;
+    }
 </style>
 
 <div id="brain_viz_container">
@@ -369,9 +371,9 @@
 	<h1>Explaining Adaptive Huffman Coding with Scrollytelling</h1>
 	<p>After months of reading and being impressed by the <a href="https://pudding.cool/2017/04/beer/" target="_blank">very</a> <a href="https://pudding.cool/2017/01/making-it-big/" target="_blank">cool</a> <a href="https://pudding.cool/2017/02/vocabulary/" target="_blank">visual</a> <a href="https://pudding.cool/2017/05/song-repetition/" target="_blank">essays</a> put out by <a href="https://pudding.cool/" target="_blank">The Pudding</a>, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">traditional Huffman Coding</a> to <a href="https://en.wikipedia.org/wiki/Adaptive_Huffman_coding" target="_blank">adaptive Huffman Coding</a>.</p>
 
-<p>
-    <a class="img_link" href="/img/posts/huffman-coding.gif" target="_blank">
-    <img src="/img/posts/huffman-coding.gif" />
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/huffman-coding.gif" target="_blank">
+    <img src="/assets/img/posts/huffman-coding.gif" alt="A screen capture of the scrollytelling visualization" />
     </a>
 </p>
 
@@ -386,44 +388,44 @@
 <div class='post'>
 	<h1>The Chaos Game</h1>
 	<style>
-#chaos-game-container {
-    width: 300px;
-    margin: auto;
-    cursor: pointer;
-}
+    #chaos-game-container {
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+    }
 
-#chaos-game-options {
-    width: 300px;
-    margin: auto;
-}
+    #chaos-game-options {
+        width: 300px;
+        margin: auto;
+    }
 
-#chaos-game-options form {
-    width: 205px;
-    margin: auto;
-    padding-top: 5px;
-}
+    #chaos-game-options form {
+        width: 205px;
+        margin: auto;
+        padding-top: 5px;
+    }
 
-#chaos-game-options form input {
-    cursor: pointer;
-}
+    #chaos-game-options form input {
+        cursor: pointer;
+    }
 
-#chaos-game-options form input:nth-of-type(n+2) {
-    margin-left: 20px;
-}
+    #chaos-game-options form input:nth-of-type(n+2) {
+        margin-left: 20px;
+    }
 
-#chaos-game-options p {
-    font-size: 20px;
-    text-align: center;
-}
+    #chaos-game-options p {
+        font-size: 20px;
+        text-align: center;
+    }
 
-#chaos-game-start {
-    color: #77bdee;
-    cursor: pointer;
-}
+    #chaos-game-start {
+        color: #77bdee;
+        cursor: pointer;
+    }
 
-#chaos-game-start:hover {
-    text-decoration: underline;
-}
+    #chaos-game-start:hover {
+        text-decoration: underline;
+    }
 </style>
 
 <p>After watching <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">this recent video from Numberphile</a>, I decided to throw together my own little visualizer of <a href="https://en.wikipedia.org/wiki/Chaos_game">the chaos game</a>.</p>
@@ -434,11 +436,13 @@
 </div>
 
 <div id="chaos-game-options">
-    <!-- <form action="" id="num_bases">
+    <!--
+    <form action="" id="num_bases">
         <input type="radio" name="num_bases" value="3" checked> Tri
         <input type="radio" name="num_bases" value="4"> Quad
         <input type="radio" name="num_bases" value="5"> Penta
-    </form> -->
+    </form>
+    -->
     <p><span id="chaos-game-start">Start</span>, i = <span id="chaos-game-i">0</span></p>
 </div>
 
@@ -630,7 +634,7 @@ polar_svg.append('circle')
     .style("stroke-width", "0.5px");
 
 /* pull data */
-d3.csv("/data/d3-radial-temp.csv", function(d) {
+d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
     d.year  = +d.year;
     d.month = +d.month;
     d.value = +d.v2;

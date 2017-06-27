@@ -92,7 +92,7 @@ polar_svg.append('circle')
     .style("stroke-width", "0.5px");
 
 /* pull data */
-d3.csv("/data/d3-radial-temp.csv", function(d) {
+d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
     d.year  = +d.year;
     d.month = +d.month;
     d.value = +d.v2;

@@ -4,43 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
 
     <!-- jquery and js files -->
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/lib/d3.v4.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <title>Introducing 2016-17 NHL Projections | Ben Tanen</title>
 </head>
 
 
 <body>
-
     <!-- adding support for mathjx -->
     <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <div class='wrapper'>
     	<div class='side'>
     <a href="/">
-        <img id='face' src='/img/me/face-a.jpg' alt='A picture of my head' />
+        <img id='face' src='/assets/img/me/face-a.jpg' alt='A picture of my head' />
     </a>
     
     <h1 id='title'>
-    <a href='/' id='title-link'>Howdy</a>
+        <a href='/' id='title-link'>
+            Howdy
+        </a>
     </h1>
 
     <div class='links'>
         <p id='about'><a href='/about/'>About</a></p>
         <p id='about'><a href='/projects/'>Projects</a></p>
-        <p id='about'><a href='/img/btanen_resume.pdf'>Resume</a></p>
+        <p id='about'><a href='/assets/BenjaminTanen_Resume.pdf'>Resume</a></p>
         <p id='about'><a href='/index/'>Index</a></p>
     </div>
     <div class='social'>
@@ -53,7 +54,7 @@
                 </a>
             </li>
 
-            <!--
+            
             <li id='twitter'>
                 <a href='https://twitter.com/ben_tanen'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -61,8 +62,8 @@
                     </svg>
                 </a>
             </li>
-            -->
-
+            
+            <!--
             <li id='spotify'>
                 <a href='https://play.spotify.com/user/129874447'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -70,6 +71,7 @@
                     </svg>
                 </a>
             </li>
+            -->
 
             <li id='linkedin'>
                 <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'>
@@ -94,9 +96,9 @@
 
 <p>Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).</p>
 
-<p>
-    <a class="img_link" href="/img/posts/nhl_proj_10_11_16.png" target="_blank">
-    <img src="/img/posts/nhl_proj_10_11_16.png" width="650px" />
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/nhl_proj_10_11_16.png" target="_blank">
+    <img src="/assets/img/posts/nhl_proj_10_11_16.png" alt="The initial projections for VAN, NYR, and WSH" width="650px" />
     </a>
 </p>
 

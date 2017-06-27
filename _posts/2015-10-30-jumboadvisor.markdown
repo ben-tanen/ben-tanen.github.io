@@ -11,7 +11,7 @@ Tufts (and the lovely people over at PeopleSoft) attempted to offer a tool calle
 
 This is where [JumboAdvisor](http://ben-tanen.github.io/JumboAdvisor/) comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart's content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.
 
-{% include figure.html src="/img/posts/jumboadvisor.png" width="600px" %}
+{% include figure.html src="/assets/img/posts/jumboadvisor.png" alt="A screenshot of JumboAdvisor" width="600px" %}
 
 This was a joint effort including work from [Alex Golin](https://github.com/agolin95), [Nolan Martin](https://github.com/menlonoma), [Samantha Welch](https://github.com/swelch01), [Michael Seltzer](https://github.com/mseltzer94), and [Jackson Clawson](https://github.com/jclaw). The site is built with pretty simple HTML, CSS, and JS with no real tricks involved. The original intention was to use something like Angular.js to build drag and droppable sections but hackathons...
 

@@ -9,7 +9,7 @@ After posting my two most recent retro posts ([#1](/2015/06/17/retro-ios-update.
 
 The first coding project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I'm not sure how or why... Either way, here is the [code on Github](https://github.com/ben-tanen/PythonGames/blob/master/battleship.py).
 
-{% include figure.html src="/img/posts/python_game_minesweeper.png" caption="Good Ol' Unix Terminal Games" %}
+{% include figure.html src="/assets/img/posts/python_game_minesweeper.png" alt="A screenshot of the Minesweeper game" caption="Good Ol' Unix Terminal Games" %}
 
 This next project was my first original game, Minesweeper! It was built very much like Battleship but the logic was a little more complicated. As you can see, it's not expertly written since this was after like a month of knowing Python. I might consider re-writting / refactoring the code not that I'm a tad more experienced. Here is the [original code on GH](https://github.com/ben-tanen/PythonGames/blob/master/minesweeper.py).
 

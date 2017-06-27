@@ -30,19 +30,19 @@ Since I was lucky enough to get a photo pass to their show, I thought I'd also s
 
 <div class='photo_container'>
     <div class='sub_photo_container'>
-        <img src='/img/photography/SPABB4.jpg' />
+        <img src='/assets/img/photography/SPABB4.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/img/photography/SPABB2.jpg' />
+        <img src='/assets/img/photography/SPABB2.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/img/photography/SPABB3.jpg' />
-        <img src='/img/photography/SPABB5.jpg' />
+        <img src='/assets/img/photography/SPABB3.jpg' />
+        <img src='/assets/img/photography/SPABB5.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/img/photography/SPABB1.jpg' />
+        <img src='/assets/img/photography/SPABB1.jpg' />
     </div>
 </div>

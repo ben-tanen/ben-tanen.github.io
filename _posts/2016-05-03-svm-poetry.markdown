@@ -17,7 +17,7 @@ It's pretty obvious to anyone who speaks English or German which language these 
 
 Using this information as the main "features" of our data, we can compute and define a hyperplane (or in this case, a line) to find if there is a meaningful division between English and German given the "features" we are analyzing (for more on the math behind this, see [here](http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html)). If we compute and plot this for ten different excerpts, we get the following:
 
-{% include figure.html src="/img/posts/svm_poems.png" width="500px" %}
+{% include figure.html src="/assets/img/posts/svm_poems.png" alt="A graph showing our poems and our SVM" width="450px" %}
 
 We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another *new* excerpt: 
 

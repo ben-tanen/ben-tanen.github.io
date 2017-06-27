@@ -10,7 +10,7 @@ A genre of music I don’t find myself particularly well-versed in is hip-hop an
 
 In his post, [The Largest Vocabulary in Hip Hop](http://experiments.undercurrent.com/), Daniels analyzed the discography of 85 rappers (he added another 19 in his [updated version](http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/) of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.
 
-![Screenshot from the Post](/img/posts/rap_vocab.png)
+{% include figure.html src="/assets/img/posts/rap_vocab.png" alt="A screenshot from the article" %}
 
 Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.
 

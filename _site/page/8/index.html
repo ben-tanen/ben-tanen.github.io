@@ -4,43 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
 
     <!-- jquery and js files -->
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/lib/d3.v4.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <title>Ben Tanen</title>
 </head>
 
 
 <body>
-
     <!-- adding support for mathjx -->
     <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <div class='wrapper'>
     	<div class='side'>
     <a href="/">
-        <img id='face' src='/img/me/face-a.jpg' alt='A picture of my head' />
+        <img id='face' src='/assets/img/me/face-a.jpg' alt='A picture of my head' />
     </a>
     
     <h1 id='title'>
-    <a href='/' id='title-link'>Howdy</a>
+        <a href='/' id='title-link'>
+            Howdy
+        </a>
     </h1>
 
     <div class='links'>
         <p id='about'><a href='/about/'>About</a></p>
         <p id='about'><a href='/projects/'>Projects</a></p>
-        <p id='about'><a href='/img/btanen_resume.pdf'>Resume</a></p>
+        <p id='about'><a href='/assets/BenjaminTanen_Resume.pdf'>Resume</a></p>
         <p id='about'><a href='/index/'>Index</a></p>
     </div>
     <div class='social'>
@@ -53,7 +54,7 @@
                 </a>
             </li>
 
-            <!--
+            
             <li id='twitter'>
                 <a href='https://twitter.com/ben_tanen'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -61,8 +62,8 @@
                     </svg>
                 </a>
             </li>
-            -->
-
+            
+            <!--
             <li id='spotify'>
                 <a href='https://play.spotify.com/user/129874447'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -70,6 +71,7 @@
                     </svg>
                 </a>
             </li>
+            -->
 
             <li id='linkedin'>
                 <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'>
@@ -137,9 +139,9 @@
 	<h1>Up-to-Date Infographics</h1>
 	<p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
 
-<p>
-    <a class="img_link" href="/img/posts/infographics_kerem.png" target="_blank">
-    <img src="/img/posts/infographics_kerem.png" alt="Examples of Kerem's use of infographics" />
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/infographics_kerem.png" target="_blank">
+    <img src="/assets/img/posts/infographics_kerem.png" alt="Examples of Kerem's use of infographics" />
     </a>
 </p>
 
@@ -151,11 +153,15 @@ Examples of Kerem's use of infographics
 
 <p>Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of <a href="http://www.IFTTT.com">IFTTT</a>, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.</p>
 
-<p>
-    <a class="img_link" href="/img/posts/infographics_ex.png" target="_blank">
-    <img src="/img/posts/infographics_ex.png" />
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/infographics_ex.png" target="_blank">
+    <img src="/assets/img/posts/infographics_ex.png" alt="My own example infographics" />
     </a>
 </p>
+
+<figcaption>
+My own example infographics
+</figcaption>
 
 <p>The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.</p>
 
@@ -174,7 +180,11 @@ Examples of Kerem's use of infographics
 
 <p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
 
-<p><img src="/img/posts/rap_vocab.png" alt="Screenshot from the Post" /></p>
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/rap_vocab.png" target="_blank">
+    <img src="/assets/img/posts/rap_vocab.png" alt="A screenshot from the article" />
+    </a>
+</p>
 
 <p>Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.</p>
 

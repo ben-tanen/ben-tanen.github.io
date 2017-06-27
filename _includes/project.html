@@ -1,18 +1,20 @@
 <div class='project-box'>
     <div class='project-img-box'>
-        <img class='project-img' src='http://ben-tanen.github.io/img/posts/portfolio_bullet.png' />
+        <img class='project-img' src='{{ include.img }}' />
     </div>
     <div class='project-content-box'>
-        <h1>{{ include.title }}</h1>
+        <h1><a href='{{ include.link1 }}'>{{ include.title }}</a></h1>
         <p>{{ include.description }}</p>
-        {% if include.title and include.github %}
-        <p>yoooo</p>
-        {% endif %}
         <p class='project-links'>View: 
-            {% if include.github %}
-            <a href='#'>j {% include.github %}</a>
+            <a href='{{ include.link1 }}'>{{ include.name1 }}</a>
+            {% if include.link2 %}
+            &middot;
+            <a href='{{ include.link2 }}'>{{ include.name2 }}</a>
             {% endif %}
-            |
-            <a href='https://github.com/ben-tanen/RodRego'>GitHub</a></p>
+            {% if include.link3 %}
+            &middot;
+            <a href='{{ include.link3 }}'>{{ include.name3 }}</a>
+            {% endif %}
+        </p>
     </div>
 </div>

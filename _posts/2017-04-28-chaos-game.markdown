@@ -6,44 +6,44 @@ categories: project data visualization math
 ---
 
 <style>
-#chaos-game-container {
-    width: 300px;
-    margin: auto;
-    cursor: pointer;
-}
+    #chaos-game-container {
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+    }
 
-#chaos-game-options {
-    width: 300px;
-    margin: auto;
-}
+    #chaos-game-options {
+        width: 300px;
+        margin: auto;
+    }
 
-#chaos-game-options form {
-    width: 205px;
-    margin: auto;
-    padding-top: 5px;
-}
+    #chaos-game-options form {
+        width: 205px;
+        margin: auto;
+        padding-top: 5px;
+    }
 
-#chaos-game-options form input {
-    cursor: pointer;
-}
+    #chaos-game-options form input {
+        cursor: pointer;
+    }
 
-#chaos-game-options form input:nth-of-type(n+2) {
-    margin-left: 20px;
-}
+    #chaos-game-options form input:nth-of-type(n+2) {
+        margin-left: 20px;
+    }
 
-#chaos-game-options p {
-    font-size: 20px;
-    text-align: center;
-}
+    #chaos-game-options p {
+        font-size: 20px;
+        text-align: center;
+    }
 
-#chaos-game-start {
-    color: #77bdee;
-    cursor: pointer;
-}
+    #chaos-game-start {
+        color: #77bdee;
+        cursor: pointer;
+    }
 
-#chaos-game-start:hover {
-    text-decoration: underline;
-}
+    #chaos-game-start:hover {
+        text-decoration: underline;
+    }
 </style>
 
 After watching [this recent video from Numberphile](https://www.youtube.com/watch?v=kbKtFN71Lfs), I decided to throw together my own little visualizer of [the chaos game](https://en.wikipedia.org/wiki/Chaos_game).
@@ -54,11 +54,13 @@ To briefly explain the game, we basically start by randomly placing some "bases"
 </div>
 
 <div id='chaos-game-options'>
-    <!-- <form action="" id="num_bases">
+    <!--
+    <form action="" id="num_bases">
         <input type="radio" name="num_bases" value="3" checked> Tri
         <input type="radio" name="num_bases" value="4"> Quad
         <input type="radio" name="num_bases" value="5"> Penta
-    </form> -->
+    </form>
+    -->
     <p><span id='chaos-game-start'>Start</span>, i = <span id='chaos-game-i'>0</span></p>
 </div>
 

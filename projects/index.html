@@ -3,211 +3,140 @@ layout: page
 title: Projects
 ---
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/data-projects3.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='/projects/data'>Analysis & Visualization</a></h1>
-        <p>Various smaller data analysis and visualization projects</p>
-        <p class='project-links'>View: 
-            <a href='/projects/data'>Site</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Analysis & Visualization" 
+    description = "Various smaller data analysis and visualization projects" 
+    img         = "/assets/img/projects/data-projects3.gif" 
+    name1       = "Site" 
+    link1       = "/projects/data"
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/asllex.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='http://asl-lex.org/'>ASL-LEX</a></h1>
-        <p>American Sign Language data visualization and teaching tool</p>
-        <p class='project-links'>View: 
-            <a href='http://asl-lex.org/'>Site</a>
-            &middot;
-            <a href='https://github.com/ben-tanen/ASL-LEX'>Source</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "ASL-LEX" 
+    description = "American Sign Language data visualization and teaching tool"
+    img         = "/assets/img/projects/asllex.png"
+    name1       = "Site"
+    link1       = "http://asl-lex.org/" 
+    name2       = "Source"
+    link2       = "https://github.com/ben-tanen/ASL-LEX"
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/huffman.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://ben-tanen.github.io/AdaptiveHuffmanCoding'>Adaptive Huffman Coding</a></h1>
-        <p>A scrollytelling walkthrough of the FGK Adaptive Huffman Coding algorithm</p>
-        <p class='project-links'>View: 
-            <a href='https://ben-tanen.github.io/AdaptiveHuffmanCoding'>Site</a>
-            &middot;
-            <a href='https://github.com/ben-tanen/AdaptiveHuffmanCoding'>Source</a>
-            <!-- &middot;
-            <a href='/2017/01/02/ultimate-convex-hull.html'>Blog</a> -->
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Adaptive Huffman Coding" 
+    description = "A scrollytelling walkthrough of the FGK Adaptive Huffman Coding algorithm"
+    img         = "/assets/img/projects/huffman.gif"
+    name1       = "Site"
+    link1       = "https://ben-tanen.github.io/AdaptiveHuffmanCoding" 
+    name2       = "Source"
+    link2       = "https://github.com/ben-tanen/AdaptiveHuffmanCoding"
+    name3       = "Blog"
+    link3       = "/2017/06/01/huffman-coding.html"
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/drunken-world.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://jadeyychan.github.io/DrunkenWorld/'>Our Drunken World</a></h1>
-        <p>A visualization of alcohol consumption around the world and through time</p>
-        <p class='project-links'>View: 
-            <a href='https://jadeyychan.github.io/DrunkenWorld/'>Site</a>
-            &middot;
-            <a href='https://github.com/jadeyychan/DrunkenWorld'>Source</a>
-            &middot;
-            <a href='/2016/12/21/drunken-world.html'>Blog</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Our Drunken World" 
+    description = "A visualization of alcohol consumption around the world and through time"
+    img         = "/assets/img/projects/drunken-world.png"
+    name1       = "Site"
+    link1       = "https://jadeyychan.github.io/DrunkenWorld/" 
+    name2       = "Source"
+    link2       = "https://github.com/jadeyychan/DrunkenWorld"
+    name3       = "Blog"
+    link3       = "/2016/12/21/drunken-world.html"
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/ultimate-ch.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://ben-tanen.github.io/UltimateConvexHull'>Ultimate Convex Hull</a></h1>
-        <p>A visual tool to teach the Kirkpatrick-Seidel ultimate convex hull algorithm</p>
-        <p class='project-links'>View: 
-            <a href='https://ben-tanen.github.io/UltimateConvexHull'>Site</a>
-            &middot;
-            <a href='https://github.com/ben-tanen/UltimateConvexHull'>Source</a>
-            &middot;
-            <a href='/2017/01/02/ultimate-convex-hull.html'>Blog</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Ultimate Convex Hull" 
+    description = "A visual tool to teach the Kirkpatrick-Seidel ultimate convex hull algorithm"
+    img         = "/assets/img/projects/ultimate-ch.gif"
+    name1       = "Site"
+    link1       = "https://ben-tanen.github.io/UltimateConvexHull" 
+    name2       = "Source"
+    link2       = "https://github.com/ben-tanen/UltimateConvexHull"
+    name3       = "Blog"
+    link3       = "/2017/01/02/ultimate-convex-hull.html"
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/nhl-projections.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='/projects/nhl-projections'>NHL Projections</a></h1>
-        <p>Projections, predictions, and analysis derived from NHL season simulations</p>
-        <p class='project-links'>View: 
-            <a href='/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf'>Paper</a>
-            <!-- &middot;
-            <a href='/projects/nhl-projections'>Site</a> -->
-        </p>
-    </div>
-</div>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/rodrego.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://ben-tanen.github.io/RodRego'>RodRego</a></h1>
-        <p>Web app version of a simple register machine simulator</p>
-        <p class='project-links'>View: 
-            <a href='https://ben-tanen.github.io/RodRego'>Site</a>
-            &middot;
-            <a href='https://github.com/ben-tanen/RodRego'>Source</a>
-            &middot;
-            <a href='/2015/03/31/rodrego.html'>Blog</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Road to the NHL Playoffs" 
+    description = "A probabilistic model to simulate the 2015 - 2016 NHL season"
+    img         = "/assets/img/projects/nhl-projections.png"
+    name1       = "Paper"
+    link1       = "/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" 
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/story-time.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='/projects/story-time/'>Story Time with Papa T</a></h1>
-        <p>Spinning a weekly show on WMFO, Tufts' Freeform Radio</p>
-        <p class='project-links'>View: 
-            <a href='/projects/story-time/'>Site</a>
-        </p>
-    </div>
-</div>
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/spotify-js.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/Spotify.js'>Spotify.js</a></h1>
-        <p>Simple client-side JS wrapper for Spotify Web API</p>
-        <p class='project-links'>View:
-            <a href='https://github.com/ben-tanen/Spotify.js'>Source</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "RodRego" 
+    description = "Web app version of a simple register machine simulator"
+    img         = "/assets/img/projects/rodrego.png"
+    name1       = "Site"
+    link1       = "https://ben-tanen.github.io/RodRego" 
+    name2       = "Source"
+    link2       = "https://github.com/ben-tanen/RodRego"
+    name3       = "Blog"
+    link3       = "/2015/03/31/rodrego.html"
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/jumboadvisor.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/JumboAdvisor'>JumboAdvisor</a></h1>
-        <p>Course advisement application for Tufts SIS (from Polyhack 2015)</p>
-        <p class='project-links'>View: 
-            <a href='https://ben-tanen.github.io/JumboAdvisor'>Site</a>
-            &middot;
-            <a href='https://github.com/ben-tanen/JumboAdvisor'>Source</a>
-            &middot;
-            <a href='/2015/10/30/jumboadvisor.html'>Blog</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Story Time with Papa T" 
+    description = "Spinning a weekly show on WMFO, Tufts' Freeform Radio"
+    img         = "/assets/img/projects/story-time.png"
+    name1       = "Site"
+    link1       = "/projects/music/story-time/" 
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/drumtab.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/DrumTabVisualizer'>Drum Tab Visualizer</a></h1>
-        <p>A "Rock Band"-style visualization for drum tab made in C++ / Python</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/DrumTabVisualizer'>Source</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Spotify.js" 
+    description = "Simple client-side JS wrapper for Spotify Web API"
+    img         = "/assets/img/projects/spotify-js.png"
+    name1       = "Source"
+    link1       = "https://github.com/ben-tanen/Spotify.js" 
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/songsearch.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/SongSearch'>Song Search</a></h1>
-        <p>Large-scale lyrical search database in C++ (from COMP-15)</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/SongSearch'>Source</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "JumboAdvisor" 
+    description = "Course advisement application for Tufts SIS (from Polyhack 2015)"
+    img         = "/assets/img/projects/jumboadvisor.png"
+    name1       = "Site"
+    link1       = "https://ben-tanen.github.io/JumboAdvisor" 
+    name2       = "Source"
+    link2       = "https://github.com/ben-tanen/JumboAdvisor"
+    name3       = "Blog"
+    link3       = "/2015/10/30/jumboadvisor.html"
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/pygames.png' />
-    </div>
-    <div class='project-content-box'>
-        <h1><a href='https://github.com/ben-tanen/PythonGames'>PyGames</a></h1>
-        <p>ASCII versions of Minesweeper, Blackjack, and Battleship in Python</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/PythonGames'>Source</a>
-            &middot;
-            <a href='/2015/07/01/retro-python-games.html'>Blog</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Drum Tab Visualizer" 
+    description = "A 'Rock Band'-style visualization for drum tab made in C++ / Python"
+    img         = "/assets/img/projects/drumtab.gif"
+    name1       = "Source"
+    link1       = "https://github.com/ben-tanen/DrumTabVisualizer" 
+%}
 
-<div class='project-box'>
-    <div class='project-img-box'>
-        <img class='project-img' src='/img/projects/simfishy.gif' />
-    </div>
-    <div class='project-content-box'>
-        <h1>SimFishy</a></h1>
-        <p>Simple ASCII sprite simulator built in C++ (from COMP-11)</p>
-        <p class='project-links'>View: 
-            <a href='https://github.com/ben-tanen/SimFishy'>Source</a>
-        </p>
-    </div>
-</div>
+{% include project.html 
+    title       = "Song Search" 
+    description = "Large-scale lyrical search database in C++ (from COMP-15)"
+    img         = "/assets/img/projects/songsearch.png"
+    name1       = "Source"
+    link1       = "https://github.com/ben-tanen/SongSearch" 
+%}
 
+{% include project.html 
+    title       = "pyGames" 
+    description = "ASCII versions of Minesweeper, Blackjack, and Battleship in Python"
+    img         = "/assets/img/projects/pygames.png"
+    name1       = "Source"
+    link1       = "https://github.com/ben-tanen/PythonGames"
+    name2       = "Blog"
+    link2       = "/2015/07/01/retro-python-games.html"
+%}
+
+{% include project.html 
+    title       = "SimFishy" 
+    description = "Simple ASCII sprite simulator built in C++ (from COMP-11)"
+    img         = "/assets/img/projects/simfishy.gif"
+    name1       = "Source"
+    link1       = "https://github.com/ben-tanen/SimFishy"
+%}

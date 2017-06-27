@@ -1,0 +1,25 @@
+---
+layout: index
+title: Vinyl
+---
+
+<h2>Vinyl</h2>
+
+<script>
+$.ajax({
+    type: "GET",
+    url: "/projects/music/vinyl/data/records.csv",
+    dataType: "text",
+    success: function(d) {
+        var lines = d.split(/\r\n|\n/);
+        for (var i = 1; i < lines.length; i++) {
+            var line   = lines[i].split(',')
+                album  = line[0],
+                artist = line[1],
+                cover  = line[2];
+
+            console.log(album, artist, cover);
+        }
+    }
+});
+</script>

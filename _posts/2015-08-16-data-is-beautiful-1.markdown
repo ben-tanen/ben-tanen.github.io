@@ -11,19 +11,19 @@ Pretty much all of the posts are cool but there are a few that are definitely a 
 
 ### [NBA Shot Charts](http://savvastjortjoglou.com/nba-shot-sharts.html)
 
-{% include figure.html src="/img/posts/dib_basketball.png" width="600px" %}
+{% include figure.html src="/assets/img/posts/dib_basketball.png" alt="A heat map of James Harden's shots" width="600px" link="http://savvastjortjoglou.com/nba-shot-sharts.html" %}
 
 I'm not a huge NBA fan but I do know there is a crazy amount of data available about the game - maybe second only to [baseball](http://fivethirtyeight.com/features/rich-data-poor-data/). I guess Savvas Tjortjoglou decided to map that data to show a very comprehensive shot chart. The post is well-done, especially the way that he actually goes about mapping the data onto the court as singular points and heat maps.
 
 ### [Mapping the UK via Pubs](http://ramiro.org/notebook/mapping-pubs/)
 
-{% include figure.html src="/img/posts/dib_pubs.png" width="600px" %}
+{% include figure.html src="/assets/img/posts/dib_pubs.png" alt="A map of all of the pubs in the U.K." width="600px" link="http://ramiro.org/notebook/mapping-pubs/" %}
 
 This is just one of those things that will make you LQTY (laugh quietly to yourself, the truer form of LOL). Of course the United Kingdom can be be well mapped through all of its pubs. While not as dense as London, Ireland does a good job of dispersing its drinking establishments. Scotland is just lacking though - come on Scotland! The actual data work being done here is pretty simple but it's cool nonetheless.
 
 ### [Swearing Across America](http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8)
 
-{% include figure.html src="http://img.huffingtonpost.com//asset/scalefit_630_noupscale/55a9001d1900002500b86ee1.png" width="500px" %}
+{% include figure.html src="/assets/img/posts/dib_swearingmap.png" alt="A map of who uses 'gosh' throughout the U.S." width="500px" link="http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8" %}
 
 I particularly enjoy this one and everything it has to say about the different regions of the US. Coming from the Northeast, I have to generally agree with the maps - I don't remember the last time I heard someone say "Gosh" seriously. I was also quite amused by the tiny spike in the use of "Bitch" in Fairfield County Connecticut. Fairfield reppin'!
 
@@ -31,7 +31,7 @@ Rather than using API access like the others, this post also had a pretty intere
 
 ### [Randomly Finding Someone](http://emptypipes.org/2015/08/03/random-finding/)
 
-{% include figure.html src="/img/posts/dib_randomfinding.gif" %}
+{% include figure.html src="/assets/img/posts/dib_randomfinding.gif" alt="Two dots trying to find each other in a grid" link="http://emptypipes.org/2015/08/03/random-finding/" %}
 
 Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the "randomly searching" process - hurray for pretty gifs. He even built a tool for anyone to try out the tool / animation. 
 

@@ -18,7 +18,7 @@ I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone
 
 > **Retrospective Update** - Apple decided to basically implement this but in reverse. If you want to mute specific people, you can and then the rest of your messages will come through.
 
-{% include figure.html src="/img/posts/ios_updates_textdelay.gif" caption="Delay a text to send a few minutes (or even a few hours)" width="230px" %}
+{% include figure.html src="/assets/img/posts/ios_updates_textdelay.gif" alt="A simulated screen capture of the text delay feature" caption="Delay a text to send a few minutes (or even a few hours)" width="230px" %}
 
 **Text Delay:** On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time. 
 
@@ -28,7 +28,7 @@ I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone
 
 > **Retrospective Update #3** - This is also available now, woohoo!
 
-{% include figure.html src="/img/posts/ios_updates_inapptext.gif" caption="Update - More or less is exactly what the actual implementation looks like" width="230px" %}
+{% include figure.html src="/assets/img/posts/ios_updates_inapptext.gif" alt="A simulated screen capture of the in-app texting feature" caption="Update - More or less is exactly what the actual implementation looks like" width="230px" %}
 
 **Voice Activated Siri:** Siri is particularly useful, especially when you can’t (or shouldn’t) be using your hands (driving, shower, etc.). However, turning on Siri requires manual activation with a hand. Instead, there should be an option to start Siri using one’s voice. For example, Siri could be activated by either saying “Siri” (though that presents certain issues in a crowd of people saying the same thing) or a keyword that the user picks (ex: "Pterodactyl").
 

@@ -4,43 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
 
     <!-- jquery and js files -->
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/lib/d3.v4.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <title>Random Brain Fun with Illustrator | Ben Tanen</title>
 </head>
 
 
 <body>
-
     <!-- adding support for mathjx -->
     <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <div class='wrapper'>
     	<div class='side'>
     <a href="/">
-        <img id='face' src='/img/me/face-a.jpg' alt='A picture of my head' />
+        <img id='face' src='/assets/img/me/face-a.jpg' alt='A picture of my head' />
     </a>
     
     <h1 id='title'>
-    <a href='/' id='title-link'>Howdy</a>
+        <a href='/' id='title-link'>
+            Howdy
+        </a>
     </h1>
 
     <div class='links'>
         <p id='about'><a href='/about/'>About</a></p>
         <p id='about'><a href='/projects/'>Projects</a></p>
-        <p id='about'><a href='/img/btanen_resume.pdf'>Resume</a></p>
+        <p id='about'><a href='/assets/BenjaminTanen_Resume.pdf'>Resume</a></p>
         <p id='about'><a href='/index/'>Index</a></p>
     </div>
     <div class='social'>
@@ -53,7 +54,7 @@
                 </a>
             </li>
 
-            <!--
+            
             <li id='twitter'>
                 <a href='https://twitter.com/ben_tanen'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -61,8 +62,8 @@
                     </svg>
                 </a>
             </li>
-            -->
-
+            
+            <!--
             <li id='spotify'>
                 <a href='https://play.spotify.com/user/129874447'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -70,6 +71,7 @@
                     </svg>
                 </a>
             </li>
+            -->
 
             <li id='linkedin'>
                 <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'>
@@ -90,30 +92,30 @@
   </header>
 
   <article class="post-content">
-  <p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because on my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">Wired</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
+  <p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because on my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">WIRED</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
 
 <p>In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we’ve all got to start somewhere. Expect more to come…</p>
 
 <style>
-#brain_viz_container {
-    width: 325px;
-    margin: auto;
-}
+    #brain_viz_container {
+        width: 325px;
+        margin: auto;
+    }
 
-#brain_viz {
-    width: 325px;
-    height: 325px;
-}
+    #brain_viz {
+        width: 100%;
+        height: auto;
+    }
 
-#brain_viz line {
-    fill: none;
-    stroke: #77bdee;
-    stroke-width: 3;
-}
+    #brain_viz line {
+        fill: none;
+        stroke: #77bdee;
+        stroke-width: 3;
+    }
 
-#brain_viz circle:not(#background_circle) {
-    fill: #77bdee;
-}
+    #brain_viz circle:not(#background_circle) {
+        fill: #77bdee;
+    }
 </style>
 
 <div id="brain_viz_container">

@@ -4,43 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
 
     <!-- jquery and js files -->
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/lib/d3.v4.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <title>Clustering Using K-Means | Ben Tanen</title>
 </head>
 
 
 <body>
-
     <!-- adding support for mathjx -->
     <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <div class='wrapper'>
     	<div class='side'>
     <a href="/">
-        <img id='face' src='/img/me/face-a.jpg' alt='A picture of my head' />
+        <img id='face' src='/assets/img/me/face-a.jpg' alt='A picture of my head' />
     </a>
     
     <h1 id='title'>
-    <a href='/' id='title-link'>Howdy</a>
+        <a href='/' id='title-link'>
+            Howdy
+        </a>
     </h1>
 
     <div class='links'>
         <p id='about'><a href='/about/'>About</a></p>
         <p id='about'><a href='/projects/'>Projects</a></p>
-        <p id='about'><a href='/img/btanen_resume.pdf'>Resume</a></p>
+        <p id='about'><a href='/assets/BenjaminTanen_Resume.pdf'>Resume</a></p>
         <p id='about'><a href='/index/'>Index</a></p>
     </div>
     <div class='social'>
@@ -53,7 +54,7 @@
                 </a>
             </li>
 
-            <!--
+            
             <li id='twitter'>
                 <a href='https://twitter.com/ben_tanen'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -61,8 +62,8 @@
                     </svg>
                 </a>
             </li>
-            -->
-
+            
+            <!--
             <li id='spotify'>
                 <a href='https://play.spotify.com/user/129874447'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -70,6 +71,7 @@
                     </svg>
                 </a>
             </li>
+            -->
 
             <li id='linkedin'>
                 <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'>
@@ -104,17 +106,17 @@
 
 <p>Initially, the code generates <em>k</em> normally-distributed random clusters of data of <em>r</em> data points each (<em>kr</em> = <em>n</em> total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn’t necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.</p>
 
-<p>
-    <a class="img_link" href="/img/posts/kmeans_before_after.png" target="_blank">
-    <img src="/img/posts/kmeans_before_after.png" width="700px" />
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/kmeans_before_after.png" target="_blank">
+    <img src="/assets/img/posts/kmeans_before_after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" />
     </a>
 </p>
 
 <p>The first iteration is done by making a random guesses for the location of the <em>k</em> (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven’t seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:</p>
 
-<p>
-    <a class="img_link" href="/img/posts/kmeans_cluster.gif" target="_blank">
-    <img src="/img/posts/kmeans_cluster.gif" width="450px" />
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/kmeans_cluster.gif" target="_blank">
+    <img src="/assets/img/posts/kmeans_cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" />
     </a>
 </p>
 

@@ -5,30 +5,30 @@ date: 2017-06-23 15:05:41
 categories: random visualization illustrator
 ---
 
-Over the years, I've dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because on my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from [Wired](https://www.youtube.com/watch?v=Bxp9Rh7srIg), I opened up Illustrator (and Google, of course) and gave it a try.
+Over the years, I've dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because on my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from [WIRED](https://www.youtube.com/watch?v=Bxp9Rh7srIg), I opened up Illustrator (and Google, of course) and gave it a try.
 
 In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we've all got to start somewhere. Expect more to come...
 
 <style>
-#brain_viz_container {
-    width: 325px;
-    margin: auto;
-}
+    #brain_viz_container {
+        width: 325px;
+        margin: auto;
+    }
 
-#brain_viz {
-    width: 325px;
-    height: 325px;
-}
+    #brain_viz {
+        width: 100%;
+        height: auto;
+    }
 
-#brain_viz line {
-    fill: none;
-    stroke: #77bdee;
-    stroke-width: 3;
-}
+    #brain_viz line {
+        fill: none;
+        stroke: #77bdee;
+        stroke-width: 3;
+    }
 
-#brain_viz circle:not(#background_circle) {
-    fill: #77bdee;
-}
+    #brain_viz circle:not(#background_circle) {
+        fill: #77bdee;
+    }
 </style>
 
 <div id="brain_viz_container">

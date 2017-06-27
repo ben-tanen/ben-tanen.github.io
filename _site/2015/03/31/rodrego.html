@@ -4,43 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
 
     <!-- jquery and js files -->
-    <script src="/js/lib/jquery.min.js"></script>
-    <script src="/js/lib/d3.v4.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <title>RodRego: The Simple Register Machine Simulator | Ben Tanen</title>
 </head>
 
 
 <body>
-
     <!-- adding support for mathjx -->
     <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <div class='wrapper'>
     	<div class='side'>
     <a href="/">
-        <img id='face' src='/img/me/face-a.jpg' alt='A picture of my head' />
+        <img id='face' src='/assets/img/me/face-a.jpg' alt='A picture of my head' />
     </a>
     
     <h1 id='title'>
-    <a href='/' id='title-link'>Howdy</a>
+        <a href='/' id='title-link'>
+            Howdy
+        </a>
     </h1>
 
     <div class='links'>
         <p id='about'><a href='/about/'>About</a></p>
         <p id='about'><a href='/projects/'>Projects</a></p>
-        <p id='about'><a href='/img/btanen_resume.pdf'>Resume</a></p>
+        <p id='about'><a href='/assets/BenjaminTanen_Resume.pdf'>Resume</a></p>
         <p id='about'><a href='/index/'>Index</a></p>
     </div>
     <div class='social'>
@@ -53,7 +54,7 @@
                 </a>
             </li>
 
-            <!--
+            
             <li id='twitter'>
                 <a href='https://twitter.com/ben_tanen'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -61,8 +62,8 @@
                     </svg>
                 </a>
             </li>
-            -->
-
+            
+            <!--
             <li id='spotify'>
                 <a href='https://play.spotify.com/user/129874447'>
                     <svg width="30px" height="30px" viewBox="0 0 100 100">
@@ -70,6 +71,7 @@
                     </svg>
                 </a>
             </li>
+            -->
 
             <li id='linkedin'>
                 <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'>
@@ -90,11 +92,23 @@
   </header>
 
   <article class="post-content">
-  <p><img src="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" alt="RodRego's Original Banner" /></p>
+  <p class="img_paragraph">
+    <a class="img_link" href="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" target="_blank">
+    <img src="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" alt="RodRego's Original Banner" />
+    </a>
+</p>
 
 <p>For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainf**k</a> without IO).</p>
 
-<p><img src="/img/posts/rodrego.png" alt="Comparison of RodRego's Versions" /></p>
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/rodrego.png" target="_blank">
+    <img src="/assets/img/posts/rodrego.png" alt="The original desktop application (left) vs. the new web application (right)" />
+    </a>
+</p>
+
+<figcaption>
+The original desktop application (left) vs. the new web application (right)
+</figcaption>
 
 <p>My assignment for this project was to build a web application that emulates (and fixes any problems of) the existing desktop application. With little instruction on how the original application worked, building something that would recreate it was interesting, but ultimately doable. Specific data validation (which was necessary to check commands / script format) was also a pain in JavaScript but that’s just JavaScript.</p>
 
