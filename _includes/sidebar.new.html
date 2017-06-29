@@ -1,47 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/style.new.css">
-
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet">
-
-    <!-- jquery and js files -->
-    <script src="/assets/js/lib/jquery.min.js"></script>
-    <script src="/assets/js/lib/d3.v4.min.js"></script>
-
-    <title>Ben Tanen</title>
-</head>
-
-
-<body>
-    <!-- adding support for mathjx -->
-    <script type="text/javascript"
-        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-
-    <div id='wrapper'>
-    	<div id='side' class='tall'>
-    
+<div id='side' {% unless page.title %}class='tall'{% endunless %}>
+    {% if page.title or paginator.page > 1 %}<a href="/">{% endif %}
         <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    
+    {% if page.title or paginator.page > 1 %}</a>{% endif %}
     
     <h1 id='title'>
-        
+        {% if page.title or paginator.page > 1 %}<a href='/'>{% endif %}
             Howdy
-        
+        {% if page.title or paginator.page > 1 %}</a>{% endif %}
     </h1>
 
-    
+    {% unless page.title %}
     <div id="bio">
         <p>I’m Ben Tanen. I am a computer scientist by training and I love all things data.</p>
         <p>I’m fascinated by data visualization and data journalism and I aspire to use data to tell interesting stories.</p>
     </div>
-    
+    {% endunless %}
 
     <ul id="social_links">
         <li id="twitter" class="social_link">
@@ -105,80 +78,15 @@
     
     <div id='site_links'>
         <ul id='site_links_a'>
-            <li class='selected_link'><a href='/'>Home</a></li>
-            <li ><a href='/projects/'>Projects</a></li>
-            <li ><a href='/blog/'>Blog</a></li>
+            <li {% unless page.title %}class='selected_link'{% endunless %}><a href='/'>Home</a></li>
+            <li {% if page.title == "Projects" %}class='selected_link'{% endif %}><a href='/projects/'>Projects</a></li>
+            <li {% if page.title == "Blog" %}class='selected_link'{% endif %}><a href='/blog/'>Blog</a></li>
         </ul>
         <ul id='site_links_b'>
-            <li ><a href='/about/'>About</a></li>
-            <li ><a href='/assets/BenjaminTanen_Resume.pdf/'>Resume</a></li>
-            <li ><a href='/contact/'>Contact</a></li>
+            <li {% if page.title == "About" %}class='selected_link'{% endif %}><a href='/about/'>About</a></li>
+            <li {% if page.title == "Resume" %}class='selected_link'{% endif %}><a href='/assets/BenjaminTanen_Resume.pdf/'>Resume</a></li>
+            <li {% if page.title == "Contact" %}class='selected_link'{% endif %}><a href='/contact/'>Contact</a></li>
         </ul>
     </div>
 
 </div>
-
-    	<div id='main'>
-    		<div class="grid_section_2">
-    <img src="/assets/img/new/asllex.png" class="section_img_2" />
-    <img src="/assets/img/new/asllex.gif" class="section_img_2" />
-    <div class="section_title_2">
-        <h3>ASL-LEX: A Lexical Database for American Sign Language</h3>
-    </div>
-</div>
-
-<div class="grid_section_2">
-    <img src="/assets/img/new/rodrego.png" class="section_img_2" />
-    <img src="/assets/img/new/rodrego.gif" class="section_img_2" />
-    <div class="section_title_2">
-        <h3>RodRego: A Simulation for Register Machines</h3>
-    </div>
-</div>
-
-<!--
-<div class="grid_section">
-    <img src="/assets/img/new/asllex.png" class="section_img" />
-    <img src="/assets/img/new/asllex.gif" class="section_img" />
-    <div class="section_title">
-        <h3>ASL-LEX: A Lexical Database for American Sign Language</h3>
-    </div>
-</div>
-
-<div class="grid_section">
-    <img src="/assets/img/new/test2.png" class="section_img" />
-    <div class="section_title">
-        <h3>Our Drunken World</h3>
-    </div>
-</div>
-
-<div class="grid_section">
-    <img src="/assets/img/new/huffman.png" class="section_img" />
-    <img src="/assets/img/new/huffman.gif" class="section_img" />
-    <div class="section_title">
-        <h3>Visualizing Adaptive Huffman Coding</h3>
-    </div>
-</div>
-
-<div class="grid_section">
-    <img src="/assets/img/new/rodrego.png" class="section_img" />
-    <img src="/assets/img/new/rodrego.gif" class="section_img" />
-    <div class="section_title">
-        <h3>RodRego: A Simulation for Register Machines</h3>
-    </div>
-</div>
-
-<div class="grid_section">
-    <img src="/assets/img/new/test.png" class="section_img" />
-    <div class="section_title">
-        <h3>Visualizing the Ultimate Convex Hull Algorithm</h3>
-    </div>
-</div>
--->
-
-
-
-    	</div>
-    </div>
-	
-</body>
-</html>

@@ -1,129 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: base.new
+---
 
-<!-- START OF head.html -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/new.css">
-
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Work+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600,700|Yantramanav:400,500,700" rel="stylesheet">
-
-    <!-- jquery and js files -->
-    <script src="/assets/js/lib/jquery.min.js"></script>
-    <script src="/assets/js/lib/d3.v4.min.js"></script>
-
-    <title>Ben Tanen</title>
-</head>
-<!-- END OF head.html -->
-
-<body>
-    <div id="wrapper">
-        <!-- START OF header.html -->
-        <div id="header">
-            <a href="/">
-                <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my head" />
-            </a>
-
-            <h1 id="title">
-                <a href="/">Howdy</a>
-            </h1>
-
-            <ul id="social_links">
-                <li id="twitter" class="social_link">
-                    <a href="https://twitter.com/ben_tanen">
-                        <svg viewBox="0 0 512 512">
-                            <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="256" cy="256" r="239.5"/>
-                            <g>
-                                <path d="M406.606,161.825c-11.083,4.915-22.992,8.236-35.493,9.73c12.759-7.648,22.558-19.759,27.172-34.189 c-11.941,7.083-25.165,12.225-39.242,14.996c-11.272-12.01-27.334-19.514-45.108-19.514c-34.129,0-61.796,27.667-61.796,61.795 c0,4.843,0.546,9.56,1.6,14.083c-51.358-2.578-96.894-27.18-127.373-64.568c-5.322,9.127-8.369,19.743-8.369,31.068 c0,21.44,10.91,40.355,27.492,51.437c-10.131-0.321-19.659-3.101-27.99-7.729c-0.006,0.257-0.006,0.517-0.006,0.777 c0,29.941,21.302,54.917,49.571,60.596c-5.185,1.411-10.645,2.169-16.281,2.169c-3.981,0-7.853-0.389-11.627-1.111 c7.864,24.55,30.686,42.42,57.729,42.918c-21.149,16.575-47.796,26.453-76.75,26.453c-4.989,0-9.907-0.291-14.742-0.865 c27.348,17.537,59.831,27.767,94.729,27.767c113.668,0,175.826-94.166,175.826-175.829c0-2.679-0.061-5.344-0.179-7.995 C387.845,185.1,398.322,174.216,406.606,161.825z"/>
-                            </g>
-                        </svg>
-                    </a>
-                </li>
-
-                <li id="github" class="social_link">
-                    <a href="https://github.com/ben-tanen" class="social_link">
-                        <svg viewBox="0 0 512 512">
-                            <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="256" cy="256" r="239.5"/>
-                            <g>
-                                <path d="M373.573,231.878c1.11-7.021,1.803-14.719,1.977-23.351c-0.066-37.014-17.785-50.111-21.194-56.251 c5.021-28.044-0.831-40.801-3.554-45.168c-10.04-3.563-34.929,9.198-48.528,18.181c-22.173-6.491-69.031-5.857-86.603,1.68 c-32.422-23.216-49.57-19.676-49.57-19.676s-11.086,19.879-2.931,48.962c-10.667,13.594-18.619,23.205-18.619,48.698 c0,6.106,0.379,11.875,1.023,17.425c9.187,48.304,47.462,69.144,85.059,72.737c-5.657,4.299-12.45,12.434-13.39,21.861 c-7.108,4.596-21.408,6.115-32.528,2.619c-15.58-4.924-21.545-35.777-44.877-31.375c-5.048,0.945-4.045,4.273,0.327,7.113 c7.108,4.609,13.803,10.342,18.963,22.605c3.963,9.416,12.299,26.229,38.655,26.229c10.462,0,17.791-1.236,17.791-1.236 s0.2,23.994,0.2,33.352c0,10.77-14.534,13.793-14.534,18.959c0,2.057,4.811,2.25,8.677,2.25c7.64,0,23.536-6.363,23.536-17.557 c0-8.895,0.142-38.785,0.142-44.02c0-11.438,6.13-15.078,6.13-15.078s0.75,61.055-1.476,69.24 c-2.609,9.625-7.336,8.258-7.336,12.541c0,6.395,19.11,1.564,25.449-12.43c4.904-10.93,2.707-70.803,2.707-70.803l5.113-0.111 c0,0,0.059,27.422-0.117,39.947c-0.186,12.977-1.523,29.379,6.184,37.121c5.059,5.092,20.555,14.027,20.555,5.861 c0-4.732-10.852-8.641-10.852-21.461v-59.057c6.593,0,7.955,19.412,7.955,19.412l2.377,36.064c0,0-1.578,13.16,14.217,18.652 c5.575,1.953,17.504,2.484,18.062-0.793c0.561-3.287-14.362-8.146-14.504-18.332c-0.078-6.203,0.277-9.834,0.277-36.818 c0-26.969-3.623-36.945-16.247-44.896C328.697,291.219,366.724,274.869,373.573,231.878z"/>
-                            </g>
-                        </svg>
-                    </a>
-                </li>
-
-                <li id="email" class="social_link">
-                    <a href="mailto:ben.tanen@gmail.com">
-                        <svg viewBox="0 0 512 512">
-                            <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="256" cy="256" r="239.5"/>
-                            <g>
-                                <path d="M256,298.711l-36.988-32.373l-105.753,90.654c3.844,3.565,9.033,5.787,14.757,5.787h255.969 c5.703,0,10.871-2.222,14.693-5.787l-105.689-90.654L256,298.711z"/>
-                                <path d="M398.742,155.01c-3.846-3.588-9.012-5.788-14.758-5.788H128.016c-5.703,0-10.87,2.222-14.714,5.83 L256,277.355L398.742,155.01z"/>
-                                <polygon points="106.51,167.972 106.51,345.396 209.723,257.688"/>
-                                <polygon points="302.277,257.688 405.49,345.396 405.49,167.908"/>
-                            </g>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-
-            <ul id='site_links'>
-                <li id="about"><a href='/about/'>About</a></li>
-                <li id='projects'><a href='/projects/'>Projects</a></li>
-                <li id='resume'><a href='/resume/'>Resume</a></li>
-                <li id='blog'><a href='/blog/'>Blog</a></li>
-            </ul>
-        </div>
-        <!-- END OF header.html -->
-
-        <div id="main">
-            <div class="grid_section">
-                <img src="/assets/img/new/rodrego.png" class="section_img" />
-                <img src="/assets/img/new/rodrego.gif" class="section_img" />
-                <div class="section_title">
-                    <h3>RodRego: A Simulation for Register Machines</h3>
-                </div>
-            </div>
-
-            <div class="grid_section">
-                <img src="/assets/img/new/huffman.png" class="section_img" />
-                <img src="/assets/img/new/huffman.gif" class="section_img" />
-                <div class="section_title">
-                    <h3>Visualizing Adaptive Huffman Coding</h3>
-                </div>
-            </div>
-
-            <div class="grid_section">
-                <img src="/assets/img/new/asllex.png" class="section_img" />
-                <img src="/assets/img/new/asllex.gif" class="section_img" />
-                <div class="section_title">
-                    <h3>ASL-LEX: A Lexical Database for American Sign Language</h3>
-                </div>
-            </div>
-
-            <div class="grid_section">
-                <img src="/assets/img/new/test.png" class="section_img" />
-                <div class="section_title">
-                    <h3>Visualizing the Ultimate Convex Hull Algorithm</h3>
-                </div>
-            </div>
-
-            <div class="grid_section">
-                <img src="/assets/img/new/test2.png" class="section_img" />
-                <div class="section_title">
-                    <h3>Our Drunken World</h3>
-                </div>
-            </div>
-        </div>
+<div class="grid_section_2">
+    <img src="/assets/img/new/asllex.png" class="section_img_2" />
+    <img src="/assets/img/new/asllex.gif" class="section_img_2" />
+    <div class="section_title_2">
+        <h3>ASL-LEX: A Lexical Database for American Sign Language</h3>
     </div>
-    
-</body>
-</html>
+</div>
+
+<div class="grid_section_2">
+    <img src="/assets/img/new/rodrego.png" class="section_img_2" />
+    <img src="/assets/img/new/rodrego.gif" class="section_img_2" />
+    <div class="section_title_2">
+        <h3>RodRego: A Simulation for Register Machines</h3>
+    </div>
+</div>
+
+<!--
+<div class="grid_section">
+    <img src="/assets/img/new/asllex.png" class="section_img" />
+    <img src="/assets/img/new/asllex.gif" class="section_img" />
+    <div class="section_title">
+        <h3>ASL-LEX: A Lexical Database for American Sign Language</h3>
+    </div>
+</div>
+
+<div class="grid_section">
+    <img src="/assets/img/new/test2.png" class="section_img" />
+    <div class="section_title">
+        <h3>Our Drunken World</h3>
+    </div>
+</div>
+
+<div class="grid_section">
+    <img src="/assets/img/new/huffman.png" class="section_img" />
+    <img src="/assets/img/new/huffman.gif" class="section_img" />
+    <div class="section_title">
+        <h3>Visualizing Adaptive Huffman Coding</h3>
+    </div>
+</div>
+
+<div class="grid_section">
+    <img src="/assets/img/new/rodrego.png" class="section_img" />
+    <img src="/assets/img/new/rodrego.gif" class="section_img" />
+    <div class="section_title">
+        <h3>RodRego: A Simulation for Register Machines</h3>
+    </div>
+</div>
+
+<div class="grid_section">
+    <img src="/assets/img/new/test.png" class="section_img" />
+    <div class="section_title">
+        <h3>Visualizing the Ultimate Convex Hull Algorithm</h3>
+    </div>
+</div>
+-->
+
+
