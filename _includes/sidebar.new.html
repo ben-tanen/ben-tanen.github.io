@@ -1,20 +1,18 @@
-<div id='side' {% unless page.title %}class='tall'{% endunless %}>
-    {% if page.title or paginator.page > 1 %}<a href="/">{% endif %}
+<div id='side' class='tall'>
+    {% if page.title %}<a href="/new/">{% endif %}
         <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    {% if page.title or paginator.page > 1 %}</a>{% endif %}
+    {% if page.title %}</a>{% endif %}
     
     <h1 id='title'>
-        {% if page.title or paginator.page > 1 %}<a href='/'>{% endif %}
+        {% if page.title %}<a href='/new/'>{% endif %}
             Howdy
-        {% if page.title or paginator.page > 1 %}</a>{% endif %}
+        {% if page.title %}</a>{% endif %}
     </h1>
 
-    {% unless page.title %}
     <div id="bio">
         <p>I’m Ben Tanen. I am a computer scientist by training and I love all things data.</p>
         <p>I’m fascinated by data visualization and data journalism and I aspire to use data to tell interesting stories.</p>
     </div>
-    {% endunless %}
 
     <ul id="social_links">
         <li id="twitter" class="social_link">
@@ -78,7 +76,7 @@
     
     <div id='site_links'>
         <ul id='site_links_a'>
-            <li {% unless page.title %}class='selected_link'{% endunless %}><a href='/'>Home</a></li>
+            <li {% unless page.title %}class='selected_link'{% endunless %}><a href='/new/'>Home</a></li>
             <li {% if page.title == "Projects" %}class='selected_link'{% endif %}><a href='/projects/'>Projects</a></li>
             <li {% if page.title == "Blog" %}class='selected_link'{% endif %}><a href='/blog/'>Blog</a></li>
         </ul>
