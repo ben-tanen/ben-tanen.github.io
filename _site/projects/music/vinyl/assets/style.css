@@ -1,0 +1,39 @@
+#bt-record-holder {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    opacity: 0;
+}
+
+.bt-record {
+    width: calc(100% / 3 - 4px);
+    height: auto;
+    position: relative;
+    color: white;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 2px;
+    opacity: 1;
+}
+
+.bt-record img {
+    margin: 0;
+}
+
+.bt-record p {
+    width: calc(100% - 20px);
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
+
+.bt-record:hover p {
+    opacity: 1;
+}

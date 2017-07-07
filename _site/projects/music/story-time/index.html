@@ -84,105 +84,108 @@
 </div>
 
     	<div class='main'>
-    		<style>
-    .playlist-date {
-        display: inline-block;
-        vertical-align: top;
-        width: 65px;
-        text-align: center !important;
-        font-size: 18px;
-        margin-top: 12px !important;
-        margin-right: 10px !important;
-        color: #77bdee;
-    }
+    		<div class="post">
 
-    .playlist-container {
-        width: calc(100% - 80px);
-        display: inline-block;
-        margin-bottom: 20px;
-    }
+  <header class="post-header">
+    <h1>Story Time with Papa T</h1>
+  </header>
 
-    .playlist-item {
-        margin-bottom: 5px;
-    }
+  <article class="post-content">
+  <style>
+#playlist-holder {
+    position: relative;
+}
 
-    .playlist-loading {
-        width: 80px;
-        position: absolute;
-        margin: 0 !important;
-        margin-left: calc((100% / 2) - 100px) !important;
-        z-index: -1;
-    }
+#loading-spinner {
+    width: 100px;
+    position: absolute;
+    left: calc((100% - 100px) / 2);
+}
+
+.playlist-date {
+    display: inline-block;
+    vertical-align: top;
+    width: 65px;
+    text-align: center !important;
+    font-size: 18px;
+    margin-top: 12px !important;
+    margin-right: 10px !important;
+    color: #77bdee;
+}
+
+.playlist-container {
+    width: calc(100% - 80px);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.playlist-item {
+    margin-bottom: 5px;
+    opacity: 0;
+}
+
+.playlist-loading {
+    width: 80px;
+    position: absolute;
+    margin: 0 !important;
+    margin-left: calc((100% / 2) - 100px) !important;
+    z-index: -1;
+}
 </style>
 
-<h1 style='margin-bottom: 0px;'>Story Time with Papa T</h1>
-<h3 style='margin-top: 0px; margin-bottom: 15px;'><span style="font-weight: normal;">A collection of shows from over the years on </span>91.5 WMFO, Tufts' Freeform Radio</h3>
+<script>
+$.ajax({
+    type: "GET",
+    url: "http://bt-dbs.herokuapp.com/getWMFOPlaylists",
+    dataType: "text",
+    success: function(d) {
+        var d = JSON.parse(d);
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-05-22-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+        d.sort(function(a, b){
+            var keyA = new Date(a.date),
+                keyB = new Date(b.date);
+            // Compare the 2 dates
+            if(keyA < keyB) return -1;
+            if(keyA > keyB) return  1;
+            return 0;
+        });
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-05-08-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+        for (var i = d.length - 1; i >= d.length - 3; i--) {
+            $('#playlist-holder').append('<iframe class="playlist-item" width="100%" height="60" src="' + d[i].url + '" frameborder="0"></iframe>');
+        }
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-05-01-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+        setTimeout(function() {
+            $('#loading-spinner').fadeOut();
+            $('.playlist-item:nth-of-type(-n+5)').animate({opacity: 1}, 500);
+        }, 500);
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-04-17-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+        var playlist_ix = d.length - 3;
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-03-27-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+        setInterval(function() {
+            if (playlist_ix > 0) playlist_ix = playlist_ix - 1;
+            else return;
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-03-13-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+            $('.playlist-item:last-of-type').animate({opacity: 1}, 500);
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-03-06-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+            $('#playlist-holder').append('<iframe class="playlist-item" style="opacity: 0;" width="100%" height="60" src="' + d[playlist_ix].url + '" frameborder="0"></iframe>');
+        }, 1000);
+    }
+});
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-02-27-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+$(window).scroll(function() {
+    var p = $(window).scrollTop() + $(window).height() - 50;
+});
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-02-20-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+</script>
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2F88-stories-per-hour-02-17-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+<h3 style='margin-top: 0px; margin-bottom: 20px;'><span style="font-weight: normal;">A collection of shows from over the years on </span>91.5 WMFO, Tufts' Freeform Radio</h3>
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-02-06-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+<div id="playlist-holder">
+    <img id="loading-spinner" style="width: 100px; position: absolute;" src='/assets/img/loading.gif' />
+</div>
+  </article>
 
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-01-30-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-12-12-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-12-05-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-11-28-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-11-21-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-11-14-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-11-07-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-10-31-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-10-24-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-10-03-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-09-26-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-04-19-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-04-05-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-03-29-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-03-15-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-03-08-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-03-01-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-02-23-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-02-09-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-02-02-2016%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-09-21-2015-taylor-swift-vs-ryan-adams%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
-
-<iframe class="playlist-item" width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fbtanen%2Fstory-time-09-19-2014%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+</div>
     	</div>
     </div>
 	
