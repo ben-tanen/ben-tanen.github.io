@@ -5,6 +5,12 @@ $.ajax({
     success: function(d) {
         var d = JSON.parse(d);
 
+        d.sort(function(a, b){
+            if(a.ix < b.ix) return -1;
+            if(a.ix > b.ix) return  1;
+            return 0;
+        });
+
         for (var i = d.length - 1; i >= 0; i--) {
             var album     = d[i].album,
                 artist    = d[i].artist,
