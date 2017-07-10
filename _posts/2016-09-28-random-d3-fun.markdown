@@ -76,9 +76,9 @@ I'm currently taking (and loving) a data visualization course, so naturally, I'm
     random_svg.on("click", function() {
         for (var i = 0; i < circles.length; i++) {
             var c    = circles[i];
-            var cn   = parseInt(c.attr("group"));
-            var ci   = parseInt(c.attr("ci"));
-            var cj   = parseInt(c.attr("cj"));
+            var cn   = +c.attr("group");
+            var ci   = +c.attr("ci");
+            var cj   = +c.attr("cj");
             var cx   = (isAligned ? get_rand_pos() : cxs[ci]);
             var cy   = (isAligned ? get_rand_pos() : cys[cj]);
 

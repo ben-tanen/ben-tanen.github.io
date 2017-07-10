@@ -9,7 +9,7 @@ html {
 
 figcaption {
 	text-align: center;
-	font-size: 12px;
+	font-size: 14px;
 	margin-bottom: 10px;
 }
 
@@ -38,7 +38,7 @@ h3 {
     position: relative;
 }
 
-.side {
+#side {
     position: fixed;
 	top: 0;
 	left: calc((vw - 100%) / 2);
@@ -49,72 +49,79 @@ h3 {
 
 	#face {
 		width: 150px;
-		margin: 75px 0 0 50px;
+		margin: 37px 0 0 50px;
 		border-radius: 150px;
 	}
 
+    #side h1 {
+        font-size: 1.8em;
+        text-align: center;
+        opacity: 0;
+        -webkit-transition: opacity 0.5s ease;
+        -moz-transition: opacity 0.5s ease;
+        -o-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+    }
 
-	.side h1 {
-        font-weight: 400; 
-		text-align: center;
-		margin: 5px 0 0 0;
+	#title-1 {
+        font-weight: 600; 
+		margin: 2.5px 0 0 0;
 	}
 
-    .side #title-link {
-        color: black;
-        text-decoration: none;
+    #title-2 {
+        font-weight: 500; 
+        margin: -5px 0 0 0;
     }
 
-    .side #title-link:hover {
-        color: #77bdee;
-    }
-
-    .links {
+    #site_links {
+        font-family: "Yantramanav", sans-serif;
     	padding: 5px;
+        text-align: center;
+        font-size: 18px;
     }
 
-	#about {
-		font-family: 'Quicksand', sans-serif;
-		text-align: center;
-		font-size: 18px;
-		margin: 2px 0 0 0;
-	}
-
-	#about a {
+	#site_links a {
 		text-decoration: none;
+        margin: 2px 0 0 0;
 		color: black;
 	}
 
-	#about a:hover {
+	#site_links a:hover {
 		color: #77bdee;
 	}
 
-/* Social Links */
-	.social {
-        width: 100%;
-        margin-top: 10px;
+    .selected-link {
+        color: #77bdee !important;
     }
 
-    #social_list {
+/* Social Links */
+    #social_links {
     	margin: auto;
-    	width: 104px;
+        margin-top: 10px;
+    	width: 110px;
     }
     
-    #social_list li {
+    #social_links li {
         display: inline-block;
-        width: 30px;
-        height: 30px;
-        margin: 0px 2px 0 0px;
-        background-color: #a9a9a9;
-        border-radius: 30px;
+        width: 33px;
+        height: 33px;
+        margin: 0px 1px 0 0px;
         cursor: pointer;
     }
 
-    #social_list li:hover {
-		background-color: #77bdee;
+    #social_links li:nth-of-type(4) {
+        margin-left: 19px;
     }
 
-    #social_list img {
+    #social_links li svg {
+        fill: #999;
+    }
+
+    #social_links li:hover svg {
+		fill: #77bdee;
+    }
+
+    #social_links img {
     	width: 30px;
     }
 
@@ -148,7 +155,7 @@ h3 {
 }
 
 .main {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Yantramanav', sans-serif;
 	margin: 30px 0 0 250px;
     display: inline-block;
     width: calc(100% - 275px);
@@ -169,6 +176,7 @@ h3 {
 	.main p {
 		text-align: justify;
 		margin: 0 0 15px 0;
+        font-size: 17px;
 	}
 
 	.main h1 {
@@ -210,17 +218,29 @@ h3 {
 	}
 
     .pagination {
+        height: 1em;
         margin-top: -65px;
-    }
-
-    #pagination_next {
-        float: right;
+        margin-bottom: 30px;
+        position: relative;
     }
 
     #pagination_previous {
-        float: left;
+        position: absolute;
+        left: 0;
+        font-size: 1em;
     }
 
+    #pagination_all {
+        position: absolute;
+        left: calc(50% - 50px);
+        font-size: 1em;
+    }
+
+    #pagination_next {
+        position: absolute;
+        right: 0;
+        font-size: 1em;
+    }
 
 	.highlight {
 		border-radius: 5px;
@@ -357,54 +377,6 @@ p.project-links {
     margin-top: 2px;
 }
 
-/* gallery CSS */
-.gallery {
-    position: relative;
-    overflow: hidden;
-    margin: auto;
-}
-
-.gallery ul {
-    position: relative;
-    width: 10000px;
-    left: 0;
-    padding: 0;
-}
-
-.gallery li {
-    display: inline-block;
-    vertical-align:top;
-    margin-right: 5px;
-    background-color: #F0F0F0; 
-}
-
-.gallery li img {
-    position: relative;
-    max-width: 95%;
-    left: 50%;
-    top: 50%;
-}
-
-.gallery li p {
-    position: absolute;
-    bottom: 0;
-    padding: 0 5px 12px 5px;
-    text-align: center;
-}
-
-#gallery_forward, #gallery_back {
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 20px;
-    width: 30px;
-    height: 30px;
-    margin-top: 5px;
-    box-shadow: none;
-    background-color: #a9a9a9;
-    outline: none;
-}
-
 th {
     padding: 5px;
     color: #77bdee;
@@ -430,7 +402,7 @@ table {
     margin: auto;
     margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 @media (max-width: 775px), (orientation : portrait) {
@@ -438,7 +410,7 @@ table {
         -webkit-text-size-adjust: 80%;
     }
 
-	.side {
+	#side {
 		position: fixed;
 		width: 100%;
 		height: 120px;
@@ -450,7 +422,7 @@ table {
         transition: top 0.6s ease;
 	}
 
-    .side.hidden {
+    #side.hidden {
         top: -120px;
     }
 
@@ -459,37 +431,37 @@ table {
         margin: 0;
         width: 100px;
         top: 10px;
-        left: 10px;
+        left: calc(50vw - 50px);
 	}
 
-	.side h1 {
-		position: absolute;
-		top: 22px;
-		left: 122px;
-		margin: 0px 0 0px 0;
+	#title-1, #title-2 {
+		display: none;
 	}
 
-	.links {
+	#site_links {
 		padding: 0;
 		position: absolute;
 		top: 16px;
 		right: 10px;
 		width: 100px;
 		height: 100px;
+        text-align: right;
 	}
 
-	#about {
-		position: relative;
-		text-align: right;
-		width: 100px;
+	#site_links a {
 		margin: 0 20px 2px 0;
 	}
 
-	#social_list {
+	#social_links {
+        margin: 0;
 		position: absolute;
-		top: 65px;
-		left: 122px;
+		top: 24px;
+		left: 25px;
 	}
+
+    #social_links li {
+        margin-left: 0 !important;
+    }
 
 	.main {
         width: calc(100% - 50px);
@@ -507,8 +479,16 @@ table {
 	}
 
     .pagination {
-        margin-top: -65px;
-        padding-bottom: 70px;
+        height: 0.9em;
+        margin-bottom: 60px;
+    }
+
+    #pagination_previous, #pagination_next, #pagination_all {
+        font-size: 1em;
+    }
+
+    #pagination_all {
+        left: calc(50% - 42.5px);
     }
 }
 
@@ -537,5 +517,19 @@ table {
 
     .project-box p {
         text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    #face {
+        width: 75px;
+        top: 22.5px;
+        left: calc(50vw - 37.5px);
+    }
+}
+
+@media (max-width: 350px) {
+    #face {
+        display: none;
     }
 }

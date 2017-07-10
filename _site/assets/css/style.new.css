@@ -46,10 +46,6 @@ a {
     margin: 20px 5px 0 5px;
 }
 
-#side.tall {
-
-}
-
 #face {
     width: 200px;
     margin: 0 40px;
@@ -70,11 +66,6 @@ a {
 #bio {
     text-align: center;
     margin-bottom: 1em;
-}
-
-#bio p {
-    font-size: 0.85em;
-    margin-bottom: 0.85em;
 }
 
 #social_links {

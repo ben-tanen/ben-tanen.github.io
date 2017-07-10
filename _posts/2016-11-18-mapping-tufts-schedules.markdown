@@ -21,7 +21,7 @@ It seems like my suspicion was true - I've become a little hermit holed up at my
 </div>
 
 <div id="checks">
-    <h4 style='margin-top: 10px;'>Choose which data to include:</h4>
+    <h4 style='margin-top: 10px; margin-bottom: 5px;'>Choose which data to include:</h4>
 
     <div id="semester-checks">
         <div class="check semester on" id="F13">

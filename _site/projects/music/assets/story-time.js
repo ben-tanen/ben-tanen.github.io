@@ -32,6 +32,6 @@ $.ajax({
             $('.playlist-item:last-of-type').animate({opacity: 1}, 500);
 
             $('#playlist-holder').append('<iframe class="playlist-item" style="opacity: 0;" width="100%" height="60" src="' + d[playlist_ix].url + '" frameborder="0"></iframe>');
-        }, 1000);
+        }, 750);
     }
 });

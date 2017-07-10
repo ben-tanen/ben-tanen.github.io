@@ -7,14 +7,37 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,400i,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
     <script src="/assets/js/lib/d3.v4.min.js"></script>
     <script src="/assets/js/main.js"></script>
+
+    <!-- adobe typekit -->
+    <script src="https://use.typekit.net/jru4jkm.js"></script>
+    <script>
+    try {
+        Typekit.load({
+            async: true,
+            active: function() {
+                $('#side h1').css('opacity', 1);
+                // $('#title-1').css('opacity', 1);
+                // setTimeout(function() { $('#title-2').css('opacity', 1);
+                // }, 500);
+            },
+            inactive: function() {
+                $('#side h1').css('opacity', 1);
+                // $('#title-1').css('opacity', 1);
+                // setTimeout(function() { $('#title-2').css('opacity', 1);
+                // }, 500);
+            }
+        });
+    } catch(e){}
+    </script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Analysis & Visualization | Ben Tanen</title>
 </head>
@@ -27,60 +50,84 @@
     </script>
 
     <div class='wrapper'>
-    	<div class='side'>
-    <a href="/">
-        <img id='face' src='/assets/img/me/face-a.jpg' alt='A picture of my head' />
-    </a>
+    	<div id='side'>
+    <!-- <a href="/"> -->
+        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
+    <!-- </a> -->
     
-    <h1 id='title'>
-        <a href='/' id='title-link'>
+    <h1 id="title-1" class="tk-europa">
             Howdy
-        </a>
+    </h1>
+    <h1 id="title-2" class="tk-europa">
+        I'm Ben
     </h1>
 
-    <div class='links'>
-        <p id='about'><a href='/about/'>About</a></p>
-        <p id='about'><a href='/projects/'>Projects</a></p>
-        <p id='about'><a href='/resume/BenjaminTanen_Resume.pdf'>Resume</a></p>
-        <p id='about'><a href='/index/'>Index</a></p>
+    <div id='site_links' class="tk-europa">
+        <p><a href='/'>Home</a></p>
+        <p><a href='/projects/' >Projects</a></p>
+        <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
+        <p><a href='/blog/' >Blog</a></p>
     </div>
-    <div class='social'>
-        <ul id='social_list'>
-            <li id='github'>
-                <a href='https://github.com/ben-tanen'>
-                    <svg width="30px" height="30px" viewBox="0 0 100 100">
-                        <path transform='translate(5, 6), scale(.9)' fill='#ffffff' d="M70.709,15.029c1.17,2.657,1.928,7.07,0.797,10.301c4.625,3.949,6.214,13.549,3.982,21.394 C82.08,47.227,89.931,46.482,95,48.505c-4.738-0.609-11.209-1.804-17.32-1.388c-1.158,0.079-2.874-0.044-2.79,1.585 c7.075,0.556,14.104,1.16,19.913,2.973c-5.761-0.941-12.754-2.374-19.913-2.574c-2.957,5.835-8.907,8.703-17.122,9.307 c0.883,1.921,2.574,2.653,2.987,5.744c0.616,4.618-0.964,11.381,0.595,14.459c0.748,1.475,1.967,1.514,2.789,2.775 c-2.012,2.381-7.001-0.267-7.568-2.775c-0.973-4.295,1.482-10.954-1.193-13.865c0.189,4.684-1.108,11.264,0.199,15.449 c0.515,1.646,2.002,2.281,1.593,3.765c-9.352,0.95-5.444-12.104-6.972-19.809c-1.411,0.1-0.791,2.113-0.796,2.972 c-0.04,7.524,1.54,17.844-6.57,16.837c-0.237-1.581,1.088-2.119,1.593-3.563c1.479-4.234-0.277-10.542,0.401-15.651 c-3.095,2.333,0.325,10.48-1.593,14.657c-1.105,2.404-4.666,3.45-7.367,2.377c0.352-1.79,2.2-1.501,2.984-3.169 c1.096-2.325,0.008-5.674,0.399-9.111c-5.729,1.143-10.173-0.166-12.348-3.764c-0.973-1.615-1.214-3.52-2.39-4.951 c-1.17-1.432-3.04-1.625-3.582-3.564c7.095-1.708,7.367,7.302,13.739,7.525c1.954,0.071,2.97-0.564,4.778-0.989 c0.506-2.272,1.589-3.966,3.186-5.153c-7.929-1.085-14.477-3.554-17.522-9.504c-7.208,0.355-13.804,1.317-19.913,2.771 c5.545-2.014,12.384-2.736,19.715-2.973c-0.432-2.596-4.219-1.882-6.57-1.782C13.973,47.31,8.473,47.853,5,48.505 c5.034-1.795,12.098-1.571,18.918-1.585c-2.086-6.54-1.363-16.929,3.186-20.798c-1.289-3.249-0.889-8.563,0.796-11.093 c5.079,0.228,8.159,2.443,11.35,4.557c3.957-1.125,8.118-1.685,13.54-1.387c2.28,0.126,4.652,1.151,6.369,0.989 c1.685-0.158,3.542-2.049,5.178-2.771C66.468,15.476,68.271,15.117,70.709,15.029z" />
-                    </svg>
-                </a>
-            </li>
 
-            
-            <li id='twitter'>
-                <a href='https://twitter.com/ben_tanen'>
-                    <svg width="30px" height="30px" viewBox="0 0 100 100">
-                        <path transform='translate(10, 10), scale(.8)' fill='#ffffff' d="M84.803,46.564c5.055-0.417,8.483-2.715,9.803-5.833c-1.824,1.12-7.484,2.341-10.61,1.178 c-0.153-0.734-0.324-1.432-0.492-2.062c-2.382-8.746-10.537-15.792-19.082-14.941c0.691-0.279,1.392-0.539,2.092-0.772 c0.94-0.337,6.459-1.235,5.59-3.183c-0.733-1.713-7.475,1.295-8.744,1.688c1.675-0.63,4.447-1.714,4.743-3.64 c-2.567,0.352-5.087,1.566-7.034,3.331c0.703-0.757,1.236-1.679,1.349-2.672C55.57,24.033,51.57,32.853,48.333,41.408 c-2.542-2.463-4.795-4.403-6.816-5.48c-5.67-3.041-12.449-6.213-23.091-10.164c-0.327,3.521,1.741,8.203,7.7,11.316 c-1.291-0.173-3.652,0.213-5.54,0.665c0.769,4.034,3.28,7.357,10.079,8.964c-3.107,0.205-4.713,0.912-6.168,2.436 c1.415,2.805,4.868,6.107,11.08,5.429c-6.906,2.977-2.816,8.49,2.804,7.667C28.794,72.143,13.679,71.416,5,63.134 c22.661,30.879,71.921,18.262,79.262-11.481c5.499,0.047,8.733-1.905,10.738-4.057C91.831,48.134,87.239,47.578,84.803,46.564z" />
-                    </svg>
-                </a>
-            </li>
-            
-            <!--
-            <li id='spotify'>
-                <a href='https://play.spotify.com/user/129874447'>
-                    <svg width="30px" height="30px" viewBox="0 0 100 100">
-                        <path transform='' fill='#ffffff' d="M14.667,49c0-6.407,1.578-12.32,4.735-17.737c3.156-5.418,7.443-9.705,12.861-12.861c5.417-3.156,11.33-4.734,17.737-4.734 c6.406,0,12.319,1.578,17.737,4.734c5.417,3.156,9.704,7.443,12.861,12.861C83.755,36.68,85.333,42.593,85.333,49 c0,4.759-0.896,9.281-2.686,13.568c-1.79,4.286-4.311,8.056-7.561,11.306c-2.826-3.438-6.255-6.124-10.282-8.056 c-4.028-1.932-8.327-2.897-12.896-2.897c-5.041,0-9.729,1.166-14.063,3.497c-4.334,2.333-7.891,5.502-10.67,9.505 c-3.91-3.344-6.972-7.349-9.187-12.012C15.774,59.246,14.667,54.276,14.667,49z M26.256,38.824c0,0.801,0.283,1.496,0.848,2.085 c0.566,0.589,1.272,0.883,2.12,0.883c0.283,0,0.495-0.023,0.636-0.071c6.784-2.732,13.803-4.099,21.059-4.099 c7.254,0,14.274,1.366,21.059,4.099c0.047,0,0.141,0.012,0.283,0.036c0.141,0.024,0.259,0.035,0.353,0.035 c0.801,0,1.495-0.294,2.085-0.883c0.588-0.589,0.883-1.284,0.883-2.085c0-1.178-0.542-2.049-1.625-2.614 c-7.49-2.968-15.169-4.452-23.037-4.452c-8.009,0-15.759,1.508-23.249,4.523C26.728,36.893,26.256,37.74,26.256,38.824z M29.507,49.354l0.424,1.13c0.377,0.613,0.918,0.918,1.625,0.918c0.141,0,0.354-0.047,0.636-0.141 c5.983-2.592,12.225-3.887,18.727-3.887c6.548,0,12.837,1.319,18.867,3.958c0.188,0.095,0.354,0.142,0.495,0.142 c0.707,0,1.249-0.307,1.625-0.919l0.354-1.201c0-0.613-0.236-1.107-0.707-1.484c-6.502-2.921-13.381-4.381-20.635-4.381 c-7.208,0-14.109,1.46-20.705,4.381C29.742,48.341,29.507,48.835,29.507,49.354z M32.898,59.529 c0.472,1.178,1.202,1.555,2.191,1.131c5.088-2.403,10.364-3.604,15.83-3.604c5.276,0,10.435,1.13,15.476,3.392 c1.131,0.612,1.955,0.329,2.473-0.849c0.236-0.612,0.236-1.153,0-1.626c-0.235-0.47-0.564-0.823-0.988-1.059 c-4.994-2.498-10.647-3.746-16.96-3.746c-6.03,0-11.778,1.296-17.243,3.888C32.781,57.527,32.522,58.351,32.898,59.529z M37.209,81.931c1.743-2.263,3.898-4.052,6.466-5.37c2.567-1.32,5.312-1.979,8.233-1.979c5.37,0,9.917,2.025,13.639,6.077 c-4.899,2.45-10.082,3.675-15.547,3.675C45.571,84.333,41.308,83.532,37.209,81.931z"/>
-                    </svg>
-                </a>
-            </li>
-            -->
+    <ul id="social_links">
+    <li id="twitter" class="social_link">
+        <a href="https://twitter.com/ben_tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M384.635,236.708c19.554-1.613,32.816-10.502,37.922-22.564c-7.055,4.333-28.952,9.057-41.044,4.558 c-0.593-2.841-1.255-5.541-1.903-7.977c-9.215-33.835-40.764-61.091-73.819-57.799c2.674-1.08,5.386-2.084,8.094-2.988 c3.638-1.303,24.987-4.777,21.625-12.312c-2.835-6.628-28.917,5.01-33.826,6.53c6.479-2.438,17.203-6.631,18.35-14.082 c-9.931,1.362-19.679,6.057-27.214,12.886c2.72-2.927,4.783-6.496,5.222-10.335c-26.493,16.924-41.967,51.042-54.488,84.139 c-9.834-9.53-18.549-17.034-26.369-21.202c-21.933-11.762-48.159-24.034-89.327-39.317c-1.264,13.621,6.736,31.731,29.789,43.774 c-4.995-0.668-14.128,0.824-21.432,2.573c2.975,15.604,12.69,28.461,38.99,34.677c-12.019,0.793-18.232,3.529-23.86,9.424 c5.474,10.852,18.832,23.625,42.863,21.002c-26.717,11.516-10.894,32.844,10.847,29.659 c-37.087,38.307-95.559,35.492-129.133,3.453c87.664,119.456,278.225,70.647,306.623-44.414 c21.273,0.184,33.784-7.368,41.539-15.693C411.823,242.782,394.057,240.632,384.635,236.708z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
 
-            <li id='linkedin'>
-                <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'>
-                    <svg width="30px" height="30px" viewBox="0 0 100 100">
-                        <path transform='translate(15, 15), scale(.7)' fill='#ffffff' d="M87.877,5.608H11.174c-3.673,0-6.65,2.886-6.65,6.448v77.101c0,3.562,2.978,6.451,6.65,6.451 h76.703c3.673,0,6.646-2.89,6.646-6.451V12.056C94.523,8.495,91.55,5.608,87.877,5.608z M31.809,80.944H18.211V40.31h13.598V80.944z M25.011,34.759H24.92c-4.56,0-7.516-3.119-7.516-7.023c0-3.983,3.043-7.017,7.693-7.017c4.651,0,7.512,3.033,7.602,7.017 C32.699,31.641,29.749,34.759,25.011,34.759z M80.827,80.944H67.233v-21.74c0-5.464-1.97-9.191-6.886-9.191 c-3.761,0-5.993,2.515-6.973,4.942c-0.364,0.868-0.453,2.08-0.453,3.292v22.696H39.329c0,0,0.178-36.823,0-40.634h13.593v5.761 c1.805-2.768,5.029-6.717,12.249-6.717c8.947,0,15.656,5.804,15.656,18.291V80.944z M52.834,46.199 c0.024-0.038,0.056-0.084,0.088-0.128v0.128H52.834z" /> </svg>
-                </a>
-            </li>
-        </ul>
-    </div>
+    <li id="github" class="social_link">
+        <a href="https://github.com/ben-tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M373.573,231.878c1.11-7.021,1.803-14.719,1.977-23.351c-0.066-37.014-17.785-50.111-21.194-56.251 c5.021-28.044-0.831-40.801-3.554-45.168c-10.04-3.563-34.929,9.198-48.528,18.181c-22.173-6.491-69.031-5.857-86.603,1.68 c-32.422-23.216-49.57-19.676-49.57-19.676s-11.086,19.879-2.931,48.962c-10.667,13.594-18.619,23.205-18.619,48.698 c0,6.106,0.379,11.875,1.023,17.425c9.187,48.304,47.462,69.144,85.059,72.737c-5.657,4.299-12.45,12.434-13.39,21.861 c-7.108,4.596-21.408,6.115-32.528,2.619c-15.58-4.924-21.545-35.777-44.877-31.375c-5.048,0.945-4.045,4.273,0.327,7.113 c7.108,4.609,13.803,10.342,18.963,22.605c3.963,9.416,12.299,26.229,38.655,26.229c10.462,0,17.791-1.236,17.791-1.236 s0.2,23.994,0.2,33.352c0,10.77-14.534,13.793-14.534,18.959c0,2.057,4.811,2.25,8.677,2.25c7.64,0,23.536-6.363,23.536-17.557 c0-8.895,0.142-38.785,0.142-44.02c0-11.438,6.13-15.078,6.13-15.078s0.75,61.055-1.476,69.24 c-2.609,9.625-7.336,8.258-7.336,12.541c0,6.395,19.11,1.564,25.449-12.43c4.904-10.93,2.707-70.803,2.707-70.803l5.113-0.111 c0,0,0.059,27.422-0.117,39.947c-0.186,12.977-1.523,29.379,6.184,37.121c5.059,5.092,20.555,14.027,20.555,5.861 c0-4.732-10.852-8.641-10.852-21.461v-59.057c6.593,0,7.955,19.412,7.955,19.412l2.377,36.064c0,0-1.578,13.16,14.217,18.652 c5.575,1.953,17.504,2.484,18.062-0.793c0.561-3.287-14.362-8.146-14.504-18.332c-0.078-6.203,0.277-9.834,0.277-36.818 c0-26.969-3.623-36.945-16.247-44.896C328.697,291.219,366.724,274.869,373.573,231.878z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="spotify" class="social_link">
+        <a href="https://play.spotify.com/user/129874447/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M256,105.5c-83.113,0-150.5,67.386-150.5,150.5c0,83.113,67.387,150.5,150.5,150.5 S406.5,339.113,406.5,256C406.5,172.886,339.113,105.5,256,105.5z M325.512,344.212c-1.881,3.442-5.398,5.361-9.049,5.361 c-1.692,0-3.386-0.395-4.984-1.26c-24.099-13.282-51.472-20.299-79.125-20.299c-16.574,0-32.941,2.464-48.611,7.317 c-5.456,1.693-11.25-1.354-12.926-6.828c-1.692-5.438,1.355-16.988,6.83-18.7c17.664-5.475,36.082-8.24,54.725-8.24 c31.116,0,61.95,7.901,89.097,22.858C326.472,327.148,328.296,339.227,325.512,344.212z M344.645,287.529 c-2.145,4.157-6.358,10.855-10.704,10.855c-1.9,0-3.781-0.415-5.55-1.374c-29.875-15.502-62.176-23.365-96.02-23.365 c-18.643,0-37.154,2.446-55.026,7.375c-6.452,1.749-13.075-2.014-14.825-8.466c-1.73-6.452,2.051-17.421,8.485-19.17 c19.94-5.437,40.597-8.202,61.366-8.202c37.229,0,74.252,9.03,107.1,26.111C345.396,274.342,347.71,281.604,344.645,287.529z M352.64,242.135c-2.051,0-4.157-0.47-6.133-1.448c-35.649-17.777-74.046-26.77-114.099-26.77 c-20.882,0-41.688,2.54-61.874,7.524c-7.412,1.825-14.881-2.671-16.706-10.064c-1.844-7.375,2.672-16.311,10.065-18.135 c22.331-5.55,45.376-8.353,68.496-8.353c44.379,0,86.933,9.99,126.42,29.667c6.828,3.405,9.613,11.683,6.208,18.493 C362.573,237.883,357.72,242.135,352.64,242.135z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="linkedin" class="social_link">
+        <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M390.005,284.965v99.085h-57.443v-92.449c0-23.224-8.308-39.072-29.101-39.072 c-15.873,0-25.318,10.68-29.475,21.013c-1.515,3.693-1.905,8.835-1.905,14.006v96.503h-57.462c0,0,0.774-156.578,0-172.8h57.457 v24.493c-0.117,0.183-0.269,0.381-0.378,0.559h0.378v-0.559c7.634-11.757,21.267-28.553,51.782-28.553 C361.663,207.189,390.005,231.887,390.005,284.965z M154.511,127.951c-19.658,0-32.516,12.894-32.516,29.85 c0,16.586,12.486,29.872,31.753,29.872h0.384c20.039,0,32.501-13.283,32.501-29.872 C186.255,140.845,174.171,127.951,154.511,127.951z M125.407,384.05h57.441v-172.8h-57.441V384.05z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="email" class="social_link">
+        <a href="mailto:ben.tanen@gmail.com" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M256,298.711l-36.988-32.373l-105.753,90.654c3.844,3.565,9.033,5.787,14.757,5.787h255.969 c5.703,0,10.871-2.222,14.693-5.787l-105.689-90.654L256,298.711z"/>
+                    <path d="M398.742,155.01c-3.846-3.588-9.012-5.788-14.758-5.788H128.016c-5.703,0-10.87,2.222-14.714,5.83 L256,277.355L398.742,155.01z"/>
+                    <polygon points="106.51,167.972 106.51,345.396 209.723,257.688"/>
+                    <polygon points="302.277,257.688 405.49,345.396 405.49,167.908"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+</ul>
 </div>
 
     	<div class='main'>
@@ -94,12 +141,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>01 Jun 2017</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2017/06/01/huffman-coding.html'>Explaining Adaptive Huffman Coding with Scrollytelling</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2017/06/01/huffman-coding.html'>Explaining Adaptive Huffman Coding with Scrollytelling</a></p>
             <div/>
             <p><p>After months of reading and being impressed by the <a href="https://pudding.cool/2017/04/beer/" target="_blank">very</a> <a href="https://pudding.cool/2017/01/making-it-big/" target="_blank">cool</a> <a href="https://pudding.cool/2017/02/vocabulary/" target="_blank">visual</a> <a href="https://pudding.cool/2017/05/song-repetition/" target="_blank">essays</a> put out by <a href="https://pudding.cool/" target="_blank">The Pudding</a>, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">traditional Huffman Coding</a> to <a href="https://en.wikipedia.org/wiki/Adaptive_Huffman_coding" target="_blank">adaptive Huffman Coding</a>.</p>
 
 </p>
-            <a href='/2017/06/01/huffman-coding.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2017/06/01/huffman-coding.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -108,7 +155,7 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>28 Apr 2017</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2017/04/28/chaos-game.html'>The Chaos Game</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2017/04/28/chaos-game.html'>The Chaos Game</a></p>
             <div/>
             <p><style>
     #chaos-game-container {
@@ -119,7 +166,7 @@
 
 </style>
 </p>
-            <a href='/2017/04/28/chaos-game.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2017/04/28/chaos-game.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -128,12 +175,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>08 Jan 2017</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2017/01/08/polar-line-charts.html'>Polar Line Charts in D3</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2017/01/08/polar-line-charts.html'>Polar Line Charts in D3</a></p>
             <div/>
             <p><p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
 
 </p>
-            <a href='/2017/01/08/polar-line-charts.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2017/01/08/polar-line-charts.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -142,12 +189,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>02 Jan 2017</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2017/01/02/ultimate-convex-hull.html'>Understanding the Kirkpatrick-Seidel Algorithm</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2017/01/02/ultimate-convex-hull.html'>Understanding the Kirkpatrick-Seidel Algorithm</a></p>
             <div/>
             <p><p>After <a href="/2016/12/21/drunken-world.html" target="_blank">posting the final project</a> for my visualization course, I thought I’d share the final project for my computational geometry class as well. The course was an extended algorithms class focused on different multi-dimensional geometric problems. One of the main problems of the course deals with finding the <a href="https://en.wikipedia.org/wiki/Convex_hull" target="_blank">convex hull</a> of a set of points. There are <a href="https://www.youtube.com/watch?v=ZnTiWcIznEQ" target="_blank">a number ways</a> to tackle the problem but one of the best approaches is the Kirkpatrick-Seidel Ultimate Planar Convex Hull Algorithm. In order to help teach the algorithm, I made <a href="http://ben-tanen.github.io/UltimateConvexHull/" target="_blank">a visualization tool</a> to walk-through the steps.</p>
 
 </p>
-            <a href='/2017/01/02/ultimate-convex-hull.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2017/01/02/ultimate-convex-hull.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -156,12 +203,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>21 Dec 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/12/21/drunken-world.html'>Visualizing Our Drunken World</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/12/21/drunken-world.html'>Visualizing Our Drunken World</a></p>
             <div/>
             <p><p>For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. - and we wanted to build a platform to either confirm or debunk these stereotypes. In a greater sense, we hoped to explore when and how alcohol has been part of culture and history. And thus, <a href="https://jadeyychan.github.io/DrunkenWorld/" target="_blank">Our Drunken World</a> was born!</p>
 
 </p>
-            <a href='/2016/12/21/drunken-world.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/12/21/drunken-world.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -170,12 +217,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>18 Nov 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/11/18/mapping-tufts-schedules.html'>Mapping My Life at Tufts</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/11/18/mapping-tufts-schedules.html'>Mapping My Life at Tufts</a></p>
             <div/>
             <p><p>Over the last view years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.</p>
 
 </p>
-            <a href='/2016/11/18/mapping-tufts-schedules.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/11/18/mapping-tufts-schedules.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -186,12 +233,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>11 Oct 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
             <div/>
             <p><p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="http://localhost:4000/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/NHLPlayoffProjections" target="_blank">the code</a>.</p>
 
 </p>
-            <a href='/2016/10/11/introducing-nhl-projections.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/10/11/introducing-nhl-projections.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -202,12 +249,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>26 Aug 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/08/26/spotify-popularity.html'>Am I Becoming More or Less Hipster?</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/08/26/spotify-popularity.html'>Am I Becoming More or Less Hipster?</a></p>
             <div/>
             <p><p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
 
 </p>
-            <a href='/2016/08/26/spotify-popularity.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/08/26/spotify-popularity.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -216,12 +263,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>22 Aug 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/08/22/rio-2016-usa-vs-world.html'>United States vs. the World in Rio 2016</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/08/22/rio-2016-usa-vs-world.html'>United States vs. the World in Rio 2016</a></p>
             <div/>
             <p><p>The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn’t a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.</p>
 
 </p>
-            <a href='/2016/08/22/rio-2016-usa-vs-world.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/08/22/rio-2016-usa-vs-world.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -232,12 +279,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>15 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
             <div/>
             <p><p>After all this learning of PCA and <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
 
 </p>
-            <a href='/2016/05/15/pca-kmeans-nhl.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/05/15/pca-kmeans-nhl.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -246,12 +293,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>08 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/05/08/netflix-history.html'>Visualizing My (Unhealthy) Netflix History</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/05/08/netflix-history.html'>Visualizing My (Unhealthy) Netflix History</a></p>
             <div/>
             <p><p>TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.</p>
 
 </p>
-            <a href='/2016/05/08/netflix-history.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/05/08/netflix-history.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -260,12 +307,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>03 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/05/03/svm-poetry.html'>Support Vector Machines and Poetry</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/05/03/svm-poetry.html'>Support Vector Machines and Poetry</a></p>
             <div/>
             <p><p>My tales of data mining continue and this time, they’re about <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">support vector machines</a>. These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a> which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn’t a fantastic method.</p>
 
 </p>
-            <a href='/2016/05/03/svm-poetry.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/05/03/svm-poetry.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -276,12 +323,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>09 Mar 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2016/03/09/clustering-with-kmeans.html'>Clustering Using K-Means</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/03/09/clustering-with-kmeans.html'>Clustering Using K-Means</a></p>
             <div/>
             <p><p>This semester, I’m taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA analysis</a>. However, we are starting to move onto look at new types of data analysis / clustering and today’s topic was <strong>k-means clustering</strong>. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student’s perspective, is much easier to rationalize. It’s a fairly simple algorithm and it does have some cool results.</p>
 
 </p>
-            <a href='/2016/03/09/clustering-with-kmeans.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2016/03/09/clustering-with-kmeans.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -290,12 +337,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>12 Dec 2015</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2015/12/12/optimizing-hedge-ratio.html'>Minimizing Risk For An Optimal Portfolio</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2015/12/12/optimizing-hedge-ratio.html'>Minimizing Risk For An Optimal Portfolio</a></p>
             <div/>
             <p><p>For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
 
 </p>
-            <a href='/2015/12/12/optimizing-hedge-ratio.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2015/12/12/optimizing-hedge-ratio.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     
@@ -306,12 +353,12 @@
         <li style='margin-bottom: 45px;'>
             <div>
                 <p id='index_date' style='text-align: left;'>01 Sep 2015</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/2015/09/01/lastfm-scrobble-graphs.html'>Visualizing My Spotify History</a></p>
+                <p id='index_title' style='font-size: 20px;'><a href='/blog/2015/09/01/lastfm-scrobble-graphs.html'>Visualizing My Spotify History</a></p>
             <div/>
             <p><p>As most people do, I go through phases of musical interests. I’ll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm’s scrobbling data, <a href="https://gist.github.com/bitmorse/5201491">this handy script</a>, and some Python / pandas, I was able to see just what I was listening to over the past few years.</p>
 
 </p>
-            <a href='/2015/09/01/lastfm-scrobble-graphs.html'><p style='margin-top: -5px;'>Read More</p></a>
+            <a href='/blog/2015/09/01/lastfm-scrobble-graphs.html'><p style='margin-top: -5px;'>Read More</p></a>
             
         </li>
     

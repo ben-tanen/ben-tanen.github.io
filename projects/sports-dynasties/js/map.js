@@ -56,11 +56,11 @@ function render_map() {
                 sd_svg.selectAll('.tail-path')
                     .transition().duration(movement_duration)
                     .style('opacity', function() {
-                        return Math.max(parseFloat(d3.select(this).style('opacity')) - (1 / movement_steps), 0);
+                        return Math.max(+d3.select(this).style('opacity') - (1 / movement_steps), 0);
                     });
 
                 sd_svg.selectAll('.tail-path').filter(function() {
-                        return parseFloat(d3.select(this).style('opacity')) < 0.0001;
+                        return +d3.select(this).style('opacity') < 0.0001;
                     }).remove();
 
                 var year_a = data.winners[String(year_ix - 1)],

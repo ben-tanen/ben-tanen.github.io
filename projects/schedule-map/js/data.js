@@ -14,7 +14,7 @@ $.ajax({
             var lat  = line[1];
             var lng  = line[2];
             var desc = line[3];
-            locations[name] = {"name": name, "lat": parseFloat(lat), "lng": parseFloat(lng), "description": desc};
+            locations[name] = {"name": name, "lat": +lat, "lng": +lng, "description": desc};
         }
     }
 });
@@ -38,7 +38,7 @@ $.ajax({
                                      "dayofweek":   line[3],
                                      "starttime":   new Date("01/01/2016 " + line[4]),
                                      "endtime":     new Date("01/01/2016 " + line[5]),
-                                     "length":      parseInt(line[6])
+                                     "length":      +line[6]
             });
         }
 

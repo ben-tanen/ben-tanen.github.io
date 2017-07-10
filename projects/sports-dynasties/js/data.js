@@ -19,7 +19,7 @@ function load_data() {
                 if (!data.cities[city + ', ' + state]) {
                     data.cities[city + ', ' + state] = {
                         name: city + ', ' + state,
-                        location: [parseFloat(lat), parseFloat(lng)]
+                        location: [+lat, +lng]
                     };
                 }
 
@@ -34,7 +34,7 @@ function load_data() {
                 if (team != "N/A") {
                     data.winners[year][league].city = {
                         name: city + ', ' + state,
-                        location: [parseFloat(lat), parseFloat(lng)]
+                        location: [+lat, +lng]
                     };              
                 } else {
                     data.winners[year][league].city = null;

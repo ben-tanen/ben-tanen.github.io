@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- jquery and js files -->
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <!-- adobe typekit -->
+    <script src="https://use.typekit.net/jru4jkm.js"></script>
+    <script>
+    try {
+        Typekit.load({
+            async: true,
+            active: function() {
+                $('#side h1').css('opacity', 1);
+                // $('#title-1').css('opacity', 1);
+                // setTimeout(function() { $('#title-2').css('opacity', 1);
+                // }, 500);
+            },
+            inactive: function() {
+                $('#side h1').css('opacity', 1);
+                // $('#title-1').css('opacity', 1);
+                // setTimeout(function() { $('#title-2').css('opacity', 1);
+                // }, 500);
+            }
+        });
+    } catch(e){}
+    </script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
+
+    <title>Blog | Ben Tanen</title>
+</head>
+
+
+<body>
+    <!-- adding support for mathjx -->
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <div class='wrapper'>
+    	<div id='side'>
+    <!-- <a href="/"> -->
+        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
+    <!-- </a> -->
+    
+    <h1 id="title-1" class="tk-europa">
+            Howdy
+    </h1>
+    <h1 id="title-2" class="tk-europa">
+        I'm Ben
+    </h1>
+
+    <div id='site_links' class="tk-europa">
+        <p><a href='/'>Home</a></p>
+        <p><a href='/projects/' >Projects</a></p>
+        <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
+        <p><a href='/blog/' class="selected-link">Blog</a></p>
+    </div>
+
+    <ul id="social_links">
+    <li id="twitter" class="social_link">
+        <a href="https://twitter.com/ben_tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M384.635,236.708c19.554-1.613,32.816-10.502,37.922-22.564c-7.055,4.333-28.952,9.057-41.044,4.558 c-0.593-2.841-1.255-5.541-1.903-7.977c-9.215-33.835-40.764-61.091-73.819-57.799c2.674-1.08,5.386-2.084,8.094-2.988 c3.638-1.303,24.987-4.777,21.625-12.312c-2.835-6.628-28.917,5.01-33.826,6.53c6.479-2.438,17.203-6.631,18.35-14.082 c-9.931,1.362-19.679,6.057-27.214,12.886c2.72-2.927,4.783-6.496,5.222-10.335c-26.493,16.924-41.967,51.042-54.488,84.139 c-9.834-9.53-18.549-17.034-26.369-21.202c-21.933-11.762-48.159-24.034-89.327-39.317c-1.264,13.621,6.736,31.731,29.789,43.774 c-4.995-0.668-14.128,0.824-21.432,2.573c2.975,15.604,12.69,28.461,38.99,34.677c-12.019,0.793-18.232,3.529-23.86,9.424 c5.474,10.852,18.832,23.625,42.863,21.002c-26.717,11.516-10.894,32.844,10.847,29.659 c-37.087,38.307-95.559,35.492-129.133,3.453c87.664,119.456,278.225,70.647,306.623-44.414 c21.273,0.184,33.784-7.368,41.539-15.693C411.823,242.782,394.057,240.632,384.635,236.708z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="github" class="social_link">
+        <a href="https://github.com/ben-tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M373.573,231.878c1.11-7.021,1.803-14.719,1.977-23.351c-0.066-37.014-17.785-50.111-21.194-56.251 c5.021-28.044-0.831-40.801-3.554-45.168c-10.04-3.563-34.929,9.198-48.528,18.181c-22.173-6.491-69.031-5.857-86.603,1.68 c-32.422-23.216-49.57-19.676-49.57-19.676s-11.086,19.879-2.931,48.962c-10.667,13.594-18.619,23.205-18.619,48.698 c0,6.106,0.379,11.875,1.023,17.425c9.187,48.304,47.462,69.144,85.059,72.737c-5.657,4.299-12.45,12.434-13.39,21.861 c-7.108,4.596-21.408,6.115-32.528,2.619c-15.58-4.924-21.545-35.777-44.877-31.375c-5.048,0.945-4.045,4.273,0.327,7.113 c7.108,4.609,13.803,10.342,18.963,22.605c3.963,9.416,12.299,26.229,38.655,26.229c10.462,0,17.791-1.236,17.791-1.236 s0.2,23.994,0.2,33.352c0,10.77-14.534,13.793-14.534,18.959c0,2.057,4.811,2.25,8.677,2.25c7.64,0,23.536-6.363,23.536-17.557 c0-8.895,0.142-38.785,0.142-44.02c0-11.438,6.13-15.078,6.13-15.078s0.75,61.055-1.476,69.24 c-2.609,9.625-7.336,8.258-7.336,12.541c0,6.395,19.11,1.564,25.449-12.43c4.904-10.93,2.707-70.803,2.707-70.803l5.113-0.111 c0,0,0.059,27.422-0.117,39.947c-0.186,12.977-1.523,29.379,6.184,37.121c5.059,5.092,20.555,14.027,20.555,5.861 c0-4.732-10.852-8.641-10.852-21.461v-59.057c6.593,0,7.955,19.412,7.955,19.412l2.377,36.064c0,0-1.578,13.16,14.217,18.652 c5.575,1.953,17.504,2.484,18.062-0.793c0.561-3.287-14.362-8.146-14.504-18.332c-0.078-6.203,0.277-9.834,0.277-36.818 c0-26.969-3.623-36.945-16.247-44.896C328.697,291.219,366.724,274.869,373.573,231.878z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="spotify" class="social_link">
+        <a href="https://play.spotify.com/user/129874447/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M256,105.5c-83.113,0-150.5,67.386-150.5,150.5c0,83.113,67.387,150.5,150.5,150.5 S406.5,339.113,406.5,256C406.5,172.886,339.113,105.5,256,105.5z M325.512,344.212c-1.881,3.442-5.398,5.361-9.049,5.361 c-1.692,0-3.386-0.395-4.984-1.26c-24.099-13.282-51.472-20.299-79.125-20.299c-16.574,0-32.941,2.464-48.611,7.317 c-5.456,1.693-11.25-1.354-12.926-6.828c-1.692-5.438,1.355-16.988,6.83-18.7c17.664-5.475,36.082-8.24,54.725-8.24 c31.116,0,61.95,7.901,89.097,22.858C326.472,327.148,328.296,339.227,325.512,344.212z M344.645,287.529 c-2.145,4.157-6.358,10.855-10.704,10.855c-1.9,0-3.781-0.415-5.55-1.374c-29.875-15.502-62.176-23.365-96.02-23.365 c-18.643,0-37.154,2.446-55.026,7.375c-6.452,1.749-13.075-2.014-14.825-8.466c-1.73-6.452,2.051-17.421,8.485-19.17 c19.94-5.437,40.597-8.202,61.366-8.202c37.229,0,74.252,9.03,107.1,26.111C345.396,274.342,347.71,281.604,344.645,287.529z M352.64,242.135c-2.051,0-4.157-0.47-6.133-1.448c-35.649-17.777-74.046-26.77-114.099-26.77 c-20.882,0-41.688,2.54-61.874,7.524c-7.412,1.825-14.881-2.671-16.706-10.064c-1.844-7.375,2.672-16.311,10.065-18.135 c22.331-5.55,45.376-8.353,68.496-8.353c44.379,0,86.933,9.99,126.42,29.667c6.828,3.405,9.613,11.683,6.208,18.493 C362.573,237.883,357.72,242.135,352.64,242.135z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="linkedin" class="social_link">
+        <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M390.005,284.965v99.085h-57.443v-92.449c0-23.224-8.308-39.072-29.101-39.072 c-15.873,0-25.318,10.68-29.475,21.013c-1.515,3.693-1.905,8.835-1.905,14.006v96.503h-57.462c0,0,0.774-156.578,0-172.8h57.457 v24.493c-0.117,0.183-0.269,0.381-0.378,0.559h0.378v-0.559c7.634-11.757,21.267-28.553,51.782-28.553 C361.663,207.189,390.005,231.887,390.005,284.965z M154.511,127.951c-19.658,0-32.516,12.894-32.516,29.85 c0,16.586,12.486,29.872,31.753,29.872h0.384c20.039,0,32.501-13.283,32.501-29.872 C186.255,140.845,174.171,127.951,154.511,127.951z M125.407,384.05h57.441v-172.8h-57.441V384.05z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="email" class="social_link">
+        <a href="mailto:ben.tanen@gmail.com" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M256,298.711l-36.988-32.373l-105.753,90.654c3.844,3.565,9.033,5.787,14.757,5.787h255.969 c5.703,0,10.871-2.222,14.693-5.787l-105.689-90.654L256,298.711z"/>
+                    <path d="M398.742,155.01c-3.846-3.588-9.012-5.788-14.758-5.788H128.016c-5.703,0-10.87,2.222-14.714,5.83 L256,277.355L398.742,155.01z"/>
+                    <polygon points="106.51,167.972 106.51,345.396 209.723,257.688"/>
+                    <polygon points="302.277,257.688 405.49,345.396 405.49,167.908"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+</ul>
+</div>
+
+    	<div class='main'>
+    		
+
+<div class='post'>
+	<h1>Lots of Light Painting</h1>
+	<p>Before I became all lame, I use to be fairly into photography. I was never superb myself but I loved to experiment with things. I adored light painting and spent hours trying to make cool patterns with some fancy glow sticks.</p>
+
+<p>I haven’t been able to take many photos recently but I felt like sharing some of my personal favorites from the past few years. I hope to maybe add some more as time goes on.</p>
+
+<style>
+    .photo_container {
+    }
+
+    .photo_container img {
+        margin: 0;
+        padding: 5px 5px 0 0;
+    }
+
+    .sub_photo_container {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+</style>
+
+<div class="photo_container">
+    <div class="sub_photo_container">
+        <img src="/assets/img/photography/pic1.jpg" />
+        <img src="/assets/img/photography/pic11.jpg" />
+    </div>
+
+    <div class="sub_photo_container">
+        <img src="/assets/img/photography/pic2.jpg" />
+    </div>
+
+    <div class="sub_photo_container">
+        <img src="/assets/img/photography/pic4.jpg" />
+        <img src="/assets/img/photography/pic5.jpg" />
+    </div>
+
+    <div class="sub_photo_container">
+        <img src="/assets/img/photography/pic6.jpg" />
+        <img src="/assets/img/photography/pic7.jpg" />
+    </div>
+
+    <div class="sub_photo_container">
+        <img src="/assets/img/photography/pic9.jpg" />
+        <img src="/assets/img/photography/pic8.jpg" />
+    </div>
+
+    <div class="sub_photo_container">
+        <img src="/assets/img/photography/pic10.jpg" />
+        <img src="/assets/img/photography/pic3.jpg" />
+    </div>
+</div>
+
+</div>
+
+
+
+<div class='post'>
+	<h1>Clustering Using K-Means</h1>
+	<p>This semester, I’m taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA analysis</a>. However, we are starting to move onto look at new types of data analysis / clustering and today’s topic was <strong>k-means clustering</strong>. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student’s perspective, is much easier to rationalize. It’s a fairly simple algorithm and it does have some cool results.</p>
+
+<p>For a brief explanation, the algorithm simply works by taking data (lets say <em>n</em> data points) and attempts to form them into <em>k</em> clusters (<em>k</em> is chosen by the user). <em>k</em> initial cluster centroids are picked (perhaps by random). From here, the following is done on every iteration:</p>
+
+<ol>
+  <li>Assign each data point <em>i</em> to the “closest” cluster <em>j</em> based on its centroid (“closest” is defined here as smallest euclidean distance, but there are a number of different definitions)</li>
+  <li>Once all data points are assigned, re-calculate the centroid of each cluster to be the mean of all of its now assigned data points</li>
+  <li>Repeat until no improvement can be found</li>
+</ol>
+
+<p>During lecture, my professor was showing of some plots from before and after clustering to visualize the k-means clustering process. I was intrigued and I thought it would be cool to see a step-by-step GIF of this process. Thus, I wrote some code in MATLAB to do k-means clustering and voilà, it works!</p>
+
+<p>Initially, the code generates <em>k</em> normally-distributed random clusters of data of <em>r</em> data points each (<em>kr</em> = <em>n</em> total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn’t necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.</p>
+
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/kmeans_before_after.png" target="_blank">
+    <img src="/assets/img/posts/kmeans_before_after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" />
+    </a>
+</p>
+
+<p>The first iteration is done by making a random guesses for the location of the <em>k</em> (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven’t seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:</p>
+
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/kmeans_cluster.gif" target="_blank">
+    <img src="/assets/img/posts/kmeans_cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" />
+    </a>
+</p>
+
+<p>If you have any interest in playing around, you can find my MATLAB code <a href="https://github.com/ben-tanen/data-mining/tree/master/kmeans">here</a> in <a href="https://github.com/ben-tanen/data-mining">a new GitHub repo</a> for my data mining work. It should work for all reasonable values of <em>k</em> (clusters) and <em>r</em> (data points per cluster). I’ll be honest and say that my MATLAB code leaves a bit to be desired but it’s working so that’s mostly all that matters. </p>
+
+<p>If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.</p>
+
+
+</div>
+
+
+
+<div class='post'>
+	<h1>Minimizing Risk For An Optimal Portfolio</h1>
+	<p>For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
+
+<p>The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.</p>
+
+<p>In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “<a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.</p>
+
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/portfolio_bullet.png" target="_blank">
+    <img src="/assets/img/posts/portfolio_bullet.png" alt="Markowitz bullets showing possible portfolios " width="800px" />
+    </a>
+</p>
+
+<figcaption>
+Markowitz bullets showing possible portfolios 
+</figcaption>
+
+<p>I found this optimized weight allocation by looping over a bunch of different allocations and searching for optimized performance. First I looped through allocations in increments of 0.1 and then examined closer at the region(s) that performed the best. I repeated this process again with increments of 0.025 and 0.005 to find the best weighting. All of these trials can be seen in the bullets above, as well as the final optimized portfolio in red (at the tip).</p>
+
+<p>Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.</p>
+
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/portfolio_return.png" target="_blank">
+    <img src="/assets/img/posts/portfolio_return.png" alt="Comparing the optimized portfolio to the S&amp;P-500" width="600px" />
+    </a>
+</p>
+
+<p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing_portfolio.html">here</a>.</p>
+
+
+</div>
+
+
+
+<div class='post'>
+	<h1>Tufts Polyhack 2015: JumboAdvisor</h1>
+	<p>Figuring out what courses to take as a college student can be a slightly confusing process. What classes count for what requirements? What requirements do I even need for my major? What will my college career look like with all these courses?</p>
+
+<p>Tufts (and the lovely people over at PeopleSoft) attempted to offer a tool called the Advisement Report which would help guide students through these questions. However, this tool is incredibly stupid, offering zero flexibility in terms of moving things around your “degree sheet”. If you want to move one course from one requirement to another, too bad. If you want to check out another major to see if switching majors is possible, you’re out of luck. Trying out minors or double majors? No way.</p>
+
+<p>This is where <a href="http://ben-tanen.github.io/JumboAdvisor/">JumboAdvisor</a> comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart’s content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.</p>
+
+<p class="img_paragraph">
+    <a class="img_link" href="/assets/img/posts/jumboadvisor.png" target="_blank">
+    <img src="/assets/img/posts/jumboadvisor.png" alt="A screenshot of JumboAdvisor" width="600px" />
+    </a>
+</p>
+
+<p>This was a joint effort including work from <a href="https://github.com/agolin95">Alex Golin</a>, <a href="https://github.com/menlonoma">Nolan Martin</a>, <a href="https://github.com/swelch01">Samantha Welch</a>, <a href="https://github.com/mseltzer94">Michael Seltzer</a>, and <a href="https://github.com/jclaw">Jackson Clawson</a>. The site is built with pretty simple HTML, CSS, and JS with no real tricks involved. The original intention was to use something like Angular.js to build drag and droppable sections but hackathons…</p>
+
+<p>Due to the typical woes of a 24-hour hackathon, the site is not fully built. It is more intended as a proof of concept to show the capabilities and functionality that an advisement report <em>should</em> have. The next steps for this project include pitching it successfully to Tufts and building out all the desired features (including data connectivity, better validation, and minors and double majors).</p>
+
+<p>For more, you can see current site <a href="http://ben-tanen.github.io/JumboAdvisor/">here</a> and the source code <a href="https://github.com/ben-tanen/JumboAdvisor">here</a>. Any updates on this project will likely be posted here but you can also check the GitHub repo.</p>
+
+
+</div>
+
+
+
+<div class='pagination'>
+    
+    <p id='pagination_previous'><a href='/blog/4'>&#8592; Newer Posts</a></p>
+    
+
+    <p id="pagination_all"><a href="/index/">View All Posts</a></p>
+
+    
+    <p id='pagination_next'><a href='/blog/6'>Older Posts &#8594;</a></p>
+    
+</div>
+
+    	</div>
+    </div>
+	
+</body>
+</html>

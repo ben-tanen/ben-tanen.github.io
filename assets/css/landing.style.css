@@ -117,8 +117,8 @@ a:hover {
     transition: opacity 0.75s ease;
 }
 
-.currently {
-    /* font-weight: 500; */
+span.currently {
+    font-weight: 600; 
 }
 
 #social_links {

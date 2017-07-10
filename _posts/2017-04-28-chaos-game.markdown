@@ -64,7 +64,7 @@ To briefly explain the game, we basically start by randomly placing some "bases"
     <p><span id='chaos-game-start'>Start</span>, i = <span id='chaos-game-i'>0</span></p>
 </div>
 
-I always enjoy funky little phenomenon like this so I decided to make my own representation of it in D3. I also decided to include colors for each of the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.
+I always enjoy funky little phenomena like this so I decided to make my own representation of it in D3. I also decided to include colors for each of the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.
 
 I'm in the works of implementing it for four, five, etc. bases, but for now, here is the triangular chaos game!
 
@@ -105,7 +105,7 @@ I'm in the works of implementing it for four, five, etc. bases, but for now, her
     var place_new_point = function() {
         var b  = pick_rand_base(a_bases);
         var bi = a_bases.indexOf(b);
-        var mp = midpoint(p_curr, [parseFloat(b.attr("cx")), parseFloat(b.attr("cy"))]);
+        var mp = midpoint(p_curr, [+b.attr("cx"), +b.attr("cy")]);
         
         chaos_svg.append("circle")
             .attr("cx", mp[0])
@@ -146,7 +146,7 @@ I'm in the works of implementing it for four, five, etc. bases, but for now, her
             .attr("cy", (dimension / 2) + randomize_pos() * 1.25)
             .attr("r", 2)
             .attr("fill", "#808080");
-        p_curr = [parseFloat(c1.attr("cx")), parseFloat(c1.attr("cy"))];
+        p_curr = [+c1.attr("cx"), +c1.attr("cy")];
 
         for (var i = 0; i < 2500; i++) {
             setTimeout(function() {
