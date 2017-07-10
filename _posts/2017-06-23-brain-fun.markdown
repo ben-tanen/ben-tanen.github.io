@@ -3,6 +3,7 @@ layout: post
 title: 'Random Brain Fun with Illustrator'
 date: 2017-06-23 15:05:41
 categories: random visualization illustrator
+landing-description: making and animating a brain with Adobe Illustrator
 ---
 
 Over the years, I've dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because on my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from [WIRED](https://www.youtube.com/watch?v=Bxp9Rh7srIg), I opened up Illustrator (and Google, of course) and gave it a try.
