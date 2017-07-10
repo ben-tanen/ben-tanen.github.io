@@ -1,45 +1,115 @@
----
-layout: base.new
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
-<table id="home-grid">
-    <tr>
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+
+    <!-- adobe typekit -->
+    <script src="https://use.typekit.net/jru4jkm.js"></script>
+    <script>
+    try {
+        Typekit.load({
+            async: true,
+            loading: function() {
+            },
+            active: function() {
+                $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                setTimeout(function() {
+                    $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 500)
+            },
+            inactive: function() {
+                $('#landing-header h1 span').css('opacity', 1);
+            }
+        });
+    } catch(e){}
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet">
+
+    <link href="/assets/css/landing-style.css" rel="stylesheet">
+</head>
+
+<body>
+    <svg id="background"></svg>
+    <div id='landing-text'>
+        <div id='landing-header'>
+            <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
+            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
+        </div>
         
-        <td colspan="1" rowspan="2" class="cell" id="cell1">
-            <a class="cell-text" href="http://asl-lex.org/">
-                <h2>ASL-LEX</h2>
-                <p>A lexical database and visualization tool for teaching American Sign Language</p>                
-            </a>
-        </td>
-        
-        <td colspan="1" rowspan="1" class="cell" id="cell2">
-            <a class="cell-text" href="https://ben-tanen.github.io/UltimateConvexHull">
-                <h2>Ultimate (?) Convex Hull</h2>
-                <p>A visual tool to teach the Kirkpatrick-Seidel Ultimate Convex Hull algorithm</p>
-            </a>
-        </td>
-        <td colspan="2" rowspan="1" class="cell" id="cell3">
-            <a class="cell-text" href="https://ben-tanen.github.io/AdaptiveHuffmanCoding">
-                <h2>Adaptive Huffman Coding</h2>
-                <p>A scrollytelling walkthrough introducing, comparing, and contrasting traditional and adaptive Huffman Coding algorithms</p>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" rowspan="1" class="cell" id="cell4">
-            <a class="cell-text" href="https://jadeyychan.github.io/DrunkenWorld/">
-                <h2>Our Drunken World</h2>
-                <p>A visualization exploring alcohol consumption around the world and through time</p>
-            </a>
-        </td>
-        <td colspan="1" rowspan="1" class="cell" id="cell5">
-            <a class="cell-text" href="/projects/">
-                <h2>Other Work</h2>
-                <p>More data visualizations and other miscellaneous projects</p>
-            </a>
-        </td>
+        <p>I’m Ben Tanen and I’m currently studying Computer Science Engineering, Mathematics, and Engineering Management at Tufts University. I have a passion for thinking with, working with, and visualizing data of all forms. During my summers, I’ve worked as software developer and analyst for a few different technology, finance, and consulting companies. Starting Fall 2017, I will be working full-time as an Analyst at Analysis Group in Boston.</p>
 
-    </tr>
-</table>
+        <p>Outside of work and school, I play for the Tufts Club Hockey team, I DJ a weekly radio show on WMFO, Tufts’ Freeform Station, and I help run a mentorship program for Tufts Engineering students. I’m also a huge fan of soul music, law, politics, filmmaking, and spicy foods and I try to immerse myself in those whenever I can - let me know if you ever want to chat about them!</p>
 
+        <p id="currently-text">I'm currently listening to <a class="currently" id="currently-music-name">...</a> from <a class="currently" id="currently-music-artist">...</a> and I'm reading <a class="currently" id="currently-book-name">...</a> by <a class="currently" id="currently-book-author">...</a>.</p>
 
+        <ul id="social_links">
+            <li id="twitter" class="social_link">
+                <a href="https://twitter.com/ben_tanen">
+                    <svg viewBox="0 0 512 512">
+                        <circle cx="256" cy="256" r="239.5"/>
+                        <g fill="#FFFFFF">
+                            <path d="M384.635,236.708c19.554-1.613,32.816-10.502,37.922-22.564c-7.055,4.333-28.952,9.057-41.044,4.558 c-0.593-2.841-1.255-5.541-1.903-7.977c-9.215-33.835-40.764-61.091-73.819-57.799c2.674-1.08,5.386-2.084,8.094-2.988 c3.638-1.303,24.987-4.777,21.625-12.312c-2.835-6.628-28.917,5.01-33.826,6.53c6.479-2.438,17.203-6.631,18.35-14.082 c-9.931,1.362-19.679,6.057-27.214,12.886c2.72-2.927,4.783-6.496,5.222-10.335c-26.493,16.924-41.967,51.042-54.488,84.139 c-9.834-9.53-18.549-17.034-26.369-21.202c-21.933-11.762-48.159-24.034-89.327-39.317c-1.264,13.621,6.736,31.731,29.789,43.774 c-4.995-0.668-14.128,0.824-21.432,2.573c2.975,15.604,12.69,28.461,38.99,34.677c-12.019,0.793-18.232,3.529-23.86,9.424 c5.474,10.852,18.832,23.625,42.863,21.002c-26.717,11.516-10.894,32.844,10.847,29.659 c-37.087,38.307-95.559,35.492-129.133,3.453c87.664,119.456,278.225,70.647,306.623-44.414 c21.273,0.184,33.784-7.368,41.539-15.693C411.823,242.782,394.057,240.632,384.635,236.708z"/>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+
+            <li id="github" class="social_link">
+                <a href="https://github.com/ben-tanen">
+                    <svg viewBox="0 0 512 512">
+                        <circle cx="256" cy="256" r="239.5"/>
+                        <g fill="#FFFFFF">
+                            <path d="M373.573,231.878c1.11-7.021,1.803-14.719,1.977-23.351c-0.066-37.014-17.785-50.111-21.194-56.251 c5.021-28.044-0.831-40.801-3.554-45.168c-10.04-3.563-34.929,9.198-48.528,18.181c-22.173-6.491-69.031-5.857-86.603,1.68 c-32.422-23.216-49.57-19.676-49.57-19.676s-11.086,19.879-2.931,48.962c-10.667,13.594-18.619,23.205-18.619,48.698 c0,6.106,0.379,11.875,1.023,17.425c9.187,48.304,47.462,69.144,85.059,72.737c-5.657,4.299-12.45,12.434-13.39,21.861 c-7.108,4.596-21.408,6.115-32.528,2.619c-15.58-4.924-21.545-35.777-44.877-31.375c-5.048,0.945-4.045,4.273,0.327,7.113 c7.108,4.609,13.803,10.342,18.963,22.605c3.963,9.416,12.299,26.229,38.655,26.229c10.462,0,17.791-1.236,17.791-1.236 s0.2,23.994,0.2,33.352c0,10.77-14.534,13.793-14.534,18.959c0,2.057,4.811,2.25,8.677,2.25c7.64,0,23.536-6.363,23.536-17.557 c0-8.895,0.142-38.785,0.142-44.02c0-11.438,6.13-15.078,6.13-15.078s0.75,61.055-1.476,69.24 c-2.609,9.625-7.336,8.258-7.336,12.541c0,6.395,19.11,1.564,25.449-12.43c4.904-10.93,2.707-70.803,2.707-70.803l5.113-0.111 c0,0,0.059,27.422-0.117,39.947c-0.186,12.977-1.523,29.379,6.184,37.121c5.059,5.092,20.555,14.027,20.555,5.861 c0-4.732-10.852-8.641-10.852-21.461v-59.057c6.593,0,7.955,19.412,7.955,19.412l2.377,36.064c0,0-1.578,13.16,14.217,18.652 c5.575,1.953,17.504,2.484,18.062-0.793c0.561-3.287-14.362-8.146-14.504-18.332c-0.078-6.203,0.277-9.834,0.277-36.818 c0-26.969-3.623-36.945-16.247-44.896C328.697,291.219,366.724,274.869,373.573,231.878z"/>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+
+            <li id="spotify" class="social_link">
+                <a href="https://play.spotify.com/user/129874447">
+                    <svg viewBox="0 0 512 512">
+                        <circle cx="256" cy="256" r="239.5"/>
+                        <g fill="#FFFFFF">
+                            <path d="M256,105.5c-83.113,0-150.5,67.386-150.5,150.5c0,83.113,67.387,150.5,150.5,150.5 S406.5,339.113,406.5,256C406.5,172.886,339.113,105.5,256,105.5z M325.512,344.212c-1.881,3.442-5.398,5.361-9.049,5.361 c-1.692,0-3.386-0.395-4.984-1.26c-24.099-13.282-51.472-20.299-79.125-20.299c-16.574,0-32.941,2.464-48.611,7.317 c-5.456,1.693-11.25-1.354-12.926-6.828c-1.692-5.438,1.355-16.988,6.83-18.7c17.664-5.475,36.082-8.24,54.725-8.24 c31.116,0,61.95,7.901,89.097,22.858C326.472,327.148,328.296,339.227,325.512,344.212z M344.645,287.529 c-2.145,4.157-6.358,10.855-10.704,10.855c-1.9,0-3.781-0.415-5.55-1.374c-29.875-15.502-62.176-23.365-96.02-23.365 c-18.643,0-37.154,2.446-55.026,7.375c-6.452,1.749-13.075-2.014-14.825-8.466c-1.73-6.452,2.051-17.421,8.485-19.17 c19.94-5.437,40.597-8.202,61.366-8.202c37.229,0,74.252,9.03,107.1,26.111C345.396,274.342,347.71,281.604,344.645,287.529z M352.64,242.135c-2.051,0-4.157-0.47-6.133-1.448c-35.649-17.777-74.046-26.77-114.099-26.77 c-20.882,0-41.688,2.54-61.874,7.524c-7.412,1.825-14.881-2.671-16.706-10.064c-1.844-7.375,2.672-16.311,10.065-18.135 c22.331-5.55,45.376-8.353,68.496-8.353c44.379,0,86.933,9.99,126.42,29.667c6.828,3.405,9.613,11.683,6.208,18.493 C362.573,237.883,357.72,242.135,352.64,242.135z"/>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+
+            <li id="linkedin" class="social_link">
+                <a href="https://www.linkedin.com/pub/ben-tanen/8a/291/a98">
+                    <svg viewBox="0 0 512 512">
+                        <circle cx="256" cy="256" r="239.5"/>
+                        <g fill="#FFFFFF">
+                            <path d="M390.005,284.965v99.085h-57.443v-92.449c0-23.224-8.308-39.072-29.101-39.072 c-15.873,0-25.318,10.68-29.475,21.013c-1.515,3.693-1.905,8.835-1.905,14.006v96.503h-57.462c0,0,0.774-156.578,0-172.8h57.457 v24.493c-0.117,0.183-0.269,0.381-0.378,0.559h0.378v-0.559c7.634-11.757,21.267-28.553,51.782-28.553 C361.663,207.189,390.005,231.887,390.005,284.965z M154.511,127.951c-19.658,0-32.516,12.894-32.516,29.85 c0,16.586,12.486,29.872,31.753,29.872h0.384c20.039,0,32.501-13.283,32.501-29.872 C186.255,140.845,174.171,127.951,154.511,127.951z M125.407,384.05h57.441v-172.8h-57.441V384.05z"/>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+
+            <li id="email" class="social_link">
+                <a href="mailto:ben.tanen@gmail.com">
+                    <svg viewBox="0 0 512 512">
+                        <circle cx="256" cy="256" r="239.5"/>
+                        <g fill="#FFFFFF">
+                            <path d="M256,298.711l-36.988-32.373l-105.753,90.654c3.844,3.565,9.033,5.787,14.757,5.787h255.969 c5.703,0,10.871-2.222,14.693-5.787l-105.689-90.654L256,298.711z"/>
+                            <path d="M398.742,155.01c-3.846-3.588-9.012-5.788-14.758-5.788H128.016c-5.703,0-10.87,2.222-14.714,5.83 L256,277.355L398.742,155.01z"/>
+                            <polygon points="106.51,167.972 106.51,345.396 209.723,257.688"/>
+                            <polygon points="302.277,257.688 405.49,345.396 405.49,167.908"/>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script src="/assets/js/landing.js">
+    </script>
+</body>
+</html>

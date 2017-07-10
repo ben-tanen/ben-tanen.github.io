@@ -1,12 +1,42 @@
-<div id='side' class='tall'>
-    {% if page.title %}<a href="/new/">{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/style.new.css">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700" rel="stylesheet">
+    
+    <!-- jquery and js files -->
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/d3.v4.min.js"></script>
+
+    <title>Ben Tanen</title>
+</head>
+
+
+<body>
+    <!-- adding support for mathjx -->
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <div id='wrapper'>
+    	<div id='side' class='tall'>
+    
         <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    {% if page.title %}</a>{% endif %}
+    
     
     <h1 id='title'>
-        {% if page.title %}<a href='/new/'>{% endif %}
+        
             Howdy
-        {% if page.title %}</a>{% endif %}
+        
     </h1>
 
     <div id="bio">
@@ -76,15 +106,64 @@
     
     <div id='site_links'>
         <ul id='site_links_a'>
-            <li {% unless page.title %}class='selected_link'{% endunless %}><a href='/new/'>Home</a></li>
-            <li {% if page.title == "Projects" %}class='selected_link'{% endif %}><a href='/projects/'>Projects</a></li>
-            <li {% if page.title == "Blog" %}class='selected_link'{% endif %}><a href='/blog/'>Blog</a></li>
+            <li class='selected_link'><a href='/new/'>Home</a></li>
+            <li ><a href='/projects/'>Projects</a></li>
+            <li ><a href='/blog/'>Blog</a></li>
         </ul>
         <ul id='site_links_b'>
-            <li {% if page.title == "About" %}class='selected_link'{% endif %}><a href='/about/'>About</a></li>
-            <li {% if page.title == "Resume" %}class='selected_link'{% endif %}><a href='/resume/BenjaminTanen_Resume.pdf/'>Resume</a></li>
-            <li {% if page.title == "Contact" %}class='selected_link'{% endif %}><a href='/contact/'>Contact</a></li>
+            <li ><a href='/about/'>About</a></li>
+            <li ><a href='/resume/BenjaminTanen_Resume.pdf/'>Resume</a></li>
+            <li ><a href='/contact/'>Contact</a></li>
         </ul>
     </div>
 
 </div>
+
+    	<div id='main'>
+    		<table id="home-grid">
+    <tr>
+        
+        <td colspan="1" rowspan="2" class="cell" id="cell1">
+            <a class="cell-text" href="http://asl-lex.org/">
+                <h2>ASL-LEX</h2>
+                <p>A lexical database and visualization tool for teaching American Sign Language</p>                
+            </a>
+        </td>
+        
+        <td colspan="1" rowspan="1" class="cell" id="cell2">
+            <a class="cell-text" href="https://ben-tanen.github.io/UltimateConvexHull">
+                <h2>Ultimate (?) Convex Hull</h2>
+                <p>A visual tool to teach the Kirkpatrick-Seidel Ultimate Convex Hull algorithm</p>
+            </a>
+        </td>
+        <td colspan="2" rowspan="1" class="cell" id="cell3">
+            <a class="cell-text" href="https://ben-tanen.github.io/AdaptiveHuffmanCoding">
+                <h2>Adaptive Huffman Coding</h2>
+                <p>A scrollytelling walkthrough introducing, comparing, and contrasting traditional and adaptive Huffman Coding algorithms</p>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="1" class="cell" id="cell4">
+            <a class="cell-text" href="https://jadeyychan.github.io/DrunkenWorld/">
+                <h2>Our Drunken World</h2>
+                <p>A visualization exploring alcohol consumption around the world and through time</p>
+            </a>
+        </td>
+        <td colspan="1" rowspan="1" class="cell" id="cell5">
+            <a class="cell-text" href="/projects/">
+                <h2>Other Work</h2>
+                <p>More data visualizations and other miscellaneous projects</p>
+            </a>
+        </td>
+
+    </tr>
+</table>
+
+
+
+    	</div>
+    </div>
+	
+</body>
+</html>

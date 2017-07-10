@@ -20,7 +20,8 @@ $.ajax({
         }
 
         setTimeout(function() {
-            $('#bt-record-holder').animate({opacity: 1}, 500);
+            $('#loading-spinner').fadeOut();
+            $('.bt-record').css({opacity: 1});
         }, 500);
     }
 });

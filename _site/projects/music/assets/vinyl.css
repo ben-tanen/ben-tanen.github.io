@@ -1,7 +1,13 @@
 #bt-record-holder {
     margin-top: 10px;
     margin-bottom: 50px;
-    opacity: 0;
+    position: relative;
+}
+
+#loading-spinner {
+    width: 100px;
+    position: absolute;
+    left: calc((100% - 100px) / 2);
 }
 
 .bt-record {
@@ -12,7 +18,11 @@
     display: inline-block;
     overflow: hidden;
     margin: 0 2px;
-    opacity: 1;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .bt-record img {
@@ -36,4 +46,10 @@
 
 .bt-record:hover p {
     opacity: 1;
+}
+
+@media (max-width: 775px), (orientation : portrait) {
+    .bt-record p {
+        display: none;
+    }
 }
