@@ -1,3 +1,4 @@
+// hide or show sidebar for mobile
 $(document).ready(function() {
     var lastScrollTop = 0;
     
