@@ -9,6 +9,7 @@ This is my personal website. It includes a home page featuring blog posts and ot
 - [x] Speed Up "Story Time" Page
 - [x] Clean Up Code (mostly CSS)
 - [ ] Update "Projects" Page
+- [ ] Add "Media" + "Photography" page
 - [ ] Add Date + Tags to Blog Posts
 - [ ] Add RSS Feed
 - [ ] Add "Work I Admire" Page
