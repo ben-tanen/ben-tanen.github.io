@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
     <link rel="stylesheet" href="/assets/css/style.css">
+    
 
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
@@ -23,12 +26,20 @@
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             }
         });
     } catch(e){}
@@ -36,7 +47,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Blog | Ben Tanen</title>
@@ -51,12 +61,10 @@
 
     <div class='wrapper'>
     	<div id='side'>
-    <!-- <a href="/"> -->
-        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    <!-- </a> -->
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
     <h1 id="title-1" class="tk-europa">
-            Howdy
+        Howdy
     </h1>
     <h1 id="title-2" class="tk-europa">
         I'm Ben
@@ -134,8 +142,15 @@
     		
 
 <div class='post'>
-	<h1>Retro Post: Game Theory, The Game</h1>
-	<p>This retro post came from my senior year of high school when I was taking AP Economics. Who doesn’t love turning economics into drinking games?</p>
+    <header class="post-header">
+	   <h1>Retro Post: Game Theory, The Game</h1>
+       <!--
+       <p class="post-meta">Jun 26 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>This retro post came from my senior year of high school when I was taking AP Economics. Who doesn’t love turning economics into drinking games?</p>
 
 <p><em>[Beginning of Post]</em></p>
 
@@ -179,13 +194,21 @@ Who doesn't love economic-based drinking games?
 
 <p>Any other potential prizes/punishments?</p>
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Retro Post: iOS Upgrades (Circa 2013)</h1>
-	<p>Before moving to Github and using Jekyll, I hosted a <a href="http://ben-tanen.tumblr.com/">blog on Tumblr</a>. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some <em>retro posts</em> from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6). </p>
+    <header class="post-header">
+	   <h1>Retro Post: iOS Upgrades (Circa 2013)</h1>
+       <!--
+       <p class="post-meta">Jun 17 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>Before moving to Github and using Jekyll, I hosted a <a href="http://ben-tanen.tumblr.com/">blog on Tumblr</a>. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some <em>retro posts</em> from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6). </p>
 
 <p>I’d like to point out that since then, three of these four upgrades have been implemented in someway or another so I guess you could say I’m an accurate futurist. I’d also like to say that I spent a fair amount of time building these mockup screens in Adobe After Effects and they’re actually pretty awesome. Overall success for 18 year old me!</p>
 
@@ -237,13 +260,21 @@ Update - More or less is exactly what the actual implementation looks like
   <p><strong>Retrospective Update #4</strong> - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.</p>
 </blockquote>
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Why Everyone Should Use (Or At Least Try) Spotify</h1>
-	<p>For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.</p>
+    <header class="post-header">
+	   <h1>Why Everyone Should Use (Or At Least Try) Spotify</h1>
+       <!--
+       <p class="post-meta">May 21 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.</p>
 
 <p>And you know what? I love Spotify. Every concern I had was quickly answered because they have thought of everything. Want to have music while you’re out of cell range? No worries, you can download playlists straight to your phone or computer. Want to listen to a brand-new remix that isn’t on Spotify? Loading and listening to local / custom files is easy. And that is just the simple stuff. If you know anyone who uses Spotify, I’m sure you’ve heard a similar raving review. But if you’re still not convinced, here is why I think you should at least consider trying Spotify Premium. </p>
 
@@ -291,13 +322,21 @@ Spotify didn't waste an inch of space on the mobile app
 <p>There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.</p>
 
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>RodRego: The Simple Register Machine Simulator</h1>
-	<p class="img_paragraph">
+    <header class="post-header">
+	   <h1>RodRego: The Simple Register Machine Simulator</h1>
+       <!--
+       <p class="post-meta">Mar 31 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p class="img_paragraph">
     <a class="img_link" href="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" target="_blank">
     <img src="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" alt="RodRego's Original Banner" />
     </a>
@@ -322,6 +361,7 @@ The original desktop application (left) vs. the new web application (right)
 <p>If you want to try it out, you can find the site <a href="http://proto.atech.tufts.edu/RodRego/">here</a>. You can also find the code on <a href="https://github.com/ben-tanen/RodRego">GitHub</a>.</p>
 
 
+    </article>
 </div>
 
 
@@ -331,7 +371,7 @@ The original desktop application (left) vs. the new web application (right)
     <p id='pagination_previous'><a href='/blog/6'>&#8592; Newer Posts</a></p>
     
 
-    <p id="pagination_all"><a href="/index/">View All Posts</a></p>
+    <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
 
     
     <p id='pagination_next'><a href='/blog/8'>Older Posts &#8594;</a></p>

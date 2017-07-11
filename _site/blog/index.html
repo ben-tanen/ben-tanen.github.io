@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
     <link rel="stylesheet" href="/assets/css/style.css">
+    
 
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
@@ -23,12 +26,20 @@
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             }
         });
     } catch(e){}
@@ -36,7 +47,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Blog | Ben Tanen</title>
@@ -51,12 +61,10 @@
 
     <div class='wrapper'>
     	<div id='side'>
-    <!-- <a href="/"> -->
-        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    <!-- </a> -->
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
     <h1 id="title-1" class="tk-europa">
-            Howdy
+        Howdy
     </h1>
     <h1 id="title-2" class="tk-europa">
         I'm Ben
@@ -134,8 +142,15 @@
     		
 
 <div class='post'>
-	<h1>Random Brain Fun with Illustrator</h1>
-	<p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because of my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">WIRED</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
+    <header class="post-header">
+	   <h1>Random Brain Fun with Illustrator</h1>
+       <!--
+       <p class="post-meta">Jun 23 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because of my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">WIRED</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
 
 <p>In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we’ve all got to start somewhere. Expect more to come…</p>
 
@@ -410,13 +425,21 @@
 </script>
 
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Explaining Adaptive Huffman Coding with Scrollytelling</h1>
-	<p>After months of reading and being impressed by the <a href="https://pudding.cool/2017/04/beer/" target="_blank">very</a> <a href="https://pudding.cool/2017/01/making-it-big/" target="_blank">cool</a> <a href="https://pudding.cool/2017/02/vocabulary/" target="_blank">visual</a> <a href="https://pudding.cool/2017/05/song-repetition/" target="_blank">essays</a> put out by <a href="https://pudding.cool/" target="_blank">The Pudding</a>, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">traditional Huffman Coding</a> to <a href="https://en.wikipedia.org/wiki/Adaptive_Huffman_coding" target="_blank">adaptive Huffman Coding</a>.</p>
+    <header class="post-header">
+	   <h1>Explaining Adaptive Huffman Coding with Scrollytelling</h1>
+       <!--
+       <p class="post-meta">Jun 01 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>After months of reading and being impressed by the <a href="https://pudding.cool/2017/04/beer/" target="_blank">very</a> <a href="https://pudding.cool/2017/01/making-it-big/" target="_blank">cool</a> <a href="https://pudding.cool/2017/02/vocabulary/" target="_blank">visual</a> <a href="https://pudding.cool/2017/05/song-repetition/" target="_blank">essays</a> put out by <a href="https://pudding.cool/" target="_blank">The Pudding</a>, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">traditional Huffman Coding</a> to <a href="https://en.wikipedia.org/wiki/Adaptive_Huffman_coding" target="_blank">adaptive Huffman Coding</a>.</p>
 
 <p class="img_paragraph">
     <a class="img_link" href="/assets/img/posts/huffman-coding.gif" target="_blank">
@@ -424,17 +447,27 @@
     </a>
 </p>
 
-<p>If you’re interested in learning about Adaptive Huffman Coding, you can find the project <a href="http://ben-tanen.github.io/AdaptiveHuffmanCoding/" target="_blank">here</a>. If you’re interested in the code, that can be found <a href="https://github.com/ben-tanen/AdaptiveHuffmanCoding" target="_blank">here</a>. If you’re interested in trying out your own scrollytelling project, I would definitely suggest checking out The Pudding’s work as well as <a href="https://pudding.cool/process/how-to-implement-scrollytelling/" target="_blank">this tutorial</a> they put together - it was a huge help for me.</p>
+<p>To give a quick preview, Huffman Coding is a lossless data compression algorithm, which means we can reduce the size of any dataset by 15 - 30% without corrupting any of our data. However, in order to do this, Huffman Coding requires some prior knowledge of our dataset, which means we will be slowed down if we don’t already have this information. To improve upon this, we can instead use Adaptive Huffman Coding, which enables us to get comparable compression efficiency in a fraction of the time. Intrigued? You can check out <a href="http://ben-tanen.github.io/AdaptiveHuffmanCoding/" target="_blank">the full explanation</a> for more.</p>
+
+<p>If you’re interested in the code, that can be found <a href="https://github.com/ben-tanen/AdaptiveHuffmanCoding" target="_blank">here</a>. If you’re interested in trying out your own scrollytelling project, I would definitely suggest checking out The Pudding’s work as well as <a href="https://pudding.cool/process/how-to-implement-scrollytelling/" target="_blank">this tutorial</a> they put together - it was a huge help for me.</p>
 
 <p><em>Usability Note</em>: I have noticed some rendering issues when viewing the second half of the site in Safari and Firefox <span style="font-size: 9px">(sorry)</span>. I’m trying to figure out the issue, but for now, I would suggest viewing the site in Chrome.</p>
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>The Chaos Game</h1>
-	<style>
+    <header class="post-header">
+	   <h1>The Chaos Game</h1>
+       <!--
+       <p class="post-meta">Apr 28 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <style>
     #chaos-game-container {
         width: 300px;
         margin: auto;
@@ -588,13 +621,21 @@
 </script>
 
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Polar Line Charts in D3</h1>
-	<p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
+    <header class="post-header">
+	   <h1>Polar Line Charts in D3</h1>
+       <!--
+       <p class="post-meta">Jan 08 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
 
 <p>Since <a href="https://bost.ocks.org/mike/" target="_blank">D3 and Mike Bostock</a> have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.</p>
 
@@ -831,6 +872,7 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
 <p>Now that I have the chart ready to go, I’ll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I’ll post it here.</p>
 
 
+    </article>
 </div>
 
 
@@ -838,7 +880,7 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
 <div class='pagination'>
     
 
-    <p id="pagination_all"><a href="/index/">View All Posts</a></p>
+    <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
 
     
     <p id='pagination_next'><a href='/blog/2'>Older Posts &#8594;</a></p>

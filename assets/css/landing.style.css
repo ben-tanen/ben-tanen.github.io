@@ -99,10 +99,10 @@ a:hover {
 }
 
 #landing-text p {
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     text-align: justify;
     font-size: 18px;
-    line-height: 1.75;
+    line-height: 1.65;
 }
 
 /******************************/
@@ -121,17 +121,16 @@ span.currently {
     font-weight: 600; 
 }
 
-#social_links {
-    height: 32px;
-    display: inline-block;
-    margin-top: 10px;
-    padding: 0 calc((100% - 179px) / 2);
-    list-style: none;
-}
-
 /****************************/
 /*** social links styling ***/
 /****************************/
+
+#social_links {
+    height: 32px;
+    display: inline-block;
+    padding: 0 calc((100% - 179px) / 2);
+    list-style: none;
+}
 
 .social_link {
     display: inline;

@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
     <link rel="stylesheet" href="/assets/css/style.css">
+    
 
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
@@ -23,12 +26,20 @@
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             }
         });
     } catch(e){}
@@ -36,7 +47,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Blog | Ben Tanen</title>
@@ -51,12 +61,10 @@
 
     <div class='wrapper'>
     	<div id='side'>
-    <!-- <a href="/"> -->
-        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    <!-- </a> -->
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
     <h1 id="title-1" class="tk-europa">
-            Howdy
+        Howdy
     </h1>
     <h1 id="title-2" class="tk-europa">
         I'm Ben
@@ -134,8 +142,15 @@
     		
 
 <div class='post'>
-	<h1>Grub: The Command-line GrubHub</h1>
-	<p>GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.</p>
+    <header class="post-header">
+	   <h1>Grub: The Command-line GrubHub</h1>
+       <!--
+       <p class="post-meta">Nov 30 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.</p>
 
 <p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
 
@@ -158,13 +173,21 @@
 <p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future. </p>
 
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Random Project: Base64 Decoder</h1>
-	<p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
+    <header class="post-header">
+	   <h1>Random Project: Base64 Decoder</h1>
+       <!--
+       <p class="post-meta">Nov 12 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
 
 <p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
 
@@ -178,13 +201,21 @@
 
 <p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code <a href="https://github.com/ben-tanen/Base64Decode">here</a>.</p>
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Up-to-Date Infographics</h1>
-	<p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
+    <header class="post-header">
+	   <h1>Up-to-Date Infographics</h1>
+       <!--
+       <p class="post-meta">Nov 01 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
 
 <p class="img_paragraph">
     <a class="img_link" href="/assets/img/posts/infographics_kerem.png" target="_blank">
@@ -217,13 +248,21 @@ My own example infographics
 <p><strong>Update</strong> - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on <a href="/about/">my about page</a>.</p>
 
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Rap, Data, and Design</h1>
-	<p>A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.</p>
+    <header class="post-header">
+	   <h1>Rap, Data, and Design</h1>
+       <!--
+       <p class="post-meta">Oct 31 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.</p>
 
 <p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
 
@@ -248,6 +287,7 @@ My own example infographics
 <p>By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.</p>
 
 
+    </article>
 </div>
 
 
@@ -257,7 +297,7 @@ My own example infographics
     <p id='pagination_previous'><a href='/blog/7'>&#8592; Newer Posts</a></p>
     
 
-    <p id="pagination_all"><a href="/index/">View All Posts</a></p>
+    <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
 
     
 </div>

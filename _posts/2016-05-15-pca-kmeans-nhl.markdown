@@ -5,7 +5,7 @@ date:   2016-05-15 15:05:41
 categories: project data matlab nhl hockey nhl-projections
 ---
 
-After all this learning of PCA and [k-means clustering](/2016/03/09/clustering-with-kmeans.html), I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!
+After all this learning of PCA and [k-means clustering](/blog/2016/03/09/clustering-with-kmeans.html), I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!
 
 It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!
 

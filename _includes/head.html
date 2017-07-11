@@ -2,7 +2,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    {% if page.title %}
     <link rel="stylesheet" href="/assets/css/style.css">
+    {% else %}
+    <link href="/assets/css/landing.style.css" rel="stylesheet">
+    {% endif %}
 
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
@@ -20,12 +25,20 @@
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             }
         });
     } catch(e){}
@@ -33,7 +46,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>{% if page.title %}{{ page.title }} | Ben Tanen{% else %}Ben Tanen{% endif %}</title>

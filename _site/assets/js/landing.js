@@ -131,7 +131,7 @@ $(document).ready(function() {
                     $('#currently-music-name').html(data.song_name).attr('href', data.song_url);
                 }
 
-                $('#currently-music-artist').html(data.song_artist).attr('href', data.song_url);
+                $('#currently-music-artist').html(data.song_artist);
 
                 if ($('#currently-book-name').html() != "...") {
                     $('#currently-text').css('opacity', 1);
@@ -146,7 +146,7 @@ $(document).ready(function() {
             if (Object.keys(data).length >= 1 && data.book_name != "") {
 
                 $('#currently-book-name').html(data.book_name).attr('href', data.book_url);
-                $('#currently-book-author').html(data.book_author).attr('href', data.book_url);
+                $('#currently-book-author').html(data.book_author);
 
                 if ($('#currently-music-name').html() != "...") {
                     $('#currently-text').css('opacity', 1);

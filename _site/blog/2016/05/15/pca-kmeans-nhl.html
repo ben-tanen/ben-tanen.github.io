@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
     <link rel="stylesheet" href="/assets/css/style.css">
+    
 
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
@@ -23,12 +26,20 @@
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             }
         });
     } catch(e){}
@@ -36,7 +47,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>PCA and K-Means on NHL Stats | Ben Tanen</title>
@@ -51,12 +61,10 @@
 
     <div class='wrapper'>
     	<div id='side'>
-    <!-- <a href="/"> -->
-        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    <!-- </a> -->
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
     <h1 id="title-1" class="tk-europa">
-            Howdy
+        Howdy
     </h1>
     <h1 id="title-2" class="tk-europa">
         I'm Ben
@@ -135,11 +143,14 @@
 
   <header class="post-header">
     <h1>PCA and K-Means on NHL Stats</h1>
-    <p class="meta">May 15, 2016</p>
+    <p class="post-date">May 15 2016
+    <!--
+    <p class="post-meta">May 15 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+    -->
   </header>
 
   <article class="post-content">
-  <p>After all this learning of PCA and <a href="/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
+  <p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
 
 <p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!</p>
 

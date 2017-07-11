@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
     <link rel="stylesheet" href="/assets/css/style.css">
+    
 
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
@@ -23,12 +26,20 @@
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             }
         });
     } catch(e){}
@@ -36,7 +47,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>RodRego: The Simple Register Machine Simulator | Ben Tanen</title>
@@ -51,12 +61,10 @@
 
     <div class='wrapper'>
     	<div id='side'>
-    <!-- <a href="/"> -->
-        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    <!-- </a> -->
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
     <h1 id="title-1" class="tk-europa">
-            Howdy
+        Howdy
     </h1>
     <h1 id="title-2" class="tk-europa">
         I'm Ben
@@ -135,7 +143,10 @@
 
   <header class="post-header">
     <h1>RodRego: The Simple Register Machine Simulator</h1>
-    <p class="meta">Mar 31, 2015</p>
+    <p class="post-date">Mar 31 2015
+    <!--
+    <p class="post-meta">Mar 31 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+    -->
   </header>
 
   <article class="post-content">

@@ -7,8 +7,10 @@ This is my personal website. It includes a home page featuring blog posts and ot
 - [x] Update "About"
 - [x] Add "Vinyl" Page
 - [x] Speed Up "Story Time" Page
-- [ ] Add Webpage for Resume
-- [ ] Add Gallery Option ([tight grid](http://ben-tanen.com/2016/11/10/stpaul-broken-bones.html) and [loose grid](http://stephaniestamm.com/))
+- [ ] Clean Up Code (mostly CSS)
+- [ ] Update "Projects" Page
+- [ ] Add Date + Tags to Blog Posts
 - [ ] Add RSS Feed
 - [ ] Add "Work I Admire" Page
+- [ ] Add Gallery Option ([tight grid](http://ben-tanen.com/2016/11/10/stpaul-broken-bones.html) and [loose grid](http://stephaniestamm.com/))
 

@@ -5,7 +5,7 @@ date:   2015-07-01 15:05:41
 categories: python projects retro
 ---
 
-After posting my two most recent retro posts ([#1](/2015/06/17/retro-ios-update.html), [#2](/2015/06/26/retro-game-theory.html)), I thought I'd post some of my older projects as well. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.
+After posting my two most recent retro posts ([#1](/blog/2015/06/17/retro-ios-update.html), [#2](/blog/2015/06/26/retro-game-theory.html)), I thought I'd post some of my older projects as well. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.
 
 The first coding project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I'm not sure how or why... Either way, here is the [code on Github](https://github.com/ben-tanen/PythonGames/blob/master/battleship.py).
 

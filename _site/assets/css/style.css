@@ -165,12 +165,34 @@ h3 {
 }
 
 	.post {
-		margin: 0 70px 100px 0;
-		width: 100%;
+		margin-bottom: 100px;
 	}
 
+    .post-header {
+        position: relative;
+    }
+
+    /*
+    .post-meta {
+        position: absolute;
+        width: 50px;
+        text-align: center !important;
+        color: black !important;
+    }
+
+    .post-tag {
+        width: 45px;
+        height: 17px;
+        padding: 0 3px;
+        font-size: 13px;
+        background-color: #77bdee;
+        color: white;
+        display: inline-block;
+    }
+    */
+
 	.post-content {
-		width: 100%;
+        /*padding-left: 60px;*/
 	}
 
 	.main p {

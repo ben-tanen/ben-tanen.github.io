@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
     <link rel="stylesheet" href="/assets/css/style.css">
+    
 
     <!-- jquery and js files -->
     <script src="/assets/js/lib/jquery.min.js"></script>
@@ -23,12 +26,20 @@
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
                 // $('#title-1').css('opacity', 1);
                 // setTimeout(function() { $('#title-2').css('opacity', 1);
                 // }, 500);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
             }
         });
     } catch(e){}
@@ -36,7 +47,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Blog | Ben Tanen</title>
@@ -51,12 +61,10 @@
 
     <div class='wrapper'>
     	<div id='side'>
-    <!-- <a href="/"> -->
-        <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    <!-- </a> -->
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
     <h1 id="title-1" class="tk-europa">
-            Howdy
+        Howdy
     </h1>
     <h1 id="title-2" class="tk-europa">
         I'm Ben
@@ -134,8 +142,15 @@
     		
 
 <div class='post'>
-	<h1>Introducing 2016-17 NHL Projections</h1>
-	<p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="http://localhost:4000/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/NHLPlayoffProjections" target="_blank">the code</a>.</p>
+    <header class="post-header">
+	   <h1>Introducing 2016-17 NHL Projections</h1>
+       <!--
+       <p class="post-meta">Oct 11 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="http://localhost:4000/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/NHLPlayoffProjections" target="_blank">the code</a>.</p>
 
 <p>Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).</p>
 
@@ -176,13 +191,21 @@
 
 <p>Here’s to an exciting 2016-17 season and <a href="https://twitter.com/search?q=lgr" target="_blank">#LGR</a>!</p>
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Random D3 Fun</h1>
-	<p>I’m currently taking (and loving) a data visualization course, so naturally, I’m learning a little D3.js to make some <em>sick</em> visualizations. Below is my first experiment with some SVG animation (likely more to come). Clearly it is art. Have fun clicking away!</p>
+    <header class="post-header">
+	   <h1>Random D3 Fun</h1>
+       <!--
+       <p class="post-meta">Sep 28 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>I’m currently taking (and loving) a data visualization course, so naturally, I’m learning a little D3.js to make some <em>sick</em> visualizations. Below is my first experiment with some SVG animation (likely more to come). Clearly it is art. Have fun clicking away!</p>
 
 <div id="d3-sample-container" style="margin: auto; width: 300px; cursor: pointer;">
 </div>
@@ -269,13 +292,21 @@
 </script>
 
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>Am I Becoming More or Less Hipster?</h1>
-	<p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
+    <header class="post-header">
+	   <h1>Am I Becoming More or Less Hipster?</h1>
+       <!--
+       <p class="post-meta">Aug 26 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
 
 <p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
 
@@ -289,13 +320,21 @@
 
 <p>Additional side note on my “hipster-ness”, of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
 
+    </article>
 </div>
 
 
 
 <div class='post'>
-	<h1>United States vs. the World in Rio 2016</h1>
-	<p>The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn’t a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.</p>
+    <header class="post-header">
+	   <h1>United States vs. the World in Rio 2016</h1>
+       <!--
+       <p class="post-meta">Aug 22 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn’t a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.</p>
 
 <p>I’ve heard a few people refer to the size of the United States’ Olympic team as a likely contributor. It would make sense that the U.S. would get more medals if they had more athletes participating in each event. However, on the surface, this doesn’t quite explain it since most events have a cap on the number of athletes that each country can send. For example, each country is only allowed to send three athletes per track &amp; field event. If there is a limit on the number of athletes per event then there must be further explanation of the United States’ success.</p>
 
@@ -511,6 +550,7 @@
 <p><strong>*</strong> These numbers do not include marathon swimming <br /> <strong>**</strong> These numbers do not include rhythmic or trampoline gymnastics</p>
 
 
+    </article>
 </div>
 
 
@@ -520,7 +560,7 @@
     <p id='pagination_previous'><a href='/blog/2'>&#8592; Newer Posts</a></p>
     
 
-    <p id="pagination_all"><a href="/index/">View All Posts</a></p>
+    <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
 
     
     <p id='pagination_next'><a href='/blog/4'>Older Posts &#8594;</a></p>
