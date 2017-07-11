@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.style.css">
     
 
     <!-- jquery and js files -->
@@ -23,9 +23,6 @@
             async: true,
             active: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -33,9 +30,6 @@
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -152,8 +146,8 @@
   <article class="post-content">
   <p>As most people do, I go through phases of musical interests. I’ll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm’s scrobbling data, <a href="https://gist.github.com/bitmorse/5201491">this handy script</a>, and some Python / pandas, I was able to see just what I was listening to over the past few years.</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/lastfm_linegraph.png" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/lastfm_linegraph.png" target="_blank">
     <img src="/assets/img/posts/lastfm_linegraph.png" alt="A graph of my music plays from 06/2014 - 08/2015" width="600px" />
     </a>
 </p>

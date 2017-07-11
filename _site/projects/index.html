@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.style.css">
     
 
     <!-- jquery and js files -->
@@ -23,9 +23,6 @@
             async: true,
             active: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -33,9 +30,6 @@
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -146,7 +140,9 @@
   </header>
 
   <article class="post-content">
-  <div class='project-box'>
+  <link rel="stylesheet" href="/assets/css/projects.style.css">
+
+<div class='project-box'>
     <div class='project-img-box'>
         <img class='project-img' src='/assets/img/projects/data-projects3.gif' />
     </div>

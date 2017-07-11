@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.style.css">
     
 
     <!-- jquery and js files -->
@@ -23,9 +23,6 @@
             async: true,
             active: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -33,9 +30,6 @@
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -230,16 +224,16 @@
 
 <p>Initially, the code generates <em>k</em> normally-distributed random clusters of data of <em>r</em> data points each (<em>kr</em> = <em>n</em> total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn’t necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/kmeans_before_after.png" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/kmeans_before_after.png" target="_blank">
     <img src="/assets/img/posts/kmeans_before_after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" />
     </a>
 </p>
 
 <p>The first iteration is done by making a random guesses for the location of the <em>k</em> (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven’t seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/kmeans_cluster.gif" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/kmeans_cluster.gif" target="_blank">
     <img src="/assets/img/posts/kmeans_cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" />
     </a>
 </p>
@@ -269,8 +263,8 @@
 
 <p>In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “<a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/portfolio_bullet.png" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/portfolio_bullet.png" target="_blank">
     <img src="/assets/img/posts/portfolio_bullet.png" alt="Markowitz bullets showing possible portfolios " width="800px" />
     </a>
 </p>
@@ -283,8 +277,8 @@ Markowitz bullets showing possible portfolios
 
 <p>Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/portfolio_return.png" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/portfolio_return.png" target="_blank">
     <img src="/assets/img/posts/portfolio_return.png" alt="Comparing the optimized portfolio to the S&amp;P-500" width="600px" />
     </a>
 </p>
@@ -312,8 +306,8 @@ Markowitz bullets showing possible portfolios
 
 <p>This is where <a href="http://ben-tanen.github.io/JumboAdvisor/">JumboAdvisor</a> comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart’s content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/jumboadvisor.png" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/jumboadvisor.png" target="_blank">
     <img src="/assets/img/posts/jumboadvisor.png" alt="A screenshot of JumboAdvisor" width="600px" />
     </a>
 </p>

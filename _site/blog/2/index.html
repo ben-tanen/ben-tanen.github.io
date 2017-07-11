@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.style.css">
     
 
     <!-- jquery and js files -->
@@ -23,9 +23,6 @@
             async: true,
             active: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -33,9 +30,6 @@
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -152,8 +146,8 @@
     <article class="post-content">
 	   <p>After <a href="/blog/2016/12/21/drunken-world.html" target="_blank">posting the final project</a> for my visualization course, I thought I’d share the final project for my computational geometry class as well. The course was an extended algorithms class focused on different multi-dimensional geometric problems. One of the main problems of the course deals with finding the <a href="https://en.wikipedia.org/wiki/Convex_hull" target="_blank">convex hull</a> of a set of points. There are <a href="https://www.youtube.com/watch?v=ZnTiWcIznEQ" target="_blank">a number ways</a> to tackle the problem but one of the best approaches is the Kirkpatrick-Seidel Ultimate Planar Convex Hull Algorithm. In order to help teach the algorithm, I made <a href="http://ben-tanen.github.io/UltimateConvexHull/" target="_blank">a visualization tool</a> to walk-through the steps.</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/ultimate_ch.png" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/ultimate_ch.png" target="_blank">
     <img src="/assets/img/posts/ultimate_ch.png" alt="A screenshot of the visualization" width="600px" />
     </a>
 </p>

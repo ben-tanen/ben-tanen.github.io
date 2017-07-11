@@ -7,7 +7,7 @@ This is my personal website. It includes a home page featuring blog posts and ot
 - [x] Update "About"
 - [x] Add "Vinyl" Page
 - [x] Speed Up "Story Time" Page
-- [ ] Clean Up Code (mostly CSS)
+- [x] Clean Up Code (mostly CSS)
 - [ ] Update "Projects" Page
 - [ ] Add Date + Tags to Blog Posts
 - [ ] Add RSS Feed

@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.style.css">
     
 
     <!-- jquery and js files -->
@@ -23,9 +23,6 @@
             async: true,
             active: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -33,9 +30,6 @@
             },
             inactive: function() {
                 $('#side h1').css('opacity', 1);
-                // $('#title-1').css('opacity', 1);
-                // setTimeout(function() { $('#title-2').css('opacity', 1);
-                // }, 500);
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
                 }, 300); 
                 setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
@@ -154,8 +148,8 @@
 
 <p>Getting the information was pretty simple. I just had to scrape the data via Netflix’s own viewing history page, clean it a bit, and then pipe it into MATLAB.</p>
 
-<p class="img_paragraph">
-    <a class="img_link" href="/assets/img/posts/netflix_history.png" target="_blank">
+<p class="fig_paragraph">
+    <a class="fig_link" href="/assets/img/posts/netflix_history.png" target="_blank">
     <img src="/assets/img/posts/netflix_history.png" alt="A visualization of my Netflix viewing history" />
     </a>
 </p>
