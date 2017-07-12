@@ -13,5 +13,5 @@ This is my personal website. It includes a home page featuring blog posts and ot
 - [ ] Add Date + Tags to Blog Posts
 - [ ] Add RSS Feed
 - [ ] Add "Work I Admire" Page
-- [ ] Add Gallery Option ([tight grid](http://ben-tanen.com/2016/11/10/stpaul-broken-bones.html) and [loose grid](http://stephaniestamm.com/))
+- [ ] Add Gallery Option ([tight grid](http://ben-tanen.com/blog/2016/11/10/stpaul-broken-bones.html) and [loose grid](http://stephaniestamm.com/))
 

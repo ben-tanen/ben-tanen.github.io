@@ -10,7 +10,7 @@
 
 a {
     text-decoration: none;
-    color: #69c9f6;
+    color: #77bdee;
 }
 
 a:hover {
@@ -152,8 +152,8 @@ span.currently {
 }
 
 .social_link svg:hover {
-    fill: #69c9f6;
-    stroke: #69c9f6;
+    fill: #77bdee;
+    stroke: #77bdee;
 }
 
 /*********************/
