@@ -415,7 +415,7 @@ tbody tr:nth-of-type(odd) {
         margin: 0;
         width: 100px;
         top: 10px;
-        left: calc(50vw - 50px);
+        left: calc(50vw - 57.5px);
 	}
 
 	#title-1, #title-2 {
@@ -480,7 +480,7 @@ tbody tr:nth-of-type(odd) {
     #face {
         width: 75px;
         top: 22.5px;
-        left: calc(50vw - 37.5px);
+        left: calc(50vw - 45px);
     }
 }
 

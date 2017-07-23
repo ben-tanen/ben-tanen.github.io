@@ -40,6 +40,52 @@ a:hover {
     fill: #999;
 }
 
+/********************/
+/*** menu styling ***/
+/********************/
+
+#landing-menu {
+    min-width: 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding-bottom: 5px;
+    background-color: rgba(255,255,255,0.9);
+    -webkit-box-shadow: 0 0 20px 20px rgba(255,255,255,0.9);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    0 0 20px 20px rgba(255,255,255,0.9);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         0 0 20px 20px rgba(255,255,255,0.9);
+}
+
+#landing-menu img {
+    width: 20px;
+    margin-top: 5px;
+    margin-left: calc(100% - 20px - 10px);
+    cursor: pointer;
+}
+
+#site-links {
+    display: none;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 0 5px;
+    text-align: right;
+    font-size: 18px;
+}
+
+#site-links a {
+    text-decoration: none;
+    margin: 2px 5px 0 0;
+    color: black;
+}
+
+#site-links a:hover {
+    color: #77bdee;
+}
+
+.selected-link {
+    color: #77bdee !important;
+}
+
 /*************************/
 /*** main text styling ***/
 /*************************/

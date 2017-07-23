@@ -28,31 +28,31 @@ I haven't been able to take many photos recently but I felt like sharing some of
 
 <div class='photo_container'>
     <div class='sub_photo_container'>
-        <img src='/assets/img/photography/pic1.jpg' />
-        <img src='/assets/img/photography/pic11.jpg' />
+        <img src='/assets/img/posts/photography-pic1.jpg' />
+        <img src='/assets/img/posts/photography-pic11.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/assets/img/photography/pic2.jpg' />
+        <img src='/assets/img/posts/photography-pic2.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/assets/img/photography/pic4.jpg' />
-        <img src='/assets/img/photography/pic5.jpg' />
+        <img src='/assets/img/posts/photography-pic4.jpg' />
+        <img src='/assets/img/posts/photography-pic5.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/assets/img/photography/pic6.jpg' />
-        <img src='/assets/img/photography/pic7.jpg' />
+        <img src='/assets/img/posts/photography-pic6.jpg' />
+        <img src='/assets/img/posts/photography-pic7.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/assets/img/photography/pic9.jpg' />
-        <img src='/assets/img/photography/pic8.jpg' />
+        <img src='/assets/img/posts/photography-pic9.jpg' />
+        <img src='/assets/img/posts/photography-pic8.jpg' />
     </div>
 
     <div class='sub_photo_container'>
-        <img src='/assets/img/photography/pic10.jpg' />
-        <img src='/assets/img/photography/pic3.jpg' />
+        <img src='/assets/img/posts/photography-pic10.jpg' />
+        <img src='/assets/img/posts/photography-pic3.jpg' />
     </div>
 </div>

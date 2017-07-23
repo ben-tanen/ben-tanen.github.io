@@ -192,3 +192,11 @@ $(document).ready(function() {
         }
     });
 });
+
+/*****************/
+/*** menu code ***/
+/*****************/
+
+$('#landing-menu img').click(function() {
+    $('#site-links').slideToggle();
+});
