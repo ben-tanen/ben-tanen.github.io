@@ -1,8 +1,8 @@
-#previews {
+#thumbnails {
     margin-top: 20px;
 }
 
-.preview-image {
+.thumbnail {
     width: 175px;
     height: 175px;
     display: inline-block;
@@ -11,7 +11,7 @@
     cursor: pointer;
 }
 
-.preview-image img {
+.thumbnail img {
     width: 100%;
     min-width: 175px;
     min-height: 175px;
@@ -51,26 +51,26 @@
 }
 
 @media (max-width: 926px) {
-    .preview-image {
+    .thumbnail {
         margin-bottom: calc((100% / 4 - 175px) - 6px);
     }
 }
 
 @media (max-width: 780px) {
-    .preview-image {
+    .thumbnail {
         margin: 0 calc((100% / 3 - 175px) / 2 - 2px);
         margin-bottom: 40px;
     }
 }
 
 @media (max-width: 715px) {
-    .preview-image {
+    .thumbnail {
         margin-bottom: calc((100% / 3 - 175px) - 6px);
     }
 }
 
 @media (max-width: 600px) {
-    .preview-image {
+    .thumbnail {
         margin: 0 calc((100% / 2 - 175px) / 2 - 2px);
         margin-bottom: 40px;
     }
@@ -90,20 +90,20 @@
 }
 
 @media (max-width: 500px) {
-    .preview-image {
+    .thumbnail {
         margin-bottom: calc((100% / 2 - 175px) - 6px);
     }
 }
 
 @media (max-width: 420px) {
-    .preview-image {
+    .thumbnail {
         width: 150px;
         height: 150px;
         margin: 0 calc((100% / 2 - 150px) / 2 - 2px);
         margin-bottom: calc((100% / 2 - 150px) - 6px);
     }
 
-    .preview-image img {
+    .thumbnail img {
         min-width: 150px;
         min-height: 150px;
     }
