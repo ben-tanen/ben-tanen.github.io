@@ -3,6 +3,7 @@ layout: post
 title:  "Old Python Games / Projects"
 date:   2015-07-01 15:05:41
 categories: python projects retro
+thumbnail: /assets/img/posts/thumbnail/python-minesweeper.png
 ---
 
 After posting my two most recent retro posts ([#1](/blog/2015/06/17/retro-ios-update.html), [#2](/blog/2015/06/26/retro-game-theory.html)), I thought I'd post some of my older projects as well. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.

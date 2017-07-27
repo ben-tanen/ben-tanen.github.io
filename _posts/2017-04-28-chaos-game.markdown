@@ -3,6 +3,7 @@ layout: post
 title: 'The Chaos Game'
 date: 2017-04-28 15:05:41
 categories: project data visualization math
+thumbnail: /assets/img/posts/thumbnail/chaos-game.gif
 ---
 
 <style>

@@ -3,16 +3,28 @@ layout: main
 ---
 <div class="post">
 
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <p class="post-date">{{ page.date | date: "%b %d %Y" }}
-    <!--
-    <p class="post-meta">{{ page.date | date: "%b %d %Y" }} <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-    -->
-  </header>
+    <header class="post-header">
+        <h1>{{ page.title }}</h1>
+        <p class="post-date">{{ page.date | date: "%b %d %Y" }}
+        <!--
+        <p class="post-meta">{{ page.date | date: "%b %d %Y" }} <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        -->
+    </header>
 
-  <article class="post-content">
-  {{ content }}
-  </article>
+    <article class="post-content">
+    {{ content }}
+    </article>
+
+    <div class='pagination'>
+        {% if page.next.url %}
+        <p id='pagination_previous'><a href='{{ page.next.url }}'>&#8592; Newer Post</a></p>
+        {% endif %}
+
+        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+
+        {% if page.previous.url %}
+        <p id='pagination_next'><a href='{{ page.previous.url }}'>Older Post &#8594;</a></p>
+        {% endif %}
+    </div>
 
 </div>

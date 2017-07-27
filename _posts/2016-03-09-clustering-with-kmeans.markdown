@@ -3,6 +3,7 @@ layout: post
 title:  'Clustering Using K-Means'
 date:   2016-03-09 15:05:41
 categories: project data matlab clustering
+thumbnail: /assets/img/posts/thumbnail/kmeans-cluster.gif
 ---
 
 This semester, I'm taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind [PCA analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). However, we are starting to move onto look at new types of data analysis / clustering and today's topic was **k-means clustering**. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student's perspective, is much easier to rationalize. It's a fairly simple algorithm and it does have some cool results.

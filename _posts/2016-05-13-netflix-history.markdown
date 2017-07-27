@@ -3,6 +3,7 @@ layout: post
 title:  'Visualizing My (Unhealthy) Netflix History'
 date:   2016-05-08 15:05:41
 categories: project data matlab netflix
+thumbnail: /assets/img/posts/thumbnail/netflix-history.png
 ---
 
 TV is pretty incredible, and I'll admit I might binge-watch from time to time. In fact, I've been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.

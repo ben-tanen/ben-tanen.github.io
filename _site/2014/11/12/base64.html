@@ -67,7 +67,7 @@
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
-        <p><a href='/blog/' >Blog</a></p>
+        <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
     <ul id="social_links">
@@ -134,16 +134,16 @@
     	<div class='main'>
     		<div class="post">
 
-  <header class="post-header">
-    <h1>Random Project: Base64 Decoder</h1>
-    <p class="post-date">Nov 12 2014
-    <!--
-    <p class="post-meta">Nov 12 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-    -->
-  </header>
+    <header class="post-header">
+        <h1>Random Project: Base64 Decoder</h1>
+        <p class="post-date">Nov 12 2014
+        <!--
+        <p class="post-meta">Nov 12 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        -->
+    </header>
 
-  <article class="post-content">
-  <p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
+    <article class="post-content">
+    <p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
 
 <p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
 
@@ -157,7 +157,19 @@
 
 <p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code <a href="https://github.com/ben-tanen/Base64Decode">here</a>.</p>
 
-  </article>
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination_previous'><a href='/2014/11/30/grub.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination_next'><a href='/2014/11/01/infographics.html'>Older Post &#8594;</a></p>
+        
+    </div>
 
 </div>
     	</div>

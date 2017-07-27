@@ -3,6 +3,7 @@ layout: post
 title:  "Why Everyone Should Use (Or At Least Try) Spotify"
 date:   2015-05-21 15:06:41
 categories: spotify music software
+thumbnail: /assets/img/posts/thumbnail/try-spotify.png
 ---
 
 For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn't actually own the music? Or what if I'm not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.

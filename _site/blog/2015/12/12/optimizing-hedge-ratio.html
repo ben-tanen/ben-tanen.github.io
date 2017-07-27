@@ -67,7 +67,7 @@
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
-        <p><a href='/blog/' >Blog</a></p>
+        <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
     <ul id="social_links">
@@ -134,16 +134,16 @@
     	<div class='main'>
     		<div class="post">
 
-  <header class="post-header">
-    <h1>Minimizing Risk For An Optimal Portfolio</h1>
-    <p class="post-date">Dec 12 2015
-    <!--
-    <p class="post-meta">Dec 12 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-    -->
-  </header>
+    <header class="post-header">
+        <h1>Minimizing Risk For An Optimal Portfolio</h1>
+        <p class="post-date">Dec 12 2015
+        <!--
+        <p class="post-meta">Dec 12 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        -->
+    </header>
 
-  <article class="post-content">
-  <p>For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
+    <article class="post-content">
+    <p>For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
 
 <p>The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.</p>
 
@@ -172,7 +172,19 @@ Markowitz bullets showing possible portfolios
 <p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing_portfolio.html">here</a>.</p>
 
 
-  </article>
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination_previous'><a href='/blog/2016/03/09/clustering-with-kmeans.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination_next'><a href='/blog/2015/10/30/jumboadvisor.html'>Older Post &#8594;</a></p>
+        
+    </div>
 
 </div>
     	</div>

@@ -67,7 +67,7 @@
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
-        <p><a href='/blog/' >Blog</a></p>
+        <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
     <ul id="social_links">
@@ -134,16 +134,16 @@
     	<div class='main'>
     		<div class="post">
 
-  <header class="post-header">
-    <h1>Am I Becoming More or Less Hipster?</h1>
-    <p class="post-date">Aug 26 2016
-    <!--
-    <p class="post-meta">Aug 26 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-    -->
-  </header>
+    <header class="post-header">
+        <h1>Am I Becoming More or Less Hipster?</h1>
+        <p class="post-date">Aug 26 2016
+        <!--
+        <p class="post-meta">Aug 26 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        -->
+    </header>
 
-  <article class="post-content">
-  <p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
+    <article class="post-content">
+    <p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
 
 <p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
 
@@ -157,7 +157,19 @@
 
 <p>Additional side note on my “hipster-ness”, of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
 
-  </article>
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination_previous'><a href='/blog/2016/09/28/random-d3-fun.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination_next'><a href='/blog/2016/08/22/rio-2016-usa-vs-world.html'>Older Post &#8594;</a></p>
+        
+    </div>
 
 </div>
     	</div>

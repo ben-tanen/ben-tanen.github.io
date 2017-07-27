@@ -1,28 +1,31 @@
-.index_list {
+#index_list {
     margin-left: -50px;
 }
 
-.index_list li {
+#index_list li {
+    min-height: 75px;
     list-style: none;
     position: relative;
     margin: 15px 0 15px 0;
 }
 
-#index_title {
-    color: #77bdee;
-    text-align: left;
+#index_list li p {
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
-    padding-left: 145px;
-    margin-bottom: -5px;
+    margin-left: 85px;
+    margin-bottom: 0px;
+    text-align: left;
 }
 
-#index_date {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
+.index_thumbnail {
+    width: 75px;
+    height: 100%;
     position: absolute;
-    text-align: right;
-    width: 130px;
-    vertical-align: top;
-    margin-bottom: -5px;
+    background: no-repeat center;
+    background-size: cover;
+    border: 1px solid #d6d6d6
+}
+
+.index_title {
+    color: #77bdee;
 }

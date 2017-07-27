@@ -3,6 +3,7 @@ layout: post
 title:  'Support Vector Machines and Poetry'
 date:   2016-05-3 15:05:41
 categories: project data matlab classification
+thumbnail: /assets/img/posts/thumbnail/svm-poems.png
 ---
 
 My tales of data mining continue and this time, they're about [support vector machines](http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html). These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about [k-means clustering](/blog/2016/03/09/clustering-with-kmeans.html) which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn't a fantastic method.

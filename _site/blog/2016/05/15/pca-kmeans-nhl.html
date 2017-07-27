@@ -67,7 +67,7 @@
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
-        <p><a href='/blog/' >Blog</a></p>
+        <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
     <ul id="social_links">
@@ -134,16 +134,16 @@
     	<div class='main'>
     		<div class="post">
 
-  <header class="post-header">
-    <h1>PCA and K-Means on NHL Stats</h1>
-    <p class="post-date">May 15 2016
-    <!--
-    <p class="post-meta">May 15 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-    -->
-  </header>
+    <header class="post-header">
+        <h1>PCA and K-Means on NHL Stats</h1>
+        <p class="post-date">May 15 2016
+        <!--
+        <p class="post-meta">May 15 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        -->
+    </header>
 
-  <article class="post-content">
-  <p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
+    <article class="post-content">
+    <p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
 
 <p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!</p>
 
@@ -312,7 +312,19 @@
 </table>
 
 
-  </article>
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination_previous'><a href='/blog/2016/08/15/miller-rabin.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination_next'><a href='/blog/2016/05/08/netflix-history.html'>Older Post &#8594;</a></p>
+        
+    </div>
 
 </div>
     	</div>
