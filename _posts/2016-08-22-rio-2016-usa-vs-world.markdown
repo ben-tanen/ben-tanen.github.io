@@ -3,7 +3,7 @@ layout: post
 title:  'United States vs. the World in Rio 2016'
 date:   2016-08-22 15:05:41
 categories: data project olympics rio usa
-thumbnail: /assets/img/posts/thumbnail/usa-rio-2016.png
+thumbnail: /assets/img/post-thumbnails/usa-rio-2016.png
 ---
 
 The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn't a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.

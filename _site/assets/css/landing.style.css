@@ -171,33 +171,33 @@ span.currently {
 /*** social links styling ***/
 /****************************/
 
-#social_links {
+#social-links {
     height: 32px;
     display: inline-block;
     padding: 0 calc((100% - 179px) / 2);
     list-style: none;
 }
 
-.social_link {
+.social-link {
     display: inline;
     vertical-align: top;
 }
 
-.social_link a, .social_link a:hover {
+.social-link a, .social-link a:hover {
     width: 32px;
     height: 32px;
     vertical-align: top;
     text-decoration: none;
 }
 
-.social_link svg {
+.social-link svg {
     width: 32px;
     height: 32px;
     fill: #999;
     stroke: #999;
 }
 
-.social_link svg:hover {
+.social-link svg:hover {
     fill: #77bdee;
     stroke: #77bdee;
 }

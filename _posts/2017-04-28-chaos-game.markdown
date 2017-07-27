@@ -3,7 +3,7 @@ layout: post
 title: 'The Chaos Game'
 date: 2017-04-28 15:05:41
 categories: project data visualization math
-thumbnail: /assets/img/posts/thumbnail/chaos-game.gif
+thumbnail: /assets/img/post-thumbnails/chaos-game.gif
 ---
 
 <style>
@@ -56,10 +56,10 @@ To briefly explain the game, we basically start by randomly placing some "bases"
 
 <div id='chaos-game-options'>
     <!--
-    <form action="" id="num_bases">
-        <input type="radio" name="num_bases" value="3" checked> Tri
-        <input type="radio" name="num_bases" value="4"> Quad
-        <input type="radio" name="num_bases" value="5"> Penta
+    <form action="" id="num-bases">
+        <input type="radio" name="num-bases" value="3" checked> Tri
+        <input type="radio" name="num-bases" value="4"> Quad
+        <input type="radio" name="num-bases" value="5"> Penta
     </form>
     -->
     <p><span id='chaos-game-start'>Start</span>, i = <span id='chaos-game-i'>0</span></p>
@@ -128,13 +128,13 @@ I'm in the works of implementing it for four, five, etc. bases, but for now, her
     /* generate bases */
     generate_bases(0);
 
-    $('#num_bases').change(function() {
+    $('#num-bases').change(function() {
         // clear current circles
         chaos_svg.selectAll("circle").remove();
         a_bases = [ ];
 
         // regenerate bases
-        generate_bases(parseInt($("input:radio[name='num_bases']:checked").val()) - 3);
+        generate_bases(parseInt($("input:radio[name='num-bases']:checked").val()) - 3);
     });
 
     $('#chaos-game-start').click(function() {

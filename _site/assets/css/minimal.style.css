@@ -23,7 +23,7 @@
     display: none;
 }
 
-#site_links {
+#site-links {
     padding: 0;
     position: absolute;
     top: 16px;
@@ -33,18 +33,18 @@
     text-align: right;
 }
 
-#site_links a {
+#site-links a {
     margin: 0 20px 2px 0;
 }
 
-#social_links {
+#social-links {
     margin: 0;
     position: absolute;
     top: 24px;
     left: 25px;
 }
 
-#social_links li {
+#social-links li {
     margin-left: 0 !important;
 }
 
@@ -68,10 +68,10 @@
     margin-bottom: 60px;
 }
 
-#pagination_previous, #pagination_next, #pagination_all {
+#pagination-previous, #pagination-next, #pagination-all {
     font-size: 1em;
 }
 
-#pagination_all {
+#pagination-all {
     left: calc(50% - 42.5px);
 }

@@ -63,15 +63,15 @@
     <h1 id="title-1" class="tk-europa">Howdy</h1>
     <h1 id="title-2" class="tk-europa">I'm Ben</h1>
 
-    <div id='site_links' class="tk-europa">
+    <div id='site-links' class="tk-europa">
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
         <p><a href='/blog/all/' class="selected-link">Blog</a></p>
     </div>
 
-    <ul id="social_links">
-    <li id="twitter" class="social_link">
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -82,7 +82,7 @@
         </a>
     </li>
 
-    <li id="github" class="social_link">
+    <li id="github" class="social-link">
         <a href="https://github.com/ben-tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -93,7 +93,7 @@
         </a>
     </li>
 
-    <li id="lastfm" class="social_link">
+    <li id="lastfm" class="social-link">
         <a href="https://www.last.fm/user/ben-tanen" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -104,7 +104,7 @@
         </a>
     </li>
 
-    <li id="linkedin" class="social_link">
+    <li id="linkedin" class="social-link">
         <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -115,7 +115,7 @@
         </a>
     </li>
 
-    <li id="email" class="social_link">
+    <li id="email" class="social-link">
         <a href="mailto:ben.tanen@gmail.com" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -148,30 +148,30 @@
 <p>In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we’ve all got to start somewhere. Expect more to come…</p>
 
 <style>
-    #brain_viz_container {
+    #brain-viz-container {
         width: 325px;
         margin: auto;
     }
 
-    #brain_viz {
+    #brain-viz {
         width: 100%;
         height: auto;
     }
 
-    #brain_viz line {
+    #brain-viz line {
         fill: none;
         stroke: #77bdee;
         stroke-width: 3;
     }
 
-    #brain_viz circle:not(#background_circle) {
+    #brain-viz circle:not(#background-circle) {
         fill: #77bdee;
     }
 </style>
 
-<div id="brain_viz_container">
-    <svg id="brain_viz" viewbox="-50 -50 600 600">
-        <circle id="background_circle" cx="250" cy="250" r="300" />
+<div id="brain-viz-container">
+    <svg id="brain-viz" viewbox="-50 -50 600 600">
+        <circle id="background-circle" cx="250" cy="250" r="300" />
         <line x1="356.396" y1="213.275" x2="295.861" y2="212.697" />
         <line x1="266.287" y1="254.945" x2="356.396" y2="213.275" />
         <line x1="262.855" y1="297.188" x2="375.528" y2="270.223" />
@@ -286,31 +286,31 @@
         <line x1="80.657" y1="287.807" x2="56.247" y2="182.52" />
         <line x1="49.809" y1="239.521" x2="80.657" y2="287.807" />
         <line x1="385.024" y1="106.742" x2="386.453" y2="161.333" />
-        <line class="brain_border" x1="42.176" y1="276.404" x2="17.62" y2="193.75" />
-        <line class="brain_border" x1="134.305" y1="274.393" x2="80.657" y2="287.807" />
-        <line class="brain_border" x1="118.211" y1="322.676" x2="134.305" y2="274.393" />
-        <line class="brain_border" x1="136.987" y1="357.548" x2="118.211" y2="322.676" />
-        <line class="brain_border" x1="326.099" y1="341.453" x2="332.804" y2="454.115" />
-        <line class="brain_border" x1="449.488" y1="364.254" x2="410.595" y2="374.982" />
-        <line class="brain_border" x1="464.242" y1="337.43" x2="449.488" y2="364.254" />
-        <line class="brain_border" x1="446.808" y1="180.508" x2="472.29" y2="246.497" />
-        <line class="brain_border" x1="386.453" y1="106.742" x2="410.595" y2="128.201" />
-        <line class="brain_border" x1="358.287" y1="87.965" x2="386.453" y2="106.742" />
-        <line class="brain_border" x1="328.78" y1="71.87" x2="358.287" y2="87.965" />
-        <line class="brain_border" x1="295.25" y1="55.776" x2="328.78" y2="71.87" />
-        <line class="brain_border" x1="64.562" y1="105.401" x2="154.423" y2="62.481" />
-        <line class="brain_border" x1="37.738" y1="142.954" x2="64.562" y2="105.401" />
-        <line class="brain_border" x1="80.657" y1="287.807" x2="44.444" y2="278.416" />
-        <line class="brain_border" x1="250.99" y1="55.776" x2="295.25" y2="55.776" />
-        <line class="brain_border" x1="154.423" y1="62.481" x2="250.99" y2="55.776" />
-        <line class="brain_border" x1="17.62" y1="196.603" x2="37.738" y2="142.954" />
-        <line class="brain_border" x1="476.112" y1="302.424" x2="472.29" y2="246.496" />
-        <line class="brain_border" x1="464.242" y1="337.43" x2="476.112" y2="302.424" />
-        <line class="brain_border" x1="371.699" y1="361.378" x2="412.338" y2="375.461" />
-        <line class="brain_border" x1="137.122" y1="356.341" x2="213.065" y2="347.295" />
-        <line class="brain_border" x1="371.699" y1="361.378" x2="326.232" y2="340.254" />
-        <line class="brain_border" x1="410.595" y1="128.201" x2="447.344" y2="177.289" />
-        <line class="brain_border" x1="211.5" y1="348" x2="332.804" y2="455.5" />
+        <line class="brain-border" x1="42.176" y1="276.404" x2="17.62" y2="193.75" />
+        <line class="brain-border" x1="134.305" y1="274.393" x2="80.657" y2="287.807" />
+        <line class="brain-border" x1="118.211" y1="322.676" x2="134.305" y2="274.393" />
+        <line class="brain-border" x1="136.987" y1="357.548" x2="118.211" y2="322.676" />
+        <line class="brain-border" x1="326.099" y1="341.453" x2="332.804" y2="454.115" />
+        <line class="brain-border" x1="449.488" y1="364.254" x2="410.595" y2="374.982" />
+        <line class="brain-border" x1="464.242" y1="337.43" x2="449.488" y2="364.254" />
+        <line class="brain-border" x1="446.808" y1="180.508" x2="472.29" y2="246.497" />
+        <line class="brain-border" x1="386.453" y1="106.742" x2="410.595" y2="128.201" />
+        <line class="brain-border" x1="358.287" y1="87.965" x2="386.453" y2="106.742" />
+        <line class="brain-border" x1="328.78" y1="71.87" x2="358.287" y2="87.965" />
+        <line class="brain-border" x1="295.25" y1="55.776" x2="328.78" y2="71.87" />
+        <line class="brain-border" x1="64.562" y1="105.401" x2="154.423" y2="62.481" />
+        <line class="brain-border" x1="37.738" y1="142.954" x2="64.562" y2="105.401" />
+        <line class="brain-border" x1="80.657" y1="287.807" x2="44.444" y2="278.416" />
+        <line class="brain-border" x1="250.99" y1="55.776" x2="295.25" y2="55.776" />
+        <line class="brain-border" x1="154.423" y1="62.481" x2="250.99" y2="55.776" />
+        <line class="brain-border" x1="17.62" y1="196.603" x2="37.738" y2="142.954" />
+        <line class="brain-border" x1="476.112" y1="302.424" x2="472.29" y2="246.496" />
+        <line class="brain-border" x1="464.242" y1="337.43" x2="476.112" y2="302.424" />
+        <line class="brain-border" x1="371.699" y1="361.378" x2="412.338" y2="375.461" />
+        <line class="brain-border" x1="137.122" y1="356.341" x2="213.065" y2="347.295" />
+        <line class="brain-border" x1="371.699" y1="361.378" x2="326.232" y2="340.254" />
+        <line class="brain-border" x1="410.595" y1="128.201" x2="447.344" y2="177.289" />
+        <line class="brain-border" x1="211.5" y1="348" x2="332.804" y2="455.5" />
         <circle cx="294.654" cy="56.776" r="7.042" />
         <circle cx="248.003" cy="55.167" r="7.042" />
         <circle cx="152.827" cy="62.817" r="7.042" />
@@ -371,7 +371,7 @@
 
 <script>
     function animate_brain() {
-        var available_lines = brain_svg.selectAll('line:not(.tbd):not(.brain_border)');
+        var available_lines = brain_svg.selectAll('line:not(.tbd):not(.brain-border)');
 
         if (available_lines.size() == 0) return;
 
@@ -398,7 +398,7 @@
             .remove();
     }
 
-    var brain_svg = d3.select('#brain_viz');
+    var brain_svg = d3.select('#brain-viz');
     var lines = brain_svg.selectAll('line'),
         dots  = brain_svg.selectAll('circle');
 
@@ -434,8 +434,8 @@
     <article class="post-content">
 	   <p>After months of reading and being impressed by the <a href="https://pudding.cool/2017/04/beer/" target="_blank">very</a> <a href="https://pudding.cool/2017/01/making-it-big/" target="_blank">cool</a> <a href="https://pudding.cool/2017/02/vocabulary/" target="_blank">visual</a> <a href="https://pudding.cool/2017/05/song-repetition/" target="_blank">essays</a> put out by <a href="https://pudding.cool/" target="_blank">The Pudding</a>, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">traditional Huffman Coding</a> to <a href="https://en.wikipedia.org/wiki/Adaptive_Huffman_coding" target="_blank">adaptive Huffman Coding</a>.</p>
 
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/huffman-coding.gif" target="_blank">
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/huffman-coding.gif" target="_blank">
     <img src="/assets/img/posts/huffman-coding.gif" alt="A screen capture of the scrollytelling visualization" />
     </a>
 </p>
@@ -510,10 +510,10 @@
 
 <div id="chaos-game-options">
     <!--
-    <form action="" id="num_bases">
-        <input type="radio" name="num_bases" value="3" checked> Tri
-        <input type="radio" name="num_bases" value="4"> Quad
-        <input type="radio" name="num_bases" value="5"> Penta
+    <form action="" id="num-bases">
+        <input type="radio" name="num-bases" value="3" checked> Tri
+        <input type="radio" name="num-bases" value="4"> Quad
+        <input type="radio" name="num-bases" value="5"> Penta
     </form>
     -->
     <p><span id="chaos-game-start">Start</span>, i = <span id="chaos-game-i">0</span></p>
@@ -582,13 +582,13 @@
     /* generate bases */
     generate_bases(0);
 
-    $('#num_bases').change(function() {
+    $('#num-bases').change(function() {
         // clear current circles
         chaos_svg.selectAll("circle").remove();
         a_bases = [ ];
 
         // regenerate bases
-        generate_bases(parseInt($("input:radio[name='num_bases']:checked").val()) - 3);
+        generate_bases(parseInt($("input:radio[name='num-bases']:checked").val()) - 3);
     });
 
     $('#chaos-game-start').click(function() {
@@ -873,10 +873,10 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
 <div class='pagination'>
     
 
-    <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+    <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
     
-    <p id='pagination_next'><a href='/blog/2'>Older Posts &#8594;</a></p>
+    <p id='pagination-next'><a href='/blog/2'>Older Posts &#8594;</a></p>
     
 </div>
 

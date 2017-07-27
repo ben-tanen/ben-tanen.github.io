@@ -63,15 +63,15 @@
     <h1 id="title-1" class="tk-europa">Howdy</h1>
     <h1 id="title-2" class="tk-europa">I'm Ben</h1>
 
-    <div id='site_links' class="tk-europa">
+    <div id='site-links' class="tk-europa">
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
         <p><a href='/blog/all/' class="selected-link">Blog</a></p>
     </div>
 
-    <ul id="social_links">
-    <li id="twitter" class="social_link">
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -82,7 +82,7 @@
         </a>
     </li>
 
-    <li id="github" class="social_link">
+    <li id="github" class="social-link">
         <a href="https://github.com/ben-tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -93,7 +93,7 @@
         </a>
     </li>
 
-    <li id="lastfm" class="social_link">
+    <li id="lastfm" class="social-link">
         <a href="https://www.last.fm/user/ben-tanen" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -104,7 +104,7 @@
         </a>
     </li>
 
-    <li id="linkedin" class="social_link">
+    <li id="linkedin" class="social-link">
         <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -115,7 +115,7 @@
         </a>
     </li>
 
-    <li id="email" class="social_link">
+    <li id="email" class="social-link">
         <a href="mailto:ben.tanen@gmail.com" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -147,9 +147,9 @@
 
 <p>Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).</p>
 
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/nhl_proj_10_11_16.png" target="_blank">
-    <img src="/assets/img/posts/nhl_proj_10_11_16.png" alt="The initial projections for VAN, NYR, and WSH" width="650px" />
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/nhl-proj-10-11-16.png" target="_blank">
+    <img src="/assets/img/posts/nhl-proj-10-11-16.png" alt="The initial projections for VAN, NYR, and WSH" width="650px" />
     </a>
 </p>
 
@@ -157,7 +157,7 @@
 
 <p>For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don’t have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.</p>
 
-<table id="projections_table">
+<table>
 <thead>
 <tr><th></th><th width="50px">Team</th><th width="150px">Projected Points (2016-17)</th><th width="100px">Actual Points (2015-16)</th></tr>
 </thead>
@@ -303,15 +303,24 @@
 
 <p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
 
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/spotify_popularity.png" target="_blank">
-    <img src="/assets/img/posts/spotify_popularity.png" alt="A graph of my Spotify popularity over time" />
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/spotify-popularity.png" target="_blank">
+    <img src="/assets/img/posts/spotify-popularity.png" alt="A graph of my Spotify popularity over time" />
     </a>
 </p>
 
 <p>While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify’s eyes. Therefore, I’m willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I’m just as cool as I’ve ever.</p>
 
-<p>Additional side note on my “hipster-ness”, of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
+<p>P.S. Of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
+
+<p>P.P.S Bonus chart! Here’s a how much I listened to a song vs. it’s popularity on Spotify.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/spotify-popularity-vs-playcount.png" target="_blank">
+    <img src="/assets/img/posts/spotify-popularity-vs-playcount.png" alt="A graph comparing play count of a song to its popularity" />
+    </a>
+</p>
+
 
     </article>
 </div>
@@ -550,13 +559,13 @@
 
 <div class='pagination'>
     
-    <p id='pagination_previous'><a href='/blog/2'>&#8592; Newer Posts</a></p>
+    <p id='pagination-previous'><a href='/blog/2'>&#8592; Newer Posts</a></p>
     
 
-    <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+    <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
     
-    <p id='pagination_next'><a href='/blog/4'>Older Posts &#8594;</a></p>
+    <p id='pagination-next'><a href='/blog/4'>Older Posts &#8594;</a></p>
     
 </div>
 

@@ -3,20 +3,20 @@ layout: post
 title:  'Introducing 2016-17 NHL Projections'
 date:   2016-10-11 15:05:41
 categories: hockey nhl-projections data project matlab
-thumbnail: /assets/img/posts/thumbnail/nhl-projections.gif
+thumbnail: /assets/img/post-thumbnails/nhl-projections.gif
 ---
 
 Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you're interested, you can read [the original model report](http://localhost:4000/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf){:target="_blank"} as well as check out [the code](https://github.com/ben-tanen/NHLPlayoffProjections){:target="_blank"}.
 
 Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).
 
-{% include figure.html src="/assets/img/posts/nhl_proj_10_11_16.png" alt="The initial projections for VAN, NYR, and WSH" width='650px' %}
+{% include figure.html src="/assets/img/posts/nhl-proj-10-11-16.png" alt="The initial projections for VAN, NYR, and WSH" width='650px' %}
 
 So, over the course of the next few months, I'll be comparing each team's expected performance (as speculated by the model) to their actual performance. I'll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out [the new project site here](/projects/nhl-projections/){:target="_blank"}. 
 
 For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don't have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.
 
-<table id="projections_table">
+<table>
 <thead>
 <tr><th></th><th width="50px">Team</th><th width="150px">Projected Points (2016-17)</th><th width="100px">Actual Points (2015-16)</th></tr>
 </thead>

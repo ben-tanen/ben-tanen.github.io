@@ -46,7 +46,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Rap, Data, and Design | Ben Tanen</title>
+    <title>Up-to-Date Infographics | Ben Tanen</title>
 </head>
 
 
@@ -63,15 +63,15 @@
     <h1 id="title-1" class="tk-europa">Howdy</h1>
     <h1 id="title-2" class="tk-europa">I'm Ben</h1>
 
-    <div id='site_links' class="tk-europa">
+    <div id='site-links' class="tk-europa">
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
         <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
-    <ul id="social_links">
-    <li id="twitter" class="social_link">
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -82,7 +82,7 @@
         </a>
     </li>
 
-    <li id="github" class="social_link">
+    <li id="github" class="social-link">
         <a href="https://github.com/ben-tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -93,7 +93,7 @@
         </a>
     </li>
 
-    <li id="lastfm" class="social_link">
+    <li id="lastfm" class="social-link">
         <a href="https://www.last.fm/user/ben-tanen" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -104,7 +104,7 @@
         </a>
     </li>
 
-    <li id="linkedin" class="social_link">
+    <li id="linkedin" class="social-link">
         <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -115,7 +115,7 @@
         </a>
     </li>
 
-    <li id="email" class="social_link">
+    <li id="email" class="social-link">
         <a href="mailto:ben.tanen@gmail.com" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -135,48 +135,58 @@
     		<div class="post">
 
     <header class="post-header">
-        <h1>Rap, Data, and Design</h1>
-        <p class="post-date">Oct 31 2014
+        <h1>Up-to-Date Infographics</h1>
+        <p class="post-date">Nov 01 2014
         <!--
-        <p class="post-meta">Oct 31 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        <p class="post-meta">Nov 01 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
         -->
     </header>
 
     <article class="post-content">
-    <p>A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.</p>
+    <p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
 
-<p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
-
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/rap_vocab.png" target="_blank">
-    <img src="/assets/img/posts/rap_vocab.png" alt="A screenshot from the article" />
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/infographics-kerem.png" target="_blank">
+    <img src="/assets/img/posts/infographics-kerem.png" alt="Examples of Kerem's use of infographics" />
     </a>
 </p>
 
-<p>Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.</p>
+<figcaption>
+Examples of Kerem's use of infographics
+</figcaption>
 
-<p>A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: </p>
+<p>For my infographics, I was attempting to display what I was currently up to (currently reading, listening to, watching). I never thought that it could be live updates, but more so descriptions of the book, album, and show/movie that I was into that week. However, the struggle with this was it was not easy to update the information. I had hard-coded into my HTML file, and accessing, changing, and uploading this was generally a pain, leaving my information drastically out-of-date.</p>
 
-<blockquote>
-  <p>“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”</p>
-</blockquote>
+<p>Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of <a href="http://www.IFTTT.com">IFTTT</a>, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.</p>
 
-<p>From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion. </p>
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/infographics-ex.png" target="_blank">
+    <img src="/assets/img/posts/infographics-ex.png" alt="My own example infographics" />
+    </a>
+</p>
 
-<p>Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.</p>
+<figcaption>
+My own example infographics
+</figcaption>
 
-<p>By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.</p>
+<p>The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.</p>
+
+<p>It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. </p>
+
+<p><strong>Update</strong> - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on <a href="/about/">my about page</a>.</p>
 
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination_previous'><a href='/2014/11/01/infographics.html'>&#8592; Newer Post</a></p>
+        <p id='pagination-previous'><a href='/blog/2014/11/12/base64.html'>&#8592; Newer Post</a></p>
         
 
-        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
+        
+        <p id='pagination-next'><a href='/blog/2014/10/31/rap-data-design.html'>Older Post &#8594;</a></p>
         
     </div>
 

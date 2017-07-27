@@ -63,15 +63,15 @@
     <h1 id="title-1" class="tk-europa">Howdy</h1>
     <h1 id="title-2" class="tk-europa">I'm Ben</h1>
 
-    <div id='site_links' class="tk-europa">
+    <div id='site-links' class="tk-europa">
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
         <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
-    <ul id="social_links">
-    <li id="twitter" class="social_link">
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -82,7 +82,7 @@
         </a>
     </li>
 
-    <li id="github" class="social_link">
+    <li id="github" class="social-link">
         <a href="https://github.com/ben-tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -93,7 +93,7 @@
         </a>
     </li>
 
-    <li id="lastfm" class="social_link">
+    <li id="lastfm" class="social-link">
         <a href="https://www.last.fm/user/ben-tanen" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -104,7 +104,7 @@
         </a>
     </li>
 
-    <li id="linkedin" class="social_link">
+    <li id="linkedin" class="social-link">
         <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -115,7 +115,7 @@
         </a>
     </li>
 
-    <li id="email" class="social_link">
+    <li id="email" class="social-link">
         <a href="mailto:ben.tanen@gmail.com" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -157,17 +157,17 @@
 
 <p>Initially, the code generates <em>k</em> normally-distributed random clusters of data of <em>r</em> data points each (<em>kr</em> = <em>n</em> total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn’t necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.</p>
 
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/kmeans_before_after.png" target="_blank">
-    <img src="/assets/img/posts/kmeans_before_after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" />
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/kmeans-before-after.png" target="_blank">
+    <img src="/assets/img/posts/kmeans-before-after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" />
     </a>
 </p>
 
 <p>The first iteration is done by making a random guesses for the location of the <em>k</em> (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven’t seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:</p>
 
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/kmeans_cluster.gif" target="_blank">
-    <img src="/assets/img/posts/kmeans_cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" />
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/kmeans-cluster.gif" target="_blank">
+    <img src="/assets/img/posts/kmeans-cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" />
     </a>
 </p>
 
@@ -180,13 +180,13 @@
 
     <div class='pagination'>
         
-        <p id='pagination_previous'><a href='/blog/2016/04/26/photography.html'>&#8592; Newer Post</a></p>
+        <p id='pagination-previous'><a href='/blog/2016/04/26/photography.html'>&#8592; Newer Post</a></p>
         
 
-        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination_next'><a href='/blog/2015/12/12/optimizing-hedge-ratio.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2015/12/12/optimizing-hedge-ratio.html'>Older Post &#8594;</a></p>
         
     </div>
 

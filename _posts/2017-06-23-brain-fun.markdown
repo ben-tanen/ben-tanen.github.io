@@ -4,7 +4,7 @@ title: 'Random Brain Fun with Illustrator'
 date: 2017-06-23 15:05:41
 categories: random visualization illustrator
 landing-description: making and animating a brain with Adobe Illustrator
-thumbnail: /assets/img/posts/thumbnail/brain.png
+thumbnail: /assets/img/post-thumbnails/brain.png
 ---
 
 Over the years, I've dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because of my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from [WIRED](https://www.youtube.com/watch?v=Bxp9Rh7srIg), I opened up Illustrator (and Google, of course) and gave it a try.
@@ -12,30 +12,30 @@ Over the years, I've dabbled a bit with digital art and design. Most of these at
 In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we've all got to start somewhere. Expect more to come...
 
 <style>
-    #brain_viz_container {
+    #brain-viz-container {
         width: 325px;
         margin: auto;
     }
 
-    #brain_viz {
+    #brain-viz {
         width: 100%;
         height: auto;
     }
 
-    #brain_viz line {
+    #brain-viz line {
         fill: none;
         stroke: #77bdee;
         stroke-width: 3;
     }
 
-    #brain_viz circle:not(#background_circle) {
+    #brain-viz circle:not(#background-circle) {
         fill: #77bdee;
     }
 </style>
 
-<div id="brain_viz_container">
-    <svg id="brain_viz" viewBox="-50 -50 600 600">
-        <circle id="background_circle" cx="250" cy="250" r="300"/>
+<div id="brain-viz-container">
+    <svg id="brain-viz" viewBox="-50 -50 600 600">
+        <circle id="background-circle" cx="250" cy="250" r="300"/>
         <line x1="356.396" y1="213.275" x2="295.861" y2="212.697"/>
         <line x1="266.287" y1="254.945" x2="356.396" y2="213.275"/>
         <line x1="262.855" y1="297.188" x2="375.528" y2="270.223"/>
@@ -150,31 +150,31 @@ In the end, I got something that does indeed look somewhat like a brain. From th
         <line x1="80.657" y1="287.807" x2="56.247" y2="182.52"/>
         <line x1="49.809" y1="239.521" x2="80.657" y2="287.807"/>
         <line x1="385.024" y1="106.742" x2="386.453" y2="161.333"/>
-        <line class="brain_border" x1="42.176" y1="276.404" x2="17.62" y2="193.75"/>
-        <line class="brain_border" x1="134.305" y1="274.393" x2="80.657" y2="287.807"/>
-        <line class="brain_border" x1="118.211" y1="322.676" x2="134.305" y2="274.393"/>
-        <line class="brain_border" x1="136.987" y1="357.548" x2="118.211" y2="322.676"/>
-        <line class="brain_border" x1="326.099" y1="341.453" x2="332.804" y2="454.115"/>
-        <line class="brain_border" x1="449.488" y1="364.254" x2="410.595" y2="374.982"/>
-        <line class="brain_border" x1="464.242" y1="337.43" x2="449.488" y2="364.254"/>
-        <line class="brain_border" x1="446.808" y1="180.508" x2="472.29" y2="246.497"/>
-        <line class="brain_border" x1="386.453" y1="106.742" x2="410.595" y2="128.201"/>
-        <line class="brain_border" x1="358.287" y1="87.965" x2="386.453" y2="106.742"/>
-        <line class="brain_border" x1="328.78" y1="71.87" x2="358.287" y2="87.965"/>
-        <line class="brain_border" x1="295.25" y1="55.776" x2="328.78" y2="71.87"/>
-        <line class="brain_border" x1="64.562" y1="105.401" x2="154.423" y2="62.481"/>
-        <line class="brain_border" x1="37.738" y1="142.954" x2="64.562" y2="105.401"/>
-        <line class="brain_border" x1="80.657" y1="287.807" x2="44.444" y2="278.416"/>
-        <line class="brain_border" x1="250.99" y1="55.776" x2="295.25" y2="55.776"/>
-        <line class="brain_border" x1="154.423" y1="62.481" x2="250.99" y2="55.776"/>
-        <line class="brain_border" x1="17.62" y1="196.603" x2="37.738" y2="142.954"/>
-        <line class="brain_border" x1="476.112" y1="302.424" x2="472.29" y2="246.496"/>
-        <line class="brain_border" x1="464.242" y1="337.43" x2="476.112" y2="302.424"/>
-        <line class="brain_border" x1="371.699" y1="361.378" x2="412.338" y2="375.461"/>
-        <line class="brain_border" x1="137.122" y1="356.341" x2="213.065" y2="347.295"/>
-        <line class="brain_border" x1="371.699" y1="361.378" x2="326.232" y2="340.254"/>
-        <line class="brain_border" x1="410.595" y1="128.201" x2="447.344" y2="177.289"/>
-        <line class="brain_border" x1="211.5" y1="348" x2="332.804" y2="455.5"/>
+        <line class="brain-border" x1="42.176" y1="276.404" x2="17.62" y2="193.75"/>
+        <line class="brain-border" x1="134.305" y1="274.393" x2="80.657" y2="287.807"/>
+        <line class="brain-border" x1="118.211" y1="322.676" x2="134.305" y2="274.393"/>
+        <line class="brain-border" x1="136.987" y1="357.548" x2="118.211" y2="322.676"/>
+        <line class="brain-border" x1="326.099" y1="341.453" x2="332.804" y2="454.115"/>
+        <line class="brain-border" x1="449.488" y1="364.254" x2="410.595" y2="374.982"/>
+        <line class="brain-border" x1="464.242" y1="337.43" x2="449.488" y2="364.254"/>
+        <line class="brain-border" x1="446.808" y1="180.508" x2="472.29" y2="246.497"/>
+        <line class="brain-border" x1="386.453" y1="106.742" x2="410.595" y2="128.201"/>
+        <line class="brain-border" x1="358.287" y1="87.965" x2="386.453" y2="106.742"/>
+        <line class="brain-border" x1="328.78" y1="71.87" x2="358.287" y2="87.965"/>
+        <line class="brain-border" x1="295.25" y1="55.776" x2="328.78" y2="71.87"/>
+        <line class="brain-border" x1="64.562" y1="105.401" x2="154.423" y2="62.481"/>
+        <line class="brain-border" x1="37.738" y1="142.954" x2="64.562" y2="105.401"/>
+        <line class="brain-border" x1="80.657" y1="287.807" x2="44.444" y2="278.416"/>
+        <line class="brain-border" x1="250.99" y1="55.776" x2="295.25" y2="55.776"/>
+        <line class="brain-border" x1="154.423" y1="62.481" x2="250.99" y2="55.776"/>
+        <line class="brain-border" x1="17.62" y1="196.603" x2="37.738" y2="142.954"/>
+        <line class="brain-border" x1="476.112" y1="302.424" x2="472.29" y2="246.496"/>
+        <line class="brain-border" x1="464.242" y1="337.43" x2="476.112" y2="302.424"/>
+        <line class="brain-border" x1="371.699" y1="361.378" x2="412.338" y2="375.461"/>
+        <line class="brain-border" x1="137.122" y1="356.341" x2="213.065" y2="347.295"/>
+        <line class="brain-border" x1="371.699" y1="361.378" x2="326.232" y2="340.254"/>
+        <line class="brain-border" x1="410.595" y1="128.201" x2="447.344" y2="177.289"/>
+        <line class="brain-border" x1="211.5" y1="348" x2="332.804" y2="455.5"/>
         <circle cx="294.654" cy="56.776" r="7.042"/>
         <circle cx="248.003" cy="55.167" r="7.042"/>
         <circle cx="152.827" cy="62.817" r="7.042"/>
@@ -235,7 +235,7 @@ In the end, I got something that does indeed look somewhat like a brain. From th
 
 <script>
     function animate_brain() {
-        var available_lines = brain_svg.selectAll('line:not(.tbd):not(.brain_border)');
+        var available_lines = brain_svg.selectAll('line:not(.tbd):not(.brain-border)');
 
         if (available_lines.size() == 0) return;
 
@@ -262,7 +262,7 @@ In the end, I got something that does indeed look somewhat like a brain. From th
             .remove();
     }
 
-    var brain_svg = d3.select('#brain_viz');
+    var brain_svg = d3.select('#brain-viz');
     var lines = brain_svg.selectAll('line'),
         dots  = brain_svg.selectAll('circle');
 

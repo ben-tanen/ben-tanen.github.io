@@ -3,7 +3,7 @@ layout: post
 title: 'Polar Line Charts in D3'
 date: 2017-01-08 15:05:41
 categories: project data visualization
-thumbnail: /assets/img/posts/thumbnail/d3-polar.gif
+thumbnail: /assets/img/post-thumbnails/d3-polar.gif
 ---
 
 A few weeks ago, I came across [this very interesting (and very scary) visualization](http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif){:target="_blank"} of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.

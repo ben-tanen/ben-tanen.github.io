@@ -46,7 +46,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Up-to-Date Infographics | Ben Tanen</title>
+    <title>Random Project: Base64 Decoder | Ben Tanen</title>
 </head>
 
 
@@ -63,15 +63,15 @@
     <h1 id="title-1" class="tk-europa">Howdy</h1>
     <h1 id="title-2" class="tk-europa">I'm Ben</h1>
 
-    <div id='site_links' class="tk-europa">
+    <div id='site-links' class="tk-europa">
         <p><a href='/'>Home</a></p>
         <p><a href='/projects/' >Projects</a></p>
         <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
         <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
-    <ul id="social_links">
-    <li id="twitter" class="social_link">
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -82,7 +82,7 @@
         </a>
     </li>
 
-    <li id="github" class="social_link">
+    <li id="github" class="social-link">
         <a href="https://github.com/ben-tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -93,7 +93,7 @@
         </a>
     </li>
 
-    <li id="lastfm" class="social_link">
+    <li id="lastfm" class="social-link">
         <a href="https://www.last.fm/user/ben-tanen" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -104,7 +104,7 @@
         </a>
     </li>
 
-    <li id="linkedin" class="social_link">
+    <li id="linkedin" class="social-link">
         <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -115,7 +115,7 @@
         </a>
     </li>
 
-    <li id="email" class="social_link">
+    <li id="email" class="social-link">
         <a href="mailto:ben.tanen@gmail.com" target="_blank">
             <svg viewBox="0 0 512 512">
                 <circle cx="256" cy="256" r="239.5"/>
@@ -135,58 +135,39 @@
     		<div class="post">
 
     <header class="post-header">
-        <h1>Up-to-Date Infographics</h1>
-        <p class="post-date">Nov 01 2014
+        <h1>Random Project: Base64 Decoder</h1>
+        <p class="post-date">Nov 12 2014
         <!--
-        <p class="post-meta">Nov 01 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        <p class="post-meta">Nov 12 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
         -->
     </header>
 
     <article class="post-content">
-    <p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
+    <p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
 
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/infographics_kerem.png" target="_blank">
-    <img src="/assets/img/posts/infographics_kerem.png" alt="Examples of Kerem's use of infographics" />
-    </a>
-</p>
+<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
 
-<figcaption>
-Examples of Kerem's use of infographics
-</figcaption>
+<ol>
+  <li>Convert each encoded character to ASCII values</li>
+  <li>String together 6-bit strings of ASCII values</li>
+  <li>Break string up into 8-bit strings</li>
+  <li>Convert 8-bit strings back into ASCII values</li>
+  <li>Convert to decoded character</li>
+</ol>
 
-<p>For my infographics, I was attempting to display what I was currently up to (currently reading, listening to, watching). I never thought that it could be live updates, but more so descriptions of the book, album, and show/movie that I was into that week. However, the struggle with this was it was not easy to update the information. I had hard-coded into my HTML file, and accessing, changing, and uploading this was generally a pain, leaving my information drastically out-of-date.</p>
-
-<p>Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of <a href="http://www.IFTTT.com">IFTTT</a>, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.</p>
-
-<p class="fig_paragraph">
-    <a class="fig_link" href="/assets/img/posts/infographics_ex.png" target="_blank">
-    <img src="/assets/img/posts/infographics_ex.png" alt="My own example infographics" />
-    </a>
-</p>
-
-<figcaption>
-My own example infographics
-</figcaption>
-
-<p>The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.</p>
-
-<p>It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. </p>
-
-<p><strong>Update</strong> - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on <a href="/about/">my about page</a>.</p>
-
+<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code <a href="https://github.com/ben-tanen/Base64Decode">here</a>.</p>
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination_previous'><a href='/2014/11/12/base64.html'>&#8592; Newer Post</a></p>
+        <p id='pagination-previous'><a href='/blog/2014/11/30/grub.html'>&#8592; Newer Post</a></p>
         
 
-        <p id="pagination_all"><a href="/blog/all/">View All Posts</a></p>
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination_next'><a href='/2014/10/31/rap-data-design.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2014/11/01/infographics.html'>Older Post &#8594;</a></p>
         
     </div>
 

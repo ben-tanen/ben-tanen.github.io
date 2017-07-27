@@ -1,15 +1,15 @@
-#index_list {
+#index-list {
     margin-left: -50px;
 }
 
-#index_list li {
+#index-list li {
     min-height: 75px;
     list-style: none;
     position: relative;
     margin: 15px 0 15px 0;
 }
 
-#index_list li p {
+#index-list li p {
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     margin-left: 85px;
@@ -17,7 +17,7 @@
     text-align: left;
 }
 
-.index_thumbnail {
+.index-thumbnail {
     width: 75px;
     height: 100%;
     position: absolute;
@@ -26,6 +26,6 @@
     border: 1px solid #d6d6d6
 }
 
-.index_title {
+.index-title {
     color: #77bdee;
 }

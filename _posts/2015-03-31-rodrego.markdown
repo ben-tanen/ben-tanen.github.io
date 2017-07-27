@@ -3,8 +3,7 @@ layout: post
 title:  "RodRego: The Simple Register Machine Simulator"
 date:   2015-03-31 15:06:41
 categories: project rodrego code
-permalink: 2015/03/31/rodrego.html
-thumbnail: /assets/img/posts/thumbnail/rodrego.png
+thumbnail: /assets/img/post-thumbnails/rodrego.png
 ---
 
 
