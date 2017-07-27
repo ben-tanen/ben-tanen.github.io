@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate" type="application/rss+xml" title="Ben Tanen RSS" href="/feed.xml">
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
@@ -621,248 +622,26 @@
 
 <div class='post'>
     <header class="post-header">
-	   <h1>Polar Line Charts in D3</h1>
+	   <h1>How I Keep Track of All My Shows</h1>
        <!--
-       <p class="post-meta">Jan 08 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       <p class="post-meta">Jan 24 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
        -->
     </header>
 
     <article class="post-content">
-	   <p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
+	   <p>As I’ve <a href="/blog/2016/05/08/netflix-history.html">previously mentioned</a>, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly have way too much time on my hands, I decided to make <strong>TV Monitor</strong>, a little Chrome extension that keeps track of all of this for me.</p>
 
-<p>Since <a href="https://bost.ocks.org/mike/" target="_blank">D3 and Mike Bostock</a> have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.</p>
+<p>A lot of inspiration for the extension came from the <a href="https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb">Feedly Notifier extension</a> I use to keep track of my RSS feeds. I found it’s design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.</p>
 
-<style>
-#d3-polar-container {
-    width: 90%;
-    max-width: 450px;
-    height: 450px;
-}
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/tv-monitor-demo.gif" target="_blank">
+    <img src="/assets/img/posts/tv-monitor-demo.gif" width="350px" />
+    </a>
+</p>
 
-#polar-line-chart {
-    width: 100%;
-    height: 100%;
-}
+<p>Overall, building this was easier than expected. It was surprisingly simple to get a basic Chrome extension going and from there it was just web development like any traditional site. The backend is built using a basic Django app that queries IMDB to see if there are any new episodes available of a particular show. If you’re interested, feel free to check out <a href="https://github.com/ben-tanen/tv-monitor">the frontend code</a> (backend maybe to come).</p>
 
-#polar-line-chart .line {
-    fill: none;
-    stroke: steelblue;
-    stroke-width: 1px;
-}
-
-#polar-line-chart .domain {
-    display: none;
-}
-
-#polar-line-chart .year-text {
-    font-family: sans-serif;
-    font-size: 14px;
-}
-
-#polar-line-chart .play-text {
-    font-family: sans-serif;
-    font-size: 18px;
-    cursor: pointer;
-    fill: #77bdee;
-}
-</style>
-
-<div id="d3-polar-container" style="margin: auto;">
-    <svg id="polar-line-chart"></svg>
-</div>
-
-<script>
-/* resize svg height if needed */
-var c_width = $("#d3-polar-container").width();
-$("#d3-polar-container").css("height", c_width);
-
-/* initialize svg and variables */
-var polar_svg = d3.select("#polar-line-chart"),
-    margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
-    width = c_width - margin.left - margin.right;
-    height = c_width - margin.top - margin.bottom;
-
-// polar scales
-var t = d3.scaleTime().range([0, 2 * Math.PI]),
-    r = d3.scaleLinear().range([0, (width - margin.center) / 2]);
-
-// cartesian conversion
-var x = function(t, r) { return (margin.left) + (width / 2) + ((r + (margin.center / 2)) *  Math.sin(t)); },
-    y = function(t, r) { return (margin.top) + (height / 2) - ((r + (margin.center / 2)) *  Math.cos(t)); }
-
-var line = d3.line()
-    .x(function(d) { return x(t(d.month), r(d.value)); })
-    .y(function(d) { return y(t(d.month), r(d.value)); });
-
-var color = d3.scaleLinear()
-    .range(["#2a96e8", "#fb6767"]);
-
-/* draw polar background */
-polar_svg.append('circle')
-    .attr("r", width / 2)
-    .attr("cx", margin.left + width / 2)
-    .attr("cy", margin.top + height / 2)
-    .style("fill", "#ececec")
-    .style("stroke", "#000")
-    .style("stroke-width", "0.5px");
-
-polar_svg.append('circle')
-    .attr("r", margin.center / 2)
-    .attr("cx", margin.left + width / 2)
-    .attr("cy", margin.top + height / 2)
-    .style("fill", "white")
-    .style("stroke", "#000")
-    .style("stroke-width", "0.5px");
-
-/* pull data */
-d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
-    d.year  = +d.year;
-    d.month = +d.month;
-    d.value = +d.v2;
-    return d;
-}, function(error, data) {
-    if (error) throw error;
-
-    var [t_min, t_max] = d3.extent(data, function(d) { return d.month; }),
-        [r_min, r_max] = d3.extent(data, function(d) { return d.value;   });
-    var r_margin = {top: 0.15, bottom: 0};
-
-    t.domain([t_min, t_max + 1]);
-    r.domain([r_min - r_margin.bottom, r_max + r_margin.top]);
-    color.domain(d3.extent(data, function(d) { return d.year; }));
-
-    /* draw polar axes */
-    var ticks = r.ticks(5).splice(1);
-    var axis  = d3.axisBottom(r).tickValues(ticks).tickSize(0).tickFormat(d3.format(".1f"));
-
-    polar_svg.selectAll("g")
-        .data(ticks).enter()
-        .append("circle")
-        .attr("cx", margin.left + width / 2)
-        .attr("cy", margin.top + height / 2)
-        .attr("r", function(d) { return margin.center / 2 + r(d); })
-        .attr("fill", "none")
-        .attr("stroke", "#000")
-        .attr("stroke-width", "0.25px");
-
-    polar_svg.append("rect")
-        .attr("x", margin.left + (margin.center + width) / 2 + 5)
-        .attr("y", margin.top + height / 2 - 10)
-        .attr("width", (width - margin.center) / 2 - 7)
-        .attr("height", 20)
-        .attr("fill", "#ececec");
-
-    /* render center year, "play", title, and month text */
-    var text_size = (c_width == 450 ? 1 : 0.8);
-
-    polar_svg.append("text")
-        .attr("class", "year-text")
-        .style("font-size", text_size - 0.1 + "em")
-        .attr("transform", "translate(" + (margin.left + width / 2 - 15) + "," + (margin.top + height / 2 + 5) + ")")
-        .text("1850");
-
-    polar_svg.append("text")
-        .style("font-size", text_size + "em")
-        .attr("transform", "translate(" + 10 + "," + 15 + ")")
-        .text("Global Temperature Change in °C (1850 - 2016)");
-
-    polar_svg.append("text")
-        .style("font-size", text_size - 0.1 + "em")
-        .attr("transform", "translate(" + (width + margin.left + 10) + "," + (height / 2 + margin.top - 8) + ") rotate(90)")
-        .text("Apr");
-
-    polar_svg.append("text")
-        .style("font-size", text_size - 0.1 + "em")
-        .attr("transform", "translate(" + (width / 2 + margin.left - 8) + "," + (margin.top - 8) + ")")
-        .text("Jan");
-
-    polar_svg.append("text")
-        .style("font-size", text_size - 0.1 + "em")
-        .attr("transform", "translate(" + (margin.left - 8) + "," + (height / 2 + margin.top + 8) + ") rotate(270)")
-        .text("Oct");
-
-    polar_svg.append("text")
-        .style("font-size", text_size - 0.1 + "em")
-        .attr("transform", "translate(" + (width / 2 + margin.left + 8) + "," + (height + margin.top + 8) + ") rotate(180)")
-        .text("Jul");
-
-    $(document).ready(function() {
-        polar_svg.append("text")
-            .attr("class", "play-text")
-            .style("font-size", text_size + "em")
-            .attr("transform", "translate(" + 10 + "," + 35 + ")")
-            .text("Play");
-    });
-
-    /* animate on click */
-    polar_svg.select(".play-text").on("click", function() {
-        /* clear paths and axis */
-        polar_svg.selectAll(".line").remove();
-        polar_svg.select("#axis").remove();
-        polar_svg.selectAll(".year-text.added").remove();
-        polar_svg.selectAll(".year-text").text("1850");
-        polar_svg.selectAll(".year-text-cover").remove();
-
-        for (var i = 1; i < data.length; i++) {
-            /* draw new path */
-            polar_svg.append("path")
-                .attr("class", "line")
-                .attr("d", line([data[i - 1], data[i]]))
-                .style("stroke", color(data[i - 1].year))
-                .style("opacity", 0)
-                .transition()
-                .duration(50)
-                .delay(1000 + 5 * i)
-                .style("opacity", 1);
-
-            /* update center text */
-            if (data[i - 1].month == 1) {
-                polar_svg.append("rect")
-                    .attr("class", "year-text-cover")
-                    .attr("x", margin.left + width / 2 - margin.center / 2 + 15)
-                    .attr("y", margin.left + width / 2 - margin.center / 2 + 25)
-                    .attr("width", 45)
-                    .attr("height", 45)
-                    .attr("fill", "white")
-                    .style("opacity", 0)
-                    .transition()
-                    .duration(0)
-                    .delay(1000 + 5 * i)
-                    .style("opacity", 1);
-
-                polar_svg.append("text")
-                    .classed("year-text", true)
-                    .classed("added", true)
-                    .attr("transform", "translate(" + (margin.left + width / 2 - 15) + "," + (margin.top + height / 2 + 5) + ")")
-                    .text(data[i - 1].year)
-                    .style("opacity", 0)
-                    .style("font-size", text_size - 0.1 + "em")
-                    .transition()
-                    .duration(0)
-                    .delay(1000 + 5 * i)
-                    .style("opacity", 1);
-            }
-        }
-
-        /* re-render axis */
-        polar_svg.append("g")
-            .attr("id", "axis")
-            .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
-            .style("font-size", (c_width == 450 ? 0.6 : 0.5) + "em")
-            .call(axis);
-    });
-
-    /* render radial ticks */
-    polar_svg.append("g")
-        .attr("id", "axis")
-        .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
-        .style("font-size", (c_width == 450 ? 0.6 : 0.5) + "em")
-        .call(axis);
-});
-
-</script>
-
-<p>Now that I have the chart ready to go, I’ll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I’ll post it here.</p>
+<p>Since I was building this just for me, I took some shortcuts in terms of security, just for my own sanity, so I’m not planning to publish the extension on the Chrome store, at least not in the foreseeable future. Maybe that’ll be the project for next Winter Break…</p>
 
 
     </article>

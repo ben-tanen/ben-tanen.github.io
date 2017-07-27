@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/landing.style.css">
+    <link rel="stylesheet" href="/assets/css/main.style.css">
     
 
     
@@ -47,41 +47,31 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Ben Tanen</title>
+    <title>How I Keep Track of All My Shows | Ben Tanen</title>
 </head>
 
 
 <body>
-    <svg id="background"></svg>
+    <!-- adding support for mathjx -->
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 
-    <div id='landing-menu'>
-        <img src="/assets/img/menu.png" />
-        <div id='site-links' class="tk-europa">
-            <p><a class="selected-link">Home</a></p>
-            <p><a href='/projects/'>Projects</a></p>
-            <p><a href='/resume/BenjaminTanen_Resume.pdf'>Resume</a></p>
-            <p><a href='/blog/all/'>Blog</a></p>
-        </div>
+    <div class='wrapper'>
+    	<div id='side'>
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
+    
+    <h1 id="title-1" class="tk-europa">Howdy</h1>
+    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
+
+    <div id='site-links' class="tk-europa">
+        <p><a href='/'>Home</a></p>
+        <p><a href='/projects/' >Projects</a></p>
+        <p><a href='/resume/BenjaminTanen_Resume.pdf' >Resume</a></p>
+        <p><a href='/blog/all/' >Blog</a></p>
     </div>
 
-    <div id='landing-text'>
-        <div id='landing-header'>
-            <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
-            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
-        </div>
-
-        <p>I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories. I graduated from Tufts University in 2017 and I currently work as an analyst at Analysis Group in Boston, MA. <a href="http://link.ben-tanen.com/resume/" target="_blank">In the past</a>, I’ve worked as software developer and analyst at a few different software, finance, and consulting companies.</p>
-
-<p>Over the years, I've worked on projects dealing with <a href="http://asl-lex.org/" target="_blank">American Sign Language</a>, <a href="http://ben-tanen.github.io/UltimateConvexHull/" target="_blank">computational geometry</a> and <a href="http://ben-tanen.github.io/AdaptiveHuffmanCoding/" target="_blank">compression algorithms</a>, <a href="https://jadeyychan.github.io/DrunkenWorld/" target="_blank">alcohol consumption</a>, and <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the NHL playoffs</a>. You can find more on my project work <a href="/projects/">here</a>.</p>
-
-
-<p>On occasion, I'll write about things I'm working on and other stuff that interests me. I most recently wrote about <a href="/blog/2017/06/23/brain-fun.html" target="_blank">making and animating a brain with Adobe Illustrator</a>. You can find all that I've written <a href="/blog/all/">here</a>.</p>
-
-<p>For fun, I spin a weekly <a href="http://link.ben-tanen.com/papaT/" target="_blank">radio show</a> as Papa T on Tufts' WMFO and I play pick-up hockey. I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/" target="_blank">my collection</a> and I love chatting about filmmaking, law, and politics. <span id="currently-text">I'm currently listening to <a class="currently" id="currently-music-name" target="_blank">...</a> from <span class="currently" id="currently-music-artist" target="_blank">...</span> and I'm reading <a class="currently" id="currently-book-name" target="_blank">...</a> by <span class="currently" id="currently-book-author" target="_blank">...</span>.</span></p>
-
-<p>Want to chat, maybe over a nice bowl of spicy ramen? Feel free to reach out on <a href="https://twitter.com/ben_tanen" target="_blank">Twitter</a> or over <a href="mailto:ben.tanen@gmail.com">e-mail</a>.</p>
-
-        <ul id="social-links">
+    <ul id="social-links">
     <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
@@ -140,9 +130,52 @@
         </a>
     </li>
 </ul>
+</div>
+
+    	<div class='main'>
+    		<div class="post">
+
+    <header class="post-header">
+        <h1>How I Keep Track of All My Shows</h1>
+        <p class="post-date">Jan 24 2017
+        <!--
+        <p class="post-meta">Jan 24 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        -->
+    </header>
+
+    <article class="post-content">
+    <p>As I’ve <a href="/blog/2016/05/08/netflix-history.html">previously mentioned</a>, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly have way too much time on my hands, I decided to make <strong>TV Monitor</strong>, a little Chrome extension that keeps track of all of this for me.</p>
+
+<p>A lot of inspiration for the extension came from the <a href="https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb">Feedly Notifier extension</a> I use to keep track of my RSS feeds. I found it’s design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/tv-monitor-demo.gif" target="_blank">
+    <img src="/assets/img/posts/tv-monitor-demo.gif" width="350px" />
+    </a>
+</p>
+
+<p>Overall, building this was easier than expected. It was surprisingly simple to get a basic Chrome extension going and from there it was just web development like any traditional site. The backend is built using a basic Django app that queries IMDB to see if there are any new episodes available of a particular show. If you’re interested, feel free to check out <a href="https://github.com/ben-tanen/tv-monitor">the frontend code</a> (backend maybe to come).</p>
+
+<p>Since I was building this just for me, I took some shortcuts in terms of security, just for my own sanity, so I’m not planning to publish the extension on the Chrome store, at least not in the foreseeable future. Maybe that’ll be the project for next Winter Break…</p>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/blog/2017/04/28/chaos-game.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/blog/2017/01/08/polar-line-charts.html'>Older Post &#8594;</a></p>
+        
     </div>
 
-    <script src="/assets/js/landing.js">
-    </script>
+</div>
+    	</div>
+    </div>
+	
 </body>
 </html>

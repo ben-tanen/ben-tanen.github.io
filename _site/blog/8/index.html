@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate" type="application/rss+xml" title="Ben Tanen RSS" href="/feed.xml">
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
@@ -136,6 +137,45 @@
 
 <div class='post'>
     <header class="post-header">
+	   <h1>RodRego: The Simple Register Machine Simulator</h1>
+       <!--
+       <p class="post-meta">Mar 31 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p class="fig-paragraph">
+    <a class="fig-link" href="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" target="_blank">
+    <img src="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" alt="RodRego's Original Banner" />
+    </a>
+</p>
+
+<p>For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainf**k</a> without IO).</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/rodrego.png" target="_blank">
+    <img src="/assets/img/posts/rodrego.png" alt="The original desktop application (left) vs. the new web application (right)" />
+    </a>
+</p>
+
+<figcaption>
+The original desktop application (left) vs. the new web application (right)
+</figcaption>
+
+<p>My assignment for this project was to build a web application that emulates (and fixes any problems of) the existing desktop application. With little instruction on how the original application worked, building something that would recreate it was interesting, but ultimately doable. Specific data validation (which was necessary to check commands / script format) was also a pain in JavaScript but that’s just JavaScript.</p>
+
+<p>Overall, it was a fun project. This was my first major web development assignment (outside of random personal projects) so it was a good learning experience. It was also pretty cool to work on someone’s legacy project. And at the end of the day, you’ve always got to remember and appreciate your first. ♥ RodRego ♥</p>
+
+<p>If you want to try it out, you can find the site <a href="http://proto.atech.tufts.edu/RodRego/">here</a>. You can also find the code on <a href="https://github.com/ben-tanen/RodRego">GitHub</a>.</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
 	   <h1>Grub: The Command-line GrubHub</h1>
        <!--
        <p class="post-meta">Nov 30 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
@@ -238,46 +278,9 @@ My own example infographics
 
 <p>It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. </p>
 
-<p><strong>Update</strong> - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on <a href="/about/">my about page</a>.</p>
+<p><strong>Update, 12/26/2016</strong> - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on <a href="/about/">my about page</a>.</p>
 
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Rap, Data, and Design</h1>
-       <!--
-       <p class="post-meta">Oct 31 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.</p>
-
-<p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/rap-vocab.png" target="_blank">
-    <img src="/assets/img/posts/rap-vocab.png" alt="A screenshot from the article" />
-    </a>
-</p>
-
-<p>Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.</p>
-
-<p>A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: </p>
-
-<blockquote>
-  <p>“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”</p>
-</blockquote>
-
-<p>From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion. </p>
-
-<p>Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.</p>
-
-<p>By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.</p>
+<p><strong>Update, 07/28/2017</strong> - Still using the improved system but now I don’t have an about page any more… you can find the details on <a href="/">my home page</a>.</p>
 
 
     </article>
@@ -292,6 +295,8 @@ My own example infographics
 
     <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
+    
+    <p id='pagination-next'><a href='/blog/9'>Older Posts &#8594;</a></p>
     
 </div>
 

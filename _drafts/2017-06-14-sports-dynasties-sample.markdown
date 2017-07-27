@@ -9,7 +9,7 @@ Thus far in 2017, we have seen the New England Patriots, the Pittsburgh Penguins
 
 ... However, while 
 
-<script src="/projects/sports-dynasties/js/lib/topojson.v1.min.js"></script>
+<script src="/assets/js/lib/topojson.v1.min.js"></script>
 <link rel="stylesheet" href="/projects/sports-dynasties/css/style.css">
 
 <div class='sd-svg-container' style='width: 650px; margin: auto;'></div>

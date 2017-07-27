@@ -8,10 +8,10 @@ This is my personal website. It includes a home page featuring blog posts and ot
 - [x] Add "Vinyl" Page
 - [x] Speed Up "Story Time" Page
 - [x] Clean Up Code (mostly CSS)
+- [x] Add "Media" + "Photography" page
+- [x] Add Gallery Option ([tight grid](http://ben-tanen.com/blog/2016/11/10/stpaul-broken-bones.html) and [loose grid](http://stephaniestamm.com/))
 - [ ] Update "Projects" Page
-- [ ] Add "Media" + "Photography" page
 - [ ] Add Date + Tags to Blog Posts
 - [ ] Add RSS Feed
 - [ ] Add "Work I Admire" Page
-- [ ] Add Gallery Option ([tight grid](http://ben-tanen.com/blog/2016/11/10/stpaul-broken-bones.html) and [loose grid](http://stephaniestamm.com/))
 

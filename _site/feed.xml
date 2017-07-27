@@ -1,0 +1,2255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ben Tanen - Posts</title>
+        <description>Recent updates from Ben Tanen</description>
+        <link>http://localhost:4000</link>
+            
+                
+                <item>
+                    <title>Random Brain Fun with Illustrator</title>
+                    <description>&lt;p&gt;Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because of my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from &lt;a href=&quot;https://www.youtube.com/watch?v=Bxp9Rh7srIg&quot;&gt;WIRED&lt;/a&gt;, I opened up Illustrator (and Google, of course) and gave it a try.&lt;/p&gt;
+
+&lt;p&gt;In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we’ve all got to start somewhere. Expect more to come…&lt;/p&gt;
+
+&lt;style&gt;
+    #brain-viz-container {
+        width: 325px;
+        margin: auto;
+    }
+
+    #brain-viz {
+        width: 100%;
+        height: auto;
+    }
+
+    #brain-viz line {
+        fill: none;
+        stroke: #77bdee;
+        stroke-width: 3;
+    }
+
+    #brain-viz circle:not(#background-circle) {
+        fill: #77bdee;
+    }
+&lt;/style&gt;
+
+&lt;div id=&quot;brain-viz-container&quot;&gt;
+    &lt;svg id=&quot;brain-viz&quot; viewbox=&quot;-50 -50 600 600&quot;&gt;
+        &lt;circle id=&quot;background-circle&quot; cx=&quot;250&quot; cy=&quot;250&quot; r=&quot;300&quot; /&gt;
+        &lt;line x1=&quot;356.396&quot; y1=&quot;213.275&quot; x2=&quot;295.861&quot; y2=&quot;212.697&quot; /&gt;
+        &lt;line x1=&quot;266.287&quot; y1=&quot;254.945&quot; x2=&quot;356.396&quot; y2=&quot;213.275&quot; /&gt;
+        &lt;line x1=&quot;262.855&quot; y1=&quot;297.188&quot; x2=&quot;375.528&quot; y2=&quot;270.223&quot; /&gt;
+        &lt;line x1=&quot;139.737&quot; y1=&quot;247.904&quot; x2=&quot;80.657&quot; y2=&quot;287.807&quot; /&gt;
+        &lt;line x1=&quot;56.247&quot; y1=&quot;182.52&quot; x2=&quot;139.737&quot; y2=&quot;247.904&quot; /&gt;
+        &lt;line x1=&quot;56.247&quot; y1=&quot;182.52&quot; x2=&quot;106.944&quot; y2=&quot;157.976&quot; /&gt;
+        &lt;line x1=&quot;135.713&quot; y1=&quot;212.697&quot; x2=&quot;56.247&quot; y2=&quot;182.52&quot; /&gt;
+        &lt;line x1=&quot;106.944&quot; y1=&quot;157.976&quot; x2=&quot;135.713&quot; y2=&quot;212.697&quot; /&gt;
+        &lt;line x1=&quot;177.224&quot; y1=&quot;322.676&quot; x2=&quot;136.987&quot; y2=&quot;357.548&quot; /&gt;
+        &lt;line x1=&quot;210.754&quot; y1=&quot;348.16&quot; x2=&quot;177.224&quot; y2=&quot;322.676&quot; /&gt;
+        &lt;line x1=&quot;273.791&quot; y1=&quot;340.111&quot; x2=&quot;210.754&quot; y2=&quot;348.16&quot; /&gt;
+        &lt;line x1=&quot;332.804&quot; y1=&quot;454.115&quot; x2=&quot;273.791&quot; y2=&quot;340.111&quot; /&gt;
+        &lt;line x1=&quot;260.378&quot; y1=&quot;295.854&quot; x2=&quot;326.099&quot; y2=&quot;341.453&quot; /&gt;
+        &lt;line x1=&quot;268.426&quot; y1=&quot;256.957&quot; x2=&quot;260.378&quot; y2=&quot;295.854&quot; /&gt;
+        &lt;line x1=&quot;240.261&quot; y1=&quot;200.626&quot; x2=&quot;268.426&quot; y2=&quot;256.957&quot; /&gt;
+        &lt;line x1=&quot;295.25&quot; y1=&quot;215.379&quot; x2=&quot;240.261&quot; y2=&quot;200.626&quot; /&gt;
+        &lt;line x1=&quot;314.027&quot; y1=&quot;171.12&quot; x2=&quot;295.25&quot; y2=&quot;215.379&quot; /&gt;
+        &lt;line x1=&quot;356.945&quot; y1=&quot;215.379&quot; x2=&quot;314.027&quot; y2=&quot;171.12&quot; /&gt;
+        &lt;line x1=&quot;377.062&quot; y1=&quot;271.711&quot; x2=&quot;356.945&quot; y2=&quot;215.379&quot; /&gt;
+        &lt;line x1=&quot;358.287&quot; y1=&quot;303.9&quot; x2=&quot;377.062&quot; y2=&quot;271.711&quot; /&gt;
+        &lt;line x1=&quot;373.04&quot; y1=&quot;362.912&quot; x2=&quot;358.287&quot; y2=&quot;303.9&quot; /&gt;
+        &lt;line x1=&quot;395.841&quot; y1=&quot;325.357&quot; x2=&quot;373.04&quot; y2=&quot;362.912&quot; /&gt;
+        &lt;line x1=&quot;410.595&quot; y1=&quot;374.982&quot; x2=&quot;395.841&quot; y2=&quot;325.357&quot; /&gt;
+        &lt;line x1=&quot;417.971&quot; y1=&quot;308.499&quot; x2=&quot;464.242&quot; y2=&quot;337.43&quot; /&gt;
+        &lt;line x1=&quot;449.488&quot; y1=&quot;364.254&quot; x2=&quot;417.971&quot; y2=&quot;308.499&quot; /&gt;
+        &lt;line x1=&quot;417.3&quot; y1=&quot;309.266&quot; x2=&quot;476.112&quot; y2=&quot;302.424&quot; /&gt;
+        &lt;line x1=&quot;379.746&quot; y1=&quot;222.086&quot; x2=&quot;417.3&quot; y2=&quot;309.266&quot; /&gt;
+        &lt;line x1=&quot;411.936&quot; y1=&quot;208.674&quot; x2=&quot;379.746&quot; y2=&quot;222.086&quot; /&gt;
+        &lt;line x1=&quot;472.29&quot; y1=&quot;246.497&quot; x2=&quot;411.936&quot; y2=&quot;208.674&quot; /&gt;
+        &lt;line x1=&quot;386.453&quot; y1=&quot;160.39&quot; x2=&quot;446.808&quot; y2=&quot;180.508&quot; /&gt;
+        &lt;line x1=&quot;410.595&quot; y1=&quot;128.201&quot; x2=&quot;386.453&quot; y2=&quot;160.39&quot; /&gt;
+        &lt;line x1=&quot;322.075&quot; y1=&quot;134.907&quot; x2=&quot;295.25&quot; y2=&quot;55.776&quot; /&gt;
+        &lt;line x1=&quot;268.426&quot; y1=&quot;125.519&quot; x2=&quot;322.075&quot; y2=&quot;134.907&quot; /&gt;
+        &lt;line x1=&quot;250.99&quot; y1=&quot;55.776&quot; x2=&quot;268.426&quot; y2=&quot;125.519&quot; /&gt;
+        &lt;line x1=&quot;171.859&quot; y1=&quot;90.647&quot; x2=&quot;250.99&quot; y2=&quot;55.776&quot; /&gt;
+        &lt;line x1=&quot;154.423&quot; y1=&quot;62.481&quot; x2=&quot;171.859&quot; y2=&quot;90.647&quot; /&gt;
+        &lt;line x1=&quot;57.856&quot; y1=&quot;181.85&quot; x2=&quot;37.738&quot; y2=&quot;142.954&quot; /&gt;
+        &lt;line x1=&quot;17.62&quot; y1=&quot;196.603&quot; x2=&quot;57.856&quot; y2=&quot;181.85&quot; /&gt;
+        &lt;line x1=&quot;49.809&quot; y1=&quot;239.521&quot; x2=&quot;17.62&quot; y2=&quot;196.603&quot; /&gt;
+        &lt;line x1=&quot;44.444&quot; y1=&quot;278.416&quot; x2=&quot;49.809&quot; y2=&quot;239.521&quot; /&gt;
+        &lt;line x1=&quot;323.014&quot; y1=&quot;131.822&quot; x2=&quot;250.99&quot; y2=&quot;55.776&quot; /&gt;
+        &lt;line x1=&quot;357.616&quot; y1=&quot;212.697&quot; x2=&quot;323.014&quot; y2=&quot;131.822&quot; /&gt;
+        &lt;line x1=&quot;386.185&quot; y1=&quot;159.787&quot; x2=&quot;357.616&quot; y2=&quot;212.697&quot; /&gt;
+        &lt;line x1=&quot;323.014&quot; y1=&quot;131.822&quot; x2=&quot;386.185&quot; y2=&quot;106.272&quot; /&gt;
+        &lt;line x1=&quot;330.055&quot; y1=&quot;71.267&quot; x2=&quot;323.014&quot; y2=&quot;131.822&quot; /&gt;
+        &lt;line x1=&quot;37.738&quot; y1=&quot;142.954&quot; x2=&quot;154.423&quot; y2=&quot;62.481&quot; /&gt;
+        &lt;line x1=&quot;65.099&quot; y1=&quot;103.858&quot; x2=&quot;56.247&quot; y2=&quot;182.52&quot; /&gt;
+        &lt;line x1=&quot;104.53&quot; y1=&quot;103.858&quot; x2=&quot;65.099&quot; y2=&quot;103.858&quot; /&gt;
+        &lt;line x1=&quot;142.755&quot; y1=&quot;106.876&quot; x2=&quot;104.53&quot; y2=&quot;103.858&quot; /&gt;
+        &lt;line x1=&quot;165.287&quot; y1=&quot;131.822&quot; x2=&quot;142.755&quot; y2=&quot;106.876&quot; /&gt;
+        &lt;line x1=&quot;223.831&quot; y1=&quot;137.053&quot; x2=&quot;165.287&quot; y2=&quot;131.822&quot; /&gt;
+        &lt;line x1=&quot;268.693&quot; y1=&quot;124.781&quot; x2=&quot;223.831&quot; y2=&quot;137.053&quot; /&gt;
+        &lt;line x1=&quot;241.132&quot; y1=&quot;200.626&quot; x2=&quot;268.693&quot; y2=&quot;124.781&quot; /&gt;
+        &lt;line x1=&quot;217.795&quot; y1=&quot;232.413&quot; x2=&quot;241.132&quot; y2=&quot;200.626&quot; /&gt;
+        &lt;line x1=&quot;160.849&quot; y1=&quot;170.248&quot; x2=&quot;217.795&quot; y2=&quot;232.413&quot; /&gt;
+        &lt;line x1=&quot;106.944&quot; y1=&quot;157.976&quot; x2=&quot;160.849&quot; y2=&quot;170.248&quot; /&gt;
+        &lt;line x1=&quot;56.247&quot; y1=&quot;182.52&quot; x2=&quot;106.944&quot; y2=&quot;157.976&quot; /&gt;
+        &lt;line x1=&quot;165.287&quot; y1=&quot;131.822&quot; x2=&quot;104.53&quot; y2=&quot;103.858&quot; /&gt;
+        &lt;line x1=&quot;160.849&quot; y1=&quot;170.248&quot; x2=&quot;165.287&quot; y2=&quot;131.822&quot; /&gt;
+        &lt;line x1=&quot;241.132&quot; y1=&quot;200.626&quot; x2=&quot;160.849&quot; y2=&quot;170.248&quot; /&gt;
+        &lt;line x1=&quot;217.795&quot; y1=&quot;232.413&quot; x2=&quot;241.132&quot; y2=&quot;200.626&quot; /&gt;
+        &lt;line x1=&quot;139.737&quot; y1=&quot;247.904&quot; x2=&quot;217.795&quot; y2=&quot;232.413&quot; /&gt;
+        &lt;line x1=&quot;160.849&quot; y1=&quot;170.248&quot; x2=&quot;139.737&quot; y2=&quot;247.904&quot; /&gt;
+        &lt;line x1=&quot;104.53&quot; y1=&quot;103.858&quot; x2=&quot;106.944&quot; y2=&quot;157.976&quot; /&gt;
+        &lt;line x1=&quot;142.755&quot; y1=&quot;106.876&quot; x2=&quot;154.423&quot; y2=&quot;62.817&quot; /&gt;
+        &lt;line x1=&quot;171.538&quot; y1=&quot;90.086&quot; x2=&quot;142.755&quot; y2=&quot;106.876&quot; /&gt;
+        &lt;line x1=&quot;165.287&quot; y1=&quot;131.822&quot; x2=&quot;174.139&quot; y2=&quot;88.568&quot; /&gt;
+        &lt;line x1=&quot;250.99&quot; y1=&quot;55.776&quot; x2=&quot;165.287&quot; y2=&quot;131.822&quot; /&gt;
+        &lt;line x1=&quot;223.831&quot; y1=&quot;137.053&quot; x2=&quot;250.99&quot; y2=&quot;55.776&quot; /&gt;
+        &lt;line x1=&quot;160.849&quot; y1=&quot;170.248&quot; x2=&quot;223.831&quot; y2=&quot;137.053&quot; /&gt;
+        &lt;line x1=&quot;135.713&quot; y1=&quot;212.697&quot; x2=&quot;160.849&quot; y2=&quot;170.248&quot; /&gt;
+        &lt;line x1=&quot;139.737&quot; y1=&quot;247.904&quot; x2=&quot;135.713&quot; y2=&quot;212.697&quot; /&gt;
+        &lt;line x1=&quot;137.122&quot; y1=&quot;274.661&quot; x2=&quot;139.737&quot; y2=&quot;247.904&quot; /&gt;
+        &lt;line x1=&quot;217.795&quot; y1=&quot;232.413&quot; x2=&quot;137.122&quot; y2=&quot;274.661&quot; /&gt;
+        &lt;line x1=&quot;178.163&quot; y1=&quot;323.348&quot; x2=&quot;217.795&quot; y2=&quot;232.413&quot; /&gt;
+        &lt;line x1=&quot;261.452&quot; y1=&quot;296.188&quot; x2=&quot;178.163&quot; y2=&quot;323.348&quot; /&gt;
+        &lt;line x1=&quot;396.646&quot; y1=&quot;326.171&quot; x2=&quot;376.125&quot; y2=&quot;268.225&quot; /&gt;
+        &lt;line x1=&quot;417.3&quot; y1=&quot;309.266&quot; x2=&quot;396.646&quot; y2=&quot;326.171&quot; /&gt;
+        &lt;line x1=&quot;472.29&quot; y1=&quot;246.496&quot; x2=&quot;417.3&quot; y2=&quot;309.266&quot; /&gt;
+        &lt;line x1=&quot;412.338&quot; y1=&quot;375.461&quot; x2=&quot;417.971&quot; y2=&quot;307.654&quot; /&gt;
+        &lt;line x1=&quot;326.232&quot; y1=&quot;340.254&quot; x2=&quot;371.699&quot; y2=&quot;361.378&quot; /&gt;
+        &lt;line x1=&quot;308.335&quot; y1=&quot;370.32&quot; x2=&quot;326.232&quot; y2=&quot;340.254&quot; /&gt;
+        &lt;line x1=&quot;261.452&quot; y1=&quot;296.188&quot; x2=&quot;308.335&quot; y2=&quot;370.32&quot; /&gt;
+        &lt;line x1=&quot;268.493&quot; y1=&quot;254.945&quot; x2=&quot;261.452&quot; y2=&quot;296.188&quot; /&gt;
+        &lt;line x1=&quot;217.795&quot; y1=&quot;232.413&quot; x2=&quot;268.493&quot; y2=&quot;254.945&quot; /&gt;
+        &lt;line x1=&quot;261.452&quot; y1=&quot;296.188&quot; x2=&quot;217.795&quot; y2=&quot;232.413&quot; /&gt;
+        &lt;line x1=&quot;213.065&quot; y1=&quot;347.295&quot; x2=&quot;261.452&quot; y2=&quot;296.188&quot; /&gt;
+        &lt;line x1=&quot;137.122&quot; y1=&quot;274.661&quot; x2=&quot;137.122&quot; y2=&quot;356.341&quot; /&gt;
+        &lt;line x1=&quot;178.163&quot; y1=&quot;323.348&quot; x2=&quot;137.122&quot; y2=&quot;274.661&quot; /&gt;
+        &lt;line x1=&quot;308.335&quot; y1=&quot;370.32&quot; x2=&quot;334.682&quot; y2=&quot;457.334&quot; /&gt;
+        &lt;line x1=&quot;273.925&quot; y1=&quot;340.254&quot; x2=&quot;308.335&quot; y2=&quot;370.32&quot; /&gt;
+        &lt;line x1=&quot;261.452&quot; y1=&quot;296.188&quot; x2=&quot;273.925&quot; y2=&quot;340.254&quot; /&gt;
+        &lt;line x1=&quot;357.616&quot; y1=&quot;303.229&quot; x2=&quot;261.452&quot; y2=&quot;296.188&quot; /&gt;
+        &lt;line x1=&quot;326.232&quot; y1=&quot;340.254&quot; x2=&quot;357.616&quot; y2=&quot;303.229&quot; /&gt;
+        &lt;line x1=&quot;376.125&quot; y1=&quot;268.225&quot; x2=&quot;371.699&quot; y2=&quot;361.378&quot; /&gt;
+        &lt;line x1=&quot;417.971&quot; y1=&quot;307.654&quot; x2=&quot;376.125&quot; y2=&quot;268.225&quot; /&gt;
+        &lt;line x1=&quot;412.338&quot; y1=&quot;210.686&quot; x2=&quot;417.971&quot; y2=&quot;307.654&quot; /&gt;
+        &lt;line x1=&quot;447.344&quot; y1=&quot;177.289&quot; x2=&quot;412.338&quot; y2=&quot;210.686&quot; /&gt;
+        &lt;line x1=&quot;412.338&quot; y1=&quot;210.686&quot; x2=&quot;410.595&quot; y2=&quot;128.201&quot; /&gt;
+        &lt;line x1=&quot;386.185&quot; y1=&quot;159.787&quot; x2=&quot;412.338&quot; y2=&quot;210.686&quot; /&gt;
+        &lt;line x1=&quot;380.752&quot; y1=&quot;222.756&quot; x2=&quot;386.185&quot; y2=&quot;159.787&quot; /&gt;
+        &lt;line x1=&quot;357.616&quot; y1=&quot;212.697&quot; x2=&quot;380.752&quot; y2=&quot;222.756&quot; /&gt;
+        &lt;line x1=&quot;386.185&quot; y1=&quot;106.272&quot; x2=&quot;357.616&quot; y2=&quot;212.697&quot; /&gt;
+        &lt;line x1=&quot;323.014&quot; y1=&quot;131.822&quot; x2=&quot;360.433&quot; y2=&quot;86.959&quot; /&gt;
+        &lt;line x1=&quot;314.161&quot; y1=&quot;170.248&quot; x2=&quot;323.014&quot; y2=&quot;131.822&quot; /&gt;
+        &lt;line x1=&quot;268.693&quot; y1=&quot;124.781&quot; x2=&quot;314.161&quot; y2=&quot;170.248&quot; /&gt;
+        &lt;line x1=&quot;295.861&quot; y1=&quot;212.697&quot; x2=&quot;268.693&quot; y2=&quot;124.781&quot; /&gt;
+        &lt;line x1=&quot;376.125&quot; y1=&quot;268.225&quot; x2=&quot;268.493&quot; y2=&quot;254.945&quot; /&gt;
+        &lt;line x1=&quot;380.752&quot; y1=&quot;222.756&quot; x2=&quot;376.125&quot; y2=&quot;268.225&quot; /&gt;
+        &lt;line x1=&quot;105.25&quot; y1=&quot;103.915&quot; x2=&quot;160.849&quot; y2=&quot;170.248&quot; /&gt;
+        &lt;line x1=&quot;56.247&quot; y1=&quot;182.52&quot; x2=&quot;104.53&quot; y2=&quot;103.858&quot; /&gt;
+        &lt;line x1=&quot;80.657&quot; y1=&quot;287.807&quot; x2=&quot;56.247&quot; y2=&quot;182.52&quot; /&gt;
+        &lt;line x1=&quot;49.809&quot; y1=&quot;239.521&quot; x2=&quot;80.657&quot; y2=&quot;287.807&quot; /&gt;
+        &lt;line x1=&quot;385.024&quot; y1=&quot;106.742&quot; x2=&quot;386.453&quot; y2=&quot;161.333&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;42.176&quot; y1=&quot;276.404&quot; x2=&quot;17.62&quot; y2=&quot;193.75&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;134.305&quot; y1=&quot;274.393&quot; x2=&quot;80.657&quot; y2=&quot;287.807&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;118.211&quot; y1=&quot;322.676&quot; x2=&quot;134.305&quot; y2=&quot;274.393&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;136.987&quot; y1=&quot;357.548&quot; x2=&quot;118.211&quot; y2=&quot;322.676&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;326.099&quot; y1=&quot;341.453&quot; x2=&quot;332.804&quot; y2=&quot;454.115&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;449.488&quot; y1=&quot;364.254&quot; x2=&quot;410.595&quot; y2=&quot;374.982&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;464.242&quot; y1=&quot;337.43&quot; x2=&quot;449.488&quot; y2=&quot;364.254&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;446.808&quot; y1=&quot;180.508&quot; x2=&quot;472.29&quot; y2=&quot;246.497&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;386.453&quot; y1=&quot;106.742&quot; x2=&quot;410.595&quot; y2=&quot;128.201&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;358.287&quot; y1=&quot;87.965&quot; x2=&quot;386.453&quot; y2=&quot;106.742&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;328.78&quot; y1=&quot;71.87&quot; x2=&quot;358.287&quot; y2=&quot;87.965&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;295.25&quot; y1=&quot;55.776&quot; x2=&quot;328.78&quot; y2=&quot;71.87&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;64.562&quot; y1=&quot;105.401&quot; x2=&quot;154.423&quot; y2=&quot;62.481&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;37.738&quot; y1=&quot;142.954&quot; x2=&quot;64.562&quot; y2=&quot;105.401&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;80.657&quot; y1=&quot;287.807&quot; x2=&quot;44.444&quot; y2=&quot;278.416&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;250.99&quot; y1=&quot;55.776&quot; x2=&quot;295.25&quot; y2=&quot;55.776&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;154.423&quot; y1=&quot;62.481&quot; x2=&quot;250.99&quot; y2=&quot;55.776&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;17.62&quot; y1=&quot;196.603&quot; x2=&quot;37.738&quot; y2=&quot;142.954&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;476.112&quot; y1=&quot;302.424&quot; x2=&quot;472.29&quot; y2=&quot;246.496&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;464.242&quot; y1=&quot;337.43&quot; x2=&quot;476.112&quot; y2=&quot;302.424&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;371.699&quot; y1=&quot;361.378&quot; x2=&quot;412.338&quot; y2=&quot;375.461&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;137.122&quot; y1=&quot;356.341&quot; x2=&quot;213.065&quot; y2=&quot;347.295&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;371.699&quot; y1=&quot;361.378&quot; x2=&quot;326.232&quot; y2=&quot;340.254&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;410.595&quot; y1=&quot;128.201&quot; x2=&quot;447.344&quot; y2=&quot;177.289&quot; /&gt;
+        &lt;line class=&quot;brain-border&quot; x1=&quot;211.5&quot; y1=&quot;348&quot; x2=&quot;332.804&quot; y2=&quot;455.5&quot; /&gt;
+        &lt;circle cx=&quot;294.654&quot; cy=&quot;56.776&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;248.003&quot; cy=&quot;55.167&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;152.827&quot; cy=&quot;62.817&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;170.542&quot; cy=&quot;88.568&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;268.098&quot; cy=&quot;124.781&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;312.565&quot; cy=&quot;169.248&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;323.417&quot; cy=&quot;131.822&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;328.458&quot; cy=&quot;72.267&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;356.836&quot; cy=&quot;86.959&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;382.587&quot; cy=&quot;106.272&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;407.131&quot; cy=&quot;126.391&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;443.747&quot; cy=&quot;177.289&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;165.69&quot; cy=&quot;130.822&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;223.234&quot; cy=&quot;137.053&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;143.158&quot; cy=&quot;105.876&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;101.934&quot; cy=&quot;103.858&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;105.348&quot; cy=&quot;157.976&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;58.65&quot; cy=&quot;180.52&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;36.141&quot; cy=&quot;140.674&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;62.502&quot; cy=&quot;103.858&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;18.041&quot; cy=&quot;195.603&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;49.218&quot; cy=&quot;240.119&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;42.994&quot; cy=&quot;275.667&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;79.597&quot; cy=&quot;287.285&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;135.525&quot; cy=&quot;273.661&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;118.614&quot; cy=&quot;323.347&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;137.525&quot; cy=&quot;356.341&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;178.566&quot; cy=&quot;323.348&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;211.469&quot; cy=&quot;347.295&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;270.329&quot; cy=&quot;340.254&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;332.085&quot; cy=&quot;455.334&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;307.738&quot; cy=&quot;369.321&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;322.635&quot; cy=&quot;340.254&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;372.103&quot; cy=&quot;360.378&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;408.741&quot; cy=&quot;375.461&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;446.562&quot; cy=&quot;363.28&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;463.326&quot; cy=&quot;336.535&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;397.049&quot; cy=&quot;325.171&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;357.02&quot; cy=&quot;303.229&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;262.855&quot; cy=&quot;297.188&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;375.528&quot; cy=&quot;270.225&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;266.287&quot; cy=&quot;254.945&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;214.199&quot; cy=&quot;232.413&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;240.536&quot; cy=&quot;200.626&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;294.266&quot; cy=&quot;211.697&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;357.02&quot; cy=&quot;212.697&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;380.156&quot; cy=&quot;222.756&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;411.741&quot; cy=&quot;209.686&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;386.587&quot; cy=&quot;160.787&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;160.252&quot; cy=&quot;169.248&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;132.117&quot; cy=&quot;212.697&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;138.141&quot; cy=&quot;246.904&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;473.516&quot; cy=&quot;302.424&quot; r=&quot;7.041&quot; /&gt;
+        &lt;circle cx=&quot;470.693&quot; cy=&quot;245.496&quot; r=&quot;7.042&quot; /&gt;
+        &lt;circle cx=&quot;417.374&quot; cy=&quot;307.654&quot; r=&quot;7.041&quot; /&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    function animate_brain() {
+        var available_lines = brain_svg.selectAll('line:not(.tbd):not(.brain-border)');
+
+        if (available_lines.size() == 0) return;
+
+        var ix = Math.floor(Math.random() * available_lines.size());
+
+        var l1 = d3.select(available_lines._groups[0][ix]);
+        var l2 = brain_svg.append('line')
+            .attr('x1', l1.attr('x2'))
+            .attr('y1', l1.attr('y2'))
+            .attr('x2', l1.attr('x2'))
+            .attr('y2', l1.attr('y2'));
+
+        var x1 = l1.attr('x1'),
+            y1 = l1.attr('y1');
+
+        l2.transition().duration(1000).delay(200)
+            .attr('x1', x1)
+            .attr('y1', y1);
+
+        l1.transition().duration(1000)
+            .attr('x2', x1)
+            .attr('y2', y1)
+            .transition().delay(2000)
+            .remove();
+    }
+
+    var brain_svg = d3.select('#brain-viz');
+    var lines = brain_svg.selectAll('line'),
+        dots  = brain_svg.selectAll('circle');
+
+    var brain_interval = setInterval(function() {
+        animate_brain();
+    }, 200);
+
+    $(window).blur(function() {
+        clearInterval(brain_interval);
+    });
+
+    $(window).focus(function() {
+        brain_interval = setInterval(function() {
+            animate_brain();
+        }, 200);
+    });
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2017-06-23T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/06/23/brain-fun.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/06/23/brain-fun.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Explaining Adaptive Huffman Coding with Scrollytelling</title>
+                    <description>&lt;p&gt;After months of reading and being impressed by the &lt;a href=&quot;https://pudding.cool/2017/04/beer/&quot; target=&quot;_blank&quot;&gt;very&lt;/a&gt; &lt;a href=&quot;https://pudding.cool/2017/01/making-it-big/&quot; target=&quot;_blank&quot;&gt;cool&lt;/a&gt; &lt;a href=&quot;https://pudding.cool/2017/02/vocabulary/&quot; target=&quot;_blank&quot;&gt;visual&lt;/a&gt; &lt;a href=&quot;https://pudding.cool/2017/05/song-repetition/&quot; target=&quot;_blank&quot;&gt;essays&lt;/a&gt; put out by &lt;a href=&quot;https://pudding.cool/&quot; target=&quot;_blank&quot;&gt;The Pudding&lt;/a&gt;, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare &lt;a href=&quot;https://en.wikipedia.org/wiki/Huffman_coding&quot; target=&quot;_blank&quot;&gt;traditional Huffman Coding&lt;/a&gt; to &lt;a href=&quot;https://en.wikipedia.org/wiki/Adaptive_Huffman_coding&quot; target=&quot;_blank&quot;&gt;adaptive Huffman Coding&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/huffman-coding.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/huffman-coding.gif&quot; alt=&quot;A screen capture of the scrollytelling visualization&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;To give a quick preview, Huffman Coding is a lossless data compression algorithm, which means we can reduce the size of any dataset by 15 - 30% without corrupting any of our data. However, in order to do this, Huffman Coding requires some prior knowledge of our dataset, which means we will be slowed down if we don’t already have this information. To improve upon this, we can instead use Adaptive Huffman Coding, which enables us to get comparable compression efficiency in a fraction of the time. Intrigued? You can check out &lt;a href=&quot;http://ben-tanen.github.io/AdaptiveHuffmanCoding/&quot; target=&quot;_blank&quot;&gt;the full explanation&lt;/a&gt; for more.&lt;/p&gt;
+
+&lt;p&gt;If you’re interested in the code, that can be found &lt;a href=&quot;https://github.com/ben-tanen/AdaptiveHuffmanCoding&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. If you’re interested in trying out your own scrollytelling project, I would definitely suggest checking out The Pudding’s work as well as &lt;a href=&quot;https://pudding.cool/process/how-to-implement-scrollytelling/&quot; target=&quot;_blank&quot;&gt;this tutorial&lt;/a&gt; they put together - it was a huge help for me.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Usability Note&lt;/em&gt;: I have noticed some rendering issues when viewing the second half of the site in Safari and Firefox &lt;span style=&quot;font-size: 9px&quot;&gt;(sorry)&lt;/span&gt;. I’m trying to figure out the issue, but for now, I would suggest viewing the site in Chrome.&lt;/p&gt;
+</description>
+                    <pubDate>2017-06-01T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/06/01/huffman-coding.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/06/01/huffman-coding.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>The Chaos Game</title>
+                    <description>&lt;style&gt;
+    #chaos-game-container {
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    #chaos-game-options {
+        width: 300px;
+        margin: auto;
+    }
+
+    #chaos-game-options form {
+        width: 205px;
+        margin: auto;
+        padding-top: 5px;
+    }
+
+    #chaos-game-options form input {
+        cursor: pointer;
+    }
+
+    #chaos-game-options form input:nth-of-type(n+2) {
+        margin-left: 20px;
+    }
+
+    #chaos-game-options p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #chaos-game-start {
+        color: #77bdee;
+        cursor: pointer;
+    }
+
+    #chaos-game-start:hover {
+        text-decoration: underline;
+    }
+&lt;/style&gt;
+
+&lt;p&gt;After watching &lt;a href=&quot;https://www.youtube.com/watch?v=kbKtFN71Lfs&quot;&gt;this recent video from Numberphile&lt;/a&gt;, I decided to throw together my own little visualizer of &lt;a href=&quot;https://en.wikipedia.org/wiki/Chaos_game&quot;&gt;the chaos game&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To briefly explain the game, we basically start by randomly placing some “bases” on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a &lt;a href=&quot;https://en.wikipedia.org/wiki/Fractal&quot;&gt;fractal&lt;/a&gt;!&lt;/p&gt;
+
+&lt;div id=&quot;chaos-game-container&quot;&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;chaos-game-options&quot;&gt;
+    &lt;!--
+    &lt;form action=&quot;&quot; id=&quot;num-bases&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;num-bases&quot; value=&quot;3&quot; checked&gt; Tri
+        &lt;input type=&quot;radio&quot; name=&quot;num-bases&quot; value=&quot;4&quot;&gt; Quad
+        &lt;input type=&quot;radio&quot; name=&quot;num-bases&quot; value=&quot;5&quot;&gt; Penta
+    &lt;/form&gt;
+    --&gt;
+    &lt;p&gt;&lt;span id=&quot;chaos-game-start&quot;&gt;Start&lt;/span&gt;, i = &lt;span id=&quot;chaos-game-i&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I always enjoy funky little phenomena like this so I decided to make my own representation of it in D3. I also decided to include colors for each of the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.&lt;/p&gt;
+
+&lt;p&gt;I’m in the works of implementing it for four, five, etc. bases, but for now, here is the triangular chaos game!&lt;/p&gt;
+
+&lt;script&gt;
+    /* make that d3 svg canvas */
+    var dimension = 300;
+    var chaos_svg = d3.select('#chaos-game-container').append('svg')
+        .attr('width', dimension)
+        .attr('height', dimension);
+
+    /* declare some helper functions */
+    var randomize_pos = function() {
+        return Math.random() * (dimension / 10) - (dimension / 20);
+    }
+
+    var generate_bases = function(ix) {
+        for (var i = 0; i &lt; bases[ix].length; i++) {
+            var cx  = bases[ix][i][0] + randomize_pos();
+            var cy  = bases[ix][i][1] + randomize_pos();
+            var c_i = chaos_svg.append(&quot;circle&quot;)
+                         .attr(&quot;cx&quot;, cx)
+                         .attr(&quot;cy&quot;, cy)
+                         .attr(&quot;r&quot;,  5)
+                         .attr(&quot;fill&quot;, base_colors[i]);
+            a_bases.push(c_i);
+        }
+    }
+
+    var pick_rand_base = function(bases) {
+        var scale = d3.scaleQuantize().domain([0, 1]).range(bases);
+        return scale(Math.random());
+    }
+
+    var midpoint = function(p1, p2) {
+        return [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
+    }
+
+    var place_new_point = function() {
+        var b  = pick_rand_base(a_bases);
+        var bi = a_bases.indexOf(b);
+        var mp = midpoint(p_curr, [+b.attr(&quot;cx&quot;), +b.attr(&quot;cy&quot;)]);
+        
+        chaos_svg.append(&quot;circle&quot;)
+            .attr(&quot;cx&quot;, mp[0])
+            .attr(&quot;cy&quot;, mp[1])
+            .attr(&quot;r&quot;, 2)
+            .attr(&quot;fill&quot;, base_colors[bi]);
+        p_curr = mp;
+    }
+
+
+    /* initialize some vars */
+    var bases = [
+        [[dimension * (1/2), dimension * (1/10)], [dimension * (1/10), dimension * (9/10)], [dimension * (9/10), dimension * (9/10)]], // triangle
+        [[dimension * (2/10), dimension * (2/10)], [dimension * (2/10), dimension * (8/10)], [dimension * (8/10), dimension * (2/10)], [dimension * (8/10), dimension * (8/10)]], // square
+    ];
+    var a_bases = [ ];
+    var base_colors = [&quot;#49E9E7&quot;, &quot;#FF4CC8&quot;, &quot;#23CE6B&quot;, &quot;#872F9C&quot;, &quot;#328DDF&quot;]
+
+    /* generate bases */
+    generate_bases(0);
+
+    $('#num-bases').change(function() {
+        // clear current circles
+        chaos_svg.selectAll(&quot;circle&quot;).remove();
+        a_bases = [ ];
+
+        // regenerate bases
+        generate_bases(parseInt($(&quot;input:radio[name='num-bases']:checked&quot;).val()) - 3);
+    });
+
+    $('#chaos-game-start').click(function() {
+        // clear all points
+        chaos_svg.selectAll(&quot;circle&quot;).filter(function(d) { return d3.select(this).attr(&quot;r&quot;) &lt; 5 }).remove();
+
+        // draw first point
+        var c1 = chaos_svg.append(&quot;circle&quot;)
+            .attr(&quot;cx&quot;, (dimension / 2) + randomize_pos() * 1.25)
+            .attr(&quot;cy&quot;, (dimension / 2) + randomize_pos() * 1.25)
+            .attr(&quot;r&quot;, 2)
+            .attr(&quot;fill&quot;, &quot;#808080&quot;);
+        p_curr = [+c1.attr(&quot;cx&quot;), +c1.attr(&quot;cy&quot;)];
+
+        for (var i = 0; i &lt; 2500; i++) {
+            setTimeout(function() {
+                place_new_point(); 
+                $('#chaos-game-i').html(chaos_svg.selectAll(&quot;circle&quot;).size() - 4);
+            }, i * 3)
+            
+        }
+    });
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2017-04-28T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/04/28/chaos-game.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/04/28/chaos-game.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>How I Keep Track of All My Shows</title>
+                    <description>&lt;p&gt;As I’ve &lt;a href=&quot;/blog/2016/05/08/netflix-history.html&quot;&gt;previously mentioned&lt;/a&gt;, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly have way too much time on my hands, I decided to make &lt;strong&gt;TV Monitor&lt;/strong&gt;, a little Chrome extension that keeps track of all of this for me.&lt;/p&gt;
+
+&lt;p&gt;A lot of inspiration for the extension came from the &lt;a href=&quot;https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb&quot;&gt;Feedly Notifier extension&lt;/a&gt; I use to keep track of my RSS feeds. I found it’s design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/tv-monitor-demo.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/tv-monitor-demo.gif&quot; width=&quot;350px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Overall, building this was easier than expected. It was surprisingly simple to get a basic Chrome extension going and from there it was just web development like any traditional site. The backend is built using a basic Django app that queries IMDB to see if there are any new episodes available of a particular show. If you’re interested, feel free to check out &lt;a href=&quot;https://github.com/ben-tanen/tv-monitor&quot;&gt;the frontend code&lt;/a&gt; (backend maybe to come).&lt;/p&gt;
+
+&lt;p&gt;Since I was building this just for me, I took some shortcuts in terms of security, just for my own sanity, so I’m not planning to publish the extension on the Chrome store, at least not in the foreseeable future. Maybe that’ll be the project for next Winter Break…&lt;/p&gt;
+
+</description>
+                    <pubDate>2017-01-24T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/01/24/tv-monitor.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/01/24/tv-monitor.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Polar Line Charts in D3</title>
+                    <description>&lt;p&gt;A few weeks ago, I came across &lt;a href=&quot;http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif&quot; target=&quot;_blank&quot;&gt;this very interesting (and very scary) visualization&lt;/a&gt; of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;a href=&quot;https://bost.ocks.org/mike/&quot; target=&quot;_blank&quot;&gt;D3 and Mike Bostock&lt;/a&gt; have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.&lt;/p&gt;
+
+&lt;style&gt;
+#d3-polar-container {
+    width: 90%;
+    max-width: 450px;
+    height: 450px;
+}
+
+#polar-line-chart {
+    width: 100%;
+    height: 100%;
+}
+
+#polar-line-chart .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1px;
+}
+
+#polar-line-chart .domain {
+    display: none;
+}
+
+#polar-line-chart .year-text {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#polar-line-chart .play-text {
+    font-family: sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    fill: #77bdee;
+}
+&lt;/style&gt;
+
+&lt;div id=&quot;d3-polar-container&quot; style=&quot;margin: auto;&quot;&gt;
+    &lt;svg id=&quot;polar-line-chart&quot;&gt;&lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+/* resize svg height if needed */
+var c_width = $(&quot;#d3-polar-container&quot;).width();
+$(&quot;#d3-polar-container&quot;).css(&quot;height&quot;, c_width);
+
+/* initialize svg and variables */
+var polar_svg = d3.select(&quot;#polar-line-chart&quot;),
+    margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
+    width = c_width - margin.left - margin.right;
+    height = c_width - margin.top - margin.bottom;
+
+// polar scales
+var t = d3.scaleTime().range([0, 2 * Math.PI]),
+    r = d3.scaleLinear().range([0, (width - margin.center) / 2]);
+
+// cartesian conversion
+var x = function(t, r) { return (margin.left) + (width / 2) + ((r + (margin.center / 2)) *  Math.sin(t)); },
+    y = function(t, r) { return (margin.top) + (height / 2) - ((r + (margin.center / 2)) *  Math.cos(t)); }
+
+var line = d3.line()
+    .x(function(d) { return x(t(d.month), r(d.value)); })
+    .y(function(d) { return y(t(d.month), r(d.value)); });
+
+var color = d3.scaleLinear()
+    .range([&quot;#2a96e8&quot;, &quot;#fb6767&quot;]);
+
+/* draw polar background */
+polar_svg.append('circle')
+    .attr(&quot;r&quot;, width / 2)
+    .attr(&quot;cx&quot;, margin.left + width / 2)
+    .attr(&quot;cy&quot;, margin.top + height / 2)
+    .style(&quot;fill&quot;, &quot;#ececec&quot;)
+    .style(&quot;stroke&quot;, &quot;#000&quot;)
+    .style(&quot;stroke-width&quot;, &quot;0.5px&quot;);
+
+polar_svg.append('circle')
+    .attr(&quot;r&quot;, margin.center / 2)
+    .attr(&quot;cx&quot;, margin.left + width / 2)
+    .attr(&quot;cy&quot;, margin.top + height / 2)
+    .style(&quot;fill&quot;, &quot;white&quot;)
+    .style(&quot;stroke&quot;, &quot;#000&quot;)
+    .style(&quot;stroke-width&quot;, &quot;0.5px&quot;);
+
+/* pull data */
+d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
+    d.year  = +d.year;
+    d.month = +d.month;
+    d.value = +d.v2;
+    return d;
+}, function(error, data) {
+    if (error) throw error;
+
+    var [t_min, t_max] = d3.extent(data, function(d) { return d.month; }),
+        [r_min, r_max] = d3.extent(data, function(d) { return d.value;   });
+    var r_margin = {top: 0.15, bottom: 0};
+
+    t.domain([t_min, t_max + 1]);
+    r.domain([r_min - r_margin.bottom, r_max + r_margin.top]);
+    color.domain(d3.extent(data, function(d) { return d.year; }));
+
+    /* draw polar axes */
+    var ticks = r.ticks(5).splice(1);
+    var axis  = d3.axisBottom(r).tickValues(ticks).tickSize(0).tickFormat(d3.format(&quot;.1f&quot;));
+
+    polar_svg.selectAll(&quot;g&quot;)
+        .data(ticks).enter()
+        .append(&quot;circle&quot;)
+        .attr(&quot;cx&quot;, margin.left + width / 2)
+        .attr(&quot;cy&quot;, margin.top + height / 2)
+        .attr(&quot;r&quot;, function(d) { return margin.center / 2 + r(d); })
+        .attr(&quot;fill&quot;, &quot;none&quot;)
+        .attr(&quot;stroke&quot;, &quot;#000&quot;)
+        .attr(&quot;stroke-width&quot;, &quot;0.25px&quot;);
+
+    polar_svg.append(&quot;rect&quot;)
+        .attr(&quot;x&quot;, margin.left + (margin.center + width) / 2 + 5)
+        .attr(&quot;y&quot;, margin.top + height / 2 - 10)
+        .attr(&quot;width&quot;, (width - margin.center) / 2 - 7)
+        .attr(&quot;height&quot;, 20)
+        .attr(&quot;fill&quot;, &quot;#ececec&quot;);
+
+    /* render center year, &quot;play&quot;, title, and month text */
+    var text_size = (c_width == 450 ? 1 : 0.8);
+
+    polar_svg.append(&quot;text&quot;)
+        .attr(&quot;class&quot;, &quot;year-text&quot;)
+        .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + width / 2 - 15) + &quot;,&quot; + (margin.top + height / 2 + 5) + &quot;)&quot;)
+        .text(&quot;1850&quot;);
+
+    polar_svg.append(&quot;text&quot;)
+        .style(&quot;font-size&quot;, text_size + &quot;em&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + 10 + &quot;,&quot; + 15 + &quot;)&quot;)
+        .text(&quot;Global Temperature Change in °C (1850 - 2016)&quot;);
+
+    polar_svg.append(&quot;text&quot;)
+        .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width + margin.left + 10) + &quot;,&quot; + (height / 2 + margin.top - 8) + &quot;) rotate(90)&quot;)
+        .text(&quot;Apr&quot;);
+
+    polar_svg.append(&quot;text&quot;)
+        .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width / 2 + margin.left - 8) + &quot;,&quot; + (margin.top - 8) + &quot;)&quot;)
+        .text(&quot;Jan&quot;);
+
+    polar_svg.append(&quot;text&quot;)
+        .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left - 8) + &quot;,&quot; + (height / 2 + margin.top + 8) + &quot;) rotate(270)&quot;)
+        .text(&quot;Oct&quot;);
+
+    polar_svg.append(&quot;text&quot;)
+        .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width / 2 + margin.left + 8) + &quot;,&quot; + (height + margin.top + 8) + &quot;) rotate(180)&quot;)
+        .text(&quot;Jul&quot;);
+
+    $(document).ready(function() {
+        polar_svg.append(&quot;text&quot;)
+            .attr(&quot;class&quot;, &quot;play-text&quot;)
+            .style(&quot;font-size&quot;, text_size + &quot;em&quot;)
+            .attr(&quot;transform&quot;, &quot;translate(&quot; + 10 + &quot;,&quot; + 35 + &quot;)&quot;)
+            .text(&quot;Play&quot;);
+    });
+
+    /* animate on click */
+    polar_svg.select(&quot;.play-text&quot;).on(&quot;click&quot;, function() {
+        /* clear paths and axis */
+        polar_svg.selectAll(&quot;.line&quot;).remove();
+        polar_svg.select(&quot;#axis&quot;).remove();
+        polar_svg.selectAll(&quot;.year-text.added&quot;).remove();
+        polar_svg.selectAll(&quot;.year-text&quot;).text(&quot;1850&quot;);
+        polar_svg.selectAll(&quot;.year-text-cover&quot;).remove();
+
+        for (var i = 1; i &lt; data.length; i++) {
+            /* draw new path */
+            polar_svg.append(&quot;path&quot;)
+                .attr(&quot;class&quot;, &quot;line&quot;)
+                .attr(&quot;d&quot;, line([data[i - 1], data[i]]))
+                .style(&quot;stroke&quot;, color(data[i - 1].year))
+                .style(&quot;opacity&quot;, 0)
+                .transition()
+                .duration(50)
+                .delay(1000 + 5 * i)
+                .style(&quot;opacity&quot;, 1);
+
+            /* update center text */
+            if (data[i - 1].month == 1) {
+                polar_svg.append(&quot;rect&quot;)
+                    .attr(&quot;class&quot;, &quot;year-text-cover&quot;)
+                    .attr(&quot;x&quot;, margin.left + width / 2 - margin.center / 2 + 15)
+                    .attr(&quot;y&quot;, margin.left + width / 2 - margin.center / 2 + 25)
+                    .attr(&quot;width&quot;, 45)
+                    .attr(&quot;height&quot;, 45)
+                    .attr(&quot;fill&quot;, &quot;white&quot;)
+                    .style(&quot;opacity&quot;, 0)
+                    .transition()
+                    .duration(0)
+                    .delay(1000 + 5 * i)
+                    .style(&quot;opacity&quot;, 1);
+
+                polar_svg.append(&quot;text&quot;)
+                    .classed(&quot;year-text&quot;, true)
+                    .classed(&quot;added&quot;, true)
+                    .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + width / 2 - 15) + &quot;,&quot; + (margin.top + height / 2 + 5) + &quot;)&quot;)
+                    .text(data[i - 1].year)
+                    .style(&quot;opacity&quot;, 0)
+                    .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
+                    .transition()
+                    .duration(0)
+                    .delay(1000 + 5 * i)
+                    .style(&quot;opacity&quot;, 1);
+            }
+        }
+
+        /* re-render axis */
+        polar_svg.append(&quot;g&quot;)
+            .attr(&quot;id&quot;, &quot;axis&quot;)
+            .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + (margin.center + width) / 2) + &quot;,&quot; + (margin.top + (height / 2) - 6) + &quot;)&quot;)
+            .style(&quot;font-size&quot;, (c_width == 450 ? 0.6 : 0.5) + &quot;em&quot;)
+            .call(axis);
+    });
+
+    /* render radial ticks */
+    polar_svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;axis&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + (margin.center + width) / 2) + &quot;,&quot; + (margin.top + (height / 2) - 6) + &quot;)&quot;)
+        .style(&quot;font-size&quot;, (c_width == 450 ? 0.6 : 0.5) + &quot;em&quot;)
+        .call(axis);
+});
+
+&lt;/script&gt;
+
+&lt;p&gt;Now that I have the chart ready to go, I’ll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I’ll post it here.&lt;/p&gt;
+
+</description>
+                    <pubDate>2017-01-08T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/01/08/polar-line-charts.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/01/08/polar-line-charts.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Understanding the Kirkpatrick-Seidel Algorithm</title>
+                    <description>&lt;p&gt;After &lt;a href=&quot;/blog/2016/12/21/drunken-world.html&quot; target=&quot;_blank&quot;&gt;posting the final project&lt;/a&gt; for my visualization course, I thought I’d share the final project for my computational geometry class as well. The course was an extended algorithms class focused on different multi-dimensional geometric problems. One of the main problems of the course deals with finding the &lt;a href=&quot;https://en.wikipedia.org/wiki/Convex_hull&quot; target=&quot;_blank&quot;&gt;convex hull&lt;/a&gt; of a set of points. There are &lt;a href=&quot;https://www.youtube.com/watch?v=ZnTiWcIznEQ&quot; target=&quot;_blank&quot;&gt;a number ways&lt;/a&gt; to tackle the problem but one of the best approaches is the Kirkpatrick-Seidel Ultimate Planar Convex Hull Algorithm. In order to help teach the algorithm, I made &lt;a href=&quot;http://ben-tanen.github.io/UltimateConvexHull/&quot; target=&quot;_blank&quot;&gt;a visualization tool&lt;/a&gt; to walk-through the steps.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/ultimate_ch.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/ultimate_ch.png&quot; alt=&quot;A screenshot of the visualization&quot; width=&quot;600px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The algorithm is a bit on the complicated side but I hope that this offers some help in figuring out what exactly goes into it. While the walk-through is complete, I plan on adding a bit more detail to explain the algorithmic time complexity that allows it to work in &lt;strong&gt;&lt;em&gt;O(n log n)&lt;/em&gt;&lt;/strong&gt; time so keep an eye out for that.&lt;/p&gt;
+
+&lt;p&gt;Feel free to check it out and let me know what you think. If anything seems confusing, unclear, or (heaven forbid) incorrect, feel free to shoot me a message. Also, if you are interested, you can find the code for the visualization &lt;a href=&quot;https://github.com/ben-tanen/UltimateConvexHull&quot;&gt;here on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+                    <pubDate>2017-01-02T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/01/02/ultimate-convex-hull.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/01/02/ultimate-convex-hull.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Visualizing Our Drunken World</title>
+                    <description>&lt;p&gt;For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. - and we wanted to build a platform to either confirm or debunk these stereotypes. In a greater sense, we hoped to explore when and how alcohol has been part of culture and history. And thus, &lt;a href=&quot;https://jadeyychan.github.io/DrunkenWorld/&quot; target=&quot;_blank&quot;&gt;Our Drunken World&lt;/a&gt; was born!&lt;/p&gt;
+
+&lt;iframe class=&quot;youtube-vid&quot; width=&quot;500&quot; height=&quot;281&quot; style=&quot;margin-bottom: 10px;&quot; src=&quot;https://www.youtube.com/embed/O-eeiWZ7WRY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;We used data for over 200 countries that was collected and compiled by the World Health Organization from 1960 - 2010. The visualization is built with D3.js, which is pretty awesome. I’m very glad I finally &lt;a href=&quot;/blog/2016/09/28/random-d3-fun.html&quot;&gt;tried it out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you’re interested in exploring this world of alcohol, you can find &lt;a href=&quot;https://jadeyychan.github.io/DrunkenWorld/&quot;&gt;the visualization here&lt;/a&gt;. You can also find &lt;a href=&quot;https://github.com/jadeyychan/DrunkenWorld&quot;&gt;the code here&lt;/a&gt;. Huge thanks to my team members, &lt;a href=&quot;https://jadeyychan.github.io/&quot;&gt;Jade&lt;/a&gt; and &lt;a href=&quot;https://github.com/rlrlarson&quot;&gt;Rebecca&lt;/a&gt;!&lt;/p&gt;
+
+</description>
+                    <pubDate>2016-12-21T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/12/21/drunken-world.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/12/21/drunken-world.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Mapping My Life at Tufts</title>
+                    <description>&lt;p&gt;Over the last view years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.&lt;/p&gt;
+
+&lt;p&gt;It seems like my suspicion was true - I’ve become a little hermit holed up at my home, the CS department (my second home), or at 574 Boston Ave. Maybe I should explore some more…&lt;/p&gt;
+
+&lt;!-- css and javascript includes --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/projects/schedule-map/css/style.css&quot; /&gt;
+
+&lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyDYYbQJxmT3xqIdpkDwtHi8TyyJPtncbE4&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/projects/schedule-map/js/data.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/projects/schedule-map/js/map.js&quot;&gt;&lt;/script&gt;
+
+&lt;div id=&quot;map-wrapper&quot;&gt;
+    &lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;legend&quot;&gt;&lt;h4&gt;&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;checks&quot;&gt;
+    &lt;h4 style=&quot;margin-top: 10px; margin-bottom: 5px;&quot;&gt;Choose which data to include:&lt;/h4&gt;
+
+    &lt;div id=&quot;semester-checks&quot;&gt;
+        &lt;div class=&quot;check semester on&quot; id=&quot;F13&quot;&gt;
+            &lt;p&gt;F13&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check semester&quot; id=&quot;S14&quot;&gt;
+            &lt;p&gt;S14&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check semester on&quot; id=&quot;F14&quot;&gt;
+            &lt;p&gt;F14&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check semester&quot; id=&quot;S15&quot;&gt;
+            &lt;p&gt;S15&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check semester&quot; id=&quot;F15&quot;&gt;
+            &lt;p&gt;F15&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check semester on&quot; id=&quot;S16&quot;&gt;
+            &lt;p&gt;S16&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check semester&quot; id=&quot;F16&quot;&gt;
+            &lt;p&gt;F16&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check semester on&quot; id=&quot;S17&quot;&gt;
+            &lt;p&gt;S17&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;activity-checks&quot;&gt;
+        &lt;div class=&quot;check activity&quot; id=&quot;Athletics&quot;&gt;
+            &lt;p&gt;Athletics&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check activity&quot; id=&quot;Clubs&quot;&gt;
+            &lt;p&gt;Clubs&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check activity on&quot; id=&quot;Food&quot;&gt;
+            &lt;p&gt;Food&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check activity on&quot; id=&quot;Home&quot;&gt;
+            &lt;p&gt;Home&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check activity on&quot; id=&quot;School&quot;&gt;
+            &lt;p&gt;School&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;check activity&quot; id=&quot;Work&quot;&gt;
+            &lt;p&gt;Work&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+                    <pubDate>2016-11-18T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/11/18/mapping-tufts-schedules.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/11/18/mapping-tufts-schedules.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Meet St. Paul and the Broken Bones</title>
+                    <description>&lt;p&gt;Through some killer &lt;a href=&quot;http://www.wmfo.org/&quot; target=&quot;_blank&quot;&gt;freeform radio hook ups&lt;/a&gt;, I was very fortunately connected with the publicity manager for the always fantastic St. Paul and the Broken Bones. Through this connection, I was able to score &lt;a href=&quot;https://www.wmfo.org/?p=3043&quot; target=&quot;_blank&quot;&gt;an interview with Jesse Phillip&lt;/a&gt;, the bassist of the band and the lead Broken Bone, as well as a photo pass to their most recent show at the Royale in Boston. They are currently on tour promoting their newest EP &lt;em&gt;Sea of Noise&lt;/em&gt;, which is &lt;a href=&quot;http://www.npr.org/2016/09/01/491941924/first-listen-st-paul-the-broken-bones-sea-of-noise&quot; target=&quot;_blank&quot;&gt;quite the album&lt;/a&gt;. If you haven’t heard of them before or you haven’t heard their latest album, I’ve put together a little playlist of my personal favorites so feel free to take a listen. My top three have got to be “Is It Me” from &lt;em&gt;Sea of Noise&lt;/em&gt;, “Call Me” from their first album &lt;em&gt;Half the City&lt;/em&gt;, and their cover of Sam Cooke’s incredible “A Change Is Gonna Come” at SXSW.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://embed.spotify.com/?uri=spotify%3Auser%3A129874447%3Aplaylist%3A7hGQWWVIqtbsSQ0zyxk7FN&quot; width=&quot;100% !important&quot; height=&quot;80px !important&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; style=&quot;margin-bottom:10px&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Since I was lucky enough to get a photo pass to their show, I thought I’d also share some of my personal favorite photos. I’d like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!&lt;/p&gt;
+
+&lt;style&gt;
+    .photo-container {
+    }
+
+    .photo-container img {
+        margin: 0;
+        padding: 5px 5px 0 0;
+    }
+
+    .sub-photo-container {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+&lt;/style&gt;
+
+&lt;div class=&quot;photo-container&quot;&gt;
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/SPABB4.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/SPABB2.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/SPABB3.jpg&quot; /&gt;
+        &lt;img src=&quot;/assets/img/posts/SPABB5.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/SPABB1.jpg&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+                    <pubDate>2016-11-10T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Introducing 2016-17 NHL Projections</title>
+                    <description>&lt;p&gt;Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read &lt;a href=&quot;http://localhost:4000/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf&quot; target=&quot;_blank&quot;&gt;the original model report&lt;/a&gt; as well as check out &lt;a href=&quot;https://github.com/ben-tanen/NHLPlayoffProjections&quot; target=&quot;_blank&quot;&gt;the code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/nhl-proj-10-11-16.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/nhl-proj-10-11-16.png&quot; alt=&quot;The initial projections for VAN, NYR, and WSH&quot; width=&quot;650px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;So, over the course of the next few months, I’ll be comparing each team’s expected performance (as speculated by the model) to their actual performance. I’ll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out &lt;a href=&quot;/projects/nhl-projections/&quot; target=&quot;_blank&quot;&gt;the new project site here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don’t have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th width=&quot;50px&quot;&gt;Team&lt;/th&gt;&lt;th width=&quot;150px&quot;&gt;Projected Points (2016-17)&lt;/th&gt;&lt;th width=&quot;100px&quot;&gt;Actual Points (2015-16)&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/dallas-stars.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;DAL&lt;/td&gt;&lt;td&gt;96.31&lt;/td&gt;&lt;td&gt;109&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/pittsburgh-penguins.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;PIT&lt;/td&gt;&lt;td&gt;95.53&lt;/td&gt;&lt;td&gt;104&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/chicago-blackhawks.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;CHI&lt;/td&gt;&lt;td&gt;94.76&lt;/td&gt;&lt;td&gt;103&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/san-jose-sharks.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;SJS&lt;/td&gt;&lt;td&gt;94.06&lt;/td&gt;&lt;td&gt;98&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/new-york-rangers.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;NYR&lt;/td&gt;&lt;td&gt;93.33&lt;/td&gt;&lt;td&gt;101&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/tampa-bay-lightning.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;TBL&lt;/td&gt;&lt;td&gt;93.24&lt;/td&gt;&lt;td&gt;97&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/boston-bruins.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;BOS&lt;/td&gt;&lt;td&gt;92.53&lt;/td&gt;&lt;td&gt;93&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td&gt;&lt;img style=&quot;width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;&quot; src=&quot;http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/st-louis-blues.png&quot; /&gt;&lt;/td&gt;&lt;td&gt;STL&lt;/td&gt;&lt;td&gt;91.82&lt;/td&gt;&lt;td&gt;107&lt;/td&gt;&lt;/tr&gt;
+
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Here’s to an exciting 2016-17 season and &lt;a href=&quot;https://twitter.com/search?q=lgr&quot; target=&quot;_blank&quot;&gt;#LGR&lt;/a&gt;!&lt;/p&gt;
+</description>
+                    <pubDate>2016-10-11T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/10/11/introducing-nhl-projections.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/10/11/introducing-nhl-projections.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Random D3 Fun</title>
+                    <description>&lt;p&gt;I’m currently taking (and loving) a data visualization course, so naturally, I’m learning a little D3.js to make some &lt;em&gt;sick&lt;/em&gt; visualizations. Below is my first experiment with some SVG animation (likely more to come). Clearly it is art. Have fun clicking away!&lt;/p&gt;
+
+&lt;div id=&quot;d3-sample-container&quot; style=&quot;margin: auto; width: 300px; cursor: pointer;&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    /* make that d3 svg canvas */
+    var dimension = 300;
+    var random_svg = d3.select('#d3-sample-container').append('svg')
+        .attr('width', dimension)
+        .attr('height', dimension)
+        .style('background-color', 'black');
+
+    /* declare some helper functions */
+    var get_group = function(i, j) {
+        return (4 - i) + j;
+    }
+
+    var get_radius = function(n) {
+        return (dimension / 10) * Math.pow(87 / 100, n + 1);
+    }
+
+    var get_rand_pos = function() {
+        return Math.random() * dimension;
+    }
+
+    /* initialize some vars */
+    var isAligned = false;
+    var circles   = [ ];
+    var cxs = [dimension * (1 / 10), 
+               dimension * (3 / 10),
+               dimension * (5 / 10),
+               dimension * (7 / 10),
+               dimension * (9 / 10)
+              ];
+    var cys = [dimension * (1 / 10), 
+               dimension * (3 / 10),
+               dimension * (5 / 10),
+               dimension * (7 / 10),
+               dimension * (9 / 10)
+              ];
+    var fill = [&quot;#0081ff&quot;, 
+                &quot;#5791ff&quot;, 
+                &quot;#779fff&quot;, 
+                &quot;#98b1ff&quot;, 
+                &quot;#aec0ff&quot;, 
+                &quot;#c7d1ff&quot;, 
+                &quot;#d9dfff&quot;, 
+                &quot;#ecefff&quot;, 
+                &quot;#ffffff&quot;
+               ];
+
+    /* generate those circles */
+    for (var i = 0; i &lt; 5; i++) {
+        for (var j = 0; j &lt; 5; j++) {
+            var group_n = get_group(i,j);
+            var c_i = random_svg.append(&quot;circle&quot;)
+                .attr(&quot;cx&quot;, get_rand_pos())
+                .attr(&quot;cy&quot;, get_rand_pos())
+                .attr(&quot;r&quot;,  get_radius(group_n))
+                .attr(&quot;fill&quot;, fill[group_n])
+                .attr(&quot;ci&quot;, i)
+                .attr(&quot;cj&quot;, j)
+                .attr(&quot;group&quot;, group_n);
+            circles.push(c_i);
+        }
+    }
+
+    /* toggle alignment */
+    random_svg.on(&quot;click&quot;, function() {
+        for (var i = 0; i &lt; circles.length; i++) {
+            var c    = circles[i];
+            var cn   = +c.attr(&quot;group&quot;);
+            var ci   = +c.attr(&quot;ci&quot;);
+            var cj   = +c.attr(&quot;cj&quot;);
+            var cx   = (isAligned ? get_rand_pos() : cxs[ci]);
+            var cy   = (isAligned ? get_rand_pos() : cys[cj]);
+
+            c.transition()
+             .duration(1000)
+             .attr(&quot;cx&quot;, cx)
+             .attr(&quot;cy&quot;, cy);
+        }
+        isAligned = !isAligned;
+    });
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2016-09-28T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/09/28/random-d3-fun.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/09/28/random-d3-fun.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Am I Becoming More or Less Hipster?</title>
+                    <description>&lt;p&gt;After years of using their services, I finally decided to check out &lt;a href=&quot;https://developer.spotify.com/web-api/&quot;&gt;Spotify’s Web API&lt;/a&gt; in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to &lt;a href=&quot;2015/09/01/lastfm-scrobble-graphs.html&quot; target=&quot;_blank&quot;&gt;visualize my Spotify usage&lt;/a&gt;) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.&lt;/p&gt;
+
+&lt;p&gt;Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-popularity.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/spotify-popularity.png&quot; alt=&quot;A graph of my Spotify popularity over time&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify’s eyes. Therefore, I’m willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I’m just as cool as I’ve ever.&lt;/p&gt;
+
+&lt;p&gt;P.S. Of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.&lt;/p&gt;
+
+&lt;p&gt;P.P.S Bonus chart! Here’s a how much I listened to a song vs. it’s popularity on Spotify.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-popularity-vs-playcount.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/spotify-popularity-vs-playcount.png&quot; alt=&quot;A graph comparing play count of a song to its popularity&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+</description>
+                    <pubDate>2016-08-26T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/08/26/spotify-popularity.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/08/26/spotify-popularity.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>United States vs. the World in Rio 2016</title>
+                    <description>&lt;p&gt;The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn’t a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.&lt;/p&gt;
+
+&lt;p&gt;I’ve heard a few people refer to the size of the United States’ Olympic team as a likely contributor. It would make sense that the U.S. would get more medals if they had more athletes participating in each event. However, on the surface, this doesn’t quite explain it since most events have a cap on the number of athletes that each country can send. For example, each country is only allowed to send three athletes per track &amp;amp; field event. If there is a limit on the number of athletes per event then there must be further explanation of the United States’ success.&lt;/p&gt;
+
+&lt;p&gt;Another major factor that should be considered is the number of sports that the U.S. competes in. Of the 31 total sports, the U.S. fields athletes in 30 while China and Great Britain (the next top contenders after the U.S.) field only 26 and 25 respectively. This means there are purely more chances for the U.S. to win medals even without skill as a consideration.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Athletes&lt;/th&gt;
+      &lt;th&gt;Sports&lt;/th&gt;
+      &lt;th&gt;Medals&lt;/th&gt;
+      &lt;th&gt;Golds&lt;/th&gt;
+      &lt;th&gt;Medals per Event&lt;/th&gt;
+      &lt;th&gt;Golds per Event&lt;/th&gt;
+      &lt;th&gt;Medals per Athlete&lt;/th&gt;
+      &lt;th&gt;Golds per Athlete&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;USA &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;555&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;121&lt;/td&gt;
+      &lt;td&gt;46&lt;/td&gt;
+      &lt;td&gt;0.395&lt;/td&gt;
+      &lt;td&gt;0.150&lt;/td&gt;
+      &lt;td&gt;0.218&lt;/td&gt;
+      &lt;td&gt;0.083&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CHN &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/8Cr5Gw-79PpIX2rIEZ7Pvg_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;416&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;0.229&lt;/td&gt;
+      &lt;td&gt;0.085&lt;/td&gt;
+      &lt;td&gt;0.168&lt;/td&gt;
+      &lt;td&gt;0.063&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GBR &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/6HRpt1RF_AbDUftxgVUoEw_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;366&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;67&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;0.219&lt;/td&gt;
+      &lt;td&gt;0.088&lt;/td&gt;
+      &lt;td&gt;0.183&lt;/td&gt;
+      &lt;td&gt;0.074&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;However, we can see that athletes from the U.S. do seem to actually perform better. By comparing the number of medals each athlete pulls in (on average) from each country, we can see that the U.S. stands on top with 0.218 medals, compared to 0.183 and 0.163 medals from Great Britain and China respectively. While this differential isn’t absurd, this apparent performance difference would factor in for the USA medal dominance.&lt;/p&gt;
+
+&lt;p&gt;So what about if we actually drill down into different sports and see how the United States’ performances compare. Let’s look at a few of the sports with the most medals given.&lt;/p&gt;
+
+&lt;h3 id=&quot;swimming&quot;&gt;Swimming*&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Athletes&lt;/th&gt;
+      &lt;th&gt;Medals&lt;/th&gt;
+      &lt;th&gt;Golds&lt;/th&gt;
+      &lt;th&gt;Medals per Athlete&lt;/th&gt;
+      &lt;th&gt;Golds per Athlete&lt;/th&gt;
+      &lt;th&gt;Golds per Medal&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;USA &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+      &lt;td&gt;33&lt;/td&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;0.750&lt;/td&gt;
+      &lt;td&gt;0.364&lt;/td&gt;
+      &lt;td&gt;0.485&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AUS &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;37&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0.270&lt;/td&gt;
+      &lt;td&gt;0.081&lt;/td&gt;
+      &lt;td&gt;0.300&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HUN &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/YEm-U_1zHCmIknmK5sNcIg_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;35&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0.200&lt;/td&gt;
+      &lt;td&gt;0.086&lt;/td&gt;
+      &lt;td&gt;0.429&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Swimming might be what the U.S. is most known to dominate in. Of course when we consider USA Swimming and their dominance, one might think that these numbers are unfairly slanted due to superstar performances from swimmers like Michael Phelps and Katie Ledecky. But if we remove Michael Phelps and Katie Ledecky with their 6 total individual medals, the U.S. still stands on top with 0.628 medals per athlete (double either Australia’s or Hungary’s performance) and 0.256 golds per athlete (triple either Australia’s or Hungary’s performance). It seems like the United States really is just &lt;em&gt;that&lt;/em&gt; good at swimming. But does this apply in other sports?&lt;/p&gt;
+
+&lt;h3 id=&quot;track--field&quot;&gt;Track &amp;amp; Field&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Athletes&lt;/th&gt;
+      &lt;th&gt;Medals&lt;/th&gt;
+      &lt;th&gt;Golds&lt;/th&gt;
+      &lt;th&gt;Medals per Athlete&lt;/th&gt;
+      &lt;th&gt;Golds per Athlete&lt;/th&gt;
+      &lt;th&gt;Golds per Medal&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;USA &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;129&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0.250&lt;/td&gt;
+      &lt;td&gt;0.102&lt;/td&gt;
+      &lt;td&gt;0.406&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;KEN &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/qNdn2A-NP605UMyeKE5S4A_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;48&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0.271&lt;/td&gt;
+      &lt;td&gt;0.125&lt;/td&gt;
+      &lt;td&gt;0.462&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JAM &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/4HCKfsNJNHDY-vWSEzLbeQ_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;56&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0.196&lt;/td&gt;
+      &lt;td&gt;0.107&lt;/td&gt;
+      &lt;td&gt;0.545&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So when we look at track &amp;amp; field, one thing that immediately pops out is the high number of athletes the U.S. had competing. I did mention how there is a cap on the number of athletes that can be sent for each individual event (men’s 100-meter, women’s 200-meter, etc.) but there are &lt;em&gt;many&lt;/em&gt; different track &amp;amp; field events, leaving a lot of room for the U.S. to send almost 130 athletes. However, if we look at &lt;em&gt;average&lt;/em&gt; performance (which should account for different sized teams), we can still see the U.S. did fair well, especially against strong running teams like Kenya and Jamaica. They did not seem to dominate the field in the same way that the U.S. Swimming team did but the 32 medals and 13 golds certain helps the U.S. overall medal win.&lt;/p&gt;
+
+&lt;h3 id=&quot;gymnastics&quot;&gt;Gymnastics**&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Athletes&lt;/th&gt;
+      &lt;th&gt;Medals&lt;/th&gt;
+      &lt;th&gt;Golds&lt;/th&gt;
+      &lt;th&gt;Medals per Athlete&lt;/th&gt;
+      &lt;th&gt;Golds per Athlete&lt;/th&gt;
+      &lt;th&gt;Golds per Medal&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;USA &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;1.300&lt;/td&gt;
+      &lt;td&gt;0.400&lt;/td&gt;
+      &lt;td&gt;0.308&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;GBR &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/6HRpt1RF_AbDUftxgVUoEw_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0.600&lt;/td&gt;
+      &lt;td&gt;0.200&lt;/td&gt;
+      &lt;td&gt;0.333&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JPN &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/by4OltvtZz7taxuQtkiP3A_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0.300&lt;/td&gt;
+      &lt;td&gt;0.200&lt;/td&gt;
+      &lt;td&gt;0.667&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RUS &lt;img src=&quot;https://ssl.gstatic.com/onebox/media/sports/logos/5Y6kOqiOIv2C1sP9C_BWtA_48x48.png&quot; width=&quot;25px&quot; style=&quot;margin-top:0px;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0.800&lt;/td&gt;
+      &lt;td&gt;0.100&lt;/td&gt;
+      &lt;td&gt;0.125&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Finally, we can end by looking at the interesting sport of gymnastics. Gymnastics is interesting because of how fews events there are, how few athletes each country can send, and how there is a mix of individual and team events. Because of the number of events, the averages from team-to-team vary a lot and indicate that we should perhaps better understand the context of these medals. For example, five of the 13 medals won by the U.S. are the individual medals given out to the five members of the U.S. women’s team when they won the team all-around. Four additional medals (three gold, one bronze) were won by Simon Biles. As a result, we can learn a little less from the averages above because they can be so swayed by individual events and athletes. However, there is still a lot of anecdotal evidence (specifically the exceptional stories of Simon Biles) to show that the U.S. was a dominating force.&lt;/p&gt;
+
+&lt;p&gt;So the numbers seem to indicate that the U.S. maybe does birth some very successful athletes. We will see how this might continue in Pyeongchang, Tokyo, and beyond.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;*&lt;/strong&gt; These numbers do not include marathon swimming &lt;br /&gt; &lt;strong&gt;**&lt;/strong&gt; These numbers do not include rhythmic or trampoline gymnastics&lt;/p&gt;
+
+</description>
+                    <pubDate>2016-08-22T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/08/22/rio-2016-usa-vs-world.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/08/22/rio-2016-usa-vs-world.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Miller-Rabin Primality Test</title>
+                    <description>&lt;p&gt;Back when I started messing around with code, I was told to try out &lt;a href=&quot;https://projecteuler.net/&quot;&gt;Project Euler&lt;/a&gt; to improve my coding skills (something I suggest everyone do). I was able to progress fairly well along but I always struggled with the questions involving prime numbers because I could never get my code to run efficiently on them.&lt;/p&gt;
+
+&lt;p&gt;I looked for a solution and repeatedly only found mention to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes&quot;&gt;Sieve of Eratosthenes&lt;/a&gt;, which is fairly intuitive and appeared to be the go-to primality test. However, in my early days of programming, I still struggled to implement the algorithm so I ultimately pushed those prime-based questions off to the side.&lt;/p&gt;
+
+&lt;p&gt;Years later, while reading Brian Christian’s and Tom Griffiths’ &lt;a href=&quot;https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365&quot;&gt;Algorithms to Live By&lt;/a&gt;, I happened across the &lt;strong&gt;Miller-Rabin Primality Test&lt;/strong&gt;, an alternative to the Sieve of Eratosthenes. The algorithm works as follows: say you wanted to test if &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; (an odd integer) is a prime number. To do so, we can first find &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;n = 2^r s + 1&lt;/script&gt;. Next, we can pick a random integer &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;1 \leq a \leq n - 1&lt;/script&gt;. With &lt;script type=&quot;math/tex&quot;&gt;a, r, s&lt;/script&gt; all defined, we next test if &lt;script type=&quot;math/tex&quot;&gt;a^s = 1 \textrm{  mod  } n&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;a^{2js} = -1 \textrm{  mod  } n&lt;/script&gt; for some &lt;script type=&quot;math/tex&quot;&gt;0 \leq j \leq r - 1&lt;/script&gt;. If either of these equalities are true, then we can say that &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; passes the test and any prime number will pass the test. It is fairly trivial to test this for pretty much any &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;. However, the trick with this algorithm is that non-prime numbers will also pass this test (return a false-positive) &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{4}&lt;/script&gt; of the time.&lt;/p&gt;
+
+&lt;p&gt;To correct for this, we can try the test again with a new randomly-selected &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;. If &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; again passes the test, we know that there is a &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{4} \cdot \frac{1}{4} = \frac{1}{16}&lt;/script&gt; chance that &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is not actually a prime. Therefore, if we repeated the test &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; times successfully, we can say that there is a &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{4^N}&lt;/script&gt; chance that &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is not actually a prime number. Using this method, we can determine if a particular number is prime with fairly high certainty after only a few iterations. For example, if we repeat the test &lt;script type=&quot;math/tex&quot;&gt;N = 5&lt;/script&gt; times, we can declare &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; to be prime with 99.9% certainty. If &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; passes after &lt;script type=&quot;math/tex&quot;&gt;N = 10&lt;/script&gt; iterations, we know with 99.9999% certainty.&lt;/p&gt;
+
+&lt;p&gt;Using this, I took another crack at those pesky prime-based Project Euler problems and what do you know, it worked like a charm! While there is a very, very, very slim chance that this still returns a false-positive (I’m using &lt;script type=&quot;math/tex&quot;&gt;N = 8&lt;/script&gt; so a 0.00153% chance), given the non-critical context of the application, I’ll definitely take the speed increase over the non-100% certainty.&lt;/p&gt;
+
+&lt;p&gt;For anyone interested, I’ve included a sample implementation in Python of the algorithm below.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# takes in a number n and a number of iterations iters&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# to test if n is prime with (1 - (1 / 4^iters)) certainty&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;miller_rabin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# find r and s&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# such that: n = (2^r)s + 1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# test n multiple times&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+                    <pubDate>2016-08-15T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/08/15/miller-rabin.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/08/15/miller-rabin.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>PCA and K-Means on NHL Stats</title>
+                    <description>&lt;p&gt;After all this learning of PCA and &lt;a href=&quot;/blog/2016/03/09/clustering-with-kmeans.html&quot;&gt;k-means clustering&lt;/a&gt;, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!&lt;/p&gt;
+
+&lt;p&gt;It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!&lt;/p&gt;
+
+&lt;p&gt;For anyone interested, you can find the MATLAB code for this example &lt;a href=&quot;https://github.com/ben-tanen/DataMining/tree/master/nhl-clustering&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Team&lt;/th&gt;
+      &lt;th&gt;In Playoffs&lt;/th&gt;
+      &lt;th&gt;K-means Cluster&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ANA&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ARI&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BOS&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BUF&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CAR&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CBJ&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CGY&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CHI&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;COL&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DAL&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DET&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;EDM&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FLA&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LAK&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MIN&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MTL&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NJD&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NSH&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NYI&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NYR&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OTT&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;PHI&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;PIT&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SJS&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;STL&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TBL&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TOR&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;VAN&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WSH&lt;/td&gt;
+      &lt;td&gt;YES&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WPG&lt;/td&gt;
+      &lt;td&gt;NO&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+                    <pubDate>2016-05-15T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/05/15/pca-kmeans-nhl.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/05/15/pca-kmeans-nhl.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Visualizing My (Unhealthy) Netflix History</title>
+                    <description>&lt;p&gt;TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.&lt;/p&gt;
+
+&lt;p&gt;Getting the information was pretty simple. I just had to scrape the data via Netflix’s own viewing history page, clean it a bit, and then pipe it into MATLAB.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/netflix-history.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/netflix-history.png&quot; alt=&quot;A visualization of my Netflix viewing history&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside… One thing is for sure, I definitely watch a lot of TV.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc). &lt;/p&gt;
+</description>
+                    <pubDate>2016-05-08T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/05/08/netflix-history.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/05/08/netflix-history.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Support Vector Machines and Poetry</title>
+                    <description>&lt;p&gt;My tales of data mining continue and this time, they’re about &lt;a href=&quot;http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html&quot;&gt;support vector machines&lt;/a&gt;. These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about &lt;a href=&quot;/blog/2016/03/09/clustering-with-kmeans.html&quot;&gt;k-means clustering&lt;/a&gt; which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn’t a fantastic method.&lt;/p&gt;
+
+&lt;p&gt;As an alternative, SVMs are pretty great at providing classifications that work for existing data &lt;em&gt;and&lt;/em&gt; future data. An example that I found particular interesting was used to distinguish between poems written in English and poems written in German. For example, take the following two excerpts:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;What happens to a dream deferred? Does it dry up&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Aktenstose nachts verschlingen, Schwatzen nach der Welt&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It’s pretty obvious to anyone who speaks English or German which language these poems are written in. But to a naive computer, these are just strings of characters. To aid in distinguishing, let’s consider two features of these 50-character excerpts: the number of complete words and the number of times the letter “i” occurs.&lt;/p&gt;
+
+&lt;p&gt;Using this information as the main “features” of our data, we can compute and define a hyperplane (or in this case, a line) to find if there is a meaningful division between English and German given the “features” we are analyzing (for more on the math behind this, see &lt;a href=&quot;http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html&quot;&gt;here&lt;/a&gt;). If we compute and plot this for ten different excerpts, we get the following:&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/svm-poems.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/svm-poems.png&quot; alt=&quot;A graph showing our poems and our SVM&quot; width=&quot;450px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another &lt;em&gt;new&lt;/em&gt; excerpt: &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Hat der alte Hexenmeister sich doch einmal wegbege&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If we go ahead and plot this (seen above in magenta), we can see that this obviously German poem is again partitioned as expected without needing to update our hyperplane. Hurray, math works!&lt;/p&gt;
+
+&lt;p&gt;For anyone interested, you can find the MATLAB code for this example &lt;a href=&quot;https://github.com/ben-tanen/DataMining/tree/master/svm-poems&quot;&gt;here&lt;/a&gt; and other data mining projects &lt;a href=&quot;https://github.com/ben-tanen/data-mining&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+                    <pubDate>2016-05-03T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/05/03/svm-poetry.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/05/03/svm-poetry.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Lots of Light Painting</title>
+                    <description>&lt;p&gt;Before I became all lame, I use to be fairly into photography. I was never superb myself but I loved to experiment with things. I adored light painting and spent hours trying to make cool patterns with some fancy glow sticks.&lt;/p&gt;
+
+&lt;p&gt;I haven’t been able to take many photos recently but I felt like sharing some of my personal favorites from the past few years. I hope to maybe add some more as time goes on.&lt;/p&gt;
+
+&lt;style&gt;
+    .photo-container {
+    }
+
+    .photo-container img {
+        margin: 0;
+        padding: 5px 5px 0 0;
+    }
+
+    .sub-photo-container {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+&lt;/style&gt;
+
+&lt;div class=&quot;photo-container&quot;&gt;
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic1.jpg&quot; /&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic11.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic2.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic4.jpg&quot; /&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic5.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic6.jpg&quot; /&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic7.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic9.jpg&quot; /&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic8.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic10.jpg&quot; /&gt;
+        &lt;img src=&quot;/assets/img/posts/photography-pic3.jpg&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+                    <pubDate>2016-04-26T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/04/26/photography.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/04/26/photography.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Clustering Using K-Means</title>
+                    <description>&lt;p&gt;This semester, I’m taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind &lt;a href=&quot;https://en.wikipedia.org/wiki/Principal_component_analysis&quot;&gt;PCA analysis&lt;/a&gt;. However, we are starting to move onto look at new types of data analysis / clustering and today’s topic was &lt;strong&gt;k-means clustering&lt;/strong&gt;. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student’s perspective, is much easier to rationalize. It’s a fairly simple algorithm and it does have some cool results.&lt;/p&gt;
+
+&lt;p&gt;For a brief explanation, the algorithm simply works by taking data (lets say &lt;em&gt;n&lt;/em&gt; data points) and attempts to form them into &lt;em&gt;k&lt;/em&gt; clusters (&lt;em&gt;k&lt;/em&gt; is chosen by the user). &lt;em&gt;k&lt;/em&gt; initial cluster centroids are picked (perhaps by random). From here, the following is done on every iteration:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Assign each data point &lt;em&gt;i&lt;/em&gt; to the “closest” cluster &lt;em&gt;j&lt;/em&gt; based on its centroid (“closest” is defined here as smallest euclidean distance, but there are a number of different definitions)&lt;/li&gt;
+  &lt;li&gt;Once all data points are assigned, re-calculate the centroid of each cluster to be the mean of all of its now assigned data points&lt;/li&gt;
+  &lt;li&gt;Repeat until no improvement can be found&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;During lecture, my professor was showing of some plots from before and after clustering to visualize the k-means clustering process. I was intrigued and I thought it would be cool to see a step-by-step GIF of this process. Thus, I wrote some code in MATLAB to do k-means clustering and voilà, it works!&lt;/p&gt;
+
+&lt;p&gt;Initially, the code generates &lt;em&gt;k&lt;/em&gt; normally-distributed random clusters of data of &lt;em&gt;r&lt;/em&gt; data points each (&lt;em&gt;kr&lt;/em&gt; = &lt;em&gt;n&lt;/em&gt; total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn’t necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/kmeans-before-after.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/kmeans-before-after.png&quot; alt=&quot;Graphs comparing the known and unknown clusters in some random data&quot; width=&quot;700px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The first iteration is done by making a random guesses for the location of the &lt;em&gt;k&lt;/em&gt; (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven’t seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/kmeans-cluster.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/kmeans-cluster.gif&quot; alt=&quot;A GIF visualizing the k-means clustering algorithm&quot; width=&quot;450px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;If you have any interest in playing around, you can find my MATLAB code &lt;a href=&quot;https://github.com/ben-tanen/data-mining/tree/master/kmeans&quot;&gt;here&lt;/a&gt; in &lt;a href=&quot;https://github.com/ben-tanen/data-mining&quot;&gt;a new GitHub repo&lt;/a&gt; for my data mining work. It should work for all reasonable values of &lt;em&gt;k&lt;/em&gt; (clusters) and &lt;em&gt;r&lt;/em&gt; (data points per cluster). I’ll be honest and say that my MATLAB code leaves a bit to be desired but it’s working so that’s mostly all that matters. &lt;/p&gt;
+
+&lt;p&gt;If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.&lt;/p&gt;
+
+</description>
+                    <pubDate>2016-03-09T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2016/03/09/clustering-with-kmeans.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2016/03/09/clustering-with-kmeans.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Minimizing Risk For An Optimal Portfolio</title>
+                    <description>&lt;p&gt;For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this &lt;a href=&quot;http://dahl.mines.edu/tech1503.pdf&quot;&gt;paper&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.&lt;/p&gt;
+
+&lt;p&gt;In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “&lt;a href=&quot;https://en.wikipedia.org/wiki/Efficient_frontier&quot;&gt;efficient frontier&lt;/a&gt;” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/portfolio-bullet.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/portfolio-bullet.png&quot; alt=&quot;Markowitz bullets showing possible portfolios &quot; width=&quot;800px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Markowitz bullets showing possible portfolios 
+&lt;/figcaption&gt;
+
+&lt;p&gt;I found this optimized weight allocation by looping over a bunch of different allocations and searching for optimized performance. First I looped through allocations in increments of 0.1 and then examined closer at the region(s) that performed the best. I repeated this process again with increments of 0.025 and 0.005 to find the best weighting. All of these trials can be seen in the bullets above, as well as the final optimized portfolio in red (at the tip).&lt;/p&gt;
+
+&lt;p&gt;Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/portfolio-return.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/portfolio-return.png&quot; alt=&quot;Comparing the optimized portfolio to the S&amp;amp;P-500&quot; width=&quot;600px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook &lt;a href=&quot;/notebooks/optimizing-portfolio.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-12-12T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/12/12/optimizing-hedge-ratio.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/12/12/optimizing-hedge-ratio.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Tufts Polyhack 2015: JumboAdvisor</title>
+                    <description>&lt;p&gt;Figuring out what courses to take as a college student can be a slightly confusing process. What classes count for what requirements? What requirements do I even need for my major? What will my college career look like with all these courses?&lt;/p&gt;
+
+&lt;p&gt;Tufts (and the lovely people over at PeopleSoft) attempted to offer a tool called the Advisement Report which would help guide students through these questions. However, this tool is incredibly stupid, offering zero flexibility in terms of moving things around your “degree sheet”. If you want to move one course from one requirement to another, too bad. If you want to check out another major to see if switching majors is possible, you’re out of luck. Trying out minors or double majors? No way.&lt;/p&gt;
+
+&lt;p&gt;This is where &lt;a href=&quot;http://ben-tanen.github.io/JumboAdvisor/&quot;&gt;JumboAdvisor&lt;/a&gt; comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart’s content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/jumboadvisor.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/jumboadvisor.png&quot; alt=&quot;A screenshot of JumboAdvisor&quot; width=&quot;600px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This was a joint effort including work from &lt;a href=&quot;https://github.com/agolin95&quot;&gt;Alex Golin&lt;/a&gt;, &lt;a href=&quot;https://github.com/menlonoma&quot;&gt;Nolan Martin&lt;/a&gt;, &lt;a href=&quot;https://github.com/swelch01&quot;&gt;Samantha Welch&lt;/a&gt;, &lt;a href=&quot;https://github.com/mseltzer94&quot;&gt;Michael Seltzer&lt;/a&gt;, and &lt;a href=&quot;https://github.com/jclaw&quot;&gt;Jackson Clawson&lt;/a&gt;. The site is built with pretty simple HTML, CSS, and JS with no real tricks involved. The original intention was to use something like Angular.js to build drag and droppable sections but hackathons…&lt;/p&gt;
+
+&lt;p&gt;Due to the typical woes of a 24-hour hackathon, the site is not fully built. It is more intended as a proof of concept to show the capabilities and functionality that an advisement report &lt;em&gt;should&lt;/em&gt; have. The next steps for this project include pitching it successfully to Tufts and building out all the desired features (including data connectivity, better validation, and minors and double majors).&lt;/p&gt;
+
+&lt;p&gt;For more, you can see current site &lt;a href=&quot;http://ben-tanen.github.io/JumboAdvisor/&quot;&gt;here&lt;/a&gt; and the source code &lt;a href=&quot;https://github.com/ben-tanen/JumboAdvisor&quot;&gt;here&lt;/a&gt;. Any updates on this project will likely be posted here but you can also check the GitHub repo.&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-10-30T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/10/30/jumboadvisor.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/10/30/jumboadvisor.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Visualizing My Spotify History</title>
+                    <description>&lt;p&gt;As most people do, I go through phases of musical interests. I’ll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm’s scrobbling data, &lt;a href=&quot;https://gist.github.com/bitmorse/5201491&quot;&gt;this handy script&lt;/a&gt;, and some Python / pandas, I was able to see just what I was listening to over the past few years.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/lastfm-linegraph.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/lastfm-linegraph.png&quot; alt=&quot;A graph of my music plays from 06/2014 - 08/2015&quot; width=&quot;600px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The process was pretty simple. Once I found the existing script (link above), I simply had to parse through the text, load it into a pandas DataFrame, and do some simple analysis. Knowing that, I plan on going a little deeper and seeing what cool stuff I can find.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Quick Note&lt;/strong&gt;: This data only reflects my listening history on computer. For some reason Spotify Mobile is set to scrobble my listening history but is refusing to actually do so. Oh well…&lt;/p&gt;
+
+&lt;p&gt;For more, you can see the whole iPython notebook &lt;a href=&quot;/notebooks/lastfm-scrobble.html&quot;&gt;here&lt;/a&gt; (Hurray for iPython notebooks, they’re awesome).&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-09-01T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/09/01/lastfm-scrobble-graphs.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/09/01/lastfm-scrobble-graphs.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Best Of &quot;Data is Beautiful&quot; #1</title>
+                    <description>&lt;p&gt;As I briefly mentioned in a &lt;a href=&quot;/blog/2014/10/31/rap-data-design.html&quot;&gt;previous post&lt;/a&gt;, I am a big fan of well-designed representations of data. If you’re also a fan of this “art form” then you should be an avid follower of the subreddit &lt;a href=&quot;https://www.reddit.com/r/dataisbeautiful&quot;&gt;/r/dataisbeautiful&lt;/a&gt;. If you’ve never seen it, it’s a must read.&lt;/p&gt;
+
+&lt;p&gt;Pretty much all of the posts are cool but there are a few that are definitely a cut above. I decided every once in awhile I’d highlight my personal favorites. So without further ado…&lt;/p&gt;
+
+&lt;h3 id=&quot;nba-shot-chartshttpsavvastjortjogloucomnba-shot-shartshtml&quot;&gt;&lt;a href=&quot;http://savvastjortjoglou.com/nba-shot-sharts.html&quot;&gt;NBA Shot Charts&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;http://savvastjortjoglou.com/nba-shot-sharts.html&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/dib-basketball.png&quot; alt=&quot;A heat map of James Harden's shots&quot; width=&quot;600px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I’m not a huge NBA fan but I do know there is a crazy amount of data available about the game - maybe second only to &lt;a href=&quot;http://fivethirtyeight.com/features/rich-data-poor-data/&quot;&gt;baseball&lt;/a&gt;. I guess Savvas Tjortjoglou decided to map that data to show a very comprehensive shot chart. The post is well-done, especially the way that he actually goes about mapping the data onto the court as singular points and heat maps.&lt;/p&gt;
+
+&lt;h3 id=&quot;mapping-the-uk-via-pubshttpramiroorgnotebookmapping-pubs&quot;&gt;&lt;a href=&quot;http://ramiro.org/notebook/mapping-pubs/&quot;&gt;Mapping the UK via Pubs&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;http://ramiro.org/notebook/mapping-pubs/&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/dib-pubs.png&quot; alt=&quot;A map of all of the pubs in the U.K.&quot; width=&quot;600px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This is just one of those things that will make you LQTY (laugh quietly to yourself, the truer form of LOL). Of course the United Kingdom can be be well mapped through all of its pubs. While not as dense as London, Ireland does a good job of dispersing its drinking establishments. Scotland is just lacking though - come on Scotland! The actual data work being done here is pretty simple but it’s cool nonetheless.&lt;/p&gt;
+
+&lt;h3 id=&quot;swearing-across-americahttpwwwhuffingtonpostcomentrywhich-curse-words-are-popular-in-your-state55a80662e4b04740a3df54b8&quot;&gt;&lt;a href=&quot;http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8&quot;&gt;Swearing Across America&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/dib-swearing-map.png&quot; alt=&quot;A map of who uses 'gosh' throughout the U.S.&quot; width=&quot;500px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I particularly enjoy this one and everything it has to say about the different regions of the US. Coming from the Northeast, I have to generally agree with the maps - I don’t remember the last time I heard someone say “Gosh” seriously. I was also quite amused by the tiny spike in the use of “Bitch” in Fairfield County Connecticut. Fairfield reppin’!&lt;/p&gt;
+
+&lt;p&gt;Rather than using API access like the others, this post also had a pretty interesting way of gathering the data. While I’m still slightly unsure of utilizing Twitter / Geolocation for accurate data science, for the matter of this post I’ll accept their method. &lt;/p&gt;
+
+&lt;h3 id=&quot;randomly-finding-someonehttpemptypipesorg20150803random-finding&quot;&gt;&lt;a href=&quot;http://emptypipes.org/2015/08/03/random-finding/&quot;&gt;Randomly Finding Someone&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;http://emptypipes.org/2015/08/03/random-finding/&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/dib-randomfinding.gif&quot; alt=&quot;Two dots trying to find each other in a grid&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the “randomly searching” process - hurray for pretty gifs. He even built a tool for anyone to try out the tool / animation. &lt;/p&gt;
+
+&lt;p&gt;While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use Find My Friends or a good ol’ phone call.&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-08-16T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/08/16/data-is-beautiful-1.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/08/16/data-is-beautiful-1.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Random Project: Censor Machine</title>
+                    <description>&lt;p&gt;Do you ever need or want a simple Internet tool and it seems like it would be easier code it than find it? That is exactly what happened when I needed a beeping censor for &lt;a href=&quot;http://wmfo.org&quot;&gt;my radio show&lt;/a&gt;. Sometimes bands like to swear and I needed a button / website to defend the honor of the FCC. Thus, I made this really &lt;a href=&quot;http://ben-tanen.github.io/CensorMachine/&quot;&gt;stupid site&lt;/a&gt;. But hey, now I have it.&lt;/p&gt;
+</description>
+                    <pubDate>2015-07-06T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/07/06/censor-machine.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/07/06/censor-machine.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Old Python Games / Projects</title>
+                    <description>&lt;p&gt;After posting my two most recent retro posts (&lt;a href=&quot;/blog/2015/06/17/retro-ios-update.html&quot;&gt;#1&lt;/a&gt;, &lt;a href=&quot;/blog/2015/06/26/retro-game-theory.html&quot;&gt;#2&lt;/a&gt;), I thought I’d post some of my older projects as well. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.&lt;/p&gt;
+
+&lt;p&gt;The first coding project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I’m not sure how or why… Either way, here is the &lt;a href=&quot;https://github.com/ben-tanen/PythonGames/blob/master/battleship.py&quot;&gt;code on Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/python-game-minesweeper.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/python-game-minesweeper.png&quot; alt=&quot;A screenshot of the Minesweeper game&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Good Ol' Unix Terminal Games
+&lt;/figcaption&gt;
+
+&lt;p&gt;This next project was my first original game, Minesweeper! It was built very much like Battleship but the logic was a little more complicated. As you can see, it’s not expertly written since this was after like a month of knowing Python. I might consider re-writting / refactoring the code not that I’m a tad more experienced. Here is the &lt;a href=&quot;https://github.com/ben-tanen/PythonGames/blob/master/minesweeper.py&quot;&gt;original code on GH&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A year later than my other games, I decided to build a blackjack game. This was made with the knowledge of classes so I decided to go down that route instead of a constant single chunk of code (see other games). It’s not much better written, but it does include the ability to “count cards” which is cool. Again, &lt;a href=&quot;https://github.com/ben-tanen/PythonGames/blob/master/blackjack.py&quot;&gt;here’s the code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: And because I was bored, I also threw in some better versions of the first two games with some serious refactoring / feature improvement into &lt;a href=&quot;https://github.com/ben-tanen/PythonGames&quot;&gt;the repo&lt;/a&gt;. Minesweeper reveals sections of 0s now! I noticed I was also doing some weird sort of logical boolean using a string of spaces. It was weird. I took it out. It’s better now.&lt;/p&gt;
+
+&lt;p&gt;If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-07-01T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/07/01/retro-python-games.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/07/01/retro-python-games.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Retro Post: Game Theory, The Game</title>
+                    <description>&lt;p&gt;This retro post came from my senior year of high school when I was taking AP Economics. Who doesn’t love turning economics into drinking games?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;[Beginning of Post]&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In my AP Economics class, we have started discussing game theory. This is the study of different behaviors in economic “games”. The most basic game is between two firms, or actors, playing together, and they have two options, for which each firm will pick the option that will give them the best output.&lt;/p&gt;
+
+&lt;p&gt;Eventually, my teacher showed us a clip from a game show that uses the concepts of game theory. The show, called Golden Balls, pits two players against each other to win a pot of money. If they both choose to split the money, they will share the pot 50/50. If one chooses to steal the money while the other splits, the stealer will win all of the money, while the other is left with zero. Finally, if they both chose to steal, everyone ends up with zero.&lt;/p&gt;
+
+&lt;iframe class=&quot;youtube-vid&quot; width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/p3Uos2fzIJ0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe class=&quot;youtube-vid&quot; width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/S0qjK3TWZE8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;After watching the clip, my classmates and I felt the need to design our own version of the game. However, as a fairly poor teenager, I felt the prize shouldn’t be monetary. And then we came to our dilemma. What to make the prize?&lt;/p&gt;
+
+&lt;p&gt;One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/game-theory-slaps.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/game-theory-slaps.png&quot; alt=&quot;A payoff matrix for the slapping game&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Playful violence is always fun
+&lt;/figcaption&gt;
+
+&lt;p&gt;This game/version relies on the idea that both players want to slap the other person, so I guess this would preferably be played with an enemy (or a close friend).&lt;/p&gt;
+
+&lt;p&gt;Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/game-theory-drinks.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/game-theory-drinks.png&quot; alt=&quot;A payoff matrix for the drinking game&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Who doesn't love economic-based drinking games?
+&lt;/figcaption&gt;
+
+&lt;p&gt;Eventually, I’d assume both parties would be drunk enough to lose track of the dilemma and implications of their choices, but I imagine that this game would serve as an interesting way to get drunk for economists.&lt;/p&gt;
+
+&lt;p&gt;Any other potential prizes/punishments?&lt;/p&gt;
+</description>
+                    <pubDate>2015-06-26T17:05:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/06/26/retro-game-theory.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/06/26/retro-game-theory.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Retro Post: iOS Upgrades (Circa 2013)</title>
+                    <description>&lt;p&gt;Before moving to Github and using Jekyll, I hosted a &lt;a href=&quot;http://ben-tanen.tumblr.com/&quot;&gt;blog on Tumblr&lt;/a&gt;. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some &lt;em&gt;retro posts&lt;/em&gt; from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6). &lt;/p&gt;
+
+&lt;p&gt;I’d like to point out that since then, three of these four upgrades have been implemented in someway or another so I guess you could say I’m an accurate futurist. I’d also like to say that I spent a fair amount of time building these mockup screens in Adobe After Effects and they’re actually pretty awesome. Overall success for 18 year old me!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;[Beginning of Post]&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone itself lacks some capabilities. Here are a few ideas that I have for improvements to the software.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Priority Messages:&lt;/strong&gt; Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed. &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Retrospective Update&lt;/strong&gt; - Apple decided to basically implement this but in reverse. If you want to mute specific people, you can and then the rest of your messages will come through.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/ios-updates-textdelay.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/ios-updates-textdelay.gif&quot; alt=&quot;A simulated screen capture of the text delay feature&quot; width=&quot;230px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Delay a text to send a few minutes (or even a few hours)
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;strong&gt;Text Delay:&lt;/strong&gt; On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time. &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Retrospective Update #2&lt;/strong&gt; - This change has not yet been implemented, but it 100% should be. Still one of my top desired features&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;In-App Text Response:&lt;/strong&gt; While the Multi-tasking on iOS is helpful, responding to a text still requires you to switch to the Messages app, which sometimes closes/disrupts certain other apps (Netflix, games). Instead, an option for In-App texting would simply have a pop-up screen in which the user can send a quick text. This capability is featured on many non-iOS devices, and it should be brought to the iPhone.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Retrospective Update #3&lt;/strong&gt; - This is also available now, woohoo!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/ios-updates-inapptext.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/ios-updates-inapptext.gif&quot; alt=&quot;A simulated screen capture of the in-app texting feature&quot; width=&quot;230px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Update - More or less is exactly what the actual implementation looks like
+&lt;/figcaption&gt;
+
+&lt;p&gt;&lt;strong&gt;Voice Activated Siri:&lt;/strong&gt; Siri is particularly useful, especially when you can’t (or shouldn’t) be using your hands (driving, shower, etc.). However, turning on Siri requires manual activation with a hand. Instead, there should be an option to start Siri using one’s voice. For example, Siri could be activated by either saying “Siri” (though that presents certain issues in a crowd of people saying the same thing) or a keyword that the user picks (ex: “Pterodactyl”).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Retrospective Update #4&lt;/strong&gt; - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+                    <pubDate>2015-06-17T17:06:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/06/17/retro-ios-update.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/06/17/retro-ios-update.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Why Everyone Should Use (Or At Least Try) Spotify</title>
+                    <description>&lt;p&gt;For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.&lt;/p&gt;
+
+&lt;p&gt;And you know what? I love Spotify. Every concern I had was quickly answered because they have thought of everything. Want to have music while you’re out of cell range? No worries, you can download playlists straight to your phone or computer. Want to listen to a brand-new remix that isn’t on Spotify? Loading and listening to local / custom files is easy. And that is just the simple stuff. If you know anyone who uses Spotify, I’m sure you’ve heard a similar raving review. But if you’re still not convinced, here is why I think you should at least consider trying Spotify Premium. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is in no way sponsored by Spotify. I just like their service.&lt;/p&gt;
+
+&lt;h3 id=&quot;instant-access-to-millions-of-songs&quot;&gt;Instant Access to Millions of Songs&lt;/h3&gt;
+
+&lt;p&gt;Of course you’ve heard that Spotify has lots of songs available, which isn’t necessarily jaw-dropping. But when you compare it to Spotify’s competitors, 30-million songs is a hell of a lot for $10 / month (or $5 / month if you’re a student). For $10 on iTunes, you get 7 - 10 songs a month. But maybe you’re considering about getting more than 10 songs a month in a less, perhaps, legal way. That might work until you get a cease and desist e-mail for a lot more than $10. So at the end of the day, 30-million songs for $10 / month is a might fine deal.&lt;/p&gt;
+
+&lt;h3 id=&quot;crazy-good-cross-syncing&quot;&gt;Crazy Good Cross-Syncing&lt;/h3&gt;
+
+&lt;p&gt;Apple seems very proud of their cross-syncing platform iCloud and to be honest, it is pretty good. But iCloud doesn’t even compare to Spotify’s syncing across their different platforms. If you’re listening to a song on your computer and you add it to your library, it shows up on your phone that instant. And you can literally swap over to your phone that instant, picking up that song exactly where you left it off. In fact you can do this across the desktop, browser, and phone apps without even missing a beat. I just switched from my phone to my computer after I came back from a walk and wanted to pick up the song exactly where I was. It’s a feature I’ve dreamed of for years and now it’s my reality, thanks to Spotify. As far as I know, iCloud or any other competitor can’t even come close to that. &lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-sync.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/spotify-sync.png&quot; alt=&quot;A screenshot showing Spotify's cross-sync capabilities&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Swap between your phone and your computer instantly
+&lt;/figcaption&gt;
+
+&lt;h3 id=&quot;spotify-mobile-is-amazing&quot;&gt;Spotify Mobile is Amazing&lt;/h3&gt;
+
+&lt;p&gt;In my opinion, the crown jewel of Spotify has to be their mobile app. If you’re a premium user, you get the same unlimited music access on your phone that you would in the desktop app. That means you get the ability to search through Spotify’s whole catalog, browse artist updates, and sample and queue up songs (a lot of which is still not doable on the iTunes equivalent app). In order to do all this, Spotify didn’t waste any space as they crammed all the functionality into a cohesive, absolutely gorgeous mobile app. You’re really not using Spotify until you’re using the mobile version.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-mobile.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/spotify-mobile.png&quot; alt=&quot;Screenshots from Spotify's mobile app&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Spotify didn't waste an inch of space on the mobile app
+&lt;/figcaption&gt;
+
+&lt;h3 id=&quot;spotify-makes-music-social&quot;&gt;Spotify Makes Music Social&lt;/h3&gt;
+
+&lt;p&gt;You can build the best music library through suggestions from real people, everyone knows that. Spotify has certainly taken this into account since one of their main focuses is making the music experience social. They do this in a few ways, but the most obvious two are social sidebar and collaborative playlists. Do you have that hip friend who has that shockingly good taste in music and always finds new stuff? If you follow them, Spotify will show you what music they are listening to at that moment through the social sidebar. You can even click on the song and start listening along. Want to go on a road trip with this friend and collaborate on a playlist? It’s super easy to share songs and make the best-of-the-best for a playlist. The social music experience is one of Spotify’s key elements and they do it quite well.&lt;/p&gt;
+
+&lt;h3 id=&quot;great-software-updates-are-great&quot;&gt;Great Software Updates are Great&lt;/h3&gt;
+&lt;p&gt;One of the best qualities of a good software system is the ability to change and adapt. Apple has always succeeded at looking ahead at the grander picture, generally answering questions that haven’t been asked yet. But there were often requests that were left unanswered because they weren’t &lt;em&gt;innovative&lt;/em&gt; enough. On the other hand, Spotify looks to embrace all of these changes. Spotify consistently pushes a new update every week or two (and all you have to do to update is press “restart”). While some changes that they make in updates aren’t groundbreaking or even noticeable, there certainly are updates / changes that do answer requests even if they are small. An example being that in one of the more recent updates, Spotify enabled the ability to search inside a specific playlist. This wasn’t a huge change (iTunes has had it for awhile), but it was a direct response to a &lt;a href=&quot;https://community.spotify.com/t5/Live-Ideas/Desktop-Bring-back-search-inside-Playlists-amp-Songs-tab/idi-p/1039674&quot;&gt;user request&lt;/a&gt; because Spotify takes these requests and suggestions seriously, which is seriously cool. This means that while the software is being managed by the company, the trend and changes of Spotify can partially be set by the customers who use Spotify. &lt;/p&gt;
+
+&lt;p&gt;There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-05-21T17:06:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/05/21/spotify.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/05/21/spotify.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>RodRego: The Simple Register Machine Simulator</title>
+                    <description>&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif&quot; alt=&quot;RodRego's Original Banner&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of &lt;a href=&quot;http://en.wikipedia.org/wiki/Brainfuck&quot;&gt;Brainf**k&lt;/a&gt; without IO).&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/rodrego.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/rodrego.png&quot; alt=&quot;The original desktop application (left) vs. the new web application (right)&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+The original desktop application (left) vs. the new web application (right)
+&lt;/figcaption&gt;
+
+&lt;p&gt;My assignment for this project was to build a web application that emulates (and fixes any problems of) the existing desktop application. With little instruction on how the original application worked, building something that would recreate it was interesting, but ultimately doable. Specific data validation (which was necessary to check commands / script format) was also a pain in JavaScript but that’s just JavaScript.&lt;/p&gt;
+
+&lt;p&gt;Overall, it was a fun project. This was my first major web development assignment (outside of random personal projects) so it was a good learning experience. It was also pretty cool to work on someone’s legacy project. And at the end of the day, you’ve always got to remember and appreciate your first. ♥ RodRego ♥&lt;/p&gt;
+
+&lt;p&gt;If you want to try it out, you can find the site &lt;a href=&quot;http://proto.atech.tufts.edu/RodRego/&quot;&gt;here&lt;/a&gt;. You can also find the code on &lt;a href=&quot;https://github.com/ben-tanen/RodRego&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-03-31T17:06:41+02:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/03/31/rodrego.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/03/31/rodrego.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Grub: The Command-line GrubHub</title>
+                    <description>&lt;p&gt;GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.&lt;/p&gt;
+
+&lt;p&gt;Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// search database for food type or restaurant
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;burrito&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bob's Burgers&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// add chicken burrito with cheese &amp;amp; sour cream
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burrito&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chicken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cheese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+
+&lt;span class=&quot;c1&quot;&gt;// add burger without pickles
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pickles&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// go to checkout and add payment information 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkout&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// place order
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if &lt;a href=&quot;http://r-wos.org/hacks/gti&quot;&gt;gti init&lt;/a&gt; can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future. &lt;/p&gt;
+
+</description>
+                    <pubDate>2014-11-30T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2014/11/30/grub.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2014/11/30/grub.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Random Project: Base64 Decoder</title>
+                    <description>&lt;p&gt;In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.&lt;/p&gt;
+
+&lt;p&gt;So, by reversing &lt;a href=&quot;http://en.wikipedia.org/wiki/Base64#Examples&quot;&gt;Wikipedia’s algorithm&lt;/a&gt; for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Convert each encoded character to ASCII values&lt;/li&gt;
+  &lt;li&gt;String together 6-bit strings of ASCII values&lt;/li&gt;
+  &lt;li&gt;Break string up into 8-bit strings&lt;/li&gt;
+  &lt;li&gt;Convert 8-bit strings back into ASCII values&lt;/li&gt;
+  &lt;li&gt;Convert to decoded character&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code &lt;a href=&quot;https://github.com/ben-tanen/Base64Decode&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+                    <pubDate>2014-11-12T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2014/11/12/base64.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2014/11/12/base64.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Up-to-Date Infographics</title>
+                    <description>&lt;p&gt;When I first started working with web design, &lt;a href=&quot;http://www.kerem.co&quot;&gt;Kerem Suer’s&lt;/a&gt; website had a lot of features that inspired me. One of these features was his use of &lt;a href=&quot;https://web.archive.org/web/20130114231739/http://kerem.co/&quot;&gt;infographics&lt;/a&gt;. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/infographics-kerem.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/infographics-kerem.png&quot; alt=&quot;Examples of Kerem's use of infographics&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+Examples of Kerem's use of infographics
+&lt;/figcaption&gt;
+
+&lt;p&gt;For my infographics, I was attempting to display what I was currently up to (currently reading, listening to, watching). I never thought that it could be live updates, but more so descriptions of the book, album, and show/movie that I was into that week. However, the struggle with this was it was not easy to update the information. I had hard-coded into my HTML file, and accessing, changing, and uploading this was generally a pain, leaving my information drastically out-of-date.&lt;/p&gt;
+
+&lt;p&gt;Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of &lt;a href=&quot;http://www.IFTTT.com&quot;&gt;IFTTT&lt;/a&gt;, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/infographics-ex.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/infographics-ex.png&quot; alt=&quot;My own example infographics&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;figcaption&gt;
+My own example infographics
+&lt;/figcaption&gt;
+
+&lt;p&gt;The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.&lt;/p&gt;
+
+&lt;p&gt;It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update, 12/26/2016&lt;/strong&gt; - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on &lt;a href=&quot;/about/&quot;&gt;my about page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update, 07/28/2017&lt;/strong&gt; - Still using the improved system but now I don’t have an about page any more… you can find the details on &lt;a href=&quot;/&quot;&gt;my home page&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+                    <pubDate>2014-11-01T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2014/11/01/infographics.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2014/11/01/infographics.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Rap, Data, and Design</title>
+                    <description>&lt;p&gt;A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.&lt;/p&gt;
+
+&lt;p&gt;In his post, &lt;a href=&quot;http://experiments.undercurrent.com/&quot;&gt;The Largest Vocabulary in Hip Hop&lt;/a&gt;, Daniels analyzed the discography of 85 rappers (he added another 19 in his &lt;a href=&quot;http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/&quot;&gt;updated version&lt;/a&gt; of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/rap-vocab.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/rap-vocab.png&quot; alt=&quot;A screenshot from the article&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.&lt;/p&gt;
+
+&lt;p&gt;A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion. &lt;/p&gt;
+
+&lt;p&gt;Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.&lt;/p&gt;
+
+&lt;p&gt;By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.&lt;/p&gt;
+
+</description>
+                    <pubDate>2014-10-31T16:05:41+01:00</pubDate>
+                    <link>http://localhost:4000/blog/2014/10/31/rap-data-design.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2014/10/31/rap-data-design.html</guid>
+                </item>
+                
+            
+                
+            
+    </channel>
+</rss>
