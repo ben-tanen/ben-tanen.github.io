@@ -6,9 +6,9 @@ categories: project tv chrome
 thumbnail: /assets/img/post-thumbnails/tv-monitor.gif
 ---
 
-As I've [previously mentioned]({% post_url 2016-05-08-netflix-history %}), I do enjoy watching TV and Netflix from time to time. However, since I've opted to go cable-less, it's a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly have way too much time on my hands, I decided to make **TV Monitor**, a little Chrome extension that keeps track of all of this for me.
+As I've [previously mentioned]({% post_url 2016-05-08-netflix-history %}), I do enjoy watching TV and Netflix from time to time. However, since I've opted to go cable-less, it's a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly had way too much time on my hands, I decided to make **TV Monitor**, a little Chrome extension that keeps track of all of this for me.
 
-A lot of inspiration for the extension came from the [Feedly Notifier extension](https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb) I use to keep track of my RSS feeds. I found it's design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.
+A lot of inspiration for the extension came from the [Feedly Notifier extension](https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb) I use to keep track of my RSS feeds. I found its design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.
 
 {% include figure.html src="/assets/img/posts/tv-monitor-demo.gif" width="350px" %}
 

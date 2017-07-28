@@ -478,9 +478,9 @@
                 
                 <item>
                     <title>How I Keep Track of All My Shows</title>
-                    <description>&lt;p&gt;As I’ve &lt;a href=&quot;/blog/2016/05/08/netflix-history.html&quot;&gt;previously mentioned&lt;/a&gt;, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly have way too much time on my hands, I decided to make &lt;strong&gt;TV Monitor&lt;/strong&gt;, a little Chrome extension that keeps track of all of this for me.&lt;/p&gt;
+                    <description>&lt;p&gt;As I’ve &lt;a href=&quot;/blog/2016/05/08/netflix-history.html&quot;&gt;previously mentioned&lt;/a&gt;, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly had way too much time on my hands, I decided to make &lt;strong&gt;TV Monitor&lt;/strong&gt;, a little Chrome extension that keeps track of all of this for me.&lt;/p&gt;
 
-&lt;p&gt;A lot of inspiration for the extension came from the &lt;a href=&quot;https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb&quot;&gt;Feedly Notifier extension&lt;/a&gt; I use to keep track of my RSS feeds. I found it’s design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.&lt;/p&gt;
+&lt;p&gt;A lot of inspiration for the extension came from the &lt;a href=&quot;https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb&quot;&gt;Feedly Notifier extension&lt;/a&gt; I use to keep track of my RSS feeds. I found its design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/tv-monitor-demo.gif&quot; target=&quot;_blank&quot;&gt;
