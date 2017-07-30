@@ -137,6 +137,35 @@
 
 <div class='post'>
     <header class="post-header">
+	   <h1>How I Keep Track of All My Shows</h1>
+       <!--
+       <p class="post-meta">Jan 24 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>As I’ve <a href="/blog/2016/05/08/netflix-history.html">previously mentioned</a>, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly had way too much time on my hands, I decided to make <strong>TV Monitor</strong>, a little Chrome extension that keeps track of all of this for me.</p>
+
+<p>A lot of inspiration for the extension came from the <a href="https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb">Feedly Notifier extension</a> I use to keep track of my RSS feeds. I found its design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/tv-monitor-demo.gif" target="_blank">
+    <img src="/assets/img/posts/tv-monitor-demo.gif" width="350px" />
+    </a>
+</p>
+
+<p>Overall, building this was easier than expected. It was surprisingly simple to get a basic Chrome extension going and from there it was just web development like any traditional site. The backend is built using a basic Django app that queries IMDB to see if there are any new episodes available of a particular show. If you’re interested, feel free to check out <a href="https://github.com/ben-tanen/tv-monitor">the frontend code</a> (backend maybe to come).</p>
+
+<p>Since I was building this just for me, I took some shortcuts in terms of security, just for my own sanity, so I’m not planning to publish the extension on the Chrome store, at least not in the foreseeable future. Maybe that’ll be the project for next Winter Break…</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
 	   <h1>Polar Line Charts in D3</h1>
        <!--
        <p class="post-meta">Jan 08 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
@@ -430,102 +459,6 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
 
 <p>If you’re interested in exploring this world of alcohol, you can find <a href="https://jadeyychan.github.io/DrunkenWorld/">the visualization here</a>. You can also find <a href="https://github.com/jadeyychan/DrunkenWorld">the code here</a>. Huge thanks to my team members, <a href="https://jadeyychan.github.io/">Jade</a> and <a href="https://github.com/rlrlarson">Rebecca</a>!</p>
 
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Mapping My Life at Tufts</h1>
-       <!--
-       <p class="post-meta">Nov 18 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Over the last view years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.</p>
-
-<p>It seems like my suspicion was true - I’ve become a little hermit holed up at my home, the CS department (my second home), or at 574 Boston Ave. Maybe I should explore some more…</p>
-
-<!-- css and javascript includes -->
-<link rel="stylesheet" href="/projects/schedule-map/css/style.css" />
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYYbQJxmT3xqIdpkDwtHi8TyyJPtncbE4" type="text/javascript"></script>
-
-<script src="/projects/schedule-map/js/data.js"></script>
-
-<script src="/projects/schedule-map/js/map.js"></script>
-
-<div id="map-wrapper">
-    <div id="map"></div>
-    <div id="legend"><h4></h4></div>
-</div>
-
-<div id="checks">
-    <h4 style="margin-top: 10px; margin-bottom: 5px;">Choose which data to include:</h4>
-
-    <div id="semester-checks">
-        <div class="check semester on" id="F13">
-            <p>F13</p>
-        </div>
-
-        <div class="check semester" id="S14">
-            <p>S14</p>
-        </div>
-
-        <div class="check semester on" id="F14">
-            <p>F14</p>
-        </div>
-
-        <div class="check semester" id="S15">
-            <p>S15</p>
-        </div>
-
-        <div class="check semester" id="F15">
-            <p>F15</p>
-        </div>
-
-        <div class="check semester on" id="S16">
-            <p>S16</p>
-        </div>
-
-        <div class="check semester" id="F16">
-            <p>F16</p>
-        </div>
-
-        <div class="check semester on" id="S17">
-            <p>S17</p>
-        </div>
-    </div>
-
-    <div id="activity-checks">
-        <div class="check activity" id="Athletics">
-            <p>Athletics</p>
-        </div>
-
-        <div class="check activity" id="Clubs">
-            <p>Clubs</p>
-        </div>
-
-        <div class="check activity on" id="Food">
-            <p>Food</p>
-        </div>
-
-        <div class="check activity on" id="Home">
-            <p>Home</p>
-        </div>
-
-        <div class="check activity on" id="School">
-            <p>School</p>
-        </div>
-
-        <div class="check activity" id="Work">
-            <p>Work</p>
-        </div>
-    </div>
-</div>
 
     </article>
 </div>

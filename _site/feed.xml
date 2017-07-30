@@ -7,6 +7,86 @@
             
                 
                 <item>
+                    <title>Street Art in London</title>
+                    <description>&lt;p&gt;I just got back from a trip to London and while I was there, I got to check out of some London’s pretty incredible street art. I was taken around parts of the city by an artist trying to break into the street art scene so he was able to share some additional information on the pieces. It was very cool to hear some of the background on the artist(s) behind each piece and the general culture in the street scene. It certainly added an extra layer to the compositions and their significance in London as a whole.&lt;/p&gt;
+
+&lt;p&gt;Amazed by many of the works, I thought I’d share some of my personal favorites. These photos certainly don’t do the art justice so if you have the opportunity to wander around London (specifically Shoreditch and Brick Lane) and see it in person, I would highly suggest it.&lt;/p&gt;
+
+&lt;p&gt;P.S. Since this isn’t the &lt;a href=&quot;/blog/2016/04/26/photography.html&quot;&gt;first&lt;/a&gt; &lt;a href=&quot;/blog/2016/11/10/stpaul-broken-bones.html&quot;&gt;time&lt;/a&gt; I’ve posted about pictures I’ve taken, I decided to put together &lt;a href=&quot;http://link.ben-tanen.com/photo&quot;&gt;a dedicated page&lt;/a&gt; for some of my personal favorite photos. Feel free to check it out and enjoy!&lt;/p&gt;
+
+&lt;style&gt;
+    .photo-container {
+    }
+
+    .photo-container img {
+        margin: 0;
+        padding: 5px 5px 0 0;
+    }
+
+    .sub-photo-container {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .sub-photo-container.wide {
+        width: calc(98% + 5px);
+    }
+
+&lt;/style&gt;
+
+&lt;div class=&quot;photo-container&quot;&gt;
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-1.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-9.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container wide&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-2.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-7.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-3.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container wide&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-4.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-8.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-5.jpg&quot; /&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-6.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-10.jpg&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sub-photo-container&quot;&gt;
+        &lt;img src=&quot;/assets/img/posts/LDN-streetart-11.jpg&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+                    <pubDate>2017-07-29T20:00:00-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/07/29/london-street-art.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/07/29/london-street-art.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>Random Brain Fun with Illustrator</title>
                     <description>&lt;p&gt;Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because of my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from &lt;a href=&quot;https://www.youtube.com/watch?v=Bxp9Rh7srIg&quot;&gt;WIRED&lt;/a&gt;, I opened up Illustrator (and Google, of course) and gave it a try.&lt;/p&gt;
 
@@ -283,7 +363,7 @@
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2017-06-23T17:05:41+02:00</pubDate>
+                    <pubDate>2017-06-23T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2017/06/23/brain-fun.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2017/06/23/brain-fun.html</guid>
                 </item>
@@ -306,7 +386,7 @@
 
 &lt;p&gt;&lt;em&gt;Usability Note&lt;/em&gt;: I have noticed some rendering issues when viewing the second half of the site in Safari and Firefox &lt;span style=&quot;font-size: 9px&quot;&gt;(sorry)&lt;/span&gt;. I’m trying to figure out the issue, but for now, I would suggest viewing the site in Chrome.&lt;/p&gt;
 </description>
-                    <pubDate>2017-06-01T17:05:41+02:00</pubDate>
+                    <pubDate>2017-06-01T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2017/06/01/huffman-coding.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2017/06/01/huffman-coding.html</guid>
                 </item>
@@ -469,7 +549,7 @@
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2017-04-28T17:05:41+02:00</pubDate>
+                    <pubDate>2017-04-28T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2017/04/28/chaos-game.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2017/04/28/chaos-game.html</guid>
                 </item>
@@ -493,7 +573,7 @@
 &lt;p&gt;Since I was building this just for me, I took some shortcuts in terms of security, just for my own sanity, so I’m not planning to publish the extension on the Chrome store, at least not in the foreseeable future. Maybe that’ll be the project for next Winter Break…&lt;/p&gt;
 
 </description>
-                    <pubDate>2017-01-24T16:05:41+01:00</pubDate>
+                    <pubDate>2017-01-24T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2017/01/24/tv-monitor.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2017/01/24/tv-monitor.html</guid>
                 </item>
@@ -739,7 +819,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;Now that I have the chart ready to go, I’ll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I’ll post it here.&lt;/p&gt;
 
 </description>
-                    <pubDate>2017-01-08T16:05:41+01:00</pubDate>
+                    <pubDate>2017-01-08T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2017/01/08/polar-line-charts.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2017/01/08/polar-line-charts.html</guid>
                 </item>
@@ -761,7 +841,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;Feel free to check it out and let me know what you think. If anything seems confusing, unclear, or (heaven forbid) incorrect, feel free to shoot me a message. Also, if you are interested, you can find the code for the visualization &lt;a href=&quot;https://github.com/ben-tanen/UltimateConvexHull&quot;&gt;here on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2017-01-02T16:05:41+01:00</pubDate>
+                    <pubDate>2017-01-02T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2017/01/02/ultimate-convex-hull.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2017/01/02/ultimate-convex-hull.html</guid>
                 </item>
@@ -779,7 +859,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;If you’re interested in exploring this world of alcohol, you can find &lt;a href=&quot;https://jadeyychan.github.io/DrunkenWorld/&quot;&gt;the visualization here&lt;/a&gt;. You can also find &lt;a href=&quot;https://github.com/jadeyychan/DrunkenWorld&quot;&gt;the code here&lt;/a&gt;. Huge thanks to my team members, &lt;a href=&quot;https://jadeyychan.github.io/&quot;&gt;Jade&lt;/a&gt; and &lt;a href=&quot;https://github.com/rlrlarson&quot;&gt;Rebecca&lt;/a&gt;!&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-12-21T16:05:41+01:00</pubDate>
+                    <pubDate>2016-12-21T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2016/12/21/drunken-world.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/12/21/drunken-world.html</guid>
                 </item>
@@ -870,7 +950,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/div&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2016-11-18T16:05:41+01:00</pubDate>
+                    <pubDate>2016-11-18T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2016/11/18/mapping-tufts-schedules.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/11/18/mapping-tufts-schedules.html</guid>
                 </item>
@@ -921,7 +1001,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/div&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2016-11-10T16:05:41+01:00</pubDate>
+                    <pubDate>2016-11-10T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</guid>
                 </item>
@@ -971,7 +1051,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;Here’s to an exciting 2016-17 season and &lt;a href=&quot;https://twitter.com/search?q=lgr&quot; target=&quot;_blank&quot;&gt;#LGR&lt;/a&gt;!&lt;/p&gt;
 </description>
-                    <pubDate>2016-10-11T17:05:41+02:00</pubDate>
+                    <pubDate>2016-10-11T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/10/11/introducing-nhl-projections.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/10/11/introducing-nhl-projections.html</guid>
                 </item>
@@ -1067,7 +1147,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2016-09-28T17:05:41+02:00</pubDate>
+                    <pubDate>2016-09-28T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/09/28/random-d3-fun.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/09/28/random-d3-fun.html</guid>
                 </item>
@@ -1099,7 +1179,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/p&gt;
 
 </description>
-                    <pubDate>2016-08-26T17:05:41+02:00</pubDate>
+                    <pubDate>2016-08-26T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/08/26/spotify-popularity.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/08/26/spotify-popularity.html</guid>
                 </item>
@@ -1324,7 +1404,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;&lt;strong&gt;*&lt;/strong&gt; These numbers do not include marathon swimming &lt;br /&gt; &lt;strong&gt;**&lt;/strong&gt; These numbers do not include rhythmic or trampoline gymnastics&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-08-22T17:05:41+02:00</pubDate>
+                    <pubDate>2016-08-22T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/08/22/rio-2016-usa-vs-world.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/08/22/rio-2016-usa-vs-world.html</guid>
                 </item>
@@ -1368,7 +1448,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-                    <pubDate>2016-08-15T17:05:41+02:00</pubDate>
+                    <pubDate>2016-08-15T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/08/15/miller-rabin.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/08/15/miller-rabin.html</guid>
                 </item>
@@ -1546,7 +1626,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/table&gt;
 
 </description>
-                    <pubDate>2016-05-15T17:05:41+02:00</pubDate>
+                    <pubDate>2016-05-15T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/05/15/pca-kmeans-nhl.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/05/15/pca-kmeans-nhl.html</guid>
                 </item>
@@ -1569,7 +1649,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc). &lt;/p&gt;
 </description>
-                    <pubDate>2016-05-08T17:05:41+02:00</pubDate>
+                    <pubDate>2016-05-08T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/05/08/netflix-history.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/05/08/netflix-history.html</guid>
                 </item>
@@ -1611,7 +1691,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;For anyone interested, you can find the MATLAB code for this example &lt;a href=&quot;https://github.com/ben-tanen/DataMining/tree/master/svm-poems&quot;&gt;here&lt;/a&gt; and other data mining projects &lt;a href=&quot;https://github.com/ben-tanen/data-mining&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-05-03T17:05:41+02:00</pubDate>
+                    <pubDate>2016-05-03T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/05/03/svm-poetry.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/05/03/svm-poetry.html</guid>
                 </item>
@@ -1672,7 +1752,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/div&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2016-04-26T17:05:41+02:00</pubDate>
+                    <pubDate>2016-04-26T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/04/26/photography.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/04/26/photography.html</guid>
                 </item>
@@ -1714,7 +1794,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-03-09T16:05:41+01:00</pubDate>
+                    <pubDate>2016-03-09T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2016/03/09/clustering-with-kmeans.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/03/09/clustering-with-kmeans.html</guid>
                 </item>
@@ -1752,7 +1832,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook &lt;a href=&quot;/notebooks/optimizing-portfolio.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-12-12T16:05:41+01:00</pubDate>
+                    <pubDate>2015-12-12T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2015/12/12/optimizing-hedge-ratio.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/12/12/optimizing-hedge-ratio.html</guid>
                 </item>
@@ -1780,7 +1860,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;For more, you can see current site &lt;a href=&quot;http://ben-tanen.github.io/JumboAdvisor/&quot;&gt;here&lt;/a&gt; and the source code &lt;a href=&quot;https://github.com/ben-tanen/JumboAdvisor&quot;&gt;here&lt;/a&gt;. Any updates on this project will likely be posted here but you can also check the GitHub repo.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-10-30T16:05:41+01:00</pubDate>
+                    <pubDate>2015-10-30T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/10/30/jumboadvisor.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/10/30/jumboadvisor.html</guid>
                 </item>
@@ -1804,7 +1884,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;For more, you can see the whole iPython notebook &lt;a href=&quot;/notebooks/lastfm-scrobble.html&quot;&gt;here&lt;/a&gt; (Hurray for iPython notebooks, they’re awesome).&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-09-01T17:05:41+02:00</pubDate>
+                    <pubDate>2015-09-01T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/09/01/lastfm-scrobble-graphs.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/09/01/lastfm-scrobble-graphs.html</guid>
                 </item>
@@ -1862,7 +1942,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use Find My Friends or a good ol’ phone call.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-08-16T17:05:41+02:00</pubDate>
+                    <pubDate>2015-08-16T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/08/16/data-is-beautiful-1.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/08/16/data-is-beautiful-1.html</guid>
                 </item>
@@ -1873,7 +1953,7 @@ Markowitz bullets showing possible portfolios
                     <title>Random Project: Censor Machine</title>
                     <description>&lt;p&gt;Do you ever need or want a simple Internet tool and it seems like it would be easier code it than find it? That is exactly what happened when I needed a beeping censor for &lt;a href=&quot;http://wmfo.org&quot;&gt;my radio show&lt;/a&gt;. Sometimes bands like to swear and I needed a button / website to defend the honor of the FCC. Thus, I made this really &lt;a href=&quot;http://ben-tanen.github.io/CensorMachine/&quot;&gt;stupid site&lt;/a&gt;. But hey, now I have it.&lt;/p&gt;
 </description>
-                    <pubDate>2015-07-06T17:05:41+02:00</pubDate>
+                    <pubDate>2015-07-06T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/07/06/censor-machine.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/07/06/censor-machine.html</guid>
                 </item>
@@ -1905,7 +1985,7 @@ Good Ol' Unix Terminal Games
 &lt;p&gt;If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-07-01T17:05:41+02:00</pubDate>
+                    <pubDate>2015-07-01T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/07/01/retro-python-games.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/07/01/retro-python-games.html</guid>
                 </item>
@@ -1958,7 +2038,7 @@ Who doesn't love economic-based drinking games?
 
 &lt;p&gt;Any other potential prizes/punishments?&lt;/p&gt;
 </description>
-                    <pubDate>2015-06-26T17:05:41+02:00</pubDate>
+                    <pubDate>2015-06-26T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/06/26/retro-game-theory.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/06/26/retro-game-theory.html</guid>
                 </item>
@@ -2019,7 +2099,7 @@ Update - More or less is exactly what the actual implementation looks like
   &lt;p&gt;&lt;strong&gt;Retrospective Update #4&lt;/strong&gt; - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-                    <pubDate>2015-06-17T17:06:41+02:00</pubDate>
+                    <pubDate>2015-06-17T11:06:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/06/17/retro-ios-update.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/06/17/retro-ios-update.html</guid>
                 </item>
@@ -2076,7 +2156,7 @@ Spotify didn't waste an inch of space on the mobile app
 &lt;p&gt;There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-05-21T17:06:41+02:00</pubDate>
+                    <pubDate>2015-05-21T11:06:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/05/21/spotify.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/05/21/spotify.html</guid>
                 </item>
@@ -2110,7 +2190,7 @@ The original desktop application (left) vs. the new web application (right)
 &lt;p&gt;If you want to try it out, you can find the site &lt;a href=&quot;http://proto.atech.tufts.edu/RodRego/&quot;&gt;here&lt;/a&gt;. You can also find the code on &lt;a href=&quot;https://github.com/ben-tanen/RodRego&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-03-31T17:06:41+02:00</pubDate>
+                    <pubDate>2015-03-31T11:06:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2015/03/31/rodrego.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2015/03/31/rodrego.html</guid>
                 </item>
@@ -2142,7 +2222,7 @@ The original desktop application (left) vs. the new web application (right)
 &lt;p&gt;Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if &lt;a href=&quot;http://r-wos.org/hacks/gti&quot;&gt;gti init&lt;/a&gt; can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future. &lt;/p&gt;
 
 </description>
-                    <pubDate>2014-11-30T16:05:41+01:00</pubDate>
+                    <pubDate>2014-11-30T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2014/11/30/grub.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2014/11/30/grub.html</guid>
                 </item>
@@ -2165,7 +2245,7 @@ The original desktop application (left) vs. the new web application (right)
 
 &lt;p&gt;Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code &lt;a href=&quot;https://github.com/ben-tanen/Base64Decode&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
-                    <pubDate>2014-11-12T16:05:41+01:00</pubDate>
+                    <pubDate>2014-11-12T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2014/11/12/base64.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2014/11/12/base64.html</guid>
                 </item>
@@ -2209,7 +2289,7 @@ My own example infographics
 &lt;p&gt;&lt;strong&gt;Update, 07/28/2017&lt;/strong&gt; - Still using the improved system but now I don’t have an about page any more… you can find the details on &lt;a href=&quot;/&quot;&gt;my home page&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2014-11-01T16:05:41+01:00</pubDate>
+                    <pubDate>2014-11-01T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2014/11/01/infographics.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2014/11/01/infographics.html</guid>
                 </item>
@@ -2243,7 +2323,7 @@ My own example infographics
 &lt;p&gt;By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.&lt;/p&gt;
 
 </description>
-                    <pubDate>2014-10-31T16:05:41+01:00</pubDate>
+                    <pubDate>2014-10-31T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2014/10/31/rap-data-design.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2014/10/31/rap-data-design.html</guid>
                 </item>
