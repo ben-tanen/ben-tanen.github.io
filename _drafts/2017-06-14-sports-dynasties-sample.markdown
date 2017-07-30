@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Visualizing Sports Dynasties'
-date: 2017-06-14 15:05:41
+date: 2017-06-14 05:00:00
 categories: project data visualization
 ---
 

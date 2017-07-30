@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'More On The NHL Projection Model'
-date:   2016-10-12 15:05:41
+date:   2016-10-12 05:00:00
 categories: hockey nhl-projections data project matlab
 ---
 
