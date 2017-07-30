@@ -10,7 +10,7 @@ Figuring out what courses to take as a college student can be a slightly confusi
 
 Tufts (and the lovely people over at PeopleSoft) attempted to offer a tool called the Advisement Report which would help guide students through these questions. However, this tool is incredibly stupid, offering zero flexibility in terms of moving things around your "degree sheet". If you want to move one course from one requirement to another, too bad. If you want to check out another major to see if switching majors is possible, you're out of luck. Trying out minors or double majors? No way.
 
-This is where [JumboAdvisor](http://ben-tanen.github.io/JumboAdvisor/) comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart's content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.
+This is where [JumboAdvisor](http://ben-tanen.github.io/jumbo-advisor/) comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart's content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.
 
 {% include figure.html src="/assets/img/posts/jumboadvisor.png" alt="A screenshot of JumboAdvisor" width="600px" %}
 
@@ -18,5 +18,5 @@ This was a joint effort including work from [Alex Golin](https://github.com/agol
 
 Due to the typical woes of a 24-hour hackathon, the site is not fully built. It is more intended as a proof of concept to show the capabilities and functionality that an advisement report *should* have. The next steps for this project include pitching it successfully to Tufts and building out all the desired features (including data connectivity, better validation, and minors and double majors).
 
-For more, you can see current site [here](http://ben-tanen.github.io/JumboAdvisor/) and the source code [here](https://github.com/ben-tanen/JumboAdvisor). Any updates on this project will likely be posted here but you can also check the GitHub repo.
+For more, you can see current site [here](http://ben-tanen.github.io/jumbo-advisor/) and the source code [here](https://github.com/ben-tanen/jumbo-advisor). Any updates on this project will likely be posted here but you can also check the GitHub repo.
 
