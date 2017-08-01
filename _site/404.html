@@ -142,6 +142,43 @@
   <article class="post-content">
   <p>Sorry about that :(</p>
 
+<p id="reroute-suggestions"></p>
+
+<script>
+    var url      = window.location.href.split("/");
+    var new_url  = null;
+    var reroutes = {
+        'ASL-LEX': 'asl-lex',
+        'AdaptiveHuffmanCoding': 'adaptive-huffman',
+        'CensorMachine': 'censor-machine',
+        'JumboAdvisor': 'jumbo-advisor',
+        'RodRego': 'rodrego',
+        'UltimateConvexHull': 'ultimate-convex-hull',
+    }
+
+    // if a bad blog url (without leading /blog/), add this reroute
+    if ((+url[3] >= 2014 && +url[3] <= 2025) &&
+        (+url[4] >= 1    && +url[4] <= 12)   &&
+        (+url[5] >= 1    && +url[5] <= 31)) {
+        new_url = '/blog/' + url[3] + '/' + url[4] + '/' + url[5] + '/' + url[6] + '/';   
+    } 
+
+    // old routes for story-time and vinyl pages
+    else if (url[3] === 'projects' && url[4] === 'story-time') {
+        new_url = '/music/story-time/';
+    } else if (url[3] === 'projects' && url[4] === 'music' && (url[5] === 'vinyl' || url[5] === 'story-time')) {
+        new_url = '/music/' + url[5] + '/';
+    }
+
+    // everything else
+    else if (reroutes[url[3]]) {
+        new_url = '/' + reroutes[url[3]] + '/';
+    }
+
+    if (new_url) $('#reroute-suggestions').html('Given the URL you were trying to access, try <a href="' + new_url + '">this alternate link.</a>');
+</script>
+
+
   </article>
 
 </div>
