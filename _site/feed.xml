@@ -582,15 +582,12 @@
                 
                 <item>
                     <title>Polar Line Charts in D3</title>
-                    <description>&lt;p&gt;A few weeks ago, I came across &lt;a href=&quot;http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif&quot; target=&quot;_blank&quot;&gt;this very interesting (and very scary) visualization&lt;/a&gt; of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.&lt;/p&gt;
-
-&lt;p&gt;Since &lt;a href=&quot;https://bost.ocks.org/mike/&quot; target=&quot;_blank&quot;&gt;D3 and Mike Bostock&lt;/a&gt; have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.&lt;/p&gt;
-
-&lt;style&gt;
+                    <description>&lt;style&gt;
 #d3-polar-container {
     width: 90%;
     max-width: 450px;
     height: 450px;
+    margin: auto;
 }
 
 #polar-line-chart {
@@ -619,21 +616,32 @@
     cursor: pointer;
     fill: #77bdee;
 }
+
+#polar-line-chart .play-text:hover {
+    text-decoration: underline;
+}
 &lt;/style&gt;
 
-&lt;div id=&quot;d3-polar-container&quot; style=&quot;margin: auto;&quot;&gt;
+&lt;p&gt;A few weeks ago, I came across &lt;a href=&quot;http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif&quot; target=&quot;_blank&quot;&gt;this very interesting (and very scary) visualization&lt;/a&gt; of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;a href=&quot;https://bost.ocks.org/mike/&quot; target=&quot;_blank&quot;&gt;D3 and Mike Bostock&lt;/a&gt; have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.&lt;/p&gt;
+
+&lt;div id=&quot;d3-polar-container&quot;&gt;
     &lt;svg id=&quot;polar-line-chart&quot;&gt;&lt;/svg&gt;
 &lt;/div&gt;
 
+&lt;p&gt;Now that I have the chart ready to go, I’ll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I’ll post it here.&lt;/p&gt;
+
 &lt;script&gt;
 /* resize svg height if needed */
-var c_width = $(&quot;#d3-polar-container&quot;).width();
+let c_width = $(&quot;#d3-polar-container&quot;).width(),
+    is_mobile = c_width &lt; 450;
 $(&quot;#d3-polar-container&quot;).css(&quot;height&quot;, c_width);
 
 /* initialize svg and variables */
 var polar_svg = d3.select(&quot;#polar-line-chart&quot;),
     margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
-    width = c_width - margin.left - margin.right;
+    width  = c_width - margin.left - margin.right;
     height = c_width - margin.top - margin.bottom;
 
 // polar scales
@@ -707,40 +715,40 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
         .attr(&quot;fill&quot;, &quot;#ececec&quot;);
 
     /* render center year, &quot;play&quot;, title, and month text */
-    var text_size = (c_width == 450 ? 1 : 0.8);
+    var text_size = (!is_mobile ? 1 : 0.8);
 
     polar_svg.append(&quot;text&quot;)
         .attr(&quot;class&quot;, &quot;year-text&quot;)
         .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + width / 2 - 15) + &quot;,&quot; + (margin.top + height / 2 + 5) + &quot;)&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left + width / 2 - (!is_mobile ? 15 : 12)}, ${margin.top + height / 2 + (!is_mobile ? 5 : 4)})`)
         .text(&quot;1850&quot;);
 
     polar_svg.append(&quot;text&quot;)
         .style(&quot;font-size&quot;, text_size + &quot;em&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(&quot; + 10 + &quot;,&quot; + 15 + &quot;)&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(10, 15)&quot;)
         .text(&quot;Global Temperature Change in °C (1850 - 2016)&quot;);
 
     polar_svg.append(&quot;text&quot;)
         .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width + margin.left + 10) + &quot;,&quot; + (height / 2 + margin.top - 8) + &quot;) rotate(90)&quot;)
+        .attr(&quot;transform&quot;, `translate(${width + margin.left + 10}, ${height / 2 + margin.top - 8}) rotate(90)`)
         .text(&quot;Apr&quot;);
 
     polar_svg.append(&quot;text&quot;)
         .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width / 2 + margin.left - 8) + &quot;,&quot; + (margin.top - 8) + &quot;)&quot;)
+        .attr(&quot;transform&quot;, `translate(${width / 2 + margin.left - 8}, ${margin.top - 8})`)
         .text(&quot;Jan&quot;);
 
     polar_svg.append(&quot;text&quot;)
         .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left - 8) + &quot;,&quot; + (height / 2 + margin.top + 8) + &quot;) rotate(270)&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left - 8}, ${height / 2 + margin.top + 8}) rotate(270)`)
         .text(&quot;Oct&quot;);
 
     polar_svg.append(&quot;text&quot;)
         .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width / 2 + margin.left + 8) + &quot;,&quot; + (height + margin.top + 8) + &quot;) rotate(180)&quot;)
+        .attr(&quot;transform&quot;, `translate(${width / 2 + margin.left + 8}, ${height + margin.top + 8}) rotate(180)`)
         .text(&quot;Jul&quot;);
 
-    $(document).ready(function() {
+    $(&quot;#d3-polar-container&quot;).ready(function() {
         polar_svg.append(&quot;text&quot;)
             .attr(&quot;class&quot;, &quot;play-text&quot;)
             .style(&quot;font-size&quot;, text_size + &quot;em&quot;)
@@ -757,52 +765,30 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
         polar_svg.selectAll(&quot;.year-text&quot;).text(&quot;1850&quot;);
         polar_svg.selectAll(&quot;.year-text-cover&quot;).remove();
 
-        for (var i = 1; i &lt; data.length; i++) {
-            /* draw new path */
-            polar_svg.append(&quot;path&quot;)
-                .attr(&quot;class&quot;, &quot;line&quot;)
-                .attr(&quot;d&quot;, line([data[i - 1], data[i]]))
-                .style(&quot;stroke&quot;, color(data[i - 1].year))
-                .style(&quot;opacity&quot;, 0)
-                .transition()
-                .duration(50)
-                .delay(1000 + 5 * i)
-                .style(&quot;opacity&quot;, 1);
+        /* update center text */
+        setTimeout(function() {
+            let ix = 0;
+            update_year = setInterval(function() {
+                ix = ix + 1;
+                                    
+                /* draw new path */
+                polar_svg.append(&quot;path&quot;)
+                    .attr(&quot;class&quot;, &quot;line&quot;)
+                    .attr(&quot;d&quot;, line([data[ix - 1], data[ix]]))
+                    .style(&quot;stroke&quot;, color(data[ix - 1].year))
+                    .style(&quot;stroke-width&quot;, (!is_mobile ? '1px' : '0.5px'))
 
-            /* update center text */
-            if (data[i - 1].month == 1) {
-                polar_svg.append(&quot;rect&quot;)
-                    .attr(&quot;class&quot;, &quot;year-text-cover&quot;)
-                    .attr(&quot;x&quot;, margin.left + width / 2 - margin.center / 2 + 15)
-                    .attr(&quot;y&quot;, margin.left + width / 2 - margin.center / 2 + 25)
-                    .attr(&quot;width&quot;, 45)
-                    .attr(&quot;height&quot;, 45)
-                    .attr(&quot;fill&quot;, &quot;white&quot;)
-                    .style(&quot;opacity&quot;, 0)
-                    .transition()
-                    .duration(0)
-                    .delay(1000 + 5 * i)
-                    .style(&quot;opacity&quot;, 1);
-
-                polar_svg.append(&quot;text&quot;)
-                    .classed(&quot;year-text&quot;, true)
-                    .classed(&quot;added&quot;, true)
-                    .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + width / 2 - 15) + &quot;,&quot; + (margin.top + height / 2 + 5) + &quot;)&quot;)
-                    .text(data[i - 1].year)
-                    .style(&quot;opacity&quot;, 0)
-                    .style(&quot;font-size&quot;, text_size - 0.1 + &quot;em&quot;)
-                    .transition()
-                    .duration(0)
-                    .delay(1000 + 5 * i)
-                    .style(&quot;opacity&quot;, 1);
-            }
-        }
+                /* update center text (or stop) */
+                if (ix == data.length - 1) clearInterval(update_year);
+                else polar_svg.select(&quot;.year-text&quot;).text(+data[ix].year);
+            }, 5);
+        }, 500)
 
         /* re-render axis */
         polar_svg.append(&quot;g&quot;)
             .attr(&quot;id&quot;, &quot;axis&quot;)
             .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + (margin.center + width) / 2) + &quot;,&quot; + (margin.top + (height / 2) - 6) + &quot;)&quot;)
-            .style(&quot;font-size&quot;, (c_width == 450 ? 0.6 : 0.5) + &quot;em&quot;)
+            .style(&quot;font-size&quot;, (!is_mobile ? 0.6 : 0.5) + &quot;em&quot;)
             .call(axis);
     });
 
@@ -810,13 +796,11 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     polar_svg.append(&quot;g&quot;)
         .attr(&quot;id&quot;, &quot;axis&quot;)
         .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + (margin.center + width) / 2) + &quot;,&quot; + (margin.top + (height / 2) - 6) + &quot;)&quot;)
-        .style(&quot;font-size&quot;, (c_width == 450 ? 0.6 : 0.5) + &quot;em&quot;)
+        .style(&quot;font-size&quot;, (!is_mobile ? 0.6 : 0.5) + &quot;em&quot;)
         .call(axis);
 });
 
 &lt;/script&gt;
-
-&lt;p&gt;Now that I have the chart ready to go, I’ll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I’ll post it here.&lt;/p&gt;
 
 </description>
                     <pubDate>2017-01-08T10:05:41-05:00</pubDate>

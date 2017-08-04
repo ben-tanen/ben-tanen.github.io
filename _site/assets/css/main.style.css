@@ -30,7 +30,7 @@ h3 {
 #side {
     position: fixed;
 	top: 0;
-	left: calc((vw - 100%) / 2);
+	left: calc((100vw - 100%) / 2);
 	width: 250px;
 	height: 100%;
     display: inline-block;
