@@ -175,7 +175,10 @@
         new_url = '/' + reroutes[url[3]] + '/';
     }
 
-    if (new_url) $('#reroute-suggestions').html('However, based on the URL you were trying to access, you might consider trying <a href="' + new_url + '">this alternate link</a>.');
+    if (new_url) {
+        $('#reroute-suggestions').html(`However, based on the URL you were trying to access, you might consider trying <a href="${new_url}">this alternate link</a>.`);
+        window.location = 'http://' + url[2] + new_url;
+    }
 </script>
 
 
