@@ -5,13 +5,30 @@ title: Projects
 
 <link rel="stylesheet" href="/assets/css/projects.style.css">
 
-{% include project.html 
-    title       = "Analysis & Visualization" 
-    description = "Various smaller data analysis and visualization projects" 
-    img         = "/assets/img/projects/data-projects3.gif" 
-    name1       = "Site" 
-    link1       = "/projects/data"
-%}
+<!--
+{% for project in site.projects %}
+<div class='project-box'>
+    <div class='project-img-box'>
+        <img class='project-img' src='{{ project.img }}' />
+    </div>
+    <div class='project-content-box'>
+        <h1><a href='{{ include.link1 }}'>{{ project.title }}</a></h1>
+        <p>{{ project.content }}</p>
+        <p class='project-links'>View: 
+            <a href='{{ project.link1 }}'>{{ project.name1 }}</a>
+            {% if project.link2 %}
+            &middot;
+            <a href='{{ project.link2 }}'>{{ project.name2 }}</a>
+            {% endif %}
+            {% if project.link3 %}
+            &middot;
+            <a href='{{ project.link3 }}'>{{ project.name3 }}</a>
+            {% endif %}
+        </p>
+    </div>
+</div>
+{% endfor %}
+-->
 
 {% include project.html 
     title       = "ASL-LEX" 
@@ -59,6 +76,13 @@ title: Projects
     link3       = "/blog/2017/01/02/ultimate-convex-hull.html"
 %}
 
+{% include project.html 
+    title       = "Analysis & Visualization" 
+    description = "Various smaller data analysis and visualization projects" 
+    img         = "/assets/img/projects/data-projects3.gif" 
+    name1       = "Site" 
+    link1       = "/projects/data"
+%}
 
 {% include project.html 
     title       = "Road to the NHL Playoffs" 
@@ -67,7 +91,6 @@ title: Projects
     name1       = "Paper"
     link1       = "/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" 
 %}
-
 
 {% include project.html 
     title       = "RodRego" 
@@ -79,14 +102,6 @@ title: Projects
     link2       = "https://github.com/ben-tanen/rodrego"
     name3       = "Blog"
     link3       = "/blog/2015/03/31/rodrego.html"
-%}
-
-{% include project.html 
-    title       = "Story Time with Papa T" 
-    description = "Spinning a weekly show on WMFO, Tufts' Freeform Radio"
-    img         = "/assets/img/projects/story-time.png"
-    name1       = "Site"
-    link1       = "http://link.ben-tanen.com/papaT/" 
 %}
 
 {% include project.html 
