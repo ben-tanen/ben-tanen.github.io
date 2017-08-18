@@ -391,7 +391,7 @@ tbody tr:nth-of-type(odd) {
 /*** media queries ***/
 /*********************/
 
-@media (max-width: 775px), (orientation : portrait) {
+@media (max-width: 775px) {
     html {
         -webkit-text-size-adjust: 80%;
     }
