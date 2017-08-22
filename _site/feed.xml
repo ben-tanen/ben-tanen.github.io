@@ -115,7 +115,7 @@
 &lt;/style&gt;
 
 &lt;div id=&quot;brain-viz-container&quot;&gt;
-    &lt;svg id=&quot;brain-viz&quot; viewbox=&quot;-50 -50 600 600&quot;&gt;
+    &lt;svg id=&quot;brain-viz&quot; viewBox=&quot;-50 -50 600 600&quot;&gt;
         &lt;circle id=&quot;background-circle&quot; cx=&quot;250&quot; cy=&quot;250&quot; r=&quot;300&quot; /&gt;
         &lt;line x1=&quot;356.396&quot; y1=&quot;213.275&quot; x2=&quot;295.861&quot; y2=&quot;212.697&quot; /&gt;
         &lt;line x1=&quot;266.287&quot; y1=&quot;254.945&quot; x2=&quot;356.396&quot; y2=&quot;213.275&quot; /&gt;
@@ -395,7 +395,13 @@
                 
                 <item>
                     <title>The Chaos Game</title>
-                    <description>&lt;style&gt;
+                    <description>&lt;p&gt;After watching &lt;a href=&quot;https://www.youtube.com/watch?v=kbKtFN71Lfs&quot;&gt;this recent video from Numberphile&lt;/a&gt;, I decided to throw together my own little visualizer of &lt;a href=&quot;https://en.wikipedia.org/wiki/Chaos_game&quot;&gt;the chaos game&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To briefly explain the game, we basically start by randomly placing some “bases” on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a &lt;a href=&quot;https://en.wikipedia.org/wiki/Fractal&quot;&gt;fractal&lt;/a&gt;!&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;style&gt;
     #chaos-game-container {
         width: 300px;
         margin: auto;
@@ -435,10 +441,6 @@
         text-decoration: underline;
     }
 &lt;/style&gt;
-
-&lt;p&gt;After watching &lt;a href=&quot;https://www.youtube.com/watch?v=kbKtFN71Lfs&quot;&gt;this recent video from Numberphile&lt;/a&gt;, I decided to throw together my own little visualizer of &lt;a href=&quot;https://en.wikipedia.org/wiki/Chaos_game&quot;&gt;the chaos game&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To briefly explain the game, we basically start by randomly placing some “bases” on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a &lt;a href=&quot;https://en.wikipedia.org/wiki/Fractal&quot;&gt;fractal&lt;/a&gt;!&lt;/p&gt;
 
 &lt;div id=&quot;chaos-game-container&quot;&gt;
 &lt;/div&gt;
@@ -582,7 +584,13 @@
                 
                 <item>
                     <title>Polar Line Charts in D3</title>
-                    <description>&lt;style&gt;
+                    <description>&lt;p&gt;A few weeks ago, I came across &lt;a href=&quot;http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif&quot; target=&quot;_blank&quot;&gt;this very interesting (and very scary) visualization&lt;/a&gt; of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;a href=&quot;https://bost.ocks.org/mike/&quot; target=&quot;_blank&quot;&gt;D3 and Mike Bostock&lt;/a&gt; have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;style&gt;
 #d3-polar-container {
     width: 90%;
     max-width: 450px;
@@ -621,10 +629,6 @@
     text-decoration: underline;
 }
 &lt;/style&gt;
-
-&lt;p&gt;A few weeks ago, I came across &lt;a href=&quot;http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif&quot; target=&quot;_blank&quot;&gt;this very interesting (and very scary) visualization&lt;/a&gt; of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.&lt;/p&gt;
-
-&lt;p&gt;Since &lt;a href=&quot;https://bost.ocks.org/mike/&quot; target=&quot;_blank&quot;&gt;D3 and Mike Bostock&lt;/a&gt; have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.&lt;/p&gt;
 
 &lt;div id=&quot;d3-polar-container&quot;&gt;
     &lt;svg id=&quot;polar-line-chart&quot;&gt;&lt;/svg&gt;
@@ -836,6 +840,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
                     <title>Visualizing Our Drunken World</title>
                     <description>&lt;p&gt;For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. - and we wanted to build a platform to either confirm or debunk these stereotypes. In a greater sense, we hoped to explore when and how alcohol has been part of culture and history. And thus, &lt;a href=&quot;http://link.ben-tanen.com/drunken-world/&quot; target=&quot;_blank&quot;&gt;Our Drunken World&lt;/a&gt; was born!&lt;/p&gt;
 
+&lt;!-- more --&gt;
+
 &lt;iframe class=&quot;youtube-vid&quot; width=&quot;500&quot; height=&quot;281&quot; style=&quot;margin-bottom: 10px;&quot; src=&quot;https://www.youtube.com/embed/O-eeiWZ7WRY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;We used data for over 200 countries that was collected and compiled by the World Health Organization from 1960 - 2010. The visualization is built with D3.js, which is pretty awesome. I’m very glad I finally &lt;a href=&quot;/blog/2016/09/28/random-d3-fun.html&quot;&gt;tried it out&lt;/a&gt;.&lt;/p&gt;
@@ -1004,7 +1010,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;So, over the course of the next few months, I’ll be comparing each team’s expected performance (as speculated by the model) to their actual performance. I’ll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out &lt;a href=&quot;/projects/nhl-projections/&quot; target=&quot;_blank&quot;&gt;the new project site here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;So, over the course of the next few months, I’ll be comparing each team’s expected performance (as speculated by the model) to their actual performance. I’ll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out &lt;a href=&quot;/projects/nhl-projections/&quot; target=&quot;_blank&quot;&gt;the new project site here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don’t have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.&lt;/p&gt;
 
@@ -1631,7 +1637,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside… One thing is for sure, I definitely watch a lot of TV.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc). &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc).&lt;/p&gt;
 </description>
                     <pubDate>2016-05-08T11:05:41-04:00</pubDate>
                     <link>http://localhost:4000/blog/2016/05/08/netflix-history.html</link>
@@ -1664,7 +1670,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another &lt;em&gt;new&lt;/em&gt; excerpt: &lt;/p&gt;
+&lt;p&gt;We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another &lt;em&gt;new&lt;/em&gt; excerpt:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;em&gt;Hat der alte Hexenmeister sich doch einmal wegbege&lt;/em&gt;&lt;/p&gt;
@@ -1773,7 +1779,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;If you have any interest in playing around, you can find my MATLAB code &lt;a href=&quot;https://github.com/ben-tanen/data-mining/tree/master/kmeans&quot;&gt;here&lt;/a&gt; in &lt;a href=&quot;https://github.com/ben-tanen/data-mining&quot;&gt;a new GitHub repo&lt;/a&gt; for my data mining work. It should work for all reasonable values of &lt;em&gt;k&lt;/em&gt; (clusters) and &lt;em&gt;r&lt;/em&gt; (data points per cluster). I’ll be honest and say that my MATLAB code leaves a bit to be desired but it’s working so that’s mostly all that matters. &lt;/p&gt;
+&lt;p&gt;If you have any interest in playing around, you can find my MATLAB code &lt;a href=&quot;https://github.com/ben-tanen/data-mining/tree/master/kmeans&quot;&gt;here&lt;/a&gt; in &lt;a href=&quot;https://github.com/ben-tanen/data-mining&quot;&gt;a new GitHub repo&lt;/a&gt; for my data mining work. It should work for all reasonable values of &lt;em&gt;k&lt;/em&gt; (clusters) and &lt;em&gt;r&lt;/em&gt; (data points per cluster). I’ll be honest and say that my MATLAB code leaves a bit to be desired but it’s working so that’s mostly all that matters.&lt;/p&gt;
 
 &lt;p&gt;If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.&lt;/p&gt;
 
@@ -1881,7 +1887,7 @@ Markowitz bullets showing possible portfolios
 
 &lt;p&gt;Pretty much all of the posts are cool but there are a few that are definitely a cut above. I decided every once in awhile I’d highlight my personal favorites. So without further ado…&lt;/p&gt;
 
-&lt;h3 id=&quot;nba-shot-chartshttpsavvastjortjogloucomnba-shot-shartshtml&quot;&gt;&lt;a href=&quot;http://savvastjortjoglou.com/nba-shot-sharts.html&quot;&gt;NBA Shot Charts&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;nba-shot-charts&quot;&gt;&lt;a href=&quot;http://savvastjortjoglou.com/nba-shot-sharts.html&quot;&gt;NBA Shot Charts&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;http://savvastjortjoglou.com/nba-shot-sharts.html&quot; target=&quot;_blank&quot;&gt;
@@ -1891,7 +1897,7 @@ Markowitz bullets showing possible portfolios
 
 &lt;p&gt;I’m not a huge NBA fan but I do know there is a crazy amount of data available about the game - maybe second only to &lt;a href=&quot;http://fivethirtyeight.com/features/rich-data-poor-data/&quot;&gt;baseball&lt;/a&gt;. I guess Savvas Tjortjoglou decided to map that data to show a very comprehensive shot chart. The post is well-done, especially the way that he actually goes about mapping the data onto the court as singular points and heat maps.&lt;/p&gt;
 
-&lt;h3 id=&quot;mapping-the-uk-via-pubshttpramiroorgnotebookmapping-pubs&quot;&gt;&lt;a href=&quot;http://ramiro.org/notebook/mapping-pubs/&quot;&gt;Mapping the UK via Pubs&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;mapping-the-uk-via-pubs&quot;&gt;&lt;a href=&quot;http://ramiro.org/notebook/mapping-pubs/&quot;&gt;Mapping the UK via Pubs&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;http://ramiro.org/notebook/mapping-pubs/&quot; target=&quot;_blank&quot;&gt;
@@ -1901,7 +1907,7 @@ Markowitz bullets showing possible portfolios
 
 &lt;p&gt;This is just one of those things that will make you LQTY (laugh quietly to yourself, the truer form of LOL). Of course the United Kingdom can be be well mapped through all of its pubs. While not as dense as London, Ireland does a good job of dispersing its drinking establishments. Scotland is just lacking though - come on Scotland! The actual data work being done here is pretty simple but it’s cool nonetheless.&lt;/p&gt;
 
-&lt;h3 id=&quot;swearing-across-americahttpwwwhuffingtonpostcomentrywhich-curse-words-are-popular-in-your-state55a80662e4b04740a3df54b8&quot;&gt;&lt;a href=&quot;http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8&quot;&gt;Swearing Across America&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;swearing-across-america&quot;&gt;&lt;a href=&quot;http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8&quot;&gt;Swearing Across America&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8&quot; target=&quot;_blank&quot;&gt;
@@ -1911,9 +1917,9 @@ Markowitz bullets showing possible portfolios
 
 &lt;p&gt;I particularly enjoy this one and everything it has to say about the different regions of the US. Coming from the Northeast, I have to generally agree with the maps - I don’t remember the last time I heard someone say “Gosh” seriously. I was also quite amused by the tiny spike in the use of “Bitch” in Fairfield County Connecticut. Fairfield reppin’!&lt;/p&gt;
 
-&lt;p&gt;Rather than using API access like the others, this post also had a pretty interesting way of gathering the data. While I’m still slightly unsure of utilizing Twitter / Geolocation for accurate data science, for the matter of this post I’ll accept their method. &lt;/p&gt;
+&lt;p&gt;Rather than using API access like the others, this post also had a pretty interesting way of gathering the data. While I’m still slightly unsure of utilizing Twitter / Geolocation for accurate data science, for the matter of this post I’ll accept their method.&lt;/p&gt;
 
-&lt;h3 id=&quot;randomly-finding-someonehttpemptypipesorg20150803random-finding&quot;&gt;&lt;a href=&quot;http://emptypipes.org/2015/08/03/random-finding/&quot;&gt;Randomly Finding Someone&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;randomly-finding-someone&quot;&gt;&lt;a href=&quot;http://emptypipes.org/2015/08/03/random-finding/&quot;&gt;Randomly Finding Someone&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;http://emptypipes.org/2015/08/03/random-finding/&quot; target=&quot;_blank&quot;&gt;
@@ -1921,7 +1927,7 @@ Markowitz bullets showing possible portfolios
     &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the “randomly searching” process - hurray for pretty gifs. He even built a tool for anyone to try out the tool / animation. &lt;/p&gt;
+&lt;p&gt;Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the “randomly searching” process - hurray for pretty gifs. He even built a tool for anyone to try out the tool / animation.&lt;/p&gt;
 
 &lt;p&gt;While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use Find My Friends or a good ol’ phone call.&lt;/p&gt;
 
@@ -2031,7 +2037,7 @@ Who doesn't love economic-based drinking games?
                 
                 <item>
                     <title>Retro Post: iOS Upgrades (Circa 2013)</title>
-                    <description>&lt;p&gt;Before moving to Github and using Jekyll, I hosted a &lt;a href=&quot;http://ben-tanen.tumblr.com/&quot;&gt;blog on Tumblr&lt;/a&gt;. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some &lt;em&gt;retro posts&lt;/em&gt; from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6). &lt;/p&gt;
+                    <description>&lt;p&gt;Before moving to Github and using Jekyll, I hosted a &lt;a href=&quot;http://ben-tanen.tumblr.com/&quot;&gt;blog on Tumblr&lt;/a&gt;. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some &lt;em&gt;retro posts&lt;/em&gt; from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6).&lt;/p&gt;
 
 &lt;p&gt;I’d like to point out that since then, three of these four upgrades have been implemented in someway or another so I guess you could say I’m an accurate futurist. I’d also like to say that I spent a fair amount of time building these mockup screens in Adobe After Effects and they’re actually pretty awesome. Overall success for 18 year old me!&lt;/p&gt;
 
@@ -2039,7 +2045,7 @@ Who doesn't love economic-based drinking games?
 
 &lt;p&gt;I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone itself lacks some capabilities. Here are a few ideas that I have for improvements to the software.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Priority Messages:&lt;/strong&gt; Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Priority Messages:&lt;/strong&gt; Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Retrospective Update&lt;/strong&gt; - Apple decided to basically implement this but in reverse. If you want to mute specific people, you can and then the rest of your messages will come through.&lt;/p&gt;
@@ -2055,7 +2061,7 @@ Who doesn't love economic-based drinking games?
 Delay a text to send a few minutes (or even a few hours)
 &lt;/figcaption&gt;
 
-&lt;p&gt;&lt;strong&gt;Text Delay:&lt;/strong&gt; On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Text Delay:&lt;/strong&gt; On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Retrospective Update #2&lt;/strong&gt; - This change has not yet been implemented, but it 100% should be. Still one of my top desired features&lt;/p&gt;
@@ -2094,7 +2100,7 @@ Update - More or less is exactly what the actual implementation looks like
                     <title>Why Everyone Should Use (Or At Least Try) Spotify</title>
                     <description>&lt;p&gt;For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.&lt;/p&gt;
 
-&lt;p&gt;And you know what? I love Spotify. Every concern I had was quickly answered because they have thought of everything. Want to have music while you’re out of cell range? No worries, you can download playlists straight to your phone or computer. Want to listen to a brand-new remix that isn’t on Spotify? Loading and listening to local / custom files is easy. And that is just the simple stuff. If you know anyone who uses Spotify, I’m sure you’ve heard a similar raving review. But if you’re still not convinced, here is why I think you should at least consider trying Spotify Premium. &lt;/p&gt;
+&lt;p&gt;And you know what? I love Spotify. Every concern I had was quickly answered because they have thought of everything. Want to have music while you’re out of cell range? No worries, you can download playlists straight to your phone or computer. Want to listen to a brand-new remix that isn’t on Spotify? Loading and listening to local / custom files is easy. And that is just the simple stuff. If you know anyone who uses Spotify, I’m sure you’ve heard a similar raving review. But if you’re still not convinced, here is why I think you should at least consider trying Spotify Premium.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post is in no way sponsored by Spotify. I just like their service.&lt;/p&gt;
 
@@ -2104,7 +2110,7 @@ Update - More or less is exactly what the actual implementation looks like
 
 &lt;h3 id=&quot;crazy-good-cross-syncing&quot;&gt;Crazy Good Cross-Syncing&lt;/h3&gt;
 
-&lt;p&gt;Apple seems very proud of their cross-syncing platform iCloud and to be honest, it is pretty good. But iCloud doesn’t even compare to Spotify’s syncing across their different platforms. If you’re listening to a song on your computer and you add it to your library, it shows up on your phone that instant. And you can literally swap over to your phone that instant, picking up that song exactly where you left it off. In fact you can do this across the desktop, browser, and phone apps without even missing a beat. I just switched from my phone to my computer after I came back from a walk and wanted to pick up the song exactly where I was. It’s a feature I’ve dreamed of for years and now it’s my reality, thanks to Spotify. As far as I know, iCloud or any other competitor can’t even come close to that. &lt;/p&gt;
+&lt;p&gt;Apple seems very proud of their cross-syncing platform iCloud and to be honest, it is pretty good. But iCloud doesn’t even compare to Spotify’s syncing across their different platforms. If you’re listening to a song on your computer and you add it to your library, it shows up on your phone that instant. And you can literally swap over to your phone that instant, picking up that song exactly where you left it off. In fact you can do this across the desktop, browser, and phone apps without even missing a beat. I just switched from my phone to my computer after I came back from a walk and wanted to pick up the song exactly where I was. It’s a feature I’ve dreamed of for years and now it’s my reality, thanks to Spotify. As far as I know, iCloud or any other competitor can’t even come close to that.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-sync.png&quot; target=&quot;_blank&quot;&gt;
@@ -2135,7 +2141,7 @@ Spotify didn't waste an inch of space on the mobile app
 &lt;p&gt;You can build the best music library through suggestions from real people, everyone knows that. Spotify has certainly taken this into account since one of their main focuses is making the music experience social. They do this in a few ways, but the most obvious two are social sidebar and collaborative playlists. Do you have that hip friend who has that shockingly good taste in music and always finds new stuff? If you follow them, Spotify will show you what music they are listening to at that moment through the social sidebar. You can even click on the song and start listening along. Want to go on a road trip with this friend and collaborate on a playlist? It’s super easy to share songs and make the best-of-the-best for a playlist. The social music experience is one of Spotify’s key elements and they do it quite well.&lt;/p&gt;
 
 &lt;h3 id=&quot;great-software-updates-are-great&quot;&gt;Great Software Updates are Great&lt;/h3&gt;
-&lt;p&gt;One of the best qualities of a good software system is the ability to change and adapt. Apple has always succeeded at looking ahead at the grander picture, generally answering questions that haven’t been asked yet. But there were often requests that were left unanswered because they weren’t &lt;em&gt;innovative&lt;/em&gt; enough. On the other hand, Spotify looks to embrace all of these changes. Spotify consistently pushes a new update every week or two (and all you have to do to update is press “restart”). While some changes that they make in updates aren’t groundbreaking or even noticeable, there certainly are updates / changes that do answer requests even if they are small. An example being that in one of the more recent updates, Spotify enabled the ability to search inside a specific playlist. This wasn’t a huge change (iTunes has had it for awhile), but it was a direct response to a &lt;a href=&quot;https://community.spotify.com/t5/Live-Ideas/Desktop-Bring-back-search-inside-Playlists-amp-Songs-tab/idi-p/1039674&quot;&gt;user request&lt;/a&gt; because Spotify takes these requests and suggestions seriously, which is seriously cool. This means that while the software is being managed by the company, the trend and changes of Spotify can partially be set by the customers who use Spotify. &lt;/p&gt;
+&lt;p&gt;One of the best qualities of a good software system is the ability to change and adapt. Apple has always succeeded at looking ahead at the grander picture, generally answering questions that haven’t been asked yet. But there were often requests that were left unanswered because they weren’t &lt;em&gt;innovative&lt;/em&gt; enough. On the other hand, Spotify looks to embrace all of these changes. Spotify consistently pushes a new update every week or two (and all you have to do to update is press “restart”). While some changes that they make in updates aren’t groundbreaking or even noticeable, there certainly are updates / changes that do answer requests even if they are small. An example being that in one of the more recent updates, Spotify enabled the ability to search inside a specific playlist. This wasn’t a huge change (iTunes has had it for awhile), but it was a direct response to a &lt;a href=&quot;https://community.spotify.com/t5/Live-Ideas/Desktop-Bring-back-search-inside-Playlists-amp-Songs-tab/idi-p/1039674&quot;&gt;user request&lt;/a&gt; because Spotify takes these requests and suggestions seriously, which is seriously cool. This means that while the software is being managed by the company, the trend and changes of Spotify can partially be set by the customers who use Spotify.&lt;/p&gt;
 
 &lt;p&gt;There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.&lt;/p&gt;
 
@@ -2203,7 +2209,7 @@ The original desktop application (left) vs. the new web application (right)
 &lt;span class=&quot;c1&quot;&gt;// place order
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if &lt;a href=&quot;http://r-wos.org/hacks/gti&quot;&gt;gti init&lt;/a&gt; can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future. &lt;/p&gt;
+&lt;p&gt;Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if &lt;a href=&quot;http://r-wos.org/hacks/gti&quot;&gt;gti init&lt;/a&gt; can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future.&lt;/p&gt;
 
 </description>
                     <pubDate>2014-11-30T10:05:41-05:00</pubDate>
@@ -2266,7 +2272,7 @@ My own example infographics
 
 &lt;p&gt;The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.&lt;/p&gt;
 
-&lt;p&gt;It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date. &lt;/p&gt;
+&lt;p&gt;It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Update, 12/26/2016&lt;/strong&gt; - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on &lt;a href=&quot;/about/&quot;&gt;my about page&lt;/a&gt;.&lt;/p&gt;
 
@@ -2294,13 +2300,13 @@ My own example infographics
 
 &lt;p&gt;Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.&lt;/p&gt;
 
-&lt;p&gt;A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying: &lt;/p&gt;
+&lt;p&gt;A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion. &lt;/p&gt;
+&lt;p&gt;From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion.&lt;/p&gt;
 
 &lt;p&gt;Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.&lt;/p&gt;
 

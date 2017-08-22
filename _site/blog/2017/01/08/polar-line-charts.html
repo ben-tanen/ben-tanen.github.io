@@ -144,7 +144,13 @@
     </header>
 
     <article class="post-content">
-    <style>
+    <p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
+
+<p>Since <a href="https://bost.ocks.org/mike/" target="_blank">D3 and Mike Bostock</a> have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.</p>
+
+<!-- more -->
+
+<style>
 #d3-polar-container {
     width: 90%;
     max-width: 450px;
@@ -183,10 +189,6 @@
     text-decoration: underline;
 }
 </style>
-
-<p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
-
-<p>Since <a href="https://bost.ocks.org/mike/" target="_blank">D3 and Mike Bostock</a> have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.</p>
 
 <div id="d3-polar-container">
     <svg id="polar-line-chart"></svg>

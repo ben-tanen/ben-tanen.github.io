@@ -4,9 +4,12 @@ title: 'Visualizing Our Drunken World'
 date: 2016-12-21 15:05:41
 categories: project data tufts school visualization alcohol
 thumbnail: /assets/img/post-thumbnails/drunken-world2.png
+excerpt_separator: <!-- more -->
 ---
 
 For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. - and we wanted to build a platform to either confirm or debunk these stereotypes. In a greater sense, we hoped to explore when and how alcohol has been part of culture and history. And thus, [Our Drunken World](http://link.ben-tanen.com/drunken-world/){:target="_blank"} was born!
+
+<!-- more -->
     
 <iframe class="youtube-vid" width="500" height="281" style="margin-bottom: 10px;" src="https://www.youtube.com/embed/O-eeiWZ7WRY" frameborder="0" allowfullscreen></iframe>
 
