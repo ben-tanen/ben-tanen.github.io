@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- jquery and js files -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <title>Visualizing My Spotify History | Ben Tanen</title>
+</head>
+
+
+<body>
+
+    <!-- adding support for mathjx -->
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+	<div class='side'>
+    <img id='face' src='/img/face2.jpg' alt='A picture of my head' />
+    
+    <h1 id='title'>
+    <a href='/' id='title-link'>Howdy</a>
+    </h1>
+
+    <div class='links'>
+        <p id='about'><a href='/about'>About</a></p>
+        <p id='about'><a href='/projects'>Projects</a></p>
+        <p id='about'><a href='/img/Benjamin_Tanen_Resume.pdf'>Resume</a></p>
+        <p id='about'><a href='/index'>Index</a></p>
+    </div>
+    <div class='social'>
+        <ul id='social_list'>
+            <a href='https://github.com/ben-tanen'><li id='github'>
+                <svg width="30px" height="30px" viewBox="0 0 100 100">
+                <path transform='translate(5, 6), scale(.9)' fill='#ffffff' d="M70.709,15.029c1.17,2.657,1.928,7.07,0.797,10.301c4.625,3.949,6.214,13.549,3.982,21.394 C82.08,47.227,89.931,46.482,95,48.505c-4.738-0.609-11.209-1.804-17.32-1.388c-1.158,0.079-2.874-0.044-2.79,1.585 c7.075,0.556,14.104,1.16,19.913,2.973c-5.761-0.941-12.754-2.374-19.913-2.574c-2.957,5.835-8.907,8.703-17.122,9.307 c0.883,1.921,2.574,2.653,2.987,5.744c0.616,4.618-0.964,11.381,0.595,14.459c0.748,1.475,1.967,1.514,2.789,2.775 c-2.012,2.381-7.001-0.267-7.568-2.775c-0.973-4.295,1.482-10.954-1.193-13.865c0.189,4.684-1.108,11.264,0.199,15.449 c0.515,1.646,2.002,2.281,1.593,3.765c-9.352,0.95-5.444-12.104-6.972-19.809c-1.411,0.1-0.791,2.113-0.796,2.972 c-0.04,7.524,1.54,17.844-6.57,16.837c-0.237-1.581,1.088-2.119,1.593-3.563c1.479-4.234-0.277-10.542,0.401-15.651 c-3.095,2.333,0.325,10.48-1.593,14.657c-1.105,2.404-4.666,3.45-7.367,2.377c0.352-1.79,2.2-1.501,2.984-3.169 c1.096-2.325,0.008-5.674,0.399-9.111c-5.729,1.143-10.173-0.166-12.348-3.764c-0.973-1.615-1.214-3.52-2.39-4.951 c-1.17-1.432-3.04-1.625-3.582-3.564c7.095-1.708,7.367,7.302,13.739,7.525c1.954,0.071,2.97-0.564,4.778-0.989 c0.506-2.272,1.589-3.966,3.186-5.153c-7.929-1.085-14.477-3.554-17.522-9.504c-7.208,0.355-13.804,1.317-19.913,2.771 c5.545-2.014,12.384-2.736,19.715-2.973c-0.432-2.596-4.219-1.882-6.57-1.782C13.973,47.31,8.473,47.853,5,48.505 c5.034-1.795,12.098-1.571,18.918-1.585c-2.086-6.54-1.363-16.929,3.186-20.798c-1.289-3.249-0.889-8.563,0.796-11.093 c5.079,0.228,8.159,2.443,11.35,4.557c3.957-1.125,8.118-1.685,13.54-1.387c2.28,0.126,4.652,1.151,6.369,0.989 c1.685-0.158,3.542-2.049,5.178-2.771C66.468,15.476,68.271,15.117,70.709,15.029z"/> </svg>
+                
+            </li></a>
+            <a href='https://play.spotify.com/user/129874447'><li id='spotify'>
+                <svg width="30px" height="30px" viewBox="0 0 100 100">
+                <path transform='' fill='#ffffff' d="M14.667,49c0-6.407,1.578-12.32,4.735-17.737c3.156-5.418,7.443-9.705,12.861-12.861c5.417-3.156,11.33-4.734,17.737-4.734
+                    c6.406,0,12.319,1.578,17.737,4.734c5.417,3.156,9.704,7.443,12.861,12.861C83.755,36.68,85.333,42.593,85.333,49
+                    c0,4.759-0.896,9.281-2.686,13.568c-1.79,4.286-4.311,8.056-7.561,11.306c-2.826-3.438-6.255-6.124-10.282-8.056
+                    c-4.028-1.932-8.327-2.897-12.896-2.897c-5.041,0-9.729,1.166-14.063,3.497c-4.334,2.333-7.891,5.502-10.67,9.505
+                    c-3.91-3.344-6.972-7.349-9.187-12.012C15.774,59.246,14.667,54.276,14.667,49z M26.256,38.824c0,0.801,0.283,1.496,0.848,2.085
+                    c0.566,0.589,1.272,0.883,2.12,0.883c0.283,0,0.495-0.023,0.636-0.071c6.784-2.732,13.803-4.099,21.059-4.099
+                    c7.254,0,14.274,1.366,21.059,4.099c0.047,0,0.141,0.012,0.283,0.036c0.141,0.024,0.259,0.035,0.353,0.035
+                    c0.801,0,1.495-0.294,2.085-0.883c0.588-0.589,0.883-1.284,0.883-2.085c0-1.178-0.542-2.049-1.625-2.614
+                    c-7.49-2.968-15.169-4.452-23.037-4.452c-8.009,0-15.759,1.508-23.249,4.523C26.728,36.893,26.256,37.74,26.256,38.824z
+                     M29.507,49.354l0.424,1.13c0.377,0.613,0.918,0.918,1.625,0.918c0.141,0,0.354-0.047,0.636-0.141
+                    c5.983-2.592,12.225-3.887,18.727-3.887c6.548,0,12.837,1.319,18.867,3.958c0.188,0.095,0.354,0.142,0.495,0.142
+                    c0.707,0,1.249-0.307,1.625-0.919l0.354-1.201c0-0.613-0.236-1.107-0.707-1.484c-6.502-2.921-13.381-4.381-20.635-4.381
+                    c-7.208,0-14.109,1.46-20.705,4.381C29.742,48.341,29.507,48.835,29.507,49.354z M32.898,59.529
+                    c0.472,1.178,1.202,1.555,2.191,1.131c5.088-2.403,10.364-3.604,15.83-3.604c5.276,0,10.435,1.13,15.476,3.392
+                    c1.131,0.612,1.955,0.329,2.473-0.849c0.236-0.612,0.236-1.153,0-1.626c-0.235-0.47-0.564-0.823-0.988-1.059
+                    c-4.994-2.498-10.647-3.746-16.96-3.746c-6.03,0-11.778,1.296-17.243,3.888C32.781,57.527,32.522,58.351,32.898,59.529z
+                     M37.209,81.931c1.743-2.263,3.898-4.052,6.466-5.37c2.567-1.32,5.312-1.979,8.233-1.979c5.37,0,9.917,2.025,13.639,6.077
+                    c-4.899,2.45-10.082,3.675-15.547,3.675C45.571,84.333,41.308,83.532,37.209,81.931z"/>
+                </svg>
+            </li></a>
+            <a href='https://www.linkedin.com/pub/ben-tanen/8a/291/a98'><li id='linkedin'>
+                <svg width="30px" height="30px" viewBox="0 0 100 100">
+                <path transform='translate(15, 15), scale(.7)' fill='#ffffff' d="M87.877,5.608H11.174c-3.673,0-6.65,2.886-6.65,6.448v77.101c0,3.562,2.978,6.451,6.65,6.451
+                    h76.703c3.673,0,6.646-2.89,6.646-6.451V12.056C94.523,8.495,91.55,5.608,87.877,5.608z M31.809,80.944H18.211V40.31h13.598V80.944z
+                     M25.011,34.759H24.92c-4.56,0-7.516-3.119-7.516-7.023c0-3.983,3.043-7.017,7.693-7.017c4.651,0,7.512,3.033,7.602,7.017
+                    C32.699,31.641,29.749,34.759,25.011,34.759z M80.827,80.944H67.233v-21.74c0-5.464-1.97-9.191-6.886-9.191
+                    c-3.761,0-5.993,2.515-6.973,4.942c-0.364,0.868-0.453,2.08-0.453,3.292v22.696H39.329c0,0,0.178-36.823,0-40.634h13.593v5.761
+                    c1.805-2.768,5.029-6.717,12.249-6.717c8.947,0,15.656,5.804,15.656,18.291V80.944z M52.834,46.199
+                    c0.024-0.038,0.056-0.084,0.088-0.128v0.128H52.834z" />
+                </svg>
+            </li></a>
+        </ul>
+    </div>
+</div>
+
+	<div class='main'>
+		<div class="post">
+
+  <header class="post-header">
+    <h1>Visualizing My Spotify History</h1>
+    <p class="meta">Sep 1, 2015</p>
+  </header>
+
+  <article class="post-content">
+  <p>As most people do, I go through phases of musical interests. I’ll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm’s scrobbling data, <a href="https://gist.github.com/bitmorse/5201491">this handy script</a>, and some Python / pandas, I was able to see just what I was listening over the past few years.</p>
+
+<p><img src="/img/posts/lastfm_linegraph.png" width="600px" /></p>
+
+<p>The process was pretty simple. Once I found the existing script (link above), I simply had to parse through the text, load it into a pandas DataFrame, and do some simple analysis. Knowing that, I plan on going a little deeper and seeing what cool stuff I can find.</p>
+
+<p><strong>Quick Note</strong>: This data only reflects my listening history on computer. For some reason Spotify Mobile is set to scrobble my listening history but is refusing to actually do so. Oh well…</p>
+
+<p>For more, you can see the whole iPython notebook <a href="/notebooks/lastfm_scrobble.html">here</a> (Hurray for iPython notebooks, they’re awesome).</p>
+
+
+  </article>
+
+</div>
+	</div>
+	
+</body>
+</html>
