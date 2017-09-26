@@ -1,0 +1,124 @@
+#thumbnails {
+    margin-top: 20px;
+}
+
+.thumbnail {
+    width: 175px;
+    height: 175px;
+    display: inline-block;
+    margin: 0 calc((100% / 4 - 175px) / 2 - 2px);
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100%;
+    min-width: 175px;
+    min-height: 175px;
+    margin: 0;
+}
+
+#lightbox {
+    width: calc(100vw - 200px);
+    height: calc(100vh - 50px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 25px 100px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#lightbox.hidden {
+    display: none;
+}
+
+#lightbox-image {
+    max-width: calc(100vw - 200px);
+    max-height: calc(100vh - 100px);
+    -webkit-transition: margin-top 0.2s ease;
+    -moz-transition: margin-top 0.2s ease;
+    -o-transition: margin-top 0.2s ease;
+    transition: margin-top 0.2s ease;
+}
+
+#lightbox-caption {
+    width: calc(100vw - 200px);
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    opacity: 0.75;
+}
+
+@media (max-width: 926px) {
+    .thumbnail {
+        margin-bottom: calc((100% / 4 - 175px) - 6px);
+    }
+}
+
+@media (max-width: 780px) {
+    .thumbnail {
+        margin: 0 calc((100% / 3 - 175px) / 2 - 2px);
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 715px) {
+    .thumbnail {
+        margin-bottom: calc((100% / 3 - 175px) - 6px);
+    }
+}
+
+@media (max-width: 600px) {
+    .thumbnail {
+        margin: 0 calc((100% / 2 - 175px) / 2 - 2px);
+        margin-bottom: 40px;
+    }
+
+    #lightbox {
+        width: calc(100vw - 100px);
+        padding: 25px 50px;
+    }
+
+    #lightbox-image {
+        max-width: calc(100vw - 100px);
+    }
+
+    #lightbox-caption {
+        width: calc(100vw - 100px);
+    }
+}
+
+@media (max-width: 500px) {
+    .thumbnail {
+        margin-bottom: calc((100% / 2 - 175px) - 6px);
+    }
+}
+
+@media (max-width: 420px) {
+    .thumbnail {
+        width: 150px;
+        height: 150px;
+        margin: 0 calc((100% / 2 - 150px) / 2 - 2px);
+        margin-bottom: calc((100% / 2 - 150px) - 6px);
+    }
+
+    .thumbnail img {
+        min-width: 150px;
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    #face {
+        width: 75px;
+        top: 22.5px;
+        left: calc(50vw - 45px);
+    }
+}
+
+@media (max-width: 350px) {
+    #face {
+        display: none;
+    }
+}

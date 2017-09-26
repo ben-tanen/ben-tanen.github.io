@@ -1,0 +1,15 @@
+<div id='side'>
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
+    
+    <h1 id="title-1" class="tk-europa">Howdy</h1>
+    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
+
+    <div id='site-links' class="tk-europa">
+        <p><a href='/'>Home</a></p>
+        <p><a href='/projects/' {% if page.title == 'Projects' %}class="selected-link"{% endif %}>Projects</a></p>
+        <p><a href='/resume/BenjaminTanen_Resume.pdf' {% if page.title == 'Resume' %}class="selected-link"{% endif %}>Resume</a></p>
+        <p><a href='/blog/all/' {% if page.title == 'Blog' %}class="selected-link"{% endif %}>Blog</a></p>
+    </div>
+
+    {% include social.html %}
+</div>

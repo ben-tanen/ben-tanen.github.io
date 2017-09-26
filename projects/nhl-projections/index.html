@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: main
 title: NHL Projections
 ---
 
@@ -13,9 +13,7 @@ title: NHL Projections
 
 <p>Projections, predictions, and analysis derived from NHL season simulations in MATLAB.
 
-<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/NHLPlayoffProjections'>here</a>.</p>
-
-<p style='color: #E61F1F;'><u>NOTE</u>: Project site under construction.</p>
+<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/nhl-playoff-projections'>here</a>.</p>
 
 <img id='about-gradient' src='files/about-gradient.png' />
 <img id='expand-img' src='files/down-arrow.png' />
@@ -23,11 +21,11 @@ title: NHL Projections
 
 <h2>Current Projections</h2>
 <div class='nhl_current_projection min'>
-<p>Projections will begin in October. Check back later!
+<p>The table below outlines how the season projections (current and original) compares to the actual season. <br /><i>Model Updated:</i> 10/11/16</p>
 
 <table id='projections_table'>
 <thead>
-<tr><th></th><th width='50px'>Team</th><th>Actual</th><th width='95px'>Current Projection</th><th width='95px'>Current Projection Differential</th><th width='95px'>Original Projection</th><th width='95px'>Original Projection Differential</th></tr>
+<tr><th></th><th width='50px'>Team</th><th width='95px'>Actual Points (To Date)</th><th width='95px'>Points Projected <br> (To Date)</th><th width='95px'>Point Differential</th><th width='95px'>Current Whole Season Projection</th><th width='95px'>Original Whole Seaon Projection</th></tr>
 </thead>
 <tbody>
 
@@ -38,8 +36,8 @@ title: NHL Projections
 <img id='expand-img' src='files/down-arrow.png' />
 </div>
 
-<h2>Recent Work</h2>
-<ul class='index_list' style='padding-left: 0;'>
+<h2 style='margin-bottom: 10px;'>Recent Work</h2>
+<ul style='padding-left: 0; list-style: none;'>
 {% for post in site.posts %}
     {% if post.categories contains 'nhl-projections' %}
         <li style='margin-bottom: 45px; margin-left: 0px;'>

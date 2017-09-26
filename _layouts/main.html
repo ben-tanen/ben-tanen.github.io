@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <!-- adding support for mathjx -->
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <div class='wrapper'>
+    	{% include sidebar.html %}
+
+    	<div class='main'>
+    		{{ content }}
+    	</div>
+    </div>
+	
+</body>
+</html>

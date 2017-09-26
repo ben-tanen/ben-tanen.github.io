@@ -1,6 +1,6 @@
 # Site settings
 title: Ben Tanen
-email: benjamin.tanen@tufts.edu
+email: ben.tanen@gmail.com
 description: "This is the personal website of Ben Tanen. It includes posts written by him and links to other content from Ben."
 baseurl: ""
 url: "http://ben-tanen.github.io"
@@ -8,7 +8,13 @@ twitter_username: ben_tanen
 github_username:  ben-tanen
 
 # Build settings
+plugins: [jekyll-paginate]
 markdown: kramdown
-permalink: /:year/:month/:day/:title.html
-paginate_path: "/page/:num"
+permalink: /blog/:year/:month/:day/:title.html
+paginate_path: "/blog/:num"
 paginate: 4
+
+# Collections
+collections:
+- projects
+

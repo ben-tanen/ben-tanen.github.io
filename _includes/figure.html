@@ -1,4 +1,17 @@
-<img src="{{include.src}}"  {% if include.caption %}alt="{{include.caption}}"{% endif %}  {% if include.width %}width="{{include.width}}"{% endif %} />
+<p class="fig-paragraph">
+    <a class="fig-link" 
+        {% if include.link %}href="{{include.link}}"
+        {% else %}href="{{include.src}}"
+        {% endif %}
+        target="_blank">
+    <img src="{{include.src}}"  
+        {% if include.alt %}alt="{{include.alt}}"
+        {% elsif include.caption %}alt="{{include.caption}}"
+        {% endif %}
+        {% if include.width %}width="{{include.width}}"{% endif %}
+    />
+    </a>
+</p>
 
 {% if include.caption %}
 <figcaption>
