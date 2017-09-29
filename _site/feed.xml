@@ -35,6 +35,8 @@
     &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;p&gt;This chart looks at where we drafted a particular player relative to where the pros and masses would have drafted them. The &lt;span style=&quot;color: rgb(169,169,169)&quot;&gt;gray baseline&lt;/span&gt; represents how we drafted players and the colored dots represent when the pros and masses would have drafted a specific player. For example, with the 48th pick, Team Silver picked up Emmanuel Sanders. &lt;span style=&quot;color: #23ce6b&quot;&gt;Fantasy Pros&lt;/span&gt; and the &lt;span style=&quot;color: #ff4cc8&quot;&gt;ESPN mock drafts&lt;/span&gt; felt that was a relatively sound pick, thus we see their dots close to the baseline. But &lt;span style=&quot;color: #77bdee&quot;&gt;5th Down Fantasy&lt;/span&gt; didn’t think Sanders should go until the 86th pick so we see their dot significantly above the baseline. On the other side, &lt;span style=&quot;color: #77bdee&quot;&gt;5th Down Fantasy&lt;/span&gt; thought Sammy Watkins, who Team Davis took with the 61st pick, should go with the 32nd pick, thus we see their dot significantly below the baseline.&lt;/p&gt;
+
 &lt;p&gt;As expected, it looks like my league started out sticking with the conventional wisdom, not really diverging from the experts and masses until the 4th or 5th round (except for &lt;span id=&quot;footnote-1&quot; class=&quot;footnote&quot;&gt;Ezekiel Elliott as the 17th pick&lt;/span&gt;). Even from there, the cone of variance grew at a fairly reasonable rate. Beyond this, I see three notable takeaways:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -117,7 +119,10 @@ button#mock {
 .footnote {
     color: #77bdee;
     cursor: pointer;
+}
 
+.footnote:hover {
+    text-decoration: underline;
 }
 
 .jBox-Tooltip{
@@ -309,6 +314,12 @@ d3.csv(&quot;/assets/data/ag-ff-draft.csv&quot;, function(d) {
         .attr(&quot;id&quot;, &quot;direction2-text&quot;)
         .attr(&quot;transform&quot;, `translate(${width * 0.85}, ${height * .83}), rotate(270)`)
         .text(&quot;\u2190 Undervalued &quot;);
+
+    // shrinking data if on mobile (so not as much packed all in)
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        ff_svg.select(&quot;#direction1-text&quot;).remove();
+        ff_svg.select(&quot;#direction2-text&quot;).remove();
+    }
 
     // toggle data sources based on what is selected
     function refreshData() {

@@ -31,8 +31,9 @@ I was then curious how the rest of my league did at their drafting. Did my leagu
     </div>
 </div>
 
-As expected, it looks like my league started out sticking with the conventional wisdom, not really diverging from the experts and masses until the 4th or 5th round (except for <span id="footnote-1" class="footnote">Ezekiel Elliott as the 17th pick</span>). Even from there, the cone of variance grew at a fairly reasonable rate. Beyond this, I see three notable takeaways:
+This chart looks at where we drafted a particular player relative to where the pros and masses would have drafted them. The <span style="color: rgb(169,169,169)">gray baseline</span> represents how we drafted players and the colored dots represent when the pros and masses would have drafted a specific player. For example, with the 48th pick, Team Silver picked up Emmanuel Sanders. <span style="color: #23ce6b">Fantasy Pros</span> and the <span style="color: #ff4cc8">ESPN mock drafts</span> felt that was a relatively sound pick, thus we see their dots close to the baseline. But <span style="color: #77bdee">5th Down Fantasy</span> didn't think Sanders should go until the 86th pick so we see their dot significantly above the baseline. On the other side, <span style="color: #77bdee">5th Down Fantasy</span> thought Sammy Watkins, who Team Davis took with the 61st pick, should go with the 32nd pick, thus we see their dot significantly below the baseline.
 
+As expected, it looks like my league started out sticking with the conventional wisdom, not really diverging from the experts and masses until the 4th or 5th round (except for <span id="footnote-1" class="footnote">Ezekiel Elliott as the 17th pick</span>). Even from there, the cone of variance grew at a fairly reasonable rate. Beyond this, I see three notable takeaways:
 
 * I picked the most similarly to the pros and masses, which makes sense.
 * Our draft overall looks most similar to the average ESPN mock draft, which also makes sense.
@@ -112,7 +113,10 @@ button#mock {
 .footnote {
     color: #77bdee;
     cursor: pointer;
+}
 
+.footnote:hover {
+    text-decoration: underline;
 }
 
 .jBox-Tooltip{
@@ -304,6 +308,12 @@ d3.csv("/assets/data/ag-ff-draft.csv", function(d) {
         .attr("id", "direction2-text")
         .attr("transform", `translate(${width * 0.85}, ${height * .83}), rotate(270)`)
         .text("\u2190 Undervalued ");
+
+    // shrinking data if on mobile (so not as much packed all in)
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        ff_svg.select("#direction1-text").remove();
+        ff_svg.select("#direction2-text").remove();
+    }
 
     // toggle data sources based on what is selected
     function refreshData() {
