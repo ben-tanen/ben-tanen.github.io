@@ -269,7 +269,6 @@ function render_text() {
 
     confederate_svg.append("text")
         .attr("transform", `translate(${margin.left + width / 2 + 25}, 55)`)
-        .style('font-family', 'Helvetica Neue')
         .style('font-size', '12px')
         .style('text-anchor', 'start')
         .text("Leave them as is");
@@ -277,7 +276,6 @@ function render_text() {
     /* source */
     confederate_svg.append("text")
         .attr("transform", `translate(${margin.left + width}, ${margin.top + height + 55})`)
-        .style('font-family', 'Helvetica Neue')
         .style('font-size', '11px')
         .style('text-anchor', 'end')
         .style('fill', '#989c9e')
