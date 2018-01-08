@@ -165,7 +165,8 @@ ol#fav2017-list {
 ol#fav2017-list li {
     margin: 7px 0;
     display: inline-block;
-    width: calc(50% - 5px);
+    width: 100%;
+    /*width: calc(50% - 5px);*/
     vertical-align: top;
 }
 
@@ -202,6 +203,12 @@ p.fav2017-title {
     text-align: left;
 }
 
+@media (max-width: 910px) {
+    ol#fav2017-list li {
+        width: 100%;
+    }
+}
+
 </style>
 
 <ol id="fav2017-list">
@@ -219,6 +226,13 @@ p.fav2017-title {
             <p><i>Album from Lucy Dacus</i></p>
         </div>
     </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/making-it-big.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/01/making-it-big/"><p class="fav2017-title">The Unlikley Odds of Making It Big</p></a>
+            <p><i>Article from The Pudding</i> &middot; This was my introduction to the awesome work from The Pudding. The team over there are writing great pieces with great visualizations. There's a reason this isn't the only piece from them on this list.</p>
+        </div>
+    </div></li>
 <li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/disaster-artist.jpeg&quot;);"></div>
         <div class="fav2017-text">
@@ -233,11 +247,11 @@ p.fav2017-title {
             <p><i>TV series</i></p>
         </div>
     </div></li>
-<li class="wide"><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/making-it-big.png&quot;);"></div>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/gabfest.jpg&quot;);"></div>
         <div class="fav2017-text">
-            <a target="_blank" href="https://pudding.cool/2017/01/making-it-big/"><p class="fav2017-title">The Unlikley Odds of Making It Big</p></a>
-            <p><i>Article from The Pudding</i> &middot; This was my introduction to the awesome work from The Pudding. The team over there are writing great pieces with great visualizations. There's a reason this isn't the only piece from them on this list.</p>
+            <a target="_blank" href="http://www.slate.com/articles/podcasts/gabfest.html"><p class="fav2017-title">Slate Political Gabfest</p></a>
+            <p><i>Podcast from Slate</i></p>
         </div>
     </div></li>
 <li class="wide"><div class="fav2017-item">
@@ -245,13 +259,6 @@ p.fav2017-title {
         <div class="fav2017-text">
             <p class="fav2017-title">Black Panther <a target="_blank" href="https://www.youtube.com/watch?v=dxWvtMOGAhw">Teaser</a> and <a target="_blank" href="https://www.youtube.com/watch?v=xjDjIWPwcPU">Theatrical</a> Trailers</p>
             <p><i>Videos from Marvel</i> &middot; These trailers have made me so excited for Black Panther. Marvel seems to know what they're doing. I loved the minimal but effective use of Run The Jewels.</p>
-        </div>
-    </div></li>
-<li><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/gabfest.jpg&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="http://www.slate.com/articles/podcasts/gabfest.html"><p class="fav2017-title">Slate Political Gabfest</p></a>
-            <p><i>Podcast from Slate</i></p>
         </div>
     </div></li>
 <li><div class="fav2017-item">
@@ -271,7 +278,7 @@ p.fav2017-title {
 <li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/black-mirror.jpg&quot;);"></div>
         <div class="fav2017-text">
-            <a target="_blank" href="https://www.youtube.com/watch?v=5ELQ6u_5YYM"><p class="fav2017-title">Black Mirror, Season 4</p></a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=5ELQ6u_5YYM"><p class="fav2017-title">Black Mirror</p></a>
             <p><i>TV series</i></p>
         </div>
     </div></li>
@@ -280,13 +287,6 @@ p.fav2017-title {
         <div class="fav2017-text">
             <a target="_blank" href="https://www.nytimes.com/interactive/2017/08/09/upshot/game-of-thrones-chart.html"><p class="fav2017-title">Good, Evil, Ugly, Beautiful: Help Us Make a 'Game of Thrones' Chart</p></a>
             <p><i>Article from the New York Times</i></p>
-        </div>
-    </div></li>
-<li><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/gender-rep.png&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://pudding.cool/2017/07/comics/"><p class="fav2017-title">Analyzing the Gender Representation of 34,476 Comic Book Characters</p></a>
-            <p><i>Article from The Pudding</i></p>
         </div>
     </div></li>
 <li><div class="fav2017-item">
@@ -304,6 +304,20 @@ p.fav2017-title {
         </div>
     </div></li>
 <li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/gender-rep.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/07/comics/"><p class="fav2017-title">Analyzing the Gender Representation of 34,476 Comic Book Characters</p></a>
+            <p><i>Article from The Pudding</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/brett-novak.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/channel/UCSXWt3Q5KZPTo_3Xjh-gkVQ"><p class="fav2017-title">ShortSided</p></a>
+            <p><i>Video series from Brett Novak</i> &middot; Brett has been putting out awesome videos for years and this year was no exception. To best sum up the series, check out <a target="_blank" href="https://www.youtube.com/watch?v=wvrd3i8PRkk">the 100th episode video</a>.</p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/master-of-none.jpg&quot;);"></div>
         <div class="fav2017-text">
             <a target="_blank" href="https://www.netflix.com/title/80049714"><p class="fav2017-title">Master of None, Season 2</p></a>
@@ -318,24 +332,10 @@ p.fav2017-title {
         </div>
     </div></li>
 <li><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/how-far.png&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://pudding.cool/2017/09/clinics/"><p class="fav2017-title">How far is too far? An analysis of driving times to abortion clinics in the US</p></a>
-            <p><i>Article from The Pudding</i></p>
-        </div>
-    </div></li>
-<li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/senators.jpg&quot;);"></div>
         <div class="fav2017-text">
             <a target="_blank" href="https://www.vox.com/policy-and-politics/2017/6/16/15810524/senate-ahca-explain-please"><p class="fav2017-title">We asked 8 Senate Republicans to explain what their health bill is trying to do</p></a>
             <p><i>Article from Vox</i></p>
-        </div>
-    </div></li>
-<li><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/brett-novak.jpg&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://www.youtube.com/channel/UCSXWt3Q5KZPTo_3Xjh-gkVQ"><p class="fav2017-title">ShortSided</p></a>
-            <p><i>Video series from Brett Novak</i> &middot; Brett has been putting out awesome videos for years and this year was no exception. To best sum up the series, check out <a target="_blank" href="https://www.youtube.com/watch?v=wvrd3i8PRkk">the 100th episode video</a>.</p>
         </div>
     </div></li>
 <li><div class="fav2017-item">
@@ -357,6 +357,13 @@ p.fav2017-title {
         <div class="fav2017-text">
             <a target="_blank" href="https://visualtrumperytour.wordpress.com/"><p class="fav2017-title">Visual Trumpery</p></a>
             <p><i>Lecture from Alberto Cairo</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/how-far.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/09/clinics/"><p class="fav2017-title">How far is too far? An analysis of driving times to abortion clinics in the US</p></a>
+            <p><i>Article from The Pudding</i></p>
         </div>
     </div></li>
 <li><div class="fav2017-item">
@@ -388,6 +395,13 @@ p.fav2017-title {
         </div>
     </div></li>
 <li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/eclipse.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.washingtonpost.com/graphics/national/eclipse/"><p class="fav2017-title">Here’s every total solar eclipse happening in your lifetime. Is this year your best chance?</p></a>
+            <p><i>Article from the Washington Post</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/dunkirk.jpg&quot;);"></div>
         <div class="fav2017-text">
             <a target="_blank" href="https://www.youtube.com/watch?v=F-eMt3SrfFU"><p class="fav2017-title">Dunkirk</p></a>
@@ -399,27 +413,6 @@ p.fav2017-title {
         <div class="fav2017-text">
             <a target="_blank" href="https://www.youtube.com/watch?v=giYeaKsXnsI"><p class="fav2017-title">Game of Thrones, Season 7</p></a>
             <p><i>TV series</i></p>
-        </div>
-    </div></li>
-<li><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/eclipse.png&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://www.washingtonpost.com/graphics/national/eclipse/"><p class="fav2017-title">Here’s every total solar eclipse happening in your lifetime. Is this year your best chance?</p></a>
-            <p><i>Article from the Washington Post</i></p>
-        </div>
-    </div></li>
-<li><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/draw-it.png&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html"><p class="fav2017-title">You Draw It: What Got Better or Worse During Obama’s Presidency</p></a>
-            <p><i>Article from the New York Times</i></p>
-        </div>
-    </div></li>
-<li><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/rep-jobs.png&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://pudding.cool/2017/07/jobs/"><p class="fav2017-title">Why the Republican Party wins when robots take your job</p></a>
-            <p><i>Article from The Pudding</i></p>
         </div>
     </div></li>
 <li><div class="fav2017-item">
@@ -437,6 +430,13 @@ p.fav2017-title {
         </div>
     </div></li>
 <li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/draw-it.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html"><p class="fav2017-title">You Draw It: What Got Better or Worse During Obama’s Presidency</p></a>
+            <p><i>Article from the New York Times</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/falling.jpg&quot;);"></div>
         <div class="fav2017-text">
             <a target="_blank" href="http://flowingdata.com/2017/09/28/falling-is-learning/"><p class="fav2017-title">Falling is Learning</p></a>
@@ -450,13 +450,6 @@ p.fav2017-title {
             <p><i>TV series</i> &middot; The crew over at 30 Rock churned out gem after gem in 2017. Examples include "<a target="_blank" href="https://www.youtube.com/watch?v=Pn8pwoNWseM">Pepsi Commercial</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=sJJWxvVldog">Guy Who Bought A Boat</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=wbIXmB2ZLmA">Welcome Video</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=jVhlJNJopOQ">Papyrus</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=PgfiXtvej7Q">Meet Cute</a>", and <a target="_blank" href="https://www.youtube.com/watch?v=SEN1pcn3oAw">all of Pete Davidson's stuff</a>.</p>
         </div>
     </div></li>
-<li class="wide"><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/la-la-cover.png&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://www.youtube.com/watch?v=t3O6vA0UL3k"><p class="fav2017-title">La La Land Mia &amp; Sebastian's Theme Guitar Cover</p></a>
-            <p><i>Video from AcousticTrench</i> &middot; This was one of the most calming videos I watched this year. The cute dog definitely helped.</p>
-        </div>
-    </div></li>
 <li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/datasaurs.jpg&quot;);"></div>
         <div class="fav2017-text">
@@ -465,10 +458,24 @@ p.fav2017-title {
         </div>
     </div></li>
 <li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/rep-jobs.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/07/jobs/"><p class="fav2017-title">Why the Republican Party wins when robots take your job</p></a>
+            <p><i>Article from The Pudding</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
         <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/biden.jpeg&quot;);"></div>
         <div class="fav2017-text">
             <a target="_blank" href="https://www.amazon.com/Promise-Me-Dad-Hardship-Purpose/dp/1250171679"><p class="fav2017-title">Promise Me, Dad</p></a>
             <p><i>Book from Joe Biden</i></p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/la-la-cover.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=t3O6vA0UL3k"><p class="fav2017-title">La La Land Mia &amp; Sebastian's Theme Guitar Cover</p></a>
+            <p><i>Video from AcousticTrench</i> &middot; This was one of the most calming videos I watched this year. The cute dog definitely helped.</p>
         </div>
     </div></li>
 <li><div class="fav2017-item">
@@ -497,13 +504,6 @@ p.fav2017-title {
         <div class="fav2017-text">
             <a target="_blank" href="https://www.youtube.com/watch?v=czyMIIm12JY"><p class="fav2017-title">The Meyerowitz Stories (New and Selected)</p></a>
             <p><i>Film</i></p>
-        </div>
-    </div></li>
-<li class="wide"><div class="fav2017-item">
-        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/max-joseph.jpg&quot;);"></div>
-        <div class="fav2017-text">
-            <a target="_blank" href="https://www.youtube.com/user/maxjosephdirector"><p class="fav2017-title">Max Joseph's Videos</p></a>
-            <p><i>YouTube channel</i> &middot; Max made some great content in 2017, including (but not limited to) "<a target="_blank" href="https://www.youtube.com/watch?v=N0MCrZlbYUM">What Makes Us American</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=mlCflbej6EM">From Dream to Reality</a>", and "<a target="_blank" href="https://www.youtube.com/watch?v=gRRvjZ_XNog">DICKS</a>" (don't worry, that last one is SFW).</p>
         </div>
     </div></li>
 <li class="wide"><div class="fav2017-item">
@@ -539,6 +539,13 @@ p.fav2017-title {
         <div class="fav2017-text">
             <a target="_blank" href="https://www.youtube.com/watch?v=1hcUoOFhxMM"><p class="fav2017-title">Why You Shouldn't Be An Artist</p></a>
             <p><i>Video from Simon Cade</i></p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/max-joseph.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/user/maxjosephdirector"><p class="fav2017-title">Max Joseph's Videos</p></a>
+            <p><i>YouTube channel</i> &middot; Max made some great content in 2017, including (but not limited to) "<a target="_blank" href="https://www.youtube.com/watch?v=N0MCrZlbYUM">What Makes Us American</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=mlCflbej6EM">From Dream to Reality</a>", and "<a target="_blank" href="https://www.youtube.com/watch?v=gRRvjZ_XNog">DICKS</a>" (don't worry, that last one is SFW).</p>
         </div>
     </div></li>
 <li><div class="fav2017-item">

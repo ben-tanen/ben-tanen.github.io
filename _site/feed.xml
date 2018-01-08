@@ -26,7 +26,8 @@ ol#fav2017-list {
 ol#fav2017-list li {
     margin: 7px 0;
     display: inline-block;
-    width: calc(50% - 5px);
+    width: 100%;
+    /*width: calc(50% - 5px);*/
     vertical-align: top;
 }
 
@@ -63,6 +64,12 @@ p.fav2017-title {
     text-align: left;
 }
 
+@media (max-width: 910px) {
+    ol#fav2017-list li {
+        width: 100%;
+    }
+}
+
 &lt;/style&gt;
 
 &lt;ol id=&quot;fav2017-list&quot;&gt;
@@ -80,6 +87,13 @@ p.fav2017-title {
             &lt;p&gt;&lt;i&gt;Album from Lucy Dacus&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/making-it-big.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/01/making-it-big/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Unlikley Odds of Making It Big&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt; &amp;middot; This was my introduction to the awesome work from The Pudding. The team over there are writing great pieces with great visualizations. There's a reason this isn't the only piece from them on this list.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/disaster-artist.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
@@ -94,11 +108,11 @@ p.fav2017-title {
             &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
-&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/making-it-big.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/gabfest.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/01/making-it-big/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Unlikley Odds of Making It Big&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt; &amp;middot; This was my introduction to the awesome work from The Pudding. The team over there are writing great pieces with great visualizations. There's a reason this isn't the only piece from them on this list.&lt;/p&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;http://www.slate.com/articles/podcasts/gabfest.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Slate Political Gabfest&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Podcast from Slate&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -106,13 +120,6 @@ p.fav2017-title {
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;p class=&quot;fav2017-title&quot;&gt;Black Panther &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=dxWvtMOGAhw&quot;&gt;Teaser&lt;/a&gt; and &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=xjDjIWPwcPU&quot;&gt;Theatrical&lt;/a&gt; Trailers&lt;/p&gt;
             &lt;p&gt;&lt;i&gt;Videos from Marvel&lt;/i&gt; &amp;middot; These trailers have made me so excited for Black Panther. Marvel seems to know what they're doing. I loved the minimal but effective use of Run The Jewels.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/gabfest.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;http://www.slate.com/articles/podcasts/gabfest.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Slate Political Gabfest&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Podcast from Slate&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -132,7 +139,7 @@ p.fav2017-title {
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/black-mirror.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=5ELQ6u_5YYM&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Black Mirror, Season 4&lt;/p&gt;&lt;/a&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=5ELQ6u_5YYM&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Black Mirror&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
@@ -141,13 +148,6 @@ p.fav2017-title {
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.nytimes.com/interactive/2017/08/09/upshot/game-of-thrones-chart.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Good, Evil, Ugly, Beautiful: Help Us Make a 'Game of Thrones' Chart&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;Article from the New York Times&lt;/i&gt;&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/gender-rep.png&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/07/comics/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Analyzing the Gender Representation of 34,476 Comic Book Characters&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -165,6 +165,20 @@ p.fav2017-title {
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/gender-rep.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/07/comics/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Analyzing the Gender Representation of 34,476 Comic Book Characters&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/brett-novak.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/channel/UCSXWt3Q5KZPTo_3Xjh-gkVQ&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;ShortSided&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video series from Brett Novak&lt;/i&gt; &amp;middot; Brett has been putting out awesome videos for years and this year was no exception. To best sum up the series, check out &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=wvrd3i8PRkk&quot;&gt;the 100th episode video&lt;/a&gt;.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/master-of-none.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.netflix.com/title/80049714&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Master of None, Season 2&lt;/p&gt;&lt;/a&gt;
@@ -179,24 +193,10 @@ p.fav2017-title {
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/how-far.png&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/09/clinics/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;How far is too far? An analysis of driving times to abortion clinics in the US&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/senators.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.vox.com/policy-and-politics/2017/6/16/15810524/senate-ahca-explain-please&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;We asked 8 Senate Republicans to explain what their health bill is trying to do&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;Article from Vox&lt;/i&gt;&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/brett-novak.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/channel/UCSXWt3Q5KZPTo_3Xjh-gkVQ&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;ShortSided&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Video series from Brett Novak&lt;/i&gt; &amp;middot; Brett has been putting out awesome videos for years and this year was no exception. To best sum up the series, check out &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=wvrd3i8PRkk&quot;&gt;the 100th episode video&lt;/a&gt;.&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -218,6 +218,13 @@ p.fav2017-title {
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://visualtrumperytour.wordpress.com/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Visual Trumpery&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;Lecture from Alberto Cairo&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/how-far.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/09/clinics/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;How far is too far? An analysis of driving times to abortion clinics in the US&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -249,6 +256,13 @@ p.fav2017-title {
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/eclipse.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.washingtonpost.com/graphics/national/eclipse/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Here’s every total solar eclipse happening in your lifetime. Is this year your best chance?&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from the Washington Post&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/dunkirk.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=F-eMt3SrfFU&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Dunkirk&lt;/p&gt;&lt;/a&gt;
@@ -260,27 +274,6 @@ p.fav2017-title {
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=giYeaKsXnsI&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Game of Thrones, Season 7&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt;&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/eclipse.png&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://www.washingtonpost.com/graphics/national/eclipse/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Here’s every total solar eclipse happening in your lifetime. Is this year your best chance?&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Article from the Washington Post&lt;/i&gt;&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/draw-it.png&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;You Draw It: What Got Better or Worse During Obama’s Presidency&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Article from the New York Times&lt;/i&gt;&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/rep-jobs.png&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/07/jobs/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Why the Republican Party wins when robots take your job&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -298,6 +291,13 @@ p.fav2017-title {
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/draw-it.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;You Draw It: What Got Better or Worse During Obama’s Presidency&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from the New York Times&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/falling.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;http://flowingdata.com/2017/09/28/falling-is-learning/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Falling is Learning&lt;/p&gt;&lt;/a&gt;
@@ -311,13 +311,6 @@ p.fav2017-title {
             &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt; &amp;middot; The crew over at 30 Rock churned out gem after gem in 2017. Examples include &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=Pn8pwoNWseM&quot;&gt;Pepsi Commercial&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=sJJWxvVldog&quot;&gt;Guy Who Bought A Boat&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=wbIXmB2ZLmA&quot;&gt;Welcome Video&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=jVhlJNJopOQ&quot;&gt;Papyrus&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=PgfiXtvej7Q&quot;&gt;Meet Cute&lt;/a&gt;&quot;, and &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=SEN1pcn3oAw&quot;&gt;all of Pete Davidson's stuff&lt;/a&gt;.&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
-&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/la-la-cover.png&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=t3O6vA0UL3k&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;La La Land Mia &amp;amp; Sebastian's Theme Guitar Cover&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;Video from AcousticTrench&lt;/i&gt; &amp;middot; This was one of the most calming videos I watched this year. The cute dog definitely helped.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/datasaurs.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
@@ -326,10 +319,24 @@ p.fav2017-title {
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/rep-jobs.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/07/jobs/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Why the Republican Party wins when robots take your job&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
         &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/biden.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.com/Promise-Me-Dad-Hardship-Purpose/dp/1250171679&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Promise Me, Dad&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;Book from Joe Biden&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/la-la-cover.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=t3O6vA0UL3k&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;La La Land Mia &amp;amp; Sebastian's Theme Guitar Cover&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video from AcousticTrench&lt;/i&gt; &amp;middot; This was one of the most calming videos I watched this year. The cute dog definitely helped.&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -358,13 +365,6 @@ p.fav2017-title {
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=czyMIIm12JY&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Meyerowitz Stories (New and Selected)&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;/li&gt;
-&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
-        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/max-joseph.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;fav2017-text&quot;&gt;
-            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/user/maxjosephdirector&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Max Joseph's Videos&lt;/p&gt;&lt;/a&gt;
-            &lt;p&gt;&lt;i&gt;YouTube channel&lt;/i&gt; &amp;middot; Max made some great content in 2017, including (but not limited to) &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=N0MCrZlbYUM&quot;&gt;What Makes Us American&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=mlCflbej6EM&quot;&gt;From Dream to Reality&lt;/a&gt;&quot;, and &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=gRRvjZ_XNog&quot;&gt;DICKS&lt;/a&gt;&quot; (don't worry, that last one is SFW).&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
@@ -400,6 +400,13 @@ p.fav2017-title {
         &lt;div class=&quot;fav2017-text&quot;&gt;
             &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=1hcUoOFhxMM&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Why You Shouldn't Be An Artist&lt;/p&gt;&lt;/a&gt;
             &lt;p&gt;&lt;i&gt;Video from Simon Cade&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/max-joseph.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/user/maxjosephdirector&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Max Joseph's Videos&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;YouTube channel&lt;/i&gt; &amp;middot; Max made some great content in 2017, including (but not limited to) &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=N0MCrZlbYUM&quot;&gt;What Makes Us American&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=mlCflbej6EM&quot;&gt;From Dream to Reality&lt;/a&gt;&quot;, and &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=gRRvjZ_XNog&quot;&gt;DICKS&lt;/a&gt;&quot; (don't worry, that last one is SFW).&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
