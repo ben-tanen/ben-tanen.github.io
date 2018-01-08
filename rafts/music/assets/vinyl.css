@@ -1,0 +1,55 @@
+#bt-record-holder {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#loading-spinner {
+    width: 100px;
+    position: absolute;
+    left: calc((100% - 100px) / 2);
+}
+
+.bt-record {
+    width: calc(100% / 3 - 4px);
+    height: auto;
+    position: relative;
+    color: white;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 2px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+
+.bt-record img {
+    margin: 0;
+}
+
+.bt-record p {
+    width: calc(100% - 20px);
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
+
+.bt-record:hover p {
+    opacity: 1;
+}
+
+@media (max-width: 775px), (orientation : portrait) {
+    .bt-record p {
+        display: none;
+    }
+}

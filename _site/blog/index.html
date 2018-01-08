@@ -17,6 +17,7 @@
     <!-- jquery and js files -->
     <script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
@@ -139,389 +140,734 @@
 
 <div class='post'>
     <header class="post-header">
-	   <h1>Should I Become an NFL Scout?</h1>
+	   <h1>Favorites from 2017</h1>
        <!--
-       <p class="post-meta">Sep 07 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       <p class="post-meta">Jan 07 2018 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
        -->
     </header>
 
     <article class="post-content">
-	   <p>Over the years, I’ve always been interested in the idea of fantasy football but I had never committed to a league. This year, I decided to take the plunge and try out my own fantasy team. While I would consider myself a fan of football, I knew I didn’t know enough about the whole league to really stand a chance at putting together a <em>good</em> fantasy team. So I decided I would just rely on the advice of the pros.</p>
+	   <p>With the end of 2017 came a whole lot of retrospective “best of” articles for the year (and here comes <em>yet</em> another one). While there were quite a few quality lists, two of them stood out to me.</p>
 
-<p>First, by suggestion of the <a href="https://www.nytimes.com/2017/08/24/sports/fantasy-football-draft-guide-beginners.html">New York Times</a>, I consulted <a href="https://www.fantasypros.com/">Fantasy Pros</a> and <a href="https://www.5thdownfantasy.com/">5th Down Fantasy</a>. To supplement these fairly reliable yet relatively standard sources, I thought I would try out a little crowd sourcing experiment of my own. Since I would be competing against other humans, I thought it would be interesting to see how the general masses valued certain players. To assess this, I entered a bunch of different mock drafts on ESPN and recorded the picks as the people and auto-draft did their things. I then compiled the data from each of these drafts, along with the Fantasy Pros and 5th Down suggestions, and made a handy little draft guide.</p>
+<p>The first was Patrick Willems’ “<a href="https://www.youtube.com/watch?v=ydroQn6IbpU" target="_blank">MY TOP 50 OF 2017</a>” video. I enjoyed Patrick’s choice not to focus on any one medium and how he didn’t try to put his picks in any sort of order (this isn’t exceptionally original, but I enjoyed his take on the format). Second was FiveThirtyEight’s “<a href="https://fivethirtyeight.com/features/damn-we-wish-wed-done-these-11-stories/" target="_blank">Damn, We Wish We’d Done These 11 Stories</a>.” For this piece, I appreciated how the FiveThirtyEight team were open with their admiration and jealousy for the work of their peers.</p>
+
+<p>These pieces have in turn inspired me to look back on my own favorite things from 2017. What came about was a mix of my favorite movies, videos, music, TV, and articles. I admire all of them and more than a few of them have made me think “damn, I wish I had made that.” Putting the list together was a nice walk through the year and it has sparked my excitement to read, watch, and (hopefully) make great content in the year to come. To slightly rephrase FiveThirtyEight, hopefully my jealousy will lead to discovery and inspiration.</p>
+
+<p>Without further ado, in no particular order, my top 50 for 2017 -</p>
+
+<style>
+
+ol#fav2017-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ol#fav2017-list li {
+    margin: 7px 0;
+    display: inline-block;
+    width: calc(50% - 5px);
+    vertical-align: top;
+}
+
+div.fav2017-item {
+    min-height: 60px;
+    position: relative;
+}
+
+div.fav2017-icon {
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    background: no-repeat center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+div.fav2017-text {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 8px 5px 68px;
+    margin-top: 5px;
+}
+
+div.fav2017-text p {
+    margin: 0;
+}
+
+p.fav2017-title {
+    font-size: 21px;
+    font-weight: 400;
+    color: #77bdee;
+    text-align: left;
+}
+
+</style>
+
+<ol id="fav2017-list">
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/little-vis-design.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="http://www.visualisingdata.com/2016/03/little-visualisation-design/"><p class="fav2017-title">The Little of Visualisation Design</p></a>
+            <p><i>Article series from Andy Kirk</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/no-burden.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.last.fm/music/Lucy+Dacus/No+Burden"><p class="fav2017-title">No Burden</p></a>
+            <p><i>Album from Lucy Dacus</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/disaster-artist.jpeg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=cMKX2tE5Luk"><p class="fav2017-title">The Disaster Artist</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/broad-city.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="http://www.cc.com/shows/broad-city"><p class="fav2017-title">Broad City, Season 4</p></a>
+            <p><i>TV series</i></p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/making-it-big.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/01/making-it-big/"><p class="fav2017-title">The Unlikley Odds of Making It Big</p></a>
+            <p><i>Article from The Pudding</i> &middot; This was my introduction to the awesome work from The Pudding. The team over there are writing great pieces with great visualizations. There's a reason this isn't the only piece from them on this list.</p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/black-panther.png&quot;);"></div>
+        <div class="fav2017-text">
+            <p class="fav2017-title">Black Panther <a target="_blank" href="https://www.youtube.com/watch?v=dxWvtMOGAhw">Teaser</a> and <a target="_blank" href="https://www.youtube.com/watch?v=xjDjIWPwcPU">Theatrical</a> Trailers</p>
+            <p><i>Videos from Marvel</i> &middot; These trailers have made me so excited for Black Panther. Marvel seems to know what they're doing. I loved the minimal but effective use of Run The Jewels.</p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/gabfest.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="http://www.slate.com/articles/podcasts/gabfest.html"><p class="fav2017-title">Slate Political Gabfest</p></a>
+            <p><i>Podcast from Slate</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/get-out.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=sRfnevzM9kQ"><p class="fav2017-title">Get Out</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/max-misery.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=LO1mTELoj6o"><p class="fav2017-title">7 Ways to Maximize Misery</p></a>
+            <p><i>Video from CGP Grey</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/black-mirror.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=5ELQ6u_5YYM"><p class="fav2017-title">Black Mirror, Season 4</p></a>
+            <p><i>TV series</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/got-chart.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.nytimes.com/interactive/2017/08/09/upshot/game-of-thrones-chart.html"><p class="fav2017-title">Good, Evil, Ugly, Beautiful: Help Us Make a 'Game of Thrones' Chart</p></a>
+            <p><i>Article from the New York Times</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/gender-rep.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/07/comics/"><p class="fav2017-title">Analyzing the Gender Representation of 34,476 Comic Book Characters</p></a>
+            <p><i>Article from The Pudding</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/hot-ones.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/playlist?list=PLAzrgbu8gEMIIK3r4Se1dOZWSZzUSadfZ"><p class="fav2017-title">Hot Ones</p></a>
+            <p><i>Video series from First We Feast</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/coco.jpeg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=xlnPHQ3TLX8"><p class="fav2017-title">Coco</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/master-of-none.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.netflix.com/title/80049714"><p class="fav2017-title">Master of None, Season 2</p></a>
+            <p><i>TV series</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/stanley-cup.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=tsdimctaOh4"><p class="fav2017-title">Stanley Cup Playoffs Ad</p></a>
+            <p><i>Video from the NHL</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/how-far.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/09/clinics/"><p class="fav2017-title">How far is too far? An analysis of driving times to abortion clinics in the US</p></a>
+            <p><i>Article from The Pudding</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/senators.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.vox.com/policy-and-politics/2017/6/16/15810524/senate-ahca-explain-please"><p class="fav2017-title">We asked 8 Senate Republicans to explain what their health bill is trying to do</p></a>
+            <p><i>Article from Vox</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/brett-novak.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/channel/UCSXWt3Q5KZPTo_3Xjh-gkVQ"><p class="fav2017-title">ShortSided</p></a>
+            <p><i>Video series from Brett Novak</i> &middot; Brett has been putting out awesome videos for years and this year was no exception. To best sum up the series, check out <a target="_blank" href="https://www.youtube.com/watch?v=wvrd3i8PRkk">the 100th episode video</a>.</p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/strike-through.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/playlist?list=PLJ8cMiYb3G5cghzLdchzalWpQJnhRYZgO"><p class="fav2017-title">Strikethrough</p></a>
+            <p><i>Video series from Vox</i> &middot; Carlos's series has been a very interesting and necessary critique of the media, especially given the events and coverage of the year.</p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/vox-hockey-luck.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=HNlgISa9Giw"><p class="fav2017-title">Why underdogs do better in hockey than basketball</p></a>
+            <p><i>Video from Vox</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/trumpery.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://visualtrumperytour.wordpress.com/"><p class="fav2017-title">Visual Trumpery</p></a>
+            <p><i>Lecture from Alberto Cairo</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/blade-runner.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=gCcx85zbxz4"><p class="fav2017-title">Blade Runner 2049</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/no-devil.jpeg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.last.fm/music/San+Fermin/_/No+Devil"><p class="fav2017-title">No Devil</p></a>
+            <p><i>Single from San Fermin</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/district.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="http://polytrope.com/district/"><p class="fav2017-title">District</p></a>
+            <p><i>Article from Polytrope</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/born-a-crime.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.amazon.com/Born-Crime-Stories-African-Childhood/dp/0399588175"><p class="fav2017-title">Born A Crime</p></a>
+            <p><i>Book from Trevor Noah</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/dunkirk.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=F-eMt3SrfFU"><p class="fav2017-title">Dunkirk</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/got.jpeg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=giYeaKsXnsI"><p class="fav2017-title">Game of Thrones, Season 7</p></a>
+            <p><i>TV series</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/eclipse.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.washingtonpost.com/graphics/national/eclipse/"><p class="fav2017-title">Here’s every total solar eclipse happening in your lifetime. Is this year your best chance?</p></a>
+            <p><i>Article from the Washington Post</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/draw-it.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html"><p class="fav2017-title">You Draw It: What Got Better or Worse During Obama’s Presidency</p></a>
+            <p><i>Article from the New York Times</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/rep-jobs.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://pudding.cool/2017/07/jobs/"><p class="fav2017-title">Why the Republican Party wins when robots take your job</p></a>
+            <p><i>Article from The Pudding</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/kd-ad.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=GbiyIb1B3UQ"><p class="fav2017-title">"Kevin Durant, Debate This" Ad</p></a>
+            <p><i>Video from Nike</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/100-days.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/channel/UC1RVRAdiSH4qxjBgxm_plng"><p class="fav2017-title">100 Days</p></a>
+            <p><i>Video series from John Green and Chris Waters</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/falling.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="http://flowingdata.com/2017/09/28/falling-is-learning/"><p class="fav2017-title">Falling is Learning</p></a>
+            <p><i>Article from Nathan Yau</i></p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/snl.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/user/SaturdayNightLive"><p class="fav2017-title">Saturday Night Live</p></a>
+            <p><i>TV series</i> &middot; The crew over at 30 Rock churned out gem after gem in 2017. Examples include "<a target="_blank" href="https://www.youtube.com/watch?v=Pn8pwoNWseM">Pepsi Commercial</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=sJJWxvVldog">Guy Who Bought A Boat</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=wbIXmB2ZLmA">Welcome Video</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=jVhlJNJopOQ">Papyrus</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=PgfiXtvej7Q">Meet Cute</a>", and <a target="_blank" href="https://www.youtube.com/watch?v=SEN1pcn3oAw">all of Pete Davidson's stuff</a>.</p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/la-la-cover.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=t3O6vA0UL3k"><p class="fav2017-title">La La Land Mia &amp; Sebastian's Theme Guitar Cover</p></a>
+            <p><i>Video from AcousticTrench</i> &middot; This was one of the most calming videos I watched this year. The cute dog definitely helped.</p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/datasaurs.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://twitter.com/Datasaurs"><p class="fav2017-title">Datasaurs</p></a>
+            <p><i>Twitter account</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/biden.jpeg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.amazon.com/Promise-Me-Dad-Hardship-Purpose/dp/1250171679"><p class="fav2017-title">Promise Me, Dad</p></a>
+            <p><i>Book from Joe Biden</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/primitive-tech.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/channel/UCAL3JXZSzSm8AlZyD3nQdBA"><p class="fav2017-title">Primitive Technology</p></a>
+            <p><i>Youtube channel</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/baby-driver.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=zTvJJnoWIPk"><p class="fav2017-title">Baby Driver</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/trump.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.nytimes.com/2017/04/29/us/politics/fact-checking-president-trump-through-his-first-100-days.html"><p class="fav2017-title">Fact-Checking President Trump Through His First 100 Days</p></a>
+            <p><i>Article from the New York Times</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/the-meyerowitz-stories.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=czyMIIm12JY"><p class="fav2017-title">The Meyerowitz Stories (New and Selected)</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/max-joseph.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/user/maxjosephdirector"><p class="fav2017-title">Max Joseph's Videos</p></a>
+            <p><i>Youtube channel</i> &middot; Max made some great content in 2017, including (but not limited to) "<a target="_blank" href="https://www.youtube.com/watch?v=N0MCrZlbYUM">What Makes Us American</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=mlCflbej6EM">From Dream to Reality</a>", and "<a target="_blank" href="https://www.youtube.com/watch?v=gRRvjZ_XNog">DICKS</a>" (don't worry, that last one is SFW).</p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/weatherman.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.last.fm/music/Gregory+Alan+Isakov/The+Weatherman"><p class="fav2017-title">The Weatherman</p></a>
+            <p><i>Album from Gregory Alan Isakov</i> &middot; I know this didn't technically come out in 2017, but this was for sure my album of the year.</p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/binging-with-babish.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/user/bgfilms"><p class="fav2017-title">Binging with Babish</p></a>
+            <p><i>Video series from Andrew Rea</i></p>
+        </div>
+    </div></li>
+<li class="wide"><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/la-la-land.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=0pdqf4P9MB8"><p class="fav2017-title">La La Land</p></a>
+            <p><i>Film</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/subway.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="http://metrocosm.com/morphing-metro-maps/"><p class="fav2017-title">Metro Maps Morphing</p></a>
+            <p><i>Article from Reddit Users</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/artist.png&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/watch?v=1hcUoOFhxMM"><p class="fav2017-title">Why You Shouldn't Be An Artist</p></a>
+            <p><i>Video from Simon Cade</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/logic.jpeg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.last.fm/music/Logic/The+Incredible+True+Story"><p class="fav2017-title">The Incredible True Story</p></a>
+            <p><i>Album from Logic</i></p>
+        </div>
+    </div></li>
+<li><div class="fav2017-item">
+        <div class="fav2017-icon" style="background-image: url(&quot;/projects/favorites-2017/royal-ocean.jpg&quot;);"></div>
+        <div class="fav2017-text">
+            <a target="_blank" href="https://www.youtube.com/channel/UCWq-qJSudqKrzquTVep9Jwg"><p class="fav2017-title">The Royal Ocean Film Society</p></a>
+            <p><i>Youtube channel</i></p>
+        </div>
+    </div></li>
+</ol>
+
+
+    </article>
+</div>
+
+
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>What Does the Public Think About Confederate Monuments?</h1>
+       <!--
+       <p class="post-meta">Oct 27 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>I recently came across <a href="http://kut.org/post/uttt-poll-most-texas-voters-say-confederate-memorials-shouldn-t-move-0">an article</a> from KUT, Austin’s NPR station, about Confederate statues with the following news graphic:</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/confederate-monuments-poll.jpg" target="_blank">
+    <img src="/assets/img/posts/confederate-monuments-poll.jpg" alt="The original graphic on Confederate statues" width="550" />
+    </a>
+</p>
+
+<p>The contents of the graphic and the results of the poll were interesting, but more than anything, I was intrigued by their choice of chart type. On my first viewing, it took me a second to mentally reconcile what exactly was going on. What were all the bars? Why all the colors? I then noticed the clustering and realized it was not just any bar chart, but instead a clustered <em>and</em> stacked bar chart. It’s now clear they wanted to emphasize the contrast between the “move or remove” responses and the “leave them” responses, but with so many bars and mixed colors, I found myself lost in comparisons.</p>
 
 <!-- more -->
 
+<p>In an effort to think about how I would tweak this chart, I immediately jumped to the idea of using a 100% stacked bar chart. I quickly threw one together (see below) but it still just didn’t seem right. In this styling, I think the groupings (Republican vs. Independent vs. Democrat) becomes a little more clear, but this chart lost the contrast between the “move or remove” and “leave” responses that was present in the original graphic. Ultimately, I don’t think this was much of an improvement and was actually more of a step back.</p>
+
 <p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/ff-spreadsheet.png" target="_blank">
-    <img src="/assets/img/posts/ff-spreadsheet.png" width="600px" />
+    <a class="fig-link" href="/assets/img/posts/confederate-monuments-remake.png" target="_blank">
+    <img src="/assets/img/posts/confederate-monuments-remake.png" alt="A quick remake of the Confederate statue graphic" width="550" />
     </a>
 </p>
 
-<p>The point of this guide was to show me if a particular player was a good or bad pick at the time. For example, if I was getting ready to make the 19th overall pick and I see that Jay Ajayi was taken with the 16.9th average pick, that would be a good sign that Ajayi is a worthwhile pick. On the other hand, if its the 44th overall pick and I’m interested in picking up Carlos Hyde, I could see that Fifth Down doesn’t think he should go until the 61th pick, prompting me to look into someone else.</p>
+<p>While the 100% stacked bar chart wasn’t exactly what I was looking for, it did remind me of <a href="http://www.visualisingdata.com/2016/08/little-visualisation-design-part-21/">an article</a> from Andy Kirk and his <a href="http://www.visualisingdata.com/2016/03/little-visualisation-design/">“little of visualization design” series</a>. In the post, Kirk talked about improving <a href="http://mannmetrics.com/who-lies-more/">a 100% stacked bar chart on lies in politics</a> by turning it into <a href="https://peltiertech.com/diverging-stacked-bar-charts/">a diverging stacked bar chart</a>. Kirk said that this change would help emphasize the polarity in the chart and I knew this was exactly what I was looking to do for the KUT chart. So I took a whack at remake #2, leading to the diverging bar chart below, which I think is a winner, or, at the very least, an improvement.</p>
 
-<p>During the actual draft, I ended up following the guide’s directions for the most part. I made some rushed-for-time panic moves like Jamison Crowder and Kenny Britt but overall, I think I ended up with a solid team - nothing amazing but definitely something to work with.</p>
+<svg id="d3-confederate-poll">
+</svg>
 
-<p>I was then curious how the rest of my league did at their drafting. Did my league follow conventional expert opinion like me or did some people opt to try out their own strategies? What better way to answer that question than with a nice visualization!</p>
-
-<div id="d3-ff-container">
-    <svg id="d3-ff"></svg>
-    <div id="d3-ff-buttons">
-        <button type="button" id="fantasy-pros">Fantasy Pros</button>
-        <button type="button" id="fifth-down">5th Down Fantasy</button>
-        <button type="button" id="mock">ESPN Mock Drafts</button>
-    </div>
-</div>
-
-<p>This chart looks at where we drafted a particular player relative to where the pros and masses would have drafted them. The <span style="color: rgb(169,169,169)">gray baseline</span> represents how we drafted players and the colored dots represent when the pros and masses would have drafted a specific player. For example, with the 48th pick, Team Silver picked up Emmanuel Sanders. <span style="color: #23ce6b">Fantasy Pros</span> and the <span style="color: #ff4cc8">ESPN mock drafts</span> felt that was a relatively sound pick, thus we see their dots close to the baseline. But <span style="color: #77bdee">5th Down Fantasy</span> didn’t think Sanders should go until the 86th pick so we see their dot significantly above the baseline. On the other side, <span style="color: #77bdee">5th Down Fantasy</span> thought Sammy Watkins, who Team Davis took with the 61st pick, should go with the 32nd pick, thus we see their dot significantly below the baseline.</p>
-
-<p>As expected, it looks like my league started out sticking with the conventional wisdom, not really diverging from the experts and masses until the 4th or 5th round (except for <span id="footnote-1" class="footnote">Ezekiel Elliott as the 17th pick</span>). Even from there, the cone of variance grew at a fairly reasonable rate. Beyond this, I see three notable takeaways:</p>
-
-<ul>
-  <li>I picked the most similarly to the pros and masses, which makes sense.</li>
-  <li>Our draft overall looks most similar to the average ESPN mock draft, which also makes sense.</li>
-  <li>Our draft overall looks least similar to 5th Down Fantasy’s suggestions, but I guess those non-traditional picks are what makes them <a href="https://www.fantasypros.com/nfl/accuracy/2009-2015.php?year=2011#overall">stand in a crowd</a>.</li>
-</ul>
-
-<p>But speculating how good I might have drafted is pointless when I’m comparing it to the speculations of other people. The only way to really see how I did is to see how the upcoming season goes. So 🤞 fingers crossed I somehow picked well and can bring home <a href="http://theleague.wikia.com/wiki/The_Shiva_Bowl_Trophy">the Shiva</a>.</p>
+<p>At the end of the day, this was all mostly just an exercise for myself. KUT did a good job with their chart and more importantly with using their chart as one of many parts to tell an interesting story. Data visualization is hard and a lot of it ends up being very subjective on what works and what doesn’t. To some, KUT’s original chart may be better than my remake. I simply wanted to use this as a chance to work on my own design skills. If you have any thoughts or ideas on improvements or changes, I’d love to hear!</p>
 
 <style>
-#d3-ff-container, #d3-ff {
+#d3-confederate-poll {
     width: 100%;
+    height: 290px;
 }
 
-#d3-ff-container {
-    margin-bottom: 15px;
-}
-
-.dot {
-    fill: none;
-    stroke-width: 1.5px;
-    cursor: pointer;
-}
-
-.legend-text {
-    font-size: 0.85em;
-    display: none;
-}
-
-#fantasy-pros-text, #fifth-down-text, #mock-text, #consensus-text {
+text.pct-label {
+    fill: #36393a;
+    font-size: 10px;
     text-anchor: middle;
 }
 
-#x-axis-text, #y-axis-text {
-    font-size: 0.85em;
-    text-anchor: middle;
+rect.legend {
+    width: 15px;
+    height: 15px;
 }
 
-#direction1-text, #direction2-text {
-    font-size: 0.62em;
-    text-anchor: middle;
-    fill: #b3b3b3;
-}
+.remove    { fill: #e95946; }
+.move      { fill: #42b0a1; }
+.leave-add { fill: #f9a545; }
+.leave     { fill: #a6a6a6; }
 
-#d3-ff-buttons {
-    max-width: 350px;
-    width: 100%;
-    margin: auto;
-}
-
-#d3-ff-buttons button {
-    margin-bottom: 5px;
-    max-width: 116.67px;
-    height: 100%;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px 10px;
-    outline: none;
-    cursor: pointer;
-}
-
-button#fantasy-pros {
-    background-color: #23ce6b;
-}
-
-button#fifth-down {
-    background-color: #77bdee;
-}
-
-button#mock {
-    background-color: #ff4cc8;
-}
-
-#d3-ff-buttons button.off {
-    background-color: #dadada;
-}
-
-.footnote {
-    color: #77bdee;
-    cursor: pointer;
-}
-
-.footnote:hover {
-    text-decoration: underline;
-}
-
-.jBox-Tooltip{
-    font-family: 'Yantramanav', 'sans-serif';
-    max-width: 300px;
-}
 </style>
 
 <script>
+var confederate_svg = d3.select("#d3-confederate-poll");
 
-new jBox('Tooltip', {
-  attach: '#footnote-1',
-  content: "At the time of me pulling this data and Mr. Hess making this pick, Ezekiel Elliott was due to serve a six-game suspension, making for a risky pick regardless of Elliott's ability. Hess didn't seem to care about that and went with him anyway. Minutes later, it was announced that Elliott would not have to serve the six-game suspension while his case was undergoing an appeal."
-});
+var margin = {top: 100, right: 15, bottom: 75, left: 15, bar: 8},
+    width  = $('#d3-confederate-poll').width() -  margin.left - margin.right,
+    height = $('#d3-confederate-poll').height() - margin.top - margin.bottom;
 
-var sources = ["fifth-down", "fantasy-pros", "mock"]
+var scale = d3.scaleLinear().range([0, width]).domain([-1,1]).nice();
 
-var margin = {top: 20, right: 20, bottom: 40, left: 50},
-    width  = $('#d3-ff').width() - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+var data = [ ];
 
-var x = d3.scaleLinear().range([0, width]),
-    y = d3.scaleLinear().range([height, 0]);
-
-var ff_svg = d3.select("#d3-ff")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-// pull in data
-d3.csv("/assets/data/ag-ff-draft.csv", function(d) {
-    d.AG           = +d.AG;
-    d.fifth_down   = +d.fifth_down;
-    d.mock         = +d.mock;
-    d.fantasy_pros = +d.fantasy_pros;
+d3.csv("/assets/data/kut-poll-data.csv", function(d) {
+    d.leave = +d.leave;
+    d.leave_add = +d.leave_add;
+    d.remove = +d.remove;
+    d.move = +d.move;
+    d.unsure = +d.unsure;
     return d;
-}, function(error, data) {
-    if (error) throw error;
+}, function(error, d) {
+    for (var i = 0; i < d.length; i++) data.push(d[i]);
 
-    // shrinking data if on mobile (so not as much packed all in)
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        data = data.slice(1,60);
+    bar_size = (height - (margin.bar * (data.length - 1))) / data.length;
+
+    for (var i = 0; i < data.length; i++) {
+        render_bar(data, i);
     }
 
-    x.domain(d3.extent(data, function(d) { return d.AG;   }));
-    y.domain(d3.extent(data, function(d) { return d.mock; })).nice();
-
-    // for each pick, add one dot from each source
-    for (let i = 0; i < data.length; i++) {
-        ff_svg.append("circle")
-            .attr("class", "dot AG")
-            .attr("id", `AG-${i}`)
-            .attr("r", 2.5)
-            .attr("cx", x(data[i].AG))
-            .attr("cy", y(data[i].AG))
-            .style("fill", `rgba(169,169,169,${data[i].team == "Team Tanen" ? 1 : 0.5})`);
-
-        ff_svg.append("circle")
-            .attr("class", "dot fifth-down")
-            .attr("id", `fifth-down-${i}`)
-            .attr("r", 3.5)
-            .attr("cx", x(data[i].AG))
-            .attr("cy", y(data[i].fifth_down))
-            .style("stroke", "#77BDEE");
-
-        ff_svg.append("circle")
-            .attr("class", "dot fantasy-pros")
-            .attr("id", `fantasy-pros-${i}`)
-            .attr("r", 3.5)
-            .attr("cx", x(data[i].AG))
-            .attr("cy", y(data[i].fantasy_pros))
-            .style("stroke", "#23CE6B");
-
-        ff_svg.append("circle")
-            .attr("class", "dot mock")
-            .attr("id", `mock-${i}`)
-            .attr("r", 3.5)
-            .attr("cx", x(data[i].AG))
-            .attr("cy", y(data[i].mock))
-            .style("stroke", "#FF4CC8");
-    }
-
-    // build legend
-    ff_svg.append("text")
-        .attr("class", "legend-text")
-        .attr("id", "player-text")
-        .style("font-weight", "bold")
-        .attr("transform", "translate(8, 10)")
-        .text("Player Name");
-
-    ff_svg.append("text")
-        .attr("class", "legend-text")
-        .attr("id", "AG-text")
-        .attr("transform", "translate(8, 27)")
-        .text("Team Name, Pick #X");
-
-    ff_svg.append("text")
-        .attr("class", "legend-text")
-        .attr("id", "suggested-text")
-        .attr("transform", "translate(8, 44)")
-        .text("Suggested:");
-
-    ff_svg.append("text")
-        .attr("class", "legend-text suggested")
-        .attr("id", "fantasy-pros-text")
-        .style("fill", "#23ce6b")
-        .attr("transform", "translate(90, 44)")
-        .text("xxx");
-
-    ff_svg.append("text")
-        .attr("class", "legend-text suggested")
-        .attr("id", "fifth-down-text")
-        .style("fill", "#77bdee")
-        .attr("transform", "translate(122, 44)")
-        .text("yyy");
-
-    ff_svg.append("text")
-        .attr("class", "legend-text suggested")
-        .attr("id", "mock-text")
-        .style("fill", "#ff4cc8")
-        .attr("transform", "translate(154, 44)")
-        .text("zzz");
-
-    ff_svg.append("text")
-        .attr("class", "legend-text")
-        .attr("id", "consensus-text")
-        .attr("transform", "translate(122, 61)")
-        .text("(Neutral pick)");
-
-    // on hover, highlight corresponding dots and display legend information
-    ff_svg.selectAll('.dot')
-        .on("mouseover", function() {
-            let id = d3.select(this).attr('id'),
-                ix = +id.split("-")[id.split("-").length - 1];
-            
-            ff_svg.select(`#fifth-down-${ix}`).style("fill","#77BDEE");
-            ff_svg.select(`#fantasy-pros-${ix}`).style("fill","#23CE6B");
-            ff_svg.select(`#mock-${ix}`).style("fill","#FF4CC8");
-            ff_svg.select(`#AG-${ix}`).style("stroke","#a9a9a9");
-
-            ff_svg.selectAll('.legend-text').style('display','block')
-            ff_svg.select("#player-text").text(data[ix].player);
-            ff_svg.select("#AG-text").text(data[ix].team + ", Pick #" + data[ix].AG);
-            ff_svg.select("#fantasy-pros-text").text(data[ix].fantasy_pros);
-            ff_svg.select("#fifth-down-text").text(data[ix].fifth_down);
-            ff_svg.select("#mock-text").text(data[ix].mock);
-
-            let average_rank = ((sources.indexOf('fantasy-pros') >= 0 ? data[ix].fantasy_pros : 0) +
-                                (sources.indexOf('fifth-down')   >= 0 ? data[ix].fifth_down : 0) +
-                                (sources.indexOf('mock')         >= 0 ? data[ix].mock : 0)) / sources.length;
-            if (average_rank >= data[ix].AG + 1.5)      var consensus_rating = "Overrated";
-            else if (average_rank <= data[ix].AG - 1.5) var consensus_rating = "Underrated";
-            else                                        var consensus_rating = "Neutral";
-            ff_svg.select("#consensus-text").text("(" + consensus_rating + " pick)");
-        })
-        .on("mouseout", function() {
-            ff_svg.selectAll('.dot:not(.AG)').style("fill","none");
-            ff_svg.selectAll('.dot.AG').style("stroke","none");
-            ff_svg.selectAll(".legend-text").style("display","none");
-        });
-
-    // add axes and labels
-    ff_svg.append("g")
-        .attr("id","x-axis")
-        .attr("transform", `translate(0, ${height})`)
-        .call(d3.axisBottom(x).ticks(5));
-
-    ff_svg.append("g")
-        .attr("id","y-axis")
-        .call(d3.axisLeft(y).tickValues([0,36,72,108,144,180]));
-
-    ff_svg.append("text")
-        .attr("id", "x-axis-text")
-        .attr("transform", `translate(${width / 2}, ${height + margin.bottom - 10})`)
-        .text("Actual Pick");
-
-    ff_svg.append("text")
-        .attr("id", "y-axis-text")
-        .attr("transform", `translate(${-margin.left + 15}, ${height / 2}), rotate(270)`)
-        .text("Suggested Pick");
-
-    ff_svg.append("text")
-        .attr("id", "direction1-text")
-        .attr("transform", `translate(${width * 0.85}, ${height * .20}), rotate(270)`)
-        .text("Overvalued \u2192");
-
-    ff_svg.append("text")
-        .attr("id", "direction2-text")
-        .attr("transform", `translate(${width * 0.85}, ${height * .83}), rotate(270)`)
-        .text("\u2190 Undervalued ");
-
-    // shrinking data if on mobile (so not as much packed all in)
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        ff_svg.select("#direction1-text").remove();
-        ff_svg.select("#direction2-text").remove();
-    }
-
-    // toggle data sources based on what is selected
-    function refreshData() {
-        sources = sources.sort();
-
-        d3.selectAll('.dot:not(.AG)').style('display', 'none');
-        d3.selectAll('text.suggested').attr("transform", "translate(-100,-100)");
-        for (source_ix in sources) {
-            source = sources[source_ix]
-            d3.selectAll('.dot.' + source).style('display', 'initial');
-            d3.select('#' + source + '-text').attr("transform", `translate(${[90,122,154][source_ix]}, 44)`);
-        }
-
-        // move consensus text based on number of sources
-        if (sources.length == 0) d3.select('#consensus-text').attr("transform", "translate(-100,-100)");
-        else {
-            d3.select('#consensus-text')
-                .attr("transform", `translate(${[155, 106, 122][sources.length - 1]}, ${[44, 61, 61][sources.length - 1]})`);
-        }
-
-        // move "Suggested:" if no sources selected
-        if (sources.length == 0) d3.select('#suggested-text').attr("transform", "translate(-100,-100)");
-        else d3.select('#suggested-text').attr("transform", "translate(8,44)");
-    }
-
-    // update data source list
-    $('#d3-ff-buttons button').click(function() {
-        $(this).toggleClass('off');
-
-        let source = $(this).attr('id');
-        if (sources.indexOf(source) > -1) sources.splice(sources.indexOf(source), 1);
-        else sources.push(source);
-
-        refreshData();
-    });
-
-    // make chart resizable
-    $(window).resize(function() {
-        // update width and scale to match
-        width  = $('#d3-ff').width() - margin.left - margin.right;
-        x.range([0, width]);
-
-        // move each dot  
-        for (var i = 0; i < data.length; i++) {
-            ff_svg.selectAll(`#fifth-down-${i}, #fantasy-pros-${i}, #mock-${i}, #AG-${i}`)
-                .attr('cx', x(data[i].AG));
-        }
-
-        // update axis
-        ff_svg.select("#x-axis")
-            .call(d3.axisBottom(x).ticks(5));
-
-        ff_svg.select("#x-axis-text")
-            .attr("transform", `translate(${width / 2}, ${height + margin.bottom - 10})`);
-
-        ff_svg.select("#direction1-text")
-            .attr("transform", `translate(${width * 0.85}, ${height * .20}), rotate(270)`);
-
-        ff_svg.select("#direction2-text")
-            .attr("transform", `translate(${width * 0.85}, ${height * .83}), rotate(270)`);
-
-    });
+    render_axes();
+    render_text();
 });
 
+// make chart resizable
+$(window).resize(function() {
+    width  = $('#d3-confederate-poll').width() -  margin.left - margin.right;
+
+    scale.range([0, width]);
+
+    d3.selectAll('text').remove();
+    d3.selectAll('rect').remove();
+    d3.selectAll('line').remove();
+    d3.select('#x-axis').remove();
+
+    for (var i = 0; i < data.length; i++) {
+        render_bar(data, i);
+    }
+
+    render_axes();
+    render_text();
+});
+
+function render_bar(data, i) {
+    confederate_svg.append('rect')
+        .attr('class', 'bar leave-add')
+        .attr('width', scale(data[i].leave_add) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(0))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i > 0 ? margin.bar : 0));
+
+    if (scale(data[i].leave_add) - scale(0) > 25) {
+        confederate_svg.append('text')
+            .attr('class', 'text pct-label')
+            .attr('x', margin.left + scale(0) + (scale(data[i].leave_add) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i > 0 ? margin.bar : 0))
+            .text((data[i].leave_add * 100).toFixed(0) + "%");
+    }
+
+    confederate_svg.append('rect')
+        .attr('class', 'bar leave')
+        .attr('width', scale(data[i].leave) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(data[i].leave_add))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i > 0 ? margin.bar : 0));
+
+    if (scale(data[i].leave) - scale(0) > 25) {
+        confederate_svg.append('text')
+            .attr('class', 'pct-label')
+            .attr('x', margin.left + scale(data[i].leave_add) + (scale(data[i].leave) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i > 0 ? margin.bar : 0))
+            .text((data[i].leave * 100).toFixed(0) + "%");
+    }
+
+    confederate_svg.append('rect')
+        .attr('class', 'bar remove')
+        .attr('width', scale(data[i].remove) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(-data[i].remove - data[i].move))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i > 0 ? margin.bar : 0));
+
+    if (scale(data[i].remove) - scale(0) > 25) {
+        confederate_svg.append('text')
+            .attr('class', 'pct-label')
+            .attr('x', margin.left + scale(-data[i].remove - data[i].move) + (scale(data[i].remove) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i > 0 ? margin.bar : 0))
+            .text((data[i].remove * 100).toFixed(0) + "%");
+    }
+
+    confederate_svg.append('rect')
+        .attr('class', 'bar move')
+        .attr('width', scale(data[i].move) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(-data[i].move))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i > 0 ? margin.bar : 0));
+
+    if (scale(data[i].move) - scale(0) > 25) {
+        confederate_svg.append('text')
+            .attr('class', 'text pct-label')
+            .attr('x', margin.left + scale(-data[i].move) + (scale(data[i].move) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i > 0 ? margin.bar : 0))
+            .text((data[i].move * 100).toFixed(0) + "%");
+    }
+
+    confederate_svg.append('text')
+        .attr('class', 'text label')
+        .attr('x', margin.left + scale(-data[i].remove - data[i].move) - 7)
+        .attr('y', margin.top + bar_size * (i + 0.6) + margin.bar * i + (i > 0 ? margin.bar : 0))
+        .style('font-size', '11.5px')
+        .style('text-anchor', 'end')
+        .text(clean_group_name(data[i].group));
+}
+
+function render_axes() {
+    confederate_svg.append('line')
+        .attr('id', 'midline')
+        .attr('x1', margin.left + scale(0) + 0.5)
+        .attr('x2', margin.left + scale(0) + 0.5)
+        .attr('y1', margin.top)
+        .attr('y2', margin.top + height + margin.bar * 2)
+        .attr('stroke', 'black');
+
+    confederate_svg.append('line')
+        .attr('id', 'breakline')
+        .attr('x1', margin.left)
+        .attr('x2', margin.left + width)
+        .attr('y1', margin.top + bar_size + margin.bar)
+        .attr('y2', margin.top + bar_size + margin.bar)
+        .attr('stroke', 'black')
+        .attr('stroke-width', 0.75)
+        .attr('stroke-dasharray', '5, 5');
+
+    confederate_svg.append("g")
+        .attr("id","x-axis")
+        .attr("transform", `translate(${margin.left}, ${margin.top + height + margin.bar * 2})`)
+        .call(d3.axisBottom(scale).ticks(5).tickFormat(function (d) { 
+            if (d < 0) d = -d; // No nagative labels
+            return d3.format(".0%")(d);
+        }));
+}
+
+function render_text() {
+    if (width <= 450) {
+        confederate_svg.append("text")
+            .attr('id', 'title1')
+            .attr('id', 'title2')
+            .attr("transform", `translate(${margin.left + width / 2}, 16)`)
+            .style('font-size', '16px')
+            .style('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text("What to do with");
+
+        confederate_svg.append("text")
+            .attr('id', 'title1')
+            .attr('id', 'title2')
+            .attr("transform", `translate(${margin.left + width / 2}, 32)`)
+            .style('font-size', '16px')
+            .style('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text("Confederate monuments?");
+    } else {
+        confederate_svg.append("text")
+            .attr('id', 'title')
+            .attr("transform", `translate(${margin.left + width / 2}, 27.5)`)
+            .style('font-size', '18px')
+            .style('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text("What to do with Confederate monuments?");
+    }
+
+    /* legend */
+    confederate_svg.append("rect")
+        .attr('class', 'legend remove')
+        .attr("x", margin.left + width / 2 - 20)
+        .attr("y", 42.5);
+
+    confederate_svg.append("text")
+        .attr("transform", `translate(${margin.left + width / 2 - 25}, 55)`)
+        .style('font-size', '12px')
+        .style('text-anchor', 'end')
+        .text("Remove them");
+
+    confederate_svg.append("rect")
+        .attr('class', 'legend move')
+        .attr("x", margin.left + width / 2 - 20)
+        .attr("y", 67.5);
+
+    confederate_svg.append("text")
+        .attr("transform", `translate(${margin.left + width / 2 - 25}, 80)`)
+        .style('font-size', '12px')
+        .style('text-anchor', 'end')
+        .text("Move to museums");
+
+    confederate_svg.append("rect")
+        .attr('class', 'legend leave-add')
+        .attr("x", margin.left + width / 2 + 5)
+        .attr("y", 67.5);
+
+    confederate_svg.append("text")
+        .attr("transform", `translate(${margin.left + width / 2 + 25}, 80)`)
+        .style('font-size', '12px')
+        .style('text-anchor', 'start')
+        .text(`${width <= 300 ? "A" : "Leave them, a"}dd ${width <= 400 ? " " : "historical "}context`);
+
+    confederate_svg.append("rect")
+        .attr('class', 'legend leave')
+        .attr("x", margin.left + width / 2 + 5)
+        .attr("y", 42.5);
+
+    confederate_svg.append("text")
+        .attr("transform", `translate(${margin.left + width / 2 + 25}, 55)`)
+        .style('font-family', 'Helvetica Neue')
+        .style('font-size', '12px')
+        .style('text-anchor', 'start')
+        .text("Leave them as is");
+
+    /* source */
+    confederate_svg.append("text")
+        .attr("transform", `translate(${margin.left + width}, ${margin.top + height + 55})`)
+        .style('font-family', 'Helvetica Neue')
+        .style('font-size', '11px')
+        .style('text-anchor', 'end')
+        .style('fill', '#989c9e')
+        .text("Source: UT/TT Poll, KUT 90.5");
+}
+
+function clean_group_name(group) {
+    if (width <= 450) {
+        if (group == "independents") return "Indep.";
+        else if (group == "all") return "All";
+        else return group[0].toUpperCase() + group.substring(1,3) + ".";
+    }
+    else {
+        return group[0].toUpperCase() + group.substring(1,group.length);
+    }
+}
 </script>
 
 
@@ -529,406 +875,6 @@ d3.csv("/assets/data/ag-ff-draft.csv", function(d) {
 </div>
 
 
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Street Art in London</h1>
-       <!--
-       <p class="post-meta">Jul 30 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>I just got back from a trip to London and while I was there, I got to check out of some London’s pretty incredible street art. I was taken around parts of the city by an artist trying to break into the street art scene so he was able to share some additional information on the pieces. It was very cool to hear some of the background on the artist(s) behind each piece and the general culture in the street scene. It certainly added an extra layer to the compositions and their significance in London as a whole.</p>
-
-<p>Amazed by many of the works, I thought I’d share some of my personal favorites. These photos certainly don’t do the art justice so if you have the opportunity to wander around London (specifically Shoreditch and Brick Lane) and see it in person, I would highly suggest it.</p>
-
-<p>P.S. Since this isn’t the <a href="/blog/2016/04/26/photography.html">first</a> <a href="/blog/2016/11/10/stpaul-broken-bones.html">time</a> I’ve posted about pictures I’ve taken, I decided to put together <a href="http://link.ben-tanen.com/photo">a dedicated page</a> for some of my personal favorite photos. Feel free to check it out and enjoy!</p>
-
-<style>
-    .photo-container {
-    }
-
-    .photo-container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
-
-    .sub-photo-container {
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    .sub-photo-container.wide {
-        width: calc(98% + 5px);
-    }
-
-</style>
-
-<div class="photo-container">
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-1.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-9.jpg" />
-    </div>
-
-    <div class="sub-photo-container wide">
-        <img src="/assets/img/posts/LDN-streetart-2.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-7.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-3.jpg" />
-    </div>
-
-    <div class="sub-photo-container wide">
-        <img src="/assets/img/posts/LDN-streetart-4.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-8.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-5.jpg" />
-        <img src="/assets/img/posts/LDN-streetart-6.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-10.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/LDN-streetart-11.jpg" />
-    </div>
-</div>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Random Brain Fun with Illustrator</h1>
-       <!--
-       <p class="post-meta">Jun 23 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because of my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">WIRED</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
-
-<p>In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we’ve all got to start somewhere. Expect more to come…</p>
-
-<style>
-    #brain-viz-container {
-        width: 325px;
-        margin: auto;
-    }
-
-    #brain-viz {
-        width: 100%;
-        height: auto;
-    }
-
-    #brain-viz line {
-        fill: none;
-        stroke: #77bdee;
-        stroke-width: 3;
-    }
-
-    #brain-viz circle:not(#background-circle) {
-        fill: #77bdee;
-    }
-</style>
-
-<div id="brain-viz-container">
-    <svg id="brain-viz" viewBox="-50 -50 600 600">
-        <circle id="background-circle" cx="250" cy="250" r="300" />
-        <line x1="356.396" y1="213.275" x2="295.861" y2="212.697" />
-        <line x1="266.287" y1="254.945" x2="356.396" y2="213.275" />
-        <line x1="262.855" y1="297.188" x2="375.528" y2="270.223" />
-        <line x1="139.737" y1="247.904" x2="80.657" y2="287.807" />
-        <line x1="56.247" y1="182.52" x2="139.737" y2="247.904" />
-        <line x1="56.247" y1="182.52" x2="106.944" y2="157.976" />
-        <line x1="135.713" y1="212.697" x2="56.247" y2="182.52" />
-        <line x1="106.944" y1="157.976" x2="135.713" y2="212.697" />
-        <line x1="177.224" y1="322.676" x2="136.987" y2="357.548" />
-        <line x1="210.754" y1="348.16" x2="177.224" y2="322.676" />
-        <line x1="273.791" y1="340.111" x2="210.754" y2="348.16" />
-        <line x1="332.804" y1="454.115" x2="273.791" y2="340.111" />
-        <line x1="260.378" y1="295.854" x2="326.099" y2="341.453" />
-        <line x1="268.426" y1="256.957" x2="260.378" y2="295.854" />
-        <line x1="240.261" y1="200.626" x2="268.426" y2="256.957" />
-        <line x1="295.25" y1="215.379" x2="240.261" y2="200.626" />
-        <line x1="314.027" y1="171.12" x2="295.25" y2="215.379" />
-        <line x1="356.945" y1="215.379" x2="314.027" y2="171.12" />
-        <line x1="377.062" y1="271.711" x2="356.945" y2="215.379" />
-        <line x1="358.287" y1="303.9" x2="377.062" y2="271.711" />
-        <line x1="373.04" y1="362.912" x2="358.287" y2="303.9" />
-        <line x1="395.841" y1="325.357" x2="373.04" y2="362.912" />
-        <line x1="410.595" y1="374.982" x2="395.841" y2="325.357" />
-        <line x1="417.971" y1="308.499" x2="464.242" y2="337.43" />
-        <line x1="449.488" y1="364.254" x2="417.971" y2="308.499" />
-        <line x1="417.3" y1="309.266" x2="476.112" y2="302.424" />
-        <line x1="379.746" y1="222.086" x2="417.3" y2="309.266" />
-        <line x1="411.936" y1="208.674" x2="379.746" y2="222.086" />
-        <line x1="472.29" y1="246.497" x2="411.936" y2="208.674" />
-        <line x1="386.453" y1="160.39" x2="446.808" y2="180.508" />
-        <line x1="410.595" y1="128.201" x2="386.453" y2="160.39" />
-        <line x1="322.075" y1="134.907" x2="295.25" y2="55.776" />
-        <line x1="268.426" y1="125.519" x2="322.075" y2="134.907" />
-        <line x1="250.99" y1="55.776" x2="268.426" y2="125.519" />
-        <line x1="171.859" y1="90.647" x2="250.99" y2="55.776" />
-        <line x1="154.423" y1="62.481" x2="171.859" y2="90.647" />
-        <line x1="57.856" y1="181.85" x2="37.738" y2="142.954" />
-        <line x1="17.62" y1="196.603" x2="57.856" y2="181.85" />
-        <line x1="49.809" y1="239.521" x2="17.62" y2="196.603" />
-        <line x1="44.444" y1="278.416" x2="49.809" y2="239.521" />
-        <line x1="323.014" y1="131.822" x2="250.99" y2="55.776" />
-        <line x1="357.616" y1="212.697" x2="323.014" y2="131.822" />
-        <line x1="386.185" y1="159.787" x2="357.616" y2="212.697" />
-        <line x1="323.014" y1="131.822" x2="386.185" y2="106.272" />
-        <line x1="330.055" y1="71.267" x2="323.014" y2="131.822" />
-        <line x1="37.738" y1="142.954" x2="154.423" y2="62.481" />
-        <line x1="65.099" y1="103.858" x2="56.247" y2="182.52" />
-        <line x1="104.53" y1="103.858" x2="65.099" y2="103.858" />
-        <line x1="142.755" y1="106.876" x2="104.53" y2="103.858" />
-        <line x1="165.287" y1="131.822" x2="142.755" y2="106.876" />
-        <line x1="223.831" y1="137.053" x2="165.287" y2="131.822" />
-        <line x1="268.693" y1="124.781" x2="223.831" y2="137.053" />
-        <line x1="241.132" y1="200.626" x2="268.693" y2="124.781" />
-        <line x1="217.795" y1="232.413" x2="241.132" y2="200.626" />
-        <line x1="160.849" y1="170.248" x2="217.795" y2="232.413" />
-        <line x1="106.944" y1="157.976" x2="160.849" y2="170.248" />
-        <line x1="56.247" y1="182.52" x2="106.944" y2="157.976" />
-        <line x1="165.287" y1="131.822" x2="104.53" y2="103.858" />
-        <line x1="160.849" y1="170.248" x2="165.287" y2="131.822" />
-        <line x1="241.132" y1="200.626" x2="160.849" y2="170.248" />
-        <line x1="217.795" y1="232.413" x2="241.132" y2="200.626" />
-        <line x1="139.737" y1="247.904" x2="217.795" y2="232.413" />
-        <line x1="160.849" y1="170.248" x2="139.737" y2="247.904" />
-        <line x1="104.53" y1="103.858" x2="106.944" y2="157.976" />
-        <line x1="142.755" y1="106.876" x2="154.423" y2="62.817" />
-        <line x1="171.538" y1="90.086" x2="142.755" y2="106.876" />
-        <line x1="165.287" y1="131.822" x2="174.139" y2="88.568" />
-        <line x1="250.99" y1="55.776" x2="165.287" y2="131.822" />
-        <line x1="223.831" y1="137.053" x2="250.99" y2="55.776" />
-        <line x1="160.849" y1="170.248" x2="223.831" y2="137.053" />
-        <line x1="135.713" y1="212.697" x2="160.849" y2="170.248" />
-        <line x1="139.737" y1="247.904" x2="135.713" y2="212.697" />
-        <line x1="137.122" y1="274.661" x2="139.737" y2="247.904" />
-        <line x1="217.795" y1="232.413" x2="137.122" y2="274.661" />
-        <line x1="178.163" y1="323.348" x2="217.795" y2="232.413" />
-        <line x1="261.452" y1="296.188" x2="178.163" y2="323.348" />
-        <line x1="396.646" y1="326.171" x2="376.125" y2="268.225" />
-        <line x1="417.3" y1="309.266" x2="396.646" y2="326.171" />
-        <line x1="472.29" y1="246.496" x2="417.3" y2="309.266" />
-        <line x1="412.338" y1="375.461" x2="417.971" y2="307.654" />
-        <line x1="326.232" y1="340.254" x2="371.699" y2="361.378" />
-        <line x1="308.335" y1="370.32" x2="326.232" y2="340.254" />
-        <line x1="261.452" y1="296.188" x2="308.335" y2="370.32" />
-        <line x1="268.493" y1="254.945" x2="261.452" y2="296.188" />
-        <line x1="217.795" y1="232.413" x2="268.493" y2="254.945" />
-        <line x1="261.452" y1="296.188" x2="217.795" y2="232.413" />
-        <line x1="213.065" y1="347.295" x2="261.452" y2="296.188" />
-        <line x1="137.122" y1="274.661" x2="137.122" y2="356.341" />
-        <line x1="178.163" y1="323.348" x2="137.122" y2="274.661" />
-        <line x1="308.335" y1="370.32" x2="334.682" y2="457.334" />
-        <line x1="273.925" y1="340.254" x2="308.335" y2="370.32" />
-        <line x1="261.452" y1="296.188" x2="273.925" y2="340.254" />
-        <line x1="357.616" y1="303.229" x2="261.452" y2="296.188" />
-        <line x1="326.232" y1="340.254" x2="357.616" y2="303.229" />
-        <line x1="376.125" y1="268.225" x2="371.699" y2="361.378" />
-        <line x1="417.971" y1="307.654" x2="376.125" y2="268.225" />
-        <line x1="412.338" y1="210.686" x2="417.971" y2="307.654" />
-        <line x1="447.344" y1="177.289" x2="412.338" y2="210.686" />
-        <line x1="412.338" y1="210.686" x2="410.595" y2="128.201" />
-        <line x1="386.185" y1="159.787" x2="412.338" y2="210.686" />
-        <line x1="380.752" y1="222.756" x2="386.185" y2="159.787" />
-        <line x1="357.616" y1="212.697" x2="380.752" y2="222.756" />
-        <line x1="386.185" y1="106.272" x2="357.616" y2="212.697" />
-        <line x1="323.014" y1="131.822" x2="360.433" y2="86.959" />
-        <line x1="314.161" y1="170.248" x2="323.014" y2="131.822" />
-        <line x1="268.693" y1="124.781" x2="314.161" y2="170.248" />
-        <line x1="295.861" y1="212.697" x2="268.693" y2="124.781" />
-        <line x1="376.125" y1="268.225" x2="268.493" y2="254.945" />
-        <line x1="380.752" y1="222.756" x2="376.125" y2="268.225" />
-        <line x1="105.25" y1="103.915" x2="160.849" y2="170.248" />
-        <line x1="56.247" y1="182.52" x2="104.53" y2="103.858" />
-        <line x1="80.657" y1="287.807" x2="56.247" y2="182.52" />
-        <line x1="49.809" y1="239.521" x2="80.657" y2="287.807" />
-        <line x1="385.024" y1="106.742" x2="386.453" y2="161.333" />
-        <line class="brain-border" x1="42.176" y1="276.404" x2="17.62" y2="193.75" />
-        <line class="brain-border" x1="134.305" y1="274.393" x2="80.657" y2="287.807" />
-        <line class="brain-border" x1="118.211" y1="322.676" x2="134.305" y2="274.393" />
-        <line class="brain-border" x1="136.987" y1="357.548" x2="118.211" y2="322.676" />
-        <line class="brain-border" x1="326.099" y1="341.453" x2="332.804" y2="454.115" />
-        <line class="brain-border" x1="449.488" y1="364.254" x2="410.595" y2="374.982" />
-        <line class="brain-border" x1="464.242" y1="337.43" x2="449.488" y2="364.254" />
-        <line class="brain-border" x1="446.808" y1="180.508" x2="472.29" y2="246.497" />
-        <line class="brain-border" x1="386.453" y1="106.742" x2="410.595" y2="128.201" />
-        <line class="brain-border" x1="358.287" y1="87.965" x2="386.453" y2="106.742" />
-        <line class="brain-border" x1="328.78" y1="71.87" x2="358.287" y2="87.965" />
-        <line class="brain-border" x1="295.25" y1="55.776" x2="328.78" y2="71.87" />
-        <line class="brain-border" x1="64.562" y1="105.401" x2="154.423" y2="62.481" />
-        <line class="brain-border" x1="37.738" y1="142.954" x2="64.562" y2="105.401" />
-        <line class="brain-border" x1="80.657" y1="287.807" x2="44.444" y2="278.416" />
-        <line class="brain-border" x1="250.99" y1="55.776" x2="295.25" y2="55.776" />
-        <line class="brain-border" x1="154.423" y1="62.481" x2="250.99" y2="55.776" />
-        <line class="brain-border" x1="17.62" y1="196.603" x2="37.738" y2="142.954" />
-        <line class="brain-border" x1="476.112" y1="302.424" x2="472.29" y2="246.496" />
-        <line class="brain-border" x1="464.242" y1="337.43" x2="476.112" y2="302.424" />
-        <line class="brain-border" x1="371.699" y1="361.378" x2="412.338" y2="375.461" />
-        <line class="brain-border" x1="137.122" y1="356.341" x2="213.065" y2="347.295" />
-        <line class="brain-border" x1="371.699" y1="361.378" x2="326.232" y2="340.254" />
-        <line class="brain-border" x1="410.595" y1="128.201" x2="447.344" y2="177.289" />
-        <line class="brain-border" x1="211.5" y1="348" x2="332.804" y2="455.5" />
-        <circle cx="294.654" cy="56.776" r="7.042" />
-        <circle cx="248.003" cy="55.167" r="7.042" />
-        <circle cx="152.827" cy="62.817" r="7.042" />
-        <circle cx="170.542" cy="88.568" r="7.042" />
-        <circle cx="268.098" cy="124.781" r="7.041" />
-        <circle cx="312.565" cy="169.248" r="7.042" />
-        <circle cx="323.417" cy="131.822" r="7.042" />
-        <circle cx="328.458" cy="72.267" r="7.041" />
-        <circle cx="356.836" cy="86.959" r="7.042" />
-        <circle cx="382.587" cy="106.272" r="7.042" />
-        <circle cx="407.131" cy="126.391" r="7.042" />
-        <circle cx="443.747" cy="177.289" r="7.042" />
-        <circle cx="165.69" cy="130.822" r="7.042" />
-        <circle cx="223.234" cy="137.053" r="7.041" />
-        <circle cx="143.158" cy="105.876" r="7.041" />
-        <circle cx="101.934" cy="103.858" r="7.041" />
-        <circle cx="105.348" cy="157.976" r="7.041" />
-        <circle cx="58.65" cy="180.52" r="7.041" />
-        <circle cx="36.141" cy="140.674" r="7.042" />
-        <circle cx="62.502" cy="103.858" r="7.041" />
-        <circle cx="18.041" cy="195.603" r="7.041" />
-        <circle cx="49.218" cy="240.119" r="7.042" />
-        <circle cx="42.994" cy="275.667" r="7.042" />
-        <circle cx="79.597" cy="287.285" r="7.042" />
-        <circle cx="135.525" cy="273.661" r="7.041" />
-        <circle cx="118.614" cy="323.347" r="7.042" />
-        <circle cx="137.525" cy="356.341" r="7.041" />
-        <circle cx="178.566" cy="323.348" r="7.041" />
-        <circle cx="211.469" cy="347.295" r="7.041" />
-        <circle cx="270.329" cy="340.254" r="7.042" />
-        <circle cx="332.085" cy="455.334" r="7.041" />
-        <circle cx="307.738" cy="369.321" r="7.041" />
-        <circle cx="322.635" cy="340.254" r="7.042" />
-        <circle cx="372.103" cy="360.378" r="7.041" />
-        <circle cx="408.741" cy="375.461" r="7.041" />
-        <circle cx="446.562" cy="363.28" r="7.042" />
-        <circle cx="463.326" cy="336.535" r="7.042" />
-        <circle cx="397.049" cy="325.171" r="7.041" />
-        <circle cx="357.02" cy="303.229" r="7.042" />
-        <circle cx="262.855" cy="297.188" r="7.042" />
-        <circle cx="375.528" cy="270.225" r="7.041" />
-        <circle cx="266.287" cy="254.945" r="7.041" />
-        <circle cx="214.199" cy="232.413" r="7.042" />
-        <circle cx="240.536" cy="200.626" r="7.042" />
-        <circle cx="294.266" cy="211.697" r="7.042" />
-        <circle cx="357.02" cy="212.697" r="7.042" />
-        <circle cx="380.156" cy="222.756" r="7.042" />
-        <circle cx="411.741" cy="209.686" r="7.041" />
-        <circle cx="386.587" cy="160.787" r="7.042" />
-        <circle cx="160.252" cy="169.248" r="7.041" />
-        <circle cx="132.117" cy="212.697" r="7.041" />
-        <circle cx="138.141" cy="246.904" r="7.041" />
-        <circle cx="473.516" cy="302.424" r="7.041" />
-        <circle cx="470.693" cy="245.496" r="7.042" />
-        <circle cx="417.374" cy="307.654" r="7.041" />
-    </svg>
-</div>
-
-<script>
-    function animate_brain() {
-        var available_lines = brain_svg.selectAll('line:not(.tbd):not(.brain-border)');
-
-        if (available_lines.size() == 0) return;
-
-        var ix = Math.floor(Math.random() * available_lines.size());
-
-        var l1 = d3.select(available_lines._groups[0][ix]);
-        var l2 = brain_svg.append('line')
-            .attr('x1', l1.attr('x2'))
-            .attr('y1', l1.attr('y2'))
-            .attr('x2', l1.attr('x2'))
-            .attr('y2', l1.attr('y2'));
-
-        var x1 = l1.attr('x1'),
-            y1 = l1.attr('y1');
-
-        l2.transition().duration(1000).delay(200)
-            .attr('x1', x1)
-            .attr('y1', y1);
-
-        l1.transition().duration(1000)
-            .attr('x2', x1)
-            .attr('y2', y1)
-            .transition().delay(2000)
-            .remove();
-    }
-
-    var brain_svg = d3.select('#brain-viz');
-    var lines = brain_svg.selectAll('line'),
-        dots  = brain_svg.selectAll('circle');
-
-    var brain_interval = setInterval(function() {
-        animate_brain();
-    }, 200);
-
-    $(window).blur(function() {
-        clearInterval(brain_interval);
-    });
-
-    $(window).focus(function() {
-        brain_interval = setInterval(function() {
-            animate_brain();
-        }, 200);
-    });
-</script>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Explaining Adaptive Huffman Coding with Scrollytelling</h1>
-       <!--
-       <p class="post-meta">Jun 01 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>After months of reading and being impressed by the <a href="https://pudding.cool/2017/04/beer/" target="_blank">very</a> <a href="https://pudding.cool/2017/01/making-it-big/" target="_blank">cool</a> <a href="https://pudding.cool/2017/02/vocabulary/" target="_blank">visual</a> <a href="https://pudding.cool/2017/05/song-repetition/" target="_blank">essays</a> put out by <a href="https://pudding.cool/" target="_blank">The Pudding</a>, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">traditional Huffman Coding</a> to <a href="https://en.wikipedia.org/wiki/Adaptive_Huffman_coding" target="_blank">adaptive Huffman Coding</a>.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/huffman-coding.gif" target="_blank">
-    <img src="/assets/img/posts/huffman-coding.gif" alt="A screen capture of the scrollytelling visualization" />
-    </a>
-</p>
-
-<p>To give a quick preview, Huffman Coding is a lossless data compression algorithm, which means we can reduce the size of any dataset by 15 - 30% without corrupting any of our data. However, in order to do this, Huffman Coding requires some prior knowledge of our dataset, which means we will be slowed down if we don’t already have this information. To improve upon this, we can instead use Adaptive Huffman Coding, which enables us to get comparable compression efficiency in a fraction of the time. Intrigued? You can check out <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_blank">the full explanation</a> for more.</p>
-
-<p>If you’re interested in the code, that can be found <a href="https://github.com/ben-tanen/adaptive-huffman/" target="_blank">here</a>. If you’re interested in trying out your own scrollytelling project, I would definitely suggest checking out The Pudding’s work as well as <a href="https://pudding.cool/process/how-to-implement-scrollytelling/" target="_blank">this tutorial</a> they put together - it was a huge help for me.</p>
-
-<p><em>Usability Note</em>: I have noticed some rendering issues when viewing the second half of the site in Safari and Firefox <span style="font-size: 9px">(sorry)</span>. I’m trying to figure out the issue, but for now, I would suggest viewing the site in Chrome.</p>
-
-    </article>
-</div>
 
 
 

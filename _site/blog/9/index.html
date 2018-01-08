@@ -17,6 +17,7 @@
     <!-- jquery and js files -->
     <script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
@@ -139,119 +140,205 @@
 
 <div class='post'>
     <header class="post-header">
-	   <h1>Random Project: Base64 Decoder</h1>
+	   <h1>Retro Post: iOS Upgrades (Circa 2013)</h1>
        <!--
-       <p class="post-meta">Nov 12 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       <p class="post-meta">Jun 17 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
        -->
     </header>
 
     <article class="post-content">
-	   <p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
+	   <p>Before moving to Github and using Jekyll, I hosted a <a href="http://ben-tanen.tumblr.com/">blog on Tumblr</a>. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some <em>retro posts</em> from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6).</p>
 
-<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
+<p>I’d like to point out that since then, three of these four upgrades have been implemented in someway or another so I guess you could say I’m an accurate futurist. I’d also like to say that I spent a fair amount of time building these mockup screens in Adobe After Effects and they’re actually pretty awesome. Overall success for 18 year old me!</p>
 
-<ol>
-  <li>Convert each encoded character to ASCII values</li>
-  <li>String together 6-bit strings of ASCII values</li>
-  <li>Break string up into 8-bit strings</li>
-  <li>Convert 8-bit strings back into ASCII values</li>
-  <li>Convert to decoded character</li>
-</ol>
+<p><em>[Beginning of Post]</em></p>
 
-<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code <a href="https://github.com/ben-tanen/Base64Decode">here</a>.</p>
+<p>I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone itself lacks some capabilities. Here are a few ideas that I have for improvements to the software.</p>
 
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Up-to-Date Infographics</h1>
-       <!--
-       <p class="post-meta">Nov 01 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/infographics-kerem.png" target="_blank">
-    <img src="/assets/img/posts/infographics-kerem.png" alt="Examples of Kerem's use of infographics" />
-    </a>
-</p>
-
-<figcaption>
-Examples of Kerem's use of infographics
-</figcaption>
-
-<p>For my infographics, I was attempting to display what I was currently up to (currently reading, listening to, watching). I never thought that it could be live updates, but more so descriptions of the book, album, and show/movie that I was into that week. However, the struggle with this was it was not easy to update the information. I had hard-coded into my HTML file, and accessing, changing, and uploading this was generally a pain, leaving my information drastically out-of-date.</p>
-
-<p>Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of <a href="http://www.IFTTT.com">IFTTT</a>, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/infographics-ex.png" target="_blank">
-    <img src="/assets/img/posts/infographics-ex.png" alt="My own example infographics" />
-    </a>
-</p>
-
-<figcaption>
-My own example infographics
-</figcaption>
-
-<p>The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.</p>
-
-<p>It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date.</p>
-
-<p><strong>Update, 12/26/2016</strong> - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on <a href="/about/">my about page</a>.</p>
-
-<p><strong>Update, 07/28/2017</strong> - Still using the improved system but now I don’t have an about page any more… you can find the details on <a href="/">my home page</a>.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Rap, Data, and Design</h1>
-       <!--
-       <p class="post-meta">Oct 31 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>A genre of music I don’t find myself particularly well-versed in is hip-hop and rap. I’ll listen to it on occasion when my more rap-inclined friends suggests some, but for the most part, I really only know the highlights. One thing I very much do like though is beautiful representation of data and Matt Daniels did the wonderful task of combining the two.</p>
-
-<p>In his post, <a href="http://experiments.undercurrent.com/">The Largest Vocabulary in Hip Hop</a>, Daniels analyzed the discography of 85 rappers (he added another 19 in his <a href="http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/">updated version</a> of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/rap-vocab.png" target="_blank">
-    <img src="/assets/img/posts/rap-vocab.png" alt="A screenshot from the article" />
-    </a>
-</p>
-
-<p>Daniels does some interesting analysis of the data in the actual post (for example, examining how the individuals of the Wu-Tang Clan holds up) and it’s worth checking out.</p>
-
-<p>A quick note, after Daniels posted the piece, multiple sites refuted the post as it seems to imply that a rapper’s talent is determined by the number of unique words they use. However, Daniels addressed this apparent implication in the updated piece, saying:</p>
+<p><strong>Priority Messages:</strong> Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed.</p>
 
 <blockquote>
-  <p>“In short, take all of this with a grain of salt. Think of this as a data-point that sparks interesting discussion about hip hop and word-usage, and absolutely not a conclusive argument for rapper x is better than rapper y.”</p>
+  <p><strong>Retrospective Update</strong> - Apple decided to basically implement this but in reverse. If you want to mute specific people, you can and then the rest of your messages will come through.</p>
 </blockquote>
 
-<p>From my limited experience, a huge part of a rapper’s talent is derived from how they combine their words in creative, unique way and then how they make those words flow. These two aspects are independent of the above data, so as Daniels mentions, this is only part of a greater discussion.</p>
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/ios-updates-textdelay.gif" target="_blank">
+    <img src="/assets/img/posts/ios-updates-textdelay.gif" alt="A simulated screen capture of the text delay feature" width="230px" />
+    </a>
+</p>
 
-<p>Regardless, the piece is creative and does a great job of combining two seemingly dissimilar things. It’s definitely worth a read.</p>
+<figcaption>
+Delay a text to send a few minutes (or even a few hours)
+</figcaption>
 
-<p>By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.</p>
+<p><strong>Text Delay:</strong> On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time.</p>
+
+<blockquote>
+  <p><strong>Retrospective Update #2</strong> - This change has not yet been implemented, but it 100% should be. Still one of my top desired features</p>
+</blockquote>
+
+<p><strong>In-App Text Response:</strong> While the Multi-tasking on iOS is helpful, responding to a text still requires you to switch to the Messages app, which sometimes closes/disrupts certain other apps (Netflix, games). Instead, an option for In-App texting would simply have a pop-up screen in which the user can send a quick text. This capability is featured on many non-iOS devices, and it should be brought to the iPhone.</p>
+
+<blockquote>
+  <p><strong>Retrospective Update #3</strong> - This is also available now, woohoo!</p>
+</blockquote>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/ios-updates-inapptext.gif" target="_blank">
+    <img src="/assets/img/posts/ios-updates-inapptext.gif" alt="A simulated screen capture of the in-app texting feature" width="230px" />
+    </a>
+</p>
+
+<figcaption>
+Update - More or less is exactly what the actual implementation looks like
+</figcaption>
+
+<p><strong>Voice Activated Siri:</strong> Siri is particularly useful, especially when you can’t (or shouldn’t) be using your hands (driving, shower, etc.). However, turning on Siri requires manual activation with a hand. Instead, there should be an option to start Siri using one’s voice. For example, Siri could be activated by either saying “Siri” (though that presents certain issues in a crowd of people saying the same thing) or a keyword that the user picks (ex: “Pterodactyl”).</p>
+
+<blockquote>
+  <p><strong>Retrospective Update #4</strong> - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.</p>
+</blockquote>
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Why Everyone Should Use (Or At Least Try) Spotify</h1>
+       <!--
+       <p class="post-meta">May 21 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.</p>
+
+<p>And you know what? I love Spotify. Every concern I had was quickly answered because they have thought of everything. Want to have music while you’re out of cell range? No worries, you can download playlists straight to your phone or computer. Want to listen to a brand-new remix that isn’t on Spotify? Loading and listening to local / custom files is easy. And that is just the simple stuff. If you know anyone who uses Spotify, I’m sure you’ve heard a similar raving review. But if you’re still not convinced, here is why I think you should at least consider trying Spotify Premium.</p>
+
+<p><strong>Note</strong>: This post is in no way sponsored by Spotify. I just like their service.</p>
+
+<h3 id="instant-access-to-millions-of-songs">Instant Access to Millions of Songs</h3>
+
+<p>Of course you’ve heard that Spotify has lots of songs available, which isn’t necessarily jaw-dropping. But when you compare it to Spotify’s competitors, 30-million songs is a hell of a lot for $10 / month (or $5 / month if you’re a student). For $10 on iTunes, you get 7 - 10 songs a month. But maybe you’re considering about getting more than 10 songs a month in a less, perhaps, legal way. That might work until you get a cease and desist e-mail for a lot more than $10. So at the end of the day, 30-million songs for $10 / month is a might fine deal.</p>
+
+<h3 id="crazy-good-cross-syncing">Crazy Good Cross-Syncing</h3>
+
+<p>Apple seems very proud of their cross-syncing platform iCloud and to be honest, it is pretty good. But iCloud doesn’t even compare to Spotify’s syncing across their different platforms. If you’re listening to a song on your computer and you add it to your library, it shows up on your phone that instant. And you can literally swap over to your phone that instant, picking up that song exactly where you left it off. In fact you can do this across the desktop, browser, and phone apps without even missing a beat. I just switched from my phone to my computer after I came back from a walk and wanted to pick up the song exactly where I was. It’s a feature I’ve dreamed of for years and now it’s my reality, thanks to Spotify. As far as I know, iCloud or any other competitor can’t even come close to that.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/spotify-sync.png" target="_blank">
+    <img src="/assets/img/posts/spotify-sync.png" alt="A screenshot showing Spotify's cross-sync capabilities" />
+    </a>
+</p>
+
+<figcaption>
+Swap between your phone and your computer instantly
+</figcaption>
+
+<h3 id="spotify-mobile-is-amazing">Spotify Mobile is Amazing</h3>
+
+<p>In my opinion, the crown jewel of Spotify has to be their mobile app. If you’re a premium user, you get the same unlimited music access on your phone that you would in the desktop app. That means you get the ability to search through Spotify’s whole catalog, browse artist updates, and sample and queue up songs (a lot of which is still not doable on the iTunes equivalent app). In order to do all this, Spotify didn’t waste any space as they crammed all the functionality into a cohesive, absolutely gorgeous mobile app. You’re really not using Spotify until you’re using the mobile version.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/spotify-mobile.png" target="_blank">
+    <img src="/assets/img/posts/spotify-mobile.png" alt="Screenshots from Spotify's mobile app" />
+    </a>
+</p>
+
+<figcaption>
+Spotify didn't waste an inch of space on the mobile app
+</figcaption>
+
+<h3 id="spotify-makes-music-social">Spotify Makes Music Social</h3>
+
+<p>You can build the best music library through suggestions from real people, everyone knows that. Spotify has certainly taken this into account since one of their main focuses is making the music experience social. They do this in a few ways, but the most obvious two are social sidebar and collaborative playlists. Do you have that hip friend who has that shockingly good taste in music and always finds new stuff? If you follow them, Spotify will show you what music they are listening to at that moment through the social sidebar. You can even click on the song and start listening along. Want to go on a road trip with this friend and collaborate on a playlist? It’s super easy to share songs and make the best-of-the-best for a playlist. The social music experience is one of Spotify’s key elements and they do it quite well.</p>
+
+<h3 id="great-software-updates-are-great">Great Software Updates are Great</h3>
+<p>One of the best qualities of a good software system is the ability to change and adapt. Apple has always succeeded at looking ahead at the grander picture, generally answering questions that haven’t been asked yet. But there were often requests that were left unanswered because they weren’t <em>innovative</em> enough. On the other hand, Spotify looks to embrace all of these changes. Spotify consistently pushes a new update every week or two (and all you have to do to update is press “restart”). While some changes that they make in updates aren’t groundbreaking or even noticeable, there certainly are updates / changes that do answer requests even if they are small. An example being that in one of the more recent updates, Spotify enabled the ability to search inside a specific playlist. This wasn’t a huge change (iTunes has had it for awhile), but it was a direct response to a <a href="https://community.spotify.com/t5/Live-Ideas/Desktop-Bring-back-search-inside-Playlists-amp-Songs-tab/idi-p/1039674">user request</a> because Spotify takes these requests and suggestions seriously, which is seriously cool. This means that while the software is being managed by the company, the trend and changes of Spotify can partially be set by the customers who use Spotify.</p>
+
+<p>There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.</p>
 
 
     </article>
 </div>
 
 
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>RodRego: The Simple Register Machine Simulator</h1>
+       <!--
+       <p class="post-meta">Mar 31 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p class="fig-paragraph">
+    <a class="fig-link" href="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" target="_blank">
+    <img src="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" alt="RodRego's Original Banner" />
+    </a>
+</p>
+
+<p>For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainf**k</a> without IO).</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/rodrego.png" target="_blank">
+    <img src="/assets/img/posts/rodrego.png" alt="The original desktop application (left) vs. the new web application (right)" />
+    </a>
+</p>
+
+<figcaption>
+The original desktop application (left) vs. the new web application (right)
+</figcaption>
+
+<p>My assignment for this project was to build a web application that emulates (and fixes any problems of) the existing desktop application. With little instruction on how the original application worked, building something that would recreate it was interesting, but ultimately doable. Specific data validation (which was necessary to check commands / script format) was also a pain in JavaScript but that’s just JavaScript.</p>
+
+<p>Overall, it was a fun project. This was my first major web development assignment (outside of random personal projects) so it was a good learning experience. It was also pretty cool to work on someone’s legacy project. And at the end of the day, you’ve always got to remember and appreciate your first. ♥ RodRego ♥</p>
+
+<p>If you want to try it out, you can find the site <a href="http://proto.atech.tufts.edu/RodRego/">here</a>. You can also find the code on <a href="https://github.com/ben-tanen/rodrego">GitHub</a>.</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Grub: The Command-line GrubHub</h1>
+       <!--
+       <p class="post-meta">Nov 30 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.</p>
+
+<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant
+</span><span class="n">grub</span> <span class="n">search</span> <span class="s">"burrito"</span>
+<span class="n">grub</span> <span class="n">search</span> <span class="s">"Bob's Burgers"</span>
+
+<span class="c1">// add chicken burrito with cheese &amp; sour cream
+</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
+
+<span class="c1">// add burger without pickles
+</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
+
+<span class="c1">// go to checkout and add payment information 
+</span><span class="n">grub</span> <span class="n">checkout</span>
+
+<span class="c1">// place order
+</span><span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></figure>
+
+<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future.</p>
+
+
+    </article>
+</div>
 
 
 
@@ -262,6 +349,8 @@ My own example infographics
 
     <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
+    
+    <p id='pagination-next'><a href='/blog/10'>Older Posts &#8594;</a></p>
     
 </div>
 

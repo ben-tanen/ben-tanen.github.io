@@ -1,0 +1,64 @@
+#nhl-about.min {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#nhl-about #about-gradient {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 93px;
+}
+
+#nhl-about #expand-img {
+    position: absolute;
+    top: 112px;
+    width: 25px;
+    margin: auto;
+}
+
+#nhl-about.expand {
+    margin-bottom: 50px;
+}
+
+#nhl-about.expand #about-gradient {
+    display: none;
+}
+
+#nhl-about.expand #expand-img {
+    display: none;
+}
+
+.nhl_current_projection {
+    margin-bottom: 50px;
+}
+
+.nhl_current_projection.min {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.nhl_current_projection #about-gradient {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 450px;
+}
+
+.nhl_current_projection #expand-img {
+    position: absolute;
+    top: 465px;
+    left: 10px;
+    width: 25px;
+}
+
+.nhl_current_projection.expand #about-gradient {
+    display: none;
+}
+
+.nhl_current_projection.expand #expand-img {
+    display: none;
+}

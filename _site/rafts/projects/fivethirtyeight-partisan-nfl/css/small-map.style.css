@@ -1,0 +1,21 @@
+#d3-nfl-map-container {
+    width: 600px;
+    margin-bottom: 15px;
+}
+
+.counties {
+    cursor: pointer;
+}
+
+#nfl-map-tooltip {   
+    top: 12px;
+    left: 338px;
+    pointer-events: none;
+}
+
+#nfl-map-tooltip p {
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    color: black;
+}

@@ -37,7 +37,7 @@ As expected, it looks like my league started out sticking with the conventional 
 
 * I picked the most similarly to the pros and masses, which makes sense.
 * Our draft overall looks most similar to the average ESPN mock draft, which also makes sense.
-* Our draft overall looks least similar to 5th Down Fantasy's suggestions, but I guess those non-traditional picks are what makes them [stand in a crowd](https://www.fantasypros.com/nfl/accuracy/2009-2015.php?year=2011#overall).
+* Our draft overall looks least similar to 5th Down Fantasy's suggestions, but I guess those non-traditional picks are what makes them [stand out in a crowd](https://www.fantasypros.com/nfl/accuracy/2009-2015.php?year=2011#overall).
 
 But speculating how good I might have drafted is pointless when I'm comparing it to the speculations of other people. The only way to really see how I did is to see how the upcoming season goes. So 🤞 fingers crossed I somehow picked well and can bring home [the Shiva](http://theleague.wikia.com/wiki/The_Shiva_Bowl_Trophy).
 

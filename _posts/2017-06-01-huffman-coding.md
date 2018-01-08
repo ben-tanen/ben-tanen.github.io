@@ -5,11 +5,14 @@ date: 2017-06-01 15:05:41
 categories: project data visualization school
 landing-description: a scrollytelling project I made to explain Huffman Coding
 thumbnail: /assets/img/post-thumbnails/huffman.gif
+excerpt_separator: <!-- more -->
 ---
 
 After months of reading and being impressed by the [very](https://pudding.cool/2017/04/beer/){:target="_blank"} [cool](https://pudding.cool/2017/01/making-it-big/){:target="_blank"} [visual](https://pudding.cool/2017/02/vocabulary/){:target="_blank"} [essays](https://pudding.cool/2017/05/song-repetition/){:target="_blank"} put out by [The Pudding](https://pudding.cool/){:target="_blank"}, I decided I would take a crack at a project using what they call "scrollytelling." For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare [traditional Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding){:target="_blank"} to [adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding){:target="_blank"}.
 
 {% include figure.html src="/assets/img/posts/huffman-coding.gif" alt="A screen capture of the scrollytelling visualization" %}
+
+<!-- more -->
 
 To give a quick preview, Huffman Coding is a lossless data compression algorithm, which means we can reduce the size of any dataset by 15 - 30% without corrupting any of our data. However, in order to do this, Huffman Coding requires some prior knowledge of our dataset, which means we will be slowed down if we don't already have this information. To improve upon this, we can instead use Adaptive Huffman Coding, which enables us to get comparable compression efficiency in a fraction of the time. Intrigued? You can check out [the full explanation](http://link.ben-tanen.com/adaptive-huffman/){:target="_blank"} for more.
 

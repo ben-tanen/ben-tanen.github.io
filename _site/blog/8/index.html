@@ -17,6 +17,7 @@
     <!-- jquery and js files -->
     <script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
@@ -139,202 +140,172 @@
 
 <div class='post'>
     <header class="post-header">
-	   <h1>Retro Post: iOS Upgrades (Circa 2013)</h1>
+	   <h1>Best Of "Data is Beautiful" #1</h1>
        <!--
-       <p class="post-meta">Jun 17 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       <p class="post-meta">Aug 16 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
        -->
     </header>
 
     <article class="post-content">
-	   <p>Before moving to Github and using Jekyll, I hosted a <a href="http://ben-tanen.tumblr.com/">blog on Tumblr</a>. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some <em>retro posts</em> from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6).</p>
+	   <p>As I briefly mentioned in a <a href="/blog/2014/10/31/rap-data-design.html">previous post</a>, I am a big fan of well-designed representations of data. If you’re also a fan of this “art form” then you should be an avid follower of the subreddit <a href="https://www.reddit.com/r/dataisbeautiful">/r/dataisbeautiful</a>. If you’ve never seen it, it’s a must read.</p>
 
-<p>I’d like to point out that since then, three of these four upgrades have been implemented in someway or another so I guess you could say I’m an accurate futurist. I’d also like to say that I spent a fair amount of time building these mockup screens in Adobe After Effects and they’re actually pretty awesome. Overall success for 18 year old me!</p>
+<p>Pretty much all of the posts are cool but there are a few that are definitely a cut above. I decided every once in awhile I’d highlight my personal favorites. So without further ado…</p>
+
+<h3 id="nba-shot-charts"><a href="http://savvastjortjoglou.com/nba-shot-sharts.html">NBA Shot Charts</a></h3>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="http://savvastjortjoglou.com/nba-shot-sharts.html" target="_blank">
+    <img src="/assets/img/posts/dib-basketball.png" alt="A heat map of James Harden's shots" width="600px" />
+    </a>
+</p>
+
+<p>I’m not a huge NBA fan but I do know there is a crazy amount of data available about the game - maybe second only to <a href="http://fivethirtyeight.com/features/rich-data-poor-data/">baseball</a>. I guess Savvas Tjortjoglou decided to map that data to show a very comprehensive shot chart. The post is well-done, especially the way that he actually goes about mapping the data onto the court as singular points and heat maps.</p>
+
+<h3 id="mapping-the-uk-via-pubs"><a href="http://ramiro.org/notebook/mapping-pubs/">Mapping the UK via Pubs</a></h3>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="http://ramiro.org/notebook/mapping-pubs/" target="_blank">
+    <img src="/assets/img/posts/dib-pubs.png" alt="A map of all of the pubs in the U.K." width="600px" />
+    </a>
+</p>
+
+<p>This is just one of those things that will make you LQTY (laugh quietly to yourself, the truer form of LOL). Of course the United Kingdom can be be well mapped through all of its pubs. While not as dense as London, Ireland does a good job of dispersing its drinking establishments. Scotland is just lacking though - come on Scotland! The actual data work being done here is pretty simple but it’s cool nonetheless.</p>
+
+<h3 id="swearing-across-america"><a href="http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8">Swearing Across America</a></h3>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="http://www.huffingtonpost.com/entry/which-curse-words-are-popular-in-your-state_55a80662e4b04740a3df54b8" target="_blank">
+    <img src="/assets/img/posts/dib-swearing-map.png" alt="A map of who uses 'gosh' throughout the U.S." width="500px" />
+    </a>
+</p>
+
+<p>I particularly enjoy this one and everything it has to say about the different regions of the US. Coming from the Northeast, I have to generally agree with the maps - I don’t remember the last time I heard someone say “Gosh” seriously. I was also quite amused by the tiny spike in the use of “Bitch” in Fairfield County Connecticut. Fairfield reppin’!</p>
+
+<p>Rather than using API access like the others, this post also had a pretty interesting way of gathering the data. While I’m still slightly unsure of utilizing Twitter / Geolocation for accurate data science, for the matter of this post I’ll accept their method.</p>
+
+<h3 id="randomly-finding-someone"><a href="http://emptypipes.org/2015/08/03/random-finding/">Randomly Finding Someone</a></h3>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="http://emptypipes.org/2015/08/03/random-finding/" target="_blank">
+    <img src="/assets/img/posts/dib-randomfinding.gif" alt="Two dots trying to find each other in a grid" />
+    </a>
+</p>
+
+<p>Finally, while not quite as data set driven as the other posts, this post from Empty Pipes features a cool and simple animation to simulate the “randomly searching” process - hurray for pretty gifs. He even built a tool for anyone to try out the tool / animation.</p>
+
+<p>While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use Find My Friends or a good ol’ phone call.</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Random Project: Censor Machine</h1>
+       <!--
+       <p class="post-meta">Jul 06 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>Do you ever need or want a simple Internet tool and it seems like it would be easier code it than find it? That is exactly what happened when I needed a beeping censor for <a href="http://wmfo.org">my radio show</a>. Sometimes bands like to swear and I needed a button / website to defend the honor of the FCC. Thus, I made this really <a href="http://ben-tanen.github.io/CensorMachine/">stupid site</a>. But hey, now I have it.</p>
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Old Python Games / Projects</h1>
+       <!--
+       <p class="post-meta">Jul 01 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>After posting my two most recent retro posts (<a href="/blog/2015/06/17/retro-ios-update.html">#1</a>, <a href="/blog/2015/06/26/retro-game-theory.html">#2</a>), I thought I’d post some of my older projects as well. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.</p>
+
+<p>The first coding project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I’m not sure how or why… Either way, here is the <a href="https://github.com/ben-tanen/py-games/blob/master/battleship.py">code on Github</a>.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/python-game-minesweeper.png" target="_blank">
+    <img src="/assets/img/posts/python-game-minesweeper.png" alt="A screenshot of the Minesweeper game" />
+    </a>
+</p>
+
+<figcaption>
+Good Ol' Unix Terminal Games
+</figcaption>
+
+<p>This next project was my first original game, Minesweeper! It was built very much like Battleship but the logic was a little more complicated. As you can see, it’s not expertly written since this was after like a month of knowing Python. I might consider re-writting / refactoring the code not that I’m a tad more experienced. Here is the <a href="https://github.com/ben-tanen/py-games/blob/master/minesweeper.py">original code on GH</a>.</p>
+
+<p>A year later than my other games, I decided to build a blackjack game. This was made with the knowledge of classes so I decided to go down that route instead of a constant single chunk of code (see other games). It’s not much better written, but it does include the ability to “count cards” which is cool. Again, <a href="https://github.com/ben-tanen/py-games/blob/master/blackjack.py">here’s the code</a>.</p>
+
+<p><strong>Update</strong>: And because I was bored, I also threw in some better versions of the first two games with some serious refactoring / feature improvement into <a href="https://github.com/ben-tanen/py-games">the repo</a>. Minesweeper reveals sections of 0s now! I noticed I was also doing some weird sort of logical boolean using a string of spaces. It was weird. I took it out. It’s better now.</p>
+
+<p>If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Retro Post: Game Theory, The Game</h1>
+       <!--
+       <p class="post-meta">Jun 26 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>This retro post came from my senior year of high school when I was taking AP Economics. Who doesn’t love turning economics into drinking games?</p>
 
 <p><em>[Beginning of Post]</em></p>
 
-<p>I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone itself lacks some capabilities. Here are a few ideas that I have for improvements to the software.</p>
+<p>In my AP Economics class, we have started discussing game theory. This is the study of different behaviors in economic “games”. The most basic game is between two firms, or actors, playing together, and they have two options, for which each firm will pick the option that will give them the best output.</p>
 
-<p><strong>Priority Messages:</strong> Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed.</p>
+<p>Eventually, my teacher showed us a clip from a game show that uses the concepts of game theory. The show, called Golden Balls, pits two players against each other to win a pot of money. If they both choose to split the money, they will share the pot 50/50. If one chooses to steal the money while the other splits, the stealer will win all of the money, while the other is left with zero. Finally, if they both chose to steal, everyone ends up with zero.</p>
 
-<blockquote>
-  <p><strong>Retrospective Update</strong> - Apple decided to basically implement this but in reverse. If you want to mute specific people, you can and then the rest of your messages will come through.</p>
-</blockquote>
+<iframe class="youtube-vid" width="420" height="315" src="https://www.youtube.com/embed/p3Uos2fzIJ0" frameborder="0" allowfullscreen=""></iframe>
+
+<iframe class="youtube-vid" width="420" height="315" src="https://www.youtube.com/embed/S0qjK3TWZE8" frameborder="0" allowfullscreen=""></iframe>
+
+<p>After watching the clip, my classmates and I felt the need to design our own version of the game. However, as a fairly poor teenager, I felt the prize shouldn’t be monetary. And then we came to our dilemma. What to make the prize?</p>
+
+<p>One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.</p>
 
 <p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/ios-updates-textdelay.gif" target="_blank">
-    <img src="/assets/img/posts/ios-updates-textdelay.gif" alt="A simulated screen capture of the text delay feature" width="230px" />
+    <a class="fig-link" href="/assets/img/posts/game-theory-slaps.png" target="_blank">
+    <img src="/assets/img/posts/game-theory-slaps.png" alt="A payoff matrix for the slapping game" />
     </a>
 </p>
 
 <figcaption>
-Delay a text to send a few minutes (or even a few hours)
+Playful violence is always fun
 </figcaption>
 
-<p><strong>Text Delay:</strong> On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time.</p>
+<p>This game/version relies on the idea that both players want to slap the other person, so I guess this would preferably be played with an enemy (or a close friend).</p>
 
-<blockquote>
-  <p><strong>Retrospective Update #2</strong> - This change has not yet been implemented, but it 100% should be. Still one of my top desired features</p>
-</blockquote>
-
-<p><strong>In-App Text Response:</strong> While the Multi-tasking on iOS is helpful, responding to a text still requires you to switch to the Messages app, which sometimes closes/disrupts certain other apps (Netflix, games). Instead, an option for In-App texting would simply have a pop-up screen in which the user can send a quick text. This capability is featured on many non-iOS devices, and it should be brought to the iPhone.</p>
-
-<blockquote>
-  <p><strong>Retrospective Update #3</strong> - This is also available now, woohoo!</p>
-</blockquote>
+<p>Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.</p>
 
 <p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/ios-updates-inapptext.gif" target="_blank">
-    <img src="/assets/img/posts/ios-updates-inapptext.gif" alt="A simulated screen capture of the in-app texting feature" width="230px" />
+    <a class="fig-link" href="/assets/img/posts/game-theory-drinks.png" target="_blank">
+    <img src="/assets/img/posts/game-theory-drinks.png" alt="A payoff matrix for the drinking game" />
     </a>
 </p>
 
 <figcaption>
-Update - More or less is exactly what the actual implementation looks like
+Who doesn't love economic-based drinking games?
 </figcaption>
 
-<p><strong>Voice Activated Siri:</strong> Siri is particularly useful, especially when you can’t (or shouldn’t) be using your hands (driving, shower, etc.). However, turning on Siri requires manual activation with a hand. Instead, there should be an option to start Siri using one’s voice. For example, Siri could be activated by either saying “Siri” (though that presents certain issues in a crowd of people saying the same thing) or a keyword that the user picks (ex: “Pterodactyl”).</p>
+<p>Eventually, I’d assume both parties would be drunk enough to lose track of the dilemma and implications of their choices, but I imagine that this game would serve as an interesting way to get drunk for economists.</p>
 
-<blockquote>
-  <p><strong>Retrospective Update #4</strong> - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.</p>
-</blockquote>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Why Everyone Should Use (Or At Least Try) Spotify</h1>
-       <!--
-       <p class="post-meta">May 21 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.</p>
-
-<p>And you know what? I love Spotify. Every concern I had was quickly answered because they have thought of everything. Want to have music while you’re out of cell range? No worries, you can download playlists straight to your phone or computer. Want to listen to a brand-new remix that isn’t on Spotify? Loading and listening to local / custom files is easy. And that is just the simple stuff. If you know anyone who uses Spotify, I’m sure you’ve heard a similar raving review. But if you’re still not convinced, here is why I think you should at least consider trying Spotify Premium.</p>
-
-<p><strong>Note</strong>: This post is in no way sponsored by Spotify. I just like their service.</p>
-
-<h3 id="instant-access-to-millions-of-songs">Instant Access to Millions of Songs</h3>
-
-<p>Of course you’ve heard that Spotify has lots of songs available, which isn’t necessarily jaw-dropping. But when you compare it to Spotify’s competitors, 30-million songs is a hell of a lot for $10 / month (or $5 / month if you’re a student). For $10 on iTunes, you get 7 - 10 songs a month. But maybe you’re considering about getting more than 10 songs a month in a less, perhaps, legal way. That might work until you get a cease and desist e-mail for a lot more than $10. So at the end of the day, 30-million songs for $10 / month is a might fine deal.</p>
-
-<h3 id="crazy-good-cross-syncing">Crazy Good Cross-Syncing</h3>
-
-<p>Apple seems very proud of their cross-syncing platform iCloud and to be honest, it is pretty good. But iCloud doesn’t even compare to Spotify’s syncing across their different platforms. If you’re listening to a song on your computer and you add it to your library, it shows up on your phone that instant. And you can literally swap over to your phone that instant, picking up that song exactly where you left it off. In fact you can do this across the desktop, browser, and phone apps without even missing a beat. I just switched from my phone to my computer after I came back from a walk and wanted to pick up the song exactly where I was. It’s a feature I’ve dreamed of for years and now it’s my reality, thanks to Spotify. As far as I know, iCloud or any other competitor can’t even come close to that.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-sync.png" target="_blank">
-    <img src="/assets/img/posts/spotify-sync.png" alt="A screenshot showing Spotify's cross-sync capabilities" />
-    </a>
-</p>
-
-<figcaption>
-Swap between your phone and your computer instantly
-</figcaption>
-
-<h3 id="spotify-mobile-is-amazing">Spotify Mobile is Amazing</h3>
-
-<p>In my opinion, the crown jewel of Spotify has to be their mobile app. If you’re a premium user, you get the same unlimited music access on your phone that you would in the desktop app. That means you get the ability to search through Spotify’s whole catalog, browse artist updates, and sample and queue up songs (a lot of which is still not doable on the iTunes equivalent app). In order to do all this, Spotify didn’t waste any space as they crammed all the functionality into a cohesive, absolutely gorgeous mobile app. You’re really not using Spotify until you’re using the mobile version.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-mobile.png" target="_blank">
-    <img src="/assets/img/posts/spotify-mobile.png" alt="Screenshots from Spotify's mobile app" />
-    </a>
-</p>
-
-<figcaption>
-Spotify didn't waste an inch of space on the mobile app
-</figcaption>
-
-<h3 id="spotify-makes-music-social">Spotify Makes Music Social</h3>
-
-<p>You can build the best music library through suggestions from real people, everyone knows that. Spotify has certainly taken this into account since one of their main focuses is making the music experience social. They do this in a few ways, but the most obvious two are social sidebar and collaborative playlists. Do you have that hip friend who has that shockingly good taste in music and always finds new stuff? If you follow them, Spotify will show you what music they are listening to at that moment through the social sidebar. You can even click on the song and start listening along. Want to go on a road trip with this friend and collaborate on a playlist? It’s super easy to share songs and make the best-of-the-best for a playlist. The social music experience is one of Spotify’s key elements and they do it quite well.</p>
-
-<h3 id="great-software-updates-are-great">Great Software Updates are Great</h3>
-<p>One of the best qualities of a good software system is the ability to change and adapt. Apple has always succeeded at looking ahead at the grander picture, generally answering questions that haven’t been asked yet. But there were often requests that were left unanswered because they weren’t <em>innovative</em> enough. On the other hand, Spotify looks to embrace all of these changes. Spotify consistently pushes a new update every week or two (and all you have to do to update is press “restart”). While some changes that they make in updates aren’t groundbreaking or even noticeable, there certainly are updates / changes that do answer requests even if they are small. An example being that in one of the more recent updates, Spotify enabled the ability to search inside a specific playlist. This wasn’t a huge change (iTunes has had it for awhile), but it was a direct response to a <a href="https://community.spotify.com/t5/Live-Ideas/Desktop-Bring-back-search-inside-Playlists-amp-Songs-tab/idi-p/1039674">user request</a> because Spotify takes these requests and suggestions seriously, which is seriously cool. This means that while the software is being managed by the company, the trend and changes of Spotify can partially be set by the customers who use Spotify.</p>
-
-<p>There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>RodRego: The Simple Register Machine Simulator</h1>
-       <!--
-       <p class="post-meta">Mar 31 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p class="fig-paragraph">
-    <a class="fig-link" href="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" target="_blank">
-    <img src="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" alt="RodRego's Original Banner" />
-    </a>
-</p>
-
-<p>For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainf**k</a> without IO).</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/rodrego.png" target="_blank">
-    <img src="/assets/img/posts/rodrego.png" alt="The original desktop application (left) vs. the new web application (right)" />
-    </a>
-</p>
-
-<figcaption>
-The original desktop application (left) vs. the new web application (right)
-</figcaption>
-
-<p>My assignment for this project was to build a web application that emulates (and fixes any problems of) the existing desktop application. With little instruction on how the original application worked, building something that would recreate it was interesting, but ultimately doable. Specific data validation (which was necessary to check commands / script format) was also a pain in JavaScript but that’s just JavaScript.</p>
-
-<p>Overall, it was a fun project. This was my first major web development assignment (outside of random personal projects) so it was a good learning experience. It was also pretty cool to work on someone’s legacy project. And at the end of the day, you’ve always got to remember and appreciate your first. ♥ RodRego ♥</p>
-
-<p>If you want to try it out, you can find the site <a href="http://proto.atech.tufts.edu/RodRego/">here</a>. You can also find the code on <a href="https://github.com/ben-tanen/rodrego">GitHub</a>.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Grub: The Command-line GrubHub</h1>
-       <!--
-       <p class="post-meta">Nov 30 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.</p>
-
-<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
-
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant
-</span><span class="n">grub</span> <span class="n">search</span> <span class="s">"burrito"</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">"Bob's Burgers"</span>
-
-<span class="c1">// add chicken burrito with cheese &amp; sour cream
-</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
-
-<span class="c1">// add burger without pickles
-</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
-
-<span class="c1">// go to checkout and add payment information 
-</span><span class="n">grub</span> <span class="n">checkout</span>
-
-<span class="c1">// place order
-</span><span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></figure>
-
-<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future.</p>
-
+<p>Any other potential prizes/punishments?</p>
 
     </article>
 </div>

@@ -1,0 +1,46 @@
+#d3-nfl-map-container {
+    width: 960px;
+    max-width: 960px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+}
+
+#d3-nfl-map {
+    width: 100%;
+    height: 100%;
+}
+
+.state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 0.65px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.county-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 0.15px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+#nfl-map-tooltip {   
+    position: absolute;
+    top: 65px;
+    left: 650px;
+    width: auto;                    
+    padding: 6px;
+    pointer-events: none;
+}
+
+#nfl-map-tooltip p {
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    color: black;
+}

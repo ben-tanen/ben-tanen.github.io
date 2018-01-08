@@ -7,6 +7,736 @@
             
                 
                 <item>
+                    <title>Favorites from 2017</title>
+                    <description>&lt;p&gt;With the end of 2017 came a whole lot of retrospective “best of” articles for the year (and here comes &lt;em&gt;yet&lt;/em&gt; another one). While there were quite a few quality lists, two of them stood out to me.&lt;/p&gt;
+
+&lt;p&gt;The first was Patrick Willems’ “&lt;a href=&quot;https://www.youtube.com/watch?v=ydroQn6IbpU&quot; target=&quot;_blank&quot;&gt;MY TOP 50 OF 2017&lt;/a&gt;” video. I enjoyed Patrick’s choice not to focus on any one medium and how he didn’t try to put his picks in any sort of order (this isn’t exceptionally original, but I enjoyed his take on the format). Second was FiveThirtyEight’s “&lt;a href=&quot;https://fivethirtyeight.com/features/damn-we-wish-wed-done-these-11-stories/&quot; target=&quot;_blank&quot;&gt;Damn, We Wish We’d Done These 11 Stories&lt;/a&gt;.” For this piece, I appreciated how the FiveThirtyEight team were open with their admiration and jealousy for the work of their peers.&lt;/p&gt;
+
+&lt;p&gt;These pieces have in turn inspired me to look back on my own favorite things from 2017. What came about was a mix of my favorite movies, videos, music, TV, and articles. I admire all of them and more than a few of them have made me think “damn, I wish I had made that.” Putting the list together was a nice walk through the year and it has sparked my excitement to read, watch, and (hopefully) make great content in the year to come. To slightly rephrase FiveThirtyEight, hopefully my jealousy will lead to discovery and inspiration.&lt;/p&gt;
+
+&lt;p&gt;Without further ado, in no particular order, my top 50 for 2017 -&lt;/p&gt;
+
+&lt;style&gt;
+
+ol#fav2017-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ol#fav2017-list li {
+    margin: 7px 0;
+    display: inline-block;
+    width: calc(50% - 5px);
+    vertical-align: top;
+}
+
+div.fav2017-item {
+    min-height: 60px;
+    position: relative;
+}
+
+div.fav2017-icon {
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    background: no-repeat center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+div.fav2017-text {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 8px 5px 68px;
+    margin-top: 5px;
+}
+
+div.fav2017-text p {
+    margin: 0;
+}
+
+p.fav2017-title {
+    font-size: 21px;
+    font-weight: 400;
+    color: #77bdee;
+    text-align: left;
+}
+
+&lt;/style&gt;
+
+&lt;ol id=&quot;fav2017-list&quot;&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/little-vis-design.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;http://www.visualisingdata.com/2016/03/little-visualisation-design/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Little of Visualisation Design&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article series from Andy Kirk&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/no-burden.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.last.fm/music/Lucy+Dacus/No+Burden&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;No Burden&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Album from Lucy Dacus&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/disaster-artist.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=cMKX2tE5Luk&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Disaster Artist&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/broad-city.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;http://www.cc.com/shows/broad-city&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Broad City, Season 4&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/making-it-big.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/01/making-it-big/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Unlikley Odds of Making It Big&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt; &amp;middot; This was my introduction to the awesome work from The Pudding. The team over there are writing great pieces with great visualizations. There's a reason this isn't the only piece from them on this list.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/black-panther.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;p class=&quot;fav2017-title&quot;&gt;Black Panther &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=dxWvtMOGAhw&quot;&gt;Teaser&lt;/a&gt; and &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=xjDjIWPwcPU&quot;&gt;Theatrical&lt;/a&gt; Trailers&lt;/p&gt;
+            &lt;p&gt;&lt;i&gt;Videos from Marvel&lt;/i&gt; &amp;middot; These trailers have made me so excited for Black Panther. Marvel seems to know what they're doing. I loved the minimal but effective use of Run The Jewels.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/gabfest.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;http://www.slate.com/articles/podcasts/gabfest.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Slate Political Gabfest&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Podcast from Slate&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/get-out.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=sRfnevzM9kQ&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Get Out&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/max-misery.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=LO1mTELoj6o&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;7 Ways to Maximize Misery&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video from CGP Grey&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/black-mirror.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=5ELQ6u_5YYM&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Black Mirror, Season 4&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/got-chart.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.nytimes.com/interactive/2017/08/09/upshot/game-of-thrones-chart.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Good, Evil, Ugly, Beautiful: Help Us Make a 'Game of Thrones' Chart&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from the New York Times&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/gender-rep.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/07/comics/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Analyzing the Gender Representation of 34,476 Comic Book Characters&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/hot-ones.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/playlist?list=PLAzrgbu8gEMIIK3r4Se1dOZWSZzUSadfZ&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Hot Ones&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video series from First We Feast&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/coco.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=xlnPHQ3TLX8&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Coco&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/master-of-none.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.netflix.com/title/80049714&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Master of None, Season 2&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/stanley-cup.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=tsdimctaOh4&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Stanley Cup Playoffs Ad&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video from the NHL&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/how-far.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/09/clinics/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;How far is too far? An analysis of driving times to abortion clinics in the US&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/senators.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.vox.com/policy-and-politics/2017/6/16/15810524/senate-ahca-explain-please&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;We asked 8 Senate Republicans to explain what their health bill is trying to do&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from Vox&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/brett-novak.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/channel/UCSXWt3Q5KZPTo_3Xjh-gkVQ&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;ShortSided&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video series from Brett Novak&lt;/i&gt; &amp;middot; Brett has been putting out awesome videos for years and this year was no exception. To best sum up the series, check out &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=wvrd3i8PRkk&quot;&gt;the 100th episode video&lt;/a&gt;.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/strike-through.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/playlist?list=PLJ8cMiYb3G5cghzLdchzalWpQJnhRYZgO&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Strikethrough&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video series from Vox&lt;/i&gt; &amp;middot; Carlos's series has been a very interesting and necessary critique of the media, especially given the events and coverage of the year.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/vox-hockey-luck.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=HNlgISa9Giw&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Why underdogs do better in hockey than basketball&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video from Vox&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/trumpery.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://visualtrumperytour.wordpress.com/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Visual Trumpery&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Lecture from Alberto Cairo&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/blade-runner.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=gCcx85zbxz4&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Blade Runner 2049&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/no-devil.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.last.fm/music/San+Fermin/_/No+Devil&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;No Devil&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Single from San Fermin&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/district.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;http://polytrope.com/district/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;District&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from Polytrope&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/born-a-crime.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.com/Born-Crime-Stories-African-Childhood/dp/0399588175&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Born A Crime&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Book from Trevor Noah&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/dunkirk.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=F-eMt3SrfFU&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Dunkirk&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/got.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=giYeaKsXnsI&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Game of Thrones, Season 7&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/eclipse.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.washingtonpost.com/graphics/national/eclipse/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Here’s every total solar eclipse happening in your lifetime. Is this year your best chance?&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from the Washington Post&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/draw-it.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;You Draw It: What Got Better or Worse During Obama’s Presidency&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from the New York Times&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/rep-jobs.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://pudding.cool/2017/07/jobs/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Why the Republican Party wins when robots take your job&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from The Pudding&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/kd-ad.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=GbiyIb1B3UQ&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;&quot;Kevin Durant, Debate This&quot; Ad&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video from Nike&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/100-days.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/channel/UC1RVRAdiSH4qxjBgxm_plng&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;100 Days&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video series from John Green and Chris Waters&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/falling.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;http://flowingdata.com/2017/09/28/falling-is-learning/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Falling is Learning&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from Nathan Yau&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/snl.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/user/SaturdayNightLive&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Saturday Night Live&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;TV series&lt;/i&gt; &amp;middot; The crew over at 30 Rock churned out gem after gem in 2017. Examples include &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=Pn8pwoNWseM&quot;&gt;Pepsi Commercial&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=sJJWxvVldog&quot;&gt;Guy Who Bought A Boat&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=wbIXmB2ZLmA&quot;&gt;Welcome Video&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=jVhlJNJopOQ&quot;&gt;Papyrus&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=PgfiXtvej7Q&quot;&gt;Meet Cute&lt;/a&gt;&quot;, and &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=SEN1pcn3oAw&quot;&gt;all of Pete Davidson's stuff&lt;/a&gt;.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/la-la-cover.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=t3O6vA0UL3k&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;La La Land Mia &amp;amp; Sebastian's Theme Guitar Cover&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video from AcousticTrench&lt;/i&gt; &amp;middot; This was one of the most calming videos I watched this year. The cute dog definitely helped.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/datasaurs.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://twitter.com/Datasaurs&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Datasaurs&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Twitter account&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/biden.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.com/Promise-Me-Dad-Hardship-Purpose/dp/1250171679&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Promise Me, Dad&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Book from Joe Biden&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/primitive-tech.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/channel/UCAL3JXZSzSm8AlZyD3nQdBA&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Primitive Technology&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Youtube channel&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/baby-driver.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=zTvJJnoWIPk&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Baby Driver&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/trump.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.nytimes.com/2017/04/29/us/politics/fact-checking-president-trump-through-his-first-100-days.html&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Fact-Checking President Trump Through His First 100 Days&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from the New York Times&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/the-meyerowitz-stories.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=czyMIIm12JY&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Meyerowitz Stories (New and Selected)&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/max-joseph.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/user/maxjosephdirector&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Max Joseph's Videos&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Youtube channel&lt;/i&gt; &amp;middot; Max made some great content in 2017, including (but not limited to) &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=N0MCrZlbYUM&quot;&gt;What Makes Us American&lt;/a&gt;&quot;, &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=mlCflbej6EM&quot;&gt;From Dream to Reality&lt;/a&gt;&quot;, and &quot;&lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=gRRvjZ_XNog&quot;&gt;DICKS&lt;/a&gt;&quot; (don't worry, that last one is SFW).&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/weatherman.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.last.fm/music/Gregory+Alan+Isakov/The+Weatherman&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Weatherman&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Album from Gregory Alan Isakov&lt;/i&gt; &amp;middot; I know this didn't technically come out in 2017, but this was for sure my album of the year.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/binging-with-babish.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/user/bgfilms&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Binging with Babish&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video series from Andrew Rea&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li class=&quot;wide&quot;&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/la-la-land.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=0pdqf4P9MB8&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;La La Land&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Film&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/subway.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;http://metrocosm.com/morphing-metro-maps/&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Metro Maps Morphing&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Article from Reddit Users&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/artist.png&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/watch?v=1hcUoOFhxMM&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;Why You Shouldn't Be An Artist&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Video from Simon Cade&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/logic.jpeg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.last.fm/music/Logic/The+Incredible+True+Story&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Incredible True Story&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Album from Logic&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;fav2017-item&quot;&gt;
+        &lt;div class=&quot;fav2017-icon&quot; style=&quot;background-image: url(&amp;quot;/projects/favorites-2017/royal-ocean.jpg&amp;quot;);&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;fav2017-text&quot;&gt;
+            &lt;a target=&quot;_blank&quot; href=&quot;https://www.youtube.com/channel/UCWq-qJSudqKrzquTVep9Jwg&quot;&gt;&lt;p class=&quot;fav2017-title&quot;&gt;The Royal Ocean Film Society&lt;/p&gt;&lt;/a&gt;
+            &lt;p&gt;&lt;i&gt;Youtube channel&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+                    <pubDate>2018-01-07T00:00:00-05:00</pubDate>
+                    <link>http://localhost:4000/blog/2018/01/07/favorites-of-2017.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2018/01/07/favorites-of-2017.html</guid>
+                </item>
+                
+            
+                
+            
+                
+                <item>
+                    <title>What Does the Public Think About Confederate Monuments?</title>
+                    <description>&lt;p&gt;I recently came across &lt;a href=&quot;http://kut.org/post/uttt-poll-most-texas-voters-say-confederate-memorials-shouldn-t-move-0&quot;&gt;an article&lt;/a&gt; from KUT, Austin’s NPR station, about Confederate statues with the following news graphic:&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/confederate-monuments-poll.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/confederate-monuments-poll.jpg&quot; alt=&quot;The original graphic on Confederate statues&quot; width=&quot;550&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The contents of the graphic and the results of the poll were interesting, but more than anything, I was intrigued by their choice of chart type. On my first viewing, it took me a second to mentally reconcile what exactly was going on. What were all the bars? Why all the colors? I then noticed the clustering and realized it was not just any bar chart, but instead a clustered &lt;em&gt;and&lt;/em&gt; stacked bar chart. It’s now clear they wanted to emphasize the contrast between the “move or remove” responses and the “leave them” responses, but with so many bars and mixed colors, I found myself lost in comparisons.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;In an effort to think about how I would tweak this chart, I immediately jumped to the idea of using a 100% stacked bar chart. I quickly threw one together (see below) but it still just didn’t seem right. In this styling, I think the groupings (Republican vs. Independent vs. Democrat) becomes a little more clear, but this chart lost the contrast between the “move or remove” and “leave” responses that was present in the original graphic. Ultimately, I don’t think this was much of an improvement and was actually more of a step back.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/confederate-monuments-remake.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/confederate-monuments-remake.png&quot; alt=&quot;A quick remake of the Confederate statue graphic&quot; width=&quot;550&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;While the 100% stacked bar chart wasn’t exactly what I was looking for, it did remind me of &lt;a href=&quot;http://www.visualisingdata.com/2016/08/little-visualisation-design-part-21/&quot;&gt;an article&lt;/a&gt; from Andy Kirk and his &lt;a href=&quot;http://www.visualisingdata.com/2016/03/little-visualisation-design/&quot;&gt;“little of visualization design” series&lt;/a&gt;. In the post, Kirk talked about improving &lt;a href=&quot;http://mannmetrics.com/who-lies-more/&quot;&gt;a 100% stacked bar chart on lies in politics&lt;/a&gt; by turning it into &lt;a href=&quot;https://peltiertech.com/diverging-stacked-bar-charts/&quot;&gt;a diverging stacked bar chart&lt;/a&gt;. Kirk said that this change would help emphasize the polarity in the chart and I knew this was exactly what I was looking to do for the KUT chart. So I took a whack at remake #2, leading to the diverging bar chart below, which I think is a winner, or, at the very least, an improvement.&lt;/p&gt;
+
+&lt;svg id=&quot;d3-confederate-poll&quot;&gt;
+&lt;/svg&gt;
+
+&lt;p&gt;At the end of the day, this was all mostly just an exercise for myself. KUT did a good job with their chart and more importantly with using their chart as one of many parts to tell an interesting story. Data visualization is hard and a lot of it ends up being very subjective on what works and what doesn’t. To some, KUT’s original chart may be better than my remake. I simply wanted to use this as a chance to work on my own design skills. If you have any thoughts or ideas on improvements or changes, I’d love to hear!&lt;/p&gt;
+
+&lt;style&gt;
+#d3-confederate-poll {
+    width: 100%;
+    height: 290px;
+}
+
+text.pct-label {
+    fill: #36393a;
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+rect.legend {
+    width: 15px;
+    height: 15px;
+}
+
+.remove    { fill: #e95946; }
+.move      { fill: #42b0a1; }
+.leave-add { fill: #f9a545; }
+.leave     { fill: #a6a6a6; }
+
+&lt;/style&gt;
+
+&lt;script&gt;
+var confederate_svg = d3.select(&quot;#d3-confederate-poll&quot;);
+
+var margin = {top: 100, right: 15, bottom: 75, left: 15, bar: 8},
+    width  = $('#d3-confederate-poll').width() -  margin.left - margin.right,
+    height = $('#d3-confederate-poll').height() - margin.top - margin.bottom;
+
+var scale = d3.scaleLinear().range([0, width]).domain([-1,1]).nice();
+
+var data = [ ];
+
+d3.csv(&quot;/assets/data/kut-poll-data.csv&quot;, function(d) {
+    d.leave = +d.leave;
+    d.leave_add = +d.leave_add;
+    d.remove = +d.remove;
+    d.move = +d.move;
+    d.unsure = +d.unsure;
+    return d;
+}, function(error, d) {
+    for (var i = 0; i &lt; d.length; i++) data.push(d[i]);
+
+    bar_size = (height - (margin.bar * (data.length - 1))) / data.length;
+
+    for (var i = 0; i &lt; data.length; i++) {
+        render_bar(data, i);
+    }
+
+    render_axes();
+    render_text();
+});
+
+// make chart resizable
+$(window).resize(function() {
+    width  = $('#d3-confederate-poll').width() -  margin.left - margin.right;
+
+    scale.range([0, width]);
+
+    d3.selectAll('text').remove();
+    d3.selectAll('rect').remove();
+    d3.selectAll('line').remove();
+    d3.select('#x-axis').remove();
+
+    for (var i = 0; i &lt; data.length; i++) {
+        render_bar(data, i);
+    }
+
+    render_axes();
+    render_text();
+});
+
+function render_bar(data, i) {
+    confederate_svg.append('rect')
+        .attr('class', 'bar leave-add')
+        .attr('width', scale(data[i].leave_add) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(0))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i &gt; 0 ? margin.bar : 0));
+
+    if (scale(data[i].leave_add) - scale(0) &gt; 25) {
+        confederate_svg.append('text')
+            .attr('class', 'text pct-label')
+            .attr('x', margin.left + scale(0) + (scale(data[i].leave_add) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i &gt; 0 ? margin.bar : 0))
+            .text((data[i].leave_add * 100).toFixed(0) + &quot;%&quot;);
+    }
+
+    confederate_svg.append('rect')
+        .attr('class', 'bar leave')
+        .attr('width', scale(data[i].leave) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(data[i].leave_add))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i &gt; 0 ? margin.bar : 0));
+
+    if (scale(data[i].leave) - scale(0) &gt; 25) {
+        confederate_svg.append('text')
+            .attr('class', 'pct-label')
+            .attr('x', margin.left + scale(data[i].leave_add) + (scale(data[i].leave) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i &gt; 0 ? margin.bar : 0))
+            .text((data[i].leave * 100).toFixed(0) + &quot;%&quot;);
+    }
+
+    confederate_svg.append('rect')
+        .attr('class', 'bar remove')
+        .attr('width', scale(data[i].remove) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(-data[i].remove - data[i].move))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i &gt; 0 ? margin.bar : 0));
+
+    if (scale(data[i].remove) - scale(0) &gt; 25) {
+        confederate_svg.append('text')
+            .attr('class', 'pct-label')
+            .attr('x', margin.left + scale(-data[i].remove - data[i].move) + (scale(data[i].remove) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i &gt; 0 ? margin.bar : 0))
+            .text((data[i].remove * 100).toFixed(0) + &quot;%&quot;);
+    }
+
+    confederate_svg.append('rect')
+        .attr('class', 'bar move')
+        .attr('width', scale(data[i].move) - scale(0))
+        .attr('height', bar_size)
+        .attr('x', margin.left + scale(-data[i].move))
+        .attr('y', margin.top + bar_size * i + margin.bar * i + (i &gt; 0 ? margin.bar : 0));
+
+    if (scale(data[i].move) - scale(0) &gt; 25) {
+        confederate_svg.append('text')
+            .attr('class', 'text pct-label')
+            .attr('x', margin.left + scale(-data[i].move) + (scale(data[i].move) - scale(0)) / 2)
+            .attr('y', margin.top + bar_size * (i + 0.65) + margin.bar * i + (i &gt; 0 ? margin.bar : 0))
+            .text((data[i].move * 100).toFixed(0) + &quot;%&quot;);
+    }
+
+    confederate_svg.append('text')
+        .attr('class', 'text label')
+        .attr('x', margin.left + scale(-data[i].remove - data[i].move) - 7)
+        .attr('y', margin.top + bar_size * (i + 0.6) + margin.bar * i + (i &gt; 0 ? margin.bar : 0))
+        .style('font-size', '11.5px')
+        .style('text-anchor', 'end')
+        .text(clean_group_name(data[i].group));
+}
+
+function render_axes() {
+    confederate_svg.append('line')
+        .attr('id', 'midline')
+        .attr('x1', margin.left + scale(0) + 0.5)
+        .attr('x2', margin.left + scale(0) + 0.5)
+        .attr('y1', margin.top)
+        .attr('y2', margin.top + height + margin.bar * 2)
+        .attr('stroke', 'black');
+
+    confederate_svg.append('line')
+        .attr('id', 'breakline')
+        .attr('x1', margin.left)
+        .attr('x2', margin.left + width)
+        .attr('y1', margin.top + bar_size + margin.bar)
+        .attr('y2', margin.top + bar_size + margin.bar)
+        .attr('stroke', 'black')
+        .attr('stroke-width', 0.75)
+        .attr('stroke-dasharray', '5, 5');
+
+    confederate_svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;,&quot;x-axis&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left}, ${margin.top + height + margin.bar * 2})`)
+        .call(d3.axisBottom(scale).ticks(5).tickFormat(function (d) { 
+            if (d &lt; 0) d = -d; // No nagative labels
+            return d3.format(&quot;.0%&quot;)(d);
+        }));
+}
+
+function render_text() {
+    if (width &lt;= 450) {
+        confederate_svg.append(&quot;text&quot;)
+            .attr('id', 'title1')
+            .attr('id', 'title2')
+            .attr(&quot;transform&quot;, `translate(${margin.left + width / 2}, 16)`)
+            .style('font-size', '16px')
+            .style('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(&quot;What to do with&quot;);
+
+        confederate_svg.append(&quot;text&quot;)
+            .attr('id', 'title1')
+            .attr('id', 'title2')
+            .attr(&quot;transform&quot;, `translate(${margin.left + width / 2}, 32)`)
+            .style('font-size', '16px')
+            .style('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(&quot;Confederate monuments?&quot;);
+    } else {
+        confederate_svg.append(&quot;text&quot;)
+            .attr('id', 'title')
+            .attr(&quot;transform&quot;, `translate(${margin.left + width / 2}, 27.5)`)
+            .style('font-size', '18px')
+            .style('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text(&quot;What to do with Confederate monuments?&quot;);
+    }
+
+    /* legend */
+    confederate_svg.append(&quot;rect&quot;)
+        .attr('class', 'legend remove')
+        .attr(&quot;x&quot;, margin.left + width / 2 - 20)
+        .attr(&quot;y&quot;, 42.5);
+
+    confederate_svg.append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left + width / 2 - 25}, 55)`)
+        .style('font-size', '12px')
+        .style('text-anchor', 'end')
+        .text(&quot;Remove them&quot;);
+
+    confederate_svg.append(&quot;rect&quot;)
+        .attr('class', 'legend move')
+        .attr(&quot;x&quot;, margin.left + width / 2 - 20)
+        .attr(&quot;y&quot;, 67.5);
+
+    confederate_svg.append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left + width / 2 - 25}, 80)`)
+        .style('font-size', '12px')
+        .style('text-anchor', 'end')
+        .text(&quot;Move to museums&quot;);
+
+    confederate_svg.append(&quot;rect&quot;)
+        .attr('class', 'legend leave-add')
+        .attr(&quot;x&quot;, margin.left + width / 2 + 5)
+        .attr(&quot;y&quot;, 67.5);
+
+    confederate_svg.append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left + width / 2 + 25}, 80)`)
+        .style('font-size', '12px')
+        .style('text-anchor', 'start')
+        .text(`${width &lt;= 300 ? &quot;A&quot; : &quot;Leave them, a&quot;}dd ${width &lt;= 400 ? &quot; &quot; : &quot;historical &quot;}context`);
+
+    confederate_svg.append(&quot;rect&quot;)
+        .attr('class', 'legend leave')
+        .attr(&quot;x&quot;, margin.left + width / 2 + 5)
+        .attr(&quot;y&quot;, 42.5);
+
+    confederate_svg.append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left + width / 2 + 25}, 55)`)
+        .style('font-family', 'Helvetica Neue')
+        .style('font-size', '12px')
+        .style('text-anchor', 'start')
+        .text(&quot;Leave them as is&quot;);
+
+    /* source */
+    confederate_svg.append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left + width}, ${margin.top + height + 55})`)
+        .style('font-family', 'Helvetica Neue')
+        .style('font-size', '11px')
+        .style('text-anchor', 'end')
+        .style('fill', '#989c9e')
+        .text(&quot;Source: UT/TT Poll, KUT 90.5&quot;);
+}
+
+function clean_group_name(group) {
+    if (width &lt;= 450) {
+        if (group == &quot;independents&quot;) return &quot;Indep.&quot;;
+        else if (group == &quot;all&quot;) return &quot;All&quot;;
+        else return group[0].toUpperCase() + group.substring(1,3) + &quot;.&quot;;
+    }
+    else {
+        return group[0].toUpperCase() + group.substring(1,group.length);
+    }
+}
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2017-10-27T01:00:00-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/10/27/confederate-monuments.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/10/27/confederate-monuments.html</guid>
+                </item>
+                
+            
+                
+            
+                
+                <item>
                     <title>Should I Become an NFL Scout?</title>
                     <description>&lt;p&gt;Over the years, I’ve always been interested in the idea of fantasy football but I had never committed to a league. This year, I decided to take the plunge and try out my own fantasy team. While I would consider myself a fan of football, I knew I didn’t know enough about the whole league to really stand a chance at putting together a &lt;em&gt;good&lt;/em&gt; fantasy team. So I decided I would just rely on the advice of the pros.&lt;/p&gt;
 
@@ -42,7 +772,7 @@
 &lt;ul&gt;
   &lt;li&gt;I picked the most similarly to the pros and masses, which makes sense.&lt;/li&gt;
   &lt;li&gt;Our draft overall looks most similar to the average ESPN mock draft, which also makes sense.&lt;/li&gt;
-  &lt;li&gt;Our draft overall looks least similar to 5th Down Fantasy’s suggestions, but I guess those non-traditional picks are what makes them &lt;a href=&quot;https://www.fantasypros.com/nfl/accuracy/2009-2015.php?year=2011#overall&quot;&gt;stand in a crowd&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Our draft overall looks least similar to 5th Down Fantasy’s suggestions, but I guess those non-traditional picks are what makes them &lt;a href=&quot;https://www.fantasypros.com/nfl/accuracy/2009-2015.php?year=2011#overall&quot;&gt;stand out in a crowd&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;But speculating how good I might have drafted is pointless when I’m comparing it to the speculations of other people. The only way to really see how I did is to see how the upcoming season goes. So 🤞 fingers crossed I somehow picked well and can bring home &lt;a href=&quot;http://theleague.wikia.com/wiki/The_Shiva_Bowl_Trophy&quot;&gt;the Shiva&lt;/a&gt;.&lt;/p&gt;
@@ -767,6 +1497,8 @@ d3.csv(&quot;/assets/data/ag-ff-draft.csv&quot;, function(d) {
     &lt;img src=&quot;/assets/img/posts/huffman-coding.gif&quot; alt=&quot;A screen capture of the scrollytelling visualization&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
+
+&lt;!-- more --&gt;
 
 &lt;p&gt;To give a quick preview, Huffman Coding is a lossless data compression algorithm, which means we can reduce the size of any dataset by 15 - 30% without corrupting any of our data. However, in order to do this, Huffman Coding requires some prior knowledge of our dataset, which means we will be slowed down if we don’t already have this information. To improve upon this, we can instead use Adaptive Huffman Coding, which enables us to get comparable compression efficiency in a fraction of the time. Intrigued? You can check out &lt;a href=&quot;http://link.ben-tanen.com/adaptive-huffman/&quot; target=&quot;_blank&quot;&gt;the full explanation&lt;/a&gt; for more.&lt;/p&gt;
 
