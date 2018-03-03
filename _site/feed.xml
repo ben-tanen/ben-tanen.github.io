@@ -12,8 +12,6 @@
 
 &lt;p&gt;The video did a great job juxtaposing Obama’s and Trump’s intraday activities and responses (comparing Obama’s first day of response to Trump’s, etc.), but I felt it was hard to compare the actual timing of each event. I decided to re-visualize &lt;span id=&quot;footnote-1&quot; class=&quot;footnote&quot;&gt;this information&lt;/span&gt; into one single timeline to (hopefully) present a slightly different effect.&lt;/p&gt;
 
-&lt;p id=&quot;mobile-notice&quot;&gt;&lt;i&gt;It seems like you are viewing this page on a small screen or mobile phone. Unfortunately, I haven't optimized this yet for narrow screens so it's going to look a bit like a dumpster fire. I'm working on it. Sorry!&lt;/i&gt;&lt;/p&gt;
-
 &lt;!-- more --&gt;
 
 &lt;svg id=&quot;d3-obama-trump-gun-response&quot;&gt;
@@ -23,16 +21,6 @@
 #d3-obama-trump-gun-response {
     width: 100%;
     height: 2000px;
-}
-
-#mobile-notice {
-    display: none;
-}
-
-@media (max-width: 550px) {
-    #mobile-notice {
-        display: initial;
-    }
 }
 
 .footnote {
@@ -48,6 +36,47 @@
     font-family: 'Yantramanav', 'sans-serif';
     max-width: 300px;
 }
+
+text.header {
+    font-size: 24px;
+    text-anchor: middle;
+}
+
+line#center-line {
+    stroke: #dadede;
+    stroke-width: 2;
+}
+
+line.marker-line-day {
+    stroke: #dadede;
+    stroke-width: 1;
+}
+
+line.marker-line {
+    stroke: #a4a4a4;
+    stroke-width: 1;
+}
+
+circle.marker-circle {
+    stroke: gray;
+    fill: #dadede;
+}
+
+text.marker-text-day {
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+text.time-string, text.desc-string {
+    font-size: 12px;
+}
+
+.time-string.Obama, .desc-string.Obama { text-anchor: end; }
+.time-string.Trump, .desc-string.Trump { text-anchor: start; }
+
+.header.Obama, .time-string.Obama { fill: #77bdee; }
+.header.Trump, .time-string.Trump { fill: #ff6e6c; }
+
 &lt;/style&gt;
 
 &lt;script&gt;
@@ -75,34 +104,30 @@ d3.csv(&quot;/assets/data/trump-obama-gun-comp-data.csv&quot;, function(d) {
     d.first_of_day = +d.first_of_day;
     d.wrap_width = +d.wrap_width;
     d.alt_wrap_width = +d.alt_wrap_width;
+    d.event_id = +d.event_id;
     return d;
 }, function(error, d) {
 
     // add headers
     ot_gun_svg.append('text')
-        .attr('id', 'obama-header')
-        .attr('x', margin.left + width * 1 / 4)
+        .classed('header', true)
+        .classed('Obama', true)
+        .attr('x', margin.left + width * 1 / 4 - 10)
         .attr('y', margin.top + 7)
         .attr('wrap-width', 200)
         .attr('alt-wrap-width', 100)
-        .style('font-size', 24)
-        .style('text-anchor', 'middle')
-        .style('fill', '#77bdee')
         .text('Obama, Newtown');
 
     ot_gun_svg.append('text')
-        .attr('id', 'trump-header')
-        .attr('x', margin.left + width * 3 / 4)
+        .classed('header', true)
+        .classed('Trump', true)
+        .attr('x', margin.left + width * 3 / 4 + 10)
         .attr('y', margin.top + 7)
         .attr('wrap-width', 200)
         .attr('alt-wrap-width', 100)
-        .style('font-size', 24)
-        .style('text-anchor', 'middle')
-        .style('fill', '#ff6e6c')
         .text('Trump, Parkland');
 
-    wrap(d3.selectAll('#trump-header, #obama-header'), (width &gt; 500 ? true : false));
-
+    wrap(d3.selectAll('text.header'), (width &gt; 500 ? true : false));
 
     // add center line
     ot_gun_svg.append('line')
@@ -110,23 +135,19 @@ d3.csv(&quot;/assets/data/trump-obama-gun-comp-data.csv&quot;, function(d) {
         .attr('x1', margin.left + width / 2)
         .attr('x2', margin.left + width / 2)
         .attr('y1', margin.top)
-        .attr('y2', margin.top + height)
-        .style('stroke', '#dadede')
-        .style('stroke-width', 2);
+        .attr('y2', margin.top + height);
 
     // for each day in timeline, add day markers
     for (var i = 0; i &lt; max_hour; i += 24) {
         ot_gun_svg.append('line')
-            .attr('class', 'marker-line-day')
+            .classed('marker-line-day', true)
             .attr('x1', margin.left + width * 9 / 20)
             .attr('x2', margin.left + width * 11 / 20)
             .attr('y1', margin.top  + (i / max_hour) * height)
-            .attr('y2', margin.top  + (i / max_hour) * height)
-            .style('stroke', '#dadede')
-            .style('stroke-width', 1);
+            .attr('y2', margin.top  + (i / max_hour) * height);
 
         ot_gun_svg.append('rect')
-            .attr('class', 'marker-text-cover-day')
+            .classed('marker-text-cover-day', true)
             .attr('x', margin.left + width / 2 - 20)
             .attr('y', margin.top  + (i / max_hour) * height - 8)
             .attr('width', 40)
@@ -134,11 +155,9 @@ d3.csv(&quot;/assets/data/trump-obama-gun-comp-data.csv&quot;, function(d) {
             .style('fill', 'white');
 
         ot_gun_svg.append('text')
-            .attr('class', 'marker-text-day')
+            .classed('marker-text-day', true)
             .attr('x', margin.left + width / 2)
             .attr('y', margin.top  + (i / max_hour) * height + 2)
-            .style('font-size', 12)
-            .style('text-anchor', 'middle')
             .text(i &gt;= 6 * 24 ? 'Later' : 'Day ' + ((i / 24) + 1));
     }
 
@@ -146,15 +165,26 @@ d3.csv(&quot;/assets/data/trump-obama-gun-comp-data.csv&quot;, function(d) {
     render_events(data);
 });
 
+function draw_marker_line(path) {
+    for (var i = 0; i &lt; path.length - 1; i++) {
+        ot_gun_svg.append('line')
+            .classed('marker-line', true)
+            .attr('x1', path[i][0])
+            .attr('x2', path[i + 1][0])
+            .attr('y1', path[i][1])
+            .attr('y2', path[i + 1][1]);
+    }
+}
+
 function render_events(d) { 
     for (var i = 0; i &lt; d.length; i++) {
         var time_str = &quot;&quot;,
             branch_h = margin.top + ((24 * d[i].days_since_shooting + d[i].hours_into_day) / max_hour) * height,
-            branch_w = margin.left + width / 2 + (width * (3 + d[i].branch_offset) / 20) * (d[i].obama_trump == &quot;Obama&quot; ? -1 : 1);
+            branch_w = margin.left + width / 2 + (width * (3 + d[i].branch_offset) / 20) * (d[i].obama_trump == &quot;Obama&quot; ? -1 : 1),
+            marker_line_path = [[margin.left + width / 2, branch_h], [branch_w, branch_h]];
 
         // parse time string
         var time_str = &quot;&quot;;
-        
         if (d[i].days_since_shooting == 6) {
             time_str == &quot;&quot;;
         } else if (d[i].first_of_day == 1) {
@@ -167,51 +197,95 @@ function render_events(d) {
             else time_str = d[i].time;
         }
 
-        ot_gun_svg.append('line')
-            .attr('class', 'marker-line')
-            .attr('x1', margin.left + width / 2)
-            .attr('x2', branch_w)
-            .attr('y1', branch_h)
-            .attr('y2', branch_h)
-            .style('stroke', '#a4a4a4')
-            .style('stroke-width', 1);
+        // adjust branch placement if mobile
+        if (is_mobile) {
+            if (d[i].event_id == 1) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 - 20, branch_h],
+                                    [margin.left + width / 2 - 20, branch_h - 60],
+                                    [margin.left + width * 1.25 / 4, branch_h - 60]];
+            } else if (d[i].event_id == 2) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width * .8 / 4, branch_h]]
+            } else if (d[i].event_id == 5) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 - 20, branch_h],
+                                    [margin.left + width / 2 - 20, branch_h - 60],
+                                    [margin.left + width * 1.5 / 4, branch_h - 60]];
+            } else if (d[i].event_id == 7) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 - 20, branch_h],
+                                    [margin.left + width / 2 - 20, branch_h - 60],
+                                    [margin.left + width * 1.25 / 4, branch_h - 60]];
+            } else if (d[i].event_id == 12) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 + 20, branch_h],
+                                    [margin.left + width / 2 + 20, branch_h - 80],
+                                    [margin.left + width * 2.6 / 4, branch_h - 80]];
+            } else if (d[i].event_id == 14) { 
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 + 30, branch_h],
+                                    [margin.left + width / 2 + 30, branch_h - 100],
+                                    [margin.left + width * 2.95 / 4, branch_h - 100]];
+            } else if (d[i].event_id == 16) { 
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 + 10, branch_h],
+                                    [margin.left + width / 2 + 10, branch_h + 55],
+                                    [margin.left + width * 2.35 / 4, branch_h + 55]];
+            } else if (d[i].event_id == 19) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 + 30, branch_h],
+                                    [margin.left + width / 2 + 30, branch_h - 90],
+                                    [margin.left + width * 2.7 / 4, branch_h - 90]];
+            } else if (d[i].event_id == 20) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 + 40, branch_h],
+                                    [margin.left + width / 2 + 40, branch_h + 70],
+                                    [margin.left + width * 3.2 / 4, branch_h + 70]];
+            } else if (d[i].event_id == 21) {
+                marker_line_path = [[margin.left + width / 2, branch_h],
+                                    [margin.left + width / 2 + 10, branch_h],
+                                    [margin.left + width / 2 + 10, branch_h + 55],
+                                    [margin.left + width * 2.35 / 4, branch_h + 55]];
+            }
+        }
 
-        ot_gun_svg.append('circle')
-            .attr('class', 'marker-circle')
-            .attr('r', 3.5)
-            .attr('cx', margin.left + width / 2)
-            .attr('cy', branch_h)
-            .style('stroke', 'gray')
-            .style('fill', '#dadede');
+        // draw branch
+        draw_marker_line(marker_line_path);
 
+        // place time description
         ot_gun_svg.append('text')
-            .attr('class', 'time-string')
-            .attr('x', branch_w + (d[i].obama_trump == &quot;Obama&quot; ? -5 : 5))
-            .attr('y', branch_h + 3)
-            .style('font-size', 12)
-            .style('fill', (d[i].obama_trump == &quot;Obama&quot; ? '#77bdee' : '#ff6e6c'))
-            .style('text-anchor', (d[i].obama_trump == &quot;Obama&quot; ? 'end' : 'start'))
+            .classed('time-string', true)
+            .classed(d[i].obama_trump, true)
+            .attr('x', marker_line_path[marker_line_path.length - 1][0] + (d[i].obama_trump == &quot;Obama&quot; ? -5 : 5))
+            .attr('y', marker_line_path[marker_line_path.length - 1][1] + 3)
             .text(time_str);
 
+        // place marker circle
+        ot_gun_svg.append('circle')
+            .classed('marker-circle', true)
+            .attr('r', 3.5)
+            .attr('cx', margin.left + width / 2)
+            .attr('cy', branch_h);
+
+        // place description
         if (d[i].days_since_shooting &lt; 6) {
             ot_gun_svg.append('text')
-                .attr('class', 'desc-string')
-                .attr('x', branch_w + (d[i].obama_trump == &quot;Obama&quot; ? -5 : 5))
-                .attr('y', branch_h + 18)
+                .classed('desc-string', true)
+                .classed(d[i].obama_trump, true)
+                .attr('x', marker_line_path[marker_line_path.length - 1][0] + (d[i].obama_trump == &quot;Obama&quot; ? -5 : 5))
+                .attr('y', marker_line_path[marker_line_path.length - 1][1] + 18)
                 .attr('wrap-width', d[i].wrap_width)
                 .attr('alt-wrap-width', d[i].alt_wrap_width)
-                .style('font-size', 12)
-                .style('text-anchor', (d[i].obama_trump == &quot;Obama&quot; ? 'end' : 'start'))
                 .text(d[i].description);
         } else {
             ot_gun_svg.append('text')
-                .attr('class', 'desc-string')
-                .attr('x', branch_w + (d[i].obama_trump == &quot;Obama&quot; ? -5 : 5))
-                .attr('y', branch_h + 3)
+                .classed('desc-string', true)
+                .classed(d[i].obama_trump, true)
+                .attr('x', marker_line_path[marker_line_path.length - 1][0] + (d[i].obama_trump == &quot;Obama&quot; ? -5 : 5))
+                .attr('y', marker_line_path[marker_line_path.length - 1][1] + 3)
                 .attr('wrap-width', d[i].wrap_width)
                 .attr('alt-wrap-width', d[i].alt_wrap_width)
-                .style('font-size', 12)
-                .style('text-anchor', (d[i].obama_trump == &quot;Obama&quot; ? 'end' : 'start'))
                 .text(d[i].description);
         }
     }
@@ -249,15 +323,15 @@ $(window).resize(function() {
     width = $('#d3-obama-trump-gun-response').width() -  margin.left - margin.right;
     
     // move over headers, center line,  and day markers
-    d3.select('#obama-header').attr('x', margin.left + width * 1 / 4);
-    d3.select('#trump-header').attr('x', margin.left + width * 3 / 4);
+    d3.select('.header.Obama').attr('x', margin.left + width * 1 / 4);
+    d3.select('.header.Trump').attr('x', margin.left + width * 3 / 4);
 
-    if (width &gt;= 450) {
-        d3.select('#obama-header').text(&quot;Obama, Newton&quot;);
-        d3.select('#trump-header').text(&quot;Trump, Parkland&quot;);
-    } else if (width &lt; 450) {
-        d3.select('#obama-header').text(&quot;Obama&quot;);
-        d3.select('#trump-header').text(&quot;Trump&quot;);
+    if (width &gt;= 470) {
+        d3.select('.header.Obama').text(&quot;Obama, Newton&quot;);
+        d3.select('.header.Trump').text(&quot;Trump, Parkland&quot;);
+    } else if (width &lt; 470) {
+        d3.select('.header.Obama').text(&quot;Obama&quot;);
+        d3.select('.header.Trump').text(&quot;Trump&quot;);
     }
 
     d3.select('#center-line').attr('x1', margin.left + width / 2).attr('x2', margin.left + width / 2);
