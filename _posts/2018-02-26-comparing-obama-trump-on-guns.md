@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'How Obama and Trump Respond to School Shootings'
+title: 'How Obama and Trump Responded to School Shootings'
 date: 2018-02-26 05:00:00
 categories: data visualization project politics graphic
-landing-description: comparing how Obama and Trump respond to school shootings
+landing-description: comparing how Obama and Trump responded to school shootings
 thumbnail: /assets/img/post-thumbnails/obama-trump-guns.png
 excerpt_separator: <!-- more -->
 ---
