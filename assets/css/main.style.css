@@ -266,6 +266,34 @@ tbody tr:nth-of-type(odd) {
     background-color: rgba(119, 189, 238, 0.3);
 }
 
+/**********************/
+/*** column styling ***/
+/**********************/
+
+.columns {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.columns.two .column {
+    width: calc(50% - 15px);
+}
+
+.columns.three .column {
+    width: calc(33.2% - 15px);
+}
+
+.column {
+    width: 25%;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: top;
+}
+
+.column:nth-last-of-type(1) {
+    margin-right: 0;
+}
+
 /********************/
 /*** code styling ***/
 /********************/

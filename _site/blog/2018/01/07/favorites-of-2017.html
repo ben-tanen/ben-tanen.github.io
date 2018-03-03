@@ -56,6 +56,11 @@
 
 <body>
     <!-- adding support for mathjx -->
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
     <script type="text/javascript"
         src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
@@ -568,6 +573,8 @@ p.fav2017-title {
     </article>
 
     <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/blog/2018/02/01/fantasy-olympics.html'>&#8592; Newer Post</a></p>
         
 
         <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>

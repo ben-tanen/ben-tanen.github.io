@@ -1,0 +1,445 @@
+"","Code-3","Country","Code-2","Sport","Games","G","S","B","Year"
+"1","AUS","Australia","AU","Freestyle Skiing","Sochi 2014",0,1,1,2014
+"2","AUS","Australia","AU","Snowboard","Sochi 2014",0,1,0,2014
+"3","AUT","Austria","AT","Alpine Skiing","Sochi 2014",3,4,2,2014
+"4","AUT","Austria","AT","Biathlon","Sochi 2014",0,1,1,2014
+"5","AUT","Austria","AT","Luge","Sochi 2014",0,1,0,2014
+"6","AUT","Austria","AT","Ski Jumping","Sochi 2014",0,2,0,2014
+"7","AUT","Austria","AT","Snowboard","Sochi 2014",1,0,1,2014
+"8","BLR","Belarus","BY","Biathlon","Sochi 2014",3,0,1,2014
+"9","BLR","Belarus","BY","Freestyle Skiing","Sochi 2014",2,0,0,2014
+"10","CAN","Canada","CA","Alpine Skiing","Sochi 2014",0,0,1,2014
+"11","CAN","Canada","CA","Bobsleigh","Sochi 2014",1,0,0,2014
+"12","CAN","Canada","CA","Curling","Sochi 2014",2,0,0,2014
+"13","CAN","Canada","CA","Figure Skating","Sochi 2014",0,3,0,2014
+"14","CAN","Canada","CA","Freestyle Skiing","Sochi 2014",4,4,1,2014
+"15","CAN","Canada","CA","Ice Hockey","Sochi 2014",2,0,0,2014
+"16","CAN","Canada","CA","Short Track Speed Skating","Sochi 2014",1,1,1,2014
+"17","CAN","Canada","CA","Snowboard","Sochi 2014",0,0,1,2014
+"18","CAN","Canada","CA","Speed Skating","Sochi 2014",0,1,1,2014
+"19","CHN","China","CN","Freestyle Skiing","Sochi 2014",0,1,1,2014
+"20","CHN","China","CN","Short Track Speed Skating","Sochi 2014",2,3,1,2014
+"21","CHN","China","CN","Speed Skating","Sochi 2014",1,0,0,2014
+"22","CRO","Croatia","HR","Alpine Skiing","Sochi 2014",0,1,0,2014
+"23","CZE","Czech Republic","CZ","Biathlon","Sochi 2014",0,3,2,2014
+"24","CZE","Czech Republic","CZ","Speed Skating","Sochi 2014",1,1,0,2014
+"25","FIN","Finland","FI","Cross-Country Skiing","Sochi 2014",1,2,0,2014
+"26","FIN","Finland","FI","Ice Hockey","Sochi 2014",0,0,1,2014
+"27","FIN","Finland","FI","Snowboard","Sochi 2014",0,1,0,2014
+"28","FRA","France","FR","Alpine Skiing","Sochi 2014",0,1,1,2014
+"29","FRA","France","FR","Biathlon","Sochi 2014",2,1,1,2014
+"30","FRA","France","FR","Cross-Country Skiing","Sochi 2014",0,0,1,2014
+"31","FRA","France","FR","Freestyle Skiing","Sochi 2014",1,2,2,2014
+"32","FRA","France","FR","Ski Jumping","Sochi 2014",0,0,1,2014
+"33","GBR","United Kingdom","GB","Curling","Sochi 2014",0,1,1,2014
+"34","GBR","United Kingdom","GB","Skeleton","Sochi 2014",1,0,0,2014
+"35","GBR","United Kingdom","GB","Snowboard","Sochi 2014",0,0,1,2014
+"36","GER","Germany","DE","Alpine Skiing","Sochi 2014",1,1,1,2014
+"37","GER","Germany","DE","Biathlon","Sochi 2014",0,2,0,2014
+"38","GER","Germany","DE","Cross-Country Skiing","Sochi 2014",0,0,1,2014
+"39","GER","Germany","DE","Figure Skating","Sochi 2014",0,0,1,2014
+"40","GER","Germany","DE","Luge","Sochi 2014",4,1,0,2014
+"41","GER","Germany","DE","Nordic Combined","Sochi 2014",0,0,1,2014
+"42","GER","Germany","DE","Ski Jumping","Sochi 2014",2,0,0,2014
+"43","GER","Germany","DE","Snowboard","Sochi 2014",0,1,1,2014
+"44","ITA","Italy","IT","Alpine Skiing","Sochi 2014",0,1,1,2014
+"45","ITA","Italy","IT","Biathlon","Sochi 2014",0,0,1,2014
+"46","ITA","Italy","IT","Figure Skating","Sochi 2014",0,0,1,2014
+"47","ITA","Italy","IT","Luge","Sochi 2014",0,0,1,2014
+"48","ITA","Italy","IT","Short Track Speed Skating","Sochi 2014",0,1,2,2014
+"49","JPN","Japan","JP","Figure Skating","Sochi 2014",1,0,0,2014
+"50","JPN","Japan","JP","Freestyle Skiing","Sochi 2014",0,0,1,2014
+"51","JPN","Japan","JP","Ski Jumping","Sochi 2014",0,1,1,2014
+"52","JPN","Japan","JP","Snowboard","Sochi 2014",0,2,1,2014
+"53","KAZ","Kazakhstan","KZ","Figure Skating","Sochi 2014",0,0,1,2014
+"54","KOR","Korea","KR","Figure Skating","Sochi 2014",0,1,0,2014
+"55","KOR","Korea","KR","Short Track Speed Skating","Sochi 2014",2,1,2,2014
+"56","KOR","Korea","KR","Speed Skating","Sochi 2014",0,1,0,2014
+"57","LAT","Latvia","LV","Bobsleigh","Sochi 2014",0,1,0,2014
+"58","LAT","Latvia","LV","Luge","Sochi 2014",0,0,2,2014
+"59","LAT","Latvia","LV","Skeleton","Sochi 2014",0,1,0,2014
+"60","NED","Netherlands","NL","Short Track Speed Skating","Sochi 2014",0,0,1,2014
+"61","NED","Netherlands","NL","Speed Skating","Sochi 2014",7,6,6,2014
+"62","NOR","Norway","NO","Alpine Skiing","Sochi 2014",1,0,2,2014
+"63","NOR","Norway","NO","Biathlon","Sochi 2014",3,1,2,2014
+"64","NOR","Norway","NO","Cross-Country Skiing","Sochi 2014",5,2,4,2014
+"65","NOR","Norway","NO","Nordic Combined","Sochi 2014",1,1,0,2014
+"66","NOR","Norway","NO","Ski Jumping","Sochi 2014",0,0,1,2014
+"67","NOR","Norway","NO","Snowboard","Sochi 2014",0,1,0,2014
+"68","POL","Poland","PL","Cross-Country Skiing","Sochi 2014",1,0,0,2014
+"69","POL","Poland","PL","Ski Jumping","Sochi 2014",2,0,0,2014
+"70","POL","Poland","PL","Speed Skating","Sochi 2014",1,1,1,2014
+"71","RUS","Russia","RU","Biathlon","Sochi 2014",1,0,1,2014
+"72","RUS","Russia","RU","Cross-Country Skiing","Sochi 2014",0,0,1,2014
+"73","RUS","Russia","RU","Figure Skating","Sochi 2014",3,1,1,2014
+"74","RUS","Russia","RU","Freestyle Skiing","Sochi 2014",0,0,1,2014
+"75","RUS","Russia","RU","Short Track Speed Skating","Sochi 2014",3,1,1,2014
+"76","RUS","Russia","RU","Snowboard","Sochi 2014",2,0,1,2014
+"77","RUS","Russia","RU","Speed Skating","Sochi 2014",0,0,2,2014
+"78","SLO","Slovania","SI","Alpine Skiing","Sochi 2014",2,0,0,2014
+"79","SLO","Slovania","SI","Biathlon","Sochi 2014",0,0,1,2014
+"80","SLO","Slovania","SI","Cross-Country Skiing","Sochi 2014",0,0,1,2014
+"81","SLO","Slovania","SI","Ski Jumping","Sochi 2014",0,1,1,2014
+"82","SLO","Slovania","SI","Snowboard","Sochi 2014",0,1,1,2014
+"83","SUI","Switzerland","CH","Alpine Skiing","Sochi 2014",2,0,1,2014
+"84","SUI","Switzerland","CH","Biathlon","Sochi 2014",0,1,0,2014
+"85","SUI","Switzerland","CH","Bobsleigh","Sochi 2014",0,1,0,2014
+"86","SUI","Switzerland","CH","Cross-Country Skiing","Sochi 2014",2,0,0,2014
+"87","SUI","Switzerland","CH","Ice Hockey","Sochi 2014",0,0,1,2014
+"88","SUI","Switzerland","CH","Snowboard","Sochi 2014",2,1,0,2014
+"89","SVK","Slovakia","SK","Biathlon","Sochi 2014",1,0,0,2014
+"90","SWE","Sweden","SE","Cross-Country Skiing","Sochi 2014",2,5,4,2014
+"91","SWE","Sweden","SE","Curling","Sochi 2014",0,1,1,2014
+"92","SWE","Sweden","SE","Freestyle Skiing","Sochi 2014",0,0,1,2014
+"93","SWE","Sweden","SE","Ice Hockey","Sochi 2014",0,1,0,2014
+"94","UKR","Ukraine","UA","Biathlon","Sochi 2014",1,0,1,2014
+"95","USA","United States","US","Alpine Skiing","Sochi 2014",2,1,2,2014
+"96","USA","United States","US","Bobsleigh","Sochi 2014",0,1,3,2014
+"97","USA","United States","US","Figure Skating","Sochi 2014",1,0,1,2014
+"98","USA","United States","US","Freestyle Skiing","Sochi 2014",3,2,2,2014
+"99","USA","United States","US","Ice Hockey","Sochi 2014",0,1,0,2014
+"100","USA","United States","US","Luge","Sochi 2014",0,0,1,2014
+"101","USA","United States","US","Short Track Speed Skating","Sochi 2014",0,1,0,2014
+"102","USA","United States","US","Skeleton","Sochi 2014",0,1,1,2014
+"103","USA","United States","US","Snowboard","Sochi 2014",3,0,1,2014
+"104","AUS","Australia","AU","Freestyle Skiing","Vancouver 2010",1,1,0,2010
+"105","AUS","Australia","AU","Snowboard","Vancouver 2010",1,0,0,2010
+"106","AUT","Austria","AT","Alpine Skiing","Vancouver 2010",1,1,2,2010
+"107","AUT","Austria","AT","Biathlon","Vancouver 2010",0,2,0,2010
+"108","AUT","Austria","AT","Freestyle Skiing","Vancouver 2010",0,1,0,2010
+"109","AUT","Austria","AT","Luge","Vancouver 2010",1,1,0,2010
+"110","AUT","Austria","AT","Ski Jumping","Vancouver 2010",1,0,2,2010
+"111","AUT","Austria","AT","Snowboard","Vancouver 2010",0,1,1,2010
+"112","BLR","Belarus","BY","Biathlon","Vancouver 2010",0,1,1,2010
+"113","BLR","Belarus","BY","Freestyle Skiing","Vancouver 2010",1,0,0,2010
+"114","CAN","Canada","CA","Bobsleigh","Vancouver 2010",1,1,1,2010
+"115","CAN","Canada","CA","Curling","Vancouver 2010",1,1,0,2010
+"116","CAN","Canada","CA","Figure Skating","Vancouver 2010",1,0,1,2010
+"117","CAN","Canada","CA","Freestyle Skiing","Vancouver 2010",2,1,0,2010
+"118","CAN","Canada","CA","Ice Hockey","Vancouver 2010",2,0,0,2010
+"119","CAN","Canada","CA","Short Track Speed Skating","Vancouver 2010",2,2,1,2010
+"120","CAN","Canada","CA","Skeleton","Vancouver 2010",1,0,0,2010
+"121","CAN","Canada","CA","Snowboard","Vancouver 2010",1,0,0,2010
+"122","CAN","Canada","CA","Speed Skating","Vancouver 2010",2,1,2,2010
+"123","CHN","China","CN","Curling","Vancouver 2010",0,0,1,2010
+"124","CHN","China","CN","Figure Skating","Vancouver 2010",1,1,0,2010
+"125","CHN","China","CN","Freestyle Skiing","Vancouver 2010",0,1,2,2010
+"126","CHN","China","CN","Short Track Speed Skating","Vancouver 2010",4,0,0,2010
+"127","CRO","Croatia","HR","Alpine Skiing","Vancouver 2010",0,2,0,2010
+"128","CRO","Croatia","HR","Biathlon","Vancouver 2010",0,0,1,2010
+"129","CZE","Czech Republic","CZ","Alpine Skiing","Vancouver 2010",0,0,1,2010
+"130","CZE","Czech Republic","CZ","Cross-Country Skiing","Vancouver 2010",0,0,2,2010
+"131","CZE","Czech Republic","CZ","Speed Skating","Vancouver 2010",2,0,1,2010
+"132","EST","Estonia","EE","Cross-Country Skiing","Vancouver 2010",0,1,0,2010
+"133","FIN","Finland","FI","Cross-Country Skiing","Vancouver 2010",0,0,2,2010
+"134","FIN","Finland","FI","Ice Hockey","Vancouver 2010",0,0,2,2010
+"135","FIN","Finland","FI","Snowboard","Vancouver 2010",0,1,0,2010
+"136","FRA","France","FR","Biathlon","Vancouver 2010",1,2,3,2010
+"137","FRA","France","FR","Freestyle Skiing","Vancouver 2010",0,0,1,2010
+"138","FRA","France","FR","Snowboard","Vancouver 2010",0,0,1,2010
+"139","GBR","United Kingdom","GB","Skeleton","Vancouver 2010",1,0,0,2010
+"140","GER","Germany","DE","Alpine Skiing","Vancouver 2010",3,0,0,2010
+"141","GER","Germany","DE","Biathlon","Vancouver 2010",2,1,2,2010
+"142","GER","Germany","DE","Bobsleigh","Vancouver 2010",1,2,0,2010
+"143","GER","Germany","DE","Cross-Country Skiing","Vancouver 2010",1,4,0,2010
+"144","GER","Germany","DE","Figure Skating","Vancouver 2010",0,0,1,2010
+"145","GER","Germany","DE","Luge","Vancouver 2010",2,1,2,2010
+"146","GER","Germany","DE","Skeleton","Vancouver 2010",0,1,1,2010
+"147","GER","Germany","DE","Ski Jumping","Vancouver 2010",0,1,0,2010
+"148","GER","Germany","DE","Speed Skating","Vancouver 2010",1,2,0,2010
+"149","ITA","Italy","IT","Alpine Skiing","Vancouver 2010",1,0,0,2010
+"150","ITA","Italy","IT","Cross-Country Skiing","Vancouver 2010",0,1,0,2010
+"151","ITA","Italy","IT","Luge","Vancouver 2010",0,0,1,2010
+"152","ITA","Italy","IT","Short Track Speed Skating","Vancouver 2010",0,0,1,2010
+"153","JPN","Japan","JP","Figure Skating","Vancouver 2010",0,1,1,2010
+"154","JPN","Japan","JP","Speed Skating","Vancouver 2010",0,1,0,2010
+"155","KAZ","Kazakhstan","KZ","Biathlon","Vancouver 2010",0,1,0,2010
+"156","KOR","Korea","KR","Figure Skating","Vancouver 2010",1,0,0,2010
+"157","KOR","Korea","KR","Short Track Speed Skating","Vancouver 2010",2,4,2,2010
+"158","KOR","Korea","KR","Speed Skating","Vancouver 2010",1,2,0,2010
+"159","LAT","Latvia","LV","Luge","Vancouver 2010",0,1,0,2010
+"160","LAT","Latvia","LV","Skeleton","Vancouver 2010",0,1,0,2010
+"161","NED","Netherlands","NL","Snowboard","Vancouver 2010",1,0,0,2010
+"162","NED","Netherlands","NL","Speed Skating","Vancouver 2010",3,1,3,2010
+"163","NOR","Norway","NO","Alpine Skiing","Vancouver 2010",1,2,1,2010
+"164","NOR","Norway","NO","Biathlon","Vancouver 2010",3,2,0,2010
+"165","NOR","Norway","NO","Cross-Country Skiing","Vancouver 2010",5,2,2,2010
+"166","NOR","Norway","NO","Curling","Vancouver 2010",0,1,0,2010
+"167","NOR","Norway","NO","Freestyle Skiing","Vancouver 2010",0,1,1,2010
+"168","NOR","Norway","NO","Ski Jumping","Vancouver 2010",0,0,1,2010
+"169","NOR","Norway","NO","Speed Skating","Vancouver 2010",0,0,1,2010
+"170","POL","Poland","PL","Cross-Country Skiing","Vancouver 2010",1,1,1,2010
+"171","POL","Poland","PL","Ski Jumping","Vancouver 2010",0,2,0,2010
+"172","POL","Poland","PL","Speed Skating","Vancouver 2010",0,0,1,2010
+"173","RUS","Russia","RU","Biathlon","Vancouver 2010",2,1,1,2010
+"174","RUS","Russia","RU","Bobsleigh","Vancouver 2010",0,0,1,2010
+"175","RUS","Russia","RU","Cross-Country Skiing","Vancouver 2010",1,1,2,2010
+"176","RUS","Russia","RU","Figure Skating","Vancouver 2010",0,1,1,2010
+"177","RUS","Russia","RU","Skeleton","Vancouver 2010",0,0,1,2010
+"178","RUS","Russia","RU","Snowboard","Vancouver 2010",0,1,0,2010
+"179","RUS","Russia","RU","Speed Skating","Vancouver 2010",0,1,1,2010
+"180","SLO","Slovania","SI","Alpine Skiing","Vancouver 2010",0,2,0,2010
+"181","SLO","Slovania","SI","Cross-Country Skiing","Vancouver 2010",0,0,1,2010
+"182","SUI","Switzerland","CH","Alpine Skiing","Vancouver 2010",2,0,1,2010
+"183","SUI","Switzerland","CH","Cross-Country Skiing","Vancouver 2010",1,0,0,2010
+"184","SUI","Switzerland","CH","Curling","Vancouver 2010",0,0,1,2010
+"185","SUI","Switzerland","CH","Freestyle Skiing","Vancouver 2010",1,0,0,2010
+"186","SUI","Switzerland","CH","Ski Jumping","Vancouver 2010",2,0,0,2010
+"187","SVK","Slovakia","SK","Biathlon","Vancouver 2010",1,1,1,2010
+"188","SWE","Sweden","SE","Alpine Skiing","Vancouver 2010",0,0,2,2010
+"189","SWE","Sweden","SE","Biathlon","Vancouver 2010",1,0,0,2010
+"190","SWE","Sweden","SE","Cross-Country Skiing","Vancouver 2010",3,2,2,2010
+"191","SWE","Sweden","SE","Curling","Vancouver 2010",1,0,0,2010
+"192","USA","United States","US","Alpine Skiing","Vancouver 2010",2,3,3,2010
+"193","USA","United States","US","Bobsleigh","Vancouver 2010",1,0,1,2010
+"194","USA","United States","US","Figure Skating","Vancouver 2010",1,1,0,2010
+"195","USA","United States","US","Freestyle Skiing","Vancouver 2010",1,1,2,2010
+"196","USA","United States","US","Ice Hockey","Vancouver 2010",0,2,0,2010
+"197","USA","United States","US","Short Track Speed Skating","Vancouver 2010",0,2,4,2010
+"198","USA","United States","US","Snowboard","Vancouver 2010",1,1,2,2010
+"199","USA","United States","US","Speed Skating","Vancouver 2010",1,2,1,2010
+"200","AUS","Australia","AU","Freestyle Skiing","Turin 2006",1,0,1,2006
+"201","AUT","Austria","AT","Alpine Skiing","Turin 2006",4,5,5,2006
+"202","AUT","Austria","AT","Cross-Country Skiing","Turin 2006",0,0,1,2006
+"203","AUT","Austria","AT","Luge","Turin 2006",1,0,0,2006
+"204","AUT","Austria","AT","Ski Jumping","Turin 2006",2,1,0,2006
+"205","AUT","Austria","AT","Snowboard","Turin 2006",0,0,1,2006
+"206","BLR","Belarus","BY","Freestyle Skiing","Turin 2006",0,1,0,2006
+"207","BUL","Bulgaria","BG","Short Track Speed Skating","Turin 2006",0,1,0,2006
+"208","CAN","Canada","CA","Bobsleigh","Turin 2006",0,1,0,2006
+"209","CAN","Canada","CA","Cross-Country Skiing","Turin 2006",1,0,0,2006
+"210","CAN","Canada","CA","Curling","Turin 2006",1,0,1,2006
+"211","CAN","Canada","CA","Figure Skating","Turin 2006",0,0,1,2006
+"212","CAN","Canada","CA","Freestyle Skiing","Turin 2006",1,0,0,2006
+"213","CAN","Canada","CA","Ice Hockey","Turin 2006",1,0,0,2006
+"214","CAN","Canada","CA","Short Track Speed Skating","Turin 2006",0,3,1,2006
+"215","CAN","Canada","CA","Skeleton","Turin 2006",1,1,1,2006
+"216","CAN","Canada","CA","Snowboard","Turin 2006",0,0,1,2006
+"217","CAN","Canada","CA","Speed Skating","Turin 2006",2,4,2,2006
+"218","CHN","China","CN","Figure Skating","Turin 2006",0,1,1,2006
+"219","CHN","China","CN","Freestyle Skiing","Turin 2006",1,1,0,2006
+"220","CHN","China","CN","Short Track Speed Skating","Turin 2006",1,1,3,2006
+"221","CRO","Croatia","HR","Alpine Skiing","Turin 2006",1,2,0,2006
+"222","CZE","Czech Republic","CZ","Cross-Country Skiing","Turin 2006",1,2,0,2006
+"223","CZE","Czech Republic","CZ","Ice Hockey","Turin 2006",0,0,1,2006
+"224","EST","Estonia","EE","Cross-Country Skiing","Turin 2006",3,0,0,2006
+"225","FIN","Finland","FI","Alpine Skiing","Turin 2006",0,1,0,2006
+"226","FIN","Finland","FI","Curling","Turin 2006",0,1,0,2006
+"227","FIN","Finland","FI","Freestyle Skiing","Turin 2006",0,1,0,2006
+"228","FIN","Finland","FI","Ice Hockey","Turin 2006",0,1,0,2006
+"229","FIN","Finland","FI","Ski Jumping","Turin 2006",0,2,0,2006
+"230","FIN","Finland","FI","Snowboard","Turin 2006",0,0,1,2006
+"231","FRA","France","FR","Alpine Skiing","Turin 2006",1,1,0,2006
+"232","FRA","France","FR","Biathlon","Turin 2006",2,0,2,2006
+"233","FRA","France","FR","Cross-Country Skiing","Turin 2006",0,1,0,2006
+"234","FRA","France","FR","Freestyle Skiing","Turin 2006",0,0,1,2006
+"235","FRA","France","FR","Snowboard","Turin 2006",0,0,1,2006
+"236","GBR","United Kingdom","GB","Skeleton","Turin 2006",0,1,0,2006
+"237","GER","Germany","DE","Biathlon","Turin 2006",5,4,2,2006
+"238","GER","Germany","DE","Bobsleigh","Turin 2006",3,0,0,2006
+"239","GER","Germany","DE","Cross-Country Skiing","Turin 2006",0,3,1,2006
+"240","GER","Germany","DE","Luge","Turin 2006",1,2,1,2006
+"241","GER","Germany","DE","Snowboard","Turin 2006",0,1,0,2006
+"242","GER","Germany","DE","Speed Skating","Turin 2006",1,1,1,2006
+"243","ITA","Italy","IT","Bobsleigh","Turin 2006",0,0,1,2006
+"244","ITA","Italy","IT","Cross-Country Skiing","Turin 2006",2,0,2,2006
+"245","ITA","Italy","IT","Luge","Turin 2006",1,0,1,2006
+"246","ITA","Italy","IT","Short Track Speed Skating","Turin 2006",0,0,1,2006
+"247","ITA","Italy","IT","Speed Skating","Turin 2006",2,0,1,2006
+"248","JPN","Japan","JP","Figure Skating","Turin 2006",1,0,0,2006
+"249","KOR","Korea","KR","Short Track Speed Skating","Turin 2006",6,3,1,2006
+"250","LAT","Latvia","LV","Luge","Turin 2006",0,0,1,2006
+"251","NED","Netherlands","NL","Speed Skating","Turin 2006",3,2,4,2006
+"252","NOR","Norway","NO","Alpine Skiing","Turin 2006",1,0,0,2006
+"253","NOR","Norway","NO","Biathlon","Turin 2006",0,3,3,2006
+"254","NOR","Norway","NO","Cross-Country Skiing","Turin 2006",0,2,1,2006
+"255","NOR","Norway","NO","Freestyle Skiing","Turin 2006",0,1,0,2006
+"256","NOR","Norway","NO","Ski Jumping","Turin 2006",1,0,3,2006
+"257","NOR","Norway","NO","Snowboard","Turin 2006",0,0,1,2006
+"258","POL","Poland","PL","Biathlon","Turin 2006",0,1,0,2006
+"259","POL","Poland","PL","Cross-Country Skiing","Turin 2006",0,0,1,2006
+"260","RUS","Russia","RU","Biathlon","Turin 2006",2,1,2,2006
+"261","RUS","Russia","RU","Bobsleigh","Turin 2006",0,1,0,2006
+"262","RUS","Russia","RU","Cross-Country Skiing","Turin 2006",2,2,2,2006
+"263","RUS","Russia","RU","Figure Skating","Turin 2006",3,0,1,2006
+"264","RUS","Russia","RU","Freestyle Skiing","Turin 2006",0,0,1,2006
+"265","RUS","Russia","RU","Luge","Turin 2006",0,1,0,2006
+"266","RUS","Russia","RU","Speed Skating","Turin 2006",0,0,1,2006
+"267","SUI","Switzerland","CH","Alpine Skiing","Turin 2006",0,1,2,2006
+"268","SUI","Switzerland","CH","Bobsleigh","Turin 2006",0,0,2,2006
+"269","SUI","Switzerland","CH","Curling","Turin 2006",0,1,0,2006
+"270","SUI","Switzerland","CH","Figure Skating","Turin 2006",0,1,0,2006
+"271","SUI","Switzerland","CH","Freestyle Skiing","Turin 2006",1,0,0,2006
+"272","SUI","Switzerland","CH","Skeleton","Turin 2006",1,0,1,2006
+"273","SUI","Switzerland","CH","Snowboard","Turin 2006",3,1,0,2006
+"274","SVK","Slovakia","SK","Snowboard","Turin 2006",0,1,0,2006
+"275","SWE","Sweden","SE","Alpine Skiing","Turin 2006",1,0,3,2006
+"276","SWE","Sweden","SE","Biathlon","Turin 2006",1,1,0,2006
+"277","SWE","Sweden","SE","Cross-Country Skiing","Turin 2006",1,0,2,2006
+"278","SWE","Sweden","SE","Curling","Turin 2006",1,0,0,2006
+"279","SWE","Sweden","SE","Ice Hockey","Turin 2006",1,1,0,2006
+"280","UKR","Ukraine","UA","Biathlon","Turin 2006",0,0,1,2006
+"281","UKR","Ukraine","UA","Figure Skating","Turin 2006",0,0,1,2006
+"282","USA","United States","US","Alpine Skiing","Turin 2006",2,0,0,2006
+"283","USA","United States","US","Bobsleigh","Turin 2006",0,1,0,2006
+"284","USA","United States","US","Curling","Turin 2006",0,0,1,2006
+"285","USA","United States","US","Figure Skating","Turin 2006",0,2,0,2006
+"286","USA","United States","US","Freestyle Skiing","Turin 2006",0,0,1,2006
+"287","USA","United States","US","Ice Hockey","Turin 2006",0,0,1,2006
+"288","USA","United States","US","Short Track Speed Skating","Turin 2006",1,0,2,2006
+"289","USA","United States","US","Snowboard","Turin 2006",3,3,1,2006
+"290","USA","United States","US","Speed Skating","Turin 2006",2,3,1,2006
+"291","AUS","Australia","AU","Freestyle Skiing","Salt Lake City 2002",1,0,0,2002
+"292","AUS","Australia","AU","Short Track Speed Skating","Salt Lake City 2002",1,0,0,2002
+"293","AUT","Austria","AT","Alpine Skiing","Salt Lake City 2002",2,1,4,2002
+"294","AUT","Austria","AT","Biathlon","Salt Lake City 2002",0,0,1,2002
+"295","AUT","Austria","AT","Luge","Salt Lake City 2002",0,0,1,2002
+"296","AUT","Austria","AT","Skeleton","Salt Lake City 2002",0,1,0,2002
+"297","BLR","Belarus","BY","Freestyle Skiing","Salt Lake City 2002",0,0,1,2002
+"298","BUL","Bulgaria","BG","Biathlon","Salt Lake City 2002",0,0,1,2002
+"299","BUL","Bulgaria","BG","Short Track Speed Skating","Salt Lake City 2002",0,1,1,2002
+"300","CAN","Canada","CA","Curling","Salt Lake City 2002",0,1,1,2002
+"301","CAN","Canada","CA","Figure Skating","Salt Lake City 2002",1,0,0,2002
+"302","CAN","Canada","CA","Freestyle Skiing","Salt Lake City 2002",0,1,1,2002
+"303","CAN","Canada","CA","Ice Hockey","Salt Lake City 2002",2,0,0,2002
+"304","CAN","Canada","CA","Short Track Speed Skating","Salt Lake City 2002",2,1,3,2002
+"305","CAN","Canada","CA","Speed Skating","Salt Lake City 2002",1,0,2,2002
+"306","CHN","China","CN","Figure Skating","Salt Lake City 2002",0,0,1,2002
+"307","CHN","China","CN","Short Track Speed Skating","Salt Lake City 2002",2,2,3,2002
+"308","CRO","Croatia","HR","Alpine Skiing","Salt Lake City 2002",2,1,0,2002
+"309","CZE","Czech Republic","CZ","Freestyle Skiing","Salt Lake City 2002",1,0,0,2002
+"310","EST","Estonia","EE","Cross-Country Skiing","Salt Lake City 2002",1,0,1,2002
+"311","FIN","Finland","FI","Freestyle Skiing","Salt Lake City 2002",1,0,0,2002
+"312","FIN","Finland","FI","Ski Jumping","Salt Lake City 2002",0,1,1,2002
+"313","FRA","France","FR","Alpine Skiing","Salt Lake City 2002",2,2,0,2002
+"314","FRA","France","FR","Biathlon","Salt Lake City 2002",0,1,1,2002
+"315","FRA","France","FR","Figure Skating","Salt Lake City 2002",1,0,0,2002
+"316","FRA","France","FR","Freestyle Skiing","Salt Lake City 2002",0,0,1,2002
+"317","FRA","France","FR","Snowboard","Salt Lake City 2002",1,2,0,2002
+"318","GBR","United Kingdom","GB","Curling","Salt Lake City 2002",1,0,0,2002
+"319","GBR","United Kingdom","GB","Skeleton","Salt Lake City 2002",0,0,1,2002
+"320","GER","Germany","DE","Biathlon","Salt Lake City 2002",2,5,1,2002
+"321","GER","Germany","DE","Bobsleigh","Salt Lake City 2002",2,1,1,2002
+"322","GER","Germany","DE","Cross-Country Skiing","Salt Lake City 2002",1,2,1,2002
+"323","GER","Germany","DE","Luge","Salt Lake City 2002",2,2,1,2002
+"324","GER","Germany","DE","Ski Jumping","Salt Lake City 2002",1,1,0,2002
+"325","GER","Germany","DE","Speed Skating","Salt Lake City 2002",3,3,2,2002
+"326","ITA","Italy","IT","Alpine Skiing","Salt Lake City 2002",1,1,1,2002
+"327","ITA","Italy","IT","Cross-Country Skiing","Salt Lake City 2002",0,1,2,2002
+"328","ITA","Italy","IT","Figure Skating","Salt Lake City 2002",0,0,1,2002
+"329","ITA","Italy","IT","Luge","Salt Lake City 2002",1,0,0,2002
+"330","ITA","Italy","IT","Short Track Speed Skating","Salt Lake City 2002",0,1,0,2002
+"331","ITA","Italy","IT","Snowboard","Salt Lake City 2002",0,0,1,2002
+"332","JPN","Japan","JP","Freestyle Skiing","Salt Lake City 2002",0,0,1,2002
+"333","JPN","Japan","JP","Speed Skating","Salt Lake City 2002",0,1,0,2002
+"334","KOR","Korea","KR","Short Track Speed Skating","Salt Lake City 2002",2,2,0,2002
+"335","NED","Netherlands","NL","Speed Skating","Salt Lake City 2002",3,5,0,2002
+"336","NOR","Norway","NO","Alpine Skiing","Salt Lake City 2002",1,1,1,2002
+"337","NOR","Norway","NO","Biathlon","Salt Lake City 2002",4,1,0,2002
+"338","NOR","Norway","NO","Cross-Country Skiing","Salt Lake City 2002",3,2,1,2002
+"339","NOR","Norway","NO","Curling","Salt Lake City 2002",1,0,0,2002
+"340","NOR","Norway","NO","Freestyle Skiing","Salt Lake City 2002",1,0,0,2002
+"341","NOR","Norway","NO","Speed Skating","Salt Lake City 2002",0,0,2,2002
+"342","POL","Poland","PL","Ski Jumping","Salt Lake City 2002",0,1,1,2002
+"343","RUS","Russia","RU","Biathlon","Salt Lake City 2002",1,0,1,2002
+"344","RUS","Russia","RU","Cross-Country Skiing","Salt Lake City 2002",1,1,0,2002
+"345","RUS","Russia","RU","Figure Skating","Salt Lake City 2002",2,3,0,2002
+"346","RUS","Russia","RU","Ice Hockey","Salt Lake City 2002",0,0,1,2002
+"347","SLO","Slovania","SI","Ski Jumping","Salt Lake City 2002",0,0,1,2002
+"348","SUI","Switzerland","CH","Alpine Skiing","Salt Lake City 2002",0,0,1,2002
+"349","SUI","Switzerland","CH","Bobsleigh","Salt Lake City 2002",0,1,1,2002
+"350","SUI","Switzerland","CH","Cross-Country Skiing","Salt Lake City 2002",0,0,1,2002
+"351","SUI","Switzerland","CH","Curling","Salt Lake City 2002",0,1,1,2002
+"352","SUI","Switzerland","CH","Skeleton","Salt Lake City 2002",0,0,1,2002
+"353","SUI","Switzerland","CH","Ski Jumping","Salt Lake City 2002",2,0,0,2002
+"354","SUI","Switzerland","CH","Snowboard","Salt Lake City 2002",1,0,1,2002
+"355","SWE","Sweden","SE","Alpine Skiing","Salt Lake City 2002",0,1,1,2002
+"356","SWE","Sweden","SE","Biathlon","Salt Lake City 2002",0,0,2,2002
+"357","SWE","Sweden","SE","Ice Hockey","Salt Lake City 2002",0,0,1,2002
+"358","SWE","Sweden","SE","Snowboard","Salt Lake City 2002",0,1,0,2002
+"359","USA","United States","US","Alpine Skiing","Salt Lake City 2002",0,1,0,2002
+"360","USA","United States","US","Bobsleigh","Salt Lake City 2002",1,1,1,2002
+"361","USA","United States","US","Figure Skating","Salt Lake City 2002",1,0,2,2002
+"362","USA","United States","US","Freestyle Skiing","Salt Lake City 2002",0,3,0,2002
+"363","USA","United States","US","Ice Hockey","Salt Lake City 2002",0,2,0,2002
+"364","USA","United States","US","Luge","Salt Lake City 2002",0,1,1,2002
+"365","USA","United States","US","Short Track Speed Skating","Salt Lake City 2002",1,1,1,2002
+"366","USA","United States","US","Skeleton","Salt Lake City 2002",2,1,0,2002
+"367","USA","United States","US","Snowboard","Salt Lake City 2002",2,1,2,2002
+"368","USA","United States","US","Speed Skating","Salt Lake City 2002",3,1,4,2002
+"369","AUS","Australia","AU","Alpine Skiing","Nagano 1998",0,0,1,1998
+"370","AUT","Austria","AT","Alpine Skiing","Nagano 1998",2,4,3,1998
+"371","AUT","Austria","AT","Luge","Nagano 1998",0,0,1,1998
+"372","AUT","Austria","AT","Ski Jumping","Nagano 1998",0,0,2,1998
+"373","BEL","Belgium","BE","Speed Skating","Nagano 1998",0,0,1,1998
+"374","BLR","Belarus","BY","Biathlon","Nagano 1998",0,0,1,1998
+"375","BLR","Belarus","BY","Freestyle Skiing","Nagano 1998",0,0,1,1998
+"376","BUL","Bulgaria","BG","Biathlon","Nagano 1998",1,0,0,1998
+"377","CAN","Canada","CA","Bobsleigh","Nagano 1998",1,0,0,1998
+"378","CAN","Canada","CA","Curling","Nagano 1998",1,1,0,1998
+"379","CAN","Canada","CA","Figure Skating","Nagano 1998",0,1,0,1998
+"380","CAN","Canada","CA","Ice Hockey","Nagano 1998",0,1,0,1998
+"381","CAN","Canada","CA","Short Track Speed Skating","Nagano 1998",2,0,2,1998
+"382","CAN","Canada","CA","Speed Skating","Nagano 1998",1,2,2,1998
+"383","CHN","China","CN","Figure Skating","Nagano 1998",0,0,1,1998
+"384","CHN","China","CN","Freestyle Skiing","Nagano 1998",0,1,0,1998
+"385","CHN","China","CN","Short Track Speed Skating","Nagano 1998",0,5,1,1998
+"386","CZE","Czech Republic","CZ","Ice Hockey","Nagano 1998",1,0,0,1998
+"387","DEN","Denmark","DK","Curling","Nagano 1998",0,1,0,1998
+"388","FIN","Finland","FI","Biathlon","Nagano 1998",0,0,1,1998
+"389","FIN","Finland","FI","Cross-Country Skiing","Nagano 1998",0,0,1,1998
+"390","FIN","Finland","FI","Freestyle Skiing","Nagano 1998",0,1,1,1998
+"391","FIN","Finland","FI","Ice Hockey","Nagano 1998",0,0,2,1998
+"392","FIN","Finland","FI","Ski Jumping","Nagano 1998",1,1,0,1998
+"393","FRA","France","FR","Alpine Skiing","Nagano 1998",1,0,1,1998
+"394","FRA","France","FR","Bobsleigh","Nagano 1998",0,0,1,1998
+"395","FRA","France","FR","Figure Skating","Nagano 1998",0,0,2,1998
+"396","FRA","France","FR","Freestyle Skiing","Nagano 1998",0,1,0,1998
+"397","GBR","United Kingdom","GB","Bobsleigh","Nagano 1998",0,0,1,1998
+"398","GER","Germany","DE","Alpine Skiing","Nagano 1998",2,0,1,1998
+"399","GER","Germany","DE","Biathlon","Nagano 1998",1,1,2,1998
+"400","GER","Germany","DE","Bobsleigh","Nagano 1998",1,0,1,1998
+"401","GER","Germany","DE","Figure Skating","Nagano 1998",0,0,1,1998
+"402","GER","Germany","DE","Freestyle Skiing","Nagano 1998",0,1,0,1998
+"403","GER","Germany","DE","Luge","Nagano 1998",3,1,1,1998
+"404","GER","Germany","DE","Ski Jumping","Nagano 1998",0,1,0,1998
+"405","GER","Germany","DE","Snowboard","Nagano 1998",1,0,0,1998
+"406","GER","Germany","DE","Speed Skating","Nagano 1998",2,3,1,1998
+"407","ITA","Italy","IT","Alpine Skiing","Nagano 1998",1,1,0,1998
+"408","ITA","Italy","IT","Biathlon","Nagano 1998",0,1,0,1998
+"409","ITA","Italy","IT","Bobsleigh","Nagano 1998",1,0,0,1998
+"410","ITA","Italy","IT","Cross-Country Skiing","Nagano 1998",0,1,1,1998
+"411","ITA","Italy","IT","Luge","Nagano 1998",0,1,0,1998
+"412","JPN","Japan","JP","Freestyle Skiing","Nagano 1998",1,0,0,1998
+"413","JPN","Japan","JP","Short Track Speed Skating","Nagano 1998",1,0,1,1998
+"414","JPN","Japan","JP","Ski Jumping","Nagano 1998",2,1,1,1998
+"415","JPN","Japan","JP","Speed Skating","Nagano 1998",1,0,2,1998
+"416","KAZ","Kazakhstan","KZ","Speed Skating","Nagano 1998",0,0,1,1998
+"417","KOR","Korea","KR","Short Track Speed Skating","Nagano 1998",3,1,2,1998
+"418","NED","Netherlands","NL","Speed Skating","Nagano 1998",5,4,2,1998
+"419","NOR","Norway","NO","Alpine Skiing","Nagano 1998",1,2,0,1998
+"420","NOR","Norway","NO","Biathlon","Nagano 1998",2,2,0,1998
+"421","NOR","Norway","NO","Cross-Country Skiing","Nagano 1998",1,1,0,1998
+"422","NOR","Norway","NO","Curling","Nagano 1998",0,0,1,1998
+"423","NOR","Norway","NO","Freestyle Skiing","Nagano 1998",0,0,1,1998
+"424","NOR","Norway","NO","Snowboard","Nagano 1998",0,2,0,1998
+"425","NOR","Norway","NO","Speed Skating","Nagano 1998",1,0,0,1998
+"426","RUS","Russia","RU","Biathlon","Nagano 1998",1,0,1,1998
+"427","RUS","Russia","RU","Cross-Country Skiing","Nagano 1998",1,0,0,1998
+"428","RUS","Russia","RU","Figure Skating","Nagano 1998",3,2,0,1998
+"429","RUS","Russia","RU","Ice Hockey","Nagano 1998",0,1,0,1998
+"430","SUI","Switzerland","CH","Alpine Skiing","Nagano 1998",0,1,1,1998
+"431","SUI","Switzerland","CH","Bobsleigh","Nagano 1998",0,1,0,1998
+"432","SUI","Switzerland","CH","Curling","Nagano 1998",1,0,0,1998
+"433","SUI","Switzerland","CH","Freestyle Skiing","Nagano 1998",0,0,1,1998
+"434","SUI","Switzerland","CH","Snowboard","Nagano 1998",1,0,0,1998
+"435","SWE","Sweden","SE","Alpine Skiing","Nagano 1998",0,1,0,1998
+"436","SWE","Sweden","SE","Curling","Nagano 1998",0,0,1,1998
+"437","UKR","Ukraine","UA","Biathlon","Nagano 1998",0,1,0,1998
+"438","USA","United States","US","Alpine Skiing","Nagano 1998",1,0,0,1998
+"439","USA","United States","US","Figure Skating","Nagano 1998",1,1,0,1998
+"440","USA","United States","US","Freestyle Skiing","Nagano 1998",3,0,0,1998
+"441","USA","United States","US","Ice Hockey","Nagano 1998",1,0,0,1998
+"442","USA","United States","US","Luge","Nagano 1998",0,1,1,1998
+"443","USA","United States","US","Snowboard","Nagano 1998",0,0,2,1998
+"444","USA","United States","US","Speed Skating","Nagano 1998",0,1,1,1998
