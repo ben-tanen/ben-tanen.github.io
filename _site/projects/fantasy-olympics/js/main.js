@@ -72,3 +72,11 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) 
     });
 });
 
+if ($(window).width() <= 900) $('#fo-chart-loc-text').html('below');
+else $('#fo-chart-loc-text').html('on the right');
+
+$(window).resize(function() {
+    if ($(window).width() <= 900) $('#fo-chart-loc-text').html('below');
+    else $('#fo-chart-loc-text').html('on the right');
+});
+

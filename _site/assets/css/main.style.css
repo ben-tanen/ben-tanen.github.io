@@ -266,6 +266,10 @@ tbody tr:nth-of-type(odd) {
     background-color: rgba(119, 189, 238, 0.3);
 }
 
+tbody td:nth-of-type(1) {
+    padding-left: 3px;
+}
+
 /**********************/
 /*** column styling ***/
 /**********************/
@@ -292,6 +296,10 @@ tbody tr:nth-of-type(odd) {
 
 .column:nth-last-of-type(1) {
     margin-right: 0;
+}
+
+@media (max-width: 500px) {
+    .column { width: 100% !important; }
 }
 
 /********************/

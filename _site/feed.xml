@@ -363,6 +363,126 @@ $(window).resize(function() {
                 
             
                 
+                <item>
+                    <title>Gamifying the 2018 Olympic Games</title>
+                    <description>&lt;p&gt;I love the Olympics and the upcoming 2018 Games have me fired up. Following my first season in &lt;a href=&quot;/blog/2017/09/07/evaluating-fantasy-draft.html&quot;&gt;a fantasy football league this year&lt;/a&gt;, I thought it would be a fun idea to try and make my own fantasy game for the Olympics. So with only a limited amount of knowledge of what makes a good fantasy game, I got to work on my own Fantasy Olympics.&lt;/p&gt;
+
+&lt;p&gt;One of the initial problems I foresaw with a game for the Olympics was the average person’s familiarity with individual athletes. While everyone knows the big stars (Michael Phelps, Shaun White, etc.), most viewers would probably struggle to name more than a handful of individual athletes. There is the same issue with fantasy football and defenses. In fantasy football, most leagues remedy this by having fantasy players draft whole defenses instead of individual defensemen and I thought a similar scheme would be a good solution for my own Fantasy Olympics problem.&lt;/p&gt;
+
+&lt;p&gt;So, instead of drafting a bunch of individual athletes, Fantasy Olympics players pick from teams of athletes by nationality and sport. For example, instead of drafting individual speed skaters, you might draft the speed skating team from the Netherlands (an excellent pick, given that they won 19 total medals at the Sochi games). You would then be awarded points for any medals won by any Dutch speed skaters.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;The next logical question: how many points are awarded per medal? The quickest and simplest scheme that comes to mind would be to award 3 points per gold, 2 points per silver, and 1 point per bronze. However, while simple, this scheme would offer a significant advantage to teams participating in sports with a large number of events. Using this scoring scheme, players would probably opt to pick a lower-skill alpine skiing team (with 11 total events to participate in) over an all-star hockey team (with only 2 total events to participate in).&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;In order correct for this, I decided to weight the scoring by how many events a particular sport has. Under my weighted scoring scheme, for each medal, a player is awarded $p = 4p_0 \frac{\sqrt[3]{x}}{x}$ points, where $x$ is the number of events in that particular sport and $p_0$ is either 3 for a gold medal, 2 for a silver medal, and 1 for a bronze medal. For example, if you had drafted the U.S. snowboarding team and Shaun White were to (does) win a gold, you would be awarded $4 * 3 * \frac{\sqrt[3]{10}}{10} = 2.6$ points, since there are 10 total snowboarding events. See below for the full medal breakdown by sport.&lt;/p&gt;
+
+        &lt;p&gt;Using this scoring scheme, we get the point distribution seen &lt;span id=&quot;fo-chart-loc-text&quot;&gt;on the right&lt;/span&gt;. As a result, a team that can compete in 3 events is not hugely disadvantaged in comparison to a team that can compete in 6 events. This should (ideally) move the focus away from the number of events a team can participate in and towards the skill of a particular team.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; alt=&quot;A quick remake of the Confederate statue graphic&quot; width=&quot;400&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;fo-points-table-title&quot;&gt;Fantasy Points Won per Medal by Sport&lt;/p&gt;
+
+&lt;div id=&quot;fo-points-table-container&quot;&gt;
+    &lt;table id=&quot;fo-points-table&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt; &lt;th&gt;Sport&lt;/th&gt; &lt;th&gt;Number of events&lt;/th&gt; &lt;th&gt;Points per gold&lt;/th&gt; &lt;th&gt;Points per silver&lt;/th&gt; &lt;th&gt;Points per bronze&lt;/th&gt; &lt;th&gt;Total points awarded&lt;/th&gt; &lt;/tr&gt; 
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt; &lt;td&gt;Alpine Skiing&lt;/td&gt; &lt;td&gt;11&lt;/td&gt; &lt;td&gt;2.4&lt;/td&gt; &lt;td&gt;1.6&lt;/td&gt; &lt;td&gt;0.8&lt;/td&gt; &lt;td&gt;53.4&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Biathlon&lt;/td&gt; &lt;td&gt;11&lt;/td&gt; &lt;td&gt;2.4&lt;/td&gt; &lt;td&gt;1.6&lt;/td&gt; &lt;td&gt;0.8&lt;/td&gt; &lt;td&gt;53.4&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Bobsleigh&lt;/td&gt; &lt;td&gt;3&lt;/td&gt; &lt;td&gt;5.8&lt;/td&gt; &lt;td&gt;3.9&lt;/td&gt; &lt;td&gt;1.9&lt;/td&gt; &lt;td&gt;34.6&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Cross-Country Skiing&lt;/td&gt; &lt;td&gt;12&lt;/td&gt; &lt;td&gt;2.3&lt;/td&gt; &lt;td&gt;1.5&lt;/td&gt; &lt;td&gt;0.8&lt;/td&gt; &lt;td&gt;55.0&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Curling&lt;/td&gt; &lt;td&gt;3&lt;/td&gt; &lt;td&gt;5.8&lt;/td&gt; &lt;td&gt;3.9&lt;/td&gt; &lt;td&gt;1.9&lt;/td&gt; &lt;td&gt;34.6&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Freestyle Skiing&lt;/td&gt; &lt;td&gt;10&lt;/td&gt; &lt;td&gt;2.6&lt;/td&gt; &lt;td&gt;1.7&lt;/td&gt; &lt;td&gt;0.7&lt;/td&gt; &lt;td&gt;51.7&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Figure Skating&lt;/td&gt; &lt;td&gt;5&lt;/td&gt; &lt;td&gt;4.1&lt;/td&gt; &lt;td&gt;2.7&lt;/td&gt; &lt;td&gt;1.4&lt;/td&gt; &lt;td&gt;41.0&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Ice Hockey&lt;/td&gt; &lt;td&gt;2&lt;/td&gt; &lt;td&gt;7.6&lt;/td&gt; &lt;td&gt;5.0&lt;/td&gt; &lt;td&gt;2.5&lt;/td&gt; &lt;td&gt;30.2&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Luge&lt;/td&gt; &lt;td&gt;4&lt;/td&gt; &lt;td&gt;4.8&lt;/td&gt; &lt;td&gt;3.2&lt;/td&gt; &lt;td&gt;1.6&lt;/td&gt; &lt;td&gt;38.1&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Nordic Combined&lt;/td&gt; &lt;td&gt;3&lt;/td&gt; &lt;td&gt;5.8&lt;/td&gt; &lt;td&gt;3.9&lt;/td&gt; &lt;td&gt;1.9&lt;/td&gt; &lt;td&gt;34.6&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Skeleton&lt;/td&gt; &lt;td&gt;2&lt;/td&gt; &lt;td&gt;7.6&lt;/td&gt; &lt;td&gt;5.0&lt;/td&gt; &lt;td&gt;2.5&lt;/td&gt; &lt;td&gt;30.2&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Ski Jumping&lt;/td&gt; &lt;td&gt;4&lt;/td&gt; &lt;td&gt;4.8&lt;/td&gt; &lt;td&gt;3.2&lt;/td&gt; &lt;td&gt;1.6&lt;/td&gt; &lt;td&gt;38.1&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Speed Skating&lt;/td&gt; &lt;td&gt;14&lt;/td&gt; &lt;td&gt;2.1&lt;/td&gt; &lt;td&gt;1.3&lt;/td&gt; &lt;td&gt;0.7&lt;/td&gt; &lt;td&gt;57.8&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Short Track Speed Skating&lt;/td&gt; &lt;td&gt;8&lt;/td&gt; &lt;td&gt;3.0&lt;/td&gt; &lt;td&gt;2.0&lt;/td&gt; &lt;td&gt;1.0&lt;/td&gt; &lt;td&gt;48.0&lt;/td&gt; &lt;/tr&gt;
+            &lt;tr&gt; &lt;td&gt;Snowboarding&lt;/td&gt; &lt;td&gt;10&lt;/td&gt; &lt;td&gt;2.6&lt;/td&gt; &lt;td&gt;1.7&lt;/td&gt; &lt;td&gt;0.7&lt;/td&gt; &lt;td&gt;51.7&lt;/td&gt; &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With these questions answered, Fantasy Olympics was ready to be played! But besides just setting the rules of the game, I was curious to see how accurate of projections I could make. Everyone’s trying to come up the perfect fantasy football predictions so I thought I’d get a head start on the projection game for when Fantasy Olympics inevitably blows up.&lt;/p&gt;
+
+&lt;p&gt;For my projections, I went with a fairly straight forward regression based on each team’s historical performances. Since there is a long gap between each of the Games, I had to consider how much historical data to include or not include in my regression. I opted to use a mean regression based on the five previous games (meaning data back to 1998 to predict the 2018 Games). This model seemed to fair best when testing against previous Games, but we shall see how it fairs for these Games. See below for my full projections by country and sport.&lt;/p&gt;
+
+&lt;p id=&quot;fo-points-table-title&quot;&gt;Projected Fantasy Points by Country and Sport&lt;/p&gt;
+
+&lt;div id=&quot;fo-prediction-table-container-container&quot;&gt;
+&lt;div id=&quot;fo-prediction-table-container&quot;&gt;
+    &lt;table id=&quot;fo-prediction-table&quot;&gt;
+        &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th width=&quot;80px&quot;&gt;Country&lt;/th&gt;
+            &lt;th&gt;Alpine Skiing&lt;/th&gt;
+            &lt;th&gt;Biathlon&lt;/th&gt;
+            &lt;th&gt;Bobsleigh&lt;/th&gt;
+            &lt;th&gt;Cross-Country Skiing&lt;/th&gt;
+            &lt;th&gt;Curling&lt;/th&gt;
+            &lt;th&gt;Figure Skating&lt;/th&gt;
+            &lt;th&gt;Freestyle Skiing&lt;/th&gt;
+            &lt;th&gt;Ice Hockey&lt;/th&gt;
+            &lt;th&gt;Luge&lt;/th&gt;
+            &lt;th&gt;Nordic Combined&lt;/th&gt;
+            &lt;th&gt;Skeleton&lt;/th&gt;
+            &lt;th&gt;Ski Jumping&lt;/th&gt;
+            &lt;th&gt;Snowboard&lt;/th&gt;
+            &lt;th&gt;Speed Skating&lt;/th&gt;
+            &lt;th&gt;Short Track Speed Skating&lt;/th&gt;
+            &lt;th&gt;Total&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;p id=&quot;scroll-hint1&quot;&gt;&amp;larr; Scroll &amp;rarr;&lt;/p&gt;
+&lt;p id=&quot;scroll-hint2&quot;&gt;&amp;larr; Scroll &amp;rarr;&lt;/p&gt;
+&lt;div id=&quot;jbox-content-grab&quot; style=&quot;display: none;&quot;&gt;
+    &lt;h2 style=&quot;font-size: 15px; color: #77bdee;&quot;&gt;&lt;span id=&quot;jbox-content-team&quot;&gt;United States&lt;/span&gt;, &lt;span id=&quot;jbox-content-sport&quot;&gt;Speed Skating&lt;/span&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;b&gt;Historical performance (1998 - 2014):&lt;/b&gt;&lt;/p&gt;
+    &lt;ul id=&quot;jbox-content-history&quot;&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/projects/fantasy-olympics/css/style.css&quot; /&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/projects/fantasy-olympics/js/main.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Based on these 182 total projections, the top five picks would be the German Luge team (16.14 points), the Dutch Speed Skating team (15.89 points), the Canadian Ice Hockey teams (13.41 points), the Norwegian Cross-Country Skiing team (13.08 points), and the Korean Short Track Speed Skating team (12.64 points). Based purely on my knowledge from past Olympics, these projections seem fairly accurate, which is a good sign. The Dutch speed skaters crushed in Sochi, Germany is &lt;a href=&quot;https://www.usatoday.com/story/sports/olympics/2018/01/10/germany-again-will-be-the-team-to-catch-in-olympic-luge/109334518/&quot; target=&quot;_new&quot;&gt;always a top luge contender&lt;/a&gt;, and, I mean, &lt;a href=&quot;https://www.youtube.com/watch?v=allADNXAAMA&quot; target=&quot;_new&quot;&gt;it’s&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=G7DeQbTzPE8&quot; target=&quot;_new&quot;&gt;Canada&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=NqBHav5puKA&quot; target=&quot;_new&quot;&gt;and&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=MB-5_bgqRZU&quot; target=&quot;_new&quot;&gt;hockey&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The United States is the top overall projected country, but we shall see if that proves to be correct. Sochi was a bit of a disappointment for the U.S. team, coming in fourth for overall medals, though Vancouver was a bit better. Let’s hope they can pull it out in South Korea.&lt;/p&gt;
+
+&lt;p&gt;Regardless of who wins and how accurate these projections end up being, I’m excited to watch two weeks of the best in sport. But also, go USA!&lt;/p&gt;
+
+</description>
+                    <pubDate>2018-02-01T00:00:00-05:00</pubDate>
+                    <link>http://localhost:4000/blog/2018/02/01/fantasy-olympics.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2018/02/01/fantasy-olympics.html</guid>
+                </item>
+                
             
                 
                 <item>
