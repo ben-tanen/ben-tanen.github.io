@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Gamifying the 2018 Olympic Games'
-date: 2018-02-01 05:00:00
+date: 2018-02-06 05:00:00
 categories: data project sports olympics visualization
 landing-description: making a fantasy sports game for the 2018 Winter Olympics
 thumbnail: /assets/img/post-thumbnails/fantasy-olympics.png

@@ -229,9 +229,9 @@ function render_events(d) {
                                     [margin.left + width * 2.95 / 4, branch_h - 100]];
             } else if (d[i].event_id == 16) { 
                 marker_line_path = [[margin.left + width / 2, branch_h],
-                                    [margin.left + width / 2 + 10, branch_h],
-                                    [margin.left + width / 2 + 10, branch_h + 55],
-                                    [margin.left + width * 2.35 / 4, branch_h + 55]];
+                                    [margin.left + width / 2 + 15, branch_h],
+                                    [margin.left + width / 2 + 15, branch_h + 40],
+                                    [margin.left + width * 2.35 / 4, branch_h + 40]];
             } else if (d[i].event_id == 19) {
                 marker_line_path = [[margin.left + width / 2, branch_h],
                                     [margin.left + width / 2 + 30, branch_h],
