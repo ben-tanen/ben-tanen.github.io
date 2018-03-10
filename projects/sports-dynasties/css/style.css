@@ -20,42 +20,26 @@
 
 #MLB {
     /* tableau colors */
-    stroke: #618ac8;
-    fill:   #618ac8;
-
-    /* neon colors */
-    /*stroke: rgb( 19,189,238);
-    fill:   rgb( 19,189,238);*/
+    stroke: #729ece;
+    fill:   #729ece;
 }
 
 #NBA {
     /* tableau colors */
-    stroke: #e05048;
-    fill:   #e05048;
-
-    /* neon colors */
-    /*stroke: rgb(238,119,189);
-    fill:   rgb(238,119,189);*/
+    stroke: #ed665d;
+    fill:   #ed665d;
 }
 
 #NFL {
     /* tableau colors */
-    stroke: #f98e29;
-    fill:   #f98e29;
-
-    /* neon colors */
-    /*stroke: rgb(238,168,119);
-    fill:   rgb(238,168,119);*/
+    stroke: #ff9e4a;
+    fill:   #ff9e4a;
 }
 
 #NHL {
     /* tableau colors */
-    stroke: #8fdc6c;
-    fill:   #8fdc6c;
-
-    /* neon colors */
-    /*stroke: rgb(119,238,168);
-    fill:   rgb(119,238,168);*/
+    stroke: #98df8a;
+    fill:   #98df8a;
 }
 
 .year-text {

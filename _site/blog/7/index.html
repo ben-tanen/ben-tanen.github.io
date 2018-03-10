@@ -145,6 +145,217 @@ MathJax.Hub.Config({
 
 <div class='post'>
     <header class="post-header">
+	   <h1>PCA and K-Means on NHL Stats</h1>
+       <!--
+       <p class="post-meta">May 15 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
+
+<p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!</p>
+
+<p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/nhl-clustering">here</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>In Playoffs</th>
+      <th>K-means Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANA</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>ARI</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>BOS</td>
+      <td>NO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>BUF</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CAR</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CBJ</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CGY</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CHI</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>COL</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>DAL</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>DET</td>
+      <td>YES</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>EDM</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>FLA</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>LAK</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>MIN</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>MTL</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>NJD</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>NSH</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>NYI</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>NYR</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>OTT</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>PHI</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>PIT</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>SJS</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>STL</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>TBL</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>TOR</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VAN</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>WSH</td>
+      <td>YES</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>WPG</td>
+      <td>NO</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Visualizing My (Unhealthy) Netflix History</h1>
+       <!--
+       <p class="post-meta">May 08 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.</p>
+
+<p>Getting the information was pretty simple. I just had to scrape the data via Netflix’s own viewing history page, clean it a bit, and then pipe it into MATLAB.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/netflix-history.png" target="_blank">
+    <img src="/assets/img/posts/netflix-history.png" alt="A visualization of my Netflix viewing history" />
+    </a>
+</p>
+
+<p>I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside… One thing is for sure, I definitely watch a lot of TV.</p>
+
+<p><strong>Note</strong>: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc).</p>
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
 	   <h1>Support Vector Machines and Poetry</h1>
        <!--
        <p class="post-meta">May 03 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
@@ -250,96 +461,6 @@ MathJax.Hub.Config({
         <img src="/assets/img/posts/photography-pic3.jpg" />
     </div>
 </div>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Clustering Using K-Means</h1>
-       <!--
-       <p class="post-meta">Mar 09 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>This semester, I’m taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA analysis</a>. However, we are starting to move onto look at new types of data analysis / clustering and today’s topic was <strong>k-means clustering</strong>. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student’s perspective, is much easier to rationalize. It’s a fairly simple algorithm and it does have some cool results.</p>
-
-<p>For a brief explanation, the algorithm simply works by taking data (lets say <em>n</em> data points) and attempts to form them into <em>k</em> clusters (<em>k</em> is chosen by the user). <em>k</em> initial cluster centroids are picked (perhaps by random). From here, the following is done on every iteration:</p>
-
-<ol>
-  <li>Assign each data point <em>i</em> to the “closest” cluster <em>j</em> based on its centroid (“closest” is defined here as smallest euclidean distance, but there are a number of different definitions)</li>
-  <li>Once all data points are assigned, re-calculate the centroid of each cluster to be the mean of all of its now assigned data points</li>
-  <li>Repeat until no improvement can be found</li>
-</ol>
-
-<p>During lecture, my professor was showing of some plots from before and after clustering to visualize the k-means clustering process. I was intrigued and I thought it would be cool to see a step-by-step GIF of this process. Thus, I wrote some code in MATLAB to do k-means clustering and voilà, it works!</p>
-
-<p>Initially, the code generates <em>k</em> normally-distributed random clusters of data of <em>r</em> data points each (<em>kr</em> = <em>n</em> total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn’t necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/kmeans-before-after.png" target="_blank">
-    <img src="/assets/img/posts/kmeans-before-after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" />
-    </a>
-</p>
-
-<p>The first iteration is done by making a random guesses for the location of the <em>k</em> (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven’t seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/kmeans-cluster.gif" target="_blank">
-    <img src="/assets/img/posts/kmeans-cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" />
-    </a>
-</p>
-
-<p>If you have any interest in playing around, you can find my MATLAB code <a href="https://github.com/ben-tanen/data-mining/tree/master/kmeans">here</a> in <a href="https://github.com/ben-tanen/data-mining">a new GitHub repo</a> for my data mining work. It should work for all reasonable values of <em>k</em> (clusters) and <em>r</em> (data points per cluster). I’ll be honest and say that my MATLAB code leaves a bit to be desired but it’s working so that’s mostly all that matters.</p>
-
-<p>If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Minimizing Risk For An Optimal Portfolio</h1>
-       <!--
-       <p class="post-meta">Dec 12 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
-
-<p>The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.</p>
-
-<p>In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “<a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/portfolio-bullet.png" target="_blank">
-    <img src="/assets/img/posts/portfolio-bullet.png" alt="Markowitz bullets showing possible portfolios " width="800px" />
-    </a>
-</p>
-
-<figcaption>
-Markowitz bullets showing possible portfolios 
-</figcaption>
-
-<p>I found this optimized weight allocation by looping over a bunch of different allocations and searching for optimized performance. First I looped through allocations in increments of 0.1 and then examined closer at the region(s) that performed the best. I repeated this process again with increments of 0.025 and 0.005 to find the best weighting. All of these trials can be seen in the bullets above, as well as the final optimized portfolio in red (at the tip).</p>
-
-<p>Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/portfolio-return.png" target="_blank">
-    <img src="/assets/img/posts/portfolio-return.png" alt="Comparing the optimized portfolio to the S&amp;P-500" width="600px" />
-    </a>
-</p>
-
-<p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing-portfolio.html">here</a>.</p>
-
 
     </article>
 </div>

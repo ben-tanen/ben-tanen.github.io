@@ -145,6 +145,127 @@ MathJax.Hub.Config({
 
 <div class='post'>
     <header class="post-header">
+	   <h1>Visualizing Our Drunken World</h1>
+       <!--
+       <p class="post-meta">Dec 21 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. - and we wanted to build a platform to either confirm or debunk these stereotypes. In a greater sense, we hoped to explore when and how alcohol has been part of culture and history. And thus, <a href="http://link.ben-tanen.com/drunken-world/" target="_blank">Our Drunken World</a> was born!</p>
+
+<!-- more -->
+
+<iframe class="youtube-vid" width="500" height="281" style="margin-bottom: 10px;" src="https://www.youtube.com/embed/O-eeiWZ7WRY" frameborder="0" allowfullscreen=""></iframe>
+
+<p>We used data for over 200 countries that was collected and compiled by the World Health Organization from 1960 - 2010. The visualization is built with D3.js, which is pretty awesome. I’m very glad I finally <a href="/blog/2016/09/28/random-d3-fun.html">tried it out</a>.</p>
+
+<p>If you’re interested in exploring this world of alcohol, you can find <a href="http://link.ben-tanen.com/drunken-world/">the visualization here</a>. You can also find <a href="https://github.com/jadeyychan/DrunkenWorld">the code here</a>. Huge thanks to my team members, <a href="https://jadeyychan.github.io/">Jade</a> and <a href="https://github.com/rlrlarson">Rebecca</a>!</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Mapping My Life at Tufts</h1>
+       <!--
+       <p class="post-meta">Nov 18 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>Over the last view years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.</p>
+
+<p>It seems like my suspicion was true - I’ve become a little hermit holed up at my home, the CS department (my second home), or at 574 Boston Ave. Maybe I should explore some more…</p>
+
+<!-- css and javascript includes -->
+<link rel="stylesheet" href="/projects/schedule-map/css/style.css" />
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYYbQJxmT3xqIdpkDwtHi8TyyJPtncbE4" type="text/javascript"></script>
+
+<script src="/projects/schedule-map/js/data.js"></script>
+
+<script src="/projects/schedule-map/js/map.js"></script>
+
+<div id="map-wrapper">
+    <div id="map"></div>
+    <div id="legend"><h4></h4></div>
+</div>
+
+<div id="checks">
+    <h4 style="margin-top: 10px; margin-bottom: 5px;">Choose which data to include:</h4>
+
+    <div id="semester-checks">
+        <div class="check semester on" id="F13">
+            <p>F13</p>
+        </div>
+
+        <div class="check semester" id="S14">
+            <p>S14</p>
+        </div>
+
+        <div class="check semester on" id="F14">
+            <p>F14</p>
+        </div>
+
+        <div class="check semester" id="S15">
+            <p>S15</p>
+        </div>
+
+        <div class="check semester" id="F15">
+            <p>F15</p>
+        </div>
+
+        <div class="check semester on" id="S16">
+            <p>S16</p>
+        </div>
+
+        <div class="check semester" id="F16">
+            <p>F16</p>
+        </div>
+
+        <div class="check semester on" id="S17">
+            <p>S17</p>
+        </div>
+    </div>
+
+    <div id="activity-checks">
+        <div class="check activity" id="Athletics">
+            <p>Athletics</p>
+        </div>
+
+        <div class="check activity" id="Clubs">
+            <p>Clubs</p>
+        </div>
+
+        <div class="check activity on" id="Food">
+            <p>Food</p>
+        </div>
+
+        <div class="check activity on" id="Home">
+            <p>Home</p>
+        </div>
+
+        <div class="check activity on" id="School">
+            <p>School</p>
+        </div>
+
+        <div class="check activity" id="Work">
+            <p>Work</p>
+        </div>
+    </div>
+</div>
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
 	   <h1>Meet St. Paul and the Broken Bones</h1>
        <!--
        <p class="post-meta">Nov 10 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
@@ -248,144 +369,6 @@ MathJax.Hub.Config({
 </table>
 
 <p>Here’s to an exciting 2016-17 season and <a href="https://twitter.com/search?q=lgr" target="_blank">#LGR</a>!</p>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Random D3 Fun</h1>
-       <!--
-       <p class="post-meta">Sep 28 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>I’m currently taking (and loving) a data visualization course, so naturally, I’m learning a little D3.js to make some <em>sick</em> visualizations. Below is my first experiment with some SVG animation (likely more to come). Clearly it is art. Have fun clicking away!</p>
-
-<div id="d3-sample-container" style="margin: auto; width: 300px; cursor: pointer;">
-</div>
-<script>
-    /* make that d3 svg canvas */
-    var dimension = 300;
-    var random_svg = d3.select('#d3-sample-container').append('svg')
-        .attr('width', dimension)
-        .attr('height', dimension)
-        .style('background-color', 'black');
-
-    /* declare some helper functions */
-    var get_group = function(i, j) {
-        return (4 - i) + j;
-    }
-
-    var get_radius = function(n) {
-        return (dimension / 10) * Math.pow(87 / 100, n + 1);
-    }
-
-    var get_rand_pos = function() {
-        return Math.random() * dimension;
-    }
-
-    /* initialize some vars */
-    var isAligned = false;
-    var circles   = [ ];
-    var cxs = [dimension * (1 / 10), 
-               dimension * (3 / 10),
-               dimension * (5 / 10),
-               dimension * (7 / 10),
-               dimension * (9 / 10)
-              ];
-    var cys = [dimension * (1 / 10), 
-               dimension * (3 / 10),
-               dimension * (5 / 10),
-               dimension * (7 / 10),
-               dimension * (9 / 10)
-              ];
-    var fill = ["#0081ff", 
-                "#5791ff", 
-                "#779fff", 
-                "#98b1ff", 
-                "#aec0ff", 
-                "#c7d1ff", 
-                "#d9dfff", 
-                "#ecefff", 
-                "#ffffff"
-               ];
-
-    /* generate those circles */
-    for (var i = 0; i < 5; i++) {
-        for (var j = 0; j < 5; j++) {
-            var group_n = get_group(i,j);
-            var c_i = random_svg.append("circle")
-                .attr("cx", get_rand_pos())
-                .attr("cy", get_rand_pos())
-                .attr("r",  get_radius(group_n))
-                .attr("fill", fill[group_n])
-                .attr("ci", i)
-                .attr("cj", j)
-                .attr("group", group_n);
-            circles.push(c_i);
-        }
-    }
-
-    /* toggle alignment */
-    random_svg.on("click", function() {
-        for (var i = 0; i < circles.length; i++) {
-            var c    = circles[i];
-            var cn   = +c.attr("group");
-            var ci   = +c.attr("ci");
-            var cj   = +c.attr("cj");
-            var cx   = (isAligned ? get_rand_pos() : cxs[ci]);
-            var cy   = (isAligned ? get_rand_pos() : cys[cj]);
-
-            c.transition()
-             .duration(1000)
-             .attr("cx", cx)
-             .attr("cy", cy);
-        }
-        isAligned = !isAligned;
-    });
-</script>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Am I Becoming More or Less Hipster?</h1>
-       <!--
-       <p class="post-meta">Aug 26 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
-
-<p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-popularity.png" target="_blank">
-    <img src="/assets/img/posts/spotify-popularity.png" alt="A graph of my Spotify popularity over time" />
-    </a>
-</p>
-
-<p>While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify’s eyes. Therefore, I’m willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I’m just as cool as I’ve ever.</p>
-
-<p>P.S. Of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
-
-<p>P.P.S Bonus chart! Here’s a how much I listened to a song vs. it’s popularity on Spotify.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-popularity-vs-playcount.png" target="_blank">
-    <img src="/assets/img/posts/spotify-popularity-vs-playcount.png" alt="A graph comparing play count of a song to its popularity" />
-    </a>
-</p>
-
 
     </article>
 </div>

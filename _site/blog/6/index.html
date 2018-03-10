@@ -145,6 +145,144 @@ MathJax.Hub.Config({
 
 <div class='post'>
     <header class="post-header">
+	   <h1>Random D3 Fun</h1>
+       <!--
+       <p class="post-meta">Sep 28 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>I’m currently taking (and loving) a data visualization course, so naturally, I’m learning a little D3.js to make some <em>sick</em> visualizations. Below is my first experiment with some SVG animation (likely more to come). Clearly it is art. Have fun clicking away!</p>
+
+<div id="d3-sample-container" style="margin: auto; width: 300px; cursor: pointer;">
+</div>
+<script>
+    /* make that d3 svg canvas */
+    var dimension = 300;
+    var random_svg = d3.select('#d3-sample-container').append('svg')
+        .attr('width', dimension)
+        .attr('height', dimension)
+        .style('background-color', 'black');
+
+    /* declare some helper functions */
+    var get_group = function(i, j) {
+        return (4 - i) + j;
+    }
+
+    var get_radius = function(n) {
+        return (dimension / 10) * Math.pow(87 / 100, n + 1);
+    }
+
+    var get_rand_pos = function() {
+        return Math.random() * dimension;
+    }
+
+    /* initialize some vars */
+    var isAligned = false;
+    var circles   = [ ];
+    var cxs = [dimension * (1 / 10), 
+               dimension * (3 / 10),
+               dimension * (5 / 10),
+               dimension * (7 / 10),
+               dimension * (9 / 10)
+              ];
+    var cys = [dimension * (1 / 10), 
+               dimension * (3 / 10),
+               dimension * (5 / 10),
+               dimension * (7 / 10),
+               dimension * (9 / 10)
+              ];
+    var fill = ["#0081ff", 
+                "#5791ff", 
+                "#779fff", 
+                "#98b1ff", 
+                "#aec0ff", 
+                "#c7d1ff", 
+                "#d9dfff", 
+                "#ecefff", 
+                "#ffffff"
+               ];
+
+    /* generate those circles */
+    for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < 5; j++) {
+            var group_n = get_group(i,j);
+            var c_i = random_svg.append("circle")
+                .attr("cx", get_rand_pos())
+                .attr("cy", get_rand_pos())
+                .attr("r",  get_radius(group_n))
+                .attr("fill", fill[group_n])
+                .attr("ci", i)
+                .attr("cj", j)
+                .attr("group", group_n);
+            circles.push(c_i);
+        }
+    }
+
+    /* toggle alignment */
+    random_svg.on("click", function() {
+        for (var i = 0; i < circles.length; i++) {
+            var c    = circles[i];
+            var cn   = +c.attr("group");
+            var ci   = +c.attr("ci");
+            var cj   = +c.attr("cj");
+            var cx   = (isAligned ? get_rand_pos() : cxs[ci]);
+            var cy   = (isAligned ? get_rand_pos() : cys[cj]);
+
+            c.transition()
+             .duration(1000)
+             .attr("cx", cx)
+             .attr("cy", cy);
+        }
+        isAligned = !isAligned;
+    });
+</script>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Am I Becoming More or Less Hipster?</h1>
+       <!--
+       <p class="post-meta">Aug 26 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
+
+<p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/spotify-popularity.png" target="_blank">
+    <img src="/assets/img/posts/spotify-popularity.png" alt="A graph of my Spotify popularity over time" />
+    </a>
+</p>
+
+<p>While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify’s eyes. Therefore, I’m willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I’m just as cool as I’ve ever.</p>
+
+<p>P.S. Of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
+
+<p>P.P.S Bonus chart! Here’s a how much I listened to a song vs. it’s popularity on Spotify.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/spotify-popularity-vs-playcount.png" target="_blank">
+    <img src="/assets/img/posts/spotify-popularity-vs-playcount.png" alt="A graph comparing play count of a song to its popularity" />
+    </a>
+</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
 	   <h1>United States vs. the World in Rio 2016</h1>
        <!--
        <p class="post-meta">Aug 22 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
@@ -416,217 +554,6 @@ MathJax.Hub.Config({
                 <span class="k">return</span> <span class="bp">False</span>
     <span class="k">return</span> <span class="bp">True</span></code></pre></figure>
 
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>PCA and K-Means on NHL Stats</h1>
-       <!--
-       <p class="post-meta">May 15 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
-
-<p>It only messed up on Boston and Detroit but they were in a tight race to make the playoffs up until the very end, so that makes sense, given the context. Math continues to prevail!</p>
-
-<p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/nhl-clustering">here</a>.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Team</th>
-      <th>In Playoffs</th>
-      <th>K-means Cluster</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ANA</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>ARI</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>BOS</td>
-      <td>NO</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>BUF</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CAR</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CBJ</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CGY</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>CHI</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>COL</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>DAL</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>DET</td>
-      <td>YES</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>EDM</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>FLA</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>LAK</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>MIN</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>MTL</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>NJD</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>NSH</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>NYI</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>NYR</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>OTT</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>PHI</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>PIT</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>SJS</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>STL</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>TBL</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>TOR</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>VAN</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>WSH</td>
-      <td>YES</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>WPG</td>
-      <td>NO</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Visualizing My (Unhealthy) Netflix History</h1>
-       <!--
-       <p class="post-meta">May 08 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>TV is pretty incredible, and I’ll admit I might binge-watch from time to time. In fact, I’ve been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.</p>
-
-<p>Getting the information was pretty simple. I just had to scrape the data via Netflix’s own viewing history page, clean it a bit, and then pipe it into MATLAB.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/netflix-history.png" target="_blank">
-    <img src="/assets/img/posts/netflix-history.png" alt="A visualization of my Netflix viewing history" />
-    </a>
-</p>
-
-<p>I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside… One thing is for sure, I definitely watch a lot of TV.</p>
-
-<p><strong>Note</strong>: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc).</p>
 
     </article>
 </div>

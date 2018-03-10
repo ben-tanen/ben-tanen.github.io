@@ -101,8 +101,8 @@ For my projections, I went with a fairly straight forward regression based on ea
 </div>
 </div>
 
-<link rel="stylesheet" href="/projects/fantasy-olympics/css/style.css">
-<script type="text/javascript" src="/projects/fantasy-olympics/js/main.js"></script>
+<link rel="stylesheet" href="/projects/fantasy-olympics/css/project-2018.style.css">
+<script type="text/javascript" src="/projects/fantasy-olympics/js/project-2018.js"></script>
 
 Based on these 182 total projections, the top five picks would be the German Luge team (16.14 points), the Dutch Speed Skating team (15.89 points), the Canadian Ice Hockey teams (13.41 points), the Norwegian Cross-Country Skiing team (13.08 points), and the Korean Short Track Speed Skating team (12.64 points). Based purely on my knowledge from past Olympics, these projections seem fairly accurate, which is a good sign. The Dutch speed skaters crushed in Sochi, Germany is [always a top luge contender](https://www.usatoday.com/story/sports/olympics/2018/01/10/germany-again-will-be-the-team-to-catch-in-olympic-luge/109334518/){:target="_new"}, and, I mean, [it's](https://www.youtube.com/watch?v=allADNXAAMA){:target="_new"} [Canada](https://www.youtube.com/watch?v=G7DeQbTzPE8){:target="_new"} [and](https://www.youtube.com/watch?v=NqBHav5puKA){:target="_new"} [hockey](https://www.youtube.com/watch?v=MB-5_bgqRZU){:target="_new"}.
 

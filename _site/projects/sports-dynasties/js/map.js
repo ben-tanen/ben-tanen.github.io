@@ -38,7 +38,7 @@ function render_map() {
         setInterval(function() {
             year_ix = (year_ix >= 2017 ? 1903 : year_ix + 1);
 
-            sd_svg.select('.year-text').transition().text(year_ix);
+            sd_svg.select('.year-text').text(year_ix);
 
             if (year_ix == 1903) {
 

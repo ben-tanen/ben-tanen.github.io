@@ -1,3 +1,14 @@
+
+/*********************/
+/*** INIT VARIABLE ***/
+/*********************/
+
+var games_lookup = [ ];
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
 function clean_predict_num(num_str) {
     if (isNaN(parseFloat(num_str))) return "-";
     return parseFloat(num_str).toFixed(2)
@@ -7,9 +18,13 @@ function clean_country_name(country_name) {
     return country_name.substring(0,2).toLowerCase()
 }
 
-var games_lookup = [ ];
+/********************************/
+/*** PARSE DATA AND INIT PLOT ***/
+/********************************/
 
 d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) {
+
+    // add prediction data to table
     for (var i = 0; i < data.length; i++) {
         datum = data[i];
         
@@ -25,6 +40,7 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) 
         $('table#fo-prediction-table tbody').append(row_str);
     }
 
+    // build historical data lookup
     d3.csv("/projects/fantasy-olympics/data/g_lookup.csv", function(error, data) {
         for (var i = 0; i < data.length; i++) {
             datum = data[i];
@@ -41,6 +57,7 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) 
         }
     })
 
+    // init tooltip
     new jBox('Tooltip', {
         attach: '.predict_cell',
         content: $('#jbox-content-grab'),
@@ -55,13 +72,9 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) 
 
             var history = games_lookup[team][sport];
 
-            if (games_lookup[team][sport]) {
-                for (var i = 0; i < history.length; i++) {
-                    $("#jbox-content-history").append("<li>" + history[i] + "</li>");
-                }
-            } else {
-                $("#jbox-content-history").append("<li>N/A</li>");
-            }
+            if (games_lookup[team][sport])
+                for (var i = 0; i < history.length; i++) $("#jbox-content-history").append("<li>" + history[i] + "</li>");
+            else $("#jbox-content-history").append("<li>N/A</li>");
         },
         position: {
             x: 'right',
@@ -72,6 +85,11 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) 
     });
 });
 
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+// set text directing where static chart is
 if ($(window).width() <= 900) $('#fo-chart-loc-text').html('below');
 else $('#fo-chart-loc-text').html('on the right');
 
