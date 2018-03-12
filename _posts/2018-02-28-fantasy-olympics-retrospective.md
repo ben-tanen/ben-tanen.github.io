@@ -41,6 +41,10 @@ My second mistake was due to a conceptual gap in my model. Using historical perf
 
 Overall, while I did make some mistakes, I'm not too upset with the results I got. This served as a good learning experience for how to improve my model for future Games and future projects in general. So lessons learned and onto the next one - 2020, here we come!
 
+**Retrospective note (on the retrospective):** FiveThirtyEight had [their own projection model](https://fivethirtyeight.com/features/a-decent-second-week-saved-the-u-s-from-olympic-catastrophe/) and they recently published their results. I decided to see how my results compared to theirs (see below for a quick chart). As **far** better modelers than me, I was expecting their results to blow mine out of the water, and you know what, they kind of do. Our results are on two different scales (theirs are measured by number of medals expected, mine are measured by expected Fantasy Olympic points) so direct comparison is probably not the best analysis, but it is interesting to see that we get similar trends, likely driven by performances that were just truly unexpected. This comparison also further points out how much I messed up Germany (points furtherest to the right). Sorry Germany...
+
+{% include figure.html src="/assets/img/posts/fantasy-olympics-538-retro.png" alt="A chart comparing FiveThirtyEight's projections to mine" %}
+
 <link rel="stylesheet" href="/projects/fantasy-olympics/css/retro-2018.style.css">
 <script type="text/javascript" src="/projects/fantasy-olympics/js/retro-2018.js"></script>
 

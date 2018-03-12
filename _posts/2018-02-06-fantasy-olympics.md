@@ -26,7 +26,7 @@ The next logical question: how many points are awarded per medal? The quickest a
     </div>
 
     <div class='column'>
-        {% include figure.html src="/assets/img/posts/fantasy-olympics-point-dist.png" alt="A quick remake of the Confederate statue graphic" width=400 %}
+        {% include figure.html src="/assets/img/posts/fantasy-olympics-point-dist.png" alt="The non-weighted and weighted point distributions" width=400 %}
     </div>
 </div>
 

@@ -397,6 +397,14 @@ $(window).resize(function() {
 
 &lt;p&gt;Overall, while I did make some mistakes, I’m not too upset with the results I got. This served as a good learning experience for how to improve my model for future Games and future projects in general. So lessons learned and onto the next one - 2020, here we come!&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;Retrospective note (on the retrospective):&lt;/strong&gt; FiveThirtyEight had &lt;a href=&quot;https://fivethirtyeight.com/features/a-decent-second-week-saved-the-u-s-from-olympic-catastrophe/&quot;&gt;their own projection model&lt;/a&gt; and they recently published their results. I decided to see how my results compared to theirs (see below for a quick chart). As &lt;strong&gt;far&lt;/strong&gt; better modelers than me, I was expecting their results to blow mine out of the water, and you know what, they kind of do. Our results are on two different scales (theirs are measured by number of medals expected, mine are measured by expected Fantasy Olympic points) so direct comparison is probably not the best analysis, but it is interesting to see that we get similar trends, likely driven by performances that were just truly unexpected. This comparison also further points out how much I messed up Germany (points furtherest to the right). Sorry Germany…&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/fantasy-olympics-538-retro.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/fantasy-olympics-538-retro.png&quot; alt=&quot;A chart comparing FiveThirtyEight's projections to mine&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
 &lt;link rel=&quot;stylesheet&quot; href=&quot;/projects/fantasy-olympics/css/retro-2018.style.css&quot; /&gt;
 
 &lt;script type=&quot;text/javascript&quot; src=&quot;/projects/fantasy-olympics/js/retro-2018.js&quot;&gt;&lt;/script&gt;
@@ -431,7 +439,7 @@ $(window).resize(function() {
     &lt;div class=&quot;column&quot;&gt;
         &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; alt=&quot;A quick remake of the Confederate statue graphic&quot; width=&quot;400&quot; /&gt;
+    &lt;img src=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; alt=&quot;The non-weighted and weighted point distributions&quot; width=&quot;400&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
 
