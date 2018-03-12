@@ -1,4 +1,4 @@
-Leage,Year,Team,City,State,Lat,Lng
+league,year,team,city,state,lat,lng
 MLB,1903,Boston Americans,Boston,MA,42.3601,-71.0589
 MLB,1904,N/A,,,,
 MLB,1905,New York Giants,New York,NY,40.7128,-74.0059
@@ -326,4 +326,4 @@ NHL,2016,Pittsburgh Penguins,Pittsburgh,PA,40.4406,-79.9959
 NFL,2017,New England Patriots,Boston,MA,42.3601,-71.0589
 NHL,2017,Pittsburgh Penguins,Pittsburgh,PA,40.4406,-79.9959
 NBA,2017,Golden State Warriors,San Francisco,CA,37.7749,-112.4194
-MLB,2017,N/A,,,,
+MLB,2017,Houston Astros,Houston,TX,29.7604,-95.3698

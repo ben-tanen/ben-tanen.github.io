@@ -12,6 +12,8 @@ Sunday marked the official end of the 2018 Olympics Games. Overall, they did not
 
 Speaking of performances, I was doubly curious about how my first attempt at [Fantasy Olympics rules and projections]({% post_url 2018-02-06-fantasy-olympics %}) went. Now on the other side of the PyeongChang Games, I stand by my original set of rules for Fantasy Olympics. I think drafting teams by country and sport forms an interesting mix of teams and I think the weighted scoring system serves as a good counter-balance for fair drafting. So overall, Fantasy Olympics rules = 👍.
 
+<!-- more -->
+
 Now onto the projections. My projections were based on a very rudimentary and naive model so I had *very* little hope for these results. But at the end of the day, I don't think they were *that* awful. On average, I was off by about 0.3 points per team (meaning I generally overestimated performances), but in absolute terms, I was off by 2.5 points per team. When the typical medaling team earned 6.4 points per event, being off by 2.5 points means I was about 39% off the mark on average.
 
 

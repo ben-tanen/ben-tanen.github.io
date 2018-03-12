@@ -1,3 +1,122 @@
+.MLB {
+    /* tableau colors */
+    stroke: #729ece;
+    fill:   #729ece;
+}
+
+.NBA {
+    /* tableau colors */
+    stroke: #ed665d;
+    fill:   #ed665d;
+}
+
+.NFL {
+    /* tableau colors */
+    stroke: #ff9e4a;
+    fill:   #ff9e4a;
+}
+
+.NHL {
+    /* tableau colors */
+    stroke: #98df8a;
+    fill:   #98df8a;
+}
+
+.footnote {
+    color: #77bdee;
+    cursor: pointer;
+}
+
+.footnote:hover {
+    text-decoration: underline;
+}
+
+.jBox-Tooltip{
+    font-family: 'Yantramanav', 'sans-serif';
+    max-width: 300px;
+}
+
+/*** BAR CHART ***/
+#d3-sd-barchart-container {
+    width: 100%;
+    /*height: 388px;*/
+    overflow-y: scroll;
+}
+
+#d3-sd-barchart-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#d3-sd-barchart {
+    width: 100%;
+    height: 800px;
+}
+
+text.bar-city-name {
+    font-size: 15px;
+    text-anchor: end;
+}
+
+rect.bar-component {
+    cursor: pointer;
+}
+
+#bar-x-axis text {
+    font-size: 13px;
+}
+
+/*** DOT CHART ***/
+#d3-sd-dotchart-container {
+    width: 100%;
+    /*height: 400px;*/
+    overflow-y: scroll;
+}
+
+#d3-sd-dotchart-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#d3-sd-dotchart {
+    width: 100%;
+    height: 800px;
+}
+
+text.dot-city-name {
+    font-size: 15px;
+    text-anchor: end;
+}
+
+circle.dot-marker {
+    stroke-width: 1.5;
+    cursor: pointer;
+}
+
+circle.dot-marker:not(.in-dynasty) {
+    fill: rgba(0, 0, 0, 0);
+}
+
+#dot-x-axis text {
+    font-size: 13px;
+}
+
+/*** DYNASTIES MAP ***/
+
+#d3-sd-map-container {
+    max-width: 650px;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+}
+
+#d3-sd-map {
+    width: 100%;
+    height: 100%;
+}
+
 .feature {
     fill: black;
     stroke: lightgrey;
@@ -18,33 +137,10 @@
     opacity: 1;
 }
 
-#MLB {
-    /* tableau colors */
-    stroke: #729ece;
-    fill:   #729ece;
-}
-
-#NBA {
-    /* tableau colors */
-    stroke: #ed665d;
-    fill:   #ed665d;
-}
-
-#NFL {
-    /* tableau colors */
-    stroke: #ff9e4a;
-    fill:   #ff9e4a;
-}
-
-#NHL {
-    /* tableau colors */
-    stroke: #98df8a;
-    fill:   #98df8a;
-}
-
 .year-text {
     font-size: 2em;
     font-family: "Roboto Mono", sans-serif;
+    cursor: pointer;
 }
 
 .legend-text {

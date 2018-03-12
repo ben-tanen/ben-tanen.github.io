@@ -1,91 +1,94 @@
-/* INIT PAGE */
-var width  = 650,
-    height = 400;
+/**********************/
+/*** INIT VARIABLES ***/
+/**********************/
 
-var sd_svg = d3.select('.sd-svg-container').append('svg')
-    .attr('width', width)
-    .attr('height', height);
+var leagues = ['MLB', 'NBA', 'NFL', 'NHL'];
 
-/* POLY BASICS */
-var sd_line = d3.line()
-    .x(function(d) { return d[0] })
-    .y(function(d) { return d[1] });
-
-var projection = d3.geoMercator()
-    .scale(550)
-    .center([-80,37]);
-
-/* INIT LEGEND */
-var year_ix = 1903;
-
-sd_svg.append('text')
-    .classed('year-text', true)
-    .attr('x', width - 80)
-    .attr('y', height - 10);
-
-sd_svg.append('circle')
-    .classed('legend-circ', true)
-    .attr('id', 'MLB')
-    .attr('cx', 10)
-    .attr('cy', height - 70)
-    .attr('r', 5);
-
-sd_svg.append('text')
-    .classed('legend-text', true)
-    .attr('id', 'MLB')
-    .attr('x', 22)
-    .attr('y', height - 66)
-    .text('MLB');
-
-sd_svg.append('circle')
-    .classed('legend-circ', true)
-    .attr('id', 'NBA')
-    .attr('cx', 10)
-    .attr('cy', height - 50)
-    .attr('r', 5);
-
-sd_svg.append('text')
-    .classed('legend-text', true)
-    .attr('id', 'NBA')
-    .attr('x', 22)
-    .attr('y', height - 46)
-    .text('NBA');
-
-sd_svg.append('circle')
-    .classed('legend-circ', true)
-    .attr('id', 'NFL')
-    .attr('cx', 10)
-    .attr('cy', height - 30)
-    .attr('r', 5);
-
-sd_svg.append('text')
-    .classed('legend-text', true)
-    .attr('id', 'NFL')
-    .attr('x', 22)
-    .attr('y', height - 26)
-    .text('NFL');
-
-sd_svg.append('circle')
-    .classed('legend-circ', true)
-    .attr('id', 'NHL')
-    .attr('cx', 10)
-    .attr('cy', height - 10)
-    .attr('r', 5);
-
-sd_svg.append('text')
-    .classed('legend-text', true)
-    .attr('id', 'NHL')
-    .attr('x', 22)
-    .attr('y', height - 6)
-    .text('NHL');
-
-/* INIT DATA */
 var data = {
     cities:  { },
     winners: { },
 };
 
-var leagues = ['MLB', 'NBA', 'NFL', 'NHL'];
+var year_start = 1903,
+    year_end   = 2017;
 
-/* LOAD DATA */
-load_data();
+/*********************************/
+/*** PARSE DATA AND INIT PLOTS ***/
+/*********************************/
+
+d3.csv("/projects/sports-dynasties/data/team-data.csv", function(d) {
+    return d;
+}, function(error, d) {
+    for (var i = 0; i < d.length; i++) {
+        var di     = d[i],
+            league = di.league,
+            year   = di.year,
+            team   = di.team,
+            city   = di.city,
+            state  = di.state,
+            lat    = +di.lat,
+            lng    = +di.lng;
+
+        // load city data
+        if (city != "" && state != "" && !data.cities[city + ', ' + state]) {
+            data.cities[city + ', ' + state] = {
+                name: city + ', ' + state,
+                location: [lat, lng]
+            };
+        }
+
+        // load winner data
+        if (!data.winners[year]) data.winners[year] = { }
+
+        data.winners[year][league] = {
+            name: team,
+            league: league
+        };
+
+        if (team != "N/A") {
+            data.winners[year][league].city = {
+                name: city + ', ' + state,
+                location: [lat, lng]
+            };              
+        } else {
+            data.winners[year][league].city = null;
+        }
+    }
+
+    // calculate league-wins and earliest win per city
+    for (city in data.cities) {
+        data.cities[city]['earliest-win'] = 2017;
+        for (ix in leagues) {
+            var league = leagues[ix];
+            data.cities[city][league + '-wins'] = [ ];
+            for (year in data.winners) {
+                if (data.winners[year][league] && data.winners[year][league].city) {
+                    if (data.winners[year][league].city.name == city) data.cities[city][league + '-wins'].push(+year);
+                }
+            }
+            if (data.cities[city][league + '-wins'].length > 0 && data.cities[city][league + '-wins'][0] < data.cities[city]['earliest-win']) data.cities[city]['earliest-win'] = data.cities[city][league + '-wins'][0];
+        }
+        data.cities[city]['total-wins'] = data.cities[city]['MLB-wins'].length + data.cities[city]['NHL-wins'].length + data.cities[city]['NBA-wins'].length + data.cities[city]['NFL-wins'].length;
+    }
+
+    render_barchart();
+    render_dotchart();
+    render_map();
+});
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+// init footnote
+new jBox('Tooltip', {
+    attach: '#sd-footnote-1',
+    offset: {y: 5},
+    content: "Totally random sidenote: it's really annoying how the NHL, MLB, and NFL all have special names for their championships / trophies, but the NBA just has <i>the NBA championship</i>. Just seems silly to me."
+});
+
+new jBox('Tooltip', {
+    attach: '#sd-footnote-2',
+    offset: {y: 5},
+    content: "A question not commonly asked by anyone from NYC or Boston."
+});
