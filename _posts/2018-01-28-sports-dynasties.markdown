@@ -29,6 +29,34 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita fuga neque ip
     <svg id="d3-sd-dotchart"></svg>
 </div>
 
+<table id="dynasties-table">
+    <thead>
+    <tr>
+        <th>City</th><th>Dynasty</th><th>Years</th><th>Wins</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr><td>Boston, MA</td><td>1912 - 1918</td><td>7</td><td>5</td></tr>
+        <tr><td>Boston, MA</td><td>1957 - 1976</td><td></td><td>15 wins</td></tr>
+        <tr><td>Boston, MA</td><td>2002 - 2008</td><td></td><td>6 wins</td></tr>
+        <tr><td>New York, NY</td><td>1936 - 1943</td><td></td><td>7 wins</td></tr>
+        <tr><td>New York, NY</td><td>1947 - 1958</td><td></td><td>10 wins</td></tr>
+        <tr><td>New York, NY</td><td>1977 - 1983</td><td></td><td>6 wins</td></tr>
+        <tr><td>New York, NY</td><td>1994 - 2000</td><td></td><td>5 wins</td></tr>
+        <tr><td>Montreal, CAN</td><td>1956 - 1960</td><td></td><td>5 wins</td></tr>
+    </tbody>
+</table>
+
+- Boston, MA 1912-1918, 5 wins
+
+- Montreal, CAN 1965-1973, 6 wins
+- Toronto, CAN 1945-1951, 5 wins
+- Minneapolis, MN 1949-1954, 5 wins
+- Los Angeles, CA 1980-1988, 8 wins
+- San Francisco, CA 1972-1977, 5 wins
+- San Francisco, CA 2010-2017, 5 wins
+- Edmonton, CAN 1984-1990, 5 wins
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptates, minus commodi harum sit. Numquam reprehenderit qui eveniet, ea praesentium at voluptate doloremque quia temporibus! Molestiae pariatur, sapiente quo inventore!
 
 <div id="d3-sd-map-container">

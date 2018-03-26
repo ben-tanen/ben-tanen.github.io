@@ -51,6 +51,7 @@ function find_dynasties(city) {
             valid_wins = 0;
         }
     }
+
     return dynasties;
 }
 
