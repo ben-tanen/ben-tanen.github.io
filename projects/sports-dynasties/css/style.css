@@ -135,10 +135,15 @@ circle.dot-marker:not(.in-dynasty) {
     stroke-linejoin: round;
 }
 
+#d3-sd-map .circ {
+    z-index: 100;
+}
+
 .tail-path {
     stroke-width: 3;
     fill: none;
     opacity: 1;
+    z-index: 1;
 }
 
 .year-text {

@@ -2,7 +2,7 @@
 layout: post
 title: 'Visualizing Cities with Sports Dynasties'
 date: 2018-01-28 05:00:00
-categories: project data visualization hidden
+categories: project data visualization
 thumbnail: /assets/img/post-thumbnails/sports-dynasties.gif
 excerpt_separator: <!-- more -->
 ---
@@ -20,14 +20,18 @@ To get a lay for the land, I was first curious about the number of total champio
     <svg id="d3-sd-barchart"></svg>
 </div>
 
-As expected, New York dominated, primarily driven by their World Series wins. I was pretty shocked that Montreal, with only a single team, came in third. In fact, when accounting for the number of teams per city, Canadian teams reign supreme, with Montreal and Toronto coming in first and second respectively. As a Bostonian, I do have to point out that while New York does have more championships than Boston, this is largely because of all the teams New York has. On a per team basis, Boston has 6.2 championships per team, beating out New York's measly 5.6 per team.
+As expected, New York dominated, primarily driven by their World Series wins. I was pretty shocked that Montreal, with only a single team, came in third. In fact, when accounting for the number of teams per city, Canadian cities reign supreme, with Montreal and Toronto coming in first and second respectively. As a Bostonian, I do have to point out that while New York does have more championships than Boston, this is largely because of all the teams New York has. On a per team basis, Boston has 6.2 championships per team, beating out New York's measly 5.6 per team.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita fuga neque ipsa voluptas ullam quam impedit provident deserunt doloremque repellendus veritatis soluta, nulla nesciunt nostrum consectetur, eaque iure, aspernatur earum.
+But pure number of wins doesn't necessarily indicate dynasties. For a dynasty, it's all about sustained excellence. But dynasties are hard to define; you kind of [know it when you see it](https://en.wikipedia.org/wiki/I_know_it_when_I_see_it). But for my purposes, I defined a dynasty as any span when a city won five championships with no more than a year gap between wins. For example, Boston from 2002 - 2008 would be a dynasty with their three Super Bowl, 2007 World Series, and 2008 NBA championship wins. Boston has also won four championships since 2011, but because of the three year gap from 2008 to 2011, the dynasty (by my defintion) wouldn't include these four most recent wins. However, a Patriots win on Sunday would make for a new ongoing dynasty including the four wins since 2011.
+
+So, based on that definition, when and where were there dynasties?
 
 <p id="d3-sd-barchart-title">Championships Over Time by City (1903 - 2017)</p>
 <div id="d3-sd-dotchart-container">
     <svg id="d3-sd-dotchart"></svg>
 </div>
+
+Since 1903, there have been 15 dynasties across New York (4), Boston (3), Montreal (2), San Francisco (2), Toronto (1), Minneapolis (1), Los Angeles (1), and Edmonton (1). The longest dynasty was Boston's 15 championship run from 1957 - 1976, pretty much entirely driven by Celtics during [the Bill Russell era](https://en.wikipedia.org/wiki/Boston_Celtics#1957%E2%80%931969:_The_Bill_Russell_era). The most recent dynasty is in San Francisco, which is ongoing, and given [the Warriors' performance thus far this season](https://projects.fivethirtyeight.com/2018-nba-predictions/), it's possible it may continue. As I mentioned, if the Patriots beat the Eagles, that would also make <span id="sd-footnote-3" class="footnote">another Boston dynasty</span>.
 
 <table id="dynasties-table">
     <thead>
@@ -37,27 +41,26 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita fuga neque ip
     </thead>
     <tbody>
         <tr><td>Boston, MA</td><td>1912 - 1918</td><td>7</td><td>5</td></tr>
-        <tr><td>Boston, MA</td><td>1957 - 1976</td><td></td><td>15 wins</td></tr>
-        <tr><td>Boston, MA</td><td>2002 - 2008</td><td></td><td>6 wins</td></tr>
-        <tr><td>New York, NY</td><td>1936 - 1943</td><td></td><td>7 wins</td></tr>
-        <tr><td>New York, NY</td><td>1947 - 1958</td><td></td><td>10 wins</td></tr>
-        <tr><td>New York, NY</td><td>1977 - 1983</td><td></td><td>6 wins</td></tr>
-        <tr><td>New York, NY</td><td>1994 - 2000</td><td></td><td>5 wins</td></tr>
-        <tr><td>Montreal, CAN</td><td>1956 - 1960</td><td></td><td>5 wins</td></tr>
+        <tr><td>New York, NY</td><td>1936 - 1943</td><td>8</td><td>7</td></tr>
+        <tr><td>Toronto, CAN</td><td>1945 - 1951</td><td>7</td><td>5</td></tr>
+        <tr><td>New York, NY</td><td>1947 - 1958</td><td>12</td><td>10</td></tr>
+        <tr><td>Minneapolis, MN</td><td>1949 - 1954</td><td>6</td><td>5</td></tr>
+        <tr><td>Montreal, CAN</td><td>1956 - 1960</td><td>5</td><td>5</td></tr>
+        <tr><td>Boston, MA</td><td>1957 - 1976</td><td>20</td><td>15</td></tr>
+        <tr><td>Montreal, CAN</td><td>1965 - 1973</td><td>9</td><td>6</td></tr>
+        <tr><td>San Francisco, CA</td><td>1972 - 1977</td><td>6</td><td>5</td></tr>
+        <tr><td>New York, NY</td><td>1977 - 1983</td><td>7</td><td>6</td></tr>
+        <tr><td>Los Angeles, CA</td><td>1980 - 1988</td><td>9</td><td>8</td></tr>
+        <tr><td>Edmonton, CAN</td><td>1984 - 1990</td><td>7</td><td>5</td></tr>
+        <tr><td>New York, NY</td><td>1994 - 2000</td><td>7</td><td>5</td></tr>
+        <tr><td>Boston, MA</td><td>2002 - 2008</td><td>7</td><td>6</td></tr>
+        <tr><td>San Francisco, CA</td><td>2010 - 2017</td><td>8</td><td>5</td></tr>
     </tbody>
 </table>
 
-- Boston, MA 1912-1918, 5 wins
+What is and is not a dynasty is obviously very subjective based on any given definition, so obviously this analysis can vary. I tried to take an objective approach but as with all things in sports, it should always be a discussion.
 
-- Montreal, CAN 1965-1973, 6 wins
-- Toronto, CAN 1945-1951, 5 wins
-- Minneapolis, MN 1949-1954, 5 wins
-- Los Angeles, CA 1980-1988, 8 wins
-- San Francisco, CA 1972-1977, 5 wins
-- San Francisco, CA 2010-2017, 5 wins
-- Edmonton, CAN 1984-1990, 5 wins
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptates, minus commodi harum sit. Numquam reprehenderit qui eveniet, ea praesentium at voluptate doloremque quia temporibus! Molestiae pariatur, sapiente quo inventore!
+As a bit of a post-script, I also wanted to include one of the original visualizations I made when I first started looking into sports dynasties. I was curious if there was any sort of pattern to be seen from plotting each league's champions. I was hoping / expecting to see some sort of cycle when championships go back and forth between a few cities. As far as I can see, no such patterns emerged. But it made a cool looking chart so I thought I'd share.
 
 <div id="d3-sd-map-container">
     <svg id="d3-sd-map"></svg>

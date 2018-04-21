@@ -92,3 +92,9 @@ new jBox('Tooltip', {
     offset: {y: 5},
     content: "A question not commonly asked by anyone from NYC or Boston."
 });
+
+new jBox('Tooltip', {
+    attach: '#sd-footnote-3',
+    offset: {y: 5},
+    content: "We're coming for you New York!"
+});
