@@ -145,6 +145,270 @@ MathJax.Hub.Config({
 
 <div class='post'>
     <header class="post-header">
+	   <h1>Polar Line Charts in D3</h1>
+       <!--
+       <p class="post-meta">Jan 08 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>A few weeks ago, I came across <a href="http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif" target="_blank">this very interesting (and very scary) visualization</a> of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.</p>
+
+<p>Since <a href="https://bost.ocks.org/mike/" target="_blank">D3 and Mike Bostock</a> have generally implemented every type of chart imaginable, I was surprised that I couldn’t find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.</p>
+
+<!-- more -->
+
+<style>
+#d3-polar-container {
+    width: 90%;
+    max-width: 450px;
+    height: 450px;
+    margin: auto;
+}
+
+#polar-line-chart {
+    width: 100%;
+    height: 100%;
+}
+
+#polar-line-chart .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1px;
+}
+
+#polar-line-chart .domain {
+    display: none;
+}
+
+#polar-line-chart .year-text {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#polar-line-chart .play-text {
+    font-family: sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    fill: #77bdee;
+}
+
+#polar-line-chart .play-text:hover {
+    text-decoration: underline;
+}
+</style>
+
+<div id="d3-polar-container">
+    <svg id="polar-line-chart"></svg>
+</div>
+
+<p>Now that I have the chart ready to go, I’ll keep my eyes open for other data sets that might work well for this sort of radial chart, and as always, I’ll post it here.</p>
+
+<script>
+/* resize svg height if needed */
+let c_width = $("#d3-polar-container").width(),
+    is_mobile = c_width < 450;
+$("#d3-polar-container").css("height", c_width);
+
+/* initialize svg and variables */
+var polar_svg = d3.select("#polar-line-chart"),
+    margin = {top: 55, left: 45, bottom: 35, right: 45, center: 75},
+    width  = c_width - margin.left - margin.right;
+    height = c_width - margin.top - margin.bottom;
+
+// polar scales
+var t = d3.scaleTime().range([0, 2 * Math.PI]),
+    r = d3.scaleLinear().range([0, (width - margin.center) / 2]);
+
+// cartesian conversion
+var x = function(t, r) { return (margin.left) + (width / 2) + ((r + (margin.center / 2)) *  Math.sin(t)); },
+    y = function(t, r) { return (margin.top) + (height / 2) - ((r + (margin.center / 2)) *  Math.cos(t)); }
+
+var line = d3.line()
+    .x(function(d) { return x(t(d.month), r(d.value)); })
+    .y(function(d) { return y(t(d.month), r(d.value)); });
+
+var color = d3.scaleLinear()
+    .range(["#2a96e8", "#fb6767"]);
+
+/* draw polar background */
+polar_svg.append('circle')
+    .attr("r", width / 2)
+    .attr("cx", margin.left + width / 2)
+    .attr("cy", margin.top + height / 2)
+    .style("fill", "#ececec")
+    .style("stroke", "#000")
+    .style("stroke-width", "0.5px");
+
+polar_svg.append('circle')
+    .attr("r", margin.center / 2)
+    .attr("cx", margin.left + width / 2)
+    .attr("cy", margin.top + height / 2)
+    .style("fill", "white")
+    .style("stroke", "#000")
+    .style("stroke-width", "0.5px");
+
+/* pull data */
+d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
+    d.year  = +d.year;
+    d.month = +d.month;
+    d.value = +d.v2;
+    return d;
+}, function(error, data) {
+    if (error) throw error;
+
+    var [t_min, t_max] = d3.extent(data, function(d) { return d.month; }),
+        [r_min, r_max] = d3.extent(data, function(d) { return d.value;   });
+    var r_margin = {top: 0.15, bottom: 0};
+
+    t.domain([t_min, t_max + 1]);
+    r.domain([r_min - r_margin.bottom, r_max + r_margin.top]);
+    color.domain(d3.extent(data, function(d) { return d.year; }));
+
+    /* draw polar axes */
+    var ticks = r.ticks(5).splice(1);
+    var axis  = d3.axisBottom(r).tickValues(ticks).tickSize(0).tickFormat(d3.format(".1f"));
+
+    polar_svg.selectAll("g")
+        .data(ticks).enter()
+        .append("circle")
+        .attr("cx", margin.left + width / 2)
+        .attr("cy", margin.top + height / 2)
+        .attr("r", function(d) { return margin.center / 2 + r(d); })
+        .attr("fill", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", "0.25px");
+
+    polar_svg.append("rect")
+        .attr("x", margin.left + (margin.center + width) / 2 + 5)
+        .attr("y", margin.top + height / 2 - 10)
+        .attr("width", (width - margin.center) / 2 - 7)
+        .attr("height", 20)
+        .attr("fill", "#ececec");
+
+    /* render center year, "play", title, and month text */
+    var text_size = (!is_mobile ? 1 : 0.8);
+
+    polar_svg.append("text")
+        .attr("class", "year-text")
+        .style("font-size", text_size - 0.1 + "em")
+        .attr("transform", `translate(${margin.left + width / 2 - (!is_mobile ? 15 : 12)}, ${margin.top + height / 2 + (!is_mobile ? 5 : 4)})`)
+        .text("1850");
+
+    polar_svg.append("text")
+        .style("font-size", text_size + "em")
+        .attr("transform", "translate(10, 15)")
+        .text("Global Temperature Change in °C (1850 - 2016)");
+
+    polar_svg.append("text")
+        .style("font-size", text_size - 0.1 + "em")
+        .attr("transform", `translate(${width + margin.left + 10}, ${height / 2 + margin.top - 8}) rotate(90)`)
+        .text("Apr");
+
+    polar_svg.append("text")
+        .style("font-size", text_size - 0.1 + "em")
+        .attr("transform", `translate(${width / 2 + margin.left - 8}, ${margin.top - 8})`)
+        .text("Jan");
+
+    polar_svg.append("text")
+        .style("font-size", text_size - 0.1 + "em")
+        .attr("transform", `translate(${margin.left - 8}, ${height / 2 + margin.top + 8}) rotate(270)`)
+        .text("Oct");
+
+    polar_svg.append("text")
+        .style("font-size", text_size - 0.1 + "em")
+        .attr("transform", `translate(${width / 2 + margin.left + 8}, ${height + margin.top + 8}) rotate(180)`)
+        .text("Jul");
+
+    $("#d3-polar-container").ready(function() {
+        polar_svg.append("text")
+            .attr("class", "play-text")
+            .style("font-size", text_size + "em")
+            .attr("transform", "translate(" + 10 + "," + 35 + ")")
+            .text("Play");
+    });
+
+    /* animate on click */
+    polar_svg.select(".play-text").on("click", function() {
+        /* clear paths and axis */
+        polar_svg.selectAll(".line").remove();
+        polar_svg.select("#axis").remove();
+        polar_svg.selectAll(".year-text.added").remove();
+        polar_svg.selectAll(".year-text").text("1850");
+        polar_svg.selectAll(".year-text-cover").remove();
+
+        /* update center text */
+        setTimeout(function() {
+            let ix = 0;
+            update_year = setInterval(function() {
+                ix = ix + 1;
+                                    
+                /* draw new path */
+                polar_svg.append("path")
+                    .attr("class", "line")
+                    .attr("d", line([data[ix - 1], data[ix]]))
+                    .style("stroke", color(data[ix - 1].year))
+                    .style("stroke-width", (!is_mobile ? '1px' : '0.5px'))
+
+                /* update center text (or stop) */
+                if (ix == data.length - 1) clearInterval(update_year);
+                else polar_svg.select(".year-text").text(+data[ix].year);
+            }, 5);
+        }, 500)
+
+        /* re-render axis */
+        polar_svg.append("g")
+            .attr("id", "axis")
+            .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
+            .style("font-size", (!is_mobile ? 0.6 : 0.5) + "em")
+            .call(axis);
+    });
+
+    /* render radial ticks */
+    polar_svg.append("g")
+        .attr("id", "axis")
+        .attr("transform", "translate(" + (margin.left + (margin.center + width) / 2) + "," + (margin.top + (height / 2) - 6) + ")")
+        .style("font-size", (!is_mobile ? 0.6 : 0.5) + "em")
+        .call(axis);
+});
+
+</script>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
+	   <h1>Understanding the Kirkpatrick-Seidel Algorithm</h1>
+       <!--
+       <p class="post-meta">Jan 02 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+       -->
+    </header>
+
+    <article class="post-content">
+	   <p>After <a href="/blog/2016/12/21/drunken-world.html" target="_blank">posting the final project</a> for my visualization course, I thought I’d share the final project for my computational geometry class as well. The course was an extended algorithms class focused on different multi-dimensional geometric problems. One of the main problems of the course deals with finding the <a href="https://en.wikipedia.org/wiki/Convex_hull" target="_blank">convex hull</a> of a set of points. There are <a href="https://www.youtube.com/watch?v=ZnTiWcIznEQ" target="_blank">a number ways</a> to tackle the problem but one of the best approaches is the Kirkpatrick-Seidel Ultimate Planar Convex Hull Algorithm. In order to help teach the algorithm, I made <a href="http://link.ben-tanen.com/ultimate-ch/" target="_blank">a visualization tool</a> to walk-through the steps.</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/ultimate_ch.png" target="_blank">
+    <img src="/assets/img/posts/ultimate_ch.png" alt="A screenshot of the visualization" width="600px" />
+    </a>
+</p>
+
+<p>The algorithm is a bit on the complicated side but I hope that this offers some help in figuring out what exactly goes into it. While the walk-through is complete, I plan on adding a bit more detail to explain the algorithmic time complexity that allows it to work in <strong><em>O(n log n)</em></strong> time so keep an eye out for that.</p>
+
+<p>Feel free to check it out and let me know what you think. If anything seems confusing, unclear, or (heaven forbid) incorrect, feel free to shoot me a message. Also, if you are interested, you can find the code for the visualization <a href="https://github.com/ben-tanen/ultimate-convex-hull/">here on GitHub</a>.</p>
+
+
+    </article>
+</div>
+
+
+
+<div class='post'>
+    <header class="post-header">
 	   <h1>Visualizing Our Drunken World</h1>
        <!--
        <p class="post-meta">Dec 21 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
@@ -258,117 +522,6 @@ MathJax.Hub.Config({
         </div>
     </div>
 </div>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Meet St. Paul and the Broken Bones</h1>
-       <!--
-       <p class="post-meta">Nov 10 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Through some killer <a href="http://www.wmfo.org/" target="_blank">freeform radio hook ups</a>, I was very fortunately connected with the publicity manager for the always fantastic St. Paul and the Broken Bones. Through this connection, I was able to score <a href="https://www.wmfo.org/?p=3043" target="_blank">an interview with Jesse Phillip</a>, the bassist of the band and the lead Broken Bone, as well as a photo pass to their most recent show at the Royale in Boston. They are currently on tour promoting their newest EP <em>Sea of Noise</em>, which is <a href="http://www.npr.org/2016/09/01/491941924/first-listen-st-paul-the-broken-bones-sea-of-noise" target="_blank">quite the album</a>. If you haven’t heard of them before or you haven’t heard their latest album, I’ve put together a little playlist of my personal favorites so feel free to take a listen. My top three have got to be “Is It Me” from <em>Sea of Noise</em>, “Call Me” from their first album <em>Half the City</em>, and their cover of Sam Cooke’s incredible “A Change Is Gonna Come” at SXSW.</p>
-
-<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A129874447%3Aplaylist%3A7hGQWWVIqtbsSQ0zyxk7FN" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true" style="margin-bottom:10px"></iframe>
-
-<p>Since I was lucky enough to get a photo pass to their show, I thought I’d also share some of my personal favorite photos. I’d like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!</p>
-
-<style>
-    .photo-container {
-    }
-
-    .photo-container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
-
-    .sub-photo-container {
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-</style>
-
-<div class="photo-container">
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB4.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB2.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB3.jpg" />
-        <img src="/assets/img/posts/SPABB5.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB1.jpg" />
-    </div>
-</div>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Introducing 2016-17 NHL Projections</h1>
-       <!--
-       <p class="post-meta">Oct 11 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/nhl-playoff-projections/" target="_blank">the code</a>.</p>
-
-<p>Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/nhl-proj-10-11-16.png" target="_blank">
-    <img src="/assets/img/posts/nhl-proj-10-11-16.png" alt="The initial projections for VAN, NYR, and WSH" width="650px" />
-    </a>
-</p>
-
-<p>So, over the course of the next few months, I’ll be comparing each team’s expected performance (as speculated by the model) to their actual performance. I’ll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out <a href="/projects/nhl-projections/" target="_blank">the new project site here</a>.</p>
-
-<p>For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don’t have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.</p>
-
-<table>
-<thead>
-<tr><th></th><th width="50px">Team</th><th width="150px">Projected Points (2016-17)</th><th width="100px">Actual Points (2015-16)</th></tr>
-</thead>
-<tbody>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/dallas-stars.png" /></td><td>DAL</td><td>96.31</td><td>109</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/pittsburgh-penguins.png" /></td><td>PIT</td><td>95.53</td><td>104</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/chicago-blackhawks.png" /></td><td>CHI</td><td>94.76</td><td>103</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/san-jose-sharks.png" /></td><td>SJS</td><td>94.06</td><td>98</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/new-york-rangers.png" /></td><td>NYR</td><td>93.33</td><td>101</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/tampa-bay-lightning.png" /></td><td>TBL</td><td>93.24</td><td>97</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/boston-bruins.png" /></td><td>BOS</td><td>92.53</td><td>93</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/st-louis-blues.png" /></td><td>STL</td><td>91.82</td><td>107</td></tr>
-
-</tbody>
-</table>
-
-<p>Here’s to an exciting 2016-17 season and <a href="https://twitter.com/search?q=lgr" target="_blank">#LGR</a>!</p>
 
     </article>
 </div>

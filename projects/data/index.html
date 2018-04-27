@@ -5,14 +5,32 @@ title: Analysis & Visualization
 
 <h1 style='margin-bottom: 20px;'>Analysis & Visualization</h1>
 
+<link rel="stylesheet" href="/assets/css/index.style.css">
+
+<ul id='index-list'>
+{% for post in site.posts %}
+{% if post.categories contains 'data' and post.categories contains 'project' %}
+{% unless post.categories contains 'hidden' %}
+    <li>
+        <div class='index-thumbnail' style='background-image: url("{% if post.thumbnail %}{{ post.thumbnail }}{% else %}/assets/img/post-thumbnails/blank.png{% endif %}");'>
+        </div>
+        <p class='index-date'>{{ post.date | date: "%b %d %Y" }}</p>
+        <p class='index-title'><a href='{{ post.url }}'>{{ post.title }}</a></p>
+    </li>
+{% endunless %}
+{% endif %}
+{% endfor %}
+</ul>
+
+<!--
 <ul style='padding-left: 0; list-style: none; position: relative;'>
 {% for post in site.posts %}
     {% if post.categories contains 'data' and post.categories contains 'project' %}
     {% unless post.categories contains 'hidden' %}
         <li style='margin-bottom: 45px;'>
-            <div>
+            <div> -->
                 <!-- <p id='index_date' style='text-align: left; margin-bottom: 0px;'>{{ post.date | date_to_string }}</p> -->
-                <p id='index_title' style='font-size: 22px; margin-bottom: -5px;'>{{ post.date | date_to_string }} <a href='{{ post.url }}' style="margin-left: 10px;">{{ post.title }}</a></p>
+                <!-- <p id='index_title' style='font-size: 22px; margin-bottom: -5px;'>{{ post.date | date_to_string }} <a href='{{ post.url }}' style="margin-left: 10px;">{{ post.title }}</a></p>
             <div/>
             <p>{{ post.excerpt }}</p>
             <p style='margin-top: -5px;'><a href='{{ post.url }}'>Read More</a></p>
@@ -20,4 +38,5 @@ title: Analysis & Visualization
     {% endunless %}    
     {% endif %}
 {% endfor %}
-</ul>
+</ul> -->
+

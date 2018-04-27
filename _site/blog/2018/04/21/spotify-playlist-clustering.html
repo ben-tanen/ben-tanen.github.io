@@ -50,7 +50,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>How Obama and Trump Responded to School Shootings | Ben Tanen</title>
+    <title>Making Spotify Playlists Using K-Means Clustering | Ben Tanen</title>
 </head>
 
 
@@ -144,27 +144,51 @@ MathJax.Hub.Config({
     		<div class="post">
 
     <header class="post-header">
-        <h1>How Obama and Trump Responded to School Shootings</h1>
-        <p class="post-date">Mar 03 2018
+        <h1>Making Spotify Playlists Using K-Means Clustering</h1>
+        <p class="post-date">Apr 21 2018
         <!--
-        <p class="post-meta">Mar 03 2018 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        <p class="post-meta">Apr 21 2018 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
         -->
     </header>
 
     <article class="post-content">
-    <p>In response to a suggestion from Franklin Leonard, the Washington Post recently published <a href="https://www.youtube.com/watch?v=uHrvODeA8-E" target="_blank">a video</a> providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents’ approaches.</p>
+    
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">pull_saved_tracks</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">saved_tracks</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
 
-<p>The video did a great job juxtaposing Obama’s and Trump’s intraday activities and responses (comparing Obama’s first day of response to Trump’s, etc.), but I felt it was hard to compare the actual timing of each event. I decided to re-visualize <span id="footnote-1" class="footnote">this information</span> into one single timeline to (hopefully) present a slightly different effect.</p>
+    <span class="n">saved_tracks_obj</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">current_user_saved_tracks</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offset</span><span class="p">)</span>
+    <span class="n">num_saved_tracks</span> <span class="o">=</span> <span class="n">saved_tracks_obj</span><span class="p">[</span><span class="s">'total'</span><span class="p">]</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="n">num_saved_tracks</span><span class="p">):</span>
+        <span class="n">saved_tracks_obj</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">current_user_saved_tracks</span><span class="p">(</span><span class="n">limit</span> <span class="o">=</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">offset</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">track_obj</span> <span class="ow">in</span> <span class="n">saved_tracks_obj</span><span class="p">[</span><span class="s">'items'</span><span class="p">]:</span>
+            <span class="n">saved_tracks</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s">'name'</span><span class="p">:</span> <span class="n">track_obj</span><span class="p">[</span><span class="s">'track'</span><span class="p">][</span><span class="s">'name'</span><span class="p">],</span>
+                <span class="s">'artists'</span><span class="p">:</span> <span class="s">', '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">artist</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">track_obj</span><span class="p">[</span><span class="s">'track'</span><span class="p">][</span><span class="s">'artists'</span><span class="p">]]),</span>
+                <span class="s">'track_id'</span><span class="p">:</span> <span class="n">track_obj</span><span class="p">[</span><span class="s">'track'</span><span class="p">][</span><span class="s">'id'</span><span class="p">]</span>
+            <span class="p">})</span>
+
+        <span class="n">offset</span> <span class="o">+=</span> <span class="n">limit</span>
+        
+    <span class="k">return</span> <span class="n">saved_tracks</span></code></pre></figure>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/spotify-clusters-ex1.png" target="_blank">
+    <img src="/assets/img/posts/spotify-clusters-ex1.png" alt="Examples of the first playlist clusters" />
+    </a>
+</p>
 
 <!-- more -->
 
-<svg id="d3-obama-trump-gun-response">
-</svg>
+<div id="d3-spotify-clustering-container">
+    <svg id="d3-spotify-clustering">
+    </svg>
+</div>
 
 <style>
-#d3-obama-trump-gun-response {
+#d3-spotify-clustering-container {
     width: 100%;
-    height: 2000px;
 }
 
 .footnote {
@@ -180,47 +204,6 @@ MathJax.Hub.Config({
     font-family: 'Yantramanav', 'sans-serif';
     max-width: 300px;
 }
-
-text.header {
-    font-size: 24px;
-    text-anchor: middle;
-}
-
-line#center-line {
-    stroke: #dadede;
-    stroke-width: 2;
-}
-
-line.marker-line-day {
-    stroke: #dadede;
-    stroke-width: 1;
-}
-
-line.marker-line {
-    stroke: #a4a4a4;
-    stroke-width: 1;
-}
-
-circle.marker-circle {
-    stroke: gray;
-    fill: #dadede;
-}
-
-text.marker-text-day {
-    font-size: 12px;
-    text-anchor: middle;
-}
-
-text.time-string, text.desc-string {
-    font-size: 12px;
-}
-
-.time-string.Obama, .desc-string.Obama { text-anchor: end; }
-.time-string.Trump, .desc-string.Trump { text-anchor: start; }
-
-.header.Obama, .time-string.Obama { fill: #77bdee; }
-.header.Trump, .time-string.Trump { fill: #ff6e6c; }
-
 </style>
 
 <script>
@@ -504,13 +487,13 @@ $(window).resize(function() {
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/blog/2018/04/21/spotify-playlist-clustering.html'>&#8592; Newer Post</a></p>
+        <p id='pagination-previous'><a href='/blog/2018/04/23/generative-art.html'>&#8592; Newer Post</a></p>
         
 
         <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/blog/2018/02/28/fantasy-olympics-retrospective.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2018/03/03/comparing-obama-trump-on-guns.html'>Older Post &#8594;</a></p>
         
     </div>
 

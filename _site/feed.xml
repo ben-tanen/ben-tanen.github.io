@@ -7,6 +7,245 @@
             
                 
                 <item>
+                    <title>A First Attempt At Generative Art</title>
+                    <description>&lt;div id=&quot;d3-gen-art-container&quot;&gt;
+    &lt;svg id=&quot;d3-gen-art&quot;&gt;&lt;/svg&gt;
+    &lt;div id=&quot;d3-gen-art-controls&quot;&gt;
+        &lt;p&gt;
+            &lt;!-- Color Steps --&gt;
+            &lt;input type=&quot;range&quot; min=&quot;1&quot; max=&quot;30&quot; value=&quot;10&quot; id=&quot;range_span&quot; /&gt;
+        &lt;/p&gt;
+        &lt;p style=&quot;text-align: right&quot;&gt;
+            &lt;!-- Type: --&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;viz-type-1&quot; name=&quot;viz-type&quot; value=&quot;radial&quot; checked=&quot;&quot; /&gt;
+            &lt;label for=&quot;viz-type-1&quot;&gt;Radial&lt;/label&gt;
+
+            &lt;input type=&quot;radio&quot; id=&quot;viz-type-2&quot; name=&quot;viz-type&quot; value=&quot;line&quot; /&gt;
+            &lt;label for=&quot;viz-type-2&quot;&gt;Line&lt;/label&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A recent trip to &lt;a href=&quot;https://www.mfa.org/&quot;&gt;the Boston MFA&lt;/a&gt; inspired me to try making more art for art’s sake. I’ve never been particularly crafty with a pencil or paint brush so I decided my artistic medium would have to be digital. I’ve been fascinated by generative art (&lt;a href=&quot;http://thedotisblack.com/&quot;&gt;the dot is black&lt;/a&gt; has always been a quality source for interesting pieces) so I thought I would take a whack at it.&lt;/p&gt;
+
+&lt;p&gt;Wikipedia says &lt;a href=&quot;https://en.wikipedia.org/wiki/Generative_art&quot;&gt;generative art&lt;/a&gt; must be created partially or entirely using an autonomous system, but I prefer &lt;a href=&quot;http://inconvergent.net/thoughts-on-generative-art/&quot;&gt;Anders Hoff’s definition&lt;/a&gt; of the art form:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I would argue that it does not really matter whether you are generating characters, dialogue or environments for a computer game, geometry as part of a building, digital or analogue art, a musical composition, or a poem. In all cases you are using a system of some kind to help you along. Either towards a specific goal, some unidentified result, or somewhere in-between. To me the main point is usually to experiment with a small system that consists of a set of relatively simple rules.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With that in mind, I set out to see what I could create. While I enjoy the pieces I’ve seen, I found a lot of generative art lacked color. As a personal fan of color, I knew I wanted to somehow include color in my piece. This led me to a question: how would a color describe itself?&lt;/p&gt;
+
+&lt;p&gt;Without the ability to have personal discussions with colors, I opted to use a color’s own codified representation (specifically the binary representation of a color’s hex code) to generate each color’s pattern in the piece. Doing so led to the piece above.&lt;/p&gt;
+
+&lt;p&gt;Feel free to play around with it and let me know if you have any thoughts on it! Is this generative art? Is there a greater meaning behind this piece? Am I just a hack making pretty pictures? Let me know and I’ll let you know if I agree!&lt;/p&gt;
+
+&lt;style&gt;
+#d3-gen-art-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+#d3-gen-art {
+    width: 100%;
+}
+
+#d3-gen-art-controls p {
+    width: calc(50% - 5px);
+    display: inline-block;
+}
+
+#viz-type-2 {
+    margin-left: 10px;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+
+/*********************/
+/*** INIT VARIABLE ***/
+/*********************/
+
+var svg = d3.select('#d3-gen-art');
+
+var margin = {top: 5, right: 5, bottom: 5, left: 5},
+    width  = $('#d3-gen-art').width() -  margin.left - margin.right,
+    height = $('#d3-gen-art').width() - margin.top - margin.bottom;
+
+var colors = ['#77bdee', '#80ff80', '#ff6666', '#ee77ee', '#77eeee'];
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
+// convert rgb color to hex color
+function color_rgb_to_hex(rgb){
+    rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+    return (rgb &amp;&amp; rgb.length === 4) ? &quot;#&quot; +
+        (&quot;0&quot; + parseInt(rgb[1],10).toString(16)).slice(-2) +
+        (&quot;0&quot; + parseInt(rgb[2],10).toString(16)).slice(-2) +
+        (&quot;0&quot; + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+}
+
+// convert hex color to binary string
+function color_hex_to_bin(hex) {
+    let bin = parseInt(hex.substring(1, 100), 16).toString(2);
+
+    if (bin.length &lt; 24) return &quot;0&quot;.repeat(24 - bin.length) + bin;
+    else return bin;
+}
+
+// line pattern for representing the binary representation of a color with colors
+function line_viz(colors, color_steps) {
+    let rect_width  = width / 24,
+        rect_height = height / ((colors.length - 1) * color_steps + 1),
+        rect_margin = 9;
+
+    // for sequential color pairs (n - 1 pairs), ranges from color_i to color_{i + 1}
+    for (let i = 0; i &lt; colors.length - 1; i++) {
+        let color_scale = d3.scaleLinear()
+            .domain([0, color_steps])
+            .range([colors[i], colors[i + 1]]);
+
+        // for each color in the scale (color_step steps)
+        for (let j = 0; j &lt; color_steps; j++) {
+            let color     = color_scale(j),
+                color_bin = color_hex_to_bin(color_rgb_to_hex(color));
+            
+            // for each bit in color
+            for (let k = 0; k &lt; 24; k++) {
+                if (color_bin[k] == &quot;1&quot;) {
+                    svg.append('rect')
+                        .attr('x', margin.left + k * rect_width + rect_margin)
+                        .attr('y', margin.top + i * rect_height * color_steps + j * rect_height)
+                        .attr('width', Math.max(rect_width  - 2 * rect_margin, 2))
+                        .attr('height', rect_height)
+                        .style('fill', color)
+                        .style('stroke', color)
+                        .style('stroke-width', 0.25);
+                }
+            }
+        }
+    }
+
+    // add in last color (color_i) to bottom row
+    let color     = colors[colors.length - 1],
+        color_bin = color_hex_to_bin(color);
+    for (let i = 0; i &lt; 24; i++) {
+        if (color_bin[i] == &quot;1&quot;) {
+            svg.append('rect')
+                .attr('x', margin.left + i * rect_width + rect_margin)
+                .attr('y', margin.top + (colors.length - 1) * rect_height * color_steps)
+                .attr('width', Math.max(rect_width - 2 * rect_margin, 2))
+                .attr('height', rect_height)
+                .style('fill', color)
+                .style('stroke', color)
+                .style('stroke-width', 0.25);
+        }
+    }
+}
+
+// radial pattern for representing the binary representation of a color with colors
+function radial_viz(colors, color_steps) {
+    let arc = d3.arc(),
+        angle_diff = 2 * Math.PI / colors.length,
+        radius_margin = 4.5;
+
+    // for each color in list, make ranging color scale
+    for (let i = 0; i &lt; colors.length; i++) {
+        let color_scale = d3.scaleLinear()
+            .domain([0, color_steps])
+            .range([colors[i], colors[i + 1 &lt; colors.length ? i + 1 : 0]]);
+
+        // for each color in color scale (color_steps steps)
+        for (let j = 0; j &lt; color_steps; j++) {
+            let color     = color_scale(j),
+                color_bin = color_hex_to_bin(color_rgb_to_hex(color));
+
+            // for each bit in color
+            for (let k = 0; k &lt; 24; k++) {
+                if (color_bin[k] == '1') {
+                    svg.append('path')
+                        .attr('transform', `translate(${margin.left + width / 2}, ${margin.top + height / 2})`)
+                        .attr('d', arc({
+                            innerRadius: (width * k)       / (2 * 24) + radius_margin,
+                            outerRadius: (width * (k + 1)) / (2 * 24) - radius_margin,
+                            startAngle: angle_diff  * (j / color_steps + i),
+                            endAngle: angle_diff * ((j + 1) / color_steps + i)
+                        }))
+                        .style('fill', color)
+                        .style('stroke', color)
+                        .style('stroke-width', 0.1);
+                }
+            }
+        }
+    }
+}
+
+var viz_fns = [line_viz, radial_viz],
+    viz_ix  = 1;
+
+/*******************/
+/*** RENDER PLOT ***/
+/*******************/
+
+// make svg plot square
+svg.style('height', svg.style('width'));
+
+// draw viz
+viz_fns[viz_ix](colors, parseInt($(&quot;#range_span&quot;).val()));
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+// on color step slider update
+d3.select('#range_span')
+    .on(&quot;input&quot;, function() {
+        svg.selectAll('rect, path').remove();
+
+        viz_fns[viz_ix](colors, parseInt($(&quot;#range_span&quot;).val()));
+    });
+
+// on viz type radio update
+d3.selectAll('input[name=&quot;viz-type&quot;]')
+    .on(&quot;change&quot;, function() {
+        svg.selectAll('rect, path').remove();
+
+        if (d3.select(this).attr('value') == &quot;radial&quot;) viz_ix = 1;
+        else viz_ix = 0;
+
+        viz_fns[viz_ix](colors, parseInt($(&quot;#range_span&quot;).val()));
+    });
+
+// on resize
+$(window).resize(function() {
+    if ($('#d3-gen-art').width() - margin.left - margin.right != width) {
+        svg.selectAll('rect, path').remove();
+
+        svg.style('height', svg.style('width'));
+
+        width  = $('#d3-gen-art').width() -  margin.left - margin.right,
+        height = $('#d3-gen-art').width() - margin.top - margin.bottom;
+
+        viz_fns[viz_ix](colors, parseInt(document.getElementById(&quot;range_span&quot;).value));
+    }
+});
+
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2018-04-23T01:00:00-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2018/04/23/generative-art.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2018/04/23/generative-art.html</guid>
+                </item>
+                
+            
+                
+            
+                
+                <item>
                     <title>How Obama and Trump Responded to School Shootings</title>
                     <description>&lt;p&gt;In response to a suggestion from Franklin Leonard, the Washington Post recently published &lt;a href=&quot;https://www.youtube.com/watch?v=uHrvODeA8-E&quot; target=&quot;_blank&quot;&gt;a video&lt;/a&gt; providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents’ approaches.&lt;/p&gt;
 
