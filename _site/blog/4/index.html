@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/main.style.css">
+    <link rel="stylesheet" href="/assets/css/landing.style.css">
     
 
     
@@ -19,6 +19,7 @@
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
@@ -50,36 +51,41 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Blog | Ben Tanen</title>
+    <title>Ben Tanen</title>
 </head>
 
 
 <body>
-    <!-- adding support for mathjx -->
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-    <script type="text/javascript"
-        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+    <svg id="background"></svg>
 
-    <div class='wrapper'>
-    	<div id='side'>
-    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
-
-    <div id='site-links' class="tk-europa">
-        <p><a href='/'>Home</a></p>
-        <p><a href='/projects/' >Projects</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/' >Resume</a></p>
-        <p><a href='/blog/all/' class="selected-link">Blog</a></p>
+    <div id='landing-menu'>
+        <img src="/assets/img/menu.png" alt="A menu for navigating the site" />
+        <div id='site-links' class="tk-europa">
+            <p><a class="selected-link">Home</a></p>
+            <p><a href='/projects/'>Projects</a></p>
+            <p><a href='/resume/BenjaminTanen_Resume.pdf'>Resume</a></p>
+            <p><a href='/blog/all/'>Blog</a></p>
+        </div>
     </div>
 
-    <ul id="social-links">
+    <div id='landing-text'>
+        <div id='landing-header'>
+            <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
+            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
+        </div>
+
+        <p>I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories. I graduated from Tufts University in 2017 and I currently work as an analyst at Analysis Group in Boston, MA. <a href="http://link.ben-tanen.com/resume/" target="_new">In the past</a>, I’ve worked as a software developer and analyst at a few different software, finance, and consulting companies.</p>
+
+<p>Over the years, I've worked on projects dealing with <a href="http://asl-lex.org/" target="_new">American Sign Language</a>, <a href="http://link.ben-tanen.com/ultimate-ch/" target="_new">computational geometry</a> and <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_new">compression algorithms</a>, <a href="http://link.ben-tanen.com/drunken-world/" target="_new">alcohol consumption</a>, and <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_new">the NHL playoffs</a>. You can find more on my project work <a href="/projects/">here</a>.</p>
+
+
+<p>On occasion, I'll write about things I'm working on and other stuff that interests me. I most recently wrote about <a href="/projects/oscars-popular-film/">what the Academy considers a popular movie vs. a great film</a>. You can find all that I've written <a href="/blog/all/">here</a>.</p>
+
+<p>I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/">my collection</a> and I love chatting about filmmaking, law, and politics. While at Tufts, I spun a weekly <a href="http://link.ben-tanen.com/papaT/">radio show</a> as Papa T on Tufts' WMFO and I played club hockey. On occasion, I take <a href="http://link.ben-tanen.com/photo/">pictures</a> with my camera. <span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>
+
+<p>Want to chat, maybe over a nice bowl of spicy ramen? Feel free to reach out on <a href="https://twitter.com/ben_tanen" target="_new">Twitter</a> or over <a href="mailto:ben.tanen@gmail.com">e-mail</a>.</p>
+
+        <ul id="social-links">
     <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
@@ -138,543 +144,9 @@ MathJax.Hub.Config({
         </a>
     </li>
 </ul>
-</div>
-
-    	<div class='main'>
-    		
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Random Brain Fun with Illustrator</h1>
-       <!--
-       <p class="post-meta">Jun 23 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Over the years, I’ve dabbled a bit with digital art and design. Most of these attempts have been done with Photoshop, purely because of my existing comfort with the software. But in an attempt to branch out, I decided I would try to work on my skills with Illustrator instead. Inspired by a graphic from <a href="https://www.youtube.com/watch?v=Bxp9Rh7srIg">WIRED</a>, I opened up Illustrator (and Google, of course) and gave it a try.</p>
-
-<p>In the end, I got something that does indeed look somewhat like a brain. From there, I exported the SVG code, threw together a quick animation with D3, and viola! Who knew Illustrator was so fun. Nothing crazy, but we’ve all got to start somewhere. Expect more to come…</p>
-
-<style>
-    #brain-viz-container {
-        width: 325px;
-        margin: auto;
-    }
-
-    #brain-viz {
-        width: 100%;
-        height: auto;
-    }
-
-    #brain-viz line {
-        fill: none;
-        stroke: #77bdee;
-        stroke-width: 3;
-    }
-
-    #brain-viz circle:not(#background-circle) {
-        fill: #77bdee;
-    }
-</style>
-
-<div id="brain-viz-container">
-    <svg id="brain-viz" viewBox="-50 -50 600 600">
-        <circle id="background-circle" cx="250" cy="250" r="300" />
-        <line x1="356.396" y1="213.275" x2="295.861" y2="212.697" />
-        <line x1="266.287" y1="254.945" x2="356.396" y2="213.275" />
-        <line x1="262.855" y1="297.188" x2="375.528" y2="270.223" />
-        <line x1="139.737" y1="247.904" x2="80.657" y2="287.807" />
-        <line x1="56.247" y1="182.52" x2="139.737" y2="247.904" />
-        <line x1="56.247" y1="182.52" x2="106.944" y2="157.976" />
-        <line x1="135.713" y1="212.697" x2="56.247" y2="182.52" />
-        <line x1="106.944" y1="157.976" x2="135.713" y2="212.697" />
-        <line x1="177.224" y1="322.676" x2="136.987" y2="357.548" />
-        <line x1="210.754" y1="348.16" x2="177.224" y2="322.676" />
-        <line x1="273.791" y1="340.111" x2="210.754" y2="348.16" />
-        <line x1="332.804" y1="454.115" x2="273.791" y2="340.111" />
-        <line x1="260.378" y1="295.854" x2="326.099" y2="341.453" />
-        <line x1="268.426" y1="256.957" x2="260.378" y2="295.854" />
-        <line x1="240.261" y1="200.626" x2="268.426" y2="256.957" />
-        <line x1="295.25" y1="215.379" x2="240.261" y2="200.626" />
-        <line x1="314.027" y1="171.12" x2="295.25" y2="215.379" />
-        <line x1="356.945" y1="215.379" x2="314.027" y2="171.12" />
-        <line x1="377.062" y1="271.711" x2="356.945" y2="215.379" />
-        <line x1="358.287" y1="303.9" x2="377.062" y2="271.711" />
-        <line x1="373.04" y1="362.912" x2="358.287" y2="303.9" />
-        <line x1="395.841" y1="325.357" x2="373.04" y2="362.912" />
-        <line x1="410.595" y1="374.982" x2="395.841" y2="325.357" />
-        <line x1="417.971" y1="308.499" x2="464.242" y2="337.43" />
-        <line x1="449.488" y1="364.254" x2="417.971" y2="308.499" />
-        <line x1="417.3" y1="309.266" x2="476.112" y2="302.424" />
-        <line x1="379.746" y1="222.086" x2="417.3" y2="309.266" />
-        <line x1="411.936" y1="208.674" x2="379.746" y2="222.086" />
-        <line x1="472.29" y1="246.497" x2="411.936" y2="208.674" />
-        <line x1="386.453" y1="160.39" x2="446.808" y2="180.508" />
-        <line x1="410.595" y1="128.201" x2="386.453" y2="160.39" />
-        <line x1="322.075" y1="134.907" x2="295.25" y2="55.776" />
-        <line x1="268.426" y1="125.519" x2="322.075" y2="134.907" />
-        <line x1="250.99" y1="55.776" x2="268.426" y2="125.519" />
-        <line x1="171.859" y1="90.647" x2="250.99" y2="55.776" />
-        <line x1="154.423" y1="62.481" x2="171.859" y2="90.647" />
-        <line x1="57.856" y1="181.85" x2="37.738" y2="142.954" />
-        <line x1="17.62" y1="196.603" x2="57.856" y2="181.85" />
-        <line x1="49.809" y1="239.521" x2="17.62" y2="196.603" />
-        <line x1="44.444" y1="278.416" x2="49.809" y2="239.521" />
-        <line x1="323.014" y1="131.822" x2="250.99" y2="55.776" />
-        <line x1="357.616" y1="212.697" x2="323.014" y2="131.822" />
-        <line x1="386.185" y1="159.787" x2="357.616" y2="212.697" />
-        <line x1="323.014" y1="131.822" x2="386.185" y2="106.272" />
-        <line x1="330.055" y1="71.267" x2="323.014" y2="131.822" />
-        <line x1="37.738" y1="142.954" x2="154.423" y2="62.481" />
-        <line x1="65.099" y1="103.858" x2="56.247" y2="182.52" />
-        <line x1="104.53" y1="103.858" x2="65.099" y2="103.858" />
-        <line x1="142.755" y1="106.876" x2="104.53" y2="103.858" />
-        <line x1="165.287" y1="131.822" x2="142.755" y2="106.876" />
-        <line x1="223.831" y1="137.053" x2="165.287" y2="131.822" />
-        <line x1="268.693" y1="124.781" x2="223.831" y2="137.053" />
-        <line x1="241.132" y1="200.626" x2="268.693" y2="124.781" />
-        <line x1="217.795" y1="232.413" x2="241.132" y2="200.626" />
-        <line x1="160.849" y1="170.248" x2="217.795" y2="232.413" />
-        <line x1="106.944" y1="157.976" x2="160.849" y2="170.248" />
-        <line x1="56.247" y1="182.52" x2="106.944" y2="157.976" />
-        <line x1="165.287" y1="131.822" x2="104.53" y2="103.858" />
-        <line x1="160.849" y1="170.248" x2="165.287" y2="131.822" />
-        <line x1="241.132" y1="200.626" x2="160.849" y2="170.248" />
-        <line x1="217.795" y1="232.413" x2="241.132" y2="200.626" />
-        <line x1="139.737" y1="247.904" x2="217.795" y2="232.413" />
-        <line x1="160.849" y1="170.248" x2="139.737" y2="247.904" />
-        <line x1="104.53" y1="103.858" x2="106.944" y2="157.976" />
-        <line x1="142.755" y1="106.876" x2="154.423" y2="62.817" />
-        <line x1="171.538" y1="90.086" x2="142.755" y2="106.876" />
-        <line x1="165.287" y1="131.822" x2="174.139" y2="88.568" />
-        <line x1="250.99" y1="55.776" x2="165.287" y2="131.822" />
-        <line x1="223.831" y1="137.053" x2="250.99" y2="55.776" />
-        <line x1="160.849" y1="170.248" x2="223.831" y2="137.053" />
-        <line x1="135.713" y1="212.697" x2="160.849" y2="170.248" />
-        <line x1="139.737" y1="247.904" x2="135.713" y2="212.697" />
-        <line x1="137.122" y1="274.661" x2="139.737" y2="247.904" />
-        <line x1="217.795" y1="232.413" x2="137.122" y2="274.661" />
-        <line x1="178.163" y1="323.348" x2="217.795" y2="232.413" />
-        <line x1="261.452" y1="296.188" x2="178.163" y2="323.348" />
-        <line x1="396.646" y1="326.171" x2="376.125" y2="268.225" />
-        <line x1="417.3" y1="309.266" x2="396.646" y2="326.171" />
-        <line x1="472.29" y1="246.496" x2="417.3" y2="309.266" />
-        <line x1="412.338" y1="375.461" x2="417.971" y2="307.654" />
-        <line x1="326.232" y1="340.254" x2="371.699" y2="361.378" />
-        <line x1="308.335" y1="370.32" x2="326.232" y2="340.254" />
-        <line x1="261.452" y1="296.188" x2="308.335" y2="370.32" />
-        <line x1="268.493" y1="254.945" x2="261.452" y2="296.188" />
-        <line x1="217.795" y1="232.413" x2="268.493" y2="254.945" />
-        <line x1="261.452" y1="296.188" x2="217.795" y2="232.413" />
-        <line x1="213.065" y1="347.295" x2="261.452" y2="296.188" />
-        <line x1="137.122" y1="274.661" x2="137.122" y2="356.341" />
-        <line x1="178.163" y1="323.348" x2="137.122" y2="274.661" />
-        <line x1="308.335" y1="370.32" x2="334.682" y2="457.334" />
-        <line x1="273.925" y1="340.254" x2="308.335" y2="370.32" />
-        <line x1="261.452" y1="296.188" x2="273.925" y2="340.254" />
-        <line x1="357.616" y1="303.229" x2="261.452" y2="296.188" />
-        <line x1="326.232" y1="340.254" x2="357.616" y2="303.229" />
-        <line x1="376.125" y1="268.225" x2="371.699" y2="361.378" />
-        <line x1="417.971" y1="307.654" x2="376.125" y2="268.225" />
-        <line x1="412.338" y1="210.686" x2="417.971" y2="307.654" />
-        <line x1="447.344" y1="177.289" x2="412.338" y2="210.686" />
-        <line x1="412.338" y1="210.686" x2="410.595" y2="128.201" />
-        <line x1="386.185" y1="159.787" x2="412.338" y2="210.686" />
-        <line x1="380.752" y1="222.756" x2="386.185" y2="159.787" />
-        <line x1="357.616" y1="212.697" x2="380.752" y2="222.756" />
-        <line x1="386.185" y1="106.272" x2="357.616" y2="212.697" />
-        <line x1="323.014" y1="131.822" x2="360.433" y2="86.959" />
-        <line x1="314.161" y1="170.248" x2="323.014" y2="131.822" />
-        <line x1="268.693" y1="124.781" x2="314.161" y2="170.248" />
-        <line x1="295.861" y1="212.697" x2="268.693" y2="124.781" />
-        <line x1="376.125" y1="268.225" x2="268.493" y2="254.945" />
-        <line x1="380.752" y1="222.756" x2="376.125" y2="268.225" />
-        <line x1="105.25" y1="103.915" x2="160.849" y2="170.248" />
-        <line x1="56.247" y1="182.52" x2="104.53" y2="103.858" />
-        <line x1="80.657" y1="287.807" x2="56.247" y2="182.52" />
-        <line x1="49.809" y1="239.521" x2="80.657" y2="287.807" />
-        <line x1="385.024" y1="106.742" x2="386.453" y2="161.333" />
-        <line class="brain-border" x1="42.176" y1="276.404" x2="17.62" y2="193.75" />
-        <line class="brain-border" x1="134.305" y1="274.393" x2="80.657" y2="287.807" />
-        <line class="brain-border" x1="118.211" y1="322.676" x2="134.305" y2="274.393" />
-        <line class="brain-border" x1="136.987" y1="357.548" x2="118.211" y2="322.676" />
-        <line class="brain-border" x1="326.099" y1="341.453" x2="332.804" y2="454.115" />
-        <line class="brain-border" x1="449.488" y1="364.254" x2="410.595" y2="374.982" />
-        <line class="brain-border" x1="464.242" y1="337.43" x2="449.488" y2="364.254" />
-        <line class="brain-border" x1="446.808" y1="180.508" x2="472.29" y2="246.497" />
-        <line class="brain-border" x1="386.453" y1="106.742" x2="410.595" y2="128.201" />
-        <line class="brain-border" x1="358.287" y1="87.965" x2="386.453" y2="106.742" />
-        <line class="brain-border" x1="328.78" y1="71.87" x2="358.287" y2="87.965" />
-        <line class="brain-border" x1="295.25" y1="55.776" x2="328.78" y2="71.87" />
-        <line class="brain-border" x1="64.562" y1="105.401" x2="154.423" y2="62.481" />
-        <line class="brain-border" x1="37.738" y1="142.954" x2="64.562" y2="105.401" />
-        <line class="brain-border" x1="80.657" y1="287.807" x2="44.444" y2="278.416" />
-        <line class="brain-border" x1="250.99" y1="55.776" x2="295.25" y2="55.776" />
-        <line class="brain-border" x1="154.423" y1="62.481" x2="250.99" y2="55.776" />
-        <line class="brain-border" x1="17.62" y1="196.603" x2="37.738" y2="142.954" />
-        <line class="brain-border" x1="476.112" y1="302.424" x2="472.29" y2="246.496" />
-        <line class="brain-border" x1="464.242" y1="337.43" x2="476.112" y2="302.424" />
-        <line class="brain-border" x1="371.699" y1="361.378" x2="412.338" y2="375.461" />
-        <line class="brain-border" x1="137.122" y1="356.341" x2="213.065" y2="347.295" />
-        <line class="brain-border" x1="371.699" y1="361.378" x2="326.232" y2="340.254" />
-        <line class="brain-border" x1="410.595" y1="128.201" x2="447.344" y2="177.289" />
-        <line class="brain-border" x1="211.5" y1="348" x2="332.804" y2="455.5" />
-        <circle cx="294.654" cy="56.776" r="7.042" />
-        <circle cx="248.003" cy="55.167" r="7.042" />
-        <circle cx="152.827" cy="62.817" r="7.042" />
-        <circle cx="170.542" cy="88.568" r="7.042" />
-        <circle cx="268.098" cy="124.781" r="7.041" />
-        <circle cx="312.565" cy="169.248" r="7.042" />
-        <circle cx="323.417" cy="131.822" r="7.042" />
-        <circle cx="328.458" cy="72.267" r="7.041" />
-        <circle cx="356.836" cy="86.959" r="7.042" />
-        <circle cx="382.587" cy="106.272" r="7.042" />
-        <circle cx="407.131" cy="126.391" r="7.042" />
-        <circle cx="443.747" cy="177.289" r="7.042" />
-        <circle cx="165.69" cy="130.822" r="7.042" />
-        <circle cx="223.234" cy="137.053" r="7.041" />
-        <circle cx="143.158" cy="105.876" r="7.041" />
-        <circle cx="101.934" cy="103.858" r="7.041" />
-        <circle cx="105.348" cy="157.976" r="7.041" />
-        <circle cx="58.65" cy="180.52" r="7.041" />
-        <circle cx="36.141" cy="140.674" r="7.042" />
-        <circle cx="62.502" cy="103.858" r="7.041" />
-        <circle cx="18.041" cy="195.603" r="7.041" />
-        <circle cx="49.218" cy="240.119" r="7.042" />
-        <circle cx="42.994" cy="275.667" r="7.042" />
-        <circle cx="79.597" cy="287.285" r="7.042" />
-        <circle cx="135.525" cy="273.661" r="7.041" />
-        <circle cx="118.614" cy="323.347" r="7.042" />
-        <circle cx="137.525" cy="356.341" r="7.041" />
-        <circle cx="178.566" cy="323.348" r="7.041" />
-        <circle cx="211.469" cy="347.295" r="7.041" />
-        <circle cx="270.329" cy="340.254" r="7.042" />
-        <circle cx="332.085" cy="455.334" r="7.041" />
-        <circle cx="307.738" cy="369.321" r="7.041" />
-        <circle cx="322.635" cy="340.254" r="7.042" />
-        <circle cx="372.103" cy="360.378" r="7.041" />
-        <circle cx="408.741" cy="375.461" r="7.041" />
-        <circle cx="446.562" cy="363.28" r="7.042" />
-        <circle cx="463.326" cy="336.535" r="7.042" />
-        <circle cx="397.049" cy="325.171" r="7.041" />
-        <circle cx="357.02" cy="303.229" r="7.042" />
-        <circle cx="262.855" cy="297.188" r="7.042" />
-        <circle cx="375.528" cy="270.225" r="7.041" />
-        <circle cx="266.287" cy="254.945" r="7.041" />
-        <circle cx="214.199" cy="232.413" r="7.042" />
-        <circle cx="240.536" cy="200.626" r="7.042" />
-        <circle cx="294.266" cy="211.697" r="7.042" />
-        <circle cx="357.02" cy="212.697" r="7.042" />
-        <circle cx="380.156" cy="222.756" r="7.042" />
-        <circle cx="411.741" cy="209.686" r="7.041" />
-        <circle cx="386.587" cy="160.787" r="7.042" />
-        <circle cx="160.252" cy="169.248" r="7.041" />
-        <circle cx="132.117" cy="212.697" r="7.041" />
-        <circle cx="138.141" cy="246.904" r="7.041" />
-        <circle cx="473.516" cy="302.424" r="7.041" />
-        <circle cx="470.693" cy="245.496" r="7.042" />
-        <circle cx="417.374" cy="307.654" r="7.041" />
-    </svg>
-</div>
-
-<script>
-    function animate_brain() {
-        var available_lines = brain_svg.selectAll('line:not(.tbd):not(.brain-border)');
-
-        if (available_lines.size() == 0) return;
-
-        var ix = Math.floor(Math.random() * available_lines.size());
-
-        var l1 = d3.select(available_lines._groups[0][ix]);
-        var l2 = brain_svg.append('line')
-            .attr('x1', l1.attr('x2'))
-            .attr('y1', l1.attr('y2'))
-            .attr('x2', l1.attr('x2'))
-            .attr('y2', l1.attr('y2'));
-
-        var x1 = l1.attr('x1'),
-            y1 = l1.attr('y1');
-
-        l2.transition().duration(1000).delay(200)
-            .attr('x1', x1)
-            .attr('y1', y1);
-
-        l1.transition().duration(1000)
-            .attr('x2', x1)
-            .attr('y2', y1)
-            .transition().delay(2000)
-            .remove();
-    }
-
-    var brain_svg = d3.select('#brain-viz');
-    var lines = brain_svg.selectAll('line'),
-        dots  = brain_svg.selectAll('circle');
-
-    var brain_interval = setInterval(function() {
-        animate_brain();
-    }, 200);
-
-    $(window).blur(function() {
-        clearInterval(brain_interval);
-    });
-
-    $(window).focus(function() {
-        brain_interval = setInterval(function() {
-            animate_brain();
-        }, 200);
-    });
-</script>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Explaining Adaptive Huffman Coding with Scrollytelling</h1>
-       <!--
-       <p class="post-meta">Jun 01 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>After months of reading and being impressed by the <a href="https://pudding.cool/2017/04/beer/" target="_blank">very</a> <a href="https://pudding.cool/2017/01/making-it-big/" target="_blank">cool</a> <a href="https://pudding.cool/2017/02/vocabulary/" target="_blank">visual</a> <a href="https://pudding.cool/2017/05/song-repetition/" target="_blank">essays</a> put out by <a href="https://pudding.cool/" target="_blank">The Pudding</a>, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">traditional Huffman Coding</a> to <a href="https://en.wikipedia.org/wiki/Adaptive_Huffman_coding" target="_blank">adaptive Huffman Coding</a>.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/huffman-coding.gif" target="_blank">
-    <img src="/assets/img/posts/huffman-coding.gif" alt="A screen capture of the scrollytelling visualization" />
-    </a>
-</p>
-
-<!-- more -->
-
-<p>To give a quick preview, Huffman Coding is a lossless data compression algorithm, which means we can reduce the size of any dataset by 15 - 30% without corrupting any of our data. However, in order to do this, Huffman Coding requires some prior knowledge of our dataset, which means we will be slowed down if we don’t already have this information. To improve upon this, we can instead use Adaptive Huffman Coding, which enables us to get comparable compression efficiency in a fraction of the time. Intrigued? You can check out <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_blank">the full explanation</a> for more.</p>
-
-<p>If you’re interested in the code, that can be found <a href="https://github.com/ben-tanen/adaptive-huffman/" target="_blank">here</a>. If you’re interested in trying out your own scrollytelling project, I would definitely suggest checking out The Pudding’s work as well as <a href="https://pudding.cool/process/how-to-implement-scrollytelling/" target="_blank">this tutorial</a> they put together - it was a huge help for me.</p>
-
-<p><em>Usability Note</em>: I have noticed some rendering issues when viewing the second half of the site in Safari and Firefox <span style="font-size: 9px">(sorry)</span>. I’m trying to figure out the issue, but for now, I would suggest viewing the site in Chrome.</p>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>The Chaos Game</h1>
-       <!--
-       <p class="post-meta">Apr 28 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>After watching <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">this recent video from Numberphile</a>, I decided to throw together my own little visualizer of <a href="https://en.wikipedia.org/wiki/Chaos_game">the chaos game</a>.</p>
-
-<p>To briefly explain the game, we basically start by randomly placing some “bases” on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a <a href="https://en.wikipedia.org/wiki/Fractal">fractal</a>!</p>
-
-<!-- more -->
-
-<style>
-    #chaos-game-container {
-        width: 300px;
-        margin: auto;
-        cursor: pointer;
-    }
-
-    #chaos-game-options {
-        width: 300px;
-        margin: auto;
-    }
-
-    #chaos-game-options form {
-        width: 205px;
-        margin: auto;
-        padding-top: 5px;
-    }
-
-    #chaos-game-options form input {
-        cursor: pointer;
-    }
-
-    #chaos-game-options form input:nth-of-type(n+2) {
-        margin-left: 20px;
-    }
-
-    #chaos-game-options p {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    #chaos-game-start {
-        color: #77bdee;
-        cursor: pointer;
-    }
-
-    #chaos-game-start:hover {
-        text-decoration: underline;
-    }
-</style>
-
-<div id="chaos-game-container">
-</div>
-
-<div id="chaos-game-options">
-    <!--
-    <form action="" id="num-bases">
-        <input type="radio" name="num-bases" value="3" checked> Tri
-        <input type="radio" name="num-bases" value="4"> Quad
-        <input type="radio" name="num-bases" value="5"> Penta
-    </form>
-    -->
-    <p><span id="chaos-game-start">Start</span>, i = <span id="chaos-game-i">0</span></p>
-</div>
-
-<p>I always enjoy funky little phenomena like this so I decided to make my own representation of it in D3. I also decided to include colors for each of the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.</p>
-
-<p>I’m in the works of implementing it for four, five, etc. bases, but for now, here is the triangular chaos game!</p>
-
-<script>
-    /* make that d3 svg canvas */
-    var dimension = 300;
-    var chaos_svg = d3.select('#chaos-game-container').append('svg')
-        .attr('width', dimension)
-        .attr('height', dimension);
-
-    /* declare some helper functions */
-    var randomize_pos = function() {
-        return Math.random() * (dimension / 10) - (dimension / 20);
-    }
-
-    var generate_bases = function(ix) {
-        for (var i = 0; i < bases[ix].length; i++) {
-            var cx  = bases[ix][i][0] + randomize_pos();
-            var cy  = bases[ix][i][1] + randomize_pos();
-            var c_i = chaos_svg.append("circle")
-                         .attr("cx", cx)
-                         .attr("cy", cy)
-                         .attr("r",  5)
-                         .attr("fill", base_colors[i]);
-            a_bases.push(c_i);
-        }
-    }
-
-    var pick_rand_base = function(bases) {
-        var scale = d3.scaleQuantize().domain([0, 1]).range(bases);
-        return scale(Math.random());
-    }
-
-    var midpoint = function(p1, p2) {
-        return [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
-    }
-
-    var place_new_point = function() {
-        var b  = pick_rand_base(a_bases);
-        var bi = a_bases.indexOf(b);
-        var mp = midpoint(p_curr, [+b.attr("cx"), +b.attr("cy")]);
-        
-        chaos_svg.append("circle")
-            .attr("cx", mp[0])
-            .attr("cy", mp[1])
-            .attr("r", 2)
-            .attr("fill", base_colors[bi]);
-        p_curr = mp;
-    }
-
-
-    /* initialize some vars */
-    var bases = [
-        [[dimension * (1/2), dimension * (1/10)], [dimension * (1/10), dimension * (9/10)], [dimension * (9/10), dimension * (9/10)]], // triangle
-        [[dimension * (2/10), dimension * (2/10)], [dimension * (2/10), dimension * (8/10)], [dimension * (8/10), dimension * (2/10)], [dimension * (8/10), dimension * (8/10)]], // square
-    ];
-    var a_bases = [ ];
-    var base_colors = ["#49E9E7", "#FF4CC8", "#23CE6B", "#872F9C", "#328DDF"]
-
-    /* generate bases */
-    generate_bases(0);
-
-    $('#num-bases').change(function() {
-        // clear current circles
-        chaos_svg.selectAll("circle").remove();
-        a_bases = [ ];
-
-        // regenerate bases
-        generate_bases(parseInt($("input:radio[name='num-bases']:checked").val()) - 3);
-    });
-
-    $('#chaos-game-start').click(function() {
-        // clear all points
-        chaos_svg.selectAll("circle").filter(function(d) { return d3.select(this).attr("r") < 5 }).remove();
-
-        // draw first point
-        var c1 = chaos_svg.append("circle")
-            .attr("cx", (dimension / 2) + randomize_pos() * 1.25)
-            .attr("cy", (dimension / 2) + randomize_pos() * 1.25)
-            .attr("r", 2)
-            .attr("fill", "#808080");
-        p_curr = [+c1.attr("cx"), +c1.attr("cy")];
-
-        for (var i = 0; i < 2500; i++) {
-            setTimeout(function() {
-                place_new_point(); 
-                $('#chaos-game-i').html(chaos_svg.selectAll("circle").size() - 4);
-            }, i * 3)
-            
-        }
-    });
-</script>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>How I Keep Track of All My Shows</h1>
-       <!--
-       <p class="post-meta">Jan 24 2017 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>As I’ve <a href="/blog/2016/05/08/netflix-history.html">previously mentioned</a>, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly had way too much time on my hands, I decided to make <strong>TV Monitor</strong>, a little Chrome extension that keeps track of all of this for me.</p>
-
-<p>A lot of inspiration for the extension came from the <a href="https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb">Feedly Notifier extension</a> I use to keep track of my RSS feeds. I found its design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/tv-monitor-demo.gif" target="_blank">
-    <img src="/assets/img/posts/tv-monitor-demo.gif" width="350px" />
-    </a>
-</p>
-
-<p>Overall, building this was easier than expected. It was surprisingly simple to get a basic Chrome extension going and from there it was just web development like any traditional site. The backend is built using a basic Django app that queries IMDB to see if there are any new episodes available of a particular show. If you’re interested, feel free to check out <a href="https://github.com/ben-tanen/tv-monitor">the frontend code</a> (backend maybe to come).</p>
-
-<p>Since I was building this just for me, I took some shortcuts in terms of security, just for my own sanity, so I’m not planning to publish the extension on the Chrome store, at least not in the foreseeable future. Maybe that’ll be the project for next Winter Break…</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='pagination'>
-    
-    <p id='pagination-previous'><a href='/blog/3'>&#8592; Newer Posts</a></p>
-    
-
-    <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
-
-    
-    <p id='pagination-next'><a href='/blog/5'>Older Posts &#8594;</a></p>
-    
-</div>
-
-    	</div>
     </div>
-	
+
+    <script src="/assets/js/landing.js">
+    </script>
 </body>
 </html>

@@ -518,7 +518,7 @@ tbody td:nth-of-type(1) {
     #face {
         width: 75px;
         top: 22.5px;
-        left: calc(50vw - 45px);
+        left: calc(50vw - 37.5px);
     }
 }
 

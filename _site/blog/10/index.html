@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/main.style.css">
+    <link rel="stylesheet" href="/assets/css/landing.style.css">
     
 
     
@@ -19,6 +19,7 @@
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
@@ -50,36 +51,41 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Blog | Ben Tanen</title>
+    <title>Ben Tanen</title>
 </head>
 
 
 <body>
-    <!-- adding support for mathjx -->
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-    <script type="text/javascript"
-        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+    <svg id="background"></svg>
 
-    <div class='wrapper'>
-    	<div id='side'>
-    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
-
-    <div id='site-links' class="tk-europa">
-        <p><a href='/'>Home</a></p>
-        <p><a href='/projects/' >Projects</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/' >Resume</a></p>
-        <p><a href='/blog/all/' class="selected-link">Blog</a></p>
+    <div id='landing-menu'>
+        <img src="/assets/img/menu.png" alt="A menu for navigating the site" />
+        <div id='site-links' class="tk-europa">
+            <p><a class="selected-link">Home</a></p>
+            <p><a href='/projects/'>Projects</a></p>
+            <p><a href='/resume/BenjaminTanen_Resume.pdf'>Resume</a></p>
+            <p><a href='/blog/all/'>Blog</a></p>
+        </div>
     </div>
 
-    <ul id="social-links">
+    <div id='landing-text'>
+        <div id='landing-header'>
+            <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
+            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
+        </div>
+
+        <p>I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories. I graduated from Tufts University in 2017 and I currently work as an analyst at Analysis Group in Boston, MA. <a href="http://link.ben-tanen.com/resume/" target="_new">In the past</a>, I’ve worked as a software developer and analyst at a few different software, finance, and consulting companies.</p>
+
+<p>Over the years, I've worked on projects dealing with <a href="http://asl-lex.org/" target="_new">American Sign Language</a>, <a href="http://link.ben-tanen.com/ultimate-ch/" target="_new">computational geometry</a> and <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_new">compression algorithms</a>, <a href="http://link.ben-tanen.com/drunken-world/" target="_new">alcohol consumption</a>, and <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_new">the NHL playoffs</a>. You can find more on my project work <a href="/projects/">here</a>.</p>
+
+
+<p>On occasion, I'll write about things I'm working on and other stuff that interests me. I most recently wrote about <a href="/projects/oscars-popular-film/">what the Academy considers a popular movie vs. a great film</a>. You can find all that I've written <a href="/blog/all/">here</a>.</p>
+
+<p>I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/">my collection</a> and I love chatting about filmmaking, law, and politics. While at Tufts, I spun a weekly <a href="http://link.ben-tanen.com/papaT/">radio show</a> as Papa T on Tufts' WMFO and I played club hockey. On occasion, I take <a href="http://link.ben-tanen.com/photo/">pictures</a> with my camera. <span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>
+
+<p>Want to chat, maybe over a nice bowl of spicy ramen? Feel free to reach out on <a href="https://twitter.com/ben_tanen" target="_new">Twitter</a> or over <a href="mailto:ben.tanen@gmail.com">e-mail</a>.</p>
+
+        <ul id="social-links">
     <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
@@ -138,248 +144,9 @@ MathJax.Hub.Config({
         </a>
     </li>
 </ul>
-</div>
-
-    	<div class='main'>
-    		
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Old Python Games / Projects</h1>
-       <!--
-       <p class="post-meta">Jul 01 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>After posting my two most recent retro posts (<a href="/blog/2015/06/17/retro-ios-update.html">#1</a>, <a href="/blog/2015/06/26/retro-game-theory.html">#2</a>), I thought I’d post some of my older projects as well. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.</p>
-
-<p>The first coding project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I’m not sure how or why… Either way, here is the <a href="https://github.com/ben-tanen/py-games/blob/master/battleship.py">code on Github</a>.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/python-game-minesweeper.png" target="_blank">
-    <img src="/assets/img/posts/python-game-minesweeper.png" alt="A screenshot of the Minesweeper game" />
-    </a>
-</p>
-
-<figcaption>
-Good Ol' Unix Terminal Games
-</figcaption>
-
-<p>This next project was my first original game, Minesweeper! It was built very much like Battleship but the logic was a little more complicated. As you can see, it’s not expertly written since this was after like a month of knowing Python. I might consider re-writting / refactoring the code not that I’m a tad more experienced. Here is the <a href="https://github.com/ben-tanen/py-games/blob/master/minesweeper.py">original code on GH</a>.</p>
-
-<p>A year later than my other games, I decided to build a blackjack game. This was made with the knowledge of classes so I decided to go down that route instead of a constant single chunk of code (see other games). It’s not much better written, but it does include the ability to “count cards” which is cool. Again, <a href="https://github.com/ben-tanen/py-games/blob/master/blackjack.py">here’s the code</a>.</p>
-
-<p><strong>Update</strong>: And because I was bored, I also threw in some better versions of the first two games with some serious refactoring / feature improvement into <a href="https://github.com/ben-tanen/py-games">the repo</a>. Minesweeper reveals sections of 0s now! I noticed I was also doing some weird sort of logical boolean using a string of spaces. It was weird. I took it out. It’s better now.</p>
-
-<p>If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Retro Post: Game Theory, The Game</h1>
-       <!--
-       <p class="post-meta">Jun 26 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>This retro post came from my senior year of high school when I was taking AP Economics. Who doesn’t love turning economics into drinking games?</p>
-
-<p><em>[Beginning of Post]</em></p>
-
-<p>In my AP Economics class, we have started discussing game theory. This is the study of different behaviors in economic “games”. The most basic game is between two firms, or actors, playing together, and they have two options, for which each firm will pick the option that will give them the best output.</p>
-
-<p>Eventually, my teacher showed us a clip from a game show that uses the concepts of game theory. The show, called Golden Balls, pits two players against each other to win a pot of money. If they both choose to split the money, they will share the pot 50/50. If one chooses to steal the money while the other splits, the stealer will win all of the money, while the other is left with zero. Finally, if they both chose to steal, everyone ends up with zero.</p>
-
-<iframe class="youtube-vid" width="420" height="315" src="https://www.youtube.com/embed/p3Uos2fzIJ0" frameborder="0" allowfullscreen=""></iframe>
-
-<iframe class="youtube-vid" width="420" height="315" src="https://www.youtube.com/embed/S0qjK3TWZE8" frameborder="0" allowfullscreen=""></iframe>
-
-<p>After watching the clip, my classmates and I felt the need to design our own version of the game. However, as a fairly poor teenager, I felt the prize shouldn’t be monetary. And then we came to our dilemma. What to make the prize?</p>
-
-<p>One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/game-theory-slaps.png" target="_blank">
-    <img src="/assets/img/posts/game-theory-slaps.png" alt="A payoff matrix for the slapping game" />
-    </a>
-</p>
-
-<figcaption>
-Playful violence is always fun
-</figcaption>
-
-<p>This game/version relies on the idea that both players want to slap the other person, so I guess this would preferably be played with an enemy (or a close friend).</p>
-
-<p>Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/game-theory-drinks.png" target="_blank">
-    <img src="/assets/img/posts/game-theory-drinks.png" alt="A payoff matrix for the drinking game" />
-    </a>
-</p>
-
-<figcaption>
-Who doesn't love economic-based drinking games?
-</figcaption>
-
-<p>Eventually, I’d assume both parties would be drunk enough to lose track of the dilemma and implications of their choices, but I imagine that this game would serve as an interesting way to get drunk for economists.</p>
-
-<p>Any other potential prizes/punishments?</p>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Retro Post: iOS Upgrades (Circa 2013)</h1>
-       <!--
-       <p class="post-meta">Jun 17 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Before moving to Github and using Jekyll, I hosted a <a href="http://ben-tanen.tumblr.com/">blog on Tumblr</a>. I mostly posted videos / photos of cool things I found on the Internet, but every once in awhile I’d post some original content (photos I took, videos I made, some blog posts). As I try and fill out this site a bit, I might go back and do some <em>retro posts</em> from back in the day, because why not. This first post was written in 2013 about updates that I thought were necessary in iOS (at this point iOS 6).</p>
-
-<p>I’d like to point out that since then, three of these four upgrades have been implemented in someway or another so I guess you could say I’m an accurate futurist. I’d also like to say that I spent a fair amount of time building these mockup screens in Adobe After Effects and they’re actually pretty awesome. Overall success for 18 year old me!</p>
-
-<p><em>[Beginning of Post]</em></p>
-
-<p>I’m a huge fan of the iPhone. I love the user interface of iOS, but the iPhone itself lacks some capabilities. Here are a few ideas that I have for improvements to the software.</p>
-
-<p><strong>Priority Messages:</strong> Say you’re in a meeting, but you have important news coming from a friend. Instead of turning “Do Not Disturb” and shutting out all texts, you can turn on Priority messaging. Selecting ‘Priority’ will make it so that messages from this conversation are distinguished (either with a different ringtone or vibration) so you know if the message is priority without even looking at your phone. The option can be turned on and off easily, by simply editing the conversation in Messages. With “Do Not Disturb” on, priority messages are still displayed.</p>
-
-<blockquote>
-  <p><strong>Retrospective Update</strong> - Apple decided to basically implement this but in reverse. If you want to mute specific people, you can and then the rest of your messages will come through.</p>
-</blockquote>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/ios-updates-textdelay.gif" target="_blank">
-    <img src="/assets/img/posts/ios-updates-textdelay.gif" alt="A simulated screen capture of the text delay feature" width="230px" />
-    </a>
-</p>
-
-<figcaption>
-Delay a text to send a few minutes (or even a few hours)
-</figcaption>
-
-<p><strong>Text Delay:</strong> On multiple occasions, I have thought of a message I’d like to send to someone but it is at an inopportune time (late at night, they’re busy, etc.). However, if I wait too long, I’ll forget about my message and will never send it. Thus why I need text delays. This option allows someone to add a certain amount of delay between when they write the message and when they actually send it. Just select the option and your phone will automatically send the message after the designated amount of time.</p>
-
-<blockquote>
-  <p><strong>Retrospective Update #2</strong> - This change has not yet been implemented, but it 100% should be. Still one of my top desired features</p>
-</blockquote>
-
-<p><strong>In-App Text Response:</strong> While the Multi-tasking on iOS is helpful, responding to a text still requires you to switch to the Messages app, which sometimes closes/disrupts certain other apps (Netflix, games). Instead, an option for In-App texting would simply have a pop-up screen in which the user can send a quick text. This capability is featured on many non-iOS devices, and it should be brought to the iPhone.</p>
-
-<blockquote>
-  <p><strong>Retrospective Update #3</strong> - This is also available now, woohoo!</p>
-</blockquote>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/ios-updates-inapptext.gif" target="_blank">
-    <img src="/assets/img/posts/ios-updates-inapptext.gif" alt="A simulated screen capture of the in-app texting feature" width="230px" />
-    </a>
-</p>
-
-<figcaption>
-Update - More or less is exactly what the actual implementation looks like
-</figcaption>
-
-<p><strong>Voice Activated Siri:</strong> Siri is particularly useful, especially when you can’t (or shouldn’t) be using your hands (driving, shower, etc.). However, turning on Siri requires manual activation with a hand. Instead, there should be an option to start Siri using one’s voice. For example, Siri could be activated by either saying “Siri” (though that presents certain issues in a crowd of people saying the same thing) or a keyword that the user picks (ex: “Pterodactyl”).</p>
-
-<blockquote>
-  <p><strong>Retrospective Update #4</strong> - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.</p>
-</blockquote>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Why Everyone Should Use (Or At Least Try) Spotify</h1>
-       <!--
-       <p class="post-meta">May 21 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>For years, I was a huge iTunes user. It was the best music player available but it certainly did have its issues. When Spotify started to gain traction, I was wary of switching to the service for a few reasons. How could I accumulate a library of music if I didn’t actually own the music? Or what if I’m not connected to the Internet? But as my roommate continued to rave about Spotify, I decided I had to jump in and just try it out.</p>
-
-<p>And you know what? I love Spotify. Every concern I had was quickly answered because they have thought of everything. Want to have music while you’re out of cell range? No worries, you can download playlists straight to your phone or computer. Want to listen to a brand-new remix that isn’t on Spotify? Loading and listening to local / custom files is easy. And that is just the simple stuff. If you know anyone who uses Spotify, I’m sure you’ve heard a similar raving review. But if you’re still not convinced, here is why I think you should at least consider trying Spotify Premium.</p>
-
-<p><strong>Note</strong>: This post is in no way sponsored by Spotify. I just like their service.</p>
-
-<h3 id="instant-access-to-millions-of-songs">Instant Access to Millions of Songs</h3>
-
-<p>Of course you’ve heard that Spotify has lots of songs available, which isn’t necessarily jaw-dropping. But when you compare it to Spotify’s competitors, 30-million songs is a hell of a lot for $10 / month (or $5 / month if you’re a student). For $10 on iTunes, you get 7 - 10 songs a month. But maybe you’re considering about getting more than 10 songs a month in a less, perhaps, legal way. That might work until you get a cease and desist e-mail for a lot more than $10. So at the end of the day, 30-million songs for $10 / month is a might fine deal.</p>
-
-<h3 id="crazy-good-cross-syncing">Crazy Good Cross-Syncing</h3>
-
-<p>Apple seems very proud of their cross-syncing platform iCloud and to be honest, it is pretty good. But iCloud doesn’t even compare to Spotify’s syncing across their different platforms. If you’re listening to a song on your computer and you add it to your library, it shows up on your phone that instant. And you can literally swap over to your phone that instant, picking up that song exactly where you left it off. In fact you can do this across the desktop, browser, and phone apps without even missing a beat. I just switched from my phone to my computer after I came back from a walk and wanted to pick up the song exactly where I was. It’s a feature I’ve dreamed of for years and now it’s my reality, thanks to Spotify. As far as I know, iCloud or any other competitor can’t even come close to that.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-sync.png" target="_blank">
-    <img src="/assets/img/posts/spotify-sync.png" alt="A screenshot showing Spotify's cross-sync capabilities" />
-    </a>
-</p>
-
-<figcaption>
-Swap between your phone and your computer instantly
-</figcaption>
-
-<h3 id="spotify-mobile-is-amazing">Spotify Mobile is Amazing</h3>
-
-<p>In my opinion, the crown jewel of Spotify has to be their mobile app. If you’re a premium user, you get the same unlimited music access on your phone that you would in the desktop app. That means you get the ability to search through Spotify’s whole catalog, browse artist updates, and sample and queue up songs (a lot of which is still not doable on the iTunes equivalent app). In order to do all this, Spotify didn’t waste any space as they crammed all the functionality into a cohesive, absolutely gorgeous mobile app. You’re really not using Spotify until you’re using the mobile version.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-mobile.png" target="_blank">
-    <img src="/assets/img/posts/spotify-mobile.png" alt="Screenshots from Spotify's mobile app" />
-    </a>
-</p>
-
-<figcaption>
-Spotify didn't waste an inch of space on the mobile app
-</figcaption>
-
-<h3 id="spotify-makes-music-social">Spotify Makes Music Social</h3>
-
-<p>You can build the best music library through suggestions from real people, everyone knows that. Spotify has certainly taken this into account since one of their main focuses is making the music experience social. They do this in a few ways, but the most obvious two are social sidebar and collaborative playlists. Do you have that hip friend who has that shockingly good taste in music and always finds new stuff? If you follow them, Spotify will show you what music they are listening to at that moment through the social sidebar. You can even click on the song and start listening along. Want to go on a road trip with this friend and collaborate on a playlist? It’s super easy to share songs and make the best-of-the-best for a playlist. The social music experience is one of Spotify’s key elements and they do it quite well.</p>
-
-<h3 id="great-software-updates-are-great">Great Software Updates are Great</h3>
-<p>One of the best qualities of a good software system is the ability to change and adapt. Apple has always succeeded at looking ahead at the grander picture, generally answering questions that haven’t been asked yet. But there were often requests that were left unanswered because they weren’t <em>innovative</em> enough. On the other hand, Spotify looks to embrace all of these changes. Spotify consistently pushes a new update every week or two (and all you have to do to update is press “restart”). While some changes that they make in updates aren’t groundbreaking or even noticeable, there certainly are updates / changes that do answer requests even if they are small. An example being that in one of the more recent updates, Spotify enabled the ability to search inside a specific playlist. This wasn’t a huge change (iTunes has had it for awhile), but it was a direct response to a <a href="https://community.spotify.com/t5/Live-Ideas/Desktop-Bring-back-search-inside-Playlists-amp-Songs-tab/idi-p/1039674">user request</a> because Spotify takes these requests and suggestions seriously, which is seriously cool. This means that while the software is being managed by the company, the trend and changes of Spotify can partially be set by the customers who use Spotify.</p>
-
-<p>There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='pagination'>
-    
-    <p id='pagination-previous'><a href='/blog/9'>&#8592; Newer Posts</a></p>
-    
-
-    <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
-
-    
-    <p id='pagination-next'><a href='/blog/11'>Older Posts &#8594;</a></p>
-    
-</div>
-
-    	</div>
     </div>
-	
+
+    <script src="/assets/js/landing.js">
+    </script>
 </body>
 </html>

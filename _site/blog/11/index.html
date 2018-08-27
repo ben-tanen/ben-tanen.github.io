@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/main.style.css">
+    <link rel="stylesheet" href="/assets/css/landing.style.css">
     
 
     
@@ -19,6 +19,7 @@
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
@@ -50,36 +51,41 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Blog | Ben Tanen</title>
+    <title>Ben Tanen</title>
 </head>
 
 
 <body>
-    <!-- adding support for mathjx -->
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-    <script type="text/javascript"
-        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+    <svg id="background"></svg>
 
-    <div class='wrapper'>
-    	<div id='side'>
-    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
-
-    <div id='site-links' class="tk-europa">
-        <p><a href='/'>Home</a></p>
-        <p><a href='/projects/' >Projects</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/' >Resume</a></p>
-        <p><a href='/blog/all/' class="selected-link">Blog</a></p>
+    <div id='landing-menu'>
+        <img src="/assets/img/menu.png" alt="A menu for navigating the site" />
+        <div id='site-links' class="tk-europa">
+            <p><a class="selected-link">Home</a></p>
+            <p><a href='/projects/'>Projects</a></p>
+            <p><a href='/resume/BenjaminTanen_Resume.pdf'>Resume</a></p>
+            <p><a href='/blog/all/'>Blog</a></p>
+        </div>
     </div>
 
-    <ul id="social-links">
+    <div id='landing-text'>
+        <div id='landing-header'>
+            <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
+            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
+        </div>
+
+        <p>I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories. I graduated from Tufts University in 2017 and I currently work as an analyst at Analysis Group in Boston, MA. <a href="http://link.ben-tanen.com/resume/" target="_new">In the past</a>, I’ve worked as a software developer and analyst at a few different software, finance, and consulting companies.</p>
+
+<p>Over the years, I've worked on projects dealing with <a href="http://asl-lex.org/" target="_new">American Sign Language</a>, <a href="http://link.ben-tanen.com/ultimate-ch/" target="_new">computational geometry</a> and <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_new">compression algorithms</a>, <a href="http://link.ben-tanen.com/drunken-world/" target="_new">alcohol consumption</a>, and <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_new">the NHL playoffs</a>. You can find more on my project work <a href="/projects/">here</a>.</p>
+
+
+<p>On occasion, I'll write about things I'm working on and other stuff that interests me. I most recently wrote about <a href="/projects/oscars-popular-film/">what the Academy considers a popular movie vs. a great film</a>. You can find all that I've written <a href="/blog/all/">here</a>.</p>
+
+<p>I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/">my collection</a> and I love chatting about filmmaking, law, and politics. While at Tufts, I spun a weekly <a href="http://link.ben-tanen.com/papaT/">radio show</a> as Papa T on Tufts' WMFO and I played club hockey. On occasion, I take <a href="http://link.ben-tanen.com/photo/">pictures</a> with my camera. <span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>
+
+<p>Want to chat, maybe over a nice bowl of spicy ramen? Feel free to reach out on <a href="https://twitter.com/ben_tanen" target="_new">Twitter</a> or over <a href="mailto:ben.tanen@gmail.com">e-mail</a>.</p>
+
+        <ul id="social-links">
     <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
@@ -138,178 +144,9 @@ MathJax.Hub.Config({
         </a>
     </li>
 </ul>
-</div>
-
-    	<div class='main'>
-    		
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>RodRego: The Simple Register Machine Simulator</h1>
-       <!--
-       <p class="post-meta">Mar 31 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p class="fig-paragraph">
-    <a class="fig-link" href="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" target="_blank">
-    <img src="http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif" alt="RodRego's Original Banner" />
-    </a>
-</p>
-
-<p>For the past few months, I’ve been working on a project known as RodRego. RodRego was built in the 1986 by Tufts Professor Dan Dennett in order to show the power of using simple INC/DEB register machines. If you don’t understand what that means, that’s okay because I didn’t either when I started the project. Basically, the user inputs a string of commands that tell 10 registers to either increment or decrement their values. If the correct commands are done in the right sequence, it is possible to simulate some fairly complex commutations (essentially think of <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainf**k</a> without IO).</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/rodrego.png" target="_blank">
-    <img src="/assets/img/posts/rodrego.png" alt="The original desktop application (left) vs. the new web application (right)" />
-    </a>
-</p>
-
-<figcaption>
-The original desktop application (left) vs. the new web application (right)
-</figcaption>
-
-<p>My assignment for this project was to build a web application that emulates (and fixes any problems of) the existing desktop application. With little instruction on how the original application worked, building something that would recreate it was interesting, but ultimately doable. Specific data validation (which was necessary to check commands / script format) was also a pain in JavaScript but that’s just JavaScript.</p>
-
-<p>Overall, it was a fun project. This was my first major web development assignment (outside of random personal projects) so it was a good learning experience. It was also pretty cool to work on someone’s legacy project. And at the end of the day, you’ve always got to remember and appreciate your first. ♥ RodRego ♥</p>
-
-<p>If you want to try it out, you can find the site <a href="http://proto.atech.tufts.edu/RodRego/">here</a>. You can also find the code on <a href="https://github.com/ben-tanen/rodrego">GitHub</a>.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Grub: The Command-line GrubHub</h1>
-       <!--
-       <p class="post-meta">Nov 30 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>GitHub is built on the fantastically useful Git. Many people may prefer to use the GitHub desktop app or through GitHub directly. However, most people, myself included, prefer to use Git directly from the command-line. So what if there was an equivalent alternative for other “Hub” sites like GrubHub? The answer to that question is the (thus far imaginary) idea of Grub, the command-line tool for GrubHub.</p>
-
-<p>Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:</p>
-
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// search database for food type or restaurant
-</span><span class="n">grub</span> <span class="n">search</span> <span class="s">"burrito"</span>
-<span class="n">grub</span> <span class="n">search</span> <span class="s">"Bob's Burgers"</span>
-
-<span class="c1">// add chicken burrito with cheese &amp; sour cream
-</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burrito</span><span class="o">-</span><span class="n">chicken</span> <span class="o">-</span><span class="n">w</span> <span class="p">{</span><span class="n">cheese</span><span class="p">,</span> <span class="n">sour</span> <span class="n">cream</span><span class="p">}</span> 
-
-<span class="c1">// add burger without pickles
-</span><span class="n">grub</span> <span class="n">add</span> <span class="n">order</span> <span class="n">burger</span> <span class="o">-</span><span class="n">wo</span> <span class="n">pickles</span>
-
-<span class="c1">// go to checkout and add payment information 
-</span><span class="n">grub</span> <span class="n">checkout</span>
-
-<span class="c1">// place order
-</span><span class="n">grub</span> <span class="n">pull</span> <span class="n">order</span></code></pre></figure>
-
-<p>Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if <a href="http://r-wos.org/hacks/gti">gti init</a> can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Random Project: Base64 Decoder</h1>
-       <!--
-       <p class="post-meta">Nov 12 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>In the past couple months I’ve become increasingly more interested and fascinated in GitHub. Now, most of this is likely due to the newbie CS student thinking “Woahhh, revision control and free project hosting” but GH is pretty remarkable. A project I’ve always been interested in doing was a blog where I write about whatever, much like the page you are reading right now. Eventually I found <a href="http://jekyllrb.com/">Jekyll</a>, but before that I toyed around with the idea of hosting the raw text files on GitHub, decoding the text from base-64, and then pasting that to the template/page that I was actually using for the blog (likely on GitHub). Now this idea is actually really dumb and a lot more difficult than it needs to be, but that didn’t stop me from making the base-64 decoder in C++, because why not.</p>
-
-<p>So, by reversing <a href="http://en.wikipedia.org/wiki/Base64#Examples">Wikipedia’s algorithm</a> for base-64 encoding, I spent a little time and built the decoder. Basically, the algorithm is just:</p>
-
-<ol>
-  <li>Convert each encoded character to ASCII values</li>
-  <li>String together 6-bit strings of ASCII values</li>
-  <li>Break string up into 8-bit strings</li>
-  <li>Convert 8-bit strings back into ASCII values</li>
-  <li>Convert to decoded character</li>
-</ol>
-
-<p>Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code <a href="https://github.com/ben-tanen/Base64Decode">here</a>.</p>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Up-to-Date Infographics</h1>
-       <!--
-       <p class="post-meta">Nov 01 2014 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>When I first started working with web design, <a href="http://www.kerem.co">Kerem Suer’s</a> website had a lot of features that inspired me. One of these features was his use of <a href="https://web.archive.org/web/20130114231739/http://kerem.co/">infographics</a>. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/infographics-kerem.png" target="_blank">
-    <img src="/assets/img/posts/infographics-kerem.png" alt="Examples of Kerem's use of infographics" />
-    </a>
-</p>
-
-<figcaption>
-Examples of Kerem's use of infographics
-</figcaption>
-
-<p>For my infographics, I was attempting to display what I was currently up to (currently reading, listening to, watching). I never thought that it could be live updates, but more so descriptions of the book, album, and show/movie that I was into that week. However, the struggle with this was it was not easy to update the information. I had hard-coded into my HTML file, and accessing, changing, and uploading this was generally a pain, leaving my information drastically out-of-date.</p>
-
-<p>Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of <a href="http://www.IFTTT.com">IFTTT</a>, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/infographics-ex.png" target="_blank">
-    <img src="/assets/img/posts/infographics-ex.png" alt="My own example infographics" />
-    </a>
-</p>
-
-<figcaption>
-My own example infographics
-</figcaption>
-
-<p>The set-up works like this: I send a text with the category I’m updating (reading, listening to, watching) and the new media (book, movie, album) to IFTTT. IFTTT reads the text, and appends the contents of the message onto a public Dropbox text file. From there, a jQuery script on my page reads this file, determines the book, show/movie, and album that is most recently added, and adds this information to the web page.</p>
-
-<p>It’s a pretty simple system, nothing ground-breaking, but for me, it solves a long standing problem. So if you really care about my daily activities, just know my website is now kind of, sort of up-to-date.</p>
-
-<p><strong>Update, 12/26/2016</strong> - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on <a href="/about/">my about page</a>.</p>
-
-<p><strong>Update, 07/28/2017</strong> - Still using the improved system but now I don’t have an about page any more… you can find the details on <a href="/">my home page</a>.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='pagination'>
-    
-    <p id='pagination-previous'><a href='/blog/10'>&#8592; Newer Posts</a></p>
-    
-
-    <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
-
-    
-    <p id='pagination-next'><a href='/blog/12'>Older Posts &#8594;</a></p>
-    
-</div>
-
-    	</div>
     </div>
-	
+
+    <script src="/assets/js/landing.js">
+    </script>
 </body>
 </html>

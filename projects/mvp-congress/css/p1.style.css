@@ -1,0 +1,9 @@
+#d3-bill-timeline-container {
+    width: calc(100% - 2px);
+    height: 800px;
+    border: 1px solid gray;
+}
+
+#d3-bill-timeline {
+    width: 100%;
+}

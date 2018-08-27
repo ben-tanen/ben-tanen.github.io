@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/main.style.css">
+    <link rel="stylesheet" href="/assets/css/landing.style.css">
     
 
     
@@ -19,6 +19,7 @@
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
@@ -50,36 +51,41 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Blog | Ben Tanen</title>
+    <title>Ben Tanen</title>
 </head>
 
 
 <body>
-    <!-- adding support for mathjx -->
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-    <script type="text/javascript"
-        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+    <svg id="background"></svg>
 
-    <div class='wrapper'>
-    	<div id='side'>
-    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
-
-    <div id='site-links' class="tk-europa">
-        <p><a href='/'>Home</a></p>
-        <p><a href='/projects/' >Projects</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/' >Resume</a></p>
-        <p><a href='/blog/all/' class="selected-link">Blog</a></p>
+    <div id='landing-menu'>
+        <img src="/assets/img/menu.png" alt="A menu for navigating the site" />
+        <div id='site-links' class="tk-europa">
+            <p><a class="selected-link">Home</a></p>
+            <p><a href='/projects/'>Projects</a></p>
+            <p><a href='/resume/BenjaminTanen_Resume.pdf'>Resume</a></p>
+            <p><a href='/blog/all/'>Blog</a></p>
+        </div>
     </div>
 
-    <ul id="social-links">
+    <div id='landing-text'>
+        <div id='landing-header'>
+            <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
+            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
+        </div>
+
+        <p>I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories. I graduated from Tufts University in 2017 and I currently work as an analyst at Analysis Group in Boston, MA. <a href="http://link.ben-tanen.com/resume/" target="_new">In the past</a>, I’ve worked as a software developer and analyst at a few different software, finance, and consulting companies.</p>
+
+<p>Over the years, I've worked on projects dealing with <a href="http://asl-lex.org/" target="_new">American Sign Language</a>, <a href="http://link.ben-tanen.com/ultimate-ch/" target="_new">computational geometry</a> and <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_new">compression algorithms</a>, <a href="http://link.ben-tanen.com/drunken-world/" target="_new">alcohol consumption</a>, and <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_new">the NHL playoffs</a>. You can find more on my project work <a href="/projects/">here</a>.</p>
+
+
+<p>On occasion, I'll write about things I'm working on and other stuff that interests me. I most recently wrote about <a href="/projects/oscars-popular-film/">what the Academy considers a popular movie vs. a great film</a>. You can find all that I've written <a href="/blog/all/">here</a>.</p>
+
+<p>I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/">my collection</a> and I love chatting about filmmaking, law, and politics. While at Tufts, I spun a weekly <a href="http://link.ben-tanen.com/papaT/">radio show</a> as Papa T on Tufts' WMFO and I played club hockey. On occasion, I take <a href="http://link.ben-tanen.com/photo/">pictures</a> with my camera. <span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>
+
+<p>Want to chat, maybe over a nice bowl of spicy ramen? Feel free to reach out on <a href="https://twitter.com/ben_tanen" target="_new">Twitter</a> or over <a href="mailto:ben.tanen@gmail.com">e-mail</a>.</p>
+
+        <ul id="social-links">
     <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
@@ -138,228 +144,9 @@ MathJax.Hub.Config({
         </a>
     </li>
 </ul>
-</div>
-
-    	<div class='main'>
-    		
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Support Vector Machines and Poetry</h1>
-       <!--
-       <p class="post-meta">May 03 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>My tales of data mining continue and this time, they’re about <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">support vector machines</a>. These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a> which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn’t a fantastic method.</p>
-
-<p>As an alternative, SVMs are pretty great at providing classifications that work for existing data <em>and</em> future data. An example that I found particular interesting was used to distinguish between poems written in English and poems written in German. For example, take the following two excerpts:</p>
-
-<blockquote>
-  <p><em>What happens to a dream deferred? Does it dry up</em></p>
-</blockquote>
-
-<blockquote>
-  <p><em>Aktenstose nachts verschlingen, Schwatzen nach der Welt</em></p>
-</blockquote>
-
-<p>It’s pretty obvious to anyone who speaks English or German which language these poems are written in. But to a naive computer, these are just strings of characters. To aid in distinguishing, let’s consider two features of these 50-character excerpts: the number of complete words and the number of times the letter “i” occurs.</p>
-
-<p>Using this information as the main “features” of our data, we can compute and define a hyperplane (or in this case, a line) to find if there is a meaningful division between English and German given the “features” we are analyzing (for more on the math behind this, see <a href="http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html">here</a>). If we compute and plot this for ten different excerpts, we get the following:</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/svm-poems.png" target="_blank">
-    <img src="/assets/img/posts/svm-poems.png" alt="A graph showing our poems and our SVM" width="450px" />
-    </a>
-</p>
-
-<p>We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another <em>new</em> excerpt:</p>
-
-<blockquote>
-  <p><em>Hat der alte Hexenmeister sich doch einmal wegbege</em></p>
-</blockquote>
-
-<p>If we go ahead and plot this (seen above in magenta), we can see that this obviously German poem is again partitioned as expected without needing to update our hyperplane. Hurray, math works!</p>
-
-<p>For anyone interested, you can find the MATLAB code for this example <a href="https://github.com/ben-tanen/DataMining/tree/master/svm-poems">here</a> and other data mining projects <a href="https://github.com/ben-tanen/data-mining">here</a>.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Lots of Light Painting</h1>
-       <!--
-       <p class="post-meta">Apr 26 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Before I became all lame, I use to be fairly into photography. I was never superb myself but I loved to experiment with things. I adored light painting and spent hours trying to make cool patterns with some fancy glow sticks.</p>
-
-<p>I haven’t been able to take many photos recently but I felt like sharing some of my personal favorites from the past few years. I hope to maybe add some more as time goes on.</p>
-
-<style>
-    .photo-container {
-    }
-
-    .photo-container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
-
-    .sub-photo-container {
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-</style>
-
-<div class="photo-container">
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/photography-pic1.jpg" />
-        <img src="/assets/img/posts/photography-pic11.jpg" />
     </div>
 
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/photography-pic2.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/photography-pic4.jpg" />
-        <img src="/assets/img/posts/photography-pic5.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/photography-pic6.jpg" />
-        <img src="/assets/img/posts/photography-pic7.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/photography-pic9.jpg" />
-        <img src="/assets/img/posts/photography-pic8.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/photography-pic10.jpg" />
-        <img src="/assets/img/posts/photography-pic3.jpg" />
-    </div>
-</div>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Clustering Using K-Means</h1>
-       <!--
-       <p class="post-meta">Mar 09 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>This semester, I’m taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA analysis</a>. However, we are starting to move onto look at new types of data analysis / clustering and today’s topic was <strong>k-means clustering</strong>. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student’s perspective, is much easier to rationalize. It’s a fairly simple algorithm and it does have some cool results.</p>
-
-<p>For a brief explanation, the algorithm simply works by taking data (lets say <em>n</em> data points) and attempts to form them into <em>k</em> clusters (<em>k</em> is chosen by the user). <em>k</em> initial cluster centroids are picked (perhaps by random). From here, the following is done on every iteration:</p>
-
-<ol>
-  <li>Assign each data point <em>i</em> to the “closest” cluster <em>j</em> based on its centroid (“closest” is defined here as smallest euclidean distance, but there are a number of different definitions)</li>
-  <li>Once all data points are assigned, re-calculate the centroid of each cluster to be the mean of all of its now assigned data points</li>
-  <li>Repeat until no improvement can be found</li>
-</ol>
-
-<p>During lecture, my professor was showing of some plots from before and after clustering to visualize the k-means clustering process. I was intrigued and I thought it would be cool to see a step-by-step GIF of this process. Thus, I wrote some code in MATLAB to do k-means clustering and voilà, it works!</p>
-
-<p>Initially, the code generates <em>k</em> normally-distributed random clusters of data of <em>r</em> data points each (<em>kr</em> = <em>n</em> total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn’t necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/kmeans-before-after.png" target="_blank">
-    <img src="/assets/img/posts/kmeans-before-after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" />
-    </a>
-</p>
-
-<p>The first iteration is done by making a random guesses for the location of the <em>k</em> (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven’t seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/kmeans-cluster.gif" target="_blank">
-    <img src="/assets/img/posts/kmeans-cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" />
-    </a>
-</p>
-
-<p>If you have any interest in playing around, you can find my MATLAB code <a href="https://github.com/ben-tanen/data-mining/tree/master/kmeans">here</a> in <a href="https://github.com/ben-tanen/data-mining">a new GitHub repo</a> for my data mining work. It should work for all reasonable values of <em>k</em> (clusters) and <em>r</em> (data points per cluster). I’ll be honest and say that my MATLAB code leaves a bit to be desired but it’s working so that’s mostly all that matters.</p>
-
-<p>If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Minimizing Risk For An Optimal Portfolio</h1>
-       <!--
-       <p class="post-meta">Dec 12 2015 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this <a href="http://dahl.mines.edu/tech1503.pdf">paper</a>).</p>
-
-<p>The first step was to figure out which equities I would use in my fake portfolio. I knew I wanted low risk so I decided to use ETFs and through these, I attempted to capture some of counter-cyclical performance (have one equity perform well while another does not) which would also reduce risk. I simply did this by looking at the covariance between different ETFs and then picked the ETFs that had the smallest overall covariance. I think this method worked, but if I’m completely honest, I think this was the weakest part of my approach. There was so much more potential research / analysis I could have done on the equities that I was using and using different (better) instruments probably would have made a huge difference in terms of performance. But I went the simple route and focused on the weights of these instruments in said portfolio instead.</p>
-
-<p>In order to reduce the risk of this fake portfolio of low variance ETFs, I used Markowitz’s modern portfolio theory to find the best weights to use for each equity. Essentially, Markowitz states that the optimized portfolio is a portfolio that lies along the “<a href="https://en.wikipedia.org/wiki/Efficient_frontier">efficient frontier</a>” (outer edge) of the Markowitz bullet (a plot of return vs. variance, examples seen below) where each point in the bullet is a different weight distribution of the same portfolio. In my situation, I wanted to reduce risk (variance) so I wanted a portfolio that would be at the left-most tip of the bullet.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/portfolio-bullet.png" target="_blank">
-    <img src="/assets/img/posts/portfolio-bullet.png" alt="Markowitz bullets showing possible portfolios " width="800px" />
-    </a>
-</p>
-
-<figcaption>
-Markowitz bullets showing possible portfolios 
-</figcaption>
-
-<p>I found this optimized weight allocation by looping over a bunch of different allocations and searching for optimized performance. First I looped through allocations in increments of 0.1 and then examined closer at the region(s) that performed the best. I repeated this process again with increments of 0.025 and 0.005 to find the best weighting. All of these trials can be seen in the bullets above, as well as the final optimized portfolio in red (at the tip).</p>
-
-<p>Overall, the optimization process went pretty well. The plots above show that the portfolio I found was indeed the lowest risk so I did optimize the hedge ratio (the goal of the assignment). When comparing this made-up portfolio to the S&amp;P-500 over the same period, the optimized portfolio does slightly outperform the S&amp;P, but not by much. This makes sense because with the reduction of risk, the portfolio also has reduced return so at the end of the day, this portfolio is really just a safe, not interesting bet.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/portfolio-return.png" target="_blank">
-    <img src="/assets/img/posts/portfolio-return.png" alt="Comparing the optimized portfolio to the S&amp;P-500" width="600px" />
-    </a>
-</p>
-
-<p>For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook <a href="/notebooks/optimizing-portfolio.html">here</a>.</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='pagination'>
-    
-    <p id='pagination-previous'><a href='/blog/7'>&#8592; Newer Posts</a></p>
-    
-
-    <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
-
-    
-    <p id='pagination-next'><a href='/blog/9'>Older Posts &#8594;</a></p>
-    
-</div>
-
-    	</div>
-    </div>
-	
+    <script src="/assets/js/landing.js">
+    </script>
 </body>
 </html>

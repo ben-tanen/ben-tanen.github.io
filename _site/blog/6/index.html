@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 
     
-    <link rel="stylesheet" href="/assets/css/main.style.css">
+    <link rel="stylesheet" href="/assets/css/landing.style.css">
     
 
     
@@ -19,6 +19,7 @@
     <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
     <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
@@ -50,36 +51,41 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Blog | Ben Tanen</title>
+    <title>Ben Tanen</title>
 </head>
 
 
 <body>
-    <!-- adding support for mathjx -->
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-    <script type="text/javascript"
-        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+    <svg id="background"></svg>
 
-    <div class='wrapper'>
-    	<div id='side'>
-    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
-    
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
-
-    <div id='site-links' class="tk-europa">
-        <p><a href='/'>Home</a></p>
-        <p><a href='/projects/' >Projects</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/' >Resume</a></p>
-        <p><a href='/blog/all/' class="selected-link">Blog</a></p>
+    <div id='landing-menu'>
+        <img src="/assets/img/menu.png" alt="A menu for navigating the site" />
+        <div id='site-links' class="tk-europa">
+            <p><a class="selected-link">Home</a></p>
+            <p><a href='/projects/'>Projects</a></p>
+            <p><a href='/resume/BenjaminTanen_Resume.pdf'>Resume</a></p>
+            <p><a href='/blog/all/'>Blog</a></p>
+        </div>
     </div>
 
-    <ul id="social-links">
+    <div id='landing-text'>
+        <div id='landing-header'>
+            <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
+            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
+        </div>
+
+        <p>I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories. I graduated from Tufts University in 2017 and I currently work as an analyst at Analysis Group in Boston, MA. <a href="http://link.ben-tanen.com/resume/" target="_new">In the past</a>, I’ve worked as a software developer and analyst at a few different software, finance, and consulting companies.</p>
+
+<p>Over the years, I've worked on projects dealing with <a href="http://asl-lex.org/" target="_new">American Sign Language</a>, <a href="http://link.ben-tanen.com/ultimate-ch/" target="_new">computational geometry</a> and <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_new">compression algorithms</a>, <a href="http://link.ben-tanen.com/drunken-world/" target="_new">alcohol consumption</a>, and <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_new">the NHL playoffs</a>. You can find more on my project work <a href="/projects/">here</a>.</p>
+
+
+<p>On occasion, I'll write about things I'm working on and other stuff that interests me. I most recently wrote about <a href="/projects/oscars-popular-film/">what the Academy considers a popular movie vs. a great film</a>. You can find all that I've written <a href="/blog/all/">here</a>.</p>
+
+<p>I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/">my collection</a> and I love chatting about filmmaking, law, and politics. While at Tufts, I spun a weekly <a href="http://link.ben-tanen.com/papaT/">radio show</a> as Papa T on Tufts' WMFO and I played club hockey. On occasion, I take <a href="http://link.ben-tanen.com/photo/">pictures</a> with my camera. <span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>
+
+<p>Want to chat, maybe over a nice bowl of spicy ramen? Feel free to reach out on <a href="https://twitter.com/ben_tanen" target="_new">Twitter</a> or over <a href="mailto:ben.tanen@gmail.com">e-mail</a>.</p>
+
+        <ul id="social-links">
     <li id="twitter" class="social-link">
         <a href="https://twitter.com/ben_tanen/" target="_blank">
             <svg viewBox="0 0 512 512">
@@ -138,274 +144,9 @@ MathJax.Hub.Config({
         </a>
     </li>
 </ul>
-</div>
-
-    	<div class='main'>
-    		
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Meet St. Paul and the Broken Bones</h1>
-       <!--
-       <p class="post-meta">Nov 10 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Through some killer <a href="http://www.wmfo.org/" target="_blank">freeform radio hook ups</a>, I was very fortunately connected with the publicity manager for the always fantastic St. Paul and the Broken Bones. Through this connection, I was able to score <a href="https://www.wmfo.org/?p=3043" target="_blank">an interview with Jesse Phillip</a>, the bassist of the band and the lead Broken Bone, as well as a photo pass to their most recent show at the Royale in Boston. They are currently on tour promoting their newest EP <em>Sea of Noise</em>, which is <a href="http://www.npr.org/2016/09/01/491941924/first-listen-st-paul-the-broken-bones-sea-of-noise" target="_blank">quite the album</a>. If you haven’t heard of them before or you haven’t heard their latest album, I’ve put together a little playlist of my personal favorites so feel free to take a listen. My top three have got to be “Is It Me” from <em>Sea of Noise</em>, “Call Me” from their first album <em>Half the City</em>, and their cover of Sam Cooke’s incredible “A Change Is Gonna Come” at SXSW.</p>
-
-<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A129874447%3Aplaylist%3A7hGQWWVIqtbsSQ0zyxk7FN" width="100% !important" height="80px !important" frameborder="0" allowtransparency="true" style="margin-bottom:10px"></iframe>
-
-<p>Since I was lucky enough to get a photo pass to their show, I thought I’d also share some of my personal favorite photos. I’d like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!</p>
-
-<style>
-    .photo-container {
-    }
-
-    .photo-container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
-
-    .sub-photo-container {
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-</style>
-
-<div class="photo-container">
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB4.jpg" />
     </div>
 
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB2.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB3.jpg" />
-        <img src="/assets/img/posts/SPABB5.jpg" />
-    </div>
-
-    <div class="sub-photo-container">
-        <img src="/assets/img/posts/SPABB1.jpg" />
-    </div>
-</div>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Introducing 2016-17 NHL Projections</h1>
-       <!--
-       <p class="post-meta">Oct 11 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/nhl-playoff-projections/" target="_blank">the code</a>.</p>
-
-<p>Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/nhl-proj-10-11-16.png" target="_blank">
-    <img src="/assets/img/posts/nhl-proj-10-11-16.png" alt="The initial projections for VAN, NYR, and WSH" width="650px" />
-    </a>
-</p>
-
-<p>So, over the course of the next few months, I’ll be comparing each team’s expected performance (as speculated by the model) to their actual performance. I’ll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out <a href="/projects/nhl-projections/" target="_blank">the new project site here</a>.</p>
-
-<p>For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don’t have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.</p>
-
-<table>
-<thead>
-<tr><th></th><th width="50px">Team</th><th width="150px">Projected Points (2016-17)</th><th width="100px">Actual Points (2015-16)</th></tr>
-</thead>
-<tbody>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/dallas-stars.png" /></td><td>DAL</td><td>96.31</td><td>109</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/pittsburgh-penguins.png" /></td><td>PIT</td><td>95.53</td><td>104</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/chicago-blackhawks.png" /></td><td>CHI</td><td>94.76</td><td>103</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/san-jose-sharks.png" /></td><td>SJS</td><td>94.06</td><td>98</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/new-york-rangers.png" /></td><td>NYR</td><td>93.33</td><td>101</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/tampa-bay-lightning.png" /></td><td>TBL</td><td>93.24</td><td>97</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/boston-bruins.png" /></td><td>BOS</td><td>92.53</td><td>93</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/st-louis-blues.png" /></td><td>STL</td><td>91.82</td><td>107</td></tr>
-
-</tbody>
-</table>
-
-<p>Here’s to an exciting 2016-17 season and <a href="https://twitter.com/search?q=lgr" target="_blank">#LGR</a>!</p>
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Random D3 Fun</h1>
-       <!--
-       <p class="post-meta">Sep 28 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>I’m currently taking (and loving) a data visualization course, so naturally, I’m learning a little D3.js to make some <em>sick</em> visualizations. Below is my first experiment with some SVG animation (likely more to come). Clearly it is art. Have fun clicking away!</p>
-
-<div id="d3-sample-container" style="margin: auto; width: 300px; cursor: pointer;">
-</div>
-<script>
-    /* make that d3 svg canvas */
-    var dimension = 300;
-    var random_svg = d3.select('#d3-sample-container').append('svg')
-        .attr('width', dimension)
-        .attr('height', dimension)
-        .style('background-color', 'black');
-
-    /* declare some helper functions */
-    var get_group = function(i, j) {
-        return (4 - i) + j;
-    }
-
-    var get_radius = function(n) {
-        return (dimension / 10) * Math.pow(87 / 100, n + 1);
-    }
-
-    var get_rand_pos = function() {
-        return Math.random() * dimension;
-    }
-
-    /* initialize some vars */
-    var isAligned = false;
-    var circles   = [ ];
-    var cxs = [dimension * (1 / 10), 
-               dimension * (3 / 10),
-               dimension * (5 / 10),
-               dimension * (7 / 10),
-               dimension * (9 / 10)
-              ];
-    var cys = [dimension * (1 / 10), 
-               dimension * (3 / 10),
-               dimension * (5 / 10),
-               dimension * (7 / 10),
-               dimension * (9 / 10)
-              ];
-    var fill = ["#0081ff", 
-                "#5791ff", 
-                "#779fff", 
-                "#98b1ff", 
-                "#aec0ff", 
-                "#c7d1ff", 
-                "#d9dfff", 
-                "#ecefff", 
-                "#ffffff"
-               ];
-
-    /* generate those circles */
-    for (var i = 0; i < 5; i++) {
-        for (var j = 0; j < 5; j++) {
-            var group_n = get_group(i,j);
-            var c_i = random_svg.append("circle")
-                .attr("cx", get_rand_pos())
-                .attr("cy", get_rand_pos())
-                .attr("r",  get_radius(group_n))
-                .attr("fill", fill[group_n])
-                .attr("ci", i)
-                .attr("cj", j)
-                .attr("group", group_n);
-            circles.push(c_i);
-        }
-    }
-
-    /* toggle alignment */
-    random_svg.on("click", function() {
-        for (var i = 0; i < circles.length; i++) {
-            var c    = circles[i];
-            var cn   = +c.attr("group");
-            var ci   = +c.attr("ci");
-            var cj   = +c.attr("cj");
-            var cx   = (isAligned ? get_rand_pos() : cxs[ci]);
-            var cy   = (isAligned ? get_rand_pos() : cys[cj]);
-
-            c.transition()
-             .duration(1000)
-             .attr("cx", cx)
-             .attr("cy", cy);
-        }
-        isAligned = !isAligned;
-    });
-</script>
-
-
-    </article>
-</div>
-
-
-
-<div class='post'>
-    <header class="post-header">
-	   <h1>Am I Becoming More or Less Hipster?</h1>
-       <!--
-       <p class="post-meta">Aug 26 2016 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
-       -->
-    </header>
-
-    <article class="post-content">
-	   <p>After years of using their services, I finally decided to check out <a href="https://developer.spotify.com/web-api/">Spotify’s Web API</a> in preparation for some upcoming hackathons. I decided to poke around in some of the API’s data (after having previously used Last.FM’s data to <a href="2015/09/01/lastfm-scrobble-graphs.html" target="_blank">visualize my Spotify usage</a>) and I was intrigued by the “popularity” metric that Spotify served up for each song. While I’m not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.</p>
-
-<p>Out of curiosity, I decided to see how my Spotify library stacked up in terms of popularity. I was also curious to see if my more recent saved songs are more or less popular than my older saves (i.e. am I becoming more or less musically hipster). As a result, I got the chart below, where each of my saved songs is plotted based on when I saved the song versus the songs popularity (as of 08/26, not when I saved it).</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-popularity.png" target="_blank">
-    <img src="/assets/img/posts/spotify-popularity.png" alt="A graph of my Spotify popularity over time" />
-    </a>
-</p>
-
-<p>While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify’s eyes. Therefore, I’m willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I’m just as cool as I’ve ever.</p>
-
-<p>P.S. Of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.</p>
-
-<p>P.P.S Bonus chart! Here’s a how much I listened to a song vs. it’s popularity on Spotify.</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-popularity-vs-playcount.png" target="_blank">
-    <img src="/assets/img/posts/spotify-popularity-vs-playcount.png" alt="A graph comparing play count of a song to its popularity" />
-    </a>
-</p>
-
-
-    </article>
-</div>
-
-
-
-<div class='pagination'>
-    
-    <p id='pagination-previous'><a href='/blog/5'>&#8592; Newer Posts</a></p>
-    
-
-    <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
-
-    
-    <p id='pagination-next'><a href='/blog/7'>Older Posts &#8594;</a></p>
-    
-</div>
-
-    	</div>
-    </div>
-	
+    <script src="/assets/js/landing.js">
+    </script>
 </body>
 </html>

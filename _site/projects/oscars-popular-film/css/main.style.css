@@ -1,0 +1,125 @@
+.columns#oscars-popular-columns {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.column#oscars-popular-text-column {
+    width: calc(40% - 15px) !important;
+}
+
+.column#oscars-popular-text-column p:nth-last-of-type(1) {
+    margin-bottom: 80px;
+}
+
+.text-cell p:nth-last-of-type(1) {
+    margin-bottom: 15px !important;
+}
+
+span.intext-title {
+    font-style: italic;
+    cursor: pointer;
+}
+
+.column#oscars-popular-viz-column {
+    width: calc(60% - 15px) !important;
+}
+
+svg#d3-oscars-popular {
+    width: 100%;
+    height: 425px;
+}
+
+.oscars-axis-label {
+    text-anchor: middle;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.oscars-title {
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+.oscars-dot {
+    fill: rgb(35, 206, 107);
+    cursor: pointer;
+}
+
+.oscars-dot.best-picture {
+    fill: rgb(230, 25, 107);
+}
+
+#oscars-svm, #oscars-better-svm {
+    stroke: gray;
+}
+
+#oscars-svm-label, #oscars-better-svm-label {
+    font-size: 12px;
+    fill: gray;
+}
+
+#oscars-better-svm-label {
+    text-anchor: end;
+}
+
+.oscars-svm-region {
+    opacity: 1;
+}
+
+#oscars-svm-region-bp, #oscars-better-svm-region-bp {
+    fill: rgba(230, 25, 107, 0.1);
+}
+
+#oscars-svm-region-tg, #oscars-better-svm-region-tg {
+    fill: rgba(35, 206, 107, 0.1);
+}
+
+.jBox-Tooltip {
+    font-family: 'Yantramanav', 'sans-serif';
+    max-width: 300px;
+    font-size: 12px;
+}
+
+#side.hidden {
+    top: 0;
+}
+
+/* if window particularly narrow (probably mobile, move text to overlay) */
+@media (max-width: 800px) {
+    .column#oscars-popular-text-column {
+        width: 100% !important;
+        position: absolute;
+        top: 0;
+    }
+
+    .column#oscars-popular-text-column p {
+        margin-bottom: 75vh;
+        background-color: rgba(255, 255, 255, 0.8);
+        position: relative;
+        padding: 5px 0;
+        z-index: 1;
+    }
+
+    .column#oscars-popular-text-column p:nth-of-type(1) {
+        margin-top: 450px;
+    }
+
+    .column#oscars-popular-text-column p:nth-last-of-type(1) {
+        margin-bottom: 450px;
+    }
+    
+    .text-cell p {
+        margin-bottom: 0 !important;
+        padding-bottom: 15px !important;
+    }
+
+    .text-cell p:nth-last-of-type(1) {
+        padding-bottom: 5px !important;
+        margin-bottom: 75vh !important;
+    }
+
+    .column#oscars-popular-viz-column {
+        width: 100% !important;
+        z-index: 2;
+    }
+}

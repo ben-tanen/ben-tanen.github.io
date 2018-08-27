@@ -54,7 +54,7 @@ d3.csv("/projects/fivethirtyeight-partisan-nfl/data/compare-data.csv", function(
 		svg_nfl_compare.append('circle')
 			.attr('class', 'dot-538')
 			.attr('id', data[i].Team + '-dot-538')
-			.attr('r', 5)
+			.attr('r', 3)
 			.attr('cx', compare_margin.left + compare_x(data[i]['Vote Lean']))
 			.attr('cy', compare_margin.top  + compare_y(data[i]['FiveThirtyEight Lean']))
 			.style('stroke', data[i].color)
