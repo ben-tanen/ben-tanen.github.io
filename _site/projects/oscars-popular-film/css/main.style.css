@@ -46,7 +46,7 @@ svg#d3-oscars-popular {
 }
 
 .oscars-dot.best-picture {
-    fill: rgb(230, 25, 107);
+    fill: rgb(244, 196, 4);
 }
 
 #oscars-svm, #oscars-better-svm {
@@ -67,11 +67,11 @@ svg#d3-oscars-popular {
 }
 
 #oscars-svm-region-bp, #oscars-better-svm-region-bp {
-    fill: rgba(230, 25, 107, 0.1);
+    fill: rgba(244, 196, 4, 0.2);
 }
 
 #oscars-svm-region-tg, #oscars-better-svm-region-tg {
-    fill: rgba(35, 206, 107, 0.1);
+    fill: rgba(35, 206, 107, 0.2);
 }
 
 .jBox-Tooltip {
