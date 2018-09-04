@@ -7,6 +7,8 @@ var compare_margin = {top: 50, right: 50, bottom: 50, left: 10},
 var compare_x = d3.scaleLinear().range([0, compare_width]),
 	compare_y = d3.scaleLinear().range([compare_height,  0]);
 
+var lean_type = "Total"
+
 /* helper functions */
 function hexToRGB(hex) {
 	return {
@@ -22,7 +24,7 @@ d3.csv("/projects/fivethirtyeight-partisan-nfl/data/compare-data.csv", function(
     d['FiveThirtyEight Lean'] = +d.fivethirtyeight;
     return d;
 }, function(error, data) {
-	compare_x.domain(d3.extent(data, function(d) { return d['Vote Lean']; })).nice();
+	compare_x.domain(d3.extent(data, function(d) { return d[lean_type + ' Lean']; })).nice();
 	compare_y.domain(d3.extent(data, function(d) { return d['FiveThirtyEight Lean']; })).nice();
 
 	svg_nfl_compare.append('line')
@@ -55,7 +57,7 @@ d3.csv("/projects/fivethirtyeight-partisan-nfl/data/compare-data.csv", function(
 			.attr('class', 'dot-538')
 			.attr('id', data[i].Team + '-dot-538')
 			.attr('r', 3)
-			.attr('cx', compare_margin.left + compare_x(data[i]['Vote Lean']))
+			.attr('cx', compare_margin.left + compare_x(data[i][lean_type + ' Lean']))
 			.attr('cy', compare_margin.top  + compare_y(data[i]['FiveThirtyEight Lean']))
 			.style('stroke', data[i].color)
 			.style('fill', function() {
@@ -66,8 +68,8 @@ d3.csv("/projects/fivethirtyeight-partisan-nfl/data/compare-data.csv", function(
 		svg_nfl_compare.append('text')
 			.attr('id', data[i].Team + '-tag')
 			.attr('class', 'team-text')
-			.attr('x', compare_margin.left + compare_x(data[i]['Vote Lean']) - (8 * (+data[i].left ? 1 : -1)))
-			.attr('y', compare_margin.top + compare_y(data[i]['FiveThirtyEight Lean']) + 4)
+			.attr('x', compare_margin.left + compare_x(data[i][lean_type + ' Lean']) - (8 * (+data[i].left ? 1 : -1)))
+			.attr('y', compare_margin.top + compare_y(data[i]['FiveThirtyEight Lean']) + 3)
 			.style('font-size', 12 + 'px')
 			.style('text-anchor', (+data[i].left ? 'end' : 'start'))
 			.text(data[i].Team);
