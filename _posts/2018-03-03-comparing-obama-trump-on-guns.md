@@ -269,25 +269,14 @@ function render_events(d) {
             .attr('cy', branch_h);
 
         // place description
-        if (d[i].days_since_shooting < 6) {
-            ot_gun_svg.append('text')
-                .classed('desc-string', true)
-                .classed(d[i].obama_trump, true)
-                .attr('x', marker_line_path[marker_line_path.length - 1][0] + (d[i].obama_trump == "Obama" ? -5 : 5))
-                .attr('y', marker_line_path[marker_line_path.length - 1][1] + 18)
-                .attr('wrap-width', d[i].wrap_width)
-                .attr('alt-wrap-width', d[i].alt_wrap_width)
-                .text(d[i].description);
-        } else {
-            ot_gun_svg.append('text')
-                .classed('desc-string', true)
-                .classed(d[i].obama_trump, true)
-                .attr('x', marker_line_path[marker_line_path.length - 1][0] + (d[i].obama_trump == "Obama" ? -5 : 5))
-                .attr('y', marker_line_path[marker_line_path.length - 1][1] + 3)
-                .attr('wrap-width', d[i].wrap_width)
-                .attr('alt-wrap-width', d[i].alt_wrap_width)
-                .text(d[i].description);
-        }
+        ot_gun_svg.append('text')
+            .classed('desc-string', true)
+            .classed(d[i].obama_trump, true)
+            .attr('x', marker_line_path[marker_line_path.length - 1][0] + (d[i].obama_trump == "Obama" ? -5 : 5))
+            .attr('y', marker_line_path[marker_line_path.length - 1][1] + (d[i].days_since_shooting < 6 ? 18 : 3))
+            .attr('wrap-width', d[i].wrap_width)
+            .attr('alt-wrap-width', d[i].alt_wrap_width)
+            .text(d[i].description);
     }
 
     wrap(d3.selectAll('.desc-string'), (width > 630 ? true : false));

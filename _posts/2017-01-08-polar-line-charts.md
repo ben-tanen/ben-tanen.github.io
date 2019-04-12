@@ -84,7 +84,7 @@ var line = d3.line()
     .y(function(d) { return y(t(d.month), r(d.value)); });
 
 var color = d3.scaleLinear()
-    .range(["#2a96e8", "#fb6767"]);
+    .range(["#2a96e8", "#fe3a3f"]);
 
 /* draw polar background */
 polar_svg.append('circle')
@@ -118,7 +118,7 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
 
     t.domain([t_min, t_max + 1]);
     r.domain([r_min - r_margin.bottom, r_max + r_margin.top]);
-    color.domain(d3.extent(data, function(d) { return d.year; }));
+    color.domain(d3.extent(data, function(d) { return d.value; }));
 
     /* draw polar axes */
     var ticks = r.ticks(5).splice(1);
@@ -202,7 +202,7 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
                 polar_svg.append("path")
                     .attr("class", "line")
                     .attr("d", line([data[ix - 1], data[ix]]))
-                    .style("stroke", color(data[ix - 1].year))
+                    .style("stroke", color(data[ix - 1].value))
                     .style("stroke-width", (!is_mobile ? '1px' : '0.5px'))
 
                 /* update center text (or stop) */

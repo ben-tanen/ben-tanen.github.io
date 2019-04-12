@@ -76,12 +76,12 @@ I'm currently taking (and loving) a data visualization course, so naturally, I'm
     /* toggle alignment */
     random_svg.on("click", function() {
         for (var i = 0; i < circles.length; i++) {
-            var c    = circles[i];
-            var cn   = +c.attr("group");
-            var ci   = +c.attr("ci");
-            var cj   = +c.attr("cj");
-            var cx   = (isAligned ? get_rand_pos() : cxs[ci]);
-            var cy   = (isAligned ? get_rand_pos() : cys[cj]);
+            var c  = circles[i];
+            var cn = +c.attr("group");
+            var ci = +c.attr("ci");
+            var cj = +c.attr("cj");
+            var cx = (isAligned ? get_rand_pos() : cxs[ci]);
+            var cy = (isAligned ? get_rand_pos() : cys[cj]);
 
             c.transition()
              .duration(1000)

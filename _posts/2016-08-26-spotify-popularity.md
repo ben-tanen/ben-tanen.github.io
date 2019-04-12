@@ -12,10 +12,10 @@ Out of curiosity, I decided to see how my Spotify library stacked up in terms of
 
 {% include figure.html src="/assets/img/posts/spotify-popularity.png" alt="A graph of my Spotify popularity over time" %}
 
-While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify's eyes. Therefore, I'm willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I'm just as cool as I've ever.
+While it does seem to stay relatively steady at an average of 42.1, the plot does seems to indicate a slight upward trend, perhaps as I lose my cool over time. However, I think a certain amount of this up-tick stems from the fact that more recently released music will likely be listened to more worldwide and thus be considered more popular in Spotify's eyes. Therefore, I'm willing to bet most, if not all, of this trend is a result of my more recent saves being more recently released. This means I'm just as cool as ever.
 
 P.S. Of my 1916 saved songs, only 20 had a popularity greater or equal to 75 while 302 had a popularity lesser or equal to 25. Just something to consider.
 
-P.P.S Bonus chart! Here's a how much I listened to a song vs. it's popularity on Spotify.
+P.P.S Bonus chart! Here's a chart of how much I listened to a song vs. it's popularity on Spotify.
 
 {% include figure.html src="/assets/img/posts/spotify-popularity-vs-playcount.png" alt="A graph comparing play count of a song to its popularity" %}

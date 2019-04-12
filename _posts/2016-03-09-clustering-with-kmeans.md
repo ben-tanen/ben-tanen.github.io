@@ -14,13 +14,13 @@ For a brief explanation, the algorithm simply works by taking data (lets say *n*
 2. Once all data points are assigned, re-calculate the centroid of each cluster to be the mean of all of its now assigned data points
 3. Repeat until no improvement can be found
 
-During lecture, my professor was showing of some plots from before and after clustering to visualize the k-means clustering process. I was intrigued and I thought it would be cool to see a step-by-step GIF of this process. Thus, I wrote some code in MATLAB to do k-means clustering and voilà, it works!
+During lecture, my professor was showing us some plots from before and after clustering to visualize the k-means clustering process. I was intrigued and I thought it would be cool to see a step-by-step GIF of this process. Thus, I wrote some code in MATLAB to do k-means clustering and voilà, it works!
 
 Initially, the code generates *k* normally-distributed random clusters of data of *r* data points each (*kr* = *n* total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn't necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.
 
 {% include figure.html src="/assets/img/posts/kmeans-before-after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" %}
 
-The first iteration is done by making a random guesses for the location of the *k* (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven't seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:
+The first iteration is done by making a random guess for the location of the *k* (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven't seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:
 
 {% include figure.html src="/assets/img/posts/kmeans-cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" %}
 

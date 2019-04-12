@@ -1,0 +1,15 @@
+---
+layout: main
+title: Explore Spotify Clusters
+minimal: yes
+---
+
+<h1>{{ page.title }}</h1>
+<p>I generated a bunch of Spotify playlists using k-means clustering based on different audio features. You can use the below to explore the audio features of the songs that make up these playlists and what features most clearly define a cluster. You can find the full analysis <a href="{% post_url 2018-04-21-spotify-playlist-clustering %}">here</a>.</p>
+
+<div id='d3-spotify-clusters-container'>
+    <svg id="d3-spotify-clusters"></svg>
+</div>
+
+<link rel="stylesheet" href="css/clusters.style.css">
+<script type="text/javascript" src="js/clusters.js"></script>
