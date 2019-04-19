@@ -2,9 +2,8 @@
 layout: post
 title: "How A Bill Doesn't Become A Law"
 date: 2018-06-01 05:00:00
-categories: data visualization project congress mvp bill hidden
+categories: data visualization project congress mvp bill
 landing-description: how a bill <i>doesn't</i> become a law
-thumbnail: /assets/img/post-thumbnails/gen-art.png
 excerpt_separator: <!-- more -->
 ---
 

@@ -51,7 +51,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Popular Movies vs. Great Films at the Oscars | Ben Tanen</title>
+    <title>Finding the Most Average Font | Ben Tanen</title>
 </head>
 
 
@@ -145,34 +145,111 @@ MathJax.Hub.Config({
     		<div class="post">
 
     <header class="post-header">
-        <h1>Popular Movies vs. Great Films at the Oscars</h1>
-        <p class="post-date">Aug 24 2018
+        <h1>Finding the Most Average Font</h1>
+        <p class="post-date">Apr 03 2019
         <!--
-        <p class="post-meta">Aug 24 2018 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        <p class="post-meta">Apr 03 2019 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
         -->
     </header>
 
     <article class="post-content">
-    <p>This post lives on another page and you were suppose to be re-routed, but something happened… sorry!</p>
+    <div class="columns two">
+    <div class="column">
+        <p>In <a href="/blog/2018/04/23/generative-art.html">a previous post</a>, I mentioned my fascination with generative art. One of my favorite creators of this art form is <a href="https://twitter.com/zachlieberman">Zach Lieberman</a>, who is constantly experimenting with different themes and methods for producing generative art. For a series he was working on in the end of 2018, he created drawings and animations to showcase the many different fonts on his computer. This included <a href="https://twitter.com/zachlieberman/status/1076926111832047616">layering O’s from each font on top of one another</a>, <a href="https://twitter.com/zachlieberman/status/1077173573859577858">sorting I’s by their aspect ratio</a>, and <a href="https://twitter.com/zachlieberman/status/1078004393415491584">creating a three dimensional counting stack</a>. These animations are a fascinating way to highlight the differences in the design of these different fonts, but when stacking them, we also see the similarities that make up a generally shared form across fonts. This makes sense, since typographers design fonts so that a reader will recognize that an “E” in their font is in fact an “E.” This recognition is heavily driven by the existence of fundamental components of any given letter (e.g., the three arms in an “E”, the two bowls in a “B”). When many fonts are stacked on top of one another, we can see trends and standard conventions in which components are included as well as how. I decided to explore these trends and see which fonts most closely followed these conventions and which decided to resisted them.</p>
+    </div>
+    <div class="column">
+        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Love written with every font on my hard drive — happy holidays ! <a href="https://twitter.com/hashtag/openframeworks?src=hash&amp;ref_src=twsrc%5Etfw">#openframeworks</a> <a href="https://t.co/ZWwjivAuJa">pic.twitter.com/ZWwjivAuJa</a></p>&mdash; zach lieberman (@zachlieberman) <a href="https://twitter.com/zachlieberman/status/1077653990760951813?ref_src=twsrc%5Etfw">December 25, 2018</a></blockquote>
+        <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div>
 
-<p>You can find the post <a href="/projects/oscars-popular-film/">here</a>.</p>
+<p>When I originally came across Lieberman’s pieces and decided to explore on my own, I started out attempting to use D3.js, since it was the graphical tool I was most comfortable with, but eventually I hit a wall. At the time, I had heard a bit about <a href="https://processing.org/">Processing</a>, but it wasn’t until reading <a href="https://blog.datawrapper.de/weeklychart-scatterplot-painting/">this piece</a> by Elana Levin Schtulberg for the Datawrapper blog that I realized Processing was indeed the tool for me. Before getting to the actual project at hand, I had <a href="/blog/2019/04/03/processing-fun.html">some fun learning</a> to make other visuals.</p>
 
-<script>
-    window.location = '/projects/oscars-popular-film/';
-</script>
+<p>Once I had a lay of the land, the first step was to generate some images to show the trends in font form for each letter. To do this, I stacked partially transparent text for each letter of each font on top of one another to generate a heatmap of where fonts overlapped and where they didn’t - easy enough to do with Processing!</p>
+
+<div class="columns two">
+    <div class="column" style="width: calc(35% - 15px)">
+        <p class="fig-paragraph">
+    <a class="fig-link" href="/projects/most-font/img/stacked_G_old.png" target="_blank">
+    <img src="/projects/most-font/img/stacked_G_old.png" style="display: inline;" />
+    </a>
+</p>
+
+
+
+
+
+    </div>
+    <div class="column" style="width: calc(65% - 15px)">
+        <p>My first attempt came out fairly well, but it also highlighted an issue for centering fonts. As we can see in the original heatmap for  "G," a faint outline of the letter appears but many of the fonts seem misaligned, including some that appear falling off the edge of the image, even though all fonts were told to render in the center. This happens for two reasons. First, as much as font sizes are supposed to be standardized describe a font’s height in pixels, not all fonts at 100 pixels will actually render with a height of 100 pixels, some will be less, some will be more. Second, some fonts will render with margins and padding so that the letters actually render vertically offset from the intended location.</p>
+    </div>
+</div>
+
+<p>But this is simple enough to fix with the help of some bounding boxes and some math! First, we can render each letter for each font and calculate the dimensions of <a href="https://computersciencewiki.org/index.php/Bounding_boxes">the bounding box</a> around said letter. Using these dimensions, we can tell the actual height of a rendered letter as well as the horizontal / vertical offset from the center and use these to scale and translate said letter back to the center at the intended height. And viola, after these modifications, we get much improved heatmaps!</p>
+
+<div id="stacked-img-container">
+    <ul id="stacked-img-list">
+        <li><img src="/projects/most-font/img/stacked_A.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_B.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_C.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_D.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_E.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_F.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_G.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_H.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_I.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_J.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_K.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_L.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_M.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_N.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_O.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_P.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_Q.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_R.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_S.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_T.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_U.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_V.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_W.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_X.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_Y.png" /></li>
+        <li><img src="/projects/most-font/img/stacked_Z.png" /></li>
+    </ul>
+</div>
+
+<style>
+    #stacked-img-container {
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    #stacked-img-list {
+        width: 4002px;
+        padding: 0;
+    }
+
+    #stacked-img-list li {
+        list-style: none;
+        display: inline;
+    }
+
+    #stacked-img-list li img {
+        width: 150px;
+        display: inline;
+    }
+</style>
 
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/blog/2019/04/03/processing-fun.html'>&#8592; Newer Post</a></p>
-        
 
         <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/blog/2018/06/01/mvp-congress-p1.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2019/04/03/processing-fun.html'>Older Post &#8594;</a></p>
         
     </div>
 
