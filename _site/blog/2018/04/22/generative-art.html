@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate" type="application/rss+xml" title="Ben Tanen RSS" href="/feed.xml">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.style.css">
+    
+
+    
+    <link rel="stylesheet" href="/assets/css/jBox.css">
+
+    <!-- jquery and js files -->
+    <script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
+
+    <!-- adobe typekit -->
+    <script src="https://use.typekit.net/jru4jkm.js"></script>
+    <script>
+    try {
+        Typekit.load({
+            async: true,
+            active: function() {
+                $('#side h1').css('opacity', 1);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
+            },
+            inactive: function() {
+                $('#side h1').css('opacity', 1);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
+            }
+        });
+    } catch(e){}
+    </script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
+
+    <title>A First Attempt At Generative Art | Ben Tanen</title>
+</head>
+
+
+<body>
+    <!-- adding support for mathjx -->
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <div class='wrapper'>
+    	<div id='side'>
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
+    
+    <h1 id="title-1" class="tk-europa">Howdy</h1>
+    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
+
+    <div id='site-links' class="tk-europa">
+        <p><a href='/'>Home</a></p>
+        <p><a href='/projects/' >Projects</a></p>
+        <p><a href='http://link.ben-tanen.com/resume/' >Resume</a></p>
+        <p><a href='/blog/all/' >Blog</a></p>
+    </div>
+
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
+        <a href="https://twitter.com/ben_tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M384.635,236.708c19.554-1.613,32.816-10.502,37.922-22.564c-7.055,4.333-28.952,9.057-41.044,4.558 c-0.593-2.841-1.255-5.541-1.903-7.977c-9.215-33.835-40.764-61.091-73.819-57.799c2.674-1.08,5.386-2.084,8.094-2.988 c3.638-1.303,24.987-4.777,21.625-12.312c-2.835-6.628-28.917,5.01-33.826,6.53c6.479-2.438,17.203-6.631,18.35-14.082 c-9.931,1.362-19.679,6.057-27.214,12.886c2.72-2.927,4.783-6.496,5.222-10.335c-26.493,16.924-41.967,51.042-54.488,84.139 c-9.834-9.53-18.549-17.034-26.369-21.202c-21.933-11.762-48.159-24.034-89.327-39.317c-1.264,13.621,6.736,31.731,29.789,43.774 c-4.995-0.668-14.128,0.824-21.432,2.573c2.975,15.604,12.69,28.461,38.99,34.677c-12.019,0.793-18.232,3.529-23.86,9.424 c5.474,10.852,18.832,23.625,42.863,21.002c-26.717,11.516-10.894,32.844,10.847,29.659 c-37.087,38.307-95.559,35.492-129.133,3.453c87.664,119.456,278.225,70.647,306.623-44.414 c21.273,0.184,33.784-7.368,41.539-15.693C411.823,242.782,394.057,240.632,384.635,236.708z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="github" class="social-link">
+        <a href="https://github.com/ben-tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M373.573,231.878c1.11-7.021,1.803-14.719,1.977-23.351c-0.066-37.014-17.785-50.111-21.194-56.251 c5.021-28.044-0.831-40.801-3.554-45.168c-10.04-3.563-34.929,9.198-48.528,18.181c-22.173-6.491-69.031-5.857-86.603,1.68 c-32.422-23.216-49.57-19.676-49.57-19.676s-11.086,19.879-2.931,48.962c-10.667,13.594-18.619,23.205-18.619,48.698 c0,6.106,0.379,11.875,1.023,17.425c9.187,48.304,47.462,69.144,85.059,72.737c-5.657,4.299-12.45,12.434-13.39,21.861 c-7.108,4.596-21.408,6.115-32.528,2.619c-15.58-4.924-21.545-35.777-44.877-31.375c-5.048,0.945-4.045,4.273,0.327,7.113 c7.108,4.609,13.803,10.342,18.963,22.605c3.963,9.416,12.299,26.229,38.655,26.229c10.462,0,17.791-1.236,17.791-1.236 s0.2,23.994,0.2,33.352c0,10.77-14.534,13.793-14.534,18.959c0,2.057,4.811,2.25,8.677,2.25c7.64,0,23.536-6.363,23.536-17.557 c0-8.895,0.142-38.785,0.142-44.02c0-11.438,6.13-15.078,6.13-15.078s0.75,61.055-1.476,69.24 c-2.609,9.625-7.336,8.258-7.336,12.541c0,6.395,19.11,1.564,25.449-12.43c4.904-10.93,2.707-70.803,2.707-70.803l5.113-0.111 c0,0,0.059,27.422-0.117,39.947c-0.186,12.977-1.523,29.379,6.184,37.121c5.059,5.092,20.555,14.027,20.555,5.861 c0-4.732-10.852-8.641-10.852-21.461v-59.057c6.593,0,7.955,19.412,7.955,19.412l2.377,36.064c0,0-1.578,13.16,14.217,18.652 c5.575,1.953,17.504,2.484,18.062-0.793c0.561-3.287-14.362-8.146-14.504-18.332c-0.078-6.203,0.277-9.834,0.277-36.818 c0-26.969-3.623-36.945-16.247-44.896C328.697,291.219,366.724,274.869,373.573,231.878z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="lastfm" class="social-link">
+        <a href="https://www.last.fm/user/ben-tanen" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M222.188,296.969c-6.664,5.982-19.463,17.961-40.772,17.961c-25.132,0-49.344-22.029-49.344-57.277 c0-45.163,28.943-59.729,51.163-59.729c32.053,0,39.071,19.339,47.809,46.145l11.663,36.721 c11.651,35.614,33.507,64.244,96.521,64.244c45.169,0,75.763-13.945,75.763-50.66c0-29.744-16.761-45.163-48.083-52.511 l-23.309-5.136c-16.027-3.672-20.762-10.283-20.762-21.302c0-12.483,9.833-19.822,25.863-19.822 c17.482,0,26.955,6.609,28.416,22.396l36.418-4.405c-2.917-33.047-25.499-46.628-62.65-46.628 c-32.779,0-64.832,12.484-64.832,52.504c0,24.968,12.018,40.752,42.242,48.102l24.776,5.869 c18.575,4.41,24.76,12.121,24.76,22.771c0,13.58-13.11,19.087-37.876,19.087c-36.786,0-55.263-19.46-64.009-46.265l-12.022-36.712 c-15.287-47.731-33.336-65.357-81.78-65.357c-43.198,0-85.133,34.145-85.133,92.153c0,55.812,40.262,85.915,82.582,85.915 c30.605,0,46.152-10.756,53.739-16.271L222.188,296.969z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="linkedin" class="social-link">
+        <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M390.005,284.965v99.085h-57.443v-92.449c0-23.224-8.308-39.072-29.101-39.072 c-15.873,0-25.318,10.68-29.475,21.013c-1.515,3.693-1.905,8.835-1.905,14.006v96.503h-57.462c0,0,0.774-156.578,0-172.8h57.457 v24.493c-0.117,0.183-0.269,0.381-0.378,0.559h0.378v-0.559c7.634-11.757,21.267-28.553,51.782-28.553 C361.663,207.189,390.005,231.887,390.005,284.965z M154.511,127.951c-19.658,0-32.516,12.894-32.516,29.85 c0,16.586,12.486,29.872,31.753,29.872h0.384c20.039,0,32.501-13.283,32.501-29.872 C186.255,140.845,174.171,127.951,154.511,127.951z M125.407,384.05h57.441v-172.8h-57.441V384.05z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="email" class="social-link">
+        <a href="mailto:ben.tanen@gmail.com" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M256,298.711l-36.988-32.373l-105.753,90.654c3.844,3.565,9.033,5.787,14.757,5.787h255.969 c5.703,0,10.871-2.222,14.693-5.787l-105.689-90.654L256,298.711z"/>
+                    <path d="M398.742,155.01c-3.846-3.588-9.012-5.788-14.758-5.788H128.016c-5.703,0-10.87,2.222-14.714,5.83 L256,277.355L398.742,155.01z"/>
+                    <polygon points="106.51,167.972 106.51,345.396 209.723,257.688"/>
+                    <polygon points="302.277,257.688 405.49,345.396 405.49,167.908"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+</ul>
+</div>
+
+    	<div class='main'>
+    		<div class="post">
+
+    <header class="post-header">
+        <h1>A First Attempt At Generative Art</h1>
+        <p class="post-date">Apr 22 2018
+        <!--
+        <p class="post-meta">Apr 22 2018 <span class="post-tag">data</span><span class="post-tag">art</span><span class="post-tag">project</span></p>
+        -->
+    </header>
+
+    <article class="post-content">
+    <div id="d3-gen-art-container">
+    <svg id="d3-gen-art"></svg>
+    <div id="d3-gen-art-controls">
+        <p>
+            <!-- Color Steps -->
+            <input type="range" min="1" max="30" value="10" id="range_span" />
+        </p>
+        <p style="text-align: right">
+            <!-- Type: -->
+            <input type="radio" id="viz-type-1" name="viz-type" value="radial" checked="" />
+            <label for="viz-type-1">Radial</label>
+
+            <input type="radio" id="viz-type-2" name="viz-type" value="line" />
+            <label for="viz-type-2">Line</label>
+        </p>
+    </div>
+</div>
+
+<p>A recent trip to <a href="https://www.mfa.org/">the Boston MFA</a> inspired me to try making more art for art’s sake. I’ve never been particularly crafty with a pencil or paint brush so I decided my artistic medium would have to be digital. I’ve been fascinated by generative art (<a href="http://thedotisblack.com/">the dot is black</a> has always been a quality source for interesting pieces) so I thought I would take a whack at it.</p>
+
+<p>Wikipedia says <a href="https://en.wikipedia.org/wiki/Generative_art">generative art</a> must be created partially or entirely using an autonomous system, but I prefer <a href="http://inconvergent.net/thoughts-on-generative-art/">Anders Hoff’s definition</a> of the art form:</p>
+
+<blockquote>
+  <p>“I would argue that it does not really matter whether you are generating characters, dialogue or environments for a computer game, geometry as part of a building, digital or analogue art, a musical composition, or a poem. In all cases you are using a system of some kind to help you along. Either towards a specific goal, some unidentified result, or somewhere in-between. To me the main point is usually to experiment with a small system that consists of a set of relatively simple rules.”</p>
+</blockquote>
+
+<p>With that in mind, I set out to see what I could create. While I enjoy the pieces I’ve seen, I found a lot of generative art lacked color. As a personal fan of color, I knew I wanted to somehow include color in my piece. This led me to a question: how would a color describe itself?</p>
+
+<p>Without the ability to have personal discussions with colors, I opted to use a color’s own codified representation (specifically the binary representation of a color’s hex code) to generate each color’s pattern in the piece. Doing so led to the piece above.</p>
+
+<p>Feel free to play around with it and let me know if you have any thoughts on it! Is this generative art? Is there a greater meaning behind this piece? Am I just a hack making pretty pictures? Let me know and I’ll let you know if I agree!</p>
+
+<style>
+#d3-gen-art-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+#d3-gen-art {
+    width: 100%;
+}
+
+#d3-gen-art-controls p {
+    width: calc(50% - 5px);
+    display: inline-block;
+}
+
+#viz-type-2 {
+    margin-left: 10px;
+}
+</style>
+
+<script>
+
+/*********************/
+/*** INIT VARIABLE ***/
+/*********************/
+
+var svg = d3.select('#d3-gen-art');
+
+var margin = {top: 5, right: 5, bottom: 5, left: 5},
+    width  = $('#d3-gen-art').width() -  margin.left - margin.right,
+    height = $('#d3-gen-art').width() - margin.top - margin.bottom;
+
+var colors = ['#77bdee', '#80ff80', '#ff6666', '#ee77ee', '#77eeee'];
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
+// convert rgb color to hex color
+function color_rgb_to_hex(rgb){
+    rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+    return (rgb && rgb.length === 4) ? "#" +
+        ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+}
+
+// convert hex color to binary string
+function color_hex_to_bin(hex) {
+    let bin = parseInt(hex.substring(1, 100), 16).toString(2);
+
+    if (bin.length < 24) return "0".repeat(24 - bin.length) + bin;
+    else return bin;
+}
+
+// line pattern for representing the binary representation of a color with colors
+function line_viz(colors, color_steps) {
+    let rect_width  = width / 24,
+        rect_height = height / ((colors.length - 1) * color_steps + 1),
+        rect_margin = 9;
+
+    // for sequential color pairs (n - 1 pairs), ranges from color_i to color_{i + 1}
+    for (let i = 0; i < colors.length - 1; i++) {
+        let color_scale = d3.scaleLinear()
+            .domain([0, color_steps])
+            .range([colors[i], colors[i + 1]]);
+
+        // for each color in the scale (color_step steps)
+        for (let j = 0; j < color_steps; j++) {
+            let color     = color_scale(j),
+                color_bin = color_hex_to_bin(color_rgb_to_hex(color));
+            
+            // for each bit in color
+            for (let k = 0; k < 24; k++) {
+                if (color_bin[k] == "1") {
+                    svg.append('rect')
+                        .attr('x', margin.left + k * rect_width + rect_margin)
+                        .attr('y', margin.top + i * rect_height * color_steps + j * rect_height)
+                        .attr('width', Math.max(rect_width  - 2 * rect_margin, 2))
+                        .attr('height', rect_height)
+                        .style('fill', color)
+                        .style('stroke', color)
+                        .style('stroke-width', 0.25);
+                }
+            }
+        }
+    }
+
+    // add in last color (color_i) to bottom row
+    let color     = colors[colors.length - 1],
+        color_bin = color_hex_to_bin(color);
+    for (let i = 0; i < 24; i++) {
+        if (color_bin[i] == "1") {
+            svg.append('rect')
+                .attr('x', margin.left + i * rect_width + rect_margin)
+                .attr('y', margin.top + (colors.length - 1) * rect_height * color_steps)
+                .attr('width', Math.max(rect_width - 2 * rect_margin, 2))
+                .attr('height', rect_height)
+                .style('fill', color)
+                .style('stroke', color)
+                .style('stroke-width', 0.25);
+        }
+    }
+}
+
+// radial pattern for representing the binary representation of a color with colors
+function radial_viz(colors, color_steps) {
+    let arc = d3.arc(),
+        angle_diff = 2 * Math.PI / colors.length,
+        radius_margin = 4.5;
+
+    // for each color in list, make ranging color scale
+    for (let i = 0; i < colors.length; i++) {
+        let color_scale = d3.scaleLinear()
+            .domain([0, color_steps])
+            .range([colors[i], colors[i + 1 < colors.length ? i + 1 : 0]]);
+
+        // for each color in color scale (color_steps steps)
+        for (let j = 0; j < color_steps; j++) {
+            let color     = color_scale(j),
+                color_bin = color_hex_to_bin(color_rgb_to_hex(color));
+
+            // for each bit in color
+            for (let k = 0; k < 24; k++) {
+                if (color_bin[k] == '1') {
+                    svg.append('path')
+                        .attr('transform', `translate(${margin.left + width / 2}, ${margin.top + height / 2})`)
+                        .attr('d', arc({
+                            innerRadius: (width * k)       / (2 * 24) + radius_margin,
+                            outerRadius: (width * (k + 1)) / (2 * 24) - radius_margin,
+                            startAngle: angle_diff  * (j / color_steps + i),
+                            endAngle: angle_diff * ((j + 1) / color_steps + i)
+                        }))
+                        .style('fill', color)
+                        .style('stroke', color)
+                        .style('stroke-width', 0.1);
+                }
+            }
+        }
+    }
+}
+
+var viz_fns = [line_viz, radial_viz],
+    viz_ix  = 1;
+
+/*******************/
+/*** RENDER PLOT ***/
+/*******************/
+
+// make svg plot square
+svg.style('height', svg.style('width'));
+
+// draw viz
+viz_fns[viz_ix](colors, parseInt($("#range_span").val()));
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+// on color step slider update
+d3.select('#range_span')
+    .on("input", function() {
+        svg.selectAll('rect, path').remove();
+
+        viz_fns[viz_ix](colors, parseInt($("#range_span").val()));
+    });
+
+// on viz type radio update
+d3.selectAll('input[name="viz-type"]')
+    .on("change", function() {
+        svg.selectAll('rect, path').remove();
+
+        if (d3.select(this).attr('value') == "radial") viz_ix = 1;
+        else viz_ix = 0;
+
+        viz_fns[viz_ix](colors, parseInt($("#range_span").val()));
+    });
+
+// on resize
+$(window).resize(function() {
+    if ($('#d3-gen-art').width() - margin.left - margin.right != width) {
+        svg.selectAll('rect, path').remove();
+
+        svg.style('height', svg.style('width'));
+
+        width  = $('#d3-gen-art').width() -  margin.left - margin.right,
+        height = $('#d3-gen-art').width() - margin.top - margin.bottom;
+
+        viz_fns[viz_ix](colors, parseInt(document.getElementById("range_span").value));
+    }
+});
+
+</script>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/blog/2018/05/31/mvp-congress-p1.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/blog/2018/04/20/spotify-playlist-clustering.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
+</div>
+    	</div>
+    </div>
+	
+</body>
+</html>
