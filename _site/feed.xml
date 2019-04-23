@@ -6,6 +6,196 @@
         <link>http://localhost:4000</link>
             
                 
+                <item>
+                    <title>Finding the Most Average Font</title>
+                    <description>&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;In &lt;a href=&quot;/blog/2018/04/22/generative-art.html&quot;&gt;a previous post&lt;/a&gt;, I mentioned my fascination with generative art. One of my favorite creators of this art form is &lt;a href=&quot;https://twitter.com/zachlieberman&quot;&gt;Zach Lieberman&lt;/a&gt;, who is constantly experimenting with different themes and methods for producing generative art. For a series he was working on in the end of 2018, he created drawings and animations to showcase the many different fonts on his computer. This included &lt;a href=&quot;https://twitter.com/zachlieberman/status/1076926111832047616&quot;&gt;layering O’s from each font on top of one another&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/zachlieberman/status/1077173573859577858&quot;&gt;sorting I’s by their aspect ratio&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/zachlieberman/status/1078004393415491584&quot;&gt;creating a three dimensional counting stack&lt;/a&gt;. These animations are a fascinating way to highlight the differences in the design of these different fonts, but when stacking them, we also see the similarities that make up a generally shared form across fonts. This makes sense, since typographers design fonts so that a reader will recognize that an “E” in their font is in fact an “E.” This recognition is heavily driven by the existence of fundamental components of any given letter (e.g., the three arms in an “E”, the two bowls in a “B”). When many fonts are stacked on top of one another, we can see trends and standard conventions in which components are included as well as how. I decided to explore these trends and see which fonts most closely followed these conventions and which decided to resist them.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Love written with every font on my hard drive — happy holidays ! &lt;a href=&quot;https://twitter.com/hashtag/openframeworks?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#openframeworks&lt;/a&gt; &lt;a href=&quot;https://t.co/ZWwjivAuJa&quot;&gt;pic.twitter.com/ZWwjivAuJa&lt;/a&gt;&lt;/p&gt;&amp;mdash; zach lieberman (@zachlieberman) &lt;a href=&quot;https://twitter.com/zachlieberman/status/1077653990760951813?ref_src=twsrc%5Etfw&quot;&gt;December 25, 2018&lt;/a&gt;&lt;/blockquote&gt;
+        &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When I originally came across Lieberman’s pieces and decided to explore on my own, I started out attempting to use D3.js, since it was the graphical tool I was most comfortable with, but eventually I hit a wall. At the time, I had heard a bit about &lt;a href=&quot;https://processing.org/&quot;&gt;Processing&lt;/a&gt;, but it wasn’t until reading &lt;a href=&quot;https://blog.datawrapper.de/weeklychart-scatterplot-painting/&quot;&gt;this piece&lt;/a&gt; by Elana Levin Schtulberg for the Datawrapper blog that I realized Processing was indeed the tool for me. Before getting to the actual project at hand, I had &lt;a href=&quot;/blog/2019/04/02/processing-fun.html&quot;&gt;some fun learning&lt;/a&gt; to make other visuals.&lt;/p&gt;
+
+&lt;p&gt;Once I had a lay of the land, the first step was to generate some images to show the trends in font form for each letter. To do this, I stacked partially transparent text for each letter of each font on top of one another to generate a heatmap of where fonts overlapped and where they didn’t - easy enough to do with Processing!&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot; style=&quot;width: calc(35% - 15px)&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_G_old.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/stacked_G_old.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot; style=&quot;width: calc(65% - 15px)&quot;&gt;
+        &lt;p&gt;My first attempt came out fairly well, but it also highlighted an issue for centering fonts. As we can see in the original heatmap for  &quot;G,&quot; a faint outline of the letter appears but many of the fonts seem misaligned, including some that appear falling off the edge of the image, even though all fonts were told to render in the center. This happens for two reasons. First, as much as font sizes are supposed to be standardized to describe a font’s height in pixels, not all fonts at 100 pixels will actually render with a height of 100 pixels - some will be less, some will be more. Second, some fonts will render with margins and padding so that the letters actually render vertically offset from the intended location.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But this is simple enough to fix with the help of some bounding boxes and some math! First, we can render each letter for each font and calculate the dimensions of &lt;a href=&quot;https://computersciencewiki.org/index.php/Bounding_boxes&quot;&gt;the bounding box&lt;/a&gt; around said letter. Using these dimensions, we can tell the actual height of a rendered letter as well as the horizontal / vertical offset from the center and use these to scale and translate said letter back to the center at the intended height. And viola, after these modifications, we get much improved heatmaps!&lt;/p&gt;
+
+&lt;div id=&quot;stacked-img-container-container&quot;&gt;
+    &lt;div id=&quot;stacked-img-container&quot;&gt;
+        &lt;ul id=&quot;stacked-img-list&quot;&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_A.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_B.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_C.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_D.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_E.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_F.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_G.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_H.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_I.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_J.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_K.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_L.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_M.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_N.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_O.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_P.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_Q.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_R.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_S.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_T.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_U.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_V.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_W.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_X.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_Y.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_Z.png&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;p id=&quot;scroll-hint&quot;&gt;&amp;larr; Scroll &amp;rarr;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;[ CUT DOWN ON METHODOLOGY - MOVE TO EXPANDABLE SECTION ]&lt;/p&gt;
+
+&lt;p&gt;[ GET TO HEATMAPS QUICKER ]&lt;/p&gt;
+
+&lt;div id=&quot;close-ups-container&quot;&gt;
+    &lt;div class=&quot;columns two&quot;&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores pariatur, saepe minus. Repudiandae commodi voluptatibus cum aliquid maxime odit soluta qui optio doloribus perspiciatis asperiores, atque exercitationem vel ipsam numquam.
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_E_closeup.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/stacked_E_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;columns two&quot;&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores pariatur, saepe minus. Repudiandae commodi voluptatibus cum aliquid maxime odit soluta qui optio doloribus perspiciatis asperiores, atque exercitationem vel ipsam numquam.
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_M_closeup.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/stacked_M_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;columns two&quot;&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores pariatur, saepe minus. Repudiandae commodi voluptatibus cum aliquid maxime odit soluta qui optio doloribus perspiciatis asperiores, atque exercitationem vel ipsam numquam.
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_R_closeup.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/stacked_R_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;[ DO CLOSE-UP ANALYSIS OF A FEW PARTS THAT ARE INTERESTING / VARY (middle branch of E, drop of M, shape of Q, height of J, etc.)]&lt;/p&gt;
+
+&lt;p&gt;[ DISCUSS AVERAGE FONTS (OVERLAP WITH HEATMAPS) ]&lt;/p&gt;
+
+&lt;p&gt;[ TALK ABOUT MOST AVERAGE AND LEAST AVERAGE FONTS ]&lt;/p&gt;
+
+&lt;p&gt;[ INCLUDE GIFS ]&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/average-brown-fox.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/average-brown-fox.png&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;style&gt;
+
+    #stacked-img-container, #stacked-img-container-container {
+        width: 100%;
+        overflow-x: scroll;
+        position: relative;
+    }
+
+    #stacked-img-list {
+        width: 4002px;
+        padding: 0;
+    }
+
+    #stacked-img-list li {
+        list-style: none;
+        display: inline;
+    }
+
+    #stacked-img-list li img {
+        width: 150px;
+        display: inline;
+    }
+
+    #scroll-hint {
+        position: absolute;
+        font-size: 13px;
+        color: gray;
+        bottom: 0;
+        right: 17px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #close-ups-container .column:nth-of-type(1) {
+        width: calc(80% - 15px);
+    }
+
+    #close-ups-container .column:nth-of-type(2) {
+        width: calc(20% - 15px);
+    }
+&lt;/style&gt;
+
+</description>
+                    <pubDate>2019-04-02T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/blog/2019/04/02/most-font.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2019/04/02/most-font.html</guid>
+                </item>
+                
             
                 
             

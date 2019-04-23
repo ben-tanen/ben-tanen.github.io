@@ -291,6 +291,10 @@ tbody td:nth-of-type(1) {
     width: 25%;
     display: inline-block;
     margin-right: 15px;
+    vertical-align: middle;
+}
+
+.column.top {
     vertical-align: top;
 }
 
