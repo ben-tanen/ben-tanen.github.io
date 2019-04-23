@@ -10,7 +10,7 @@ TV is pretty incredible, and I'll admit I might binge-watch from time to time. I
 
 Getting the information was pretty simple. I just had to scrape the data via Netflix's own viewing history page, clean it a bit, and then pipe it into MATLAB.
 
-{% include figure.html src="/assets/img/posts/netflix-history.png" alt="A visualization of my Netflix viewing history" %}
+{% include figure.html autolink="yes" src="/assets/img/posts/netflix-history.png" alt="A visualization of my Netflix viewing history" %}
 
 I find it interesting that there are huge spikes during my winter breaks but dips during my summer breaks. Maybe I was playing outside... One thing is for sure, I definitely watch a lot of TV.
 

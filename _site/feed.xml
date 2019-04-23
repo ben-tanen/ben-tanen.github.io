@@ -25,7 +25,7 @@
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot; style=&quot;width: calc(35% - 15px)&quot;&gt;
         &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_G_old.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/projects/most-font/img/stacked_G_old.png&quot; style=&quot;display: inline;&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -45,32 +45,32 @@
 &lt;div id=&quot;stacked-img-container-container&quot;&gt;
     &lt;div id=&quot;stacked-img-container&quot;&gt;
         &lt;ul id=&quot;stacked-img-list&quot;&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_A.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_B.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_C.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_D.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_E.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_F.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_G.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_H.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_I.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_J.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_K.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_L.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_M.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_N.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_O.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_P.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_Q.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_R.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_S.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_T.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_U.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_V.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_W.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_X.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_Y.png&quot; /&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked_Z.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_A.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_B.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_C.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_D.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_E.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_F.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_G.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_H.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_I.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_J.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_K.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_L.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_M.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_N.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_O.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_P.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_Q.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_R.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_S.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_T.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_U.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_V.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_W.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_X.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_Y.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_Z.png&quot; /&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
     &lt;p id=&quot;scroll-hint&quot;&gt;&amp;larr; Scroll &amp;rarr;&lt;/p&gt;
@@ -87,8 +87,8 @@
         &lt;/div&gt;
         &lt;div class=&quot;column&quot;&gt;
             &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_E_closeup.png&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/most-font/img/stacked_E_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/closeups/stacked_E_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
 
@@ -104,8 +104,8 @@
         &lt;/div&gt;
         &lt;div class=&quot;column&quot;&gt;
             &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_M_closeup.png&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/most-font/img/stacked_M_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/closeups/stacked_M_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
 
@@ -121,8 +121,25 @@
         &lt;/div&gt;
         &lt;div class=&quot;column&quot;&gt;
             &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/stacked_R_closeup.png&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/most-font/img/stacked_R_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/closeups/stacked_R_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;columns two&quot;&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores pariatur, saepe minus. Repudiandae commodi voluptatibus cum aliquid maxime odit soluta qui optio doloribus perspiciatis asperiores, atque exercitationem vel ipsam numquam.
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/closeups/stacked_J_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
 
@@ -140,16 +157,27 @@
 
 &lt;p&gt;[ TALK ABOUT MOST AVERAGE AND LEAST AVERAGE FONTS ]&lt;/p&gt;
 
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/top3-fonts.png&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
 &lt;p&gt;[ INCLUDE GIFS ]&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/most-font/img/average-brown-fox.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/projects/most-font/img/average-brown-fox.png&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;style&gt;
+&lt;p style=&quot;color: #77bdee; text-align: center;&quot;&gt;* * *&lt;/p&gt;
 
+&lt;p&gt;&lt;span style=&quot;color: #77bdee; font-size: 15px;&quot;&gt;Methodology&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat amet quae quis earum dignissimos neque harum est voluptatem laudantium assumenda natus, maiores sed rem corrupti reprehenderit ad repudiandae eligendi ratione.&lt;/span&gt;&lt;/p&gt;
+
+&lt;style&gt;
     #stacked-img-container, #stacked-img-container-container {
         width: 100%;
         overflow-x: scroll;
@@ -842,7 +870,7 @@ $(window).resize(function() {
 &lt;p&gt;&lt;strong&gt;Retrospective note (on the retrospective):&lt;/strong&gt; FiveThirtyEight had &lt;a href=&quot;https://fivethirtyeight.com/features/a-decent-second-week-saved-the-u-s-from-olympic-catastrophe/&quot;&gt;their own projection model&lt;/a&gt; and they recently published their results. I decided to see how my results compared to theirs (see below for a quick chart). As &lt;strong&gt;far&lt;/strong&gt; better modelers than me, I was expecting their results to blow mine out of the water, and you know what, they kind of do. Our results are on two different scales (theirs are measured by number of medals expected, mine are measured by expected Fantasy Olympic points) so direct comparison is probably not the best analysis, but it is interesting to see that we get similar trends, likely driven by performances that were just truly unexpected. This comparison also further points out how much I messed up Germany (points furtherest to the right). Sorry Germany…&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/fantasy-olympics-538-retro.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/fantasy-olympics-538-retro.png&quot; alt=&quot;A chart comparing FiveThirtyEight's projections to mine&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -880,7 +908,7 @@ $(window).resize(function() {
 
     &lt;div class=&quot;column&quot;&gt;
         &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; alt=&quot;The non-weighted and weighted point distributions&quot; width=&quot;400&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -1860,7 +1888,7 @@ function clean_group_name(group) {
 &lt;!-- more --&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/ff-spreadsheet.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/ff-spreadsheet.png&quot; width=&quot;600px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -1967,7 +1995,7 @@ function clean_group_name(group) {
                     <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus adipisci odio numquam, at nostrum reprehenderit non. Nobis vitae libero nam ad! Voluptatum doloremque, ratione veritatis provident maxime voluptatibus fuga est.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/darkside-initial.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/darkside-initial.jpg&quot; alt=&quot;My original try at remixing Storm Thorgerson's Pink Floyd design&quot; width=&quot;500px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -2349,7 +2377,7 @@ function clean_group_name(group) {
                     <description>&lt;p&gt;After months of reading and being impressed by the &lt;a href=&quot;https://pudding.cool/2017/04/beer/&quot; target=&quot;_blank&quot;&gt;very&lt;/a&gt; &lt;a href=&quot;https://pudding.cool/2017/01/making-it-big/&quot; target=&quot;_blank&quot;&gt;cool&lt;/a&gt; &lt;a href=&quot;https://pudding.cool/2017/02/vocabulary/&quot; target=&quot;_blank&quot;&gt;visual&lt;/a&gt; &lt;a href=&quot;https://pudding.cool/2017/05/song-repetition/&quot; target=&quot;_blank&quot;&gt;essays&lt;/a&gt; put out by &lt;a href=&quot;https://pudding.cool/&quot; target=&quot;_blank&quot;&gt;The Pudding&lt;/a&gt;, I decided I would take a crack at a project using what they call “scrollytelling.” For my final final project of my undergraduate career, I constructed a visual walk-through to explain and compare &lt;a href=&quot;https://en.wikipedia.org/wiki/Huffman_coding&quot; target=&quot;_blank&quot;&gt;traditional Huffman Coding&lt;/a&gt; to &lt;a href=&quot;https://en.wikipedia.org/wiki/Adaptive_Huffman_coding&quot; target=&quot;_blank&quot;&gt;adaptive Huffman Coding&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/huffman-coding.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/huffman-coding.gif&quot; alt=&quot;A screen capture of the scrollytelling visualization&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -2541,7 +2569,7 @@ function clean_group_name(group) {
 &lt;p&gt;A lot of inspiration for the extension came from the &lt;a href=&quot;https://chrome.google.com/webstore/detail/feedly-notifier/egikgfbhipinieabdmcpigejkaomgjgb&quot;&gt;Feedly Notifier extension&lt;/a&gt; I use to keep track of my RSS feeds. I found its design to be clean but still provided me all the information and actions I would need. Thus, for my extension, I ended up with something that looked and felt pretty similar.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/tv-monitor-demo.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/tv-monitor-demo.gif&quot; width=&quot;350px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -2979,7 +3007,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
                     <description>&lt;p&gt;&lt;em&gt;This is a follow-up for a project I am working on during the 2016-17 NHL season. For more, see &lt;a href=&quot;/2016/10/11/introducing-nhl-projections.html&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/nhl-projections/files/progression.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/projects/nhl-projections/files/progression.gif&quot; width=&quot;450px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -3659,7 +3687,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;Using this information as the main “features” of our data, we can compute and define a hyperplane (or in this case, a line) to find if there is a meaningful division between English and German given the “features” we are analyzing (for more on the math behind this, see &lt;a href=&quot;http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html&quot;&gt;here&lt;/a&gt;). If we compute and plot this for ten different excerpts, we get the following:&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/svm-poems.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/svm-poems.png&quot; alt=&quot;A graph showing our poems and our SVM&quot; width=&quot;450px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -3832,7 +3860,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;This is where &lt;a href=&quot;http://ben-tanen.github.io/jumbo-advisor/&quot;&gt;JumboAdvisor&lt;/a&gt; comes in. Done as a project for Tufts Polyhack 2015, JumboAdvisor is intended to allow flexibility in the college course planning process. Want to see if one course counts for a certain requirement? Want to swap around course to your heart’s content? Want to see what your college career will look like with all of these CS and math courses? Go right ahead.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/jumboadvisor.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/jumboadvisor.png&quot; alt=&quot;A screenshot of JumboAdvisor&quot; width=&quot;600px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -3951,7 +3979,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;The first coding project was Battleship. This was based on the project that Codacademy had you build as you learned Python. This version is more extended than the Codacademy, but to be honest, without looking back at the Codacademy version, I’m not sure how or why… Either way, here is the &lt;a href=&quot;https://github.com/ben-tanen/py-games/blob/master/battleship.py&quot;&gt;code on Github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/python-game-minesweeper.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/python-game-minesweeper.png&quot; alt=&quot;A screenshot of the Minesweeper game&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -3995,7 +4023,7 @@ Good Ol' Unix Terminal Games
 &lt;p&gt;One potential game gave the prize/punishment in the form of slaps. Using the same split/steal principles, players would either end up giving or receiving slaps (or share a hug, if both players choose split). In the payoff matrix below, +2 slap means that you will give two slaps to the opposing party, and -2 slaps means you will receive two slaps. In the case of a steal/steal situation, both players would receive two slaps from a 3rd party.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/game-theory-slaps.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/game-theory-slaps.png&quot; alt=&quot;A payoff matrix for the slapping game&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -4009,7 +4037,7 @@ Playful violence is always fun
 &lt;p&gt;Another version turns game theory into a drinking game. To play this version, you would need to find an alcoholic beverage of which both players dislike and a few beers. This time having the option to make the other player either drink or sit, punishments would be dealt out as shots of the collectively despised liquor. A drink/drink situation would result in both parties taking a shot. A drink/sit situation would lead to one party (the one who chose sit) to take a shot, while the other does not. The ideal situation, however, is for both parties to choose sit, resulting in both parties sitting and enjoying a beer together.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/game-theory-drinks.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/game-theory-drinks.png&quot; alt=&quot;A payoff matrix for the drinking game&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -4107,7 +4135,7 @@ Update - More or less is exactly what the actual implementation looks like
 &lt;p&gt;Apple seems very proud of their cross-syncing platform iCloud and to be honest, it is pretty good. But iCloud doesn’t even compare to Spotify’s syncing across their different platforms. If you’re listening to a song on your computer and you add it to your library, it shows up on your phone that instant. And you can literally swap over to your phone that instant, picking up that song exactly where you left it off. In fact you can do this across the desktop, browser, and phone apps without even missing a beat. I just switched from my phone to my computer after I came back from a walk and wanted to pick up the song exactly where I was. It’s a feature I’ve dreamed of for years and now it’s my reality, thanks to Spotify. As far as I know, iCloud or any other competitor can’t even come close to that.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-sync.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/spotify-sync.png&quot; alt=&quot;A screenshot showing Spotify's cross-sync capabilities&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -4121,7 +4149,7 @@ Swap between your phone and your computer instantly
 &lt;p&gt;In my opinion, the crown jewel of Spotify has to be their mobile app. If you’re a premium user, you get the same unlimited music access on your phone that you would in the desktop app. That means you get the ability to search through Spotify’s whole catalog, browse artist updates, and sample and queue up songs (a lot of which is still not doable on the iTunes equivalent app). In order to do all this, Spotify didn’t waste any space as they crammed all the functionality into a cohesive, absolutely gorgeous mobile app. You’re really not using Spotify until you’re using the mobile version.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-mobile.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/spotify-mobile.png&quot; alt=&quot;Screenshots from Spotify's mobile app&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -4150,7 +4178,7 @@ Spotify didn't waste an inch of space on the mobile app
                 <item>
                     <title>RodRego: The Simple Register Machine Simulator</title>
                     <description>&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;http://sites.tufts.edu/rodrego/files/2011/03/RodRego1986.gif&quot; alt=&quot;RodRego's Original Banner&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -4241,7 +4269,7 @@ The original desktop application (left) vs. the new web application (right)
                     <description>&lt;p&gt;When I first started working with web design, &lt;a href=&quot;http://www.kerem.co&quot;&gt;Kerem Suer’s&lt;/a&gt; website had a lot of features that inspired me. One of these features was his use of &lt;a href=&quot;https://web.archive.org/web/20130114231739/http://kerem.co/&quot;&gt;infographics&lt;/a&gt;. It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/infographics-kerem.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/infographics-kerem.png&quot; alt=&quot;Examples of Kerem's use of infographics&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -4255,7 +4283,7 @@ Examples of Kerem's use of infographics
 &lt;p&gt;Fast forward to today, my infographic aspirations remain, and I think I’ve found my solution. Using the services of &lt;a href=&quot;http://www.IFTTT.com&quot;&gt;IFTTT&lt;/a&gt;, Dropbox, and some simple jQuery, I set up a system that allows me to send a quick text and see my online infographic update within a few moments.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/infographics-ex.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/infographics-ex.png&quot; alt=&quot;My own example infographics&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
@@ -4287,7 +4315,7 @@ My own example infographics
 &lt;p&gt;In his post, &lt;a href=&quot;http://experiments.undercurrent.com/&quot;&gt;The Largest Vocabulary in Hip Hop&lt;/a&gt;, Daniels analyzed the discography of 85 rappers (he added another 19 in his &lt;a href=&quot;http://mfdaniels.tumblr.com/post/93313634355/updated-rappers-sorted-by-size-of-vocabulary-20-new/&quot;&gt;updated version&lt;/a&gt; of the piece) and determined who had the largest unique vocabulary. Using Python, Daniels looked at the first 35,000 lyrics of each rapper and counted the number of unique words used. The result is a beautifully represented data set, arranging the rappers by the size of their vocabularies.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/rap-vocab.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/rap-vocab.png&quot; alt=&quot;A screenshot from the article&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;

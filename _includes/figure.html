@@ -1,7 +1,7 @@
 <p class="fig-paragraph">
     <a class="fig-link" 
         {% if include.link %}href="{{include.link}}"
-        {% else %}href="{{include.src}}"
+        {% elsif include.autolink %}href="{{include.src}}"
         {% endif %}
         target="_blank">
     <img src="{{include.src}}"  

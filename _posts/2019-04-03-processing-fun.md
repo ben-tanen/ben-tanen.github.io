@@ -14,10 +14,10 @@ In the pursuit of [visualizing font design trends]({% post_url 2019-04-03-most-f
 
 <div class="columns two">
     <div class="column">
-        {% include figure.html src="/assets/img/posts/processing-ex-flower.gif" alt="An animated random flower made in Processing" %}
+        {% include figure.html autolink="yes" src="/assets/img/posts/processing-ex-flower.gif" alt="An animated random flower made in Processing" %}
     </div>
     <div class="column">
-        {% include figure.html src="/assets/img/posts/processing-ex-letter-grid.gif" alt="A cycle of random fonts per letter made in Processing" %}
+        {% include figure.html autolink="yes" src="/assets/img/posts/processing-ex-letter-grid.gif" alt="A cycle of random fonts per letter made in Processing" %}
     </div>
 </div>
 
