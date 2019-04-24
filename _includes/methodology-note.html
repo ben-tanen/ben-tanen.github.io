@@ -1,0 +1,11 @@
+{% include section-break.html %}
+
+<div class='methodology'>
+    <p class='methodology-title'>Methodology and minutia</p>
+    {% assign desc = include.content | newline_to_br | split: '<br />' %}
+    {% for member in desc %}
+    <p>{{ member }}</p>
+    {% endfor %}
+</div>
+
+

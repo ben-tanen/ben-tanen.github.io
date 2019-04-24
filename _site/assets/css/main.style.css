@@ -238,6 +238,39 @@ figcaption {
     margin-bottom: 10px;
 }
 
+/*************************/
+/*** misc post styling ***/
+/*************************/
+
+.footnote {
+    color: #77bdee;
+    cursor: pointer;
+}
+
+.footnote:hover {
+    text-decoration: underline;
+}
+
+.jBox-Tooltip{
+    font-family: 'Yantramanav', 'sans-serif';
+    max-width: 300px;
+}
+
+p.section-break {
+    color: #77bdee;
+    text-align: center;
+}
+
+.methodology p {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.methodology-title {
+    color: #77bdee;
+    font-weight: 700;
+}
+
 /*********************/
 /*** table styling ***/
 /*********************/
