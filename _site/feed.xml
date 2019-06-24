@@ -6,7 +6,358 @@
         <link>http://localhost:4000</link>
             
                 
+                <item>
+                    <title>Finding the Most Average Font</title>
+                    <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/projects/most-font/css/style.css&quot; /&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;In &lt;a href=&quot;/blog/2018/04/23/generative-art.html&quot;&gt;a previous post&lt;/a&gt;, I mentioned my fascination with generative art. One of my favorite creators of this art form is &lt;a href=&quot;https://twitter.com/zachlieberman&quot;&gt;Zach Lieberman&lt;/a&gt;, who is constantly experimenting with different themes and methods for producing generative art. For a series he was working on near the end of 2018, he created drawings and animations to showcase the many different fonts on his computer. This included &lt;a href=&quot;https://twitter.com/zachlieberman/status/1076926111832047616&quot;&gt;layering O’s from each font on top of one another&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/zachlieberman/status/1077173573859577858&quot;&gt;sorting I’s by their aspect ratio&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/zachlieberman/status/1078004393415491584&quot;&gt;creating a three dimensional counting stack&lt;/a&gt;. These animations are a fascinating way to highlight the differences in the design of these different fonts, but when stacking them, we also see the similarities that make up a generally shared form across fonts. This makes sense, since typographers design fonts so that a reader will recognize that E in their font is in fact an E. This recognition is heavily driven by the existence of fundamental components of any given letter (e.g., the three arms in E, the two bowls in B). When many fonts are stacked on top of one another, we can see trends and standard conventions in which components are included as well as how. I decided to explore these trends and see which fonts most closely followed these conventions and which decided to resist them.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Love written with every font on my hard drive — happy holidays ! &lt;a href=&quot;https://twitter.com/hashtag/openframeworks?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#openframeworks&lt;/a&gt; &lt;a href=&quot;https://t.co/ZWwjivAuJa&quot;&gt;pic.twitter.com/ZWwjivAuJa&lt;/a&gt;&lt;/p&gt;&amp;mdash; zach lieberman (@zachlieberman) &lt;a href=&quot;https://twitter.com/zachlieberman/status/1077653990760951813?ref_src=twsrc%5Etfw&quot;&gt;December 25, 2018&lt;/a&gt;&lt;/blockquote&gt;
+        &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This post will contain some font design lingo, so if you’re relatively new to typography (like I am), you can read some basics on &lt;a href=&quot;http://typedia.com/learn/only/anatomy-of-a-typeface/&quot; target=&quot;_blank&quot;&gt;these&lt;/a&gt; &lt;a href=&quot;https://www.fonts.com/content/learning/fontology/level-1&quot; target=&quot;_blank&quot;&gt;pages&lt;/a&gt; &lt;a href=&quot;https://material.io/design/typography/understanding-typography.html&quot; target=&quot;_blank&quot;&gt;for&lt;/a&gt; &lt;a href=&quot;http://www.happytypings.com/alphabet/&quot; target=&quot;_blank&quot;&gt;background&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The first step was to generate some images to show the trends in font form for each letter. To do this, I stacked partially transparent text for each letter of each font on top of one another to generate a “heatmap” of where fonts overlapped and where they didn’t.&lt;/p&gt;
+
+&lt;div class=&quot;img-container-container&quot;&gt;
+    &lt;div class=&quot;img-container&quot;&gt;
+        &lt;ul class=&quot;img-list&quot; id=&quot;stacked&quot;&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_A.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_B.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_C.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_D.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_E.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_F.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_G.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_H.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_I.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_J.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_K.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_L.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_M.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_N.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_O.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_P.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_Q.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_R.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_S.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_T.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_U.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_V.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_W.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_X.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_Y.png&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/stacked/stacked_Z.png&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;scroll-hint&quot;&gt;&amp;larr; Scroll &amp;rarr;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Looking at these heatmaps, we can see obvious trends emerge that form the basis of the letters we know and love, i.e., the heatmap for C looks like a C. But looking closely at these images, we can see the different ways that fonts can vary. A more obvious and consistent example is the use of serifs. Based on the fonts I used for this exercise, about two thirds of fonts are sans-serif, but by focusing on caps of a particular letter’s strokes, we can see the faint apparition of serifs coming from those minority serif fonts. The inclusion of serifs is an intentional design decision and from these letter heatmaps, we can see the embodiment of this design choice. These design decisions are often made across an entire font, but there are also letter-specific examples.&lt;/p&gt;
+
+&lt;div id=&quot;close-ups-container&quot;&gt;
+    &lt;div class=&quot;columns two&quot;&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            One such example is for the &lt;a href=&quot;https://typedecon.com/blogs/type-glossary/stroke/&quot; target=&quot;_blank&quot;&gt;middle strokes&lt;/a&gt; used in M. As seen in the close-up, fonts differ in whether to have these two middle strokes meet &lt;a href=&quot;https://typography.guru/uploads/monthly_2016_02/M_Comparison.thumb.png.3a44c1f62b79a1d04b5d2098f4e442b8.png&quot; target=&quot;_blank&quot;&gt;above or on the baseline&lt;/a&gt;. This seems to be &lt;span id=&quot;footnote-2&quot; class=&quot;footnote&quot;&gt;occasionally referred&lt;/span&gt; to as the &lt;a href=&quot;http://www.identifont.com/identify?7+.+8J+HQ5+57D+4PV+7LD+7V+ECI+50+7B+8RT+B6G+NEY+7UW+1K9+KBY+2JR+56V+1L1+4Y+DH+1LA+97+80+8W+PAF+58C+9J+76Q+Z+4C+7P+1JZ+30D+J+26RC+4A+7W+J4T+1KU+1U6+11+7S+6X6+6XA+79+1KI+42+53K+1QY+1U+9Z&quot; target=&quot;_blank&quot;&gt;height of the M’s center vertex&lt;/a&gt;. Examples of a high vertex include Courier and Tahoma, while examples of a low vertex include Futura and Avenir.
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/closeups/stacked_M_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;columns two&quot;&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            Another example can be seen for the &lt;a href=&quot;https://typedecon.com/blogs/type-glossary/tail/&quot; target=&quot;_blank&quot;&gt;tail&lt;/a&gt; of R. While the heatmap shows a deeper red for straight tails, indicating the vast majority of fonts went in this direction, we can see some fonts that opted for an outward curved tail. For example, Helvetica uses an outwardly bowed tail for R. This design decision is portrayed for &lt;a href=&quot;http://www.identifont.com/identify?17+.+8J+HQ5+57D+4PV+7LD+7V+ECI+50+7B+8RT+B6G+NEY+7UW+1K9+KBY+2JR+56V+1L1+4Y+DH+1LA+97+80+8W+PAF+58C+9J+76Q+Z+4C+7P+1JZ+30D+J+26RC+4A+7W+J4T+1KU+1U6+11+7S+6X6+6XA+79+1KI+42+53K+1QY+1U+9Z&quot; target=&quot;_blank&quot;&gt;this question&lt;/a&gt; on Identifont. 
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/closeups/stacked_R_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;columns two&quot;&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            We can also look at the top of J to see differences in heights among among fonts. From the heatmap, it appears as if most of the used fonts have J sitting on the &lt;a href=&quot;https://typedecon.com/blogs/type-glossary/baseline/&quot; target=&quot;_blank&quot;&gt;baseline&lt;/a&gt; with their height becoming apparent from the &lt;a href=&quot;https://typedecon.com/blogs/type-glossary/cap-height/&quot; target=&quot;_blank&quot;&gt;cap height of J’s stem&lt;/a&gt;. However, because of how these images show centered letters &lt;span id=&quot;footnote-3&quot; class=&quot;footnote&quot;&gt;without consideration for the baseline&lt;/span&gt;, the variance in heights for J are actually coming from a mix of fonts that have the letter sitting on the baseline, like Arial, and those that have &lt;a href=&quot;http://www.identifont.com/identify?9+J+4KG+2XE+7K+3A5+3C+9L+F+20Z+773+J4S+97+1QN+8YZ+1L0+30C+B6F+1TM+6X+7UF+58C+8Z+6ZQ+2BR+PAE+4PV+76P+74+9I+8J+56V+8F+DG+26RA+8N+1KS+JPK+75+8W+7P+7W+8E+7S+6X4+6X8+8B+53K+1U6+79+1KI+1LA+1QY+7G+9Z&quot; target=&quot;_blank&quot;&gt;J dipping below the baseline&lt;/a&gt;, like Gill Sans, leading to the appearance of mixed heights.
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot;&gt;
+            &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/most-font/img/closeups/stacked_J_closeup.png&quot; style=&quot;display: inline;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Beyond showing design decisions and trends across fonts and letters, we can also use these heatmaps as a benchmark to test how “average” an individual font might be. By layering an individual font’s letter on top of a heatmap and measuring the saturation of the color inside vs. outside of the font, we get a measure for how much that letter overlaps with the standard/average form, which I’ll refer to as it’s “averageness score.” If we then sort all of our fonts/letters based on this averageness score, we can see a series of fonts that start relatively average and then diverge quite a bit from the standard.&lt;/p&gt;
+
+&lt;div class=&quot;img-container-container&quot;&gt;
+    &lt;div class=&quot;img-container&quot;&gt;
+        &lt;ul class=&quot;img-list&quot; id=&quot;gif&quot;&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/gifs/overlap-outline_A.gif&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/gifs/overlap-outline_E.gif&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/gifs/overlap-outline_G.gif&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/gifs/overlap-outline_K.gif&quot; /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src=&quot;/projects/most-font/img/gifs/overlap-outline_W.gif&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;scroll-hint&quot;&gt;&amp;larr; Scroll &amp;rarr;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Using these individual letter averageness scores, we can assess how divergent and/or unique a particular font is by taking the average score across all 26 letters. After doing this for each font, we find that the most average font is… Lucida Grande! On the other end of the spectrum, we unsurprisingly see that a variant of Wingdings is the most &lt;em&gt;unique&lt;/em&gt; font. Interestingly, the font Blackoak Std came in with the second lowest average, largely driven by how wide the letters of this font is. You can see these fonts (as well as a selection of extreme examples and other notable fonts) compared to the heatmaps by clicking below.&lt;/p&gt;
+
+&lt;div id=&quot;font-list-container-container&quot;&gt;
+    &lt;div id=&quot;font-list-list-container&quot;&gt;
+        &lt;ul id=&quot;font-list-list&quot;&gt;
+            &lt;li data-font-name=&quot;LucidaGrande&quot; class=&quot;selected&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Lucida-Grande.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;KozGoPro-Regular&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Kozuka-Gothic-Pro.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;MyriadPro-Regular&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Myriad-Pro.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Tahoma&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Tahoma.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;ArialUnicodeMS&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Arial.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Times-Roman&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Times-Roman.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Helvetica&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Helvetica.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Futura-Medium&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Futura.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;GillSans&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Gill-Sans.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Montserrat-Regular&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Montserrat.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Courier&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Courier.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Papyrus&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Papyrus.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Webdings&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Webdings.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;BlackoakStd&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Blackoak-Std.png&quot; /&gt;&lt;/li&gt;
+            &lt;li data-font-name=&quot;Wingdings3&quot;&gt;&lt;img src=&quot;/projects/most-font/img/font-map/font-map-label-Wingdings3.png&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;scroll-hint&quot;&gt;&amp;larr; Scroll &amp;rarr;&lt;/p&gt;
+    &lt;div id=&quot;font-list-img-container&quot;&gt;
+        &lt;img src=&quot;/projects/most-font/img/font-map/font-map-LucidaGrande.png&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now that we’ve arrived at a quantitative assessment of the most and least average fonts, it’s worth considering what these measures actually say about a font or how we should use them. If you were to be working on an eye-catching project that were to call for an eye-catching font, it is possible that you might want a font with a lower averageness score. However, for many projects, while intentional, an included font is supposed to be &lt;a href=&quot;https://thomasbyttebier.be/blog/the-best-ui-typeface-goes-unnoticed&quot;&gt;unnoticeable&lt;/a&gt;. Does that mean we should be using fonts that lean towards the more average end of the spectrum? Maybe. More likely than not though, this idea of “averageness” is just another (important?) component of one’s greater considerations for a font choice. Just as there are hundreds of different choices that make up a design for a font, choosing the right font for a design often involves a number of questions. If one of those questions is “how ordinary should the font be,” you can now consult &lt;a href=&quot;https://github.com/ben-tanen/most-font/tree/master/data&quot;&gt;the data&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
+
+&lt;div class=&quot;methodology&quot;&gt;
+    &lt;p class=&quot;methodology-title&quot;&gt;Methodology and minutia&lt;/p&gt;
+    
+    
+    &lt;p&gt;&lt;/p&gt;
+    
+    &lt;p&gt;
+All images and gifs were generated using a combination of &lt;a href=&quot;https://processing.org/&quot;&gt;Processing&lt;/a&gt; and &lt;a href=&quot;https://www.imagemagick.org/&quot;&gt;ImageMagick&lt;/a&gt;.&lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+    &lt;p&gt;
+The first iteration of this project included all of the 712 fonts on my computer, but I decided to pare it down to the primary/”regular” versions of each font (e.g., keeping Helvetica, but not Helvetica Oblique or Helvetica Light), leaving a total of 255 fonts. A handful of these fonts were also primarily designed for non-Latin alphabets (for example, &lt;a href=&quot;https://www.diwan.com/index.php/products/fonts/36-diwan-arabic-fonts&quot;&gt;Waseem&lt;/a&gt; was designed for Arabic), but since I was analyzing characters in the Latin alphabet, Processing often displayed these fonts using standard fonts.&lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+    &lt;p&gt;
+When initially generating letter heatmaps, Processing would frequently render fonts &lt;span id=&quot;footnote-1&quot; class=&quot;footnote&quot;&gt;at inconsistent sizes and with inconsistent offsets/positions&lt;/span&gt;. As much as font sizes are supposed to be standardized to describe a font’s height in pixels, not all fonts at centered 100 pixels will actually render centered with a height of 100 pixels (some will be taller/shorter, some will have padding, etc.). To compensate for this, I calculated the &lt;a href=&quot;https://computersciencewiki.org/index.php/Bounding_boxes&quot;&gt;bounding box&lt;/a&gt; around each font/letter combination and used the dimensions of these bounding boxes to scale and translate everything back to the center at the intended height.&lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+    &lt;p&gt;
+You can find all of the code, data, and generated images from the project in &lt;a href=&quot;https://github.com/ben-tanen/most-font&quot;&gt;this repo&lt;/a&gt;.&lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+&lt;/div&gt;
+
+&lt;script&gt;
+new jBox('Tooltip', {
+  attach: '#footnote-1',
+  content: &quot;&lt;img src='/projects/most-font/img/stacked_H_old.png' width='100%' /&gt;&quot;
+});
+&lt;/script&gt;
+
+&lt;script&gt;
+new jBox('Tooltip', {
+  attach: '#footnote-2',
+  content: &quot;Interestingly, in a response describing the high or low vertex, the responder captured the essence of most of these design decisions: That's just one of hundreds of type design decisions with endless amounts of gradual options.&quot;
+});
+&lt;/script&gt;
+
+&lt;script&gt;
+new jBox('Tooltip', {
+  attach: '#footnote-3',
+  content: &quot;See the methodology section below.&quot;
+});
+&lt;/script&gt;
+
+&lt;script&gt;
+d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
+    d3.selectAll(&quot;#font-list-list li&quot;).classed('selected', false);
+    d3.select(this).classed('selected', true);
+    d3.select(&quot;#font-list-img-container img&quot;).attr(&quot;src&quot;, &quot;/projects/most-font/img/font-map/font-map-&quot; + d3.select(this).attr(&quot;data-font-name&quot;) + &quot;.png&quot;);
+})
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2019-06-23T01:00:00-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2019/06/23/most-font.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2019/06/23/most-font.html</guid>
+                </item>
+                
             
+                
+                <item>
+                    <title>Random Fun with Processing</title>
+                    <description>&lt;p&gt;In the pursuit of &lt;a href=&quot;/blog/2019/06/23/most-font.html&quot;&gt;visualizing font design trends&lt;/a&gt;, I did a lot of playing around in Processing. Here is a collection of some random animations/sketches I made while working on the project.&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-mosaic.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-mosaic.gif&quot; alt=&quot;A generated mosaic of my friend snowboarding made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-offset2.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-offset2.gif&quot; alt=&quot;A slinky sine wave animation made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-sort2.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-sort2.gif&quot; alt=&quot;Sorting animation made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-offset1.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-offset1.gif&quot; alt=&quot;A scrunchy slinky animation made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-letter-grid.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-letter-grid.gif&quot; alt=&quot;A cycle of random fonts per letter made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-rave-stripes.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-rave-stripes.gif&quot; alt=&quot;A pattern of alternating colors made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-flower.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-flower.gif&quot; alt=&quot;An animated random flower made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-sort1.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-sort1.gif&quot; alt=&quot;Another sorting animation made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-stripe-tunnel.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-stripe-tunnel.gif&quot; alt=&quot;An animation showing movement in and out of a striped tunnel made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/processing-ex-spiral.gif&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/processing-ex-spiral.gif&quot; alt=&quot;A colored spiral made in Processing&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+                    <pubDate>2019-06-23T00:00:00-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2019/06/23/processing-fun.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2019/06/23/processing-fun.html</guid>
+                </item>
                 
             
                 
@@ -1297,8 +1648,6 @@ p.fav2017-title {
                 
             
                 
-            
-                
                 <item>
                     <title>What Does the Public Think About Confederate Monuments?</title>
                     <description>&lt;p&gt;I recently came across &lt;a href=&quot;http://kut.org/post/uttt-poll-most-texas-voters-say-confederate-memorials-shouldn-t-move-0&quot;&gt;an article&lt;/a&gt; from KUT, Austin’s NPR station, about Confederate statues with the following news graphic:&lt;/p&gt;
@@ -1710,82 +2059,6 @@ function clean_group_name(group) {
                     <pubDate>2017-09-07T01:00:00-04:00</pubDate>
                     <link>http://localhost:4000/blog/2017/09/07/evaluating-fantasy-draft.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2017/09/07/evaluating-fantasy-draft.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Discovering Music with Real People, Not a Computer</title>
-                    <description>&lt;p&gt;The original purpose of &lt;a href=&quot;http://musicalshots.tumblr.com/&quot;&gt;Musical Shots&lt;/a&gt; was to help me discover new music through suggestions from followers. It hasn’t worked as well as I initially planned, but I have found some great suggestions from real people. This idea of music discovery through actual people is refreshing. Tools like Pandora and Last.fm are great, but they lack the human perspective. So, with dozens of computer-driven music discovery sites, why is there no person-based site?&lt;/p&gt;
-
-&lt;p&gt;From this question spawned a concept for a person-driven, suggestion based music discovery site.&lt;/p&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/personal-musical-discovery.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/personal-musical-discovery.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Learning as a Developer</title>
-                    <description>&lt;p&gt;&lt;a href=&quot;http://bt-old.tumblr.com/post/45150349590/long-term-variables-in-python&quot;&gt;old post&lt;/a&gt;&lt;/p&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/learning-as-a-developer.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/learning-as-a-developer.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Designing Street Signs for a Global Audience</title>
-                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores cupiditate sint minus magnam veniam id expedita voluptate quam ut ad deleniti, numquam natus quibusdam nesciunt doloribus blanditiis voluptatem assumenda earum!&lt;/p&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/designing-street-signs.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/designing-street-signs.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Automating My Life with Spotify and Last.fm</title>
-                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus adipisci odio numquam, at nostrum reprehenderit non. Nobis vitae libero nam ad! Voluptatum doloremque, ratione veritatis provident maxime voluptatibus fuga est.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Spotify Playlist Checker&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Currently Listening to (with IFTTT, Last.FM, etc.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Download playlist&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/automating-spotify.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/automating-spotify.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Animating the Dark Side of the Moon</title>
-                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus adipisci odio numquam, at nostrum reprehenderit non. Nobis vitae libero nam ad! Voluptatum doloremque, ratione veritatis provident maxime voluptatibus fuga est.&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/darkside-initial.jpg&quot; alt=&quot;My original try at remixing Storm Thorgerson's Pink Floyd design&quot; width=&quot;500px&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/animating-dark-side-of-the-moon.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/animating-dark-side-of-the-moon.html</guid>
                 </item>
                 
             
@@ -2780,24 +3053,6 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
                     <pubDate>2016-11-10T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>More On The NHL Projection Model</title>
-                    <description>&lt;p&gt;&lt;em&gt;This is a follow-up for a project I am working on during the 2016-17 NHL season. For more, see &lt;a href=&quot;/2016/10/11/introducing-nhl-projections.html&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/nhl-projections/files/progression.gif&quot; width=&quot;450px&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-</description>
-                    <pubDate>2016-10-12T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2016/10/12/more-on-nhl-projections.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2016/10/12/more-on-nhl-projections.html</guid>
                 </item>
                 
             
