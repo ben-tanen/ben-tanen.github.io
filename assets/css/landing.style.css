@@ -49,6 +49,7 @@ a:hover {
     position: fixed;
     top: 0;
     right: 0;
+    margin: 20px;
     z-index: 100;
     padding-bottom: 5px;
     background-color: rgba(255,255,255,0.9);
@@ -58,9 +59,9 @@ a:hover {
 }
 
 #landing-menu img {
-    width: 20px;
+    width: 40px;
     margin-top: 5px;
-    margin-left: calc(100% - 20px - 10px);
+    margin-left: calc(100% - 40px - 10px);
     cursor: pointer;
 }
 
@@ -219,5 +220,10 @@ span.currently {
         width: 100px; 
         height: 78px; 
         font-size: 30px;
+    }
+    
+    #landing-menu img {
+        width: 30px;
+        margin-left: calc(100% - 30px - 10px);
     }
 }
