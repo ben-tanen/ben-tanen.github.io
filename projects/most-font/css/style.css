@@ -1,8 +1,10 @@
 .img-container-container {
     margin-bottom: 15px;
+    position: relative;
+    width: 100%;
 }
 
-.img-container, .img-container-container {
+.img-container {
     width: 100%;
     overflow-x: scroll;
     position: relative;
@@ -58,8 +60,7 @@
 #font-list-list-container {
     width: 100%;      
     display: inline-block;
-    vertical-align: top;
-    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 #font-list-list {
@@ -68,7 +69,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    overflow-y: scroll;
 }
 
 #font-list-list li {
