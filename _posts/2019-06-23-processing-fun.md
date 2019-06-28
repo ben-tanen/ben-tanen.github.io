@@ -2,7 +2,7 @@
 layout: post
 title: "Random Fun with Processing"
 date: 2019-06-23 04:00:00
-categories: data visualization project fonts processing
+categories: data visualization project processing
 landing-description: random illustrations done with processing
 thumbnail: /assets/img/post-thumbnails/processing-ex3.gif
 excerpt_separator: <!-- more -->
