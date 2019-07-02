@@ -6,6 +6,414 @@
         <link>http://localhost:4000</link>
             
                 
+                <item>
+                    <title>Visualizing Trump's Narrow Path to Victory</title>
+                    <description>&lt;p&gt;&lt;em&gt;Okay, I know…the 2016 election happened nearly 1,000 days ago and at this point re-litigating it just feels like beating a dead horse that died from beating another dead horse. But this idea was inspired by 2020 Democratic Debate coverage, and you can’t always decide when inspiration strikes.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;During &lt;a href=&quot;https://www.youtube.com/watch?v=cX7hni-zGD8&amp;amp;t=1192&quot;&gt;commercial breaks between coverage&lt;/a&gt; of the second night of Democratic debates, Steve Kornacki discussed how the 2020 Electoral College race was shaping up by looking back at the 2016 results. While Hillary Clinton won the popular vote by nearly 3 million more votes, Donald Trump was able to eke out the 2016 win by clinching a number of crucial battleground state like Florida and Michigan. In the end, this helped propel him well past the necessary 270 electoral votes. However, as Kornacki noted, Trump’s path to victory was exceptionally narrow, driven by razor thin margins of a few thousand votes in the states that mattered.&lt;/p&gt;
+
+&lt;p&gt;I wanted to try to contextualize just how narrow Trump’s victory truly was, especially in comparison to the electoral significance of winning these battleground states. We generally see the Electoral College breakdown shown as &lt;a href=&quot;https://www.politico.com/2016-election/results/map/president/&quot;&gt;a race to 270 electoral votes along one dimension&lt;/a&gt;, where each state, regardless of the win margin, contributes. This makes sense for election night coverage since each state is winner-take-all. But, if we want to understand how narrowly a candidate might have won, or more importantly, contextualize how easy it might be for the same candidate to lose future elections, we need to also consider the margin of victory in each state.&lt;/p&gt;
+
+&lt;p&gt;To do so, let’s imagine the presidential election is like a tower building contest, where the person who can build the taller tower (of at least 270 votes) wins. As with any tower, you want to start with a candidate’s base—their go-to states where they crushed the competition. Once we’ve put down these sturdy bases, we continue to stack each candidate’s wins in order of how strong the win was, with bigger states really helping to pad the height. But as a candidate’s margins get narrower and therefore the building blocks get slimmer, they’ll have to be careful about the ease of one of those big important blocks falling over and onto the other side’s tower (either in this or future elections).&lt;/p&gt;
+
+&lt;div id=&quot;d3-2016-electoral-college-paths-container&quot;&gt;
+    &lt;svg id=&quot;d3-2016-electoral-college-paths&quot;&gt;
+    &lt;/svg&gt;
+    &lt;div id=&quot;d3-2016-electoral-college-paths-controls&quot;&gt;
+        &lt;div class=&quot;slider-container&quot;&gt;
+            &lt;p&gt;Florida (29 EVs): &lt;span class=&quot;slider-margin-text trump&quot; id=&quot;FL&quot;&gt;Trump +1.20%&lt;/span&gt;&lt;/p&gt;
+            &lt;input type=&quot;range&quot; min=&quot;-320&quot; max=&quot;80&quot; value=&quot;-120&quot; step=&quot;10&quot; class=&quot;slider&quot; id=&quot;FL&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;slider-container&quot;&gt;
+            &lt;p&gt;Michigan (16 EVs): &lt;span class=&quot;slider-margin-text trump&quot; id=&quot;MI&quot;&gt;Trump +0.22%&lt;/span&gt;&lt;/p&gt;
+            &lt;input type=&quot;range&quot; min=&quot;-222&quot; max=&quot;178&quot; value=&quot;-22&quot; step=&quot;10&quot; class=&quot;slider&quot; id=&quot;MI&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;slider-container&quot;&gt;
+            &lt;p&gt;Minnesota (10 EVs): &lt;span class=&quot;slider-margin-text clinton&quot; id=&quot;MN&quot;&gt;Clinton +1.52%&lt;/span&gt;&lt;/p&gt;
+            &lt;input type=&quot;range&quot; min=&quot;-48&quot; max=&quot;352&quot; value=&quot;152&quot; step=&quot;10&quot; class=&quot;slider&quot; id=&quot;MN&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;slider-container&quot;&gt;
+            &lt;p&gt;New Hampshire (4 EVs): &lt;span class=&quot;slider-margin-text clinton&quot; id=&quot;NH&quot;&gt;Clinton +0.37%&lt;/span&gt;&lt;/p&gt;
+            &lt;input type=&quot;range&quot; min=&quot;-163&quot; max=&quot;237&quot; value=&quot;37&quot; step=&quot;10&quot; class=&quot;slider&quot; id=&quot;NH&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;slider-container&quot;&gt;
+            &lt;p&gt;Pennsylvania (20 EVs): &lt;span class=&quot;slider-margin-text trump&quot; id=&quot;PA&quot;&gt;Trump +0.72%&lt;/span&gt;&lt;/p&gt;
+            &lt;input type=&quot;range&quot; min=&quot;-272&quot; max=&quot;128&quot; value=&quot;-72&quot; step=&quot;10&quot; class=&quot;slider&quot; id=&quot;PA&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;slider-container&quot;&gt;
+            &lt;p&gt;Wisconsin (10 EVs): &lt;span class=&quot;slider-margin-text trump&quot; id=&quot;WI&quot;&gt;Trump +0.76%&lt;/span&gt;&lt;/p&gt;
+            &lt;input type=&quot;range&quot; min=&quot;-276&quot; max=&quot;124&quot; value=&quot;-76&quot; step=&quot;10&quot; class=&quot;slider&quot; id=&quot;WI&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;By building these towers, we get another view of Trump’s decisive yet narrow win. At the top of Trump’s tower (pun half intended), we see four states - Florida, Wisconsin, Pennsylvania, and Michigan - that he clinched with less than a 2% margin, yet they accounted for nearly 25% of his total electoral votes. On the other side, Clinton won Minnesota and New Hampshire by less than 2%, yet those only accounted for 6% of her total electoral votes. By playing around with these battleground states (see the sliders above), we can see that all it takes is a bit of nudging to flip just two of these narrow-win states and swing the election for Clinton. In fact, without casting another vote for Clinton and simply shuffling where some of these battleground votes were cast (2.5% more votes in FL, 1.5% more votes in PA, and 2.9% fewer votes in MI, MN, NH, and WI), it was very possible for Clinton to have won.&lt;/p&gt;
+
+&lt;p&gt;These narrow wins helped push Trump toward victory, so they’re worth considering now. The window of 2% margin puts 25% of Trump’s electoral votes easily within &lt;a href=&quot;https://fivethirtyeight.com/features/trump-is-just-a-normal-polling-error-behind-clinton/&quot; target=&quot;_blank&quot;&gt;a normal polling error&lt;/a&gt;, which doesn’t inspire much confidence when it comes to building a strong win. You wouldn’t want a building to be constructed so that 25% of it could topple over with the slightest gust, so the same should go for your electoral politics. This may be something for the Biden/Sanders/Harris/Warren/… team to consider.&lt;/p&gt;
+
+&lt;style&gt;
+#d3-2016-electoral-college-paths-container {
+    margin-bottom: 15px;
+}
+
+.slider-container {
+    width: calc(33% - 2px);
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.slider-container p {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.slider-margin-text.trump {
+    color: #ff6e6c;
+}
+
+.slider-margin-text.clinton {
+    color: #77bdee;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: #dedede;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: gray;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: gray;
+  cursor: pointer;
+}
+
+#d3-2016-electoral-college-paths {
+    width: 100%;
+    height: 600px;
+}
+
+rect.trump {
+    fill: #ff6e6c;
+    cursor: pointer;
+}
+
+rect.clinton {
+    fill: #77bdee;
+    cursor: pointer;
+}
+
+.ecvotes-cumu-text {
+    font-size: 25px;
+    fill: black;
+}
+
+.ecvotes-cumu-text#trump {
+    fill: #ff6e6c;
+}
+
+.ecvotes-cumu-text#clinton {
+    text-anchor: end;
+    fill: #77bdee;
+}
+
+#x-axis-trump text, #x-axis-clinton text {
+    text-anchor: middle;
+    fill: black;
+}
+
+#y-axis .tick text {
+    text-anchor: middle;
+}
+
+#y-axis .tick rect {
+    fill: white;
+}
+
+#line270 {
+    stroke-width: 1;
+    stroke: gray;
+}
+
+#line270-caption {
+    font-size: 12px;
+    fill: gray;
+}
+
+@media (max-width: 400px) {
+    .ecvotes-cumu-text {
+        font-size: 18px;
+    }
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+
+/*********************/
+/*** INIT VARIABLE ***/
+/*********************/
+
+var ec_paths_svg = d3.select(&quot;#d3-2016-electoral-college-paths&quot;);
+
+var margin = {top: 5, right: 10, bottom: 45, left: 10, middle: 50},
+    width  = $(&quot;#d3-2016-electoral-college-paths&quot;).width() -  margin.left - margin.right,
+    height = $(&quot;#d3-2016-electoral-college-paths&quot;).height() - margin.top - margin.bottom,
+    is_mobile = (width &gt;= 470 ? false : true);
+
+// set domains: x = possible vote margins, y = possible EC votes
+var x = d3.scaleLinear().domain([0, 0.5]).range([0, (width - margin.middle) / 2]),
+    y = d3.scaleLinear().domain([0, 320]).range([height, 0]);
+
+// create empty list to store data
+var data = [ ];
+
+// keep track of adjustments to 6 swing states
+var swing_state_mods = {
+    &quot;FL&quot;: $(&quot;.slider#FL&quot;).val(),
+    &quot;MI&quot;: $(&quot;.slider#MI&quot;).val(),
+    &quot;MN&quot;: $(&quot;.slider#MN&quot;).val(),
+    &quot;NH&quot;: $(&quot;.slider#NH&quot;).val(),
+    &quot;PA&quot;: $(&quot;.slider#PA&quot;).val(),
+    &quot;WI&quot;: $(&quot;.slider#WI&quot;).val(),
+}
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
+// update values for swing states depending on user slider inputs
+function update_swing_state_data(d) {
+    if ([&quot;FL&quot;, &quot;MI&quot;, &quot;MN&quot;, &quot;NH&quot;, &quot;PA&quot;, &quot;WI&quot;].indexOf(d.state_abbrev) &gt;= 0) {
+        d.votemargin = +swing_state_mods[d.state_abbrev] / 1e4;
+        if (d.votemargin &lt; 0) {
+            d.votemargin = -d.votemargin;
+            d.winner = &quot;Trump&quot;;
+        } else {
+            d.winner = &quot;Clinton&quot;;
+        }
+    }
+    return d;
+}
+
+// update swing state values and re-sort accordingly
+function update_data() {
+
+    // update swing state values
+    data = data.map(d =&gt; update_swing_state_data(d));
+
+    // sort by winner then vote margin
+    data.sort((a, b) =&gt; {
+        if (a.winner === b.winner) return d3.descending(a.votemargin, b.votemargin);
+        else return d3.descending(a.winner, b.winner);
+    });
+}
+
+function render_blocks() {
+    // keep track of cumulative EC votes for each candidate,
+    // will determine height to place new blocks
+    let ecvotes_clinton_cumu = 0,
+        ecvotes_trump_cumu = 0;
+
+    for (let i = 0; i &lt; data.length; i++) {
+        let d = data[i];
+
+        ec_paths_svg.append(&quot;rect&quot;)
+            .classed(d.winner === &quot;Trump&quot; ? &quot;trump&quot; : &quot;clinton&quot;, true)
+            .attr(&quot;state&quot;, d.state)
+            .attr(&quot;winner&quot;, d.winner)
+            .attr(&quot;votemargin&quot;, d.votemargin)
+            .attr(&quot;ecvotes&quot;, d.ecvotes)
+            .attr(&quot;x&quot;, margin.left + (width / 2) + (d.winner === &quot;Trump&quot; ? -1 : 0) * x(d.votemargin) + (d.winner === &quot;Trump&quot; ? -1 : 1) * margin.middle / 2)
+            .attr(&quot;y&quot;, margin.top + y((d.winner === &quot;Trump&quot; ? ecvotes_trump_cumu : ecvotes_clinton_cumu) + d.ecvotes) + 1.5)
+            .attr(&quot;width&quot;, x(d.votemargin))
+            .attr(&quot;height&quot;, y(y.domain()[1] - d.ecvotes) - 1.5);
+
+        if (d.winner === &quot;Clinton&quot;) ecvotes_clinton_cumu += d.ecvotes;
+        else ecvotes_trump_cumu += d.ecvotes;
+    }
+
+    // add text to show how many electoral votes each candidate has
+    ec_paths_svg.append(&quot;text&quot;)
+        .classed(&quot;ecvotes-cumu-text&quot;, true)
+        .attr(&quot;id&quot;, &quot;clinton&quot;)
+        .attr(&quot;x&quot;, margin.left + width)
+        .attr(&quot;y&quot;, margin.top + y(270) - 30)
+        .text(&quot;Clinton: &quot; + ecvotes_clinton_cumu);
+
+    ec_paths_svg.append(&quot;text&quot;)
+        .classed(&quot;ecvotes-cumu-text&quot;, true)
+        .attr(&quot;id&quot;, &quot;trump&quot;)
+        .attr(&quot;x&quot;, margin.left)
+        .attr(&quot;y&quot;, margin.top + y(270) - 30)
+        .text(&quot;Trump: &quot; + ecvotes_trump_cumu);
+
+    // add tooltips for blocks
+    new jBox(&quot;Tooltip&quot;, {
+        attach: &quot;rect.trump, rect.clinton&quot;,
+        content: &quot;...&quot;,
+        onOpen: function() {
+            var state       = $(this.source).attr(&quot;state&quot;),
+                swing_state = [&quot;Florida&quot;, &quot;Michigan&quot;, &quot;Minnesota&quot;, &quot;New Hampshire&quot;, &quot;Pennsylvania&quot;, &quot;Wisconsin&quot;].indexOf(state) &gt;= 0,
+                winner      = $(this.source).attr(&quot;winner&quot;),
+                votemargin  = d3.format(&quot;.2%&quot;)($(this.source).attr(&quot;votemargin&quot;)),
+                ecvotes     = $(this.source).attr(&quot;ecvotes&quot;);
+
+            this.setContent(`&lt;p&gt;&lt;b&gt;${state}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;${winner} won${swing_state ? &quot;*&quot; : &quot;&quot;} ${ecvotes} Electoral Votes by a margin of ${votemargin}&lt;/p&gt;`);
+        }
+    });
+}
+
+function render_axes() {
+    // add x-axes (one for each candidate)
+    ec_paths_svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;x-axis-clinton&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + (width + margin.middle) / 2) + &quot;, &quot; + (margin.top + height + 2) + &quot;)&quot;)
+        .call(d3.axisBottom(x).tickValues([0.1, 0.2, 0.3, 0.4, 0.5]).tickFormat(d3.format(&quot;.0%&quot;)))
+        .append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width / 4) + &quot;, 30)&quot;)
+        .text(&quot;Clinton winning vote margin&quot;);
+
+    x.domain([0.5, 0]); // flip the domain to show a flipped axis for trump
+
+    ec_paths_svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;x-axis-trump&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;, &quot; + (margin.top + height + 2) + &quot;)&quot;)
+        .call(d3.axisBottom(x).tickValues([0.1, 0.2, 0.3, 0.4, 0.5]).tickFormat(d3.format(&quot;.0%&quot;)))
+        .append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (width / 4) + &quot;, 30)&quot;)
+        .text(&quot;Trump winning vote margin&quot;);
+
+    x.domain([0, 0.5]); // flip domain back
+
+    // add y-axis
+    ec_paths_svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;y-axis&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + (margin.left + (width / 2)) + &quot;, &quot; + margin.top + &quot;)&quot;)
+        .call((g) =&gt; {
+
+            // adding generic axis
+            g.call(d3.axisRight(y).ticks(5))
+
+            // removing middle line
+            g.selectAll(&quot;.domain&quot;).remove();
+
+            // adding white box for text to sit over line
+            g.selectAll(&quot;.tick&quot;).append(&quot;rect&quot;).attr(&quot;x&quot;, -10).attr(&quot;y&quot;, -5).attr(&quot;width&quot;, 20).attr(&quot;height&quot;, 10);
+
+            // extending line across middle
+            g.selectAll(&quot;.tick line&quot;).attr(&quot;x1&quot;, -margin.middle * 0.4).attr(&quot;x2&quot;, margin.middle * 0.4);
+
+            // centering tick text and moving to front of parent g
+            g.selectAll(&quot;.tick text&quot;).attr(&quot;x&quot;, 0).each(function() {
+                this.parentNode.appendChild(this);
+            });
+        });
+
+    // add line showing 270 electoral votes
+    ec_paths_svg.append(&quot;line&quot;)
+        .attr(&quot;id&quot;, &quot;line270&quot;)
+        .attr(&quot;x1&quot;, margin.left)
+        .attr(&quot;x2&quot;, margin.left + width)
+        .attr(&quot;y1&quot;, margin.top + y(270))
+        .attr(&quot;y2&quot;, margin.top + y(270))
+
+    ec_paths_svg.append(&quot;text&quot;)
+        .attr(&quot;id&quot;, &quot;line270-caption&quot;)
+        .attr(&quot;x&quot;, margin.left)
+        .attr(&quot;y&quot;, margin.top + y(270) + 12)
+        .text(&quot;270 electoral votes&quot;);
+}
+
+function resize() {
+
+    // delete existing elements
+    d3.selectAll(&quot;rect.trump, rect.clinton, .ecvotes-cumu-text&quot;).remove();
+    d3.selectAll(&quot;#x-axis-trump, #x-axis-clinton, #y-axis&quot;).remove();
+    d3.selectAll(&quot;#line270, #line270-caption&quot;).remove();
+    
+    // reset d3 width and x scale
+    width = $(&quot;#d3-2016-electoral-college-paths&quot;).width() -  margin.left - margin.right;
+    x.range([0, (width - margin.middle) / 2]);
+
+    // re-render
+    render_axes();
+    render_blocks();
+}
+
+/*********************************/
+/*** PARSE DATA AND INIT PLOTS ***/
+/*********************************/
+
+d3.csv(&quot;/assets/data/election2016-results.csv&quot;, (d) =&gt; {
+    d.ecvotes = +(d.winner === &quot;Trump&quot; ? d.ecvotes_trump : d.ecvotes_clinton);
+    d.votemargin = +d.votemargin;
+    return d;
+}, (e, d) =&gt; {
+    if (e) throw e;
+
+    // store data for later
+    for (var i = 0; i &lt; d.length; i++) data.push(d[i]);
+
+    // update data for swing state mods and sort
+    update_data();
+
+    // render block and axes
+    render_axes();
+    render_blocks();
+});
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+$(window).resize(() =&gt; resize());
+
+$(&quot;.slider&quot;).change(function() {
+    var id  = $(this).attr(&quot;id&quot;),
+        val = $(this).val();
+
+    // update mod track
+    swing_state_mods[id] = val;
+
+    // update text
+    $('.slider-margin-text#' + id).text((val &gt; 0 ? &quot;Clinton&quot; : &quot;Trump&quot;) + &quot; +&quot; + (Math.abs(val) / 100) + &quot;%&quot;);
+    $('.slider-margin-text#' + id).addClass((val &gt; 0 ? &quot;clinton&quot; : &quot;trump&quot;)).removeClass((val &gt; 0 ? &quot;trump&quot; : &quot;clinton&quot;))
+
+    // update data
+    update_data();
+
+    // delete blocks and re-render
+    d3.selectAll(&quot;rect.trump, rect.clinton, .ecvotes-cumu-text&quot;).remove();
+    render_blocks();
+})
+
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2019-06-27T00:00:00-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2019/06/27/trump-electoral-college-visualized.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2019/06/27/trump-electoral-college-visualized.html</guid>
+                </item>
+                
             
                 
                 <item>
@@ -4337,7 +4745,7 @@ My own example infographics
 
 &lt;p&gt;&lt;strong&gt;Update, 12/26/2016&lt;/strong&gt; - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on &lt;a href=&quot;/about/&quot;&gt;my about page&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Update, 07/28/2017&lt;/strong&gt; - Still using the improved system but now I don’t have an about page any more… you can find the details on &lt;a href=&quot;/&quot;&gt;my home page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update, 07/28/2017&lt;/strong&gt; - Still using the improved system but now I don’t have an about page any more…you can find the details on &lt;a href=&quot;/&quot;&gt;my home page&lt;/a&gt;.&lt;/p&gt;
 
 </description>
                     <pubDate>2014-11-01T11:05:41-04:00</pubDate>

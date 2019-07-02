@@ -22,5 +22,5 @@ It’s a pretty simple system, nothing ground-breaking, but for me, it solves a 
 
 **Update, 12/26/2016** - I have since moved onto a different system that is now built on a much more sustainable database. I still use a bit of IFTTT work but no more public Dropbox files. You can find the information on [my about page](/about/).
 
-**Update, 07/28/2017** - Still using the improved system but now I don't have an about page any more... you can find the details on [my home page](/).
+**Update, 07/28/2017** - Still using the improved system but now I don't have an about page any more...you can find the details on [my home page](/).
 
