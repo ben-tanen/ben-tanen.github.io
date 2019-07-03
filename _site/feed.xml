@@ -4299,6 +4299,48 @@ Markowitz bullets showing possible portfolios
             
                 
                 <item>
+                    <title>Building a &quot;Rock Band&quot; Visualizer for Drum Tab</title>
+                    <description>&lt;p&gt;&lt;em&gt;Note: this post was a retroactive addition to the blog to highlight a previously unpublicized project. This was done alongside a site restructing in July 2019 (focusing on blog feed, moving away from dedicated project page).&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Growing up, I &lt;em&gt;absolutely loved&lt;/em&gt; playing Rock Band, especially on the drums. RB was my first introduction to playing the drums, and my hours upon hours of gameplay inspired me to eventually pick up some real sticks and learn the actual drums. As helpful and accessible as &lt;a href=&quot;https://en.wikipedia.org/wiki/Drum_tablature&quot;&gt;drum tab&lt;/a&gt; generally is, I found myself wishing for some way to turn this drum tab into a Rock Band/Guitar Hero-style visualization (vertical scrolling notes timed up to the music) to help make sight-reading tab a bit easier. Across a number of years, I tried a variety of approaches—at one point I made a flash game where I could play along with manually transcribed drum tab using the actual RB drum kit—but was never super successful.&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;This project idea resurfaced for me after I finished &lt;a href=&quot;https://github.com/ben-tanen/sim-fishy&quot;&gt;a project for my introductory CS course&lt;/a&gt; where we were asked to build a object-oriented simulator to animate fish sprites. The structure of the code allowed a user to input pretty much any kind of sprites (not just limited to fish) so I realized I could use this simulation code to help run my Rock Band-style drum tab visualization.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/sim-fishy-ex.gif&quot; alt=&quot;Fish animation via the command-line&quot; width=&quot;400px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With this simulation engine pretty much ready to go already, I just had to write some code that would convert drum tab into a valid input for the simulation. This primarily involves just reading drum tab and spacing out the corresponding notes/dots based on timing and which drum/cymbal is to be played. There are a lot of variations in styling for drum tab, so initially I’ve just made it work on &lt;a href=&quot;https://github.com/ben-tanen/drumtab-visualizer/blob/master/maps-tab.txt&quot;&gt;a specific sample style&lt;/a&gt; with the intention of expanding this in the future.&lt;/p&gt;
+
+&lt;p&gt;Putting this all together finally gave me something similar to what I had been dreaming of for so long. Yes, the use of a fish simulator is maybe a little janky, and yes, the tab interpreter/converter works on a limited set of drum tabs, but this is a big step. This has been a dream project for awhile so I imagine there will be some continued work and improvements as I use the tool more over time. For now, I’m just happy to have a custom animation for &lt;a href=&quot;https://www.youtube.com/watch?v=oIIxlgcuQRU&quot;&gt;my favorite song to play on the drums&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https://github.com/ben-tanen/drumtab-visualizer/raw/master/images/demo.gif&quot; alt=&quot;Demo GIF of the drum tab visualizer&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;You can check out the code for this project &lt;a href=&quot;https://github.com/ben-tanen/drumtab-visualizer&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+                    <pubDate>2015-11-10T10:05:41-05:00</pubDate>
+                    <link>http://localhost:4000/blog/2015/11/10/drum-tab-visualizer.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2015/11/10/drum-tab-visualizer.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>Tufts Polyhack 2015: JumboAdvisor</title>
                     <description>&lt;p&gt;Figuring out what courses to take as a college student can be a slightly confusing process. What classes count for what requirements? What requirements do I even need for my major? What will my college career look like with all these courses?&lt;/p&gt;
 

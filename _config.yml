@@ -11,8 +11,6 @@ github_username:  ben-tanen
 plugins: [jekyll-paginate]
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title.html
-paginate_path: "/blog/:num"
-paginate: 4
 
 # Collections
 collections:
