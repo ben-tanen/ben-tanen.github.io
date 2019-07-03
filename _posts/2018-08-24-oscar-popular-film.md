@@ -3,7 +3,7 @@ layout: post
 title: "Popular Movies vs. Great Films at the Oscars"
 date: 2018-08-24 05:00:00
 categories: data visualization project film movies oscars svm
-show-on-landing: true
+show-on-landing: false
 landing-description: what the Academy considers a popular movie vs. a great film
 thumbnail: /assets/img/post-thumbnails/oscars-popular.png
 reroute-url: /projects/oscars-popular-film/
