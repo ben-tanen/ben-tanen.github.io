@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Introducing 2016-17 NHL Projections | Ben Tanen</title>
+    <title>ASL-LEX: A Visualization of American Sign Language | Ben Tanen</title>
 </head>
 
 
@@ -145,63 +145,39 @@ MathJax.Hub.Config({
     		<div class="post">
 
     <header class="post-header">
-        <h1>Introducing 2016-17 NHL Projections</h1>
-        <p class="post-date">Oct 11 2016
+        <h1>ASL-LEX: A Visualization of American Sign Language</h1>
+        <p class="post-date">Mar 15 2017
     </header>
 
     <article class="post-content">
-    <p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/nhl-playoff-projections/" target="_blank">the code</a>.</p>
-
-<p>Originally, this model was to be used in the early Spring (March / April 2016) simply to predict the last month or so of the 2015-16 regular season, but the model appeared to work fairly well going as far back as the first weeks of the season. Given this, I decided I would put my model to the test with the new 2016-17 NHL season (starting tomorrow!).</p>
+    <p>Since the fall of 2014, I’ve worked as a fellow for Tufts’ Academic Technology department. As an AT Fellow, I worked on a number of research and education-based technology tools that have been based in a variety of academic department (economics, biology, physics, philosophy). One of my favorite projects during my time as an AT Fellow was <a href="http://asl-lex.org/" target="_new">the ASL-LEX project</a>, which is based off work from researchers at Tufts, Boston University, and San Diego State University. ASL-LEX is a database and visualization of lexical and phonological properties for nearly 1,000 different signs of American Sign Language. The tool is designed to help teachers and parents teach and promote ASL vocabulary to K-12 students.</p>
 
 <p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/nhl-proj-10-11-16.png" target="_blank">
-    <img src="/assets/img/posts/nhl-proj-10-11-16.png" alt="The initial projections for VAN, NYR, and WSH" width="650px" />
+    <a class="fig-link" target="_blank">
+    <img src="/assets/img/posts/asl-lex-screenshot.png" alt="A screenshot of the ASL-LEX visualization" width="500px" />
     </a>
 </p>
 
-<p>So, over the course of the next few months, I’ll be comparing each team’s expected performance (as speculated by the model) to their actual performance. I’ll also be tweaking the model and using it to run other predictions and analyses, just to see what I can come up with. For more on the project, as well as the most up-to-date projections, check out <a href="/projects/nhl-projections/" target="_blank">the new project site here</a>.</p>
+<p>The visualization shows a network of nodes, where each node represent a single sign. Larger nodes represent signs that occur more commonly and connections between nodes show signs that are phonologically related (those that share movement, major location, flexion, and/or selected fingers). This makes it so that clusters of signs signify a group of signs that look similar, even if they don’t necessarily have similar meaning. You can search for specific signs as well as apply phonological and lexical filters to limit your search. When you click on a specific node, you are presented with information on the associated sign, including a video of the sign being performed.</p>
 
-<p>For a little sneak peak, to start off the season, the model is only working with game data from the 2015-16 season and the handful of pre-season games so I don’t have the highest expectations for these predictions. See below for the top 8 projected teams, all of who (with the exception of Boston) made the playoffs last season.</p>
+<p>I decided to highlight the project here and now because I found out that the visualization was actually named one of the <a href="https://www.popsci.com/vizzies-winners-2017/" target="_new">Best Interactives from National Science Foundation’s 2017 Vizzies Awards</a>, which is kind of incredible! This project was super cool to work on with the team, but it’s always fun to get some recognition as well.</p>
 
-<table>
-<thead>
-<tr><th></th><th width="50px">Team</th><th width="150px">Projected Points (2016-17)</th><th width="100px">Actual Points (2015-16)</th></tr>
-</thead>
-<tbody>
+<p>All the thanks and credit in the world to the team (Naomi Caselli, Karen Emmorey, Zed Sevcikova Sehyr, and Ariel Cohen-Goldberg, among others) who conducted the research and conceptualized the visualization. I was lucky enough to put together the visualization/website, but none of it would have been possible without their incredible work.</p>
 
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/dallas-stars.png" /></td><td>DAL</td><td>96.31</td><td>109</td></tr>
+<p>You can read more about the project (as well as play with the visualization) <a href="http://asl-lex.org/" target="_new">on this site</a>. You can also view the underlying code for the visualization in <a href="https://github.com/ben-tanen/asl-lex" target="_new">this Github repo</a>.</p>
 
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/pittsburgh-penguins.png" /></td><td>PIT</td><td>95.53</td><td>104</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/chicago-blackhawks.png" /></td><td>CHI</td><td>94.76</td><td>103</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/san-jose-sharks.png" /></td><td>SJS</td><td>94.06</td><td>98</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/new-york-rangers.png" /></td><td>NYR</td><td>93.33</td><td>101</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/tampa-bay-lightning.png" /></td><td>TBL</td><td>93.24</td><td>97</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/boston-bruins.png" /></td><td>BOS</td><td>92.53</td><td>93</td></tr>
-
-<tr><td><img style="width: 30px; padding-bottom: 8px; padding-left: 7px; padding-top: 7px; margin: auto; vertical-align: center;" src="http://www.sportsnet.ca/wp-content/themes/sportsnet-nhl/images/team_logos/200x200/hockey/nhl/st-louis-blues.png" /></td><td>STL</td><td>91.82</td><td>107</td></tr>
-
-</tbody>
-</table>
-
-<p>Here’s to an exciting 2016-17 season and <a href="https://twitter.com/search?q=lgr" target="_blank">#LGR</a>!</p>
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/blog/2016/11/10/stpaul-broken-bones.html'>&#8592; Newer Post</a></p>
+        <p id='pagination-previous'><a href='/blog/2017/04/28/chaos-game.html'>&#8592; Newer Post</a></p>
         
 
         <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/blog/2016/09/28/random-d3-fun.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2017/01/24/tv-monitor.html'>Older Post &#8594;</a></p>
         
     </div>
 

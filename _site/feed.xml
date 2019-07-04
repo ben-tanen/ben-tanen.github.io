@@ -3028,6 +3028,32 @@ function clean_group_name(group) {
             
                 
                 <item>
+                    <title>ASL-LEX: A Visualization of American Sign Language</title>
+                    <description>&lt;p&gt;Since the fall of 2014, I’ve worked as a fellow for Tufts’ Academic Technology department. As an AT Fellow, I worked on a number of research and education-based technology tools that have been based in a variety of academic department (economics, biology, physics, philosophy). One of my favorite projects during my time as an AT Fellow was &lt;a href=&quot;http://asl-lex.org/&quot; target=&quot;_new&quot;&gt;the ASL-LEX project&lt;/a&gt;, which is based off work from researchers at Tufts, Boston University, and San Diego State University. ASL-LEX is a database and visualization of lexical and phonological properties for nearly 1,000 different signs of American Sign Language. The tool is designed to help teachers and parents teach and promote ASL vocabulary to K-12 students.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/asl-lex-screenshot.png&quot; alt=&quot;A screenshot of the ASL-LEX visualization&quot; width=&quot;500px&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The visualization shows a network of nodes, where each node represent a single sign. Larger nodes represent signs that occur more commonly and connections between nodes show signs that are phonologically related (those that share movement, major location, flexion, and/or selected fingers). This makes it so that clusters of signs signify a group of signs that look similar, even if they don’t necessarily have similar meaning. You can search for specific signs as well as apply phonological and lexical filters to limit your search. When you click on a specific node, you are presented with information on the associated sign, including a video of the sign being performed.&lt;/p&gt;
+
+&lt;p&gt;I decided to highlight the project here and now because I found out that the visualization was actually named one of the &lt;a href=&quot;https://www.popsci.com/vizzies-winners-2017/&quot; target=&quot;_new&quot;&gt;Best Interactives from National Science Foundation’s 2017 Vizzies Awards&lt;/a&gt;, which is kind of incredible! This project was super cool to work on with the team, but it’s always fun to get some recognition as well.&lt;/p&gt;
+
+&lt;p&gt;All the thanks and credit in the world to the team (Naomi Caselli, Karen Emmorey, Zed Sevcikova Sehyr, and Ariel Cohen-Goldberg, among others) who conducted the research and conceptualized the visualization. I was lucky enough to put together the visualization/website, but none of it would have been possible without their incredible work.&lt;/p&gt;
+
+&lt;p&gt;You can read more about the project (as well as play with the visualization) &lt;a href=&quot;http://asl-lex.org/&quot; target=&quot;_new&quot;&gt;on this site&lt;/a&gt;. You can also view the underlying code for the visualization in &lt;a href=&quot;https://github.com/ben-tanen/asl-lex&quot; target=&quot;_new&quot;&gt;this Github repo&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+                    <pubDate>2017-03-15T11:05:41-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/03/15/ASL-LEX.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/03/15/ASL-LEX.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>How I Keep Track of All My Shows</title>
                     <description>&lt;p&gt;As I’ve &lt;a href=&quot;/blog/2016/05/08/netflix-history.html&quot;&gt;previously mentioned&lt;/a&gt;, I do enjoy watching TV and Netflix from time to time. However, since I’ve opted to go cable-less, it’s a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly had way too much time on my hands, I decided to make &lt;strong&gt;TV Monitor&lt;/strong&gt;, a little Chrome extension that keeps track of all of this for me.&lt;/p&gt;
 
@@ -4300,9 +4326,7 @@ Markowitz bullets showing possible portfolios
                 
                 <item>
                     <title>Building a &quot;Rock Band&quot; Visualizer for Drum Tab</title>
-                    <description>&lt;p&gt;&lt;em&gt;Note: this post was a retroactive addition to the blog to highlight a previously unpublicized project. This was done alongside a site restructing in July 2019 (focusing on blog feed, moving away from dedicated project page).&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Growing up, I &lt;em&gt;absolutely loved&lt;/em&gt; playing Rock Band, especially on the drums. RB was my first introduction to playing the drums, and my hours upon hours of gameplay inspired me to eventually pick up some real sticks and learn the actual drums. As helpful and accessible as &lt;a href=&quot;https://en.wikipedia.org/wiki/Drum_tablature&quot;&gt;drum tab&lt;/a&gt; generally is, I found myself wishing for some way to turn this drum tab into a Rock Band/Guitar Hero-style visualization (vertical scrolling notes timed up to the music) to help make sight-reading tab a bit easier. Across a number of years, I tried a variety of approaches—at one point I made a flash game where I could play along with manually transcribed drum tab using the actual RB drum kit—but was never super successful.&lt;/p&gt;
+                    <description>&lt;p&gt;Growing up, I &lt;em&gt;absolutely loved&lt;/em&gt; playing Rock Band, especially on the drums. RB was my first introduction to playing the drums, and my hours upon hours of gameplay inspired me to eventually pick up some real sticks and learn the actual drums. As helpful and accessible as &lt;a href=&quot;https://en.wikipedia.org/wiki/Drum_tablature&quot;&gt;drum tab&lt;/a&gt; generally is, I found myself wishing for some way to turn this drum tab into a Rock Band/Guitar Hero-style visualization (vertical scrolling notes timed up to the music) to help make sight-reading tab a bit easier. Across a number of years, I tried a variety of approaches—at one point I made a flash game where I could play along with manually transcribed drum tab using the actual RB drum kit—but was never super successful.&lt;/p&gt;
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;

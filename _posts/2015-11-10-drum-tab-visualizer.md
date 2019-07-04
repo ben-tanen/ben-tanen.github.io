@@ -6,8 +6,6 @@ categories: project python drums music
 thumbnail: /assets/img/post-thumbnails/drum-tab-visualizer.gif
 ---
 
-*Note: this post was a retroactive addition to the blog to highlight a previously unpublicized project. This was done alongside a site restructing in July 2019 (focusing on blog feed, moving away from dedicated project page).*
-
 Growing up, I *absolutely loved* playing Rock Band, especially on the drums. RB was my first introduction to playing the drums, and my hours upon hours of gameplay inspired me to eventually pick up some real sticks and learn the actual drums. As helpful and accessible as [drum tab](https://en.wikipedia.org/wiki/Drum_tablature) generally is, I found myself wishing for some way to turn this drum tab into a Rock Band/Guitar Hero-style visualization (vertical scrolling notes timed up to the music) to help make sight-reading tab a bit easier. Across a number of years, I tried a variety of approaches—at one point I made a flash game where I could play along with manually transcribed drum tab using the actual RB drum kit—but was never super successful.
 
 <div class="columns two">
