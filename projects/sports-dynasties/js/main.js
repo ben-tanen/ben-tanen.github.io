@@ -9,9 +9,6 @@ var data = {
     winners: { },
 };
 
-var year_start = 1903,
-    year_end   = 2017;
-
 /*********************************/
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/

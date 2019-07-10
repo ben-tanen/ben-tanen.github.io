@@ -76,7 +76,7 @@ function render_dotchart() {
 
     // set scale for bars
     var x = d3.scaleLinear()
-        .domain([year_start, year_end])
+        .domain([1903, 2017])
         .range([0 + 5, dot_width - 5]);
 
     sd_dot_svg.append("g")

@@ -22,7 +22,7 @@ To get a lay for the land, I was first curious about the number of total champio
 
 As expected, New York dominated, primarily driven by their World Series wins. I was pretty shocked that Montreal, with only a single team, came in third. In fact, when accounting for the number of teams per city, Canadian cities reign supreme, with Montreal and Toronto coming in first and second respectively. As a Bostonian, I do have to point out that while New York does have more championships than Boston, this is largely because of all the teams New York has. On a per team basis, Boston has 6.2 championships per team, beating out New York's measly 5.6 per team.
 
-But pure number of wins doesn't necessarily indicate dynasties. For a dynasty, it's all about sustained excellence. But dynasties are hard to define; you kind of [know it when you see it](https://en.wikipedia.org/wiki/I_know_it_when_I_see_it). But for my purposes, I defined a dynasty as any span when a city won five championships with no more than a year gap between wins. For example, Boston from 2002 - 2008 would be a dynasty with their three Super Bowl, 2007 World Series, and 2008 NBA championship wins. Boston has also won four championships since 2011, but because of the three year gap from 2008 to 2011, the dynasty (by my defintion) wouldn't include these four most recent wins. However, a Patriots win on Sunday would make for a new ongoing dynasty including the four wins since 2011.
+Yet pure number of wins doesn’t necessarily indicate dynasties. For a dynasty, it’s all about sustained excellence, but that is hard to define algorithmically; you kind of [know it when you see it](https://en.wikipedia.org/wiki/I_know_it_when_I_see_it). For my purposes, I defined a dynasty as any span when a city won five championships with no more than a year gap between wins. For example, Boston from 2002 - 2008 would be a dynasty with their three Super Bowl, 2007 World Series, and 2008 NBA championship wins. Boston has also won four championships since 2011, but because of the three year gap from 2008 to 2011, the dynasty (by my defintion) wouldn't include these four most recent wins. However, a Patriots win on Sunday would make for a new ongoing dynasty including the four wins since 2011.
 
 So, based on that definition, when and where were there dynasties?
 
@@ -60,7 +60,7 @@ Since 1903, there have been 15 dynasties across New York (4), Boston (3), Montre
 
 What is and is not a dynasty is obviously very subjective based on any given definition, so obviously this analysis can vary. I tried to take an objective approach but as with all things in sports, it should always be a discussion.
 
-As a bit of a post-script, I also wanted to include one of the original visualizations I made when I first started looking into sports dynasties. I was curious if there was any sort of pattern to be seen from plotting each league's champions. I was hoping / expecting to see some sort of cycle when championships go back and forth between a few cities. As far as I can see, no such patterns emerged. But it made a cool looking chart so I thought I'd share.
+As a bit of a post-script, I also wanted to include one of the original visualizations I made when I first started looking into sports dynasties. I was curious if there was any sort of pattern to be seen from plotting each league's champions by location. I was hoping / expecting to see some sort of cycle when championships go back and forth between a few cities. As far as I can see, no such patterns emerged, but it made a cool looking chart so I thought I'd share.
 
 <div id="d3-sd-map-container">
     <svg id="d3-sd-map"></svg>
@@ -68,8 +68,8 @@ As a bit of a post-script, I also wanted to include one of the original visualiz
 
 <link rel="stylesheet" href="/projects/sports-dynasties/css/style.css">
 
-<script type="text/javascript" src='/projects/sports-dynasties/js/main.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/bar.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/dot.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/map.js'></script>
+<script type="text/javascript" src='/projects/sports-dynasties/js/main.js'></script>
 

@@ -8,7 +8,7 @@ thumbnail: /assets/img/post-thumbnails/obama-trump-guns.png
 excerpt_separator: <!-- more -->
 ---
 
-In response to a suggestion from Franklin Leonard, the Washington Post recently published [a video](https://www.youtube.com/watch?v=uHrvODeA8-E){:target="_blank"} providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents' approaches.
+In response to a suggestion from [Franklin Leonard](https://twitter.com/franklinleonard){:target="_blank"}, the Washington Post recently published [a video](https://www.youtube.com/watch?v=uHrvODeA8-E){:target="_blank"} providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents' approaches.
 
 The video did a great job juxtaposing Obama's and Trump's intraday activities and responses (comparing Obama's first day of response to Trump's, etc.), but I felt it was hard to compare the actual timing of each event. I decided to re-visualize <span id="footnote-1" class="footnote">this information</span> into one single timeline to (hopefully) present a slightly different effect.
 

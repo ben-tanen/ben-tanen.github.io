@@ -59,7 +59,7 @@ The next logical question: how many points are awarded per medal? The quickest a
 
 With these questions answered, Fantasy Olympics was ready to be played! But besides just setting the rules of the game, I was curious to see how accurate of projections I could make. Everyone's trying to come up the perfect fantasy football predictions so I thought I'd get a head start on the projection game for when Fantasy Olympics inevitably blows up.
 
-For my projections, I went with a fairly straight forward regression based on each team's historical performances. Since there is a long gap between each of the Games, I had to consider how much historical data to include or not include in my regression. I opted to use a mean regression based on the five previous games (meaning data back to 1998 to predict the 2018 Games). This model seemed to fair best when testing against previous Games, but we shall see how it fairs for these Games. See below for my full projections by country and sport.
+For my projections, I went with a fairly straight forward regression based on each team's historical performances. Since there is a long gap between each of the Games, I had to consider how much historical data to include or not include in my regression. I opted to use a mean regression based on the five previous games (meaning data back to 1998 to predict the 2018 Games). This model seemed to fare best when testing against previous Games, but we shall see how it fares for these Games. See below for my full projections by country and sport.
 
 <p id="fo-points-table-title">Projected Fantasy Points by Country and Sport</p>
 

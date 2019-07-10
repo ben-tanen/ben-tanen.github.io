@@ -20,6 +20,9 @@ var projection = d3.geoMercator()
     .scale(width_scale(map_width))
     .center([centerx_scale(map_width), centery_scale(map_width)]);
 
+var year_start = 1903,
+    year_end   = 2017;
+
 var map_year_ix = year_start;
 
 var animate = true,

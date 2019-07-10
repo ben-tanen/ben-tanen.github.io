@@ -6,7 +6,7 @@ categories: project data tufts school visualization
 thumbnail: /assets/img/post-thumbnails/tufts-map.jpg
 ---
 
-Over the last view years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.
+Over the last few years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.
 
 It seems like my suspicion was true - I've become a little hermit holed up at my home, the CS department (my second home), or at 574 Boston Ave. Maybe I should explore some more...
 

@@ -8,7 +8,7 @@ thumbnail: /assets/img/post-thumbnails/processing-ex3.gif
 excerpt_separator: <!-- more -->
 ---
 
-In the pursuit of [visualizing font design trends]({% post_url 2019-06-23-most-font %}), I did a lot of playing around in Processing. Here is a collection of some random animations/sketches I made while working on the project.
+In the pursuit of [visualizing font design trends]({% post_url 2019-06-23-most-font %}), I did a lot of playing around in [Processing](https://processing.org/){:target="_blank"}. Here is a collection of some random animations/sketches I made while working on my latest project.
 
 <div class="columns two">
     <div class="column">

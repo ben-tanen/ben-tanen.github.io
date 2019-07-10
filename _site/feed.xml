@@ -642,7 +642,7 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
                 
                 <item>
                     <title>Random Fun with Processing</title>
-                    <description>&lt;p&gt;In the pursuit of &lt;a href=&quot;/blog/2019/06/23/most-font.html&quot;&gt;visualizing font design trends&lt;/a&gt;, I did a lot of playing around in Processing. Here is a collection of some random animations/sketches I made while working on the project.&lt;/p&gt;
+                    <description>&lt;p&gt;In the pursuit of &lt;a href=&quot;/blog/2019/06/23/most-font.html&quot;&gt;visualizing font design trends&lt;/a&gt;, I did a lot of playing around in &lt;a href=&quot;https://processing.org/&quot; target=&quot;_blank&quot;&gt;Processing&lt;/a&gt;. Here is a collection of some random animations/sketches I made while working on my latest project.&lt;/p&gt;
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
@@ -811,17 +811,17 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A recent trip to &lt;a href=&quot;https://www.mfa.org/&quot;&gt;the Boston MFA&lt;/a&gt; inspired me to try making more art for art’s sake. I’ve never been particularly crafty with a pencil or paint brush so I decided my artistic medium would have to be digital. I’ve been fascinated by generative art (&lt;a href=&quot;http://thedotisblack.com/&quot;&gt;the dot is black&lt;/a&gt; has always been a quality source for interesting pieces) so I thought I would take a whack at it.&lt;/p&gt;
+&lt;p&gt;A recent trip to &lt;a href=&quot;https://www.mfa.org/&quot; target=&quot;_blank&quot;&gt;the Boston MFA&lt;/a&gt; inspired me to try making more art for art’s sake. I’ve never been particularly crafty with a pencil or paint brush so I decided my artistic medium would have to be digital. I’ve been fascinated by generative art (&lt;a href=&quot;http://thedotisblack.com/&quot; target=&quot;_blank&quot;&gt;the dot is black&lt;/a&gt; has always been a quality source for interesting pieces) so I thought I would take a whack at it.&lt;/p&gt;
 
-&lt;p&gt;Wikipedia says &lt;a href=&quot;https://en.wikipedia.org/wiki/Generative_art&quot;&gt;generative art&lt;/a&gt; must be created partially or entirely using an autonomous system, but I prefer &lt;a href=&quot;http://inconvergent.net/thoughts-on-generative-art/&quot;&gt;Anders Hoff’s definition&lt;/a&gt; of the art form:&lt;/p&gt;
+&lt;p&gt;Wikipedia says &lt;a href=&quot;https://en.wikipedia.org/wiki/Generative_art&quot; target=&quot;_blank&quot;&gt;generative art&lt;/a&gt; must be created partially or entirely using an autonomous system, but I prefer &lt;a href=&quot;http://inconvergent.net/thoughts-on-generative-art/&quot; target=&quot;_blank&quot;&gt;Anders Hoff’s definition&lt;/a&gt; of the art form:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;“I would argue that it does not really matter whether you are generating characters, dialogue or environments for a computer game, geometry as part of a building, digital or analogue art, a musical composition, or a poem. In all cases you are using a system of some kind to help you along. Either towards a specific goal, some unidentified result, or somewhere in-between. To me the main point is usually to experiment with a small system that consists of a set of relatively simple rules.”&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;With that in mind, I set out to see what I could create. While I enjoy the pieces I’ve seen, I found a lot of generative art lacked color. As a personal fan of color, I knew I wanted to somehow include color in my piece. This led me to a question: how would a color describe itself?&lt;/p&gt;
+&lt;p&gt;With that in mind, I set out to see what I could create. While I enjoy the pieces I’ve seen, I found a lot of generative art lacked color. As a personal fan of color, I knew I wanted to somehow include some in my piece. This led me to a question: how would a color describe itself?&lt;/p&gt;
 
-&lt;p&gt;Without the ability to have personal discussions with colors, I opted to use a color’s own codified representation (specifically the binary representation of a color’s hex code) to generate each color’s pattern in the piece. Doing so led to the piece above.&lt;/p&gt;
+&lt;p&gt;Without the ability to have personal discussions with a color, I opted to use a color’s own codified representation (specifically the binary representation of a color’s hex code) to generate each color’s pattern in the piece. Doing so led to the piece above.&lt;/p&gt;
 
 &lt;p&gt;Feel free to play around with it and let me know if you have any thoughts on it! Is this generative art? Is there a greater meaning behind this piece? Am I just a hack making pretty pictures? Let me know and I’ll let you know if I agree!&lt;/p&gt;
 
@@ -1032,7 +1032,7 @@ $(window).resize(function() {
                 
                 <item>
                     <title>How Obama and Trump Responded to School Shootings</title>
-                    <description>&lt;p&gt;In response to a suggestion from Franklin Leonard, the Washington Post recently published &lt;a href=&quot;https://www.youtube.com/watch?v=uHrvODeA8-E&quot; target=&quot;_blank&quot;&gt;a video&lt;/a&gt; providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents’ approaches.&lt;/p&gt;
+                    <description>&lt;p&gt;In response to a suggestion from &lt;a href=&quot;https://twitter.com/franklinleonard&quot; target=&quot;_blank&quot;&gt;Franklin Leonard&lt;/a&gt;, the Washington Post recently published &lt;a href=&quot;https://www.youtube.com/watch?v=uHrvODeA8-E&quot; target=&quot;_blank&quot;&gt;a video&lt;/a&gt; providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents’ approaches.&lt;/p&gt;
 
 &lt;p&gt;The video did a great job juxtaposing Obama’s and Trump’s intraday activities and responses (comparing Obama’s first day of response to Trump’s, etc.), but I felt it was hard to compare the actual timing of each event. I decided to re-visualize &lt;span id=&quot;footnote-1&quot; class=&quot;footnote&quot;&gt;this information&lt;/span&gt; into one single timeline to (hopefully) present a slightly different effect.&lt;/p&gt;
 
@@ -1386,7 +1386,7 @@ $(window).resize(function() {
 
 &lt;p&gt;Now onto the projections. My projections were based on a very rudimentary and naive model so I had &lt;em&gt;very&lt;/em&gt; little hope for these results. But at the end of the day, I don’t think they were &lt;em&gt;that&lt;/em&gt; awful. On average, I was off by about 0.3 points per team (meaning I generally overestimated performances), but in absolute terms, I was off by 2.5 points per team. When the typical medaling team earned 6.4 points per event, being off by 2.5 points means I was about 39% off the mark on average.&lt;/p&gt;
 
-&lt;p&gt;But enough with averages - what about the spread? I decided to look at the spread of how my projections faired by team (by country and sport), by sport, and by country, leading to the visualization below.&lt;/p&gt;
+&lt;p&gt;But enough with averages - what about the spread? I decided to look at the spread of how my projections fared by team (by country and sport), by sport, and by country, leading to the visualization below.&lt;/p&gt;
 
 &lt;div id=&quot;d3-fantasy-olympics-retro-container&quot;&gt;
     &lt;p id=&quot;d3-fantasy-olympics-retro-title&quot;&gt;Difference Between Actual and Projected Fantasy Points&lt;/p&gt;
@@ -1406,11 +1406,11 @@ $(window).resize(function() {
 
 &lt;p&gt;In order to make my projections, I pulled data from &lt;a href=&quot;https://www.olympic.org/sports&quot;&gt;the official Olympics website&lt;/a&gt;, where they have listed past winners for each event. This seemed to be a good place to scrape the historical results I would need for my model, and it seemed to work fairly well. In the process of scraping these results, I did notice that some events had no past results (for example, see the page for &lt;a href=&quot;https://www.olympic.org/nordic-combined/individual-ski-jumping-k90-70m-men&quot;&gt;men’s individual ski jumping&lt;/a&gt;). I shrugged this off and assumed this was because these were new events or were slightly modified from past Games. This was true, but it was a mistake to be so cavalier. It turns out I wasn’t actually pulling in the results for &lt;strong&gt;all&lt;/strong&gt; historical events as I was expecting. This mistake became an issue when my historical results were missing results that would have indicated strong performances in the 2018 Games. For example, my data showed that Germany had only ever won a bronze in Nordic Combined, so one would expect they probably wouldn’t have done amazingly in PyeongChang. However, Germany’s Nordic Combined team actually earned a gold, a silver, and a bronze in just Sochi. Therefore, someone using accurate data probably would have correctly projected that Germany could have won five medals in PyeongChang, &lt;a href=&quot;https://www.reuters.com/article/us-olympics-2018-nors-m-team/nordic-combined-germany-continue-dominance-with-team-gold-idUSKCN1G61BQ&quot;&gt;as they did&lt;/a&gt;. So in a classic newbie fashion, I blindly trusted my data and neglected to account for problems stemming from missing data.&lt;/p&gt;
 
-&lt;p&gt;My second mistake was due to a conceptual gap in my model. Using historical performances (which now turned out to be only partially complete), I estimated how each team would fair entirely independently of each other. So if there were five teams that all did okay historically, they would each be projected to do okay in PyeongChang, which makes sense. But one of these teams would have to win the gold, right? This was my oversight. By projecting each team individually (and then not checking my results in the aggregate), I ended up making projections that would indicate no one wins gold. For example, based on my scoring scheme, with three Nordic Combined events, there would be 34.6 total points awarded to Nordic Combined teams. However, my projections said 6.2 points would be awarded, because, based on my incomplete data, no one team had done particularly amazing in the past. Instead, I should have awarded shares of these 34.6 points based on who was mostly likely to come in first, second, and third. If I had done so, I would have projected that the German Nordic Combined team would have earned 25.6 points, which is &lt;strong&gt;much&lt;/strong&gt; closer to the 23.1 points they actually earned.&lt;/p&gt;
+&lt;p&gt;My second mistake was due to a conceptual gap in my model. Using historical performances (which now turned out to be only partially complete), I estimated how each team would fare entirely independently of each other. So if there were five teams that all did okay historically, they would each be projected to do okay in PyeongChang, which makes sense. But one of these teams would have to win the gold, right? This was my oversight. By projecting each team individually (and then not checking my results in the aggregate), I ended up making projections that would indicate no one wins gold. For example, based on my scoring scheme, with three Nordic Combined events, there would be 34.6 total points awarded to Nordic Combined teams. However, my projections said 6.2 points would be awarded, because, based on my incomplete data, no one team had done particularly amazing in the past. Instead, I should have awarded shares of these 34.6 points based on who was mostly likely to come in first, second, and third. If I had done so, I would have projected that the German Nordic Combined team would have earned 25.6 points, which is &lt;strong&gt;much&lt;/strong&gt; closer to the 23.1 points they actually earned.&lt;/p&gt;
 
 &lt;p&gt;Overall, while I did make some mistakes, I’m not too upset with the results I got. This served as a good learning experience for how to improve my model for future Games and future projects in general. So lessons learned and onto the next one - 2020, here we come!&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Retrospective note (on the retrospective):&lt;/strong&gt; FiveThirtyEight had &lt;a href=&quot;https://fivethirtyeight.com/features/a-decent-second-week-saved-the-u-s-from-olympic-catastrophe/&quot;&gt;their own projection model&lt;/a&gt; and they recently published their results. I decided to see how my results compared to theirs (see below for a quick chart). As &lt;strong&gt;far&lt;/strong&gt; better modelers than me, I was expecting their results to blow mine out of the water, and you know what, they kind of do. Our results are on two different scales (theirs are measured by number of medals expected, mine are measured by expected Fantasy Olympic points) so direct comparison is probably not the best analysis, but it is interesting to see that we get similar trends, likely driven by performances that were just truly unexpected. This comparison also further points out how much I messed up Germany (points furtherest to the right). Sorry Germany…&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Retrospective note (on the retrospective):&lt;/strong&gt; FiveThirtyEight had &lt;a href=&quot;https://fivethirtyeight.com/features/a-decent-second-week-saved-the-u-s-from-olympic-catastrophe/&quot;&gt;their own projection model&lt;/a&gt; and they recently published their results. I decided to see how my results compared to theirs (see below for a quick chart). As &lt;strong&gt;far&lt;/strong&gt; better modelers than me, I was expecting their results to blow mine out of the water, and you know what, they kind of do. Our results are on two different scales (theirs are measured by number of medals expected, mine are measured by expected Fantasy Olympic points) so direct comparison is probably not the best analysis, but it is interesting to see that we get similar trends, likely driven by performances that were just truly unexpected. This comparison also further points out how much I messed up Germany (points furthest to the right). Sorry Germany…&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
@@ -1492,7 +1492,7 @@ $(window).resize(function() {
 
 &lt;p&gt;With these questions answered, Fantasy Olympics was ready to be played! But besides just setting the rules of the game, I was curious to see how accurate of projections I could make. Everyone’s trying to come up the perfect fantasy football predictions so I thought I’d get a head start on the projection game for when Fantasy Olympics inevitably blows up.&lt;/p&gt;
 
-&lt;p&gt;For my projections, I went with a fairly straight forward regression based on each team’s historical performances. Since there is a long gap between each of the Games, I had to consider how much historical data to include or not include in my regression. I opted to use a mean regression based on the five previous games (meaning data back to 1998 to predict the 2018 Games). This model seemed to fair best when testing against previous Games, but we shall see how it fairs for these Games. See below for my full projections by country and sport.&lt;/p&gt;
+&lt;p&gt;For my projections, I went with a fairly straight forward regression based on each team’s historical performances. Since there is a long gap between each of the Games, I had to consider how much historical data to include or not include in my regression. I opted to use a mean regression based on the five previous games (meaning data back to 1998 to predict the 2018 Games). This model seemed to fare best when testing against previous Games, but we shall see how it fares for these Games. See below for my full projections by country and sport.&lt;/p&gt;
 
 &lt;p id=&quot;fo-points-table-title&quot;&gt;Projected Fantasy Points by Country and Sport&lt;/p&gt;
 
@@ -1569,7 +1569,7 @@ $(window).resize(function() {
 
 &lt;p&gt;As expected, New York dominated, primarily driven by their World Series wins. I was pretty shocked that Montreal, with only a single team, came in third. In fact, when accounting for the number of teams per city, Canadian cities reign supreme, with Montreal and Toronto coming in first and second respectively. As a Bostonian, I do have to point out that while New York does have more championships than Boston, this is largely because of all the teams New York has. On a per team basis, Boston has 6.2 championships per team, beating out New York’s measly 5.6 per team.&lt;/p&gt;
 
-&lt;p&gt;But pure number of wins doesn’t necessarily indicate dynasties. For a dynasty, it’s all about sustained excellence. But dynasties are hard to define; you kind of &lt;a href=&quot;https://en.wikipedia.org/wiki/I_know_it_when_I_see_it&quot;&gt;know it when you see it&lt;/a&gt;. But for my purposes, I defined a dynasty as any span when a city won five championships with no more than a year gap between wins. For example, Boston from 2002 - 2008 would be a dynasty with their three Super Bowl, 2007 World Series, and 2008 NBA championship wins. Boston has also won four championships since 2011, but because of the three year gap from 2008 to 2011, the dynasty (by my defintion) wouldn’t include these four most recent wins. However, a Patriots win on Sunday would make for a new ongoing dynasty including the four wins since 2011.&lt;/p&gt;
+&lt;p&gt;Yet pure number of wins doesn’t necessarily indicate dynasties. For a dynasty, it’s all about sustained excellence, but that is hard to define algorithmically; you kind of &lt;a href=&quot;https://en.wikipedia.org/wiki/I_know_it_when_I_see_it&quot;&gt;know it when you see it&lt;/a&gt;. For my purposes, I defined a dynasty as any span when a city won five championships with no more than a year gap between wins. For example, Boston from 2002 - 2008 would be a dynasty with their three Super Bowl, 2007 World Series, and 2008 NBA championship wins. Boston has also won four championships since 2011, but because of the three year gap from 2008 to 2011, the dynasty (by my defintion) wouldn’t include these four most recent wins. However, a Patriots win on Sunday would make for a new ongoing dynasty including the four wins since 2011.&lt;/p&gt;
 
 &lt;p&gt;So, based on that definition, when and where were there dynasties?&lt;/p&gt;
 
@@ -1607,7 +1607,7 @@ $(window).resize(function() {
 
 &lt;p&gt;What is and is not a dynasty is obviously very subjective based on any given definition, so obviously this analysis can vary. I tried to take an objective approach but as with all things in sports, it should always be a discussion.&lt;/p&gt;
 
-&lt;p&gt;As a bit of a post-script, I also wanted to include one of the original visualizations I made when I first started looking into sports dynasties. I was curious if there was any sort of pattern to be seen from plotting each league’s champions. I was hoping / expecting to see some sort of cycle when championships go back and forth between a few cities. As far as I can see, no such patterns emerged. But it made a cool looking chart so I thought I’d share.&lt;/p&gt;
+&lt;p&gt;As a bit of a post-script, I also wanted to include one of the original visualizations I made when I first started looking into sports dynasties. I was curious if there was any sort of pattern to be seen from plotting each league’s champions by location. I was hoping / expecting to see some sort of cycle when championships go back and forth between a few cities. As far as I can see, no such patterns emerged, but it made a cool looking chart so I thought I’d share.&lt;/p&gt;
 
 &lt;div id=&quot;d3-sd-map-container&quot;&gt;
     &lt;svg id=&quot;d3-sd-map&quot;&gt;&lt;/svg&gt;
@@ -1615,13 +1615,13 @@ $(window).resize(function() {
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;/projects/sports-dynasties/css/style.css&quot; /&gt;
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;/projects/sports-dynasties/js/main.js&quot;&gt;&lt;/script&gt;
-
 &lt;script type=&quot;text/javascript&quot; src=&quot;/projects/sports-dynasties/js/bar.js&quot;&gt;&lt;/script&gt;
 
 &lt;script type=&quot;text/javascript&quot; src=&quot;/projects/sports-dynasties/js/dot.js&quot;&gt;&lt;/script&gt;
 
 &lt;script type=&quot;text/javascript&quot; src=&quot;/projects/sports-dynasties/js/map.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/projects/sports-dynasties/js/main.js&quot;&gt;&lt;/script&gt;
 
 </description>
                     <pubDate>2018-01-28T00:00:00-05:00</pubDate>
@@ -3353,7 +3353,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
                 
                 <item>
                     <title>Mapping My Life at Tufts</title>
-                    <description>&lt;p&gt;Over the last view years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.&lt;/p&gt;
+                    <description>&lt;p&gt;Over the last few years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.&lt;/p&gt;
 
 &lt;p&gt;It seems like my suspicion was true - I’ve become a little hermit holed up at my home, the CS department (my second home), or at 574 Boston Ave. Maybe I should explore some more…&lt;/p&gt;
 
