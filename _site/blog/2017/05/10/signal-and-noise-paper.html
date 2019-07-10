@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>The Chaos Game | Ben Tanen</title>
+    <title>Decipering the Signal and the Noise | Ben Tanen</title>
 </head>
 
 
@@ -145,178 +145,36 @@ MathJax.Hub.Config({
     		<div class="post">
 
     <header class="post-header">
-        <h1>The Chaos Game</h1>
-        <p class="post-date">Apr 28 2017
+        <h1>Decipering the Signal and the Noise</h1>
+        <p class="post-date">May 10 2017
     </header>
 
     <article class="post-content">
-    <p>After watching <a href="https://www.youtube.com/watch?v=kbKtFN71Lfs">this recent video from Numberphile</a>, I decided to throw together my own little visualizer of <a href="https://en.wikipedia.org/wiki/Chaos_game">the chaos game</a>.</p>
+    <p>With the close of my final semester at Tufts, it seemed time to <a href="/blog/2016/12/21/drunken-world.html">yet</a> <a href="/blog/2017/01/02/ultimate-convex-hull.html">again</a> share some of my final projects. This semester, I took a course called “Technical and Managerial Writing,” for which we were asked to write a research paper and presentation on whatever technical process we wanted. After all <a href="https://www.politico.com/story/2016/11/how-did-everyone-get-2016-wrong-presidential-election-231036">the hoopla</a> following the <em>unexpected</em> 2016 election results, I decided to explore how FiveThirtyEight’s 2016 Election Forecast model worked and why predictive models are not actually broken. While FiveThrityEight may have missed predicting the actual result, understanding how this (and other models) worked can give us some good insight and confidence for predictve modeling more generally.</p>
 
-<p>To briefly explain the game, we basically start by randomly placing some “bases” on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a <a href="https://en.wikipedia.org/wiki/Fractal">fractal</a>!</p>
+<p>You can read both the final presentation and paper below. If you’re interested in learning more, Nate Silver did <a href="https://fivethirtyeight.com/features/the-real-story-of-2016/">a deep dive</a> on his take for what really happened in 2016.</p>
 
-<!-- more -->
-
-<style>
-    #chaos-game-container {
-        width: 300px;
-        margin: auto;
-        cursor: pointer;
-    }
-
-    #chaos-game-options {
-        width: 300px;
-        margin: auto;
-    }
-
-    #chaos-game-options form {
-        width: 205px;
-        margin: auto;
-        padding-top: 5px;
-    }
-
-    #chaos-game-options form input {
-        cursor: pointer;
-    }
-
-    #chaos-game-options form input:nth-of-type(n+2) {
-        margin-left: 20px;
-    }
-
-    #chaos-game-options p {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    #chaos-game-start {
-        color: #77bdee;
-        cursor: pointer;
-    }
-
-    #chaos-game-start:hover {
-        text-decoration: underline;
-    }
-</style>
-
-<div id="chaos-game-container">
+<div style="max-width: 600px; margin: auto;">
+    <iframe src="/projects/signal-and-noise-paper/Deciphering the Signal and the Noise - Presentation.pdf" width="600" height="400">
+    </iframe>
 </div>
 
-<div id="chaos-game-options">
-    <!--
-    <form action="" id="num-bases">
-        <input type="radio" name="num-bases" value="3" checked> Tri
-        <input type="radio" name="num-bases" value="4"> Quad
-        <input type="radio" name="num-bases" value="5"> Penta
-    </form>
-    -->
-    <p><span id="chaos-game-start">Start</span>, i = <span id="chaos-game-i">0</span></p>
+<div style="max-width: 600px; margin: auto;">
+    <iframe src="/projects/signal-and-noise-paper/Deciphering the Signal and the Noise - Paper.pdf" width="600" height="775">
+    </iframe>
 </div>
-
-<p>I always enjoy funky little phenomena like this so I decided to make my own representation of it in D3. I also decided to include colors for each of the bases and then colored each new point based on which base it was moving closer to. I found it interesting that the colors become so strongly clustered immediately.</p>
-
-<p>I’m in the works of implementing it for four, five, etc. bases, but for now, here is the triangular chaos game!</p>
-
-<script>
-    /* make that d3 svg canvas */
-    var dimension = 300;
-    var chaos_svg = d3.select('#chaos-game-container').append('svg')
-        .attr('width', dimension)
-        .attr('height', dimension);
-
-    /* declare some helper functions */
-    var randomize_pos = function() {
-        return Math.random() * (dimension / 10) - (dimension / 20);
-    }
-
-    var generate_bases = function(ix) {
-        for (var i = 0; i < bases[ix].length; i++) {
-            var cx  = bases[ix][i][0] + randomize_pos();
-            var cy  = bases[ix][i][1] + randomize_pos();
-            var c_i = chaos_svg.append("circle")
-                         .attr("cx", cx)
-                         .attr("cy", cy)
-                         .attr("r",  5)
-                         .attr("fill", base_colors[i]);
-            a_bases.push(c_i);
-        }
-    }
-
-    var pick_rand_base = function(bases) {
-        var scale = d3.scaleQuantize().domain([0, 1]).range(bases);
-        return scale(Math.random());
-    }
-
-    var midpoint = function(p1, p2) {
-        return [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
-    }
-
-    var place_new_point = function() {
-        var b  = pick_rand_base(a_bases);
-        var bi = a_bases.indexOf(b);
-        var mp = midpoint(p_curr, [+b.attr("cx"), +b.attr("cy")]);
-        
-        chaos_svg.append("circle")
-            .attr("cx", mp[0])
-            .attr("cy", mp[1])
-            .attr("r", 2)
-            .attr("fill", base_colors[bi]);
-        p_curr = mp;
-    }
-
-
-    /* initialize some vars */
-    var bases = [
-        [[dimension * (1/2), dimension * (1/10)], [dimension * (1/10), dimension * (9/10)], [dimension * (9/10), dimension * (9/10)]], // triangle
-        [[dimension * (2/10), dimension * (2/10)], [dimension * (2/10), dimension * (8/10)], [dimension * (8/10), dimension * (2/10)], [dimension * (8/10), dimension * (8/10)]], // square
-    ];
-    var a_bases = [ ];
-    var base_colors = ["#49E9E7", "#FF4CC8", "#23CE6B", "#872F9C", "#328DDF"]
-
-    /* generate bases */
-    generate_bases(0);
-
-    $('#num-bases').change(function() {
-        // clear current circles
-        chaos_svg.selectAll("circle").remove();
-        a_bases = [ ];
-
-        // regenerate bases
-        generate_bases(parseInt($("input:radio[name='num-bases']:checked").val()) - 3);
-    });
-
-    $('#chaos-game-start').click(function() {
-        // clear all points
-        chaos_svg.selectAll("circle").filter(function(d) { return d3.select(this).attr("r") < 5 }).remove();
-
-        // draw first point
-        var c1 = chaos_svg.append("circle")
-            .attr("cx", (dimension / 2) + randomize_pos() * 1.25)
-            .attr("cy", (dimension / 2) + randomize_pos() * 1.25)
-            .attr("r", 2)
-            .attr("fill", "#808080");
-        p_curr = [+c1.attr("cx"), +c1.attr("cy")];
-
-        for (var i = 0; i < 2500; i++) {
-            setTimeout(function() {
-                place_new_point(); 
-                $('#chaos-game-i').html(chaos_svg.selectAll("circle").size() - 4);
-            }, i * 3)
-            
-        }
-    });
-</script>
-
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/blog/2017/05/10/signal-and-noise-paper.html'>&#8592; Newer Post</a></p>
+        <p id='pagination-previous'><a href='/blog/2017/06/01/huffman-coding.html'>&#8592; Newer Post</a></p>
         
 
         <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/blog/2017/03/15/ASL-LEX.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2017/04/28/chaos-game.html'>Older Post &#8594;</a></p>
         
     </div>
 

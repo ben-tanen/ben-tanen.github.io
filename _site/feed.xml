@@ -2863,6 +2863,29 @@ function clean_group_name(group) {
             
                 
                 <item>
+                    <title>Decipering the Signal and the Noise</title>
+                    <description>&lt;p&gt;With the close of my final semester at Tufts, it seemed time to &lt;a href=&quot;/blog/2016/12/21/drunken-world.html&quot;&gt;yet&lt;/a&gt; &lt;a href=&quot;/blog/2017/01/02/ultimate-convex-hull.html&quot;&gt;again&lt;/a&gt; share some of my final projects. This semester, I took a course called “Technical and Managerial Writing,” for which we were asked to write a research paper and presentation on whatever technical process we wanted. After all &lt;a href=&quot;https://www.politico.com/story/2016/11/how-did-everyone-get-2016-wrong-presidential-election-231036&quot;&gt;the hoopla&lt;/a&gt; following the &lt;em&gt;unexpected&lt;/em&gt; 2016 election results, I decided to explore how FiveThirtyEight’s 2016 Election Forecast model worked and why predictive models are not actually broken. While FiveThrityEight may have missed predicting the actual result, understanding how this (and other models) worked can give us some good insight and confidence for predictve modeling more generally.&lt;/p&gt;
+
+&lt;p&gt;You can read both the final presentation and paper below. If you’re interested in learning more, Nate Silver did &lt;a href=&quot;https://fivethirtyeight.com/features/the-real-story-of-2016/&quot;&gt;a deep dive&lt;/a&gt; on his take for what really happened in 2016.&lt;/p&gt;
+
+&lt;div style=&quot;max-width: 600px; margin: auto;&quot;&gt;
+    &lt;iframe src=&quot;/projects/signal-and-noise-paper/Deciphering the Signal and the Noise - Presentation.pdf&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;max-width: 600px; margin: auto;&quot;&gt;
+    &lt;iframe src=&quot;/projects/signal-and-noise-paper/Deciphering the Signal and the Noise - Paper.pdf&quot; width=&quot;600&quot; height=&quot;775&quot;&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+                    <pubDate>2017-05-10T11:05:41-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2017/05/10/signal-and-noise-paper.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2017/05/10/signal-and-noise-paper.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>The Chaos Game</title>
                     <description>&lt;p&gt;After watching &lt;a href=&quot;https://www.youtube.com/watch?v=kbKtFN71Lfs&quot;&gt;this recent video from Numberphile&lt;/a&gt;, I decided to throw together my own little visualizer of &lt;a href=&quot;https://en.wikipedia.org/wiki/Chaos_game&quot;&gt;the chaos game&lt;/a&gt;.&lt;/p&gt;
 
