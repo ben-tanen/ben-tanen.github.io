@@ -1,37 +1,77 @@
+/* 
+TO DO:
+4. make x scale unique for house vs. senate?
+5. to include resolving differences/president bills?
+6. add tooltips? to axis labels to explain meaning; to bars?
+7. make it so you can "update" bars by just relinking data and then hitting "refresh"; does this exist?
+8. make a scale for date with domain for scroll position (can you make date ranges?)
+*/
+
 /*********************/
 /*** INIT VARIABLE ***/
 /*********************/
 
 let hbd_svg = d3.select('#d3-how-bills-die');
 
-let hbd_margin = {top: 10, right: 10, bottom: 10, left: 10},
-    hbd_width  = $('#d3-how-bills-die').width() - hbd_margin.left - hbd_margin.right,
-    hbd_height = $('#d3-how-bills-die').height() - hbd_margin.top - hbd_margin.bottom;
+let hbd_margin = {top: 10, right: 10, bottom: 10, left: 10, middle_x: 100, middle_y: 10},
+    hbd_width  = $('#d3-how-bills-die').width() - hbd_margin.left - hbd_margin.right - hbd_margin.middle_x,
+    hbd_height = $('#d3-how-bills-die').height() - hbd_margin.top - hbd_margin.bottom - hbd_margin.middle_y * 4;
 
-let data = { };
+let data = [ ];
+
+let x = d3.scaleLinear().range([0, hbd_width / 2]),
+    y = d3.scaleOrdinal().range([...Array(5).keys()].map((i) => i * (hbd_height / 5 + hbd_margin.middle_y)));
 
 /********************************/
 /*** DECLARE HELPER FUNCTIONS ***/
 /********************************/
 
-// given id, position (list of x + y), radius, color, and label
-// render a bucket
-function render_bucket(id, p, r, c, l) {
-    hbd_svg.append("circle")
-        .classed("status-bucket", true)
-        .attr("id", id)
-        .attr("cx", hbd_margin.left + p[0])
-        .attr("cy", hbd_margin.top + p[1])
-        .attr("r", r)
-        .style("fill", c);
+function init_bars(date) {
+    hbd_svg.selectAll("rect.bar.back")
+        .data(data.filter((d) => d.date === date & d.chamber_curr != "b")).enter()
+        .append("rect")
+        .classed("bar", true)
+        .classed("back", true)
+        .attr("id", (d) => d.chamber_curr + "_" + d.status_bucket.substr(0, 1))
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? x(d.N) : 0))
+        .attr("y", (d) => hbd_margin.top + y(d.status_bucket))
+        .attr("width", (d) => x(d.N))
+        .attr("height", hbd_height / 5);
+
+    hbd_svg.selectAll("rect.bar.front")
+        .data(data.filter((d) => d.date === date & d.chamber_curr != "b")).enter()
+        .append("rect")
+        .classed("bar", true)
+        .classed("front", true)
+        .attr("id", (d) => d.chamber_curr + "_" + d.status_bucket.substr(0, 1))
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? x(d.N - d.N_curr) : 0))
+        .attr("y", (d) => hbd_margin.top + y(d.status_bucket))
+        .attr("width", (d) => x(d.N - d.N_curr))
+        .attr("height", hbd_height / 5);
 }
 
-// given id, new radius, delay, and duration
-// transition the bucket radius
-function update_bucket_radius(id, r, de, du) {
-    hbd_svg.select(".status-bucket#" + id)
-        .transition().delay(de).duration(du)
-        .attr("r", r);
+function update_bars(date, duration = 0) {
+    hbd_svg.selectAll("rect.bar.back")
+        .data(data.filter((d) => d.date === date & d.chamber_curr != "b"))
+        .transition().duration(duration)
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? x(d.N) : 0))
+        .attr("width", (d) => x(d.N));
+
+    hbd_svg.selectAll("rect.bar.front")
+        .data(data.filter((d) => d.date === date & d.chamber_curr != "b"))
+        .transition().duration(duration)
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? x(d.N - d.N_curr) : 0))
+        .attr("width", (d) => x(d.N - d.N_curr));    
+}
+
+function draw_axis() {
+    hbd_svg.selectAll("text.axis-label")
+        .data(y.domain()).enter()
+        .append("text")
+        .classed("axis-label", true)
+        .attr("x", hbd_margin.left + hbd_width / 2 + hbd_margin.middle_x / 2)
+        .attr("y", (d) => hbd_margin.top + y(d) + (hbd_height / 5) / 2)
+        .text((d) => d);
 }
 
 // given number of dots, class of dots, ids of bucket 1 + 2, delay, and duration
@@ -66,7 +106,7 @@ function animate_bill_dot_transition(n, cl, b1_id, b2_id, de, du) {
         .attr("cy", d => d.y2)
         .remove();
 
-    hbd_svg.selectAll(".status-bucket").raise();
+    hbd_svg.selectAll(".bar").raise();
 }
 
 function sticky_scroll() {
@@ -102,45 +142,43 @@ function sticky_scroll() {
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/
 
-d3.csv("data/2019-10-21_bill-counts-by-day.csv", function(d) {
-    d.hr_A = +d.hr_A;
-    d.hr_B = +d.hr_B;
-    d.hr_C = +d.hr_C;
-    d.hr_D = +d.hr_D;
-    d.hr_E = +d.hr_E;
-    d.s_A = +d.s_A;
-    d.s_B = +d.s_B;
-    d.s_C = +d.s_C;
-    d.s_D = +d.s_D;
-    d.s_E = +d.s_E;
-    d.b_F = +d.b_F;
-    d.b_G = +d.b_G;
+d3.csv("data/2019-10-21_bill-counts-by-day-long.csv", (d) => {
+    d.N = +d.N;
+    d.N_chamber = +d.N_chamber;
+    d.N_curr = +d.N_curr;
     return d;
-}, function(error, d) {
-    // store data
-    for (var i = 0; i < d.length; i++) data[d[i].date] = d[i];
+}, (error, d) => {
+    // store data (necessary?)
+    for (var i = 0; i < d.length; i++) data.push(d[i]);
 
-    render_bucket("b1", [hbd_width / 2, 50], 50, "#77bdee", "label1");
-    render_bucket("b2", [hbd_width / 2, 200], 50, "#77bdee", "label2");
-    render_bucket("b3", [hbd_width / 2, 350], 50, "#77bdee", "label3");
+    // adjust scale domain based on data
+    x.domain(d3.extent(data, (d) => d.N));
+    y.domain(d3.map(data.filter((d) => d.chamber_curr != "b"), (d) => d.status_bucket).keys().sort())
 
-    animate_bill_dot_transition(10, "t1", "b1", "b2", 500, 1000);
-    update_bucket_radius("b1", 40, 500, 500);
-    update_bucket_radius("b2", 60, 1000, 500);
-});
+    draw_axis();
+    init_bars("2019-10-08");
+})
 
 /*********************************/
 /*** PAGE AND BUTTON LISTENERS ***/
 /*********************************/
 
-$(document).ready(function() {
+$(document).ready(() => {
     // init size of plot / columns based on page size?
+    sticky_scroll();
 });
 
-$(window).resize(function() {
-    // resize();
+$(window).resize(() => {
+    hbd_width = $('#d3-how-bills-die').width() - hbd_margin.left - hbd_margin.right - hbd_margin.middle_x;
+    x.range([0, hbd_width / 2]);
+
+    update_bars("2019-10-08");
+
+    hbd_svg.selectAll("text.axis-label")
+        .transition().duration(0)
+        .attr("x", hbd_margin.left + hbd_width / 2 + hbd_margin.middle_x / 2);
 });
 
-$(window).scroll(function() {
+$(window).scroll(() => {
     sticky_scroll();
 });
