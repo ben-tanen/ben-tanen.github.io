@@ -13,8 +13,6 @@
     
 
     
-    <link rel="stylesheet" href="/assets/css/minimal.style.css">
-    
     <link rel="stylesheet" href="/assets/css/jBox.css">
 
     <!-- jquery and js files -->
@@ -54,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Explore Spotify Clusters | Ben Tanen</title>
+    <title>Training for a Half Marathon, Visualized | Ben Tanen</title>
 </head>
 
 
@@ -144,15 +142,46 @@ MathJax.Hub.Config({
 </div>
 
     	<div class='main'>
-    		<h1>Explore Spotify Clusters</h1>
-<p>I generated a bunch of Spotify playlists using k-means clustering based on different audio features. You can use the below to explore the audio features of the songs that make up these playlists and what features most clearly define a cluster. You can find the full analysis <a href="/blog/2018/04/20/spotify-playlist-clustering.html">here</a>.</p>
+    		<div class="post">
 
-<div id='d3-spotify-clusters-container'>
-    <svg id="d3-spotify-clusters"></svg>
+    <header class="post-header">
+        <h1>Training for a Half Marathon, Visualized</h1>
+        <p class="post-date">Sep 27 2019
+    </header>
+
+    <article class="post-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error qui debitis accusantium, quaerat sed consectetur odit quasi facere animi modi molestias nostrum tenetur dolor officiis commodi corporis, laudantium natus asperiores.</p>
+
+<style>
+</style>
+
+<script>
+d3.csv("/assets/data/running-data-20190925.csv", d => {
+    d.avg_pace_min = +d.avg_pace_min;
+    d.mile = +d.mile;
+    d.pace_min = +d.pace_min;
+    d.total_dist = +d.total_dist;
+    d.total_time_min = +d.total_time_min;
+    return d;
+}, (e, d) => {
+    console.table(d);
+});
+</script>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/blog/2019/06/26/trump-electoral-college-visualized.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
 </div>
-
-<link rel="stylesheet" href="css/clusters.style.css">
-<script type="text/javascript" src="js/clusters.js"></script>
     	</div>
     </div>
 	

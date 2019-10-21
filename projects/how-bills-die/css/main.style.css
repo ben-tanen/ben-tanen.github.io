@@ -1,0 +1,25 @@
+#scroll-text-container p {
+    color: red;
+}
+
+#scroll-viz-container {
+    width: 80%;
+    height: 2000px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+#d3-how-bills-die {
+    width: 100%;
+    height: 500px;
+}
+
+/* svg rendering */
+circle.status-bucket {
+    stroke: black;
+    stroke-width: 2px;
+}
+
+circle.bill-dot {
+    fill: rgba(100, 100, 100, 0.5);
+}
