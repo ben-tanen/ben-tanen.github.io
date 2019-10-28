@@ -3,8 +3,8 @@ TO DO:
 4. make x scale unique for house vs. senate?
 5. to include resolving differences/president bills?
 6. add tooltips? to axis labels to explain meaning; to bars?
-7. make it so you can "update" bars by just relinking data and then hitting "refresh"; does this exist?
-8. make a scale for date with domain for scroll position (can you make date ranges?)
+7. add data labels
+8. make vote bucket all blue
 */
 
 /*********************/
@@ -13,18 +13,51 @@ TO DO:
 
 let hbd_svg = d3.select('#d3-how-bills-die');
 
-let hbd_margin = {top: 10, right: 10, bottom: 10, left: 10, middle_x: 100, middle_y: 10},
+let hbd_margin = {top: 30, right: 20, bottom: 10, left: 225, middle_x: 100, middle_y: 10},
     hbd_width  = $('#d3-how-bills-die').width() - hbd_margin.left - hbd_margin.right - hbd_margin.middle_x,
     hbd_height = $('#d3-how-bills-die').height() - hbd_margin.top - hbd_margin.bottom - hbd_margin.middle_y * 4;
 
 let data = [ ];
 
+let n_buckets = 5,
+    n_scroll_stops = 10;
+
+let curr_date;
+
 let x = d3.scaleLinear().range([0, hbd_width / 2]),
-    y = d3.scaleOrdinal().range([...Array(5).keys()].map((i) => i * (hbd_height / 5 + hbd_margin.middle_y)));
+    y = d3.scaleOrdinal().range([...Array(n_buckets).keys()].map((i) => i * (hbd_height / n_buckets + hbd_margin.middle_y))),
+    date = d3.scaleTime().domain([1, n_scroll_stops]);
 
 /********************************/
 /*** DECLARE HELPER FUNCTIONS ***/
 /********************************/
+
+function wrap(text) {
+    text.each(function() {
+        var text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            x = text.attr("x"),
+            y = text.attr("y"),
+            ww = 100,
+            dy = 0,
+            tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+            console.log(x)
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > ww) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+            }
+        }
+    });
+}
 
 function init_bars(date) {
     hbd_svg.selectAll("rect.bar.back")
@@ -36,7 +69,7 @@ function init_bars(date) {
         .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? x(d.N) : 0))
         .attr("y", (d) => hbd_margin.top + y(d.status_bucket))
         .attr("width", (d) => x(d.N))
-        .attr("height", hbd_height / 5);
+        .attr("height", hbd_height / n_buckets);
 
     hbd_svg.selectAll("rect.bar.front")
         .data(data.filter((d) => d.date === date & d.chamber_curr != "b")).enter()
@@ -47,7 +80,33 @@ function init_bars(date) {
         .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? x(d.N - d.N_curr) : 0))
         .attr("y", (d) => hbd_margin.top + y(d.status_bucket))
         .attr("width", (d) => x(d.N - d.N_curr))
-        .attr("height", hbd_height / 5);
+        .attr("height", hbd_height / n_buckets);
+
+    let labels = hbd_svg.selectAll("text.bar-label")
+        .data(data.filter((d) => d.date === date & d.chamber_curr != "b")).enter()
+        .append("text")
+        .classed("bar-label", true)
+        .classed("right-align", (d) => d.chamber_curr === "s")
+        .attr("id", (d) => d.chamber_curr + "_" + d.status_bucket.substr(0, 1))
+
+    labels.selectAll("tspan.upper-label")
+        .data((d) => [d]).enter()
+        .append("tspan")
+        .classed("upper-label", true)
+        .classed("invisible", (d) => d.N == 0)
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? 1 : -1) * (x(d.N) + 2))
+        .attr("y", (d) => hbd_margin.top + y(d.status_bucket) + (hbd_height / n_buckets) / 2)
+        .text((d) => d.N_curr + " bills (" + (d.N_curr / d.N_chamber * 100).toFixed(1) + "%)" + (d.chamber_curr === "hr" & d.status_bucket === "A. INTRODUCTION" ? " are still here" : ""));
+
+    labels.selectAll("tspan.lower-label")
+        .data((d) => [d]).enter()
+        .append("tspan")
+        .classed("lower-label", true)
+        .classed("invisible", (d) => d.N == 0)
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? 1 : -1) * (x(d.N) + 2))
+        .attr("y", (d) => hbd_margin.top + y(d.status_bucket) + (hbd_height / n_buckets) / 2)
+        .attr("dy", "14px")
+        .text((d) => (d.N - d.N_curr) + " bills" + (d.chamber_curr === "hr" & d.status_bucket === "A. INTRODUCTION" ? " have progressed" : ""));
 }
 
 function update_bars(date, duration = 0) {
@@ -61,65 +120,80 @@ function update_bars(date, duration = 0) {
         .data(data.filter((d) => d.date === date & d.chamber_curr != "b"))
         .transition().duration(duration)
         .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? x(d.N - d.N_curr) : 0))
-        .attr("width", (d) => x(d.N - d.N_curr));    
+        .attr("width", (d) => x(d.N - d.N_curr));
+
+    let labels = hbd_svg.selectAll("text.bar-label")
+        .data(data.filter((d) => d.date === date & d.chamber_curr != "b"));
+
+    labels.selectAll("tspan.upper-label")
+        .data((d) => [d])
+        .classed("invisible", (d) => d.N == 0)
+        .transition().duration(duration)
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? 1 : -1) * (x(d.N) + 2))
+        .text((d) => d.N_curr + " bills (" + (d.N_curr / d.N_chamber * 100).toFixed(1) + "%)" + (d.chamber_curr === "hr" & d.status_bucket === "A. INTRODUCTION" ? " are still here" : ""))
+
+    labels.selectAll("tspan.lower-label")
+        .data((d) => [d])
+        .classed("invisible", (d) => d.N == 0)
+        .transition().duration(duration)
+        .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? 1 : -1) * (x(d.N) + 2))
+        .text((d) => (d.N - d.N_curr) + " bills" + (d.chamber_curr === "hr" & d.status_bucket === "A. INTRODUCTION" ? " have progressed" : ""));
 }
 
-function draw_axis() {
-    hbd_svg.selectAll("text.axis-label")
+function draw_bucket_labels() {
+    hbd_svg.selectAll("text.bucket-label")
         .data(y.domain()).enter()
         .append("text")
-        .classed("axis-label", true)
+        .classed("bucket-label", true)
         .attr("x", hbd_margin.left + hbd_width / 2 + hbd_margin.middle_x / 2)
-        .attr("y", (d) => hbd_margin.top + y(d) + (hbd_height / 5) / 2)
+        .attr("y", (d) => hbd_margin.top + y(d) + (hbd_height / n_buckets) / 2)
         .text((d) => d);
 }
 
-// given number of dots, class of dots, ids of bucket 1 + 2, delay, and duration
-// animate the transition of these dots between bucket 1 and bucket 2
-function animate_bill_dot_transition(n, cl, b1_id, b2_id, de, du) {
+function draw_chamber_labels() {
+    hbd_svg.append("text")
+        .classed("chamber-label", true)
+        .attr("id", "hr")
+        .attr("x", hbd_margin.left + hbd_width * 0.25)
+        .attr("y", hbd_margin.top * 0.5)
+        .text("House of Reps");
 
-    let b1 = hbd_svg.select("#" + b1_id),
-        b2 = hbd_svg.select("#" + b2_id);
+    hbd_svg.append("text")
+        .classed("chamber-label", true)
+        .attr("id", "s")
+        .attr("x", hbd_margin.left + hbd_margin.middle_x + hbd_width * 0.75)
+        .attr("y", hbd_margin.top * 0.5)
+        .text("Senate");
+}
 
-    let dots = [ ];
+function draw_date_axis_labels() {
+    let d3_container_height = $('#d3-how-bills-die').parent().parent().height();
+    for (let i = 1; i <= n_scroll_stops; i++) {
+        d3.select("#scroll-viz-container").append("text")
+            .classed("date-axis-label", true)
+            .classed("focus", i == 1)
+            .attr("id", "label-" + date_to_input_str(date(i)))
+            .style("top", ((i - 1) * (d3_container_height / n_scroll_stops) + hbd_height / 2 + hbd_margin.top) + "px")
+            .text(date_to_input_str(date(i)));
+    }
+}
 
-    for (let i = 0; i < n; i++) dots.push({
-        "i": i,
-        "type": "bill-dot",
-        "class": cl,
-        "x1": +b1.attr("cx") + (Math.random() - 0.5) * +b1.attr("r") * 0.8, 
-        "y1": +b1.attr("cy") + (Math.random() - 0.5) * +b1.attr("r") * 0.8,
-        "x2": +b2.attr("cx") + (Math.random() - 0.5) * +b2.attr("r") * 0.8,
-        "y2": +b2.attr("cy") + (Math.random() - 0.5) * +b2.attr("r") * 0.8
-    });
-
-    hbd_svg.selectAll("circle.bill-dot." + cl)
-        .data(dots)
-        .enter().append("circle")
-        .classed("bill-dot", true)
-        .classed(cl, true)
-        .attr("cx", d => d.x1)
-        .attr("cy", d => d.y1)
-        .attr("r", 4)
-        .transition().delay(d => de + d.i * 10).duration(du)
-        .attr("cx", d => d.x2)
-        .attr("cy", d => d.y2)
-        .remove();
-
-    hbd_svg.selectAll(".bar").raise();
+function date_to_input_str(date) {
+    return date.toISOString().substr(0, 10);
 }
 
 function sticky_scroll() {
-    var screen_margin = ($(window).height() - $('#d3-how-bills-die').height()) / 2;
-    var d3_container_top = $('#d3-how-bills-die').parent().offset().top;
-    var d3_container_height = $('#d3-how-bills-die').parent().parent().height();
+    let screen_margin = ($(window).height() - $('#d3-how-bills-die').height()) / 2,
+        d3_container_top = $('#d3-how-bills-die').parent().offset().top,
+        d3_container_height = $('#d3-how-bills-die').parent().parent().height();
 
     // after focusing on svg, don't move it at bottom of column
     if (d3_container_top + d3_container_height - screen_margin <= $(window).scrollTop() + $('#d3-how-bills-die').height()) {
-        var margin_top = d3_container_height - $('#d3-how-bills-die').height();
+        let margin_top = d3_container_height - $('#d3-how-bills-die').height();
         $('#d3-how-bills-die').css({
             'position': 'initial',
-            'margin-top': margin_top + 'px'
+            'margin-top': margin_top + 'px',
+            'width': '100%'
         });
 
     // while focusing on svg, center it
@@ -134,7 +208,10 @@ function sticky_scroll() {
     
     // before encountering svg, don't move it at top of column
     } else {
-        $('#d3-how-bills-die').css('position', 'initial');
+        $('#d3-how-bills-die').css({
+            'position': 'initial',
+            'width': '100%'
+        });
     }
 }
 
@@ -149,14 +226,21 @@ d3.csv("data/2019-10-21_bill-counts-by-day-long.csv", (d) => {
     return d;
 }, (error, d) => {
     // store data (necessary?)
-    for (var i = 0; i < d.length; i++) data.push(d[i]);
+    for (let i = 0; i < d.length; i++) {
+        if (d[i].status_bucket == "E. VOTE") d[i].N_curr = 0;
+        data.push(d[i]);
+    }
 
     // adjust scale domain based on data
     x.domain(d3.extent(data, (d) => d.N));
-    y.domain(d3.map(data.filter((d) => d.chamber_curr != "b"), (d) => d.status_bucket).keys().sort())
+    y.domain(d3.map(data.filter((d) => d.chamber_curr != "b"), (d) => d.status_bucket).keys().sort());
+    date.range(d3.extent(data, (d) => new Date(d.date + " ")));
+    curr_date = d3.min(data, (d) => d.date);
 
-    draw_axis();
-    init_bars("2019-10-08");
+    draw_chamber_labels();
+    draw_bucket_labels();
+    draw_date_axis_labels();
+    init_bars("2019-01-03");
 })
 
 /*********************************/
@@ -164,21 +248,46 @@ d3.csv("data/2019-10-21_bill-counts-by-day-long.csv", (d) => {
 /*********************************/
 
 $(document).ready(() => {
-    // init size of plot / columns based on page size?
     sticky_scroll();
 });
 
 $(window).resize(() => {
+    // update width variable and update x scale accordingly
     hbd_width = $('#d3-how-bills-die').width() - hbd_margin.left - hbd_margin.right - hbd_margin.middle_x;
     x.range([0, hbd_width / 2]);
 
-    update_bars("2019-10-08");
-
-    hbd_svg.selectAll("text.axis-label")
+    // update bars and labels based on updated x scale
+    update_bars(curr_date);
+    hbd_svg.selectAll("text.bucket-label")
         .transition().duration(0)
         .attr("x", hbd_margin.left + hbd_width / 2 + hbd_margin.middle_x / 2);
+
+    hbd_svg.select("text.chamber-label#hr")
+        .transition().duration(0)
+        .attr("x", hbd_margin.left + hbd_width * 0.25);
+    hbd_svg.select("text.chamber-label#s")
+        .transition().duration(0)
+        .attr("x", hbd_margin.left + hbd_margin.middle_x + hbd_width * 0.75);
+
+    // reposition chart if needed
+    sticky_scroll();
 });
 
 $(window).scroll(() => {
+
+    screen_margin = ($(window).height() - $('#d3-how-bills-die').height()) / 2,
+    d3_container_top = $('#d3-how-bills-die').parent().offset().top,
+    d3_container_height = $('#d3-how-bills-die').parent().parent().height();
+
+    date_ix = Math.ceil(Math.max(1, $(window).scrollTop() - (d3_container_top - screen_margin)) / (d3_container_height / n_scroll_stops));
+    if (date_ix >= 1) {
+        if (date_to_input_str(date(date_ix)) != curr_date) {
+            curr_date = date_to_input_str(date(date_ix))
+            update_bars(curr_date, 250);
+            d3.selectAll("text.date-axis-label").classed('focus', false);
+            d3.select("text.date-axis-label#label-" + curr_date).classed('focus', true);
+        }
+    }
+
     sticky_scroll();
 });
