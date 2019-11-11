@@ -171,7 +171,6 @@ function draw_date_axis_labels() {
     for (let i = 1; i <= n_scroll_stops; i++) {
         d3.select("#scroll-viz-container").append("text")
             .classed("date-axis-label", true)
-            .classed("focus", i == 1)
             .attr("id", "label-" + date_to_input_str(date(i)))
             .style("top", ((i - 1) * (d3_container_height / n_scroll_stops) + hbd_height / 2 + hbd_margin.top) + "px")
             .text(date_to_input_str(date(i)));
