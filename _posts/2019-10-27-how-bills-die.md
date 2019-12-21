@@ -3,7 +3,7 @@ layout: post
 title: "How A Bill Does Not Become A Law"
 date: 2019-10-27 05:00:00
 categories: data visualization project congress bill
-show-on-landing: false
+show-on-landing: true
 landing-description: how a bill does not become a law
 thumbnail: /assets/img/post-thumbnails/sad-bill.png
 reroute-url: /projects/how-bills-die/

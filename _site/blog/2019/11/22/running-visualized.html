@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Training for a Half Marathon, Visualized | Ben Tanen</title>
+    <title>A Tale of Two Half Marathons | Ben Tanen</title>
 </head>
 
 
@@ -145,41 +145,37 @@ MathJax.Hub.Config({
     		<div class="post">
 
     <header class="post-header">
-        <h1>Training for a Half Marathon, Visualized</h1>
-        <p class="post-date">Sep 27 2019
+        <h1>A Tale of Two Half Marathons</h1>
+        <p class="post-date">Nov 22 2019
     </header>
 
     <article class="post-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error qui debitis accusantium, quaerat sed consectetur odit quasi facere animi modi molestias nostrum tenetur dolor officiis commodi corporis, laudantium natus asperiores.</p>
+    <p>Prior to this year, I had a somewhat love-hate relationship with running. I ran cross country in high school to help train for the hockey season (my main sport), but I never really loved the running as much as some others on the team. In the years since, I forced myself to go on runs as a good form of cardio, but it was always more of chore. Cut to January 2019 when I was convinced to sign up for my first half marathon after being persuaded by a friend (and much better runner). Signing up for the half pressured me into training and once I started training, things started to click a bit more, though I wouldn’t say I was a true runner. This was until I caved and decided to take that next step and really do the running thing: I bought a running watch. The watch really helped my pacing, which I had always had issues with and overall made me enjoy runs quite a bit more. Now, 11 months later, I just wrapped up my second half marathon, because I guess I’ve been converted, possibly all thanks to that sweet running data.</p>
 
-<style>
-</style>
+<p>In training for these two races, I logged 58 runs, which comes out to a nice chunk of data. So, now that I’m taking a bit of a break from running for the winter, I wanted to take a look back at all of these runs and see what kind of story these data tell. Thus, I present: A Tale of Two Half Marathons, as told by charts.</p>
 
-<script>
-d3.csv("/assets/data/running-data-20190925.csv", d => {
-    d.avg_pace_min = +d.avg_pace_min;
-    d.mile = +d.mile;
-    d.pace_min = +d.pace_min;
-    d.total_dist = +d.total_dist;
-    d.total_time_min = +d.total_time_min;
-    return d;
-}, (e, d) => {
-    console.table(d);
-});
-</script>
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/running-viz-cumul-plot.jpg" target="_blank">
+    <img src="/assets/img/posts/running-viz-cumul-plot.jpg" alt="A visualization of my cumulative miles run in 2019" />
+    </a>
+</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/running-viz-pace-plot.jpg" target="_blank">
+    <img src="/assets/img/posts/running-viz-pace-plot.jpg" alt="A visualization of my pace per mile for my different training runs" />
+    </a>
+</p>
 
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/blog/2019/10/27/how-bills-die.html'>&#8592; Newer Post</a></p>
-        
 
         <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/blog/2019/06/27/trump-electoral-college-visualized.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2019/10/27/how-bills-die.html'>Older Post &#8594;</a></p>
         
     </div>
 

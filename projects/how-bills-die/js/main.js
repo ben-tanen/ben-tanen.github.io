@@ -60,7 +60,7 @@ function init_bars(date) {
         .classed("upper-label", true)
         .classed("invisible", (d) => d.N == 0)
         .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? 1 : -1) * (x(d.N) + 2))
-        .attr("y", (d) => hbd_margin.top + y(d.status_bucket) + (hbd_height / n_buckets) / 2)
+        .attr("y", (d) => hbd_margin.top + y(d.status_bucket) + (hbd_height / n_buckets) / 2 - 3)
         .text((d) => d.N_curr + " bills (" + (d.N_curr / d.N_chamber * 100).toFixed(1) + "%)" + (d.chamber_curr === "hr" & d.status_bucket === "A. INTRODUCED" ? " are still here" : ""));
 
     labels.selectAll("tspan.lower-label")
@@ -69,7 +69,7 @@ function init_bars(date) {
         .classed("lower-label", true)
         .classed("invisible", (d) => d.N == 0)
         .attr("x", (d) => hbd_margin.left + (d.chamber_curr === "hr" ? 0 : hbd_margin.middle_x) + (hbd_width / 2) - (d.chamber_curr === "hr" ? 1 : -1) * (x(d.N) + 2))
-        .attr("y", (d) => hbd_margin.top + y(d.status_bucket) + (hbd_height / n_buckets) / 2)
+        .attr("y", (d) => hbd_margin.top + y(d.status_bucket) + (hbd_height / n_buckets) / 2 - 3)
         .attr("dy", "14px")
         .text((d) => (d.N - d.N_curr) + " bills (" + ((d.N - d.N_curr) / d.N_chamber * 100).toFixed(1) + "%)" + (d.chamber_curr === "hr" & d.status_bucket === "A. INTRODUCED" ? " have moved on" : ""));
 }
@@ -200,8 +200,6 @@ d3.csv("data/2019-10-21_bill-counts-by-day-long.csv", (d) => {
 /*********************************/
 
 $(document).ready(() => {
-    let hbd_width  = $('#d3-how-bills-die').width() - hbd_margin.left - hbd_margin.right - hbd_margin.middle_x,
-        hbd_height = $('#d3-how-bills-die').height() - hbd_margin.top - hbd_margin.bottom - hbd_margin.middle_y * 4;
     sticky_scroll();
 });
 

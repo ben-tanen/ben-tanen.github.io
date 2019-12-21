@@ -7,6 +7,32 @@
             
                 
                 <item>
+                    <title>A Tale of Two Half Marathons</title>
+                    <description>&lt;p&gt;Prior to this year, I had a somewhat love-hate relationship with running. I ran cross country in high school to help train for the hockey season (my main sport), but I never really loved the running as much as some others on the team. In the years since, I forced myself to go on runs as a good form of cardio, but it was always more of chore. Cut to January 2019 when I was convinced to sign up for my first half marathon after being persuaded by a friend (and much better runner). Signing up for the half pressured me into training and once I started training, things started to click a bit more, though I wouldn’t say I was a true runner. This was until I caved and decided to take that next step and really do the running thing: I bought a running watch. The watch really helped my pacing, which I had always had issues with and overall made me enjoy runs quite a bit more. Now, 11 months later, I just wrapped up my second half marathon, because I guess I’ve been converted, possibly all thanks to that sweet running data.&lt;/p&gt;
+
+&lt;p&gt;In training for these two races, I logged 58 runs, which comes out to a nice chunk of data. So, now that I’m taking a bit of a break from running for the winter, I wanted to take a look back at all of these runs and see what kind of story these data tell. Thus, I present: A Tale of Two Half Marathons, as told by charts.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/running-viz-cumul-plot.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/running-viz-cumul-plot.jpg&quot; alt=&quot;A visualization of my cumulative miles run in 2019&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/running-viz-pace-plot.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/running-viz-pace-plot.jpg&quot; alt=&quot;A visualization of my pace per mile for my different training runs&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+</description>
+                    <pubDate>2019-11-22T10:05:41-05:00</pubDate>
+                    <link>http://localhost:4000/blog/2019/11/22/running-visualized.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2019/11/22/running-visualized.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>How A Bill Does Not Become A Law</title>
                     <description>&lt;p&gt;This post lives on another page and you were suppose to be re-routed, but something happened… sorry!&lt;/p&gt;
 
@@ -21,8 +47,6 @@
                     <link>http://localhost:4000/blog/2019/10/27/how-bills-die.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2019/10/27/how-bills-die.html</guid>
                 </item>
-                
-            
                 
             
                 
