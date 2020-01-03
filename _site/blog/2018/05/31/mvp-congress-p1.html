@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>NHL Projections | Ben Tanen</title>
+    <title>How A Bill Doesn't Become A Law | Ben Tanen</title>
 </head>
 
 
@@ -142,177 +142,44 @@ MathJax.Hub.Config({
 </div>
 
     	<div class='main'>
-    		<link rel="stylesheet" href="nhl-projections.css">
-<script src='nhl-proj.js'></script>
+    		<div class="post">
 
-<h1>NHL Projections</h1>
+    <header class="post-header">
+        <h1>How A Bill Doesn't Become A Law</h1>
+        <p class="post-date">May 31 2018
+    </header>
 
-<div id='nhl-about' class='expand'>
-<h2>About</h2>
+    <article class="post-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis amet dolorem quod quos culpa qui eum doloremque, incidunt sequi, neque rem quidem obcaecati enim voluptatum nulla aperiam maxime deserunt maiores!</p>
 
-<p>Projections, predictions, and analysis derived from NHL season simulations in MATLAB.
+<p>Note: This page is going to get long…</p>
 
-<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/nhl-playoff-projections'>here</a>.</p>
-
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+<div id="d3-bill-timeline-container">
+    <svg id="d3-bill-timeline"></svg>
+    <div id="d3-bill-timeline-controls">
+    </div>
 </div>
 
-<h2>Current Projections</h2>
-<div class='nhl_current_projection min'>
-<p>The table below outlines how the season projections (current and original) compares to the actual season. <br /><i>Model Updated:</i> 10/11/16</p>
+<link rel="stylesheet" href="/projects/mvp-congress/css/p1.style.css" />
 
-<table id='projections_table'>
-<thead>
-<tr><th></th><th width='50px'>Team</th><th width='95px'>Actual Points (To Date)</th><th width='95px'>Points Projected <br> (To Date)</th><th width='95px'>Point Differential</th><th width='95px'>Current Whole Season Projection</th><th width='95px'>Original Whole Seaon Projection</th></tr>
-</thead>
-<tbody>
+<script src="/projects/mvp-congress/js/p1.js"></script>
 
-</tbody>
-</table>
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/blog/2018/08/23/oscar-popular-film.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/blog/2018/04/22/generative-art.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
 </div>
-
-<h2 style='margin-bottom: 10px;'>Recent Work</h2>
-<ul style='padding-left: 0; list-style: none;'>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>11 Oct 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
-            <div/>
-            <p><p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/nhl-playoff-projections/" target="_blank">the code</a>.</p>
-
-</p>
-            <a href='/blog/2016/10/11/introducing-nhl-projections.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>15 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
-            <div/>
-            <p><p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
-
-</p>
-            <a href='/blog/2016/05/15/pca-kmeans-nhl.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-</ul>
     	</div>
     </div>
 	

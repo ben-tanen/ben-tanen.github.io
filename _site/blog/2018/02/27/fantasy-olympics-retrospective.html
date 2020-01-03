@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>NHL Projections | Ben Tanen</title>
+    <title>A Retrospective on the 2018 Fantasy Olympics | Ben Tanen</title>
 </head>
 
 
@@ -142,177 +142,74 @@ MathJax.Hub.Config({
 </div>
 
     	<div class='main'>
-    		<link rel="stylesheet" href="nhl-projections.css">
-<script src='nhl-proj.js'></script>
+    		<div class="post">
 
-<h1>NHL Projections</h1>
+    <header class="post-header">
+        <h1>A Retrospective on the 2018 Fantasy Olympics</h1>
+        <p class="post-date">Feb 27 2018
+    </header>
 
-<div id='nhl-about' class='expand'>
-<h2>About</h2>
+    <article class="post-content">
+    <p>Sunday marked the official end of the 2018 Olympics Games. Overall, they did not disappoint. There were some great moments and highlights all around. As an objectively not-objective American, I was a bit disappointed with <a href="https://www.theatlantic.com/entertainment/archive/2018/02/america-winter-olympics-worst-2018/554438/">the United States’ overall performance</a> but there were some amazing individual performances (shoutout to <a href="https://www.youtube.com/watch?v=3opTwpiCZ6c">Chloe Kim</a>, <a href="https://www.youtube.com/watch?v=dRmZUNO4Y5s">the U.S. Women’s Hockey Team</a>, and <a href="https://www.nytimes.com/interactive/2018/02/12/sports/olympics/jamie-anderson-gold-slopestyle.html">Jamie Anderson</a>).</p>
 
-<p>Projections, predictions, and analysis derived from NHL season simulations in MATLAB.
+<p>Speaking of performances, I was doubly curious about how my first attempt at <a href="/blog/2018/02/05/fantasy-olympics.html">Fantasy Olympics rules and projections</a> went. Now on the other side of the PyeongChang Games, I stand by my original set of rules for Fantasy Olympics. I think drafting teams by country and sport forms an interesting mix of teams and I think the weighted scoring system serves as a good counter-balance for fair drafting. So overall, Fantasy Olympics rules = 👍.</p>
 
-<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/nhl-playoff-projections'>here</a>.</p>
+<!-- more -->
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+<p>Now onto the projections. My projections were based on a very rudimentary and naive model so I had <em>very</em> little hope for these results. But at the end of the day, I don’t think they were <em>that</em> awful. On average, I was off by about 0.3 points per team (meaning I generally overestimated performances), but in absolute terms, I was off by 2.5 points per team. When the typical medaling team earned 6.4 points per event, being off by 2.5 points means I was about 39% off the mark on average.</p>
+
+<p>But enough with averages - what about the spread? I decided to look at the spread of how my projections fared by team (by country and sport), by sport, and by country, leading to the visualization below.</p>
+
+<div id="d3-fantasy-olympics-retro-container">
+    <p id="d3-fantasy-olympics-retro-title">Difference Between Actual and Projected Fantasy Points</p>
+    <div id="d3-fantasy-olympics-retro-buttons">
+        Group by:
+        <button id="both-button" class="selected">Country and Sport</button>
+        <button id="country-button">Country</button>
+        <button id="sport-button">Sport</button>
+    </div>
+    <svg id="d3-fantasy-olympics-retro">
+    </svg>
 </div>
 
-<h2>Current Projections</h2>
-<div class='nhl_current_projection min'>
-<p>The table below outlines how the season projections (current and original) compares to the actual season. <br /><i>Model Updated:</i> 10/11/16</p>
+<p>Off the bat, it appears that while I <em>on average</em> overestimated performances, I more often underestimated teams performances. Of <span id="footnote-1" class="footnote">the 199 results included</span>, 119 teams underperformed relative to my projections, but they weren’t crazy far off (on average 1.8 points off). On the other end of the spectrum, the 80 over-performers really outdid themselves, over-performing by 3.5 points on average.</p>
 
-<table id='projections_table'>
-<thead>
-<tr><th></th><th width='50px'>Team</th><th width='95px'>Actual Points (To Date)</th><th width='95px'>Points Projected <br> (To Date)</th><th width='95px'>Point Differential</th><th width='95px'>Current Whole Season Projection</th><th width='95px'>Original Whole Seaon Projection</th></tr>
-</thead>
-<tbody>
+<p>As you can see, this average over-performance is very heavily influenced by the outliers on the right side of the chart, namely the German Nordic Combined team. No matter how you look at the data, the German Nordic Combined team’s projection was the dominate inaccuracy in my projections. Diving into how I could have possibly been so (21.5 points!) off, I saw two issues with my data and model.</p>
 
-</tbody>
-</table>
+<p>In order to make my projections, I pulled data from <a href="https://www.olympic.org/sports">the official Olympics website</a>, where they have listed past winners for each event. This seemed to be a good place to scrape the historical results I would need for my model, and it seemed to work fairly well. In the process of scraping these results, I did notice that some events had no past results (for example, see the page for <a href="https://www.olympic.org/nordic-combined/individual-ski-jumping-k90-70m-men">men’s individual ski jumping</a>). I shrugged this off and assumed this was because these were new events or were slightly modified from past Games. This was true, but it was a mistake to be so cavalier. It turns out I wasn’t actually pulling in the results for <strong>all</strong> historical events as I was expecting. This mistake became an issue when my historical results were missing results that would have indicated strong performances in the 2018 Games. For example, my data showed that Germany had only ever won a bronze in Nordic Combined, so one would expect they probably wouldn’t have done amazingly in PyeongChang. However, Germany’s Nordic Combined team actually earned a gold, a silver, and a bronze in just Sochi. Therefore, someone using accurate data probably would have correctly projected that Germany could have won five medals in PyeongChang, <a href="https://www.reuters.com/article/us-olympics-2018-nors-m-team/nordic-combined-germany-continue-dominance-with-team-gold-idUSKCN1G61BQ">as they did</a>. So in a classic newbie fashion, I blindly trusted my data and neglected to account for problems stemming from missing data.</p>
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+<p>My second mistake was due to a conceptual gap in my model. Using historical performances (which now turned out to be only partially complete), I estimated how each team would fare entirely independently of each other. So if there were five teams that all did okay historically, they would each be projected to do okay in PyeongChang, which makes sense. But one of these teams would have to win the gold, right? This was my oversight. By projecting each team individually (and then not checking my results in the aggregate), I ended up making projections that would indicate no one wins gold. For example, based on my scoring scheme, with three Nordic Combined events, there would be 34.6 total points awarded to Nordic Combined teams. However, my projections said 6.2 points would be awarded, because, based on my incomplete data, no one team had done particularly amazing in the past. Instead, I should have awarded shares of these 34.6 points based on who was mostly likely to come in first, second, and third. If I had done so, I would have projected that the German Nordic Combined team would have earned 25.6 points, which is <strong>much</strong> closer to the 23.1 points they actually earned.</p>
+
+<p>Overall, while I did make some mistakes, I’m not too upset with the results I got. This served as a good learning experience for how to improve my model for future Games and future projects in general. So lessons learned and onto the next one - 2020, here we come!</p>
+
+<p><strong>Retrospective note (on the retrospective):</strong> FiveThirtyEight had <a href="https://fivethirtyeight.com/features/a-decent-second-week-saved-the-u-s-from-olympic-catastrophe/">their own projection model</a> and they recently published their results. I decided to see how my results compared to theirs (see below for a quick chart). As <strong>far</strong> better modelers than me, I was expecting their results to blow mine out of the water, and you know what, they kind of do. Our results are on two different scales (theirs are measured by number of medals expected, mine are measured by expected Fantasy Olympic points) so direct comparison is probably not the best analysis, but it is interesting to see that we get similar trends, likely driven by performances that were just truly unexpected. This comparison also further points out how much I messed up Germany (points furthest to the right). Sorry Germany…</p>
+
+<p class="fig-paragraph">
+    <a class="fig-link" target="_blank">
+    <img src="/assets/img/posts/fantasy-olympics-538-retro.png" alt="A chart comparing FiveThirtyEight's projections to mine" />
+    </a>
+</p>
+
+<link rel="stylesheet" href="/projects/fantasy-olympics/css/retro-2018.style.css" />
+
+<script type="text/javascript" src="/projects/fantasy-olympics/js/retro-2018.js"></script>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/blog/2018/03/02/comparing-obama-trump-on-guns.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/blog/2018/02/05/fantasy-olympics.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
 </div>
-
-<h2 style='margin-bottom: 10px;'>Recent Work</h2>
-<ul style='padding-left: 0; list-style: none;'>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>11 Oct 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
-            <div/>
-            <p><p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/nhl-playoff-projections/" target="_blank">the code</a>.</p>
-
-</p>
-            <a href='/blog/2016/10/11/introducing-nhl-projections.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>15 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
-            <div/>
-            <p><p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
-
-</p>
-            <a href='/blog/2016/05/15/pca-kmeans-nhl.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-</ul>
     	</div>
     </div>
 	
