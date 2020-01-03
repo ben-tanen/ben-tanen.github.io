@@ -18,7 +18,7 @@ thumbnail: https://www.yourwdwstore.net/assets/images/1/10000/3000/100/13163-s2.
     </div>
 </div>
 
-Beyond the number of top 10 movies that Disney produced, it is worth considering the share of total box office gross captured by the House of Mouse, especially since those at the top earn quite a bit more than the 9th or 10th biggest movies. *Avengers: Endgame* earned nearly 60% more at the box office than the 2nd highest grossing movie, which was also a Disney movie, and more than four times than *It Chapter Two*, the 10th highest. So when we look at the total box office revenue, Disney actually captured nearly 90% of the gross among top movies.
+Beyond the number of top 10 movies that Disney produced, it is worth considering the share of total box office gross captured by the House of Mouse, especially since those at the top earn quite a bit more than the 9th or 10th biggest movies. *Avengers: Endgame* earned nearly 60% more at the box office than the 2nd highest grossing movie, which was also a Disney movie, and more than four times what *It Chapter Two*, the 10th highest, grossed. So when we look at the total box office revenue, Disney actually captured nearly 90% of the gross among top movies.
 
 | #| Film                             | Domestic Box Office (as of Jan 1, 2020) | Share of Top Box Office |
 |--|----------------------------------|-----------------------------------------|-------------------------|
