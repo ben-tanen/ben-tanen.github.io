@@ -1,10 +1,9 @@
 ---
 layout: post
 title:  "How Accurate Are IBM Watson's Fantasy Football Projections"
-date:   2020-01-05 15:05:41
+date:   2020-01-02 15:05:41
 categories: project data visualization football fantasy ibm hidden
 thumbnail: /assets/img/post-thumbnails/ff-ibm-watson.png
-show-on-landing: true
 landing-description: the accuracy of IBM Watson's fantasy football projections
 ---
 
