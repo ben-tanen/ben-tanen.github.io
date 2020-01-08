@@ -61,7 +61,7 @@ Movie data (titles, domestic gross, and distributor) were pulled from <a href="h
 
 Box office gross was not adjusted for inflation.
 
-Movies were determined to be released by Disney based on the "Distributor" field from <a href="https://www.boxofficemojo.com/year/2019/?grossesOption=totalGrosses">Box Office Mojo</a>. However, Disney has earned money from films for which they are not distributor (examples include the latest Spider-Man films in <a href="https://www.cnbc.com/2019/09/27/sony-and-disney-reach-deal-to-continue-spider-man-movie-partnership.html">their joint production deal with Sony</a>). The Verge correctly considered <i>Spider-Man: Far From Home</i> as being produced by Disney and thus counted the film in their analysis when stating eight out of ten films from 2019 were produced by Disney.
+Movies were determined to be released by Disney based on the "Distributor" field from <a href="https://www.boxofficemojo.com/year/2019/?grossesOption=totalGrosses">Box Office Mojo</a>. However, Disney has earned money from films for which they are not distributor (examples include the latest Spider-Man films in <a href="https://www.cnbc.com/2019/09/27/sony-and-disney-reach-deal-to-continue-spider-man-movie-partnership.html">their joint production deal with Sony</a>). The Verge correctly considered <i>Spider-Man: Far From Home</i> as being produced by Marvel (and thus Disney) and thus counted the film in their analysis when stating eight out of ten films from 2019 were produced by Disney.
 {% endcapture %}
 {% include methodology-note.html content=methodology-note break='yes' %}
 
