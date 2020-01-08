@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>How Accurate Are IBM Watson's Fantasy Football Projections | Ben Tanen</title>
+    <title>Is IBM Watson Good At Fantasy Football? | Ben Tanen</title>
 </head>
 
 
@@ -145,12 +145,38 @@ MathJax.Hub.Config({
     		<div class="post">
 
     <header class="post-header">
-        <h1>How Accurate Are IBM Watson's Fantasy Football Projections</h1>
+        <h1>Is IBM Watson Good At Fantasy Football?</h1>
         <p class="post-date">Jan 02 2020
     </header>
 
     <article class="post-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate voluptatum recusandae adipisci nulla, maxime praesentium reprehenderit at ratione eveniet odit. Eius blanditiis, labore nihil recusandae quidem consectetur natus laudantium incidunt.</p>
+    <p>In 2011, IBM’s Watson computer competed on <i>Jeopardy!</i> and won against two of the show’s all-time greats. In the years since, Watson has become a household name and one of the most well-known examples of artificial intelligence. Much of this fame has come from IBM’s continued marketing that showcases Watson and IBM’s other AI technology as “enterprise-ready” and “globally applicable” by integrating the technology in a variety of places.</p>
+
+<p>An example is <a href="https://www.ibm.com/sports/fantasy/">IBM's recent partnership with ESPN</a> to bring Watson's AI capabilities to ESPN's fantasy football system in the form of player-by-player performance projections. <a href="https://www.youtube.com/watch?v=uDeP5b3iKfU">Per IBM's marketing materials</a> for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete's stats and are also frequently used in discussions on <a href="https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show">ESPN's fantasy-driven shows</a>.</p>
+
+<div class="columns two">
+    <div class="column">
+        <p>For the 2019 season, Watson made projections for hundreds of players across 17 weeks, which amounts to thousands of distinct player projections. For each projection, a player is given two point thresholds (a upside or "boom" threshold and a downside or "bust" threshold) that indicate how strong of a week Watson projects for that player. Beyond these point thresholds to indicate what would make a good or bad week for the player, Watson also assigns probabilities for the expected likelihood of each outcome. For example, in week 8, Watson gave Aaron Rodgers a boom threshold of 27.9 points and a bust threshold of 12.5 points, with a 26% and 15% chance of occurring, respectively. This means that, based on Watson's projections, Aaron Rodgers had a 26% chance of scoring 27.9 points or more, a 15% chance of scoring 12.5 points or less, and 59% chance of scoring somewhere in between - he ultimately went on to score 27.1 points.</p>
+    </div>
+    <div class="column">
+        <p class="fig-paragraph">
+    <a class="fig-link" target="_blank">
+    <img src="/assets/img/posts/disney-top-box-office-share.png" alt="An example of Watson's player projections." />
+    </a>
+</p>
+
+
+
+
+
+    </div>
+</div>
+
+<p>IBM and ESPN have marketed these projections as a way for fantasy football players to quickly gain insights and another tool for players to use when making game-time decisions. However, after a few seasons of the partnership, there is still relatively little information on the overall accuracy of these projections. IBM has said that <a href="https://www.ibm.com/thought-leadership/fantasy-football/index.html">Watson helped a IBM data scientist go undefeated in fantasy football</a>, but this is one example and is obviously from a somewhat biased perspective. Thus, inspired by <a href="https://projects.fivethirtyeight.com/checking-our-work/">a recent project from FiveThirtyEight</a>, I decided to find out for myself.</p>
+
+<p>Using all of these projections, we can assess Watson’s projections by measuring how well calibrated its predictions are. For example, if, over the course of the season, Watson makes 100 projections that have a 40% chance of occurring and roughly 40 of them are correct, we would say that the model is well-calibrated. However, if 10% or 70% of these projections were correct, we would say that Watson is poorly calibrated. This is because the forecasted likelihood associated with these projections were inconsistent with the actual likelihood for which they occurred.</p>
+
+<p>We can therefore assess Watson’s overall calibration by bucketing thousands of its projections by their predicted likelihood of occurring and then test how often those projections actually occurred. If we plot this, we would expect a perfectly calibrated model to follow the dotted line while a poorly calibrated model would diverge from this line at different points. By this measure, this year’s data would indicate that Watson is doing so-so. Each dot in the plot below represents a group of projections and for the most part, these points somewhat correlate with the trend we would expect for a perfectly calibrated model, though it’s clear Watson has been far from perfect.</p>
 
 <div id="d3-ff-ibm-container">
     <div id="d3-ff-ibm-title">
@@ -159,6 +185,54 @@ MathJax.Hub.Config({
     </div>
     <svg id="d3-ff-ibm">
     </svg>
+</div>
+
+<p>There are a few things we should note when we talk about calibration and Watson’s projections. First, sample size is incredibly important when we talk about calibration. If a model makes 100,000 projections with a likelihood of 20% and 20% of these projections are correct, it is fair to say that the model is well-calibrated. However, if a model makes five similar projections and two of them (40%) are correct, we should hesitate from calling the model poorly calibrated. This measure of calibration, like all things in statistics, follows <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">the law of large numbers</a> so there is always a possibility of irregular outcomes with smaller sample sizes. Thus, it is worth noting that the dots/buckets that appear the furthest from perfectly calibrated are often associated with groups with relatively fewer projections. To play around with this, you can change the size of the buckets above, which will change the range of projections included in a particular bucket (e.g., when n = 2, all projections between 25 - 27% are grouped together; when n = 10, all projections between 25 - 30% are grouped together).</p>
+
+<p>Additionally, you might notice a gap in projections with a forecasted chance of occurring between 30% and 50%, which is caused by how Watson reports its projections.</p>
+
+<p>With all of this in mind, …; Watson has always appeared to be more of a marketing tool than anything else. (Links to other sources mentioning this). Predicting individual player performance will always be somewhat of a crap shoot because …, but IBM should take this into account when they make projections. If the problem is too difficult to project accurately, it’s worth asking if there should be any projections at all.</p>
+
+<p>Links:</p>
+
+<ul>
+  <li>https://www.reddit.com/r/fantasyfootball/comments/9nc3bc/accuracy_of_ibm_watson_fantasy_insights/</li>
+  <li>https://www.techrepublic.com/article/ibm-and-espn-take-fantasy-football-to-the-next-level-with-watson-ai/</li>
+  <li>https://frntofficesport.com/ibm-watson-espn-fantasy-football/</li>
+</ul>
+
+<p class="section-break">* * *</p>
+
+<div class="methodology">
+    <p class="methodology-title">Methodology and minutia</p>
+    
+    
+    <p></p>
+    
+    <p>
+IBM Watson's weekly player projections were scraped from ESPN for weeks 1 - 16 of the 2019 season. ESPN did not report projections for all players in all weeks, both when the player was not likely to play or when the player did not have enough relevant data available to make a projection. If the player had no projection for week 16, it was not possible to view Watson's projections for the player in prior weeks, so these data are not reflected. </p>
+    
+    <p>
+</p>
+    
+    <p>
+In total, 2,939 player-weeks of data were used, where each player-week had three projections, resulting in 8,817 total projections assessed. </p>
+    
+    <p>
+</p>
+    
+    <p>
+Watson's point projections reflect <a href="https://www.nbcsports.com/bayarea/49ers/what-ppr-means-fantasy-football-and-three-picks-target-draft">PPR</a> scoring.</p>
+    
+    <p>
+</p>
+    
+    <p>
+You can view the full list of projections used <a href="#" style="color: red">here</a>.</p>
+    
+    <p>
+</p>
+    
 </div>
 
 <style>
@@ -396,7 +470,7 @@ $('.bucket-button').click(function() {
         <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/blog/2020/01/01/decade-of-disney.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/blog/2020/01/02/decade-of-disney.html'>Older Post &#8594;</a></p>
         
     </div>
 

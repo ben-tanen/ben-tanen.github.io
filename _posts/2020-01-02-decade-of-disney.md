@@ -56,6 +56,15 @@ In the 1940s, after years of anti-competitive behavior on the part of major movi
 
 The film industry is a better place for the sake of (profitable!) movies like *Knives Out*, *Ad Astra*, and *Booksmart*. So while we wait for any actual government or industry intervention, I implore you to go see these kind of movies while you still can.
 
+{% capture methodology-note %}
+Movie data (titles, domestic gross, and distributor) were pulled from <a href="https://www.boxofficemojo.com/">Box Office Mojo</a> on January 1, 2020. Box Office Mojo reports domestic gross for films back until 1977 so this analysis is limited to films released between 1977 and 2019. Movies were assigned year based on the year of their release date and total box office gross (including from years other than release year) was used.
+
+Box office gross was not adjusted for inflation.
+
+Movies were determined to be released by Disney based on the "Distributor" field from <a href="https://www.boxofficemojo.com/year/2019/?grossesOption=totalGrosses">Box Office Mojo</a>. However, Disney has earned money from films for which they are not distributor (examples include the latest Spider-Man films in <a href="https://www.cnbc.com/2019/09/27/sony-and-disney-reach-deal-to-continue-spider-man-movie-partnership.html">their joint production deal with Sony</a>). The Verge correctly considered <i>Spider-Man: Far From Home</i> as being produced by Marvel (and thus Disney) and thus counted the film in their analysis when stating eight out of ten films from 2019 were produced by Disney.
+{% endcapture %}
+{% include methodology-note.html content=methodology-note break='yes' %}
+
 <style>
 #d3-dod-container {
     width: 100%;
