@@ -8,18 +8,13 @@
                 
                 <item>
                     <title>Is IBM Watson Good At Fantasy Football?</title>
-                    <description>&lt;p&gt;In 2011, IBM’s Watson computer competed on &lt;i&gt;Jeopardy!&lt;/i&gt; and won against two of the show’s all-time greats. In the years since, Watson has become a household name and one of the most well-known examples of artificial intelligence. Much of this fame has come from IBM’s continued marketing that showcases Watson and IBM’s other AI technology as “enterprise-ready” and “globally applicable” by integrating the technology in a variety of places.&lt;/p&gt;
-
-&lt;p&gt;An example is &lt;a href=&quot;https://www.ibm.com/sports/fantasy/&quot;&gt;IBM's recent partnership with ESPN&lt;/a&gt; to bring Watson's AI capabilities to ESPN's fantasy football system in the form of player-by-player performance projections. &lt;a href=&quot;https://www.youtube.com/watch?v=uDeP5b3iKfU&quot;&gt;Per IBM's marketing materials&lt;/a&gt; for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete's stats and are also frequently used in discussions on &lt;a href=&quot;https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show&quot;&gt;ESPN's fantasy-driven shows&lt;/a&gt;.&lt;/p&gt;
+                    <description>&lt;p&gt;In the years since IBM’s Watson supercomputer infamously appeared on &lt;i&gt;Jeopardy&lt;/i&gt; in 2011, Watson has become a household name and one of the most well-known examples of artificial intelligence in the real world. Much of this fame has come from IBM’s continued marketing that integrates and showcases Watson in a variety of real-world applications. An example is &lt;a href=&quot;https://www.ibm.com/sports/fantasy/&quot;&gt;IBM’s recent partnership with ESPN&lt;/a&gt; to bring Watson’s AI capabilities to ESPN’s fantasy football system in the form of player-by-player performance projections. &lt;a href=&quot;https://www.youtube.com/watch?v=uDeP5b3iKfU&quot;&gt;Per IBM’s marketing materials&lt;/a&gt; for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete’s stats and are also frequently used in discussions on &lt;a href=&quot;https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show&quot;&gt;ESPN’s fantasy-driven shows&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
-        &lt;p&gt;For the 2019 season, Watson made projections for hundreds of players across 17 weeks, which amounts to thousands of distinct player projections. For each projection, a player is given two point thresholds (a upside or &quot;boom&quot; threshold and a downside or &quot;bust&quot; threshold) that indicate how strong of a week Watson projects for that player. Beyond these point thresholds to indicate what would make a good or bad week for the player, Watson also assigns probabilities for the expected likelihood of each outcome. For example, in week 8, Watson gave Aaron Rodgers a boom threshold of 27.9 points and a bust threshold of 12.5 points, with a 26% and 15% chance of occurring, respectively. This means that, based on Watson's projections, Aaron Rodgers had a 26% chance of scoring 27.9 points or more, a 15% chance of scoring 12.5 points or less, and 59% chance of scoring somewhere in between - he ultimately went on to score 27.1 points.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;column&quot;&gt;
         &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/disney-top-box-office-share.png&quot; alt=&quot;An example of Watson's player projections.&quot; /&gt;
+    &lt;img src=&quot;/assets/img/posts/ibm-watson-proj-ex.jpg&quot; alt=&quot;An example of Watson's player projections.&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
 
@@ -28,13 +23,16 @@
 
 
     &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;For the 2019 season, Watson made projections for hundreds of players across 17 weeks, which amounts to thousands of distinct player projections. For each projection, a player is given two point thresholds (an upside or &quot;boom&quot; threshold and a downside or &quot;bust&quot; threshold) that indicate how strong of a week Watson projects for that player. Watson also assigns probabilities for these thresholds and the overall likelihood of a player having a good or bad week. For example, in week 5, Watson gave Patrick Mahomes a boom threshold of 28.3 points and a bust threshold of 10.0 points, where each had an 8% chance of occurring. This means that, based on Watson's projections, Mahomes had an 8% chance of having a great week (scoring 28.3 or more points), an 8% chance of having a bad week (scoring 10 or fewer points), and 84% chance of scoring somewhere in between - he ultimately went on to score 18.5 points.&lt;/p&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;IBM and ESPN have marketed these projections as a way for fantasy football players to quickly gain insights and another tool for players to use when making game-time decisions. However, after a few seasons of the partnership, there is still relatively little information on the overall accuracy of these projections. IBM has said that &lt;a href=&quot;https://www.ibm.com/thought-leadership/fantasy-football/index.html&quot;&gt;Watson helped a IBM data scientist go undefeated in fantasy football&lt;/a&gt;, but this is one example and is obviously from a somewhat biased perspective. Thus, inspired by &lt;a href=&quot;https://projects.fivethirtyeight.com/checking-our-work/&quot;&gt;a recent project from FiveThirtyEight&lt;/a&gt;, I decided to find out for myself.&lt;/p&gt;
+&lt;p&gt;IBM and ESPN have described these projections as a way for fantasy football players to quickly gain insights and another tool for players to use when making game-time decisions. However, after a few seasons of the partnership, there is still relatively little information on the overall accuracy of these projections. IBM has said that &lt;a href=&quot;https://www.ibm.com/thought-leadership/fantasy-football/index.html&quot;&gt;Watson helped an IBM data scientist go undefeated in fantasy football&lt;/a&gt;, but this is one example and is obviously from a somewhat biased perspective. Thus, inspired by &lt;a href=&quot;https://projects.fivethirtyeight.com/checking-our-work/&quot;&gt;a recent project from FiveThirtyEight&lt;/a&gt;, I decided to find out for myself.&lt;/p&gt;
 
-&lt;p&gt;Using all of these projections, we can assess Watson’s projections by measuring how well calibrated its predictions are. For example, if, over the course of the season, Watson makes 100 projections that have a 40% chance of occurring and roughly 40 of them are correct, we would say that the model is well-calibrated. However, if 10% or 70% of these projections were correct, we would say that Watson is poorly calibrated. This is because the forecasted likelihood associated with these projections were inconsistent with the actual likelihood for which they occurred.&lt;/p&gt;
+&lt;p&gt;Using all of Watson’s projections, we can assess Watson’s accuracy by measuring how well calibrated its predictions are. In this context, calibration is a measure of how accurately Watson’s predicts align with the real-world results of what it predicted. For example, if, over the course of the season, Watson made 100 projections that have a 40% chance of occurring and 40 of them were correct, we would say that the model is well-calibrated. However, if instead 70% of these predictions were correct, we would say that Watson is poorly calibrated. This is because the forecasted likelihood associated with these projections (40% chance) were inconsistent with the actual likelihood for which they occurred (70% chance).&lt;/p&gt;
 
-&lt;p&gt;We can therefore assess Watson’s overall calibration by bucketing thousands of its projections by their predicted likelihood of occurring and then test how often those projections actually occurred. If we plot this, we would expect a perfectly calibrated model to follow the dotted line while a poorly calibrated model would diverge from this line at different points. By this measure, this year’s data would indicate that Watson is doing so-so. Each dot in the plot below represents a group of projections and for the most part, these points somewhat correlate with the trend we would expect for a perfectly calibrated model, though it’s clear Watson has been far from perfect.&lt;/p&gt;
+&lt;p&gt;We can therefore measure Watson’s overall calibration by bucketing thousands of its projections based on their predicted chance and then test how often those projections actually occurred. If we plot this, we would expect a perfectly calibrated model to follow the dotted diagonal line, while a poorly calibrated model would diverge from this line at different points. By this measure, this year’s data would indicate that Watson is doing so-so. Each dot in the plot below represents a group of projections and for the most part, these points somewhat correlate with the trend we would expect for a perfectly calibrated model, though it’s clear Watson has been far from perfect.&lt;/p&gt;
 
 &lt;div id=&quot;d3-ff-ibm-container&quot;&gt;
     &lt;div id=&quot;d3-ff-ibm-title&quot;&gt;
@@ -45,19 +43,11 @@
     &lt;/svg&gt;
 &lt;/div&gt;
 
-&lt;p&gt;There are a few things we should note when we talk about calibration and Watson’s projections. First, sample size is incredibly important when we talk about calibration. If a model makes 100,000 projections with a likelihood of 20% and 20% of these projections are correct, it is fair to say that the model is well-calibrated. However, if a model makes five similar projections and two of them (40%) are correct, we should hesitate from calling the model poorly calibrated. This measure of calibration, like all things in statistics, follows &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_large_numbers&quot;&gt;the law of large numbers&lt;/a&gt; so there is always a possibility of irregular outcomes with smaller sample sizes. Thus, it is worth noting that the dots/buckets that appear the furthest from perfectly calibrated are often associated with groups with relatively fewer projections. To play around with this, you can change the size of the buckets above, which will change the range of projections included in a particular bucket (e.g., when n = 2, all projections between 25 - 27% are grouped together; when n = 10, all projections between 25 - 30% are grouped together).&lt;/p&gt;
+&lt;p&gt;It is worth noting the importance of sample size when we talk about calibration. If a model makes 100,000 projections with a likelihood of 20% and 20% of these projections are correct, it is fair to say that the model is well-calibrated. However, if a model makes five similar projections (all with a 20% chance of occurring) and two of them (40%) are correct, we should hesitate from calling the model poorly calibrated. This measure of calibration, like all things in statistics, follows &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_large_numbers&quot;&gt;the law of large numbers&lt;/a&gt; so there is always a possibility of irregular outcomes with smaller sample sizes. Thus, it is worth noting that the dots/buckets that appear the furthest from perfectly calibrated are often associated with groups with relatively fewer projections. To play around with this, you can change the size of the buckets above, which will change the range of projections included in a particular bucket (e.g., when n = 2, all projections between 25 - 27% are grouped together; when n = 10, all projections between 25 - 30% are grouped together).&lt;/p&gt;
 
-&lt;p&gt;Additionally, you might notice a gap in projections with a forecasted chance of occurring between 30% and 50%, which is caused by how Watson reports its projections.&lt;/p&gt;
+&lt;p&gt;Given all of this, it is worth asking if this application of Watson is successful? From a strictly data science perspective, Watson has done a fine but not great job. To be fair, it is incredibly difficult to predict the performance of individual players with any real sense of accuracy. There are so many convoluted factors that can lead to a successful game for a particular athlete, more than even Watson’s mighty powers might be able to entirely understand.&lt;/p&gt;
 
-&lt;p&gt;With all of this in mind, …; Watson has always appeared to be more of a marketing tool than anything else. (Links to other sources mentioning this). Predicting individual player performance will always be somewhat of a crap shoot because …, but IBM should take this into account when they make projections. If the problem is too difficult to project accurately, it’s worth asking if there should be any projections at all.&lt;/p&gt;
-
-&lt;p&gt;Links:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;https://www.reddit.com/r/fantasyfootball/comments/9nc3bc/accuracy_of_ibm_watson_fantasy_insights/&lt;/li&gt;
-  &lt;li&gt;https://www.techrepublic.com/article/ibm-and-espn-take-fantasy-football-to-the-next-level-with-watson-ai/&lt;/li&gt;
-  &lt;li&gt;https://frntofficesport.com/ibm-watson-espn-fantasy-football/&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;However, as much as Watson and its applications are depicted as data science projects, I don’t think IBM assesses Watson’s success from a data science perspective. Instead, by &lt;a href=&quot;https://gizmodo.com/why-everyone-is-hating-on-watson-including-the-people-w-1797510888&quot;&gt;all reasonable accounts&lt;/a&gt;, Watson is actually a very expensive marketing tool. Watson’s work with ESPN never appears to be marketed as the next great tool for fantasy football players to dominate in leagues but rather as the next great tool that ESPN could use to keep users engaged. Thus Watson’s success is likely not measured by its calibration or accuracy, but rather how much money it can make for ESPN and how many new clients it can bring in for IBM. Watson has certainly developed the capabilities to do some remarkable things - beating Ken Jennings is no laughing matter - but more than anything, Watson’s work at ESPN serves as a shiny example of all the things that other business could potentially accomplish if they pay lots of money to IBM.&lt;/p&gt;
 
 &lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
 
@@ -68,13 +58,7 @@
     &lt;p&gt;&lt;/p&gt;
     
     &lt;p&gt;
-IBM Watson's weekly player projections were scraped from ESPN for weeks 1 - 16 of the 2019 season. ESPN did not report projections for all players in all weeks, both when the player was not likely to play or when the player did not have enough relevant data available to make a projection. If the player had no projection for week 16, it was not possible to view Watson's projections for the player in prior weeks, so these data are not reflected. &lt;/p&gt;
-    
-    &lt;p&gt;
-&lt;/p&gt;
-    
-    &lt;p&gt;
-In total, 2,939 player-weeks of data were used, where each player-week had three projections, resulting in 8,817 total projections assessed. &lt;/p&gt;
+IBM Watson's weekly player projections were scraped from ESPN for weeks 1 - 16 of the 2019 season. ESPN did not report projections for all players in all weeks, both when the player was not likely to play or when the player did not have enough relevant data available to make a projection. If the player had no projection for week 16, it was not possible to view Watson's projections for the player in prior weeks, so these data are not reflected. In total, 2930 player-weeks of data were used, where each player-week had three projections, resulting in 8790 total projections assessed.&lt;/p&gt;
     
     &lt;p&gt;
 &lt;/p&gt;
@@ -86,7 +70,7 @@ Watson's point projections reflect &lt;a href=&quot;https://www.nbcsports.com/ba
 &lt;/p&gt;
     
     &lt;p&gt;
-You can view the full list of projections used &lt;a href=&quot;#&quot; style=&quot;color: red&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+You can view the full list of projections used &lt;a href=&quot;/projects/fantasy-football/data/ibm-watson-ff-projections-2019.csv&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
     
     &lt;p&gt;
 &lt;/p&gt;
@@ -278,7 +262,7 @@ function resize() {
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/
 
-d3.csv(&quot;/assets/data/ff-ibm-watson-projections.csv&quot;, (d) =&gt; {
+d3.csv(&quot;/projects/fantasy-football/data/ff-ibm-watson-projections.csv&quot;, (d) =&gt; {
     d.pct = +d.pct;
     d.n = +d.n;
     d.n_correct = +d.n_correct;
@@ -320,9 +304,9 @@ $('.bucket-button').click(function() {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2020-01-02T10:05:41-05:00</pubDate>
-                    <link>http://localhost:4000/blog/2020/01/02/ibm-watson-ff.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2020/01/02/ibm-watson-ff.html</guid>
+                    <pubDate>2020-01-08T10:05:41-05:00</pubDate>
+                    <link>http://localhost:4000/blog/2020/01/08/ibm-watson-ff.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2020/01/08/ibm-watson-ff.html</guid>
                 </item>
                 
             
@@ -712,7 +696,7 @@ $(window).resize(resize);
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2020-01-02T00:05:41-05:00</pubDate>
+                    <pubDate>2020-01-02T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2020/01/02/decade-of-disney.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2020/01/02/decade-of-disney.html</guid>
                 </item>
@@ -4918,19 +4902,19 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;For anyone interested, I’ve included a sample implementation in Python of the algorithm below.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# takes in a number n and a number of iterations iters
-# to test if n is prime with (1 - (1 / 4^iters)) certainty
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;miller_rabin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# find r and s
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# such that: n = (2^r)s + 1
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# takes in a number n and a number of iterations iters&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# to test if n is prime with (1 - (1 / 4^iters)) certainty&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;miller_rabin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# find r and s&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# such that: n = (2^r)s + 1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 
-    &lt;span class=&quot;c1&quot;&gt;# test n multiple times
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# test n multiple times&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
@@ -5736,21 +5720,21 @@ The original desktop application (left) vs. the new web application (right)
 
 &lt;p&gt;Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// search database for food type or restaurant&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;burrito&quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// search database for food type or restaurant
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;burrito&quot;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bob's Burgers&quot;&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// add chicken burrito with cheese &amp;amp; sour cream&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burrito&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chicken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cheese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;// add chicken burrito with cheese &amp;amp; sour cream
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burrito&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chicken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cheese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
 
-&lt;span class=&quot;c1&quot;&gt;// add burger without pickles&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pickles&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// add burger without pickles
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pickles&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// go to checkout and add payment information &lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkout&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// go to checkout and add payment information 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkout&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// place order&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;c1&quot;&gt;// place order
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if &lt;a href=&quot;http://r-wos.org/hacks/gti&quot;&gt;gti init&lt;/a&gt; can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future.&lt;/p&gt;
 

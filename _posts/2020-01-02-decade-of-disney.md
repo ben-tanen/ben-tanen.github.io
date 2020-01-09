@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "The Decade of Disney"
-date:   2020-01-02 05:05:41
+date:   2020-01-02 15:05:41
 categories: project data visualization disney movies monopoly
 show-on-landing: true
 landing-description: monopoly and how the 2010s were the decade of Disney
-thumbnail: https://www.yourwdwstore.net/assets/images/1/10000/3000/100/13163-s2.jpg
+thumbnail: /assets/img/post-thumbnails/disney-monopoly.jpg
 ---
 
 <div class='columns two'>
