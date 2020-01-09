@@ -162,19 +162,19 @@ MathJax.Hub.Config({
 
 <p>For anyone interested, I’ve included a sample implementation in Python of the algorithm below.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># takes in a number n and a number of iterations iters
-# to test if n is prime with (1 - (1 / 4^iters)) certainty
-</span><span class="k">def</span> <span class="nf">miller_rabin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">iters</span><span class="p">):</span>
-    <span class="c1"># find r and s
-</span>    <span class="c1"># such that: n = (2^r)s + 1
-</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># takes in a number n and a number of iterations iters</span>
+<span class="c"># to test if n is prime with (1 - (1 / 4^iters)) certainty</span>
+<span class="k">def</span> <span class="nf">miller_rabin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">iters</span><span class="p">):</span>
+    <span class="c"># find r and s</span>
+    <span class="c"># such that: n = (2^r)s + 1</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">s</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="mi">2</span>
         <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="c1"># test n multiple times
-</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
+    <span class="c"># test n multiple times</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">**</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">j</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
