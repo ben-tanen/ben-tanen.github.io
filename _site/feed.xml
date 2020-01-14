@@ -8,7 +8,7 @@
                 
                 <item>
                     <title>Is IBM Watson Good At Fantasy Football?</title>
-                    <description>&lt;p&gt;In the years since IBM’s Watson supercomputer infamously appeared on &lt;i&gt;Jeopardy&lt;/i&gt; in 2011, Watson has become a household name and one of the most well-known examples of artificial intelligence in the real world. Much of this fame has come from IBM’s continued marketing that integrates and showcases Watson in a variety of real-world applications. An example is &lt;a href=&quot;https://www.ibm.com/sports/fantasy/&quot;&gt;IBM’s recent partnership with ESPN&lt;/a&gt; to bring Watson’s AI capabilities to ESPN’s fantasy football system in the form of player-by-player performance projections. &lt;a href=&quot;https://www.youtube.com/watch?v=uDeP5b3iKfU&quot;&gt;Per IBM’s marketing materials&lt;/a&gt; for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete’s stats and are also frequently used in discussions on &lt;a href=&quot;https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show&quot;&gt;ESPN’s fantasy-driven shows&lt;/a&gt;.&lt;/p&gt;
+                    <description>&lt;p&gt;In the years since &lt;a href=&quot;https://www.nytimes.com/2011/02/17/science/17jeopardy-watson.html&quot;&gt;IBM’s Watson supercomputer infamously appeared on &lt;em&gt;Jeopardy!&lt;/em&gt;&lt;/a&gt; in 2011, Watson has become a household name and one of the most well-known examples of artificial intelligence in the real world. Much of this fame has come from IBM’s continued marketing that integrates and showcases Watson in a variety of real-world applications. An example is &lt;a href=&quot;https://www.ibm.com/sports/fantasy/&quot;&gt;IBM’s recent partnership with ESPN&lt;/a&gt; to bring Watson’s AI capabilities to ESPN’s fantasy football system in the form of player-by-player performance projections. &lt;a href=&quot;https://www.youtube.com/watch?v=uDeP5b3iKfU&quot;&gt;Per IBM’s marketing materials&lt;/a&gt; for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete’s stats and are also frequently used in discussions on &lt;a href=&quot;https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show&quot;&gt;ESPN’s fantasy-driven shows&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
@@ -30,7 +30,7 @@
 
 &lt;p&gt;IBM and ESPN have described these projections as a way for fantasy football players to quickly gain insights and another tool for players to use when making game-time decisions. However, after a few seasons of the partnership, there is still relatively little information on the overall accuracy of these projections. IBM has said that &lt;a href=&quot;https://www.ibm.com/thought-leadership/fantasy-football/index.html&quot;&gt;Watson helped an IBM data scientist go undefeated in fantasy football&lt;/a&gt;, but this is one example and is obviously from a somewhat biased perspective. Thus, inspired by &lt;a href=&quot;https://projects.fivethirtyeight.com/checking-our-work/&quot;&gt;a recent project from FiveThirtyEight&lt;/a&gt;, I decided to find out for myself.&lt;/p&gt;
 
-&lt;p&gt;Using all of Watson’s projections, we can assess Watson’s accuracy by measuring how well calibrated its predictions are. In this context, calibration is a measure of how accurately Watson’s predicts align with the real-world results of what it predicted. For example, if, over the course of the season, Watson made 100 projections that have a 40% chance of occurring and 40 of them were correct, we would say that the model is well-calibrated. However, if instead 70% of these predictions were correct, we would say that Watson is poorly calibrated. This is because the forecasted likelihood associated with these projections (40% chance) were inconsistent with the actual likelihood for which they occurred (70% chance).&lt;/p&gt;
+&lt;p&gt;Using all of Watson’s projections, we can assess Watson’s accuracy by measuring how well calibrated its predictions are. In this context, calibration is a measure of how accurately Watson’s predicts align with the real-world results of what it predicted. For example, if, over the course of the season, Watson made 100 projections that have a 40% chance of occurring and 40 of them were correct, we would say that the model is well-calibrated. However, if instead 70% of these predictions were correct, we would say that Watson is poorly calibrated. This is because the forecasted likelihood of these projections (40% chance) were inconsistent with the actual likelihood for which they occurred (70% chance).&lt;/p&gt;
 
 &lt;p&gt;We can therefore measure Watson’s overall calibration by bucketing thousands of its projections based on their predicted chance and then test how often those projections actually occurred. If we plot this, we would expect a perfectly calibrated model to follow the dotted diagonal line, while a poorly calibrated model would diverge from this line at different points. By this measure, this year’s data would indicate that Watson is doing so-so. Each dot in the plot below represents a group of projections and for the most part, these points somewhat correlate with the trend we would expect for a perfectly calibrated model, though it’s clear Watson has been far from perfect.&lt;/p&gt;
 
@@ -43,11 +43,11 @@
     &lt;/svg&gt;
 &lt;/div&gt;
 
-&lt;p&gt;It is worth noting the importance of sample size when we talk about calibration. If a model makes 100,000 projections with a likelihood of 20% and 20% of these projections are correct, it is fair to say that the model is well-calibrated. However, if a model makes five similar projections (all with a 20% chance of occurring) and two of them (40%) are correct, we should hesitate from calling the model poorly calibrated. This measure of calibration, like all things in statistics, follows &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_large_numbers&quot;&gt;the law of large numbers&lt;/a&gt; so there is always a possibility of irregular outcomes with smaller sample sizes. Thus, it is worth noting that the dots/buckets that appear the furthest from perfectly calibrated are often associated with groups with relatively fewer projections. To play around with this, you can change the size of the buckets above, which will change the range of projections included in a particular bucket (e.g., when n = 2, all projections between 25 - 27% are grouped together; when n = 10, all projections between 25 - 30% are grouped together).&lt;/p&gt;
+&lt;p&gt;It is worth noting the importance of sample size when we talk about calibration. If a model makes 100,000 projections with a likelihood of 20% and 20% of these projections are correct, it is fair to say that the model is well-calibrated. However, if a model makes five similar projections (all with a 20% chance of occurring) and two of them (40%) are correct, we should hesitate from calling the model poorly calibrated. This measure of calibration, like all things in statistics, follows &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_large_numbers&quot;&gt;the law of large numbers&lt;/a&gt; so there is always a possibility of irregular outcomes with smaller sample sizes. Thus, we should note that the dots/buckets that appear the furthest from perfectly calibrated are often associated with groups with relatively fewer projections. To play around with this, you can change the size of the buckets above, which will change the range of projections included in a particular bucket (e.g., when n = 2, all projections between 25 - 27% are grouped together; when n = 10, all projections between 25 - 35% are grouped together).&lt;/p&gt;
 
-&lt;p&gt;Given all of this, it is worth asking if this application of Watson is successful? From a strictly data science perspective, Watson has done a fine but not great job. To be fair, it is incredibly difficult to predict the performance of individual players with any real sense of accuracy. There are so many convoluted factors that can lead to a successful game for a particular athlete, more than even Watson’s mighty powers might be able to entirely understand.&lt;/p&gt;
+&lt;p&gt;Given all of this, it is worth asking: is this use of Watson a success? From a strictly data science perspective, Watson has done a fine but not great job. The projections are not disastrously bad but they are probably not much better than what a well-informed human would say. To be fair, it is incredibly difficult to predict the performance of individual players with any real sense of accuracy. There are so many convoluted factors that can lead to a successful game for a particular athlete, more than even Watson’s mighty powers might be able to entirely understand.&lt;/p&gt;
 
-&lt;p&gt;However, as much as Watson and its applications are depicted as data science projects, I don’t think IBM assesses Watson’s success from a data science perspective. Instead, by &lt;a href=&quot;https://gizmodo.com/why-everyone-is-hating-on-watson-including-the-people-w-1797510888&quot;&gt;all reasonable accounts&lt;/a&gt;, Watson is actually a very expensive marketing tool. Watson’s work with ESPN never appears to be marketed as the next great tool for fantasy football players to dominate in leagues but rather as the next great tool that ESPN could use to keep users engaged. Thus Watson’s success is likely not measured by its calibration or accuracy, but rather how much money it can make for ESPN and how many new clients it can bring in for IBM. Watson has certainly developed the capabilities to do some remarkable things - beating Ken Jennings is no laughing matter - but more than anything, Watson’s work at ESPN serves as a shiny example of all the things that other business could potentially accomplish if they pay lots of money to IBM.&lt;/p&gt;
+&lt;p&gt;However, as much as Watson and its applications are depicted as data science projects, I don’t think IBM assesses Watson’s success from a data science perspective. Instead, by &lt;a href=&quot;https://gizmodo.com/why-everyone-is-hating-on-watson-including-the-people-w-1797510888&quot;&gt;all reasonable accounts&lt;/a&gt;, Watson is actually a very expensive marketing tool. Watson’s work with ESPN never appears to be marketed as the next great tool for fantasy football players to dominate in leagues but rather as the next great tool that ESPN could use to keep users engaged. Watson’s success is likely not measured by its calibration or accuracy, but rather how much money it can make for ESPN and how many new clients it can bring in for IBM. Watson has certainly developed the capabilities to do some remarkable things - beating Ken Jennings is no laughing matter - but more than anything, Watson’s work at ESPN serves as a shiny example of all the things that other business could potentially accomplish if they pay lots of money to IBM.&lt;/p&gt;
 
 &lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
 
@@ -64,13 +64,7 @@ IBM Watson's weekly player projections were scraped from ESPN for weeks 1 - 16 o
 &lt;/p&gt;
     
     &lt;p&gt;
-Watson's point projections reflect &lt;a href=&quot;https://www.nbcsports.com/bayarea/49ers/what-ppr-means-fantasy-football-and-three-picks-target-draft&quot;&gt;PPR&lt;/a&gt; scoring.&lt;/p&gt;
-    
-    &lt;p&gt;
-&lt;/p&gt;
-    
-    &lt;p&gt;
-You can view the full list of projections used &lt;a href=&quot;/projects/fantasy-football/data/ibm-watson-ff-projections-2019.csv&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+You can view the full list of projections used &lt;a href=&quot;/projects/fantasy-football/data/ibm-watson-ff-projections-2019.csv&quot;&gt;here&lt;/a&gt;. Watson's point projections reflect &lt;a href=&quot;https://www.nbcsports.com/bayarea/49ers/what-ppr-means-fantasy-football-and-three-picks-target-draft&quot;&gt;PPR&lt;/a&gt; scoring.&lt;/p&gt;
     
     &lt;p&gt;
 &lt;/p&gt;
@@ -3349,82 +3343,6 @@ function clean_group_name(group) {
             
                 
                 <item>
-                    <title>Discovering Music with Real People, Not a Computer</title>
-                    <description>&lt;p&gt;The original purpose of &lt;a href=&quot;http://musicalshots.tumblr.com/&quot;&gt;Musical Shots&lt;/a&gt; was to help me discover new music through suggestions from followers. It hasn’t worked as well as I initially planned, but I have found some great suggestions from real people. This idea of music discovery through actual people is refreshing. Tools like Pandora and Last.fm are great, but they lack the human perspective. So, with dozens of computer-driven music discovery sites, why is there no person-based site?&lt;/p&gt;
-
-&lt;p&gt;From this question spawned a concept for a person-driven, suggestion based music discovery site.&lt;/p&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/personal-musical-discovery.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/personal-musical-discovery.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Learning as a Developer</title>
-                    <description>&lt;p&gt;&lt;a href=&quot;http://bt-old.tumblr.com/post/45150349590/long-term-variables-in-python&quot;&gt;old post&lt;/a&gt;&lt;/p&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/learning-as-a-developer.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/learning-as-a-developer.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Designing Street Signs for a Global Audience</title>
-                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores cupiditate sint minus magnam veniam id expedita voluptate quam ut ad deleniti, numquam natus quibusdam nesciunt doloribus blanditiis voluptatem assumenda earum!&lt;/p&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/designing-street-signs.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/designing-street-signs.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Automating My Life with Spotify and Last.fm</title>
-                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus adipisci odio numquam, at nostrum reprehenderit non. Nobis vitae libero nam ad! Voluptatum doloremque, ratione veritatis provident maxime voluptatibus fuga est.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Spotify Playlist Checker&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Currently Listening to (with IFTTT, Last.FM, etc.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Download playlist&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/automating-spotify.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/automating-spotify.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Animating the Dark Side of the Moon</title>
-                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus adipisci odio numquam, at nostrum reprehenderit non. Nobis vitae libero nam ad! Voluptatum doloremque, ratione veritatis provident maxime voluptatibus fuga est.&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/darkside-initial.jpg&quot; alt=&quot;My original try at remixing Storm Thorgerson's Pink Floyd design&quot; width=&quot;500px&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-</description>
-                    <pubDate>2017-08-05T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2017/08/05/animating-dark-side-of-the-moon.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2017/08/05/animating-dark-side-of-the-moon.html</guid>
-                </item>
-                
-            
-                
-                <item>
                     <title>Street Art in London</title>
                     <description>&lt;p&gt;I just got back from a trip to London and while I was there, I got to check out of some London’s pretty incredible street art. I was taken around parts of the city by an artist trying to break into the street art scene so he was able to share some additional information on the pieces. It was very cool to hear some of the background on the artist(s) behind each piece and the general culture in the street scene. It certainly added an extra layer to the compositions and their significance in London as a whole.&lt;/p&gt;
 
@@ -4463,24 +4381,6 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
                     <pubDate>2016-11-10T10:05:41-05:00</pubDate>
                     <link>http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2016/11/10/stpaul-broken-bones.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>More On The NHL Projection Model</title>
-                    <description>&lt;p&gt;&lt;em&gt;This is a follow-up for a project I am working on during the 2016-17 NHL season. For more, see &lt;a href=&quot;/2016/10/11/introducing-nhl-projections.html&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/nhl-projections/files/progression.gif&quot; width=&quot;450px&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-</description>
-                    <pubDate>2016-10-12T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/blog/2016/10/12/more-on-nhl-projections.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/blog/2016/10/12/more-on-nhl-projections.html</guid>
                 </item>
                 
             
