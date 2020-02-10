@@ -7,6 +7,277 @@
             
                 
                 <item>
+                    <title>The Best Films That Don't Win Best Picture</title>
+                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dicta magnam ullam, repellat, asperiores, rem commodi tempore expedita mollitia impedit consequuntur saepe quod alias nesciunt dignissimos inventore excepturi suscipit blanditiis?&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/oscars-best-picture-2019.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/oscars-best-picture-2019.jpg&quot; alt=&quot;A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis assumenda asperiores modi deserunt eaque quis saepe delectus. Asperiores, earum qui? Non deleniti ut eum dolorem quam fuga quia laboriosam magni?&lt;/p&gt;
+
+&lt;div id=&quot;d3-obp-container&quot;&gt;
+    &lt;div id=&quot;d3-obp-title&quot;&gt;
+        &lt;h3&gt;Best Picture nominees vs. other comparable non-nominated films, 2000 - 2019&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;svg id=&quot;d3-obp&quot;&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, ut. Reiciendis fugiat reprehenderit illum eveniet at dolorem blanditiis, nesciunt ipsam praesentium, consequuntur eligendi ducimus ex corrupti ullam incidunt sunt labore!&lt;/p&gt;
+
+&lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
+
+&lt;div class=&quot;methodology&quot;&gt;
+    &lt;p class=&quot;methodology-title&quot;&gt;Methodology and minutia&lt;/p&gt;
+    
+    
+    &lt;p&gt;&lt;/p&gt;
+    
+    &lt;p&gt;
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, sapiente, dolores. Sunt suscipit quia, quisquam earum ipsa adipisci illo eos. Harum ex ipsum, aperiam quaerat dolorum est debitis laboriosam nulla.&lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+&lt;/div&gt;
+
+&lt;style&gt;
+#d3-obp-container {
+    width: 100%;
+}
+
+#d3-obp {
+    width: 100%;
+    height: 4000px;
+}
+
+#d3-obp-title h3 {
+    text-align: center;
+    color: #77bdee;
+}
+
+#d3-obp-title p {
+    text-align: center;
+}
+
+#x-axis-label {
+    text-anchor: middle;
+    font-size: 12px;
+}
+
+line.y-axis-line {
+    stroke: #dadada;
+}
+
+#y-axis path.domain {
+    stroke: none;
+}
+
+text.stat-line1, text.stat-line2 tspan {
+    font-size: 12px;
+}
+
+circle.film {
+    stroke: #515151;
+    stroke-width: 1.5px;
+    fill: #D4D4D4;
+    cursor: pointer;
+}
+
+@media (max-width: 840px) {
+    circle.film {
+        stroke-width: 1px;
+    }
+}
+
+circle.film.oscars-nom {
+    fill: #E35DEF; 
+}
+
+circle.film.oscars-win {
+    fill: #FFDD0A;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+
+/*********************/
+/*** INIT VARIABLE ***/
+/*********************/
+
+let obp_svg = d3.select(&quot;#d3-obp&quot;);
+
+let margin = {top: 150, right: 105, bottom: 70, left: 40},
+    width  = $(&quot;#d3-obp&quot;).width() - margin.left - margin.right,
+    height = $(&quot;#d3-obp&quot;).height() - margin.top - margin.bottom,
+    is_mobile = (width &gt;= 470 ? false : true);
+
+// set domains: x = projected probability, y = actual probability
+let x = d3.scaleLinear().range([0, width]),
+    y = d3.scaleLinear().range([height, 0]);
+
+// create empty list to store data
+let data = [ ];
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
+function render_axes() {
+    obp_svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;x-axis&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left}, ${margin.top - height / 40 - 10})`)
+        .call(d3.axisTop(x));
+
+    obp_svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;y-axis&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left}, ${margin.top})`)
+        .call(d3.axisLeft(y).ticks(20).tickFormat(d3.format(&quot;d&quot;)));
+
+    obp_svg.append('text')
+        .classed(&quot;axis-label&quot;, true)
+        .attr(&quot;id&quot;, &quot;x-axis-label&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left + width / 2}, ${margin.top - height / 40 - 35})`)
+        .text(&quot;Metacritic Score&quot;);
+
+    obp_svg.selectAll('line.y-axis-line')
+        .data(d3.range(y.domain()[0], y.domain()[1] + 1)).enter()
+        .append(&quot;line&quot;)
+        .classed(&quot;y-axis-line&quot;, true)
+        .attr(&quot;id&quot;, (d) =&gt; &quot;y-axis-line-&quot; + d)
+        .attr(&quot;x1&quot;, margin.left)
+        .attr(&quot;y1&quot;, (d) =&gt; margin.top + y(d) + 0.5)
+        .attr(&quot;x2&quot;, margin.left + width)
+        .attr(&quot;y2&quot;, (d) =&gt; margin.top + y(d) + 0.5);
+
+    let sl1 = obp_svg.selectAll(&quot;text.stat-line1&quot;)
+        .data(d3.range(y.domain()[0], y.domain()[1] + 1)).enter()
+        .append(&quot;text&quot;)
+        .classed(&quot;stat-line1&quot;, true)
+        .attr(&quot;y&quot;, (d) =&gt; margin.top + y(d) - 62);
+
+    sl1.selectAll(&quot;tspan&quot;)
+        .data((d) =&gt; `${data.filter((e) =&gt; e.year === d &amp; e.oscars_nom === 0).length} non-nominated\nfilms were better\nthan the lowest\nscoring nominee`.split(&quot;\n&quot;)).enter()
+        .append(&quot;tspan&quot;)
+        .text((d) =&gt; d)
+        .attr(&quot;x&quot;, margin.left + width + 5)
+        .attr(&quot;dx&quot;, 0)
+        .attr(&quot;dy&quot;, 12);
+
+    let sl2 = obp_svg.selectAll(&quot;text.stat-line2&quot;)
+        .data(d3.range(y.domain()[0], y.domain()[1] + 1)).enter()
+        .append(&quot;text&quot;)
+        .classed(&quot;stat-line2&quot;, true)
+        .attr(&quot;y&quot;, (d) =&gt; margin.top + y(d) + 10);
+
+    sl2.selectAll(&quot;tspan&quot;)
+        .data((d) =&gt; `${data.filter((e) =&gt; e.year === d &amp; e.oscars_nom === 0 &amp; e.metacritic_rank &lt; e.oscar_win_rank).length} non-nominated\nfilms were better\nthan the Best\nPicture winner`.split(&quot;\n&quot;)).enter()
+        .append(&quot;tspan&quot;)
+        .text((d) =&gt; d)
+        .attr(&quot;x&quot;, margin.left + width + 5)
+        .attr(&quot;dx&quot;, 0)
+        .attr(&quot;dy&quot;, 12);
+}
+
+function render_points() {
+
+    // create circles
+    obp_svg.selectAll(&quot;circle.film&quot;)
+        .data(data).enter()
+        .append(&quot;circle&quot;)
+        .classed(&quot;film&quot;, true)
+        .classed(&quot;oscars-nom&quot;, (d) =&gt; d.oscars_nom === 1)
+        .classed(&quot;oscars-win&quot;, (d) =&gt; d.oscars_win === 1)
+        .attr(&quot;id&quot;, (d) =&gt; &quot;film&quot; + d.year + &quot;-&quot; + d.metacritic_rank)
+        .attr(&quot;cx&quot;, (d) =&gt; margin.left + x(d.metacritic_score))
+        .attr(&quot;cy&quot;, (d) =&gt; margin.top + y(d.year) + y_jitter(d.tie_rank) * 10)
+        .attr(&quot;jitter&quot;, (d) =&gt; y_jitter(d.tie_rank))
+        .attr(&quot;r&quot;, width &gt; 550 ? 4 : (width &gt; 420 ? 3 : 2));
+
+    // add tooltips for circles
+    new jBox(&quot;Tooltip&quot;, {
+        attach: &quot;circle.film&quot;,
+        content: &quot;...&quot;,
+        offset: {x: 4},
+        onOpen: function() {
+            let d = d3.select(this.source[0]).data()[0];
+
+            this.setContent(`&lt;p&gt;&lt;b&gt;${d.title} (${d.year})&lt;/b&gt;&lt;/p&gt;
+                             &lt;p&gt;Metacritic score: ${d.metacritic_score} (#${d.metacritic_rank} of ${d.year})&lt;/p&gt;
+                             &lt;p&gt;${d.oscars_nom === 1 ? &quot;Best Picture &quot; + (d.oscars_win === 1 ? &quot;Winner&quot; : &quot;Nominee&quot;) : &quot;Not nominated for Best Picture&quot;}&lt;/p&gt;`);
+        }
+    });
+
+}
+
+function y_jitter(r) {
+    return((r % 2 === 1 ? 1 : -1) * Math.floor(r / 2));
+}
+
+function resize() {
+
+    // delete existing elements
+    obp_svg.selectAll(&quot;#x-axis, #y-axis, text.axis-label, line.y-axis-line, text.stat-line1, text.stat-line2, circle.film&quot;).remove();
+
+    // update width properties and scales
+    width = $(&quot;#d3-obp&quot;).width() - margin.left - margin.right;
+    x.range([0, width]);
+
+    // rerender
+    render_axes();
+    render_points();
+}
+
+/*********************************/
+/*** PARSE DATA AND INIT PLOTS ***/
+/*********************************/
+
+d3.csv(&quot;/assets/data/metacritic-topmovies-byyear.csv&quot;, (d) =&gt; {
+    d.year = +d.year;
+    d.metacritic_score = +d.metacritic_score;
+    d.metacritic_rank = +d.metacritic_rank;
+    d.oscars_nom = +d.oscars_nom;
+    d.oscars_win = +d.oscars_win;
+    d.min_oscar_nom_rank = +d.min_oscar_nom_rank;
+    d.oscar_win_rank = +d.oscar_win_rank;
+    d.tie_rank = +d.tie_rank;
+    return d;
+}, (e, d) =&gt; {
+    if (e) throw e;
+
+    // limit to relevant data and store for later
+    d = d.filter((d) =&gt; d.metacritic_rank &lt;= d.min_oscar_nom_rank);
+    for (let i = 0; i &lt; d.length; i++) data.push(d[i]);
+
+    // set domain for scales
+    x.domain(d3.extent(data, (d) =&gt; d.metacritic_score)).nice();
+    y.domain(d3.extent(data, (d) =&gt; d.year));
+
+    // draw axes and initla points
+    render_axes();
+    render_points();
+});
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+$(window).resize(resize);
+
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2020-02-09T10:05:41-05:00</pubDate>
+                    <link>http://localhost:4000/blog/2020/02/09/oscars-best-picture.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2020/02/09/oscars-best-picture.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>Is IBM Watson Good At Fantasy Football?</title>
                     <description>&lt;p&gt;In the years since &lt;a href=&quot;https://www.nytimes.com/2011/02/17/science/17jeopardy-watson.html&quot;&gt;IBM’s Watson supercomputer infamously appeared on &lt;em&gt;Jeopardy!&lt;/em&gt;&lt;/a&gt; in 2011, Watson has become a household name and one of the most well-known examples of artificial intelligence in the real world. Much of this fame has come from IBM’s continued marketing that integrates and showcases Watson in a variety of real-world applications. An example is &lt;a href=&quot;https://www.ibm.com/sports/fantasy/&quot;&gt;IBM’s recent partnership with ESPN&lt;/a&gt; to bring Watson’s AI capabilities to ESPN’s fantasy football system in the form of player-by-player performance projections. &lt;a href=&quot;https://www.youtube.com/watch?v=uDeP5b3iKfU&quot;&gt;Per IBM’s marketing materials&lt;/a&gt; for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete’s stats and are also frequently used in discussions on &lt;a href=&quot;https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show&quot;&gt;ESPN’s fantasy-driven shows&lt;/a&gt;.&lt;/p&gt;
 
