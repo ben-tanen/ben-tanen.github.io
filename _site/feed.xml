@@ -39,11 +39,15 @@
 &lt;h3 style=&quot;padding-left: 30px; margin-bottom: 5px; color: #77bdee;&quot;&gt;BT's Picks: Great Films Not Nominated for Best Picture&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;2019: &lt;em&gt;Uncut Gems&lt;/em&gt;, &lt;em&gt;The Farewell&lt;/em&gt;, &lt;em&gt;Dolemite Is My Name&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;2018: &lt;em&gt;Eighth Grade&lt;/em&gt;, &lt;em&gt;Minding the Gap&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;2017: &lt;em&gt;The Florida Project&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;2019: &lt;em&gt;Uncut Gems&lt;/em&gt;, &lt;em&gt;The Farewell&lt;/em&gt;, &lt;em&gt;Dolemite Is My Name&lt;/em&gt;, &lt;em&gt;I Lost My Body&lt;/em&gt;, &lt;em&gt;Ad Astra&lt;/em&gt;, &lt;em&gt;Midsommar&lt;/em&gt;, &lt;em&gt;Booksmart&lt;/em&gt;, &lt;em&gt;Knives Out&lt;/em&gt;, &lt;em&gt;Luce&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;2018: &lt;em&gt;Eighth Grade&lt;/em&gt;, &lt;em&gt;Sorry to Bother You&lt;/em&gt;, &lt;em&gt;Minding the Gap&lt;/em&gt;, &lt;em&gt;Beautiful Boy&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;2017: &lt;em&gt;The Florida Project&lt;/em&gt;, &lt;em&gt;The Meyerowitz Stories (New and Selected)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;2016: &lt;em&gt;The Nice Guys&lt;/em&gt;, &lt;em&gt;The Lobster&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;2015: &lt;em&gt;Ex Machina&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;2014: &lt;em&gt;Nightcrawler&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;2013: &lt;em&gt;Fruitvale Station&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;2012: &lt;em&gt;Moonrise Kingdom&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;2011: &lt;em&gt;Drive&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;2008: &lt;em&gt;WALL-E&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;2007: &lt;em&gt;The King of Kong: A Fistful of Quarters&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;2006: &lt;em&gt;Children of Men&lt;/em&gt;, &lt;em&gt;Borat&lt;/em&gt;&lt;/li&gt;
@@ -2027,8 +2031,6 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
                     <link>http://localhost:4000/blog/2018/08/24/oscar-popular-film.html</link>
                     <guid isPermaLink="true">http://localhost:4000/blog/2018/08/24/oscar-popular-film.html</guid>
                 </item>
-                
-            
                 
             
                 
@@ -5174,19 +5176,19 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;For anyone interested, I’ve included a sample implementation in Python of the algorithm below.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# takes in a number n and a number of iterations iters&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# to test if n is prime with (1 - (1 / 4^iters)) certainty&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;miller_rabin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# find r and s&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# such that: n = (2^r)s + 1&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# takes in a number n and a number of iterations iters
+# to test if n is prime with (1 - (1 / 4^iters)) certainty
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;miller_rabin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# find r and s
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# such that: n = (2^r)s + 1
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 
-    &lt;span class=&quot;c&quot;&gt;# test n multiple times&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# test n multiple times
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
@@ -5992,21 +5994,21 @@ The original desktop application (left) vs. the new web application (right)
 
 &lt;p&gt;Basically, using similar syntax to Git, users can search and order food from local restaurants using the command line. Examples include:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// search database for food type or restaurant
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;burrito&quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// search database for food type or restaurant&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;burrito&quot;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bob's Burgers&quot;&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// add chicken burrito with cheese &amp;amp; sour cream
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burrito&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chicken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cheese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;// add chicken burrito with cheese &amp;amp; sour cream&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burrito&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chicken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cheese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
 
-&lt;span class=&quot;c1&quot;&gt;// add burger without pickles
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pickles&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// add burger without pickles&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;burger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pickles&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// go to checkout and add payment information 
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkout&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// go to checkout and add payment information &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkout&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// place order
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;c1&quot;&gt;// place order&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;grub&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if &lt;a href=&quot;http://r-wos.org/hacks/gti&quot;&gt;gti init&lt;/a&gt; can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future.&lt;/p&gt;
 

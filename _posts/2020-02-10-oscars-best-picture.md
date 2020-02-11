@@ -34,11 +34,15 @@ Now that we have the benefit of knowing who won Best Picture, this year’s Best
 
 <h3 style='padding-left: 30px; margin-bottom: 5px; color: #77bdee;'>BT's Picks: Great Films Not Nominated for Best Picture</h3>
 
-- 2019: *Uncut Gems*, *The Farewell*, *Dolemite Is My Name*
-- 2018: *Eighth Grade*, *Minding the Gap*
-- 2017: *The Florida Project*
+- 2019: *Uncut Gems*, *The Farewell*, *Dolemite Is My Name*, *I Lost My Body*, *Ad Astra*, *Midsommar*, *Booksmart*, *Knives Out*, *Luce*
+- 2018: *Eighth Grade*, *Sorry to Bother You*, *Minding the Gap*, *Beautiful Boy*
+- 2017: *The Florida Project*, *The Meyerowitz Stories (New and Selected)*
+- 2016: *The Nice Guys*, *The Lobster*
+- 2015: *Ex Machina*
+- 2014: *Nightcrawler*
 - 2013: *Fruitvale Station*
 - 2012: *Moonrise Kingdom*
+- 2011: *Drive*
 - 2008: *WALL-E*
 - 2007: *The King of Kong: A Fistful of Quarters*
 - 2006: *Children of Men*, *Borat*
