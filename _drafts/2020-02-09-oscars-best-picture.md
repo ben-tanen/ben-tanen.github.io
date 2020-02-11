@@ -3,8 +3,9 @@ layout: post
 title:  "The Best Films That Don't Win Best Picture"
 date:   2020-02-09 15:05:41
 categories: project data visualization movies oscars
+show-on-landing: true
 thumbnail: /assets/img/post-thumbnails/oscars-best-picture.png
-landing-description: great films ignored by the Academy
+landing-description: how many great films can be ignored by the Academy of Motion Picture Arts and Sciences
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dicta magnam ullam, repellat, asperiores, rem commodi tempore expedita mollitia impedit consequuntur saepe quod alias nesciunt dignissimos inventore excepturi suscipit blanditiis?
@@ -54,6 +55,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, sapiente, dolores.
 
 line.y-axis-line {
     stroke: #dadada;
+}
+
+#y-axis g.tick text {
+    font-size: 14px;
 }
 
 #y-axis path.domain {

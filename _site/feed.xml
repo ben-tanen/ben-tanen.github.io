@@ -72,6 +72,10 @@ line.y-axis-line {
     stroke: #dadada;
 }
 
+#y-axis g.tick text {
+    font-size: 14px;
+}
+
 #y-axis path.domain {
     stroke: none;
 }
