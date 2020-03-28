@@ -7,6 +7,87 @@
             
                 
                 <item>
+                    <title>Plotting the 3,979 Delegates of the 2020 Democratic Primary</title>
+                    <description>&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot; style=&quot;width: calc(45% - 15px);&quot;&gt;
+        &lt;p&gt;On March 17, Arizona, Florida, and Illinois each held their respective 2020 primaries elections. These state primaries marked the halfway point in this ongoing national primary since now more than 50% of the initial 3,979 delegates have been awarded across 30 different state contests. As of writing this, Joe Biden leads the race with 1,215 delegates while Bernie Sanders trails behind at 909 delegates. Given these current counts and the outlook for upcoming primaries, &lt;a href=&quot;https://www.economist.com/united-states/2020/03/19/joe-biden-builds-an-insurmountable-lead&quot;&gt;many&lt;/a&gt; &lt;a href=&quot;https://fivethirtyeight.com/features/election-update-bidens-delegate-lead-is-now-nearly-insurmountable/&quot;&gt;outlets&lt;/a&gt; have called Biden’s lead (nearly) insurmountable. In the lead up to Super Tuesday (March 3), Biden’s path to victory was not so clear and it actually seemed like Sanders might end up winning the nomination after he had relatively strong performances in early states like Nevada and Iowa. But at the end of the day, Biden was able to pull it out in many of the big states that mattered and here we are.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot; style=&quot;width: calc(55% - 15px);&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/dem2020-delegate-map/img/RPlot.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/dem2020-delegate-map/img/RPlot.jpg&quot; alt=&quot;A plot showing where Biden is expected to win relative to their total number of delegates awarded&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you have been following this election closely, Biden’s leading position is not all that surprising. But because this primary process is almost unbearably long, it can sometimes be hard to piece together all of the states that brought Biden and Sanders to the delegate totals that they have as well as the states that will likely help Biden secure the nomination. Thus, to help illustrate the bigger picture of these primaries, I present a visualization of all 3,979 of the delegates up for grabs, where they have gone thus far, and where they are projected to go in upcoming states.&lt;/p&gt;
+
+&lt;p&gt;This race is not yet over (though I agree it is almost nearly over) so I will continue to update the below as new results and projections become available. Ongoing developments with Trump and COVID-19 will almost certainly throw some (more) curveballs so we will see how that may change things.&lt;/p&gt;
+
+&lt;p&gt;I hope everyone is staying safe and healthy. And remember to wash your hands.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;dem2020-title&quot;&gt;
+    &lt;h2&gt;Delegates won (or projected to be won) by &lt;span class=&quot;biden-count&quot;&gt;Biden&lt;/span&gt;, &lt;span class=&quot;sanders-count&quot;&gt;Sanders&lt;/span&gt;, and &lt;span class=&quot;other-count&quot;&gt;Other Candidates&lt;/span&gt;&lt;/h2&gt;
+    &lt;p style=&quot;margin-bottom: 10px;&quot;&gt;&lt;i&gt;Updated on: &lt;span id=&quot;update-date&quot;&gt;...&lt;/span&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Based on current counts and future projections, Biden is expected to win &lt;span id=&quot;biden-total-del&quot;&gt;…&lt;/span&gt; total delegates. Sanders is expected to win &lt;span id=&quot;sanders-total-del&quot;&gt;…&lt;/span&gt; total delegates.&lt;/li&gt;
+  &lt;li&gt;&lt;span id=&quot;largest-remaining-state&quot;&gt;…&lt;/span&gt; is the largest state to not yet hold their primary election. Biden is expected to win &lt;span id=&quot;biden-largest-remaining-state-del&quot;&gt;…&lt;/span&gt; of the &lt;span id=&quot;largest-remaining-state-total-del&quot;&gt;…&lt;/span&gt; total delegates available in &lt;span id=&quot;largest-remaining-state&quot;&gt;…&lt;/span&gt;.&lt;/li&gt;
+  &lt;li&gt;Biden is expected to clinch his winning 1991st delegate from &lt;span id=&quot;winning-del-state&quot;&gt;…&lt;/span&gt; in &lt;span id=&quot;winning-del-state-days&quot;&gt;…&lt;/span&gt; days.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;dem2020-container&quot;&gt;&lt;/div&gt;
+
+&lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
+
+&lt;div class=&quot;methodology&quot;&gt;
+    &lt;p class=&quot;methodology-title&quot;&gt;Methodology and minutia&lt;/p&gt;
+    
+    
+    &lt;p&gt;&lt;/p&gt;
+    
+    &lt;p&gt;
+States are organized from top to bottom by date of primary/caucus and then alphabetically. Dates for primaries and caucuses come from &lt;a href=&quot;https://www.npr.org/2020/02/10/799979293/how-many-delegates-do-the-2020-presidential-democratic-candidates-have&quot;&gt;NPR&lt;/a&gt;. Due to concerns around the COVID-19, multiple states (e.g., Ohio, Conecticut) have postponed their original dates. The most recent proposed postponement date is shown.&lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+    &lt;p&gt;
+Delegate counts from states that have held primaries/caucuses come from &lt;a href=&quot;https://interactives.ap.org/delegate-tracker/&quot;&gt;the Associated Press&lt;/a&gt;. &lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+    &lt;p&gt;
+Projected results for upcoming states come from &lt;a href=&quot;https://projects.fivethirtyeight.com/2020-primary-forecast/&quot;&gt;FiveThirtyEight's 2020 Democratic Primary model&lt;/a&gt;, where the average forecasted pleged delegate totals were used. For instances where the combined average number of pleged delegates for each candidate did not equal the total number of delegates available in a state, the remaining unallocated delegates were assigned proportionally.&lt;/p&gt;
+    
+    &lt;p&gt;
+&lt;/p&gt;
+    
+&lt;/div&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/projects/dem2020-delegate-map/css/main.style.css&quot; /&gt;
+
+&lt;script src=&quot;/projects/dem2020-delegate-map/js/main.js&quot;&gt;&lt;/script&gt;
+
+</description>
+                    <pubDate>2020-03-24T06:05:41-04:00</pubDate>
+                    <link>http://localhost:4000/blog/2020/03/24/dem2020-delegate-map.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/blog/2020/03/24/dem2020-delegate-map.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>The Best Films That Don't Win Best Picture</title>
                     <description>&lt;p&gt;On Sunday, &lt;em&gt;Parasite&lt;/em&gt; made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that &lt;em&gt;Parasite&lt;/em&gt; would lose to &lt;a href=&quot;https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html&quot;&gt;1917&lt;/a&gt;, even though &lt;a href=&quot;https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/&quot;&gt;most critics believed&lt;/a&gt; &lt;em&gt;Parasite&lt;/em&gt; was the superior movie. All of this was also coming a year after &lt;a href=&quot;https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture&quot;&gt;&lt;em&gt;Green Book&lt;/em&gt; won&lt;/a&gt; over (believed to be) superior films like &lt;em&gt;Roma&lt;/em&gt;, &lt;em&gt;The Favourite&lt;/em&gt;, and &lt;em&gt;BlackKlansman&lt;/em&gt;. Needless to say, before &lt;em&gt;Parasite&lt;/em&gt; actually won, there were low hopes that the Academy would make the best choice.&lt;/p&gt;
 

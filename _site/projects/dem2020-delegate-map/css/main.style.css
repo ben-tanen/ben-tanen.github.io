@@ -1,0 +1,52 @@
+#dem2020-container {
+    width: 100%;
+    height: 3500px;
+    position: relative;
+}
+
+#dem2020-canvas {
+    position: absolute;
+}
+
+#dem2020-svg {
+    position: absolute;
+}
+
+path.outline-path {
+    fill: rgba(0, 0, 0, 0);
+    stroke: black;
+    stroke-linejoin: round;
+    cursor: pointer;
+}
+
+path.outline-path.hover {
+    fill: rgba(0, 0, 0, 0.4) !important;
+}
+
+path.annotation-path {
+    fill: none;
+    stroke: black;
+}
+
+text.annotation {
+    fill: black;
+}
+
+text.state-label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+text.state-label.hover {
+    font-weight: bolder;
+}
+
+.jBox-state-label .jBox-container {
+    border: 1px solid black;
+    box-shadow: none;
+}
+
+.biden-count { color: #ea39bc; }
+.sanders-count { color: #51b5c9; }
+.other-count { color: #8C8CA0; }
+.unassigned-count { color: #7F96FF; }

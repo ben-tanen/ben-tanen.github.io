@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>NHL Projections | Ben Tanen</title>
+    <title>Plotting the 3,979 Delegates of the 2020 Democratic Primary | Ben Tanen</title>
 </head>
 
 
@@ -142,183 +142,99 @@ MathJax.Hub.Config({
 </div>
 
     	<div class='main'>
-    		<link rel="stylesheet" href="nhl-projections.css">
-<script src='nhl-proj.js'></script>
+    		<div class="post">
 
-<h1>NHL Projections</h1>
+    <header class="post-header">
+        <h1>Plotting the 3,979 Delegates of the 2020 Democratic Primary</h1>
+        <p class="post-date">Mar 24 2020
+    </header>
 
-<div id='nhl-about' class='expand'>
-<h2>About</h2>
+    <article class="post-content">
+    <div class="columns two">
+    <div class="column" style="width: calc(45% - 15px);">
+        <p>On March 17, Arizona, Florida, and Illinois each held their respective 2020 primaries elections. These state primaries marked the halfway point in this ongoing national primary since now more than 50% of the initial 3,979 delegates have been awarded across 30 different state contests. As of writing this, Joe Biden leads the race with 1,215 delegates while Bernie Sanders trails behind at 909 delegates. Given these current counts and the outlook for upcoming primaries, <a href="https://www.economist.com/united-states/2020/03/19/joe-biden-builds-an-insurmountable-lead">many</a> <a href="https://fivethirtyeight.com/features/election-update-bidens-delegate-lead-is-now-nearly-insurmountable/">outlets</a> have called Biden’s lead (nearly) insurmountable. In the lead up to Super Tuesday (March 3), Biden’s path to victory was not so clear and it actually seemed like Sanders might end up winning the nomination after he had relatively strong performances in early states like Nevada and Iowa. But at the end of the day, Biden was able to pull it out in many of the big states that mattered and here we are.</p>
+    </div>
+    <div class="column" style="width: calc(55% - 15px);">
+        <p class="fig-paragraph">
+    <a class="fig-link" href="/projects/dem2020-delegate-map/img/RPlot.jpg" target="_blank">
+    <img src="/projects/dem2020-delegate-map/img/RPlot.jpg" alt="A plot showing where Biden is expected to win relative to their total number of delegates awarded" />
+    </a>
+</p>
 
-<p>Projections, predictions, and analysis derived from NHL season simulations in MATLAB.
 
-<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/nhl-playoff-projections'>here</a>.</p>
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+
+
+    </div>
 </div>
 
-<h2>Current Projections</h2>
-<div class='nhl_current_projection min'>
-<p>The table below outlines how the season projections (current and original) compares to the actual season. <br /><i>Model Updated:</i> 10/11/16</p>
+<p>If you have been following this election closely, Biden’s leading position is not all that surprising. But because this primary process is almost unbearably long, it can sometimes be hard to piece together all of the states that brought Biden and Sanders to the delegate totals that they have as well as the states that will likely help Biden secure the nomination. Thus, to help illustrate the bigger picture of these primaries, I present a visualization of all 3,979 of the delegates up for grabs, where they have gone thus far, and where they are projected to go in upcoming states.</p>
 
-<table id='projections_table'>
-<thead>
-<tr><th></th><th width='50px'>Team</th><th width='95px'>Actual Points (To Date)</th><th width='95px'>Points Projected <br> (To Date)</th><th width='95px'>Point Differential</th><th width='95px'>Current Whole Season Projection</th><th width='95px'>Original Whole Seaon Projection</th></tr>
-</thead>
-<tbody>
+<p>This race is not yet over (though I agree it is almost nearly over) so I will continue to update the below as new results and projections become available. Ongoing developments with Trump and COVID-19 will almost certainly throw some (more) curveballs so we will see how that may change things.</p>
 
-</tbody>
-</table>
+<p>I hope everyone is staying safe and healthy. And remember to wash your hands.</p>
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+<p><br /></p>
+
+<div id="dem2020-title">
+    <h2>Delegates won (or projected to be won) by <span class="biden-count">Biden</span>, <span class="sanders-count">Sanders</span>, and <span class="other-count">Other Candidates</span></h2>
+    <p style="margin-bottom: 10px;"><i>Updated on: <span id="update-date">...</span></i></p>
 </div>
 
-<h2 style='margin-bottom: 10px;'>Recent Work</h2>
-<ul style='padding-left: 0; list-style: none;'>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>11 Oct 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
-            <div/>
-            <p><p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/nhl-playoff-projections/" target="_blank">the code</a>.</p>
-
-</p>
-            <a href='/blog/2016/10/11/introducing-nhl-projections.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>15 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/blog/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
-            <div/>
-            <p><p>After all this learning of PCA and <a href="/blog/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
-
-</p>
-            <a href='/blog/2016/05/15/pca-kmeans-nhl.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+<ul>
+  <li>Based on current counts and future projections, Biden is expected to win <span id="biden-total-del">…</span> total delegates. Sanders is expected to win <span id="sanders-total-del">…</span> total delegates.</li>
+  <li><span id="largest-remaining-state">…</span> is the largest state to not yet hold their primary election. Biden is expected to win <span id="biden-largest-remaining-state-del">…</span> of the <span id="largest-remaining-state-total-del">…</span> total delegates available in <span id="largest-remaining-state">…</span>.</li>
+  <li>Biden is expected to clinch his winning 1991st delegate from <span id="winning-del-state">…</span> in <span id="winning-del-state-days">…</span> days.</li>
 </ul>
+
+<div id="dem2020-container"></div>
+
+<p class="section-break">* * *</p>
+
+<div class="methodology">
+    <p class="methodology-title">Methodology and minutia</p>
+    
+    
+    <p></p>
+    
+    <p>
+States are organized from top to bottom by date of primary/caucus and then alphabetically. Dates for primaries and caucuses come from <a href="https://www.npr.org/2020/02/10/799979293/how-many-delegates-do-the-2020-presidential-democratic-candidates-have">NPR</a>. Due to concerns around the COVID-19, multiple states (e.g., Ohio, Conecticut) have postponed their original dates. The most recent proposed postponement date is shown.</p>
+    
+    <p>
+</p>
+    
+    <p>
+Delegate counts from states that have held primaries/caucuses come from <a href="https://interactives.ap.org/delegate-tracker/">the Associated Press</a>. </p>
+    
+    <p>
+</p>
+    
+    <p>
+Projected results for upcoming states come from <a href="https://projects.fivethirtyeight.com/2020-primary-forecast/">FiveThirtyEight's 2020 Democratic Primary model</a>, where the average forecasted pleged delegate totals were used. For instances where the combined average number of pleged delegates for each candidate did not equal the total number of delegates available in a state, the remaining unallocated delegates were assigned proportionally.</p>
+    
+    <p>
+</p>
+    
+</div>
+
+<link rel="stylesheet" href="/projects/dem2020-delegate-map/css/main.style.css" />
+
+<script src="/projects/dem2020-delegate-map/js/main.js"></script>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+
+        <p id="pagination-all"><a href="/blog/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/blog/2020/02/10/oscars-best-picture.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
+</div>
     	</div>
     </div>
 	
