@@ -52,7 +52,7 @@ let data = [ ],
     data_agg, candidates, states;
 
 // show when last updated
-const update_date = "2020-03-24";
+const update_date = "2020-04-08";
 
 /********************************/
 /*** DECLARE HELPER FUNCTIONS ***/

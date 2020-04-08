@@ -8,6 +8,8 @@ show-on-landing: true
 landing-description: the current state of the delegate race for the Democratic Party Nomination
 ---
 
+***Update (Apr 08, 2020):** [Bernie Sanders is dropping out of the Democratic Primary](https://www.nytimes.com/2020/04/08/us/politics/bernie-sanders-drops-out.html), leaving Joe Biden as the sole candidate and now the presumptive Democratic nominee. As a result, this project is now no longer relevant, so I'm going to freeze it for now.*
+
 <div class='columns two'>
     <div class='column' style="width: calc(45% - 15px);">
         <p>On March 17, Arizona, Florida, and Illinois each held their respective 2020 primaries elections. These state primaries marked the halfway point in this ongoing national primary since now more than 50% of the initial 3,979 delegates have been awarded across 30 different state contests. As of writing this, Joe Biden leads the race with 1,215 delegates while Bernie Sanders trails behind at 909 delegates. Given these current counts and the outlook for upcoming primaries, <a href="https://www.economist.com/united-states/2020/03/19/joe-biden-builds-an-insurmountable-lead">many</a> <a href="https://fivethirtyeight.com/features/election-update-bidens-delegate-lead-is-now-nearly-insurmountable/">outlets</a> have called Biden’s lead (nearly) insurmountable. In the lead up to Super Tuesday (March 3), Biden’s path to victory was not so clear and it actually seemed like Sanders might end up winning the nomination after he had relatively strong performances in early states like Nevada and Iowa. But at the end of the day, Biden was able to through in many of the big states that mattered and here we are.</p>
