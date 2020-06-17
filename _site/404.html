@@ -77,7 +77,7 @@ MathJax.Hub.Config({
     <div id='site-links' class="tk-europa">
         <p><a href='/'>Home</a></p>
         <p><a href='http://link.ben-tanen.com/resume/'  target="_new">Resume</a></p>
-        <p><a href='/blog/all/' >Blog</a></p>
+        <p><a href='/projects/all/' >Projects</a></p>
     </div>
 
     <ul id="social-links">
@@ -170,7 +170,12 @@ MathJax.Hub.Config({
         (+url[4] >= 1    && +url[4] <= 12)   &&
         (+url[5] >= 1    && +url[5] <= 31)) {
         new_url = '/blog/' + url[3] + '/' + url[4] + '/' + url[5] + '/' + url[6];   
-    } 
+    }
+
+    // if a bad project url (links to /blog/ instead of /project/), reroute
+    else if (url[3] === "blog") {
+        new_url = '/projects/' + url[4] + '/' + url[5] + '/' + url[6] + '/' + url[7];
+    }
 
     // old routes for story-time and vinyl pages
     else if (url[3] === 'projects' && url[4] === 'story-time') {
@@ -185,7 +190,7 @@ MathJax.Hub.Config({
     }
 
     if (new_url) {
-        $('#reroute-suggestions').html(`However, based on the URL you were trying to access, you might consider trying <a href="${new_url}">this alternate link</a>.`);
+        $('#reroute-suggestions').html(`However, based on the URL you were trying to access, you should try <a href="${new_url}">this alternate link</a>.`);
         window.location = 'http://' + url[2] + new_url;
     }
 </script>

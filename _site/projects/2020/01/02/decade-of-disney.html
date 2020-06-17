@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate" type="application/rss+xml" title="Ben Tanen RSS" href="/feed.xml">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.style.css">
+    
+
+    
+    <link rel="stylesheet" href="/assets/css/jBox.css">
+
+    <!-- jquery and js files -->
+    <script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
+
+    <!-- adobe typekit -->
+    <script src="https://use.typekit.net/jru4jkm.js"></script>
+    <script>
+    try {
+        Typekit.load({
+            async: true,
+            active: function() {
+                $('#side h1').css('opacity', 1);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
+            },
+            inactive: function() {
+                $('#side h1').css('opacity', 1);
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
+                }, 300); 
+                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
+                }, 900);
+            }
+        });
+    } catch(e){}
+    </script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
+
+    <title>The Decade of Disney | Ben Tanen</title>
+</head>
+
+
+<body>
+    <!-- adding support for mathjx -->
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <div class='wrapper'>
+    	<div id='side'>
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
+    
+    <h1 id="title-1" class="tk-europa">Howdy</h1>
+    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
+
+    <div id='site-links' class="tk-europa">
+        <p><a href='/'>Home</a></p>
+        <p><a href='http://link.ben-tanen.com/resume/'  target="_new">Resume</a></p>
+        <p><a href='/projects/all/' >Projects</a></p>
+    </div>
+
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
+        <a href="https://twitter.com/ben_tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M384.635,236.708c19.554-1.613,32.816-10.502,37.922-22.564c-7.055,4.333-28.952,9.057-41.044,4.558 c-0.593-2.841-1.255-5.541-1.903-7.977c-9.215-33.835-40.764-61.091-73.819-57.799c2.674-1.08,5.386-2.084,8.094-2.988 c3.638-1.303,24.987-4.777,21.625-12.312c-2.835-6.628-28.917,5.01-33.826,6.53c6.479-2.438,17.203-6.631,18.35-14.082 c-9.931,1.362-19.679,6.057-27.214,12.886c2.72-2.927,4.783-6.496,5.222-10.335c-26.493,16.924-41.967,51.042-54.488,84.139 c-9.834-9.53-18.549-17.034-26.369-21.202c-21.933-11.762-48.159-24.034-89.327-39.317c-1.264,13.621,6.736,31.731,29.789,43.774 c-4.995-0.668-14.128,0.824-21.432,2.573c2.975,15.604,12.69,28.461,38.99,34.677c-12.019,0.793-18.232,3.529-23.86,9.424 c5.474,10.852,18.832,23.625,42.863,21.002c-26.717,11.516-10.894,32.844,10.847,29.659 c-37.087,38.307-95.559,35.492-129.133,3.453c87.664,119.456,278.225,70.647,306.623-44.414 c21.273,0.184,33.784-7.368,41.539-15.693C411.823,242.782,394.057,240.632,384.635,236.708z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="github" class="social-link">
+        <a href="https://github.com/ben-tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M373.573,231.878c1.11-7.021,1.803-14.719,1.977-23.351c-0.066-37.014-17.785-50.111-21.194-56.251 c5.021-28.044-0.831-40.801-3.554-45.168c-10.04-3.563-34.929,9.198-48.528,18.181c-22.173-6.491-69.031-5.857-86.603,1.68 c-32.422-23.216-49.57-19.676-49.57-19.676s-11.086,19.879-2.931,48.962c-10.667,13.594-18.619,23.205-18.619,48.698 c0,6.106,0.379,11.875,1.023,17.425c9.187,48.304,47.462,69.144,85.059,72.737c-5.657,4.299-12.45,12.434-13.39,21.861 c-7.108,4.596-21.408,6.115-32.528,2.619c-15.58-4.924-21.545-35.777-44.877-31.375c-5.048,0.945-4.045,4.273,0.327,7.113 c7.108,4.609,13.803,10.342,18.963,22.605c3.963,9.416,12.299,26.229,38.655,26.229c10.462,0,17.791-1.236,17.791-1.236 s0.2,23.994,0.2,33.352c0,10.77-14.534,13.793-14.534,18.959c0,2.057,4.811,2.25,8.677,2.25c7.64,0,23.536-6.363,23.536-17.557 c0-8.895,0.142-38.785,0.142-44.02c0-11.438,6.13-15.078,6.13-15.078s0.75,61.055-1.476,69.24 c-2.609,9.625-7.336,8.258-7.336,12.541c0,6.395,19.11,1.564,25.449-12.43c4.904-10.93,2.707-70.803,2.707-70.803l5.113-0.111 c0,0,0.059,27.422-0.117,39.947c-0.186,12.977-1.523,29.379,6.184,37.121c5.059,5.092,20.555,14.027,20.555,5.861 c0-4.732-10.852-8.641-10.852-21.461v-59.057c6.593,0,7.955,19.412,7.955,19.412l2.377,36.064c0,0-1.578,13.16,14.217,18.652 c5.575,1.953,17.504,2.484,18.062-0.793c0.561-3.287-14.362-8.146-14.504-18.332c-0.078-6.203,0.277-9.834,0.277-36.818 c0-26.969-3.623-36.945-16.247-44.896C328.697,291.219,366.724,274.869,373.573,231.878z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="lastfm" class="social-link">
+        <a href="https://www.last.fm/user/ben-tanen" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M222.188,296.969c-6.664,5.982-19.463,17.961-40.772,17.961c-25.132,0-49.344-22.029-49.344-57.277 c0-45.163,28.943-59.729,51.163-59.729c32.053,0,39.071,19.339,47.809,46.145l11.663,36.721 c11.651,35.614,33.507,64.244,96.521,64.244c45.169,0,75.763-13.945,75.763-50.66c0-29.744-16.761-45.163-48.083-52.511 l-23.309-5.136c-16.027-3.672-20.762-10.283-20.762-21.302c0-12.483,9.833-19.822,25.863-19.822 c17.482,0,26.955,6.609,28.416,22.396l36.418-4.405c-2.917-33.047-25.499-46.628-62.65-46.628 c-32.779,0-64.832,12.484-64.832,52.504c0,24.968,12.018,40.752,42.242,48.102l24.776,5.869 c18.575,4.41,24.76,12.121,24.76,22.771c0,13.58-13.11,19.087-37.876,19.087c-36.786,0-55.263-19.46-64.009-46.265l-12.022-36.712 c-15.287-47.731-33.336-65.357-81.78-65.357c-43.198,0-85.133,34.145-85.133,92.153c0,55.812,40.262,85.915,82.582,85.915 c30.605,0,46.152-10.756,53.739-16.271L222.188,296.969z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="linkedin" class="social-link">
+        <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M390.005,284.965v99.085h-57.443v-92.449c0-23.224-8.308-39.072-29.101-39.072 c-15.873,0-25.318,10.68-29.475,21.013c-1.515,3.693-1.905,8.835-1.905,14.006v96.503h-57.462c0,0,0.774-156.578,0-172.8h57.457 v24.493c-0.117,0.183-0.269,0.381-0.378,0.559h0.378v-0.559c7.634-11.757,21.267-28.553,51.782-28.553 C361.663,207.189,390.005,231.887,390.005,284.965z M154.511,127.951c-19.658,0-32.516,12.894-32.516,29.85 c0,16.586,12.486,29.872,31.753,29.872h0.384c20.039,0,32.501-13.283,32.501-29.872 C186.255,140.845,174.171,127.951,154.511,127.951z M125.407,384.05h57.441v-172.8h-57.441V384.05z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="email" class="social-link">
+        <a href="mailto:ben.tanen@gmail.com" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M256,298.711l-36.988-32.373l-105.753,90.654c3.844,3.565,9.033,5.787,14.757,5.787h255.969 c5.703,0,10.871-2.222,14.693-5.787l-105.689-90.654L256,298.711z"/>
+                    <path d="M398.742,155.01c-3.846-3.588-9.012-5.788-14.758-5.788H128.016c-5.703,0-10.87,2.222-14.714,5.83 L256,277.355L398.742,155.01z"/>
+                    <polygon points="106.51,167.972 106.51,345.396 209.723,257.688"/>
+                    <polygon points="302.277,257.688 405.49,345.396 405.49,167.908"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+</ul>
+</div>
+
+    	<div class='main'>
+    		<div class="post">
+
+    <header class="post-header">
+        <h1>The Decade of Disney</h1>
+        <p class="post-date">Jan 02 2020
+    </header>
+
+    <article class="post-content">
+    <div class="columns two">
+    <div class="column">
+        <p>Last week, the Verge published <a href="https://www.theverge.com/2019/12/23/21034937/disney-star-wars-box-office-2019-marvel-pixar-star-wars-avengers-lion-king-frozen">an article</a> announcing that, with the release of the latest Star Wars film, Disney had produced 80% of the top box office films in 2019. The general reaction was understandably quite negative, but this news was not particularly surprising as it was just <a href="https://www.washingtonpost.com/news/business/wp/2017/12/14/disney-buys-much-of-fox-in-mega-merger-that-will-shake-world-of-entertainment-and-media/">the latest example</a> of Disney as a definite media giant and possible monopoly holder.</p>
+        <p>Given the unprecedented and frankly somewhat scary implications of the Verge’s article, it’s worth exploring the meaning of and context around this 80% figure. This percentage reflects that Disney produced eight of the top ten highest grossing films in 2019, which they were able to secure once <i>Star Wars: The Rise of Skywalker</i> moved into the #10 spot after its big opening week (as of writing this, it has since moved up to the #6 spot). The seven other films included a mix of Marvel movies (<i>Avengers: Endgame</i>, <i>Captain Marvel</i>, <i>Spider-Man: Far From Home</i>), animated pictures (<i>Toy Story 4</i>, <i>Frozen II</i>), and remakes (<i>The Lion King</i>, <i>Aladdin</i>). The two non-Disney films were <i>Joker</i> and <i>It Chapter Two</i>, which came in at the #9 and #10 spots, respectively.</p>
+    </div>
+    <div class="column">
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Disney produced an unprecedented 80 percent of the top box office hits this year <a href="https://t.co/9XMvqzEtMp">https://t.co/9XMvqzEtMp</a> <a href="https://t.co/rdtS96LRrl">pic.twitter.com/rdtS96LRrl</a></p>&mdash; The Verge (@verge) <a href="https://twitter.com/verge/status/1209312002054742016?ref_src=twsrc%5Etfw">December 24, 2019</a></blockquote> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div>
+
+<p>Beyond the number of top 10 movies that Disney produced, it is worth considering the share of total box office gross captured by the House of Mouse, especially since those at the top earn quite a bit more than the 9th or 10th biggest movies. <em>Avengers: Endgame</em> earned nearly 60% more at the box office than the 2nd highest grossing movie, which was also a Disney movie, and more than four times what <em>It Chapter Two</em>, the 10th highest, grossed. So when we look at the total box office revenue, Disney actually captured nearly 90% of the gross among top movies.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Film</th>
+      <th>Domestic Box Office (as of Jan 1, 2020)</th>
+      <th>Share of Top Box Office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Avengers: Endgame</td>
+      <td>$858,373,000</td>
+      <td>19.7%</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>The Lion King</td>
+      <td>$543,638,043</td>
+      <td>12.5%</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Toy Story 4</td>
+      <td>$434,038,008</td>
+      <td>10.0%</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Captain Marvel</td>
+      <td>$426,829,839</td>
+      <td>9.8%</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Frozen II</td>
+      <td>$426,104,939</td>
+      <td>9.8%</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Spider-Man: Far from Home</td>
+      <td>$390,532,085</td>
+      <td>9.0%</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Star Wars: The Rise of Skywalker</td>
+      <td>$377,488,536</td>
+      <td>8.7%</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Aladdin</td>
+      <td>$355,559,216</td>
+      <td>8.2%</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Joker</td>
+      <td>$333,494,002</td>
+      <td>7.7%</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>It Chapter Two</td>
+      <td>$211,593,228</td>
+      <td>4.9%</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="columns two">
+    <div class="column">
+        <p style="padding-top: 20px;">While 2019 has been a standout year for Disney, they have always had a solid footing among top grossing films and their dominance has only increased over this past decade. In fact, the 2010s were really the decade for Disney. Of the top 50 grossing movies released from 2010 - 2019, Disney produced 56% (28) and accounted for 62% of the total domestic box office. In comparison, the studio that accounted for the second largest amount (Warner Bros.) produced 18% of the top 50 movies from the 2010s and accounted for 15% of the domestic box office from the decade. The fact that handfuls of other major studios can't even come close to the power of Disney is pretty remarkable and potentially alarming.</p>
+        <p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/disney-top-box-office-share.png" target="_blank">
+    <img src="/assets/img/posts/disney-top-box-office-share.png" alt="A chart showing Disney's increasing box office share over time" />
+    </a>
+</p>
+
+
+
+
+
+        <p>It hasn't always been this way. In the decades prior to the 2010s, Disney averaged just 15% of the top grossing films, which was much more comparable to other major studios like Warner Bros. and Universal. In fact, prior to the 2010s, Disney was the top studio in only the 1990s, which was a period known as <a href="https://en.wikipedia.org/wiki/Disney_Renaissance">the Disney Renaissance</a>. And still, even during the booming years of Disney classics like <i>The Lion King</i>, <i>Toy Story</i>, and <i>Beauty and the Beast</i>, Disney only captured 25% of the top box office.</p>
+    </div>
+    <div class="column">
+        <div id="d3-dod-container">
+            <div id="d3-dod-title">
+                <h3>Top <span id="title-n-movies">50</span> Domestic Box Office Grosses for Movies Released Between 2010 and 2019</h3>
+            </div>
+            <svg id="d3-dod">
+            </svg>
+        </div>
+    </div>
+</div>
+
+<p>So what is there to be done about Disney? Should we even care? From a pure economics perspective, it feels like Disney is verging on attaining a somewhat obvious monopoly in the movie market, and as we all know, monopolies are bad! “But hold on,” you might say, “more Disney means more of my favorites from Marvel and Pixar!” And while I love Captain America, Buzz Lightyear, and the whole gang as much as the next guy, this kind of monopolistic hold from Disney has some severe implications for the quality of all the other non-Disney movies that I also love.</p>
+
+<p>In the 1940s, after years of anti-competitive behavior on the part of major movie studios, <a href="https://en.wikipedia.org/wiki/United_States_v._Paramount_Pictures,_Inc.">the U.S. Supreme Court ruled to break up the “old Hollywood system”</a> since it was seen to limit choice for consumers and in turn stifle the creativity of the industry. While the current Disney dilemma is structurally very different from the cases of the 1940s, the implications and detrimental effects on the film industry are quite similar. In a world captivated by giant superhero epics and blockbuster live-action remakes, there may be a diminishing opening for novelty, weirdness, and outside-the-box film-making, especially as original film concepts are becoming riskier and riskier in the era of streaming.</p>
+
+<p>The film industry is a better place for the sake of (profitable!) movies like <em>Knives Out</em>, <em>Ad Astra</em>, and <em>Booksmart</em>. So while we wait for any actual government or industry intervention, I implore you to go see these kind of movies while you still can.</p>
+
+<p class="section-break">* * *</p>
+
+<div class="methodology">
+    <p class="methodology-title">Methodology and minutia</p>
+    
+    
+    <p></p>
+    
+    <p>
+Movie data (titles, domestic gross, and distributor) were pulled from <a href="https://www.boxofficemojo.com/">Box Office Mojo</a> on January 1, 2020. Box Office Mojo reports domestic gross for films back until 1977 so this analysis is limited to films released between 1977 and 2019. Movies were assigned year based on the year of their release date and total box office gross (including from years other than release year) was used.</p>
+    
+    <p>
+</p>
+    
+    <p>
+Box office gross was not adjusted for inflation.</p>
+    
+    <p>
+</p>
+    
+    <p>
+Movies were determined to be released by Disney based on the "Distributor" field from <a href="https://www.boxofficemojo.com/year/2019/?grossesOption=totalGrosses">Box Office Mojo</a>. However, Disney has earned money from films for which they are not distributor (examples include the latest Spider-Man films in <a href="https://www.cnbc.com/2019/09/27/sony-and-disney-reach-deal-to-continue-spider-man-movie-partnership.html">their joint production deal with Sony</a>). The Verge correctly considered <i>Spider-Man: Far From Home</i> as being produced by Marvel (and thus Disney) and thus counted the film in their analysis when stating eight out of ten films from 2019 were produced by Disney.</p>
+    
+    <p>
+</p>
+    
+</div>
+
+<style>
+#d3-dod-container {
+    width: 100%;
+}
+
+#d3-dod {
+    width: 100%;
+    height: 875px;
+}
+
+#d3-dod-title h3 {
+    text-align: center;
+    color: #77bdee;
+}
+
+text.axis-label {
+    text-anchor: middle;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+text#y-axis-label {
+    text-anchor: start;
+}
+
+rect.bar {
+    fill: #dadada;
+}
+
+rect.bar.disney {
+    fill: #77bdee;
+}
+
+rect.bar-overlay {
+    fill: rgba(0, 0, 0, 0);
+}
+
+text.bar-label {
+    font-size: 12px;
+    text-anchor: end;
+    fill: #a9a9a9;
+}
+
+text.bar-label.disney {
+    fill: white;
+}
+
+img.tooltip-logo {
+    width: 120px;
+}
+
+</style>
+
+<script>
+
+/*********************/
+/*** INIT VARIABLE ***/
+/*********************/
+
+let dod_svg = d3.select("#d3-dod");
+
+let margin = {top: 25, right: 10, bottom: 10, left: 25},
+    width  = $("#d3-dod").width() - margin.left - margin.right,
+    height = $("#d3-dod").height() - margin.top - margin.bottom,
+    is_mobile = (width >= 470 ? false : true);
+
+// create empty list to store data
+let data = [ ];
+
+let n_movies = 50;
+
+// set domains: x = box office gross, y = rank
+let x = d3.scaleLinear().domain([0, 1e9]).range([0, width]),
+    y = d3.scaleLinear().domain([0.5, n_movies + 0.5]).range([0, height]);
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
+function strip_title(title) {
+    return title.replace(/[^a-z0-9]/gmi, "");
+}
+
+function render_axis() {
+    dod_svg.append("g")
+        .attr("id", "x-axis")
+        .attr("transform", `translate(${margin.left}, ${margin.top})`)
+        .call(d3.axisTop(x).ticks(5).tickFormat((d) => d3.format("$.0s")(d).replace("G", "B")));
+
+    dod_svg.append("g")
+        .attr("id", "y-axis")
+        .attr("transform", `translate(${margin.left}, ${margin.top})`)
+        .call(d3.axisLeft(y).ticks(10).tickSizeOuter(0));
+
+    /*
+    dod_svg.append('text')
+        .classed("axis-label", true)
+        .attr("id", "x-axis-label")
+        .attr("transform", `translate(${margin.left + width / 2}, ${margin.top - 25})`)
+        .text("Domestic Box Office Gross");
+    */
+
+    dod_svg.append('text')
+        .classed("axis-label", true)
+        .attr("id", "y-axis-label")
+        .attr("transform", `translate(${margin.left - 15}, ${margin.top}), rotate(90)`)
+        .text("Rank");
+}
+
+function render_bars(n = n_movies, animate = false) {
+
+    // limit data
+    let data_lim = data.filter((d) => d.decaderank <= n);
+
+    // create bars
+    let bars = dod_svg.selectAll("rect.bar")
+        .data(data_lim).enter()
+        .append("rect")
+        .classed("bar", true)
+        .classed("disney", (d) => d.disney === 1)
+        .attr("id", (d) => "bar" + strip_title(d.title))
+        .attr("x", margin.left + 1)
+        .attr("y", (d) => margin.top + y(d.decaderank - 0.5) + 1)
+        .attr("width", 0)
+        .attr("height", y(2) - y(1) - 1);
+
+    // animate (if desired)
+    if (animate) bars.transition().duration(200).attr("width", (d) => x(d.gross));
+    else bars.attr("width", (d) => x(d.gross));
+
+    // add text
+    dod_svg.selectAll("text.bar-label")
+        .data(data_lim).enter()
+        .append("text")
+        .classed("bar-label", true)
+        .classed("disney", (d) => d.disney === 1)
+        .attr("id", (d) => "label" + strip_title(d.title))
+        .attr("x", (d) => margin.left + x(d.gross) - 5)
+        .attr("y", (d) => margin.top + y(d.decaderank - 0.5) + 1)
+        .attr("dy", (y(2) - y(1)) / 2 + 3)
+        .text((d) => d.title);
+
+    // if text is too long, shorten it
+    dod_svg.selectAll("text.bar-label")
+        .each(function(d) {
+            if (this.getComputedTextLength() > x(d.gross) * 0.8) {
+                let scale_factor = (x(d.gross) * 0.8) / this.getComputedTextLength();
+                d3.select(this).text(d.title.substring(0, Math.floor(d.title.length * scale_factor) - 3) + "...");
+            }
+        })
+
+    // create bar overlays for tooltips
+    dod_svg.selectAll("rect.bar-overlay")
+        .data(data_lim).enter()
+        .append("rect")
+        .classed("bar-overlay", true)
+        .attr("id", (d) => "bar" + strip_title(d.title))
+        .attr("x", margin.left + 1)
+        .attr("y", (d) => margin.top + y(d.decaderank - 0.5) + 1)
+        .attr("width", (d) => x(d.gross))
+        .attr("height", y(2) - y(1) - 1);
+
+    // add tooltips for bars
+    new jBox("Tooltip", {
+        attach: "rect.bar-overlay",
+        content: "...",
+        position: {
+            x: 'right',
+            y: 'center'
+        },
+        outside: 'x',
+        onOpen: function() {
+            let d = d3.select(this.source[0]).data()[0];
+
+            // add logo to tooltip
+            if (d.disney === 1 & d.marvel === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-marvel-logo.png' /></p>";
+            else if (d.disney === 1 & d.starwars === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-star-wars-logo.png' /></p>";
+            else if (d.disney === 1 & d.pixar === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-pixar-logo.png' /></p>";
+            else if (d.disney === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-logo.png' /></p>";
+            else img_str = ""; 
+
+            // set content
+            this.setContent(`${img_str}<p>${d.title} (${d.year}): ${d3.format("$,d")(d.gross)}</p>`);
+        }
+    });
+}
+
+function resize() {
+
+    // delete existing elements
+    dod_svg.selectAll("#x-axis, #y-axis, text.axis-label, rect.bar, text.bar-label, rect.bar-overlay").remove();
+
+    // update width properties and scales
+    width = $("#d3-dod").width() - margin.left - margin.right;
+    x.range([0, width]);
+
+    // rerender
+    render_axis();
+    render_bars();
+}
+
+/*********************************/
+/*** PARSE DATA AND INIT PLOTS ***/
+/*********************************/
+
+d3.csv("/assets/data/top-movies-from-2010s.csv", (d) => {
+    d.year = +d.year;
+    d.yearrank = +d.yearrank;
+    d.decaderank = +d.decaderank;
+    d.gross = +d.gross;
+    d.disney = +d.disney;
+    d.marvel = +d.marvel;
+    d.starwars = +d.starwars;
+    d.pixar = +d.pixar;
+    return d;
+}, (e, d) => {
+    if (e) throw e;
+
+    // store data for later
+    for (let i = 0; i < d.length; i++) data.push(d[i]);
+
+    // update chart title if necessary
+    d3.select("#title-n-movies").text(n_movies);
+
+    // draw axis and bars
+    render_axis();
+    render_bars();
+});
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+$(window).resize(resize);
+
+</script>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/projects/2020/01/08/ibm-watson-ff.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination-all"><a href="/projects/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/projects/2019/12/31/2019-ff-retrospective.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
+</div>
+    	</div>
+    </div>
+	
+</body>
+</html>
