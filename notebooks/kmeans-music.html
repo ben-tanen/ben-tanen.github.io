@@ -16194,13 +16194,13 @@ average (median) number of songs from same artist per cluster: 1.06 (1.00)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rand_clusters2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">saved_tracks_clustered2_df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rand_clusters2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">cluster</span> <span class="o">=</span> <span class="n">saved_tracks_clustered1_df</span><span class="p">[</span><span class="n">saved_tracks_clustered1_df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">rand_clusters2</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span>
+    <span class="n">cluster</span> <span class="o">=</span> <span class="n">saved_tracks_clustered2_df</span><span class="p">[</span><span class="n">saved_tracks_clustered2_df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">rand_clusters2</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">cluster</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;artists&quot;</span><span class="p">,</span> <span class="s2">&quot;cluster&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
     <span class="n">save_cluster_tracks_to_playlist</span><span class="p">(</span><span class="s2">&quot;k-means, cluster </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">cluster</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]))</span>
 </pre></div>
@@ -16219,28 +16219,48 @@ average (median) number of songs from same artist per cluster: 1.06 (1.00)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>                     name        artists  cluster
-116          Use Somebody  Kings of Leon       43
-232     Flirting With Her   Sir Babygirl       43
-769  Don&#39;t Just Sit There         Lucius       43
-925               Contact          Logic       43
-976             Hot Blood          KALEO       43
-                           name               artists  cluster
-76                   Gaslighter          Dixie Chicks       38
-146       You Need To Calm Down          Taylor Swift       38
-183  Don&#39;t Go Breaking My Heart  Elton John, Kiki Dee       38
-195              Loving Is Easy           Pomplamoose       38
-238             Wild Wild Woman            Your Smith       38
-               name        artists  cluster
-135       The Night  Sundara Karma       30
-224          Bitter         Palace       30
-520          O Lord      Cub Sport       30
-526      Holy Grail     The Rubens       30
-572  Mature Fantasy        Drummer       30
+<pre>                                                  name  \
+233  Truth (feat. Alicia Keys &amp; The Last Artful, Do...   
+305                                       Good As Hell   
+306                                           Water Me   
+552                                      Favorite Song   
+619                            Can We Hang On ? - Live   
+
+                                              artists  cluster  
+233  Mark Ronson, Alicia Keys, The Last Artful, Dodgr        5  
+305                                             Lizzo        5  
+306                                             Lizzo        5  
+552                                           Sinkane        5  
+619                                     Cold War Kids        5  
+                 name              artists  cluster
+155  Transatlanticism  Death Cab for Cutie       48
+201      Turn to Hate         Orville Peck       48
+687        Empiricist              Typhoon       48
+691            Window         GoGo Penguin       48
+990          Epilogue       Justin Hurwitz       48
+                  name             artists  cluster
+98     Pluto Projector   Rex Orange County       54
+133  Early Spring Till  Nathaniel Rateliff       54
+282           Helpless       Angie McMahon       54
+286        Home - Live         Bruno Major       54
+348          Follow Me          Wild Child       54
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
