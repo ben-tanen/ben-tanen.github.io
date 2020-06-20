@@ -14,5 +14,8 @@ permalink: /projects/:year/:month/:day/:title.html
 
 # Collections
 collections:
-- projects
+  generative-sketches:
+    sort_by: date
+    output: true
+    permalink: /projects/generative-sketchbook/:year/:month/:day/:title.html
 

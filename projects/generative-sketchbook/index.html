@@ -1,0 +1,53 @@
+---
+layout: main
+title: Generative Sketchbook
+minimal: yes
+---
+
+<link rel="stylesheet" href="/assets/css/photography.style.css">
+
+<style>
+
+    #page-header h3 {
+        margin-top: -10px;
+        margin-bottom: 30px;
+    }
+
+    .thumbnail {
+        height: 225px;
+    }
+    
+    .thumbnail p {
+        text-align: center;
+        margin: 0;
+        color: black;
+    }
+
+    .thumbnail p:nth-of-type(1) {
+        margin-top: 2px;
+    }
+
+    .thumbnail:hover p {
+        color: #77bdee;
+    }
+
+</style>
+
+<div id="page-header">
+    <h1>Generative Sketchbook</h1>
+    <h3>A collection of creative coding/generative art sketches</h3>
+</div>
+
+<div id="thumbnails">
+{% assign sorted = site.generative-sketches | reverse %}    
+{% for sketch in sorted %}
+    <a href="{{ sketch.url }}">
+        <div class="thumbnail">
+            <img src="{% if sketch.thumbnail %}{{ sketch.thumbnail }}{% else %}/assets/img/post-thumbnails/blank.png{% endif %}" />
+            <p>{{ sketch.title }}</p>
+            <p>{{ sketch.date | date: "%b %d %Y" }}</p>
+        </div>
+    </a>
+    <!-- <li>{{ sketch.date | date: "%b %d %Y" }} | <a href="{{ sketch.url }}">{{ sketch.title }}</a></li> -->
+{% endfor %}
+</div>

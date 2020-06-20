@@ -1,0 +1,26 @@
+---
+layout: main
+---
+<div class="post">
+
+    <script src="/assets/js/lib/p5.min.js"></script>
+
+    <article class="post-content">
+        <div id="p5-container"></div>
+        <h2>{{ page.title }}, {{ page.date | date: "%b %d %Y" }}</h2>
+        {{ content }}
+    </article>
+
+    <div class='pagination'>
+        {% if page.next.url %}
+        <p id='pagination-previous'><a href='{{ page.next.url }}'>&#8592; Newer Sketch</a></p>
+        {% endif %}
+
+        <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
+
+        {% if page.previous.url %}
+        <p id='pagination-next'><a href='{{ page.previous.url }}'>Older Sketch &#8594;</a></p>
+        {% endif %}
+    </div>
+
+</div>

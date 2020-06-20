@@ -13,8 +13,6 @@
     
 
     
-    <link rel="stylesheet" href="/assets/css/minimal.style.css">
-    
     <link rel="stylesheet" href="/assets/css/jBox.css">
 
     <!-- jquery and js files -->
@@ -54,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Explore Spotify Clusters | Ben Tanen</title>
+    <title>Halftone | Ben Tanen</title>
 </head>
 
 
@@ -144,15 +142,97 @@ MathJax.Hub.Config({
 </div>
 
     	<div class='main'>
-    		<h1>Explore Spotify Clusters</h1>
-<p>I generated a bunch of Spotify playlists using k-means clustering based on different audio features. You can use the below to explore the audio features of the songs that make up these playlists and what features most clearly define a cluster. You can find the full analysis <a href="#">here</a>.</p>
+    		<div class="post">
 
-<div id='d3-spotify-clusters-container'>
-    <svg id="d3-spotify-clusters"></svg>
+    <script src="/assets/js/lib/p5.min.js"></script>
+
+    <article class="post-content">
+        <div id="p5-container"></div>
+        <h2>Halftone, Aug 16 2019</h2>
+        <script>
+
+let sketch = function(p) {
+
+    /*********************/
+    /*** INIT VARIABLE ***/
+    /*********************/
+
+    const w = 500,
+          h = 500;
+
+    const COLOR_BLACK   = "#000000",
+          COLOR_WHITE   = "#FFFFFF",
+          COLOR_CYAN    = "#00FFFF",
+          COLOR_YELLOW  = "#FFFF00",
+          COLOR_MAGENTA = "#FF00FF";
+          
+    const c = [COLOR_MAGENTA, COLOR_YELLOW, COLOR_CYAN],
+          x = [w / 2, w / 2, w / 2],
+          y = [h / 2, h / 2, h / 2],
+          r = [5, 5, 5],
+          d = [20, 20, 20];
+          t = [0, 0.005, .01];
+           
+    let dt = 0;
+
+    /********************************/
+    /*** DECLARE HELPER FUNCTIONS ***/
+    /********************************/
+
+    /* given c = color, x = x-position of middle dot, y = y-position of middle dot,
+         r = radius of circles, d = distance between circles, t = angle (in radians) of screen, n = number of dots out from center dot,
+         draw halftone screen */
+    function draw_halftone_screen(c, x, y, r, d, t, n) {
+        p.fill(c);
+        for (let i = -n; i < n; i++) {
+            for (let j = -n; j < n; j++) {
+                p.circle(x + d * i * p.cos(t * p.PI) + d * j * p.cos(t * p.PI + p.PI / 2), y + d * i * p.sin(t * p.PI) + d * j * p.sin(t * p.PI + p.PI / 2), r);
+            }
+        }
+    }
+
+    /*********************/
+    /*** DEFINE SKETCH ***/
+    /*********************/
+
+    p.setup = function() {
+        p.createCanvas(w, h);
+        p.frameRate(15);
+        p.background(COLOR_WHITE);
+        p.noStroke();
+        p.ellipseMode(p.CENTER);
+    };
+
+    p.draw = function() {
+        p.background(COLOR_WHITE);
+        for (let i = 0; i < c.length; i++) {
+            draw_halftone_screen(c[i], x[i], y[i], r[i], d[i] + dt, t[i] + dt, 40);
+        }
+        dt += 0.01;
+    };
+
+}
+
+new p5(sketch, 'p5-container');
+
+</script>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/08/17/circle-follow.html'>&#8592; Newer Sketch</a></p>
+        
+
+        <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
+
+        
+        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/05/05/mosaic.html'>Older Sketch &#8594;</a></p>
+        
+    </div>
+
 </div>
-
-<link rel="stylesheet" href="css/clusters.style.css">
-<script type="text/javascript" src="js/clusters.js"></script>
     	</div>
     </div>
 	
