@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Insertion Sort 1D | Ben Tanen</title>
+    <title>Circle Scrunch | Ben Tanen</title>
 </head>
 
 
@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 
     <article class="post-content">
         <div id="p5-container"></div>
-        <h2>Insertion Sort 1D, Apr 19 2019</h2>
+        <h2>Circle Scrunch, Jun 04 2019</h2>
         <script>
 
 let sketch = function(p) {
@@ -157,35 +157,13 @@ let sketch = function(p) {
     /*** INIT VARIABLE ***/
     /*********************/
 
-    const w = Math.min(600, $("#p5-container").width()),
-          h = 400;
+    const w = Math.min(500, $("#p5-container").width()),
+          h = w;
 
-    const n = 200;
+    const steps = 80,
+          dt = 0.1;
 
-    let v = [],
-        sort_ix = 0;
-
-    /********************************/
-    /*** DECLARE HELPER FUNCTIONS ***/
-    /********************************/
-
-    function float_list(start, end, step) {
-        let l = [start];
-        while (l[l.length - 1] < end) {
-            l.push(l[l.length - 1] + step);
-        }
-        return l;
-    }
-
-    function shuffle_float_array(array) {
-        for (let i = 0; i < array.length; i++) {
-            let j = Math.floor(Math.random() * (i + 1));
-            let v = array[j];
-            array[j] = array[i];
-            array[i] = v;
-        }
-        return array;
-    }
+    let t = 0;
 
     /*********************/
     /*** DEFINE SKETCH ***/
@@ -193,27 +171,28 @@ let sketch = function(p) {
 
     p.setup = function() {
         p.createCanvas(w, h);
-        p.frameRate(30);
-        p.noStroke();
+        p.frameRate(15);
 
-        v = shuffle_float_array(float_list(0, 1, 1 / n));
+        p.stroke("black");
+        p.fill("white");
     };
 
     p.draw = function() {
-        let v_sort = v.splice(0, sort_ix + 1);
-        v_sort.sort();
-        v = v_sort.concat(v);
-  
-        for (let i = 0; i < n; i++) {
-            p.fill(p.lerpColor(p.color("#77bdee"), p.color(255, 110, 108), v[i]));
-            p.rect(i * w / n, 0, w / n, h);
+
+        // clear background (set to black)
+        p.background("white");
+
+        // 
+        for (let i = 0; i < steps; i++) {
+            const r = p.sin(p.map(i, 0, steps - 1, t, t + 2 * p.PI)) * 80 + 150,
+                  x = w / (steps - 1) * i,
+                  y = h - h / (steps - 1) * i;
+            p.circle(x - (w / 2), y + (h / 2), r);
         }
-          
-        if (sort_ix < v.length - 1) sort_ix++;
-        else {
-            sort_ix = 0;
-            v = shuffle_float_array(v);
-        }
+
+        // increment t
+        t += dt;
+        
     };
 
 }
@@ -227,11 +206,13 @@ new p5(sketch, 'p5-container');
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/04/22/insertion-sort-2d-v1.html'>&#8592; Newer Sketch</a></p>
+        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/08/16/halftone.html'>&#8592; Newer Sketch</a></p>
         
 
         <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
 
+        
+        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/06/03/circle-wave.html'>Older Sketch &#8594;</a></p>
         
     </div>
 

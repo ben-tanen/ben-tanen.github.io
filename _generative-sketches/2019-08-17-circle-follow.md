@@ -13,8 +13,8 @@ let sketch = function(p) {
     /*** INIT VARIABLE ***/
     /*********************/
 
-    const w = 500,
-          h = 500;
+    const w = Math.min(500, $("#p5-container").width()),
+          h = w;
 
     let cx, cy;
 

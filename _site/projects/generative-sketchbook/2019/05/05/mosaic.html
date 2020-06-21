@@ -157,8 +157,8 @@ let sketch = function(p) {
     /*** INIT VARIABLE ***/
     /*********************/
 
-    const w = 500,
-          h = 500;
+    const w = Math.min(500, $("#p5-container").width()),
+          h = w;
 
     let img;
 
@@ -176,9 +176,6 @@ let sketch = function(p) {
 
         img.resize(w, h);
         img.loadPixels();
-
-        console.log(img.pixels.length);
-        console.log(w * h);
     };
 
     p.draw = function() {
@@ -187,12 +184,22 @@ let sketch = function(p) {
                 x = ix % w,
                 y = Math.floor(ix / h);
 
-            // console.log(img.pixels[ix]);
-
             p.fill(p.color(img.pixels[ix * 4], img.pixels[ix * 4 + 1], img.pixels[ix * 4 + 2], img.pixels[ix * 4 + 3]));
             p.circle(x, y, p.random(1, 15));
         }
     };
+
+    p.keyPressed = function() {
+        p.clear();
+        p.background("white");
+    }
+
+    p.mouseClicked = function() {
+        if (p.mouseX > 0 & p.mouseY > 0 & p.mouseX < w & p.mouseY < h) {
+            p.clear();
+            p.background("white");
+        }
+    }
 
 }
 
@@ -200,7 +207,7 @@ new p5(sketch, 'p5-container');
 
 </script>
 
-<p>See below for the original image</p>
+<p>See below for the original image. Click or press any key to erase the canvas.</p>
 
 <p class="fig-paragraph">
     <a class="fig-link" href="/projects/generative-sketchbook/assets/img/TuftsSnowday.jpg" target="_blank">
@@ -219,13 +226,13 @@ new p5(sketch, 'p5-container');
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/08/16/halftone.html'>&#8592; Newer Sketch</a></p>
+        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/06/03/circle-wave.html'>&#8592; Newer Sketch</a></p>
         
 
         <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
 
         
-        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/04/19/insertion-sort-1d.html'>Older Sketch &#8594;</a></p>
+        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/04/22/insertion-sort-2d-v2.html'>Older Sketch &#8594;</a></p>
         
     </div>
 

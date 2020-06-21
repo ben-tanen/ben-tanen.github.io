@@ -157,8 +157,8 @@ let sketch = function(p) {
     /*** INIT VARIABLE ***/
     /*********************/
 
-    const w = 500,
-          h = 500;
+    const w = Math.min(500, $("#p5-container").width()),
+          h = w;
 
     const COLOR_BLACK   = "#000000",
           COLOR_WHITE   = "#FFFFFF",
@@ -228,7 +228,7 @@ new p5(sketch, 'p5-container');
         <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
 
         
-        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/05/05/mosaic.html'>Older Sketch &#8594;</a></p>
+        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/06/04/circle-scrunch.html'>Older Sketch &#8594;</a></p>
         
     </div>
 

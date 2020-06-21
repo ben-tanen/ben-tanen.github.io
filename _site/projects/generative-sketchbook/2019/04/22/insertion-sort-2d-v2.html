@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Insertion Sort 1D | Ben Tanen</title>
+    <title>Insertion Sort 2D, V2 | Ben Tanen</title>
 </head>
 
 
@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 
     <article class="post-content">
         <div id="p5-container"></div>
-        <h2>Insertion Sort 1D, Apr 19 2019</h2>
+        <h2>Insertion Sort 2D, V2, Apr 22 2019</h2>
         <script>
 
 let sketch = function(p) {
@@ -160,19 +160,39 @@ let sketch = function(p) {
     const w = Math.min(600, $("#p5-container").width()),
           h = 400;
 
-    const n = 200;
+    const n_w = 50,
+          n_h = 30;
 
     let v = [],
-        sort_ix = 0;
+        sort_ix = 1;
 
     /********************************/
     /*** DECLARE HELPER FUNCTIONS ***/
     /********************************/
 
-    function float_list(start, end, step) {
-        let l = [start];
-        while (l[l.length - 1] < end) {
-            l.push(l[l.length - 1] + step);
+    function draw_grid() {
+        for (let i = 0; i < n_h; i++) {
+            for (let j = 0; j < n_w; j++) {
+                p.fill(p.lerpColor(p.color("#ff5d7b"), p.color("#ff91a6"), v[i * n_w + j]));
+                p.rect(j * w / n_w, i * h / n_h, w / n_w, h / n_h);
+            }
+        }
+    }
+
+    function float_list(start, end, n_step) {
+        let l = [];
+        let step = (end - start) / (n_step - 1);
+        for (let i = 0; i < n_step; i++) {
+            l.push(+(start + step * i).toFixed(5));
+        }
+        return l;
+    }
+
+    function float_list_2d(start, end, n_w, n_h) {
+        let l = [];
+        for (let i = 0; i < n_h; i++) {
+            li = float_list(start, end, n_w);
+            l = l.concat(li);
         }
         return l;
     }
@@ -187,33 +207,51 @@ let sketch = function(p) {
         return array;
     }
 
+    function shuffle_float_array_2d(array, n_w, n_h) {
+        if (n_w * n_h > array.length) return array;
+        for (let i = 0; i < n_h; i++) {
+            vi = array.slice(i * n_w, (i + 1) * n_w);
+            vi = shuffle_float_array(vi);
+            for (let j = 0; j < n_w; j++) {
+                array[i * n_w + j] = vi[j];
+            }
+        }
+        return array;
+    }
+
+    function sort_float_array_2d(array, n_w, n_h, count) {
+        if (n_w * n_h > array.length) return array;
+        for (let i = 0; i < n_h; i++) {
+            vi = array.slice(i * n_w, i * n_w + count);
+            vi.sort();
+            for (let j = 0; j < count; j++) {
+                array[i * n_w + j] = vi[j];
+            }
+        }
+        return array;
+    }
+
     /*********************/
     /*** DEFINE SKETCH ***/
     /*********************/
 
     p.setup = function() {
         p.createCanvas(w, h);
-        p.frameRate(30);
+        p.frameRate(15);
         p.noStroke();
 
-        v = shuffle_float_array(float_list(0, 1, 1 / n));
+        v = float_list_2d(0, 1, n_w, n_h);
+        v = shuffle_float_array_2d(v, n_w, n_h);
     };
 
     p.draw = function() {
-        let v_sort = v.splice(0, sort_ix + 1);
-        v_sort.sort();
-        v = v_sort.concat(v);
-  
-        for (let i = 0; i < n; i++) {
-            p.fill(p.lerpColor(p.color("#77bdee"), p.color(255, 110, 108), v[i]));
-            p.rect(i * w / n, 0, w / n, h);
+        if (sort_ix <= n_w) {
+            v = sort_float_array_2d(v, n_w, n_h, sort_ix++);
+        } else {
+            v = shuffle_float_array_2d(v, n_w, n_h);
+            sort_ix = 1;
         }
-          
-        if (sort_ix < v.length - 1) sort_ix++;
-        else {
-            sort_ix = 0;
-            v = shuffle_float_array(v);
-        }
+        draw_grid();
     };
 
 }
@@ -227,11 +265,13 @@ new p5(sketch, 'p5-container');
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/04/22/insertion-sort-2d-v1.html'>&#8592; Newer Sketch</a></p>
+        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/05/05/mosaic.html'>&#8592; Newer Sketch</a></p>
         
 
         <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
 
+        
+        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/04/22/insertion-sort-2d-v1.html'>Older Sketch &#8594;</a></p>
         
     </div>
 

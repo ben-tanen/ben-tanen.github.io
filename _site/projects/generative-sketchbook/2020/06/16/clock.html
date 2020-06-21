@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Insertion Sort 1D | Ben Tanen</title>
+    <title>Clock | Ben Tanen</title>
 </head>
 
 
@@ -148,7 +148,7 @@ MathJax.Hub.Config({
 
     <article class="post-content">
         <div id="p5-container"></div>
-        <h2>Insertion Sort 1D, Apr 19 2019</h2>
+        <h2>Clock, Jun 16 2020</h2>
         <script>
 
 let sketch = function(p) {
@@ -157,35 +157,8 @@ let sketch = function(p) {
     /*** INIT VARIABLE ***/
     /*********************/
 
-    const w = Math.min(600, $("#p5-container").width()),
-          h = 400;
-
-    const n = 200;
-
-    let v = [],
-        sort_ix = 0;
-
-    /********************************/
-    /*** DECLARE HELPER FUNCTIONS ***/
-    /********************************/
-
-    function float_list(start, end, step) {
-        let l = [start];
-        while (l[l.length - 1] < end) {
-            l.push(l[l.length - 1] + step);
-        }
-        return l;
-    }
-
-    function shuffle_float_array(array) {
-        for (let i = 0; i < array.length; i++) {
-            let j = Math.floor(Math.random() * (i + 1));
-            let v = array[j];
-            array[j] = array[i];
-            array[i] = v;
-        }
-        return array;
-    }
+    const w = Math.min(500, $("#p5-container").width()),
+          h = w;
 
     /*********************/
     /*** DEFINE SKETCH ***/
@@ -193,27 +166,51 @@ let sketch = function(p) {
 
     p.setup = function() {
         p.createCanvas(w, h);
-        p.frameRate(30);
-        p.noStroke();
-
-        v = shuffle_float_array(float_list(0, 1, 1 / n));
+        p.frameRate(1);
     };
 
     p.draw = function() {
-        let v_sort = v.splice(0, sort_ix + 1);
-        v_sort.sort();
-        v = v_sort.concat(v);
-  
-        for (let i = 0; i < n; i++) {
-            p.fill(p.lerpColor(p.color("#77bdee"), p.color(255, 110, 108), v[i]));
-            p.rect(i * w / n, 0, w / n, h);
-        }
-          
-        if (sort_ix < v.length - 1) sort_ix++;
-        else {
-            sort_ix = 0;
-            v = shuffle_float_array(v);
-        }
+
+        // clear background to black
+        p.background("black");
+
+        // get current time
+        const H = p.hour(),
+              M = p.minute(),
+              S = p.second();
+
+        // determine ranges of circles based on 
+        const dh = p.map(H, 0, 23, 0, p.min(w, h) * 0.9);
+              dm = p.map(M, 0, 59, 0, dh);
+              ds = p.map(S, 0, 59, 0, dm);
+
+        // draw hour circle then minute circle then second circle
+        p.stroke("white");
+        p.strokeWeight(2.5);
+
+        p.fill("#17BEBB");
+        p.circle(w / 2, h / 2, dh);
+        p.fill("#F76F8E");
+        p.circle(w / 2, h / 2, dm);
+        p.fill("#FFCF56");
+        p.circle(w / 2, h / 2, ds);
+
+        // draw text to show the values for each circle
+        text_pos = (r, t) => {
+            return [w / 2 + r * p.sin(t), h / 2 - r * p.cos(t)];
+        };
+        const tp = 12,
+              [th_x, th_y] = text_pos(dh / 2 + tp, 0);
+              [tm_x, tm_y] = text_pos(dm / 2 + (dh - dm < 45 ? -1 : 1) * tp, p.PI / 6);
+              [ts_x, ts_y] = text_pos(ds / 2 + (dm - ds < 45 ? -1 : 1) * tp, (2 * p.PI) / 6);
+        p.fill("white");
+        p.noStroke();
+        p.textAlign(p.CENTER, p.CENTER);
+        p.textSize(15);
+        p.text((H < 10 ? "0" : "") + H, th_x, th_y);
+        p.text((M < 10 ? "0" : "") + M, tm_x, tm_y);
+        p.text((S < 10 ? "0" : "") + S, ts_x, ts_y);
+
     };
 
 }
@@ -227,11 +224,11 @@ new p5(sketch, 'p5-container');
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2019/04/22/insertion-sort-2d-v1.html'>&#8592; Newer Sketch</a></p>
-        
 
         <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
 
+        
+        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/08/17/circle-follow.html'>Older Sketch &#8594;</a></p>
         
     </div>
 
