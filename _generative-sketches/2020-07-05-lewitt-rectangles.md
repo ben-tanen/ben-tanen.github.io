@@ -1,7 +1,7 @@
 ---
 layout: generative-sketch
 title:  "Rectangles"
-date:   2020-07-04 10:06:41
+date:   2020-07-05 10:06:41
 thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/lewitt-rectangles.png
 ---
 

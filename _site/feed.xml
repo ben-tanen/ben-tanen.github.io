@@ -7,6 +7,45 @@
             
                 
                 <item>
+                    <title>Data Artwork and Creative Coding</title>
+                    <description>&lt;p&gt;&lt;em&gt;TL;DR: I put together &lt;a href=&quot;/projects/generative-sketchbook/&quot;&gt;a sketchbook&lt;/a&gt; of generative art and creative coding sketches I’ve done. I plan on adding to it periodically.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;Last year, when I set out to &lt;a href=&quot;/projects/2019/06/22/most-font.html&quot;&gt;find the most average font&lt;/a&gt;, I started to play around with creative coding and generative art. At the time, I was learning to use Processing as a means to finish my original project, but along the way, I had fun creating a bunch of &lt;a href=&quot;/projects/2019/06/22/processing-fun.html&quot;&gt;random sketches and animations&lt;/a&gt;. I have continued to play around with processing and creative coding since then and have &lt;a href=&quot;https://twitter.com/ben_tanen/status/1161850631084228608&quot;&gt;periodically sharing sketches on Twitter&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Fast forward to last month, I took a course on &lt;a href=&quot;https://github.com/mattdesl/workshop-data-artwork&quot;&gt;creative coding&lt;/a&gt; taught by &lt;a href=&quot;https://www.mattdesl.com/&quot;&gt;Matt DesLauriers&lt;/a&gt;, which reignited my interest in generative art and creative coding. The course was taught with a focus on &lt;a href=&quot;https://p5js.org/&quot;&gt;P5.js&lt;/a&gt;, the JavaScript port of the Processing language, which inspired me to recreate and revise my old sketches for the web. This lead to the creation of &lt;a href=&quot;/projects/generative-sketchbook/&quot;&gt;a generative sketchbook&lt;/a&gt;, which I plan to update with new sketches moving forward.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/generative-sketchbook/2020/07/05/lewitt-rectangles.html&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/generative-sketchbook/assets/img/thumbnails/lewitt-rectangles.png&quot; alt=&quot;One of my newer sketches&quot; width=&quot;500&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;While a significant part of the course focused on the technical details of creating generative art, we also discussed some of the more abstract parts of creative coding, including how to plan and sketch and generate ideas before typing a single line of code. Since I come from more of a technical background, I found this part of the course particularly interesting, which I discuss in a little more detail on &lt;a href=&quot;/projects/generative-sketchbook/2020/07/05/lewitt-rectangles.html&quot;&gt;my most recent sketch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By the way, I &lt;em&gt;do&lt;/em&gt; realize I may or may not be undergoing my data viz midlife crisis, but art is fun and cool so who cares!&lt;/p&gt;
+
+&lt;div style=&quot;max-width: 500px; margin: auto&quot;&gt;
+    &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Pick your own dataviz midlife crisis:&lt;br /&gt;- do algorithmic art&lt;br /&gt;- get a pen plotter&lt;br /&gt;- collect esoteric, historical dataviz books&lt;br /&gt;- participate in unpaid marketing for tableau every Monday, in hopes of making zen so the void in your heart can finally be filled&lt;/p&gt;&amp;mdash; Frank ⌁ (@FrankElavsky) &lt;a href=&quot;https://twitter.com/FrankElavsky/status/1278398313495007232?ref_src=twsrc%5Etfw&quot;&gt;July 1, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+</description>
+                    <pubDate>2020-07-06T02:05:41-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2020/07/06/generative-sketchbook.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2020/07/06/generative-sketchbook.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>K-Means Music: Generating Clustered Playlists on Spotify</title>
                     <description>&lt;p&gt;This post lives on another page and you were suppose to be re-routed, but something happened… sorry!&lt;/p&gt;
 

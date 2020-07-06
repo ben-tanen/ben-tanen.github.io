@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Clock | Ben Tanen</title>
+    <title>Data Artwork and Creative Coding | Ben Tanen</title>
 </head>
 
 
@@ -144,116 +144,51 @@ MathJax.Hub.Config({
     	<div class='main'>
     		<div class="post">
 
-    <script src="/assets/js/lib/p5.min.js"></script>
+    <header class="post-header">
+        <h1>Data Artwork and Creative Coding</h1>
+        <p class="post-date">Jul 06 2020
+    </header>
 
     <article class="post-content">
-        <h2><a href="/projects/generative-sketchbook/">&#8592; Back to Sketchbook</a></h3>
-        <div id="p5-container" style="margin: 10px 0;"></div>
-        <h2 style="margin-bottom: 10px;">Clock, Jun 16 2020</h2>
-        <script>
+    <p><em>TL;DR: I put together <a href="/projects/generative-sketchbook/">a sketchbook</a> of generative art and creative coding sketches I’ve done. I plan on adding to it periodically.</em></p>
 
-let sketch = function(p) {
-
-    /*********************/
-    /*** INIT VARIABLE ***/
-    /*********************/
-
-    const w = Math.min(500, $("#p5-container").width()),
-          h = w;
-
-    /*********************/
-    /*** DEFINE SKETCH ***/
-    /*********************/
-
-    p.setup = function() {
-        p.createCanvas(w, h);
-        p.frameRate(1);
-    };
-
-    p.draw = function() {
-
-        // clear background to black
-        p.background("black");
-
-        // get current time
-        const H = p.hour(),
-              M = p.minute(),
-              S = p.second();
-
-        // determine ranges of circles based on 
-        const dh = p.map(H, 0, 23, 0, p.min(w, h) * 0.9);
-              dm = p.map(M, 0, 59, 0, dh);
-              ds = p.map(S, 0, 59, 0, dm);
-
-        // draw hour circle then minute circle then second circle
-        p.stroke("white");
-        p.strokeWeight(2.5);
-
-        p.fill("#17BEBB");
-        p.circle(w / 2, h / 2, dh);
-        p.fill("#F76F8E");
-        p.circle(w / 2, h / 2, dm);
-        p.fill("#FFCF56");
-        p.circle(w / 2, h / 2, ds);
-
-        // draw text to show the values for each circle
-        text_pos = (r, t) => {
-            return [w / 2 + r * p.sin(t), h / 2 - r * p.cos(t)];
-        };
-        const tp = 12,
-              [th_x, th_y] = text_pos(dh / 2 + tp, 0);
-              [tm_x, tm_y] = text_pos(dm / 2 + (dh - dm < 45 ? -1 : 1) * tp, p.PI / 6);
-              [ts_x, ts_y] = text_pos(ds / 2 + (dm - ds < 45 ? -1 : 1) * tp, (2 * p.PI) / 6);
-        p.fill("white");
-        p.noStroke();
-        p.textAlign(p.CENTER, p.CENTER);
-        p.textSize(15);
-        p.text((H < 10 ? "0" : "") + H, th_x, th_y);
-        p.text((M < 10 ? "0" : "") + M, tm_x, tm_y);
-        p.text((S < 10 ? "0" : "") + S, ts_x, ts_y);
-
-    };
-
-}
-
-new p5(sketch, 'p5-container');
-
-</script>
-
-<p>This was done as an exercise on “time as data” for <a href="https://github.com/mattdesl/workshop-data-artwork">a creative coding class</a> taught by <a href="https://www.mattdesl.com/">Matt DesLauriers</a>.</p>
-
-<p>I discuss this more in the next sketch, but this class emphasized the importance of sketching and using notes throughout the process, which I hadn’t done a whole lot of previously for other creative coding sketches. I’ve appreciated when other artists/data viz folks share their (often handwritten) notes (<a href="https://roadtolarissa.com/2018-chart-diary/">Adam Pearce does this well</a>) so I’ll try to do the same for these as well. They were limited for this sketch, but nevertheless…</p>
-
-<p class="fig-paragraph">
-    <a class="fig-link" href="/projects/generative-sketchbook/assets/img/clock-notes1.png" target="_blank">
-    <img src="/projects/generative-sketchbook/assets/img/clock-notes1.png" alt="Initial notes when I was planning out this sketch using 'time as data'" width="500" />
+<div class="columns two">
+    <div class="column">
+        <p>Last year, when I set out to <a href="/projects/2019/06/22/most-font.html">find the most average font</a>, I started to play around with creative coding and generative art. At the time, I was learning to use Processing as a means to finish my original project, but along the way, I had fun creating a bunch of <a href="/projects/2019/06/22/processing-fun.html">random sketches and animations</a>. I have continued to play around with processing and creative coding since then and have <a href="https://twitter.com/ben_tanen/status/1161850631084228608">periodically sharing sketches on Twitter</a>.</p>
+        <p>Fast forward to last month, I took a course on <a href="https://github.com/mattdesl/workshop-data-artwork">creative coding</a> taught by <a href="https://www.mattdesl.com/">Matt DesLauriers</a>, which reignited my interest in generative art and creative coding. The course was taught with a focus on <a href="https://p5js.org/">P5.js</a>, the JavaScript port of the Processing language, which inspired me to recreate and revise my old sketches for the web. This lead to the creation of <a href="/projects/generative-sketchbook/">a generative sketchbook</a>, which I plan to update with new sketches moving forward.</p>
+    </div>
+    <div class="column">
+        <p class="fig-paragraph">
+    <a class="fig-link" href="/projects/generative-sketchbook/2020/07/05/lewitt-rectangles.html" target="_blank">
+    <img src="/projects/generative-sketchbook/assets/img/thumbnails/lewitt-rectangles.png" alt="One of my newer sketches" width="500" />
     </a>
 </p>
 
-<p class="fig-paragraph">
-    <a class="fig-link" href="/projects/generative-sketchbook/assets/img/clock-notes2.png" target="_blank">
-    <img src="/projects/generative-sketchbook/assets/img/clock-notes2.png" alt="More initial notes when I was planning out this sketch using 'time as data'" width="500" />
-    </a>
-</p>
 
-<style>
-    p.fig-paragraph {
-        text-align: left !important;
-    }
-</style>
+
+
+
+    </div>
+</div>
+
+<p>While a significant part of the course focused on the technical details of creating generative art, we also discussed some of the more abstract parts of creative coding, including how to plan and sketch and generate ideas before typing a single line of code. Since I come from more of a technical background, I found this part of the course particularly interesting, which I discuss in a little more detail on <a href="/projects/generative-sketchbook/2020/07/05/lewitt-rectangles.html">my most recent sketch</a>.</p>
+
+<p>By the way, I <em>do</em> realize I may or may not be undergoing my data viz midlife crisis, but art is fun and cool so who cares!</p>
+
+<div style="max-width: 500px; margin: auto">
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Pick your own dataviz midlife crisis:<br />- do algorithmic art<br />- get a pen plotter<br />- collect esoteric, historical dataviz books<br />- participate in unpaid marketing for tableau every Monday, in hopes of making zen so the void in your heart can finally be filled</p>&mdash; Frank ⌁ (@FrankElavsky) <a href="https://twitter.com/FrankElavsky/status/1278398313495007232?ref_src=twsrc%5Etfw">July 1, 2020</a></blockquote> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2020/07/05/lewitt-rectangles.html'>&#8592; Newer Sketch</a></p>
-        
 
-        <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
+        <p id="pagination-all"><a href="/projects/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/projects/generative-sketchbook/2019/10/02/dot-tracing.html'>Older Sketch &#8594;</a></p>
+        <p id='pagination-next'><a href='/projects/2020/06/15/kmeans-music.html'>Older Post &#8594;</a></p>
         
     </div>
 
