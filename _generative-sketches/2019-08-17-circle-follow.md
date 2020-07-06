@@ -2,7 +2,7 @@
 layout: generative-sketch
 title:  "Circle Follow"
 date:   2019-08-17 10:06:41
-thumbnail: /assets/img/generative-sketch-thumbnails/circle-follow.png
+thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/circle-follow.png
 ---
 
 <script>

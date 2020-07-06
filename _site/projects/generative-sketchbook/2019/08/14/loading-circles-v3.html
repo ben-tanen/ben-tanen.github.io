@@ -147,8 +147,9 @@ MathJax.Hub.Config({
     <script src="/assets/js/lib/p5.min.js"></script>
 
     <article class="post-content">
-        <div id="p5-container"></div>
-        <h2>Loading Circles V3, Aug 14 2019</h2>
+        <h2><a href="/projects/generative-sketchbook/">&#8592; Back to Sketchbook</a></h3>
+        <div id="p5-container" style="margin: 10px 0;"></div>
+        <h2 style="margin-bottom: 10px;">Loading Circles V3, Aug 14 2019</h2>
         <script>
 
 let sketch = function(p) {
@@ -168,7 +169,7 @@ let sketch = function(p) {
           BT_GREEN = "#23CE6B";
 
     // const dt = [0.02, 0.0175, 0.015, 0.0125, 0.01]; // array of speeds to update arc angles
-    const dt = [0.01, 0.0125, 0.015, 0.0175, 0.02]; // array of speeds to update arc angles
+    const dt = [0.005, 0.00625, 0.0075, 0.00875, 0.01]; // array of speeds to update arc angles
           
     const N_ARC = dt.length; // number of arcs to draw
 
@@ -274,7 +275,7 @@ let sketch = function(p) {
 
     p.setup = function() {
         p.createCanvas(w, h);
-        p.frameRate(15);
+        p.frameRate(30);
         p.angleMode(p.RADIANS)
     };
 

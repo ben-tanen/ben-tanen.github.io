@@ -2,7 +2,7 @@
 layout: generative-sketch
 title:  "Insertion Sort 2D, V2"
 date:   2019-04-22 10:06:41
-thumbnail: /assets/img/generative-sketch-thumbnails/insertion-sort-2d-v2.png
+thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/insertion-sort-2d-v2.png
 ---
 
 <script>

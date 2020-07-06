@@ -2,7 +2,7 @@
 layout: generative-sketch
 title:  "Circle Scrunch"
 date:   2019-06-04 10:06:41
-thumbnail: /assets/img/generative-sketch-thumbnails/circle-scrunch.png
+thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/circle-scrunch.png
 ---
 
 <script>
@@ -27,7 +27,7 @@ let sketch = function(p) {
 
     p.setup = function() {
         p.createCanvas(w, h);
-        p.frameRate(15);
+        p.frameRate(30);
 
         p.stroke("black");
         p.fill("white");

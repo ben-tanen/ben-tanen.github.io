@@ -2,7 +2,7 @@
 layout: generative-sketch
 title:  "Loading Circles V3"
 date:   2019-08-14 10:06:41
-thumbnail: /assets/img/generative-sketch-thumbnails/loading-circle-v3.png
+thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/loading-circle-v3.png
 ---
 
 <script>
@@ -24,7 +24,7 @@ let sketch = function(p) {
           BT_GREEN = "#23CE6B";
 
     // const dt = [0.02, 0.0175, 0.015, 0.0125, 0.01]; // array of speeds to update arc angles
-    const dt = [0.01, 0.0125, 0.015, 0.0175, 0.02]; // array of speeds to update arc angles
+    const dt = [0.005, 0.00625, 0.0075, 0.00875, 0.01]; // array of speeds to update arc angles
           
     const N_ARC = dt.length; // number of arcs to draw
 
@@ -130,7 +130,7 @@ let sketch = function(p) {
 
     p.setup = function() {
         p.createCanvas(w, h);
-        p.frameRate(15);
+        p.frameRate(30);
         p.angleMode(p.RADIANS)
     };
 

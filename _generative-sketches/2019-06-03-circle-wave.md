@@ -2,7 +2,7 @@
 layout: generative-sketch
 title:  "Circle Wave"
 date:   2019-06-03 10:06:41
-thumbnail: /assets/img/generative-sketch-thumbnails/circle-wave.png
+thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/circle-wave.png
 ---
 
 <script>
@@ -27,7 +27,7 @@ let sketch = function(p) {
 
     p.setup = function() {
         p.createCanvas(w, h);
-        p.frameRate(15);
+        p.frameRate(30);
 
         p.stroke("white");
         p.fill("black");

@@ -2,7 +2,7 @@
 layout: generative-sketch
 title:  "Progressive Dot Tracing"
 date:   2019-10-02 10:06:41
-thumbnail: /assets/img/generative-sketch-thumbnails/dot-tracing.png
+thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/dot-tracing.png
 ---
 
 <script>
