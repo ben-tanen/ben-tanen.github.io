@@ -164,8 +164,8 @@ let sketch = function(p) {
     let theta = 0,
         d_theta = 0.005;
 
-    let offset = 0,
-        d_offset = 0.1;
+    let d_offset = 0.1,
+        offset = d_offset;
 
     /********************************/
     /*** DECLARE HELPER FUNCTIONS ***/
@@ -239,7 +239,7 @@ let sketch = function(p) {
         // increment position variables
         offset += d_offset;
         theta += d_theta;
-        if (theta > p.PI * 0.5) theta = 0;
+        if (theta > p.PI * 0.5 || theta < p.abs(d_theta)) d_theta = -d_theta;
     };
 
 }
