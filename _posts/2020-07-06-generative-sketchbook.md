@@ -3,7 +3,7 @@ layout: post
 title:  "Data Artwork and Creative Coding"
 date:   2020-07-06 08:05:41
 categories: project visualization code art generative
-show-on-landing: true
+show-on-landing: false
 landing-description: creating art with data and code
 thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/circle-follow.png
 ---

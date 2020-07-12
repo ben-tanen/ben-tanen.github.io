@@ -87,7 +87,7 @@ let sketch = function(p) {
         // clear background
         p.background("white");
 
-        for (let i = 0.01; i <= 1; i += 0.1) {
+        for (let i = 0.1; i <= 1; i += 0.1) {
             draw_squiggle(0, 0, p.max(1, width * 2 * p.cos(theta * i)), height * 2 * p.sin(theta * i), 30, 5, offset, true);
         }
 
