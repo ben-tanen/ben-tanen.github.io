@@ -94,11 +94,11 @@ a:hover {
 #landing-text {
     width: calc(100vw - 60px);
     max-width: calc(900px - 60px);
-    min-height: calc(100vh - 50px);
 
     position: relative;
 
     margin: auto;
+    margin-top: 5vh;
     z-index: 10;
 
     padding: 25px 30px;
