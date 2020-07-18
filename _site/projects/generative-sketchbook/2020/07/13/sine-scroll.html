@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Wave Sweep | Ben Tanen</title>
+    <title>Sine Scroll | Ben Tanen</title>
 </head>
 
 
@@ -149,7 +149,7 @@ MathJax.Hub.Config({
     <article class="post-content">
         <h2><a href="/projects/generative-sketchbook/">&#8592; Back to Sketchbook</a></h3>
         <div id="p5-container" style="margin: 10px 0;"></div>
-        <h2 style="margin-bottom: 10px;">Wave Sweep, Jul 11 2020</h2>
+        <h2 style="margin-bottom: 10px;">Sine Scroll, Jul 13 2020</h2>
         <script>
 
 let sketch = function(p) {
@@ -159,63 +159,41 @@ let sketch = function(p) {
     /*********************/
 
     const width = Math.min(500, $("#p5-container").width()),
-          height = width;
+          height = width,
+          padding = 5;
 
-    let theta = 0,
-        d_theta = 0.005;
+    let t = 0,
+        dt = 0.02;
 
-    let d_offset = 0.1,
-        offset = d_offset;
+    const grid_size = [300, 50];
+
+    let bars = [ ];
 
     /********************************/
     /*** DECLARE HELPER FUNCTIONS ***/
     /********************************/
 
-    function draw_squiggle(x1, y1, x2, y2, amp, wave_len, offset, outline) {
+    function draw_bar(x0, h0) {
+        let c = p.lerpColor(p.color("#8EF9F3"), p.color("#8377D1"), p.map(x0, 0, grid_size[0], 0, 1))
+        p.strokeWeight(0.5);
+        p.stroke(c);
+        p.fill(c);
 
-        if (p.min(x1, x2) < 0 || p.min(y1, y2) < 0) return;
+        let x = p.map(x0, 0, grid_size[0], padding, width - padding),
+            h = p.map(h0, 0, grid_size[1], 0, (height - 2 * padding) / 2),
+            y = height / 2 - h,
+            w = (width - 2 * padding) / grid_size[0];
+        p.rect(x, y, w, h);
+    }
 
-        // calculate the slope and distance of the axis to draw along
-        const ang = p.atan((y2 > y1 ? y2 - y1 : y1 - y2) / (x2 > x1 ? x2 - x1 : x1 - x2)),
-              line_d = p.sqrt(p.pow(x2 - x1, 2) + p.pow(y2 - y1, 2));
+    function draw_line(x0, h0, x1, h1) {
+        let x2 = p.map(x0, 0, grid_size[0], padding, width - padding),
+            x3 = p.map(x1, 0, grid_size[0], padding, width - padding),
+            y2 = height / 2 - (p.map(h0, 0, grid_size[1], 0, (height - 2 * padding) / 2)),
+            y3 = height / 2 - (p.map(h1, 0, grid_size[1], 0, (height - 2 * padding) / 2));
 
-        // add points in sine wave formation along axis
-        let ps = [ ];
-        for (let t = 0; t < 2 * p.PI; t += 0.1) {
-
-            // calculate where along / off axis point should appear
-            let along_axis = p.map(t, 0, 2 * p.PI, 0, line_d),
-                off_axis = amp * p.sin(t * wave_len + offset);
-
-            // calculate x and y position using these calculations and known angle
-            let x_aa = p.cos(ang) * along_axis,
-                x_oa = p.sin(ang) * off_axis
-                x = p.min(x1, x2) + x_aa + x_oa * (x2 > x1 ? 1 : -1),
-                y_aa = p.sin(ang) * along_axis,
-                y_oa = p.cos(ang) * off_axis,
-                y = p.min(y1, y2) + y_aa + y_oa * (y2 > y1 ? -1 : 1);
-
-            // add position to list
-            ps.push([x, y]);
-        }
-
-        // plot lines
-        for (let i = 1; i < ps.length; i++) {
-            let p0 = ps[i - 1],
-                p1 = ps[i];
-
-            p.stroke("black");
-            p.strokeWeight(2);
-            if (outline) p.line(p0[0], p0[1], p1[0], p1[1]);
-        }
-
-        for (let i = 0; i < ps.length; i++) {
-            let p0 = ps[i]
-
-            p.stroke("black");
-            p.fill("white");
-            p.circle(p0[0], p0[1], 5);
-        }
+        p.strokeWeight(3);
+        p.line(x2, y2, x3, y3);
     }
 
     /*********************/
@@ -224,7 +202,7 @@ let sketch = function(p) {
 
     p.setup = function() {
         p.createCanvas(width, height);
-        p.frameRate(30);
+        p.frameRate(50);
     };
 
     p.draw = function() {
@@ -232,14 +210,25 @@ let sketch = function(p) {
         // clear background
         p.background("white");
 
-        for (let i = 0.1; i <= 1; i += 0.1) {
-            draw_squiggle(0, 0, p.max(1, width * 2 * p.cos(theta * i)), height * 2 * p.sin(theta * i), 30, 5, offset, true);
+        // draw flat lines (while bars is not populated enough to fill screen)
+        for (let i = 0; i < p.max(0, grid_size[0] - bars.length); i++) {
+            draw_bar(i, 0);
         }
 
-        // increment position variables
-        offset += d_offset;
-        theta += d_theta;
-        if (theta > p.PI * 0.5 || theta < p.abs(d_theta)) d_theta = -d_theta;
+        // draw bars
+        for (let i = p.max(0, bars.length - grid_size[0]); i < bars.length; i++) {
+            draw_bar(grid_size[0] - bars.length + i, bars[i]);
+            if (bars.length > 1) {
+                if ([0, bars.length - grid_size[0], bars.length].indexOf(i) == -1) {
+                    draw_line(grid_size[0] - bars.length + i - 1, bars[i - 1], grid_size[0] - bars.length + i, bars[i]);
+                }
+            }
+        }
+
+        // add new bar
+        if (p.random() < 1) bars.push(grid_size[1] * 0.8 * p.sin(t));
+        else bars.push(0);
+        t += dt;
     };
 
 }
@@ -253,13 +242,11 @@ new p5(sketch, 'p5-container');
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/projects/generative-sketchbook/2020/07/13/sine-scroll.html'>&#8592; Newer Sketch</a></p>
-        
 
         <p id="pagination-all"><a href="/projects/generative-sketchbook/">View All Sketches</a></p>
 
         
-        <p id='pagination-next'><a href='/projects/generative-sketchbook/2020/07/05/lewitt-rectangles.html'>Older Sketch &#8594;</a></p>
+        <p id='pagination-next'><a href='/projects/generative-sketchbook/2020/07/11/wave-sweep.html'>Older Sketch &#8594;</a></p>
         
     </div>
 
