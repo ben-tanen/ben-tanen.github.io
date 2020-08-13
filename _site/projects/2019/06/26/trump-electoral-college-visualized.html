@@ -385,9 +385,9 @@ function render_blocks() {
             .attr("votemargin", d.votemargin)
             .attr("ecvotes", d.ecvotes)
             .attr("x", margin.left + (width / 2) + (d.winner === "Trump" ? -1 : 0) * x(d.votemargin) + (d.winner === "Trump" ? -1 : 1) * margin.middle / 2)
-            .attr("y", margin.top + y((d.winner === "Trump" ? ecvotes_trump_cumu : ecvotes_clinton_cumu) + d.ecvotes) + 1.5)
+            .attr("y", margin.top + y((d.winner === "Trump" ? ecvotes_trump_cumu : ecvotes_clinton_cumu) + d.ecvotes) + 0.9)
             .attr("width", x(d.votemargin))
-            .attr("height", y(y.domain()[1] - d.ecvotes) - 1.5);
+            .attr("height", y(y.domain()[1] - d.ecvotes) - 0.9);
 
         if (d.winner === "Clinton") ecvotes_clinton_cumu += d.ecvotes;
         else ecvotes_trump_cumu += d.ecvotes;

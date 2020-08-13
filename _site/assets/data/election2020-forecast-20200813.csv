@@ -1,0 +1,57 @@
+state,state_abbrev,proj_winner,proj_margin,prob_winning,ecvotes,ecvotes_trump,ecvotes_biden
+Alabama,AL,Trump,0.2051356,0.97805,9,9,0
+Alaska,AK,Trump,0.0941585,0.807825,3,3,0
+Arizona,AZ,Biden,0.0135517,0.559125,11,0,11
+Arkansas,AR,Trump,0.147194,0.92705,6,6,0
+California,CA,Biden,0.2985863,0.9968,55,0,55
+Colorado,CO,Biden,0.093551,0.855975,9,0,9
+Connecticut,CT,Biden,0.18833,0.9741,7,0,7
+Delaware,DE,Biden,0.2313343,0.9974,3,0,3
+District of Columbia,DC,Biden,0.84995227,1,3,0,3
+Florida,FL,Biden,0.031778,0.65205,29,0,29
+Georgia,GA,Trump,0.0266905,0.64545,16,16,0
+Hawaii,HI,Biden,0.3308476,0.984825,3,0,3
+Idaho,ID,Trump,0.284836,0.99345,4,4,0
+Illinois,IL,Biden,0.2088448,0.992575,20,0,20
+Indiana,IN,Trump,0.1375022,0.9442,11,11,0
+Iowa,IA,Trump,0.0407974,0.67445,6,6,0
+Kansas,KS,Trump,0.1249675,0.92235,6,6,0
+Kentucky,KY,Trump,0.1983254,0.97225,8,8,0
+Louisiana,LA,Trump,0.1591257,0.92175,8,8,0
+Maine,ME,Biden,0.0836929,0.780675,2,0,2
+ME-1,ME-1,Biden,0.1921232,0.943725,1,0,1
+ME-2,ME-2,Trump,0.036508,0.6293,1,1,0
+Maryland,MD,Biden,0.2734624,0.998075,10,0,10
+Massachusetts,MA,Biden,0.3034648,0.994425,11,0,11
+Michigan,MI,Biden,0.0723205,0.81895,16,0,16
+Minnesota,MN,Biden,0.0486715,0.728825,10,0,10
+Mississippi,MS,Trump,0.1245887,0.8822,6,6,0
+Missouri,MO,Trump,0.1001174,0.86945,10,10,0
+Montana,MT,Trump,0.1238382,0.876925,3,3,0
+Nebraska,NE,Trump,0.1958884,0.98415,2,2,0
+NE-1,NE-1,Trump,0.1428686,0.940225,1,1,0
+NE-2,NE-2,Biden,0.0115258,0.552675,1,0,1
+NE-3,NE-3,Trump,0.4753216,0.999625,1,1,0
+Nevada,NV,Biden,0.0636132,0.77395,6,0,6
+New Hampshire,NH,Biden,0.0654666,0.726125,4,0,4
+New Jersey,NJ,Biden,0.1784545,0.954475,14,0,14
+New Mexico,NM,Biden,0.1202865,0.904975,5,0,5
+New York,NY,Biden,0.249185,0.99555,29,0,29
+North Carolina,NC,Biden,0.0007872,0.503225,15,0,15
+North Dakota,ND,Trump,0.2444694,0.984875,3,3,0
+Ohio,OH,Trump,0.0084076,0.540925,18,18,0
+Oklahoma,OK,Trump,0.2781825,0.992275,7,7,0
+Oregon,OR,Biden,0.1443298,0.9122,7,0,7
+Pennsylvania,PA,Biden,0.0485296,0.742375,20,0,20
+Rhode Island,RI,Biden,0.2342754,0.981425,4,0,4
+South Carolina,SC,Trump,0.0867008,0.865125,9,9,0
+South Dakota,SD,Trump,0.2085078,0.961625,3,3,0
+Tennessee,TN,Trump,0.1631911,0.946425,11,11,0
+Texas,TX,Trump,0.04252,0.7032,36,36,0
+Utah,UT,Trump,0.1718376,0.948675,6,6,0
+Vermont,VT,Biden,0.3472272,0.991925,3,0,3
+Virginia,VA,Biden,0.106994,0.92515,13,0,13
+Washington,WA,Biden,0.2412457,0.98725,8,0,8
+West Virginia,WV,Trump,0.3358858,0.99155,5,5,0
+Wisconsin,WI,Biden,0.0500657,0.7281,10,0,10
+Wyoming,WY,Trump,0.404548,0.998025,3,3,0
