@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>Automating with Spotify and Last.FM | Ben Tanen</title>
+    <title>Where Is Election Night 2020 Heading? | Ben Tanen</title>
 </head>
 
 
@@ -145,36 +145,52 @@ MathJax.Hub.Config({
     		<div class="post">
 
     <header class="post-header">
-        <h1>Automating with Spotify and Last.FM</h1>
-        <p class="post-date">Apr 12 2020
+        <h1>Where Is Election Night 2020 Heading?</h1>
+        <p class="post-date">Aug 24 2020
     </header>
 
     <article class="post-content">
-    <h3 id="adding-songs-to-my-downloaded-spotify-playlist">Adding songs to my downloaded Spotify playlist</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<h3 id="updating-my-websites-landing-page-to-reflect-what-im-listening-to">Updating my website’s landing page to reflect what I’m listening to</h3>
+<div id="elfun2020-container">
+    <div id="elfun2020-loading">
+        <img id="loading-spinner" src="/assets/img/loading.gif" />
+    </div>
+    <div class="columns two" id="elfun2020-title">
+        <div class="column" style="width: calc(75% - 15px);">
+            <h3><b>Contests called:</b> <span id="states-called">...</span> of 56</h3>
+            <h3><b>Scenarios remaining:</b> <span id="scenarios-remaining">...</span> of 100</h3>
+            <h3><b>EV range remaining:</b> <span style="color: #77bdee">Biden <span id="ev-range-biden">...</span></span>, <span style="color: #ff6e6c">Trump <span id="ev-range-trump">...</span></span></h3>
+            <p style="margin-top: 5px"><i>Last updated: <span id="update-datetime">...</span></i></p>
+        </div>
+        <div class="column" style="width: calc(25% - 5px);">
+            <ul id="elfun2020-view-select">
+                <li class="selected">Full view</li>
+                <li id="compact">Compact view</li>
+            </ul>
+        </div>
+    </div>
+    <div id="elfun2020-viz">
+        <svg id="elfun2020-svg"></svg>
+    </div>
+</div>
 
-<h3 id="adding-new-records-to-my-website">Adding new records to my website</h3>
+<link rel="stylesheet" href="/projects/election-night2020-funnel/css/main.style.css" />
 
-<p class="fig-paragraph">
-    <a class="fig-link" href="/assets/img/posts/spotify-util-add-album.gif" target="_blank">
-    <img src="/assets/img/posts/spotify-util-add-album.gif" alt="A .gif showing the process for adding a new album to my website" />
-    </a>
-</p>
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
 
-<p>You can find all of these scripts, plus a few other experiments and random things, in <a href="https://github.com/ben-tanen/spotify-lastfm-utils">this repo</a>.</p>
+<script src="/projects/election-night2020-funnel/js/main.js"></script>
+
 
     </article>
 
     <div class='pagination'>
         
-        <p id='pagination-previous'><a href='/projects/2020/05/09/running-covid19.html'>&#8592; Newer Post</a></p>
-        
 
         <p id="pagination-all"><a href="/projects/all/">View All Posts</a></p>
 
         
-        <p id='pagination-next'><a href='/projects/2020/03/24/dem2020-delegate-map.html'>Older Post &#8594;</a></p>
+        <p id='pagination-next'><a href='/projects/2020/07/06/generative-sketchbook.html'>Older Post &#8594;</a></p>
         
     </div>
 

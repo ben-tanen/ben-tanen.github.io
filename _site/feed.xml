@@ -7,6 +7,47 @@
             
                 
                 <item>
+                    <title>Where Is Election Night 2020 Heading?</title>
+                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+&lt;div id=&quot;elfun2020-container&quot;&gt;
+    &lt;div id=&quot;elfun2020-loading&quot;&gt;
+        &lt;img id=&quot;loading-spinner&quot; src=&quot;/assets/img/loading.gif&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;columns two&quot; id=&quot;elfun2020-title&quot;&gt;
+        &lt;div class=&quot;column&quot; style=&quot;width: calc(75% - 15px);&quot;&gt;
+            &lt;h3&gt;&lt;b&gt;Contests called:&lt;/b&gt; &lt;span id=&quot;states-called&quot;&gt;...&lt;/span&gt; of 56&lt;/h3&gt;
+            &lt;h3&gt;&lt;b&gt;Scenarios remaining:&lt;/b&gt; &lt;span id=&quot;scenarios-remaining&quot;&gt;...&lt;/span&gt; of 100&lt;/h3&gt;
+            &lt;h3&gt;&lt;b&gt;EV range remaining:&lt;/b&gt; &lt;span style=&quot;color: #77bdee&quot;&gt;Biden &lt;span id=&quot;ev-range-biden&quot;&gt;...&lt;/span&gt;&lt;/span&gt;, &lt;span style=&quot;color: #ff6e6c&quot;&gt;Trump &lt;span id=&quot;ev-range-trump&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
+            &lt;p style=&quot;margin-top: 5px&quot;&gt;&lt;i&gt;Last updated: &lt;span id=&quot;update-datetime&quot;&gt;...&lt;/span&gt;&lt;/i&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;column&quot; style=&quot;width: calc(25% - 5px);&quot;&gt;
+            &lt;ul id=&quot;elfun2020-view-select&quot;&gt;
+                &lt;li class=&quot;selected&quot;&gt;Full view&lt;/li&gt;
+                &lt;li id=&quot;compact&quot;&gt;Compact view&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;elfun2020-viz&quot;&gt;
+        &lt;svg id=&quot;elfun2020-svg&quot;&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/projects/election-night2020-funnel/css/main.style.css&quot; /&gt;
+
+&lt;script src=&quot;https://d3js.org/d3-time-format.v2.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/projects/election-night2020-funnel/js/main.js&quot;&gt;&lt;/script&gt;
+
+</description>
+                    <pubDate>2020-08-24T04:05:41-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2020/08/24/election-night-funnel.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2020/08/24/election-night-funnel.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>Data Artwork and Creative Coding</title>
                     <description>&lt;p&gt;&lt;em&gt;TL;DR: I put together &lt;a href=&quot;/projects/generative-sketchbook/&quot;&gt;a sketchbook&lt;/a&gt; of generative art and creative coding sketches I’ve done. I plan on adding to it periodically.&lt;/em&gt;&lt;/p&gt;
 
@@ -59,148 +100,6 @@
                     <pubDate>2020-06-15T23:00:00-06:00</pubDate>
                     <link>http://localhost:4000/projects/2020/06/15/kmeans-music.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/06/15/kmeans-music.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Running During A Pandemic</title>
-                    <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus odio dolor nam. Non accusamus odit alias vero adipisci nostrum recusandae, quam quibusdam sed dicta tenetur optio, reprehenderit cum nam soluta!&lt;/p&gt;
-
-&lt;script src=&quot;/projects/running-covid19/js/mapbox-polyline.bundle.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js&quot;&gt;&lt;/script&gt;
-
-&lt;link href=&quot;https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css&quot; rel=&quot;stylesheet&quot; /&gt;
-
-&lt;div id=&quot;map&quot; style=&quot;width: 100%; height: 500px;&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-
-let city = &quot;Boston, MA&quot;,
-    city_pos = {
-        &quot;New York, NY&quot;: [-74.005974, 40.712776],
-        &quot;San Francisco, CA&quot;: [-122.419418, 37.774929],
-        &quot;Boston, MA&quot;: [-71.058884, 42.360081]
-    }
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiYnRhbmVuIiwiYSI6ImNrYWVnajN2NTAwYWEzNG83aXQ0bGliYTkifQ.2DrlmefSt_1M3V_Hzn-H2Q';
-
-let map = new mapboxgl.Map({
-    'container': 'map',
-    'center': city_pos[city],
-    'zoom': 10,
-    'style': 'mapbox://styles/btanen/ckaeh3eeb10f31iqj63wkan5i'
-});
-
-
-d3.csv(&quot;/projects/running-covid19/data/running-segments.csv&quot;, (d) =&gt; {
-    d.year_entries = +d.year_entries;
-    d.month_entries = +d.month_entries;
-    d.week_entries = +d.week_entries;
-    return d;
-}, (e, d) =&gt; {
-    if (e) throw e;
-
-    // re-format data  
-    let d_format = d.filter(r =&gt; r.city === city).map(r =&gt; {
-        return {
-            'type': 'Feature',
-            'properties': {
-                'name': r.segment_id,
-                'change': (r.month_entries - (r.year_entries / 12)) / (r.year_entries / 12)
-            },
-            'geometry': polyline.toGeoJSON(r.polyline)
-        }
-    });
-    
-    map.on('load', function() {
-        map.addSource('routes', {
-            'type': 'geojson',
-            'data': {
-                'type': 'FeatureCollection',
-                'features': d_format
-            }
-        });
-
-        map.addLayer({
-            'id': 'routes',
-            'type': 'line',
-            'source': 'routes',
-            'layout': {
-                'line-join': 'round',
-                'line-cap': 'round'
-            },
-            'paint': {
-                'line-color': {
-                    'property': 'change',
-                    'stops': [
-                        [-1, '#b2182b'],
-                        [ 0, '#f7f7f7'],
-                        [ 1, '#2166ac']
-                    ]
-                },
-                'line-width': 8
-            }
-        });
-
-        map.on('click', 'routes', function(e) {
-            var coordinates = e.features[0].geometry.coordinates[Math.floor(e.features[0].geometry.coordinates.length / 2)];
-            var content = e.features[0].properties.name;
-             
-            // Ensure that if the map is zoomed out such that multiple
-            // copies of the feature are visible, the popup appears
-            // over the copy being pointed to.
-            while (Math.abs(e.lngLat.lng - coordinates[0]) &gt; 180) {
-                coordinates[0] += e.lngLat.lng &gt; coordinates[0] ? 360 : -360;
-            }
-             
-            new mapboxgl.Popup()
-                .setLngLat(coordinates)
-                .setHTML(content)
-                .addTo(map);
-        });
-         
-        // Change the cursor to a pointer when the mouse is over the places layer.
-        map.on('mouseenter', 'routes', function() {
-            map.getCanvas().style.cursor = 'pointer';
-        });
-         
-        // Change it back to a pointer when it leaves.
-        map.on('mouseleave', 'routes', function() {
-            map.getCanvas().style.cursor = '';
-        });
-    });
-});
-
-&lt;/script&gt;
-
-</description>
-                    <pubDate>2020-05-09T02:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/05/09/running-covid19.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/05/09/running-covid19.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Automating with Spotify and Last.FM</title>
-                    <description>&lt;h3 id=&quot;adding-songs-to-my-downloaded-spotify-playlist&quot;&gt;Adding songs to my downloaded Spotify playlist&lt;/h3&gt;
-
-&lt;h3 id=&quot;updating-my-websites-landing-page-to-reflect-what-im-listening-to&quot;&gt;Updating my website’s landing page to reflect what I’m listening to&lt;/h3&gt;
-
-&lt;h3 id=&quot;adding-new-records-to-my-website&quot;&gt;Adding new records to my website&lt;/h3&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/spotify-util-add-album.gif&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/spotify-util-add-album.gif&quot; alt=&quot;A .gif showing the process for adding a new album to my website&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;You can find all of these scripts, plus a few other experiments and random things, in &lt;a href=&quot;https://github.com/ben-tanen/spotify-lastfm-utils&quot;&gt;this repo&lt;/a&gt;.&lt;/p&gt;
-</description>
-                    <pubDate>2020-04-12T04:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/04/12/spotify-automation-utils.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/04/12/spotify-automation-utils.html</guid>
                 </item>
                 
             

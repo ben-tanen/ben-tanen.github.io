@@ -1,0 +1,113 @@
+#elfun2020-title {
+    display: none;
+}
+
+#elfun2020-title h3 {
+    margin-top: 0;
+}
+
+#elfun2020-view-select {
+    padding: 0;
+}
+
+#elfun2020-view-select li {
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+    background-color: #e0e0e0;
+    margin-top: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#elfun2020-view-select li.selected {
+    background-color: #a9a9a9;
+    font-weight: bolder;
+}
+
+#elfun2020-viz {
+    width: 100%;
+    max-width: 800px;
+    height: 250px;
+    position: relative;
+    display: none;
+}
+
+#elfun2020-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.state-icon.Trump {
+    fill: #ff6e6c;
+}
+
+.state-icon.Biden {
+    fill: #77bdee;
+}
+
+text.state-callcorrect-label {
+    font-size: 20px;
+    text-anchor: middle;
+    alignment-baseline: middle;
+    display: none;
+}
+
+text.state-callcorrect-label.visible {
+    display: inherit;
+}
+
+text.state-label {
+    text-anchor: middle;
+    font-weight: bolder;
+    font-size: 20px;
+    alignment-baseline: middle;
+}
+
+text.state-label.colored-text.Trump {
+    fill: #ff6e6c;
+}
+
+text.state-label.colored-text.Biden {
+    fill: #77bdee;
+}
+
+text.state-calltime-label {
+    text-anchor: middle;
+    alignment-baseline: middle;
+}
+
+rect.scenario-cell {
+    fill: #e0e0e0;
+    stroke: white;
+}
+
+rect.scenario-cell.overlay {
+    fill: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+rect.colored-cell {
+    fill: #a9a9a9;
+}
+
+rect.colored-cell.correct-cell {
+    fill: #77EEB5;
+}
+
+text.scenario-cell-text {
+    fill: #a9a9a9;
+    text-anchor: middle;
+    font-size: 12px;
+    alignment-baseline: middle;
+}
+
+text.scenario-cell-text.colored-cell {
+    fill: black;
+}
+
+.jBox-state-label .jBox-container {
+    border: 1px solid black;
+    box-shadow: none;
+}
