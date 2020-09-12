@@ -8,6 +8,10 @@ landing-description: the many paths Election Night 2020 could have taken
 thumbnail: /assets/img/post-thumbnails/election-funnel2.png
 ---
 
+[Nate Silver Twitter thread about 100 scenarios](https://twitter.com/natesilver538/status/1300825856072454145)
+
+[McSweeny's "Swear It's Changed"](https://www.mcsweeneys.net/articles/im-back-in-a-relationship-with-fivethirtyeights-elections-forecast-model-but-this-time-i-swear-hes-changed)
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <div id="elfun2020-container">
