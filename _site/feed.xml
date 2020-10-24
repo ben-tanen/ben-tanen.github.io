@@ -7,6 +7,137 @@
             
                 
                 <item>
+                    <title>Improving Twitter's Image Previews</title>
+                    <description>&lt;p&gt;&lt;em&gt;Note: I started this post/project two weeks before it became clear that there were issues with Twitter’s image algorithm. My original plan was to jokingly propose the seam carving algorithm as an alternative to Twitter’s current system as a fix for trivial issues, but with the more recent news, I would also like to earnestly address the larger systemic issues that people have noticed. While I do think seam carving could be a useful tool for Twitter as they address these larger issues, this post is only intended to highlight how things can go very poorly if we knowingly or unknowingly use algorithms incorrectly.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Also, if you don’t know what seam carving is and would like a primer, you can read &lt;a href=&quot;/projects/2020/10/08/seam-carving-pt1.html&quot;&gt;this explanation&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For pretty much as long as we’ve had digital images, we’ve also run into the problem of trying to show pictures in non-optimal spaces. We scale images to make images bigger and often get blurry images; we crop images to fit in different shapes and end up losing part of the image. When we’re talking about a single image, we can make manual adjustments to salvage as much as possible, but when we have to do this for millions of images, we’ve got to turn to algorithms to do the job for us.&lt;/p&gt;
+
+&lt;p&gt;This is what social media sites like Facebook and Twitter have to do when they display images on our timelines. Most uploaded images are not anywhere close to the right dimensions to fit neatly into the boxes that Facebook and Twitter use to give users a quick preview of an image before they open it, so these sites have to figure out how to scale and crop images algorithmically. Most of the time, this works fine, but as with all algorithms, sometimes they run into issues, and some are worse than others.&lt;/p&gt;
+
+&lt;div class=&quot;columns two&quot;&gt;
+    &lt;div class=&quot;column&quot; style=&quot;width: calc(60% - 15px);&quot;&gt;
+        &lt;p&gt;This is what social media sites like Facebook and Twitter have to do when they display images on our timelines. Most uploaded images are not anywhere close to the right dimensions to fit neatly into the boxes that Facebook and Twitter use to give users a quick preview of an image before they open it, so these sites have to figure out how to scale and crop images algorithmically. Most of the time, this works fine, but as with all algorithms, sometimes they run into issues, and some are worse than others.&lt;/p&gt;
+        &lt;p&gt;For a while, Twitter users have been jokingly taking advantage of the platform’s flawed image preview algorithm &lt;a href=&quot;https://knowyourmeme.com/memes/open-for-a-surprise&quot;&gt;by hiding “surprises” that are only revealed after you “open for a surprise.”&lt;/a&gt; Most reveals are focused on cute animals, but there is really no telling what you’ll get until you actually open the image. Aside from the always present internet trolls, Twitter’s constrained image preview makes this gag is mostly harmless. But, as with all things algorithms and the internet, there are far more harmful instances as well.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot; style=&quot;width: calc(40% - 15px);&quot;&gt;
+        &lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/open-for-surprise-giraffe.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/open-for-surprise-giraffe.png&quot; alt=&quot;An image of a giraffe sticking it's tongue out&quot; width=&quot;500&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;figcaption&gt;
+An example of what 'open for surprise' might reveal
+&lt;/figcaption&gt;
+
+
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A few weeks ago, Twitter users started running experiments to see if Twitter’s algorithm had any preference for certain faces, or rather, certain skin tones or apparent genders. After many different examples tested all different combinations, it became clear that there was something very off with Twitter’s algorithmic approach for picking image previews. Folks at Twitter eventually responded and said that they had not previously found any racial or gender bias, but noted that “it’s clear that we’ve got more analysis to do.”&lt;/p&gt;
+
+&lt;div style=&quot;max-width: 400px; margin: auto; margin-bottom: 15px;&quot;&gt;
+    &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Trying a horrible experiment...&lt;br /&gt;&lt;br /&gt;Which will the Twitter algorithm pick: Mitch McConnell or Barack Obama? &lt;a href=&quot;https://t.co/bR1GRyCkia&quot;&gt;pic.twitter.com/bR1GRyCkia&lt;/a&gt;&lt;/p&gt;&amp;mdash; Tony “Abolish (Pol)ICE” Arcieri 🦀 (@bascule) &lt;a href=&quot;https://twitter.com/bascule/status/1307440596668182528?ref_src=twsrc%5Etfw&quot;&gt;September 19, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;This is hardly the first example–and will surely not be the last–of algorithmic bias creeping into tech unexpectedly. We know some of the steps to combat it and this is hopefully where Twitter will start. The key question behind image preview is deciding what is the most “important” part of the image, which is extremely subjective. Some will likely be inclined to say “let the computer figure it out,” but as we’ve seen time and time again, unchecked algorithms generally lead to bad and/or biased algorithms.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/bascule/status/1307440596668182528&quot;&gt;Original example&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/sina_rawayama/status/1307506452786016257&quot;&gt;Racist example #2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/colinmadland/status/1307111816250748933&quot;&gt;Real world example, comparison to Zoom&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/neilcastle/status/1307597309862125568&quot;&gt;Algo is sexist as well as racist&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/therourke/status/1307711835836219394&quot;&gt;Meme version&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/lizkelley/status/1307742267193532416&quot;&gt;Response from Twitter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/_theghettomonk/status/1307686197934854147&quot;&gt;Book recommendations&lt;/a&gt;&lt;/p&gt;
+
+</description>
+                    <pubDate>2020-10-08T04:05:41-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2020/10/08/seam-carving-pt2.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2020/10/08/seam-carving-pt2.html</guid>
+                </item>
+                
+            
+                
+                <item>
+                    <title>Intro to the Seam Carving Algorithm</title>
+                    <description>&lt;p&gt;&lt;em&gt;This is an introductory tutorial to the seam carving algorithm, which I use in the next post to “improve” the way Twitter crops images. If you want to skip over the explanation and go straight to the application, click &lt;a href=&quot;/projects/2020/10/08/seam-carving-pt2.html&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For the last few weeks, I’ve been following along for an ongoing MIT class called &lt;a href=&quot;https://computationalthinking.mit.edu/Fall20/&quot;&gt;“Introduction to Computational Thinking”&lt;/a&gt; after Grant Sanderson (of &lt;a href=&quot;https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw&quot;&gt;3Blue1Brown fame&lt;/a&gt;) mentioned he was one of the lecturers. I’ve always been a huge fan of Grant’s work on 3Blue1Brown and thus far, the class, especially the lectures taught by Grant, has not disappointed. In one of the lectures, Grant introduced &lt;a href=&quot;https://www.youtube.com/watch?v=rpB6zQNsbQU&quot;&gt;the concept of “seam carving,”&lt;/a&gt; which is an alternative way to crop images in confined spaces. I was fascinated by the approach, decided to play around with it a little myself, and wanted to share a brief introduction to the algorithm.&lt;/p&gt;
+
+&lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
+
+&lt;p&gt;Images come in all shapes and sizes, and when we try to show these images, we are sometimes constrained. This leads us to the dilemma of figuring out how to maximize the amount of the image shown and if we can’t show the entire image, ideally show the most interesting parts.&lt;/p&gt;
+
+&lt;p&gt;For this walkthrough, let’s use the beautiful landscape image below (credit: &lt;a href=&quot;https://unsplash.com/photos/T7K4aEPoGGk&quot;&gt;Pietro De Grandi&lt;/a&gt;), which is a 3:2, meaning it is 50% wider than it is tall.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/landscape.JPG&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/seam-carving/img/landscape.JPG&quot; alt=&quot;A landscape photo with water, mountains, boaters, and sky that we will use for our tutorial&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Now, imagine we want to show this image somewhere but we are constrained to a 3:4 space (33% taller than it is wide). Typically, we have two options: (a) show the entire image, but scale it to fit within the provided space; or (b) crop the image to fit height-wise while cutting off some portion from the sides. Neither of these approaches is optimal since we’re left with either a smaller image and wasted space above and below as we see in (a) or we have to cut parts of the image, potentially losing sections of importance, as we see in (b). At the moment, most social media companies opt to go down the cropping route, but as we’ll see in &lt;a href=&quot;/projects/2020/10/08/seam-carving-pt2.html&quot;&gt;the next post&lt;/a&gt;, it can be very difficult for social media companies to accurately crop millions of images to really show the most interesting parts.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/method-comp.PNG&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/seam-carving/img/method-comp.PNG&quot; alt=&quot;An image comparing our three methods of displaying images: (a) scaling, (b) cropping, (c) seam carving&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;As an alternative, we can use the seam carving algorithm, which produces the image seen above on the right (c). When we use the seam carving algorithm on our image, we end up with something that shows all of the varied landscape that we see in the full image squeezed into the appropriately sized box. When compared to our other two approaches, seam carving seems like the obvious winner.&lt;/p&gt;
+
+&lt;p&gt;So what is actually happening to go from our full image to our squeezed final image? The seam carving algorithm works by repeatedly identifying a “seam” in our image that is the least “interesting” and then selectively slicing those seams out of the image. In this case, a “seam” is a continuous path that we draw from top-to-bottom (or left-to-right) of the image that does not loop or backtrack. If we identify a one-pixel seam in our image, we can remove each one of the seam’s pixels (one pixel per row) from the image, which will leave us with an image that is one pixel narrower. If we repeat this process 100 times, it’ll be 100px narrow. Thus, if we have an image that is 800px and we need it to be 600px, we simply need to identify and then delete 200 seams that represent the least interesting part of our image, leaving us with a 600px image of the good stuff.&lt;/p&gt;
+
+&lt;p&gt;A logical next question: how do we define the “least interesting” part of an image? This is obviously very subjective so there is no “right” way to do this. But one of the nice things about the seam carving algorithm is that we can pick any number of ways to define “interesting” depending on the context and the algorithm will still work. A very common way to do this is to use edge detection, which is what we’ll use here. The idea behind using edge detection is that edges generally indicate the presence of some object so a seam that passes through a number of edges is likely slicing through objects of importance, which is not ideal. Instead, we’ll want to identify seams that pass through as few edges as possible, which will hopefully skirt around any objects of interest. With that in mind, let’s use some edge detection on our image.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/landscape-energy.JPG&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/seam-carving/img/landscape-energy.JPG&quot; alt=&quot;A black and white image that shows the identifies the edges of the various objects in our image&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The above shows us where a computer detects edges in our image (see &lt;a href=&quot;https://www.youtube.com/watch?v=8rrHTtUzyZA&quot;&gt;here&lt;/a&gt; if you’re interested in how we get such an image). We can see the outline of our boaters and our mountains but very few edges in our sky or water, which makes sense since these are both fairly uniform. So, now that we know where there are edges in our image, we will want to find a seam that slices through our image and minimizes the number of edges crossed. Doing this identifies the red seam we see below.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/landscape-carve1.JPG&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/seam-carving/img/landscape-carve1.JPG&quot; alt=&quot;Our original landscape image with a red seam drawn through the middle&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;While this first red seam does slice through a number of edges to get from the top to the bottom, when we compare the seam’s path to our edge detection image, we can see that it traces through mostly uniform sections of the image. This means we probably won’t mind if we take a pixel or two from along this path. Most images will require any seam to cut through some edges, and depending on the image, this may work out totally fine. However, for some, carving out the “least interesting” part of the image may actually alter the image significantly, which is why seam carving, like any other cropping approach, should be used on a case-by-case basis to make sure it works appropriately in context. If you notice non-ideal results, it might be worth considering a different approach for defining “interesting” other than edge detection. That being said, this first identified seam seems (pun half-intended) to work pretty well for our landscape image.&lt;/p&gt;
+
+&lt;p&gt;So now that we’ve gone through the process for identifying one seam, all we have to do is carve out this identified seam and then repeat the process until we have an image of the intended size. The GIF below shows what this looks like as we squeeze the image to half its original width. Note that as we repeat the process, we are forced to carve out progressively more and more interesting seams, so it is important to find the right target size such that we don’t end up cutting out big chunks of important parts in the image. As you’ll notice, the seam carving algorithm has its constraints, but as do all other cropping approaches and algorithms in general. This will be but another tool in the image display toolbox.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/seam_animate.GIF&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/seam-carving/img/seam_animate.GIF&quot; alt=&quot;GIF illustrating how the seam carving algorithm works&quot; /&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;So that’s seam carving! Pretty neat, right? While I don’t actually foresee this becoming the new standard for how we display images online, it is interesting to consider what it would look like if, for example, Twitter used a seam carving algorithm to render their image previews. Check out &lt;a href=&quot;/projects/2020/10/08/seam-carving-pt2.html&quot;&gt;the next post&lt;/a&gt; to see what that actually looks like (preview: it works somewhat well for landscape photos and makes weird looking images for a lot of other things).&lt;/p&gt;
+
+&lt;p&gt;If you want to learn more about seam carving, I would highly recommend &lt;a href=&quot;https://www.youtube.com/watch?v=rpB6zQNsbQU&quot;&gt;MIT/Grant’s original lecture&lt;/a&gt;. On the &lt;a href=&quot;https://computationalthinking.mit.edu/Fall20/&quot;&gt;course website&lt;/a&gt;, they also have &lt;a href=&quot;https://www.youtube.com/watch?v=ALcohd1q3dk&quot;&gt;a live coding session&lt;/a&gt; showing the algorithm and &lt;a href=&quot;https://github.com/mitmath/18S191/blob/68e5631f5658d779482aa546f8d324ad2b426b27/lecture_notebooks/seam_carving.jl&quot;&gt;a notebook&lt;/a&gt; (written in Julia) that you can use to play around with. I also put together my own Jupyter notebook (written in Python), which you can find in &lt;a href=&quot;https://github.com/ben-tanen/seam-carving&quot;&gt;this Github repo&lt;/a&gt;. Huge shoutout to &lt;a href=&quot;https://karthikkaranth.me/&quot;&gt;Karthik Karanth&lt;/a&gt; and &lt;a href=&quot;https://karthikkaranth.me/blog/implementing-seam-carving-with-python/&quot;&gt;his post on seam carving&lt;/a&gt;, which is where I lifted most of my python code.&lt;/p&gt;
+
+</description>
+                    <pubDate>2020-10-08T04:05:41-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2020/10/08/seam-carving-pt1.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2020/10/08/seam-carving-pt1.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>Fixing Bad COVID-19 Maps, Mapping Musical Genres, and Other Twitter Projects</title>
                     <description>&lt;p&gt;Over the last few months, I’ve worked on a few smaller projects that I didn’t think warranted full individual posts on this site, so I just shared them as smaller threads on Twitter directly. But in order to keep this site as a comprehensive collection of the work I’ve done, I’ve decided to make a list compiling this recent work. Some might say this is double dipping on the same content, but my site, my rules! Of course, if you want to see this kind of work first, you should just &lt;a href=&quot;https://twitter.com/ben_tanen&quot;&gt;follow me on Twitter&lt;/a&gt; 🙂&lt;/p&gt;
 
@@ -56,59 +187,6 @@
                     <pubDate>2020-09-12T04:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2020/09/12/recent-tweets.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/09/12/recent-tweets.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Using Seam Carving to Generate Twitter Image Previews</title>
-                    <description>
-</description>
-                    <pubDate>2020-09-09T04:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/09/09/seam-carving-pt2.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/09/09/seam-carving-pt2.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Intro to the Seam Carving Algorithm</title>
-                    <description>&lt;p&gt;jjjj&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/landscape.JPG&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/seam-carving/img/landscape.JPG&quot; alt=&quot;GIF illustrating how the seam carving algorithm works&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/method-comp.PNG&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/seam-carving/img/method-comp.PNG&quot; alt=&quot;GIF illustrating how the seam carving algorithm works&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/landscape-energy.JPG&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/seam-carving/img/landscape-energy.JPG&quot; alt=&quot;GIF illustrating how the seam carving algorithm works&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/landscape-carve1.JPG&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/seam-carving/img/landscape-carve1.JPG&quot; alt=&quot;GIF illustrating how the seam carving algorithm works&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/seam_animate.GIF&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/seam-carving/img/seam_animate.GIF&quot; alt=&quot;GIF illustrating how the seam carving algorithm works&quot; /&gt;
-    &lt;/a&gt;
-&lt;/p&gt;
-
-</description>
-                    <pubDate>2020-09-09T04:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/09/09/seam-carving-pt1.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/09/09/seam-carving-pt1.html</guid>
                 </item>
                 
             
