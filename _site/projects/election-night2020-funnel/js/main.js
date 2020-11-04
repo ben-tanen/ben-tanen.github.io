@@ -3,7 +3,7 @@
 /*** INIT VARIABLE ***/
 /*********************/
 
-let margin = {top: 10, right: 0, bottom: 0, left: 150, cell: 1, state: 4},
+let margin = {top: 10, right: 0, bottom: 0, left: 150, cell: 1, state: 4, day: 0},
     width  = $("#elfun2020-viz").width() - margin.left - margin.right,
     height = $("#elfun2020-viz").height() - margin.top - margin.bottom;
 
@@ -35,8 +35,8 @@ function draw_labels(is_compact) {
         for (let i = 0; i < call_data.length; i++) {
             const feat = map_data.filter(s => s['properties']['name'] === call_data[i]['state_abbrev'].substr(0, 2))[0];
             draw_state(feat, 
-                       [[margin.state, margin.top + i * row_height + margin.state], 
-                        [margin.left / 2 - margin.state, margin.top + (i + 1) * row_height - margin.state]],
+                       [[margin.state, margin.top + i * row_height + margin.state + call_data[i]['days_after_ed'] * margin.day], 
+                        [margin.left / 2 - margin.state, margin.top + (i + 1) * row_height - margin.state + call_data[i]['days_after_ed'] * margin.day]],
                        call_data[i]['winner']);
         }
 
@@ -47,8 +47,28 @@ function draw_labels(is_compact) {
             .classed("state-calltime-label", true)
             .attr("id", d => d.state_abbrev)
             .attr("x", margin.left * 3 / 4)
-            .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * 0.7)
+            .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * 0.7 + d.days_after_ed * margin.day)
             .text(d => format_datetime(d.called_at, "%I:%M %p"));
+
+        // draw label for date of call
+        // svg.append("text")
+        //     .classed("date-label", true)
+        //     .attr("x", margin.left + width / 2)
+        //     .attr("y", margin.top + margin.day - 8)
+        //     .style("text-anchor", "middle")
+        //     .text("Nov 3, 2020");
+
+        // const n_calls_day2 = call_data.filter(e => e.days_after_ed > 1).length,
+        //       n_calls_day3 = call_data.filter(e => e.days_after_ed > 2).length,
+        //       n_calls_day4 = call_data.filter(e => e.days_after_ed > 3).length;
+        // if (n_calls_day2 > 0) {
+        //     svg.append("text")
+        //         .classed("date-label", true)
+        //         .attr("x", margin.left + width / 2)
+        //         .attr("y", margin.top + n_calls_day2 * row_height + 2 * margin.day - 8)
+        //         .style("text-anchor", "middle")
+        //         .text("Nov 4, 2020");
+        // }
     }
 
     // draw main state name label
@@ -61,7 +81,7 @@ function draw_labels(is_compact) {
         .classed("colored-text", is_compact)
         .attr("id", d => d.state_abbrev)
         .attr("x", margin.left * (is_compact ? 1 / 2 : 3 / 4))
-        .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * (is_compact ? 0.5 : 0.3))
+        .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * (is_compact ? 0.5 : 0.3) + (is_compact ? 0 : d.days_after_ed * margin.day))
         .text(d => d.state_abbrev);   
 
     // draw check marks and Xs to show if path is correct
@@ -71,7 +91,7 @@ function draw_labels(is_compact) {
         .classed("state-callcorrect-label", true)
         .classed("wrong", true)
         .attr("x", is_compact ? 5 : margin.left * 0.58)
-        .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * (is_compact ? 0.5 : 0.3))
+        .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * (is_compact ? 0.5 : 0.3) + (is_compact ? 0 : d.days_after_ed * margin.day))
         .text("✗");
 
     svg.selectAll(".state-callcorrect-label.right")
@@ -80,7 +100,7 @@ function draw_labels(is_compact) {
         .classed("state-callcorrect-label", true)
         .classed("right", true)
         .attr("x", is_compact ? 5 : margin.left * 0.58)
-        .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * (is_compact ? 0.5 : 0.3))
+        .attr("y", d => margin.top + (d.nth_state_called - 1) * row_height + row_height * (is_compact ? 0.5 : 0.3) + (is_compact ? 0 : d.days_after_ed * margin.day))
         .text("✓"); 
 }
 
@@ -106,7 +126,7 @@ function draw_scenario_cells() {
         .classed("colored-cell", d => d.correct)
         .attr("id", d => d.n_states_called + "-" + d.winners)
         .attr("x", d => margin.left + x(d.n_sims_roll - d.n_sims))
-        .attr("y", d => margin.top + (d.n_states_called - 1) * row_height)
+        .attr("y", d => margin.top + (d.n_states_called - 1) * row_height + (is_compact() ? 0 : call_data[d.n_states_called - 1].days_after_ed * margin.day))
         .attr("width", d => x(d.n_sims))
         .attr("height", row_height)
         .style("stroke-width", margin.cell + "px");
@@ -119,7 +139,7 @@ function draw_scenario_cells() {
         .classed("colored-cell", d => d.correct)
         .attr("id", d => d.n_states_called + "-" + d.winners)
         .attr("x", d => margin.left + x(d.n_sims_roll - d.n_sims + d.n_sims / 2))
-        .attr("y", d => margin.top + (d.n_states_called - 1) * row_height + row_height / 2)
+        .attr("y", d => margin.top + (d.n_states_called - 1) * row_height + row_height / 2 + (is_compact() ? 0 : call_data[d.n_states_called - 1].days_after_ed * margin.day))
         .text(d => x(d.n_sims) > 60 ? `${d.n_sims}%${d.n_states_called == 1 ? " of scenarios" : ""}` : "");
 
     svg.selectAll(".scenario-cell.overlay")
@@ -129,7 +149,7 @@ function draw_scenario_cells() {
         .classed("overlay", true)
         .attr("id", d => d.n_states_called + "-" + d.winners)
         .attr("x", d => margin.left + x(d.n_sims_roll - d.n_sims))
-        .attr("y", d => margin.top + (d.n_states_called - 1) * row_height)
+        .attr("y", d => margin.top + (d.n_states_called - 1) * row_height + (is_compact() ? 0 : call_data[d.n_states_called - 1].days_after_ed * margin.day))
         .attr("width", d => x(d.n_sims))
         .attr("height", row_height)
         .on("mouseenter", function(cell) {
@@ -191,7 +211,7 @@ function is_compact() {
 function resize() {
 
     // delete existing elements
-    svg.selectAll(".state-icon, .state-label, .state-calltime-label, .scenario-cell, .scenario-cell-text, .state-callcorrect-label").remove();
+    svg.selectAll(".state-icon, .state-label, .state-calltime-label, .date-label, .scenario-cell, .scenario-cell-text, .state-callcorrect-label").remove();
 
     // set to compact (if not already selected by user)
     if (d3.selectAll("#elfun2020-view-select li.user").size() == 0) {
@@ -225,7 +245,11 @@ d3.json("https://bt-dbs.herokuapp.com/getElectionFunnel2020Data", (d) => {
     d3.selectAll("#elfun2020-title, #elfun2020-viz").style("display", "inline-block");
 
     // store data for later
-    for (let i = 0; i < d["call_data"].length; i++) call_data.push(d["call_data"][i]);
+    for (let i = 0; i < d["call_data"].length; i++) {
+        let e = d["call_data"][i];
+        e.days_after_ed = d3.timeParse("%Q")(e.called_at * 1000).getDate() - 2;
+        call_data.push(e);
+    }
     for (let i = 0; i < d["scenario_data"].length; i++) scenario_data.push(d["scenario_data"][i]);
     for (let i = 0; i < d["map_data"].length; i++) map_data.push(d["map_data"][i]);
 
