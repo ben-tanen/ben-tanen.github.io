@@ -43,6 +43,11 @@ Let's see how this all goes! It is very unlikely that we'll know much on Electio
     </div>
 </div>
 
+{% capture methodology-note %}
+State calls come from <a href="https://twitter.com/AP_Politics">the Associated Press</a>, including when the calls are made, and are ordered by time of the call. These calls are compared against the 100 scenarios that FiveThirtyEight has highlighted on <a href="https://projects.fivethirtyeight.com/2020-election-forecast/">its (now frozen) Presidential Election Forecast</a> and each scenario is marked as viable if it includes the same state-by-state calls as the AP. Electoral vote ranges are calculated based on the remaining viable scenarios.
+{% endcapture %}
+{% include methodology-note.html content=methodology-note break='yes' %}
+
 <link rel="stylesheet" href="/projects/election-night2020-funnel/css/main.style.css" />
 <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
 <script src='/projects/election-night2020-funnel/js/main.js'></script>

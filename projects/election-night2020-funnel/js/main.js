@@ -3,7 +3,7 @@
 /*** INIT VARIABLE ***/
 /*********************/
 
-let margin = {top: 10, right: 0, bottom: 0, left: 150, cell: 1, state: 4, day: 0},
+let margin = {top: 0, right: 0, bottom: 0, left: 150, cell: 1, state: 4, day: 26},
     width  = $("#elfun2020-viz").width() - margin.left - margin.right,
     height = $("#elfun2020-viz").height() - margin.top - margin.bottom;
 
@@ -51,24 +51,43 @@ function draw_labels(is_compact) {
             .text(d => format_datetime(d.called_at, "%I:%M %p"));
 
         // draw label for date of call
-        // svg.append("text")
-        //     .classed("date-label", true)
-        //     .attr("x", margin.left + width / 2)
-        //     .attr("y", margin.top + margin.day - 8)
-        //     .style("text-anchor", "middle")
-        //     .text("Nov 3, 2020");
+        svg.append("text")
+            .classed("date-label", true)
+            .attr("x", margin.left + width / 2)
+            .attr("y", margin.top + margin.day - 8)
+            .style("text-anchor", "middle")
+            .text("Nov 3, 2020");
 
-        // const n_calls_day2 = call_data.filter(e => e.days_after_ed > 1).length,
-        //       n_calls_day3 = call_data.filter(e => e.days_after_ed > 2).length,
-        //       n_calls_day4 = call_data.filter(e => e.days_after_ed > 3).length;
-        // if (n_calls_day2 > 0) {
-        //     svg.append("text")
-        //         .classed("date-label", true)
-        //         .attr("x", margin.left + width / 2)
-        //         .attr("y", margin.top + n_calls_day2 * row_height + 2 * margin.day - 8)
-        //         .style("text-anchor", "middle")
-        //         .text("Nov 4, 2020");
-        // }
+        const n_calls_day1 = call_data.filter(e => e.days_after_ed == 1).length,
+              n_calls_day2 = call_data.filter(e => e.days_after_ed == 2).length,
+              n_calls_day3 = call_data.filter(e => e.days_after_ed == 3).length,
+              n_calls_day4 = call_data.filter(e => e.days_after_ed == 4).length;
+        if ((n_calls_day2 + n_calls_day3 + n_calls_day4) > 0) {
+            svg.append("text")
+                .classed("date-label", true)
+                .attr("x", margin.left + width / 2)
+                .attr("y", margin.top + n_calls_day1 * row_height + 2 * margin.day - 8)
+                .style("text-anchor", "middle")
+                .text("Nov 4, 2020");
+        }
+
+        if ((n_calls_day3 + n_calls_day4) > 0) {
+            svg.append("text")
+                .classed("date-label", true)
+                .attr("x", margin.left + width / 2)
+                .attr("y", margin.top + (n_calls_day1 + n_calls_day2) * row_height + 3 * margin.day - 8)
+                .style("text-anchor", "middle")
+                .text("Nov 5, 2020");
+        }
+
+        if ((n_calls_day4) > 0) {
+            svg.append("text")
+                .classed("date-label", true)
+                .attr("x", margin.left + width / 2)
+                .attr("y", margin.top + (n_calls_day1 + n_calls_day2 + n_calls_day3) * row_height + 4 * margin.day - 8)
+                .style("text-anchor", "middle")
+                .text("Nov 6, 2020");
+        }
     }
 
     // draw main state name label
@@ -226,7 +245,7 @@ function resize() {
     x.range([0, width]);
 
     // set height based on number of states called already
-    height = margin.top + margin.bottom + call_data.length * row_height;
+    height = margin.top + margin.bottom + call_data.length * row_height + (is_compact() ? 0 : d3.max(call_data, d => d.days_after_ed) * margin.day);
     $("#elfun2020-viz").height(height);
     svg.attr("height", height);
 
