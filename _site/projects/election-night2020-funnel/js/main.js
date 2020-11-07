@@ -58,35 +58,17 @@ function draw_labels(is_compact) {
             .style("text-anchor", "middle")
             .text("Nov 3, 2020");
 
-        const n_calls_day1 = call_data.filter(e => e.days_after_ed == 1).length,
-              n_calls_day2 = call_data.filter(e => e.days_after_ed == 2).length,
-              n_calls_day3 = call_data.filter(e => e.days_after_ed == 3).length,
-              n_calls_day4 = call_data.filter(e => e.days_after_ed == 4).length;
-        if ((n_calls_day2 + n_calls_day3 + n_calls_day4) > 0) {
-            svg.append("text")
-                .classed("date-label", true)
-                .attr("x", margin.left + width / 2)
-                .attr("y", margin.top + n_calls_day1 * row_height + 2 * margin.day - 8)
-                .style("text-anchor", "middle")
-                .text("Nov 4, 2020");
-        }
-
-        if ((n_calls_day3 + n_calls_day4) > 0) {
-            svg.append("text")
-                .classed("date-label", true)
-                .attr("x", margin.left + width / 2)
-                .attr("y", margin.top + (n_calls_day1 + n_calls_day2) * row_height + 3 * margin.day - 8)
-                .style("text-anchor", "middle")
-                .text("Nov 5, 2020");
-        }
-
-        if ((n_calls_day4) > 0) {
-            svg.append("text")
-                .classed("date-label", true)
-                .attr("x", margin.left + width / 2)
-                .attr("y", margin.top + (n_calls_day1 + n_calls_day2 + n_calls_day3) * row_height + 4 * margin.day - 8)
-                .style("text-anchor", "middle")
-                .text("Nov 6, 2020");
+        // add date of call (given calls come after many days)
+        let n_calls_day_ix = [ ];
+        for (let i = 2; i <= 100; i++) {
+            if (call_data.filter(e => e.days_after_ed >= i).length > 0) {
+                svg.append("text")
+                    .classed("date-label", true)
+                    .attr("x", margin.left + width / 2)
+                    .attr("y", margin.top + call_data.filter(e => e.days_after_ed < i).length * row_height + i * margin.day - 8)
+                    .style("text-anchor", "middle")
+                    .text(`Nov ${2 + i}, 2020`);
+            }
         }
     }
 
