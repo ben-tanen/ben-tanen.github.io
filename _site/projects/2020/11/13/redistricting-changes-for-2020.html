@@ -52,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
-    <title>NHL Projections | Ben Tanen</title>
+    <title>Where the United States Stands on Redistricting for 2021 | Ben Tanen</title>
 </head>
 
 
@@ -142,191 +142,74 @@ MathJax.Hub.Config({
 </div>
 
     	<div class='main'>
-    		<link rel="stylesheet" href="nhl-projections.css">
-<script src='nhl-proj.js'></script>
+    		<div class="post">
 
-<h1>NHL Projections</h1>
+    <header class="post-header">
+        <h1>Where the United States Stands on Redistricting for 2021</h1>
+        <p class="post-date">Nov 13 2020
+    </header>
 
-<div id='nhl-about' class='expand'>
-<h2>About</h2>
+    <article class="post-content">
+    <p>There was a huge number of things on the ballot in 2020: President (i.e., <a href="https://twitter.com/drbiden/status/1321192200584220674">decency</a> and <a href="https://twitter.com/DrBiden/status/1321836527123599362">kindness</a> among other things, according to the Biden campaign), control of the U.S. Senate and House, <a href="https://www.cnn.com/2020/11/04/politics/marijuana-legalization-2020-states/index.html">legalization/decriminalization of marijuana</a> and <a href="https://www.cnn.com/2020/11/09/politics/oregon-decriminalize-drugs-trnd/index.html">other drugs</a>, and potential restrictions on <a href="https://www.wwltv.com/article/news/politics/elections/what-amendment-1-no-right-to-abortion-means-for-louisiana/289-9ecde885-a475-45eb-af23-20649034fd7d">abortion</a> and <a href="https://thehill.com/opinion/technology/525114-prop-22-just-passed-in-california-now-what">the gig economy</a>. Perhaps one of the most important things, even though it wasn’t always covered with much significance, was control for the redistricting process that is set to start following the 2020 Census. The 2020 Election was the last chance for voters across the United States to change the redistricting process in their state by altering the political control of their state’s legislature or by passing relevant ballot initiatives. With the redistricting processes and political power dynamics now mostly set, it is worth checking in on this crucial but often underreported process by comparing it to the redistricting dynamics in 2011.</p>
 
-<p>Projections, predictions, and analysis derived from NHL season simulations in MATLAB.
+<p class="fig-paragraph">
+    <a class="fig-link" href="/assets/img/posts/redistricting-sankey-horiz.png" target="_blank">
+    <img src="/assets/img/posts/redistricting-sankey-vert.png" alt="A visualization showing how redistricting control has changed from 2011 to today based on changes in legislative control and ballot initatives changing the process" />
+    </a>
+</p>
 
-<p>You can read the full project report <a href='./files/NHL_Projections-Full_Report.pdf'>here</a>. The full project code can be found <a href='https://github.com/ben-tanen/nhl-playoff-projections'>here</a>.</p>
+<p>Coming out of the 2010 Election, after it became clear that Republicans had <a href="https://www.npr.org/2020/09/23/916290633/redmap-update">enacted a plan called REDMAP to take control of the redistricting process</a>, Republican-controlled legislatures were responsible for redrawing nearly half of all Congressional districts. Meanwhile, Democrats were responsible for just 13%, leaving the remaining 41% of Congressional districts drawn by bipartisan or independent redistricting commissions (or come from states with only one at-large district). This split lead to <a href="https://www.wbur.org/hereandnow/2016/07/19/gerrymandering-republicans-redmap">rampant gerrymandering</a> that allowed Republicans to win back majority control <a href="https://en.wikipedia.org/wiki/2012_United_States_House_of_Representatives_elections">in Congress</a> without a majority of the votes.</p>
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+<p>In the years following, after the implications of REDMAP had become clear, groups across the country gave new attention to making the redistricting process more fair both by balancing party control in state legislatures and transferring redistricting duties to independent commissions. We can see the latter appear in the chart above as five states (accounting for 70 electoral votes and 60 districts) shifted redistricting power away from partisan legislatures and towards some kind of redistricting commission.</p>
+
+<p>Heading into the 2020 Election, Democrats were hopeful that they could take back some control in state legislatures, ideally shifting redistricting power to Democrat-controlled legislatures or at the very least split governments. However, <a href="https://www.nytimes.com/2020/11/04/us/election-state-house-legislature-governors.html">Democrats performed poorly</a> in legislative races across the country at both state and federal levels and are actually projected to have lost ground.</p>
+
+<p>So these are the conditions under which the United States will redraw legislative maps, mostly unchanged for the sake of a decade. The fact that Democrats have not gained any majority control and have lost partial control in split governments in the past 10 years is not promising for Democrats hoping to get back at their Republican counterparts for the incredibly gerrymandered maps of the 2010s. But, while voters were not able to balance the scales in states where redistricting is run by the legislature, there has been a substantial increase in the number of states that use independently (or at least bipartisan-ly) commissioned maps, largely due to great work and ballot initiatives from groups across the country that understand the importance of fair maps.</p>
+
+<p>While redistricting is certainly not the <em>sexiest</em> topic, if nothing else, the last decade has turned the public’s attention to what can go wrong when this process is left unchecked. With our eyes on the process, we can only hope that the maps of the 2020s are more fair than those of the 2010s. Hopefully it doesn’t just make for sneakier and more extreme gerrymandering…</p>
+
+<p class="section-break">* * *</p>
+
+<div class="methodology">
+    <p class="methodology-title">Methodology and minutia</p>
+    
+    
+    <p></p>
+    
+    <p>
+Control of the redistricting process was determined based on information from <a href="https://gerrymander.princeton.edu/">The Princeton Gerrymandering Project</a> and <a href="https://redistricting.lls.edu/index.php">Loyola Law School's All About Redistricting</a>. </p>
+    
+    <p>
+</p>
+    
+    <p>
+The number of electoral votes allocated to each state in 2021 is based on <a href="https://www.electiondataservices.com/wp-content/uploads/2019/12/NR_Appor19wTablesMaps.pdf#page=3">2019 Census Estimates from Election Data Services</a>, which shows AZ, CO, FL, MT, NC, OR, TX gaining seats and AL, CA, IL, MI, MN, NY, OH, PA, RI, WV losing seats. If Montana gains a seat, it will require redistricting (they currently only have one district) but their redistricting will be done by an independent commission. If Rhode Island loses a seat, they will only have one district, therefore not requiring any redistricting.</p>
+    
+    <p>
+</p>
+    
+    <p>
+While many state legislature races are still undecided (as of 11/13/2020), <a href="https://www.nhpr.org/post/new-hampshire-s-was-only-state-legislature-changed-parties-2020-election">most outlets are projecting</a> that New Hampshire is the only state that will see any change in their state legislature, switching from Democratic to Republican control in both chambers.</p>
+    
+    <p>
+</p>
+    
 </div>
 
-<h2>Current Projections</h2>
-<div class='nhl_current_projection min'>
-<p>The table below outlines how the season projections (current and original) compares to the actual season. <br /><i>Model Updated:</i> 10/11/16</p>
 
-<table id='projections_table'>
-<thead>
-<tr><th></th><th width='50px'>Team</th><th width='95px'>Actual Points (To Date)</th><th width='95px'>Points Projected <br> (To Date)</th><th width='95px'>Point Differential</th><th width='95px'>Current Whole Season Projection</th><th width='95px'>Original Whole Seaon Projection</th></tr>
-</thead>
-<tbody>
+    </article>
 
-</tbody>
-</table>
+    <div class='pagination'>
+        
 
-<img id='about-gradient' src='files/about-gradient.png' />
-<img id='expand-img' src='files/down-arrow.png' />
+        <p id="pagination-all"><a href="/projects/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/projects/2020/11/03/election-night-funnel.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
 </div>
-
-<h2 style='margin-bottom: 10px;'>Recent Work</h2>
-<ul style='padding-left: 0; list-style: none;'>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>11 Oct 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/projects/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
-            <div/>
-            <p><p>Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you’re interested, you can read <a href="/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf" target="_blank">the original model report</a> as well as check out <a href="https://github.com/ben-tanen/nhl-playoff-projections/" target="_blank">the code</a>.</p>
-</p>
-            <a href='/projects/2016/10/11/introducing-nhl-projections.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <li style='margin-bottom: 45px; margin-left: 0px;'>
-            <div>
-                <p id='index_date' style='text-align: left;'>15 May 2016</p>
-                <p id='index_title' style='font-size: 20px;'><a href='/projects/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
-            <div/>
-            <p><p>After all this learning of PCA and <a href="/projects/2016/03/09/clustering-with-kmeans.html">k-means clustering</a>, I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!</p>
-</p>
-            <a href='/projects/2016/05/15/pca-kmeans-nhl.html'><p style='margin-top: -5px;'>Read More</p></a>
-        </li>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-</ul>
     	</div>
     </div>
 	
