@@ -260,9 +260,14 @@ d3.json("https://bt-dbs.herokuapp.com/getElectionFunnel2020Data", (d) => {
     // set contests called, scenarios remaining, ev range text
     const latest_correct_cell = scenario_data.filter(s => s['n_states_called'] == call_data.length & s['correct'])[0]
     d3.select("#states-called").text(call_data.length);
-    d3.select("#scenarios-remaining").text(latest_correct_cell == null ? 0 : latest_correct_cell['n_sims']);
-    d3.select("#ev-range-biden").text(latest_correct_cell == null ? "??" : latest_correct_cell['ev_rng_biden'].join(" - "))
-    d3.select("#ev-range-trump").text(latest_correct_cell == null ? "??" : latest_correct_cell['ev_rng_trump'].join(" - "))
+    if (latest_correct_cell != null) {
+        d3.select("#scenarios-remaining").text(latest_correct_cell['n_sims']);
+        d3.select("#ev-range-biden").text(latest_correct_cell['n_sims'] > 1 ? latest_correct_cell['ev_rng_biden'].join(" - ") : latest_correct_cell['ev_rng_biden'][0]);
+        d3.select("#ev-range-trump").text(latest_correct_cell['n_sims'] > 1 ? latest_correct_cell['ev_rng_trump'].join(" - ") : latest_correct_cell['ev_rng_trump'][0]);
+    } else {
+        d3.select("#scenarios-remaining").text(0);
+        d3.select("#ev-range-biden, #ev-range-trump").text("??");
+    }
 
     // set size (with page loaded) and redraw
     resize();
