@@ -2,10 +2,11 @@
 layout: post
 title:  "Where Is Election Night 2020 Heading?"
 date:   2020-11-03 10:05:41
-categories: project data visualization politics election 2020
-show-on-landing: true
-landing-description: the many paths Election Night 2020 could have taken
 thumbnail: /assets/img/post-thumbnails/election-funnel2.png
+landing-proj:  true
+landing-order: 2
+landing-img:   /assets/img/post-thumbnails/election-funnel.png
+landing-large: false
 ---
 
 Well, today is the day! After weeks of voting (and [weeks of challenges](https://www.axios.com/texas-harris-county-drive-thru-voting-5a874c81-b927-48e7-8dcb-3bc1d5d76f6b.html) [to how](https://www.cnn.com/2020/10/26/politics/wisconsin-mail-in-voting-deadline-supreme-court/index.html) [people can vote](https://www.reuters.com/article/us-usa-election-court-pennsylvania/u-s-supreme-court-deals-blow-to-republicans-in-pennsylvania-north-carolina-vote-by-mail-fights-idUSKBN27D37H)), we have finally arrived at the beginning of the end. As of writing this, polls on the East Coast are beginning to close and shortly after, we will start getting calls from various states about winners and losers. 

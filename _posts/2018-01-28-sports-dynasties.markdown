@@ -2,9 +2,11 @@
 layout: post
 title: 'Visualizing Cities with Sports Dynasties'
 date: 2018-01-28 05:00:00
-categories: project data visualization
 thumbnail: /assets/img/post-thumbnails/sports-dynasties.gif
-excerpt_separator: <!-- more -->
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: false
 ---
 
 Last year, after the Pittsburgh Penguins won the Stanley Cup for the second year in a row, I was very interested in the idea of existing or emerging sports dynasties. At the time, of the four major (American) sports, the winners of three of the four league champions had also previously won in the prior two years. The Patriots won the Super Bowl in 2015 and 2017, Pittsburgh won the Stanley Cup in 2016 and 2017, and the Warriors <span id="sd-footnote-1" class="footnote">won in</span> 2015 and 2017. This seemed kind of incredible to me and at the time, I was curious if this was a common occurrence and if so, if it manifested itself in any interesting ways. I got started on some visualizations to explore this but never really got anywhere.

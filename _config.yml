@@ -18,4 +18,6 @@ collections:
     sort_by: date
     output: true
     permalink: /projects/generative-sketchbook/:year/:month/:day/:title.html
+  landing-projects:
+    sort_by: order
 

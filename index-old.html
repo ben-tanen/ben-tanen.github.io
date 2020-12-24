@@ -1,0 +1,12 @@
+---
+layout: landing-old
+---
+
+{% assign recentposts = site.posts | where: "show-on-landing", "true" %}
+{% assign recentpost = recentposts.first %}
+
+<p>I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories.</p>
+
+<p>Over the years, I've worked on projects dealing with <a href="/projects/how-bills-die/" target="_new">our broken legislative process</a>, <a href="/projects/oscars-popular-film/" target="_new">popular movies</a> and <a href="{% post_url 2020-02-10-oscars-best-picture %}" target="_new">snubbed films at the Oscars</a>, <a href="{% post_url 2020-01-02-decade-of-disney %}" target="_new">Disney's monopoly in the 2010s</a>, <a href="{% post_url 2019-06-23-most-font %}" target="_new">font design</a>, <a href="{% post_url 2018-02-06-fantasy-olympics %}" target="_new">the Winter Olympics</a>, <a href="{% post_url 2017-03-15-ASL-LEX %}" target="_new">American Sign Language</a>, <a href="http://link.ben-tanen.com/adaptive-huffman/" target="_new">data compression algorithms</a>, and <a href="{% post_url 2020-01-08-ibm-watson-ff %}" target="_new">fantasy football</a>. Recently, I wrote about <a href="{% if recentpost.reroute-url %}{{ recentpost.reroute-url }}{% else %}{{ recentpost.url }}{% endif %}">{{ recentpost.landing-description }}</a>. You can find more of my work <a href="/projects/all/">here</a>.</p>
+
+<p>I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/">my collection</a> and I love chatting about filmmaking, law, and politics. On occasion, I make <a href="/projects/generative-sketchbook/">generative art sketches</a> and take <a href="http://link.ben-tanen.com/photo/">pictures</a> with my camera. <span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently hidden" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>

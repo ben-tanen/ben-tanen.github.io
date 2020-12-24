@@ -2,11 +2,11 @@
 layout: post
 title: "Visualizing Trump's Narrow Path to Victory"
 date: 2019-06-27 04:00:00
-show-on-landing: true
-categories: data visualization project politics 2016 2020
-landing-description: visualizing Trump's narrow path to victory
 thumbnail: /assets/img/post-thumbnails/electoral-college-viz.png
-excerpt_separator: <!-- more -->
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: true
 ---
 
 *Okay, I know...the 2016 election happened nearly 1,000 days ago and at this point re-litigating it just feels like beating a dead horse that died from beating another dead horse. But this idea was inspired by 2020 Democratic Debate coverage, and you can't always decide when inspiration strikes.*

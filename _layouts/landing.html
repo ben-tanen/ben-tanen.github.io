@@ -4,29 +4,34 @@
 {% include head.html %}
 
 <body>
-    <svg id="background"></svg>
 
-    <div id='landing-menu'>
-        <img src="/assets/img/menu.png" alt="A menu for navigating the site" />
-        <div id='site-links' class="tk-europa">
-            <p><a class="selected-link">Home</a></p>
-            <p><a href='http://link.ben-tanen.com/resume/' target="_new">Resume</a></p>
-            <p><a href='/projects/all/'>Projects</a></p>
-        </div>
+<div id="main-container">
+    <div id="viz-container">
     </div>
-
-    <div id='landing-text'>
-        <div id='landing-header'>
+    <div id="text-container">
+        <div id="header-container">
             <img id="face" src="/assets/img/me/face-f.png" alt="A picture of my face." />
-            <h1><span class="tk-europa">Howdy</span><br /><span class="tk-europa">I'm Ben</span></h1>
+            <h1>Howdy<br /><span id="header-subtitle">I'm Ben</span></h1>
         </div>
-
-        {{ content }}
-
-        {% include social.html %}
+        <p>My name is <b>Ben Tanen</b>. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories.</p>
+        <p>You can read more about me <a href="/about/">here</a>.</p>
+        <p>Here are some of my favorite projects. You can find a full list <a href="/projects/all/">here</a>.</p>
     </div>
+    <div id="proj-container">
+        <!-- collect all landing projects (from both posts and other) -->
+        {% assign landingproj1 = site.posts | where: "landing-proj", "true" | sort: 'landing-order' %}
+        {% assign landingproj2 = site.landing-projects | sort: 'landing-order' %}
+        {% assign landingproj = landingproj1 | concat: landingproj2 | sort: 'landing-order' %}
+        <!-- iterate over all projects to create a cell on landing page -->
+        {% for proj in landingproj %}
+        <div class="proj-cell {% if proj.landing-large == true %}large{% endif %}" style='background-image: url("{% if proj.landing-img %}{{ proj.landing-img }}{% else %}{{ proj.thumbnail }}{% endif %}");'>
+            <a href="{% if proj.reroute-url %}{{ proj.reroute-url }}{% else %}{{ proj.url }}{% endif %}">
+                <p>{{ proj.title }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
-    <script src="/assets/js/landing.js">
-    </script>
 </body>
 </html>

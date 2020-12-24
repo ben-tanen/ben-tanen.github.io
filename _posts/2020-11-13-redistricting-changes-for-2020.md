@@ -2,10 +2,11 @@
 layout: post
 title:  "How Has Redistricting Changed Since 2011"
 date:   2020-11-13 10:05:41
-categories: project data visualization politics election 2020 redistricting
-show-on-landing: true
-landing-description: how redistricting processes have changed since 2011
 thumbnail: /assets/img/post-thumbnails/redistricting-sankey.png
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: true
 ---
 
 There were a huge number of issues on the ballot in 2020: control of the U.S. Senate and House, [legalization/decriminalization of marijuana](https://www.cnn.com/2020/11/04/politics/marijuana-legalization-2020-states/index.html) and [other drugs](https://www.cnn.com/2020/11/09/politics/oregon-decriminalize-drugs-trnd/index.html), potential restrictions on [abortion](https://www.wwltv.com/article/news/politics/elections/what-amendment-1-no-right-to-abortion-means-for-louisiana/289-9ecde885-a475-45eb-af23-20649034fd7d) and [the gig economy](https://thehill.com/opinion/technology/525114-prop-22-just-passed-in-california-now-what), and, of course, the Presidency (i.e., [decency](https://twitter.com/drbiden/status/1321192200584220674) and [kindness](https://twitter.com/DrBiden/status/1321836527123599362) among other things, according to the Biden campaign). Perhaps one of the most important things, even though it wasn't always covered with much significance, was control for the redistricting process that is set to start following the 2020 Census. The 2020 Election was the last chance for voters across the United States to change the redistricting process in their state by altering the political control of their state's legislature or by passing relevant ballot initiatives. With the redistricting processes and political power dynamics now mostly set, it is worth checking in on this crucial but often underreported process by comparing it to the redistricting dynamics in 2011.

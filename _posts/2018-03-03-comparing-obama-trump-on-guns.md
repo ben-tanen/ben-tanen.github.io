@@ -2,10 +2,11 @@
 layout: post
 title: 'How Obama and Trump Responded to School Shootings'
 date: 2018-03-03 05:00:00
-categories: data visualization project politics graphic
-landing-description: comparing how Obama and Trump responded to school shootings
 thumbnail: /assets/img/post-thumbnails/obama-trump-guns.png
-excerpt_separator: <!-- more -->
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: false
 ---
 
 In response to a suggestion from [Franklin Leonard](https://twitter.com/franklinleonard){:target="_blank"}, the Washington Post recently published [a video](https://www.youtube.com/watch?v=uHrvODeA8-E){:target="_blank"} providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents' approaches.

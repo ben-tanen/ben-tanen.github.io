@@ -27,32 +27,8 @@
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
-    <!-- adobe typekit -->
-    <script src="https://use.typekit.net/jru4jkm.js"></script>
-    <script>
-    try {
-        Typekit.load({
-            async: true,
-            active: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            },
-            inactive: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            }
-        });
-    } catch(e){}
-    </script>
-
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>{% if page.title %}{{ page.title }} | {% endif %}Ben Tanen</title>

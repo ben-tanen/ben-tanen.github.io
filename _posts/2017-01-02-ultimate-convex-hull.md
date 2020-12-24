@@ -2,8 +2,11 @@
 layout: post
 title: 'Understanding the Kirkpatrick-Seidel Algorithm'
 date: 2017-01-02 15:05:41
-categories: project data tufts school visualization geometry
 thumbnail: /assets/img/post-thumbnails/ultimate-ch.gif
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: false
 ---
 
 After [posting the final project]({% post_url 2016-12-21-drunken-world %}){:target="_blank"} for my visualization course, I thought I'd share the final project for my computational geometry class as well. The course was an extended algorithms class focused on different multi-dimensional geometric problems. One of the main problems of the course deals with finding the [convex hull](https://en.wikipedia.org/wiki/Convex_hull){:target="_blank"} of a set of points. There are [a number ways](https://www.youtube.com/watch?v=ZnTiWcIznEQ){:target="_blank"} to tackle the problem but one of the best approaches is the Kirkpatrick-Seidel Ultimate Planar Convex Hull Algorithm. In order to help teach the algorithm, I made [a visualization tool](http://link.ben-tanen.com/ultimate-ch/){:target="_blank"} to walk-through the steps.

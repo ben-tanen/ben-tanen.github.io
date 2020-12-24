@@ -7,13 +7,11 @@ title: Projects
 
 <ul id='index-list'>
 {% for post in site.posts %}
-{% unless post.categories contains 'hidden' %}
     <li>
         <div class='index-thumbnail' style='background-image: url("{% if post.thumbnail %}{{ post.thumbnail }}{% else %}/assets/img/post-thumbnails/blank.png{% endif %}");'>
         </div>
         <p class='index-date'>{{ post.date | date: "%b %d %Y" }}</p>
         <p class='index-title'><a href='{% if post.reroute-url %}{{ post.reroute-url }}{% else %}{{ post.url }}{% endif %}'>{{ post.title }}</a></p>
     </li>
-{% endunless %}
 {% endfor %}
 </ul>

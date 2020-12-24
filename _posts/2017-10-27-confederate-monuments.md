@@ -2,10 +2,11 @@
 layout: post
 title: 'What Does the Public Think About Confederate Monuments?'
 date: 2017-10-27 05:00:00
-categories: data visualization project politics graphic
-landing-description: visualizing public opinion on Confederate monuments
 thumbnail: /assets/img/post-thumbnails/confederate-monuments.png
-excerpt_separator: <!-- more -->
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: false
 ---
 
 I recently came across [an article](http://kut.org/post/uttt-poll-most-texas-voters-say-confederate-memorials-shouldn-t-move-0) from KUT, Austin's NPR station, about Confederate statues with the following news graphic:

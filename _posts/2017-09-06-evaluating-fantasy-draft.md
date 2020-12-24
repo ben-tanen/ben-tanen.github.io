@@ -2,10 +2,11 @@
 layout: post
 title: 'Should I Become an NFL Scout?'
 date: 2017-09-07 05:00:00
-categories: data visualization project football fantasy
-landing-description: evaluating the quality of my fantasy draft choices
 thumbnail: /assets/img/post-thumbnails/ff-draft.png
-excerpt_separator: <!-- more -->
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: false
 ---
 
 Over the years, I've always been interested in the idea of fantasy football but I had never committed to a league. This year, I decided to take the plunge and try out my own fantasy team. While I would consider myself a fan of football, I knew I didn't know enough about the whole league to really stand a chance at putting together a *good* fantasy team. So I decided I would just rely on the advice of the pros.

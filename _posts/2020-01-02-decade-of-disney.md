@@ -2,10 +2,11 @@
 layout: post
 title:  "The Decade of Disney"
 date:   2020-01-02 15:05:41
-categories: project data visualization disney movies monopoly
-show-on-landing: true
-landing-description: monopoly and how the 2010s were the decade of Disney
 thumbnail: /assets/img/post-thumbnails/disney-monopoly.jpg
+landing-proj:  true
+landing-order: 1
+landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-large: false
 ---
 
 <div class='columns two'>
