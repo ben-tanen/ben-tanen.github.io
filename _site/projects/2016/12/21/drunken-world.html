@@ -24,32 +24,8 @@
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
-    <!-- adobe typekit -->
-    <script src="https://use.typekit.net/jru4jkm.js"></script>
-    <script>
-    try {
-        Typekit.load({
-            async: true,
-            active: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            },
-            inactive: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            }
-        });
-    } catch(e){}
-    </script>
-
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Visualizing Our Drunken World | Ben Tanen</title>
@@ -71,12 +47,12 @@ MathJax.Hub.Config({
     	<div id='side'>
     <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
+    <h1 id="title-1">Howdy</h1>
+    <h1 id="title-2">I'm Ben</h1>
 
-    <div id='site-links' class="tk-europa">
+    <div id='site-links'>
         <p><a href='/'>Home</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/'  target="_new">Resume</a></p>
+        <p><a href='/about/'  target="_new">About</a></p>
         <p><a href='/projects/all/' >Projects</a></p>
     </div>
 

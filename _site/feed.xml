@@ -7,6 +7,291 @@
             
                 
                 <item>
+                    <title>Do You Know How Much Your Food Delivery Costs?</title>
+                    <description>&lt;div id=&quot;fooddelivery-viz&quot;&gt;
+    &lt;svg id=&quot;fooddelivery-svg&quot;&gt;&lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    #fooddelivery-viz {
+        width: 100%;
+        height: 310px;
+    }
+
+    #fooddelivery-svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    rect.bar.food_cost {
+        fill: #a9a9a9;
+    }
+
+    rect.bar.addl_cost {
+        fill: orange;
+    }
+
+    rect.drag-target {
+        cursor: col-resize;
+        fill: rgba(255, 0, 0, 0);
+    }
+
+    text.bar-label {
+        fill: black;
+        text-anchor: end;
+        alignment-baseline: middle;
+    }
+
+    text.bar-cost-label {
+        fill: black;
+        text-anchor: start;
+        alignment-baseline: middle;
+    }
+
+    line.x-axis-gridline {
+        stroke: #c9c9c9;
+        stroke-dasharray: 5 5;
+    }
+
+    line.x-axis-gridline#baseline {
+        stroke: black;
+        stroke-dasharray: 0;
+    }
+
+    g#show-me-btn {
+        cursor: pointer;
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+/**********************/
+/*** INIT VARIABLES ***/
+/**********************/
+
+let margin = {top: 30, right: 60, bottom: 0, left: 120, bar: 5, label: 8},
+    width  = $(&quot;#fooddelivery-viz&quot;).width() - margin.left - margin.right,
+    height = $(&quot;#fooddelivery-viz&quot;).height() - margin.top - margin.bottom;
+
+const bar_height = 40,
+      target_width = 20;
+
+const axis_ticks = [0, 5, 10, 15, 20, 25, 30];
+
+let revealed = false;
+
+// create svg
+let svg = d3.select(&quot;#fooddelivery-svg&quot;);
+
+// create scales
+let x = d3.scaleLinear().domain([0, 30]).range([0, width]);
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
+// take string to produce clean id
+function clean_id(str) {
+    return str.replace(&quot; &quot;, &quot;-&quot;).toLowerCase();
+}
+
+// draw grid + axis
+function draw_grid() {
+    svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;x-axis&quot;)
+        .attr(&quot;transform&quot;, `translate(${margin.left}, ${margin.top})`)
+        .call(d3.axisTop(x)
+            .tickValues(axis_ticks)
+            .tickFormat(d3.format(&quot;$.0f&quot;)));
+
+    svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;x-axis-grid&quot;)
+        .selectAll(&quot;line.x-axis-gridline&quot;)
+        .data(axis_ticks).enter()
+        .append(&quot;line&quot;)
+        .classed(&quot;x-axis-gridline&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d == 0 ? &quot;baseline&quot; : &quot;grid&quot;)
+        .attr(&quot;x1&quot;, d =&gt; margin.left + x(d) + 0.5)
+        .attr(&quot;x2&quot;, d =&gt; margin.left + x(d) + 0.5)
+        .attr(&quot;y1&quot;, margin.top)
+        .attr(&quot;y2&quot;, margin.top + height);
+}
+
+// draw bars
+function draw_bars() {
+    let bars = svg.selectAll(&quot;g.bar&quot;)
+        .data(data).enter()
+        .append(&quot;g&quot;)
+        .classed(&quot;bar&quot;, true);
+
+    bars.append(&quot;rect&quot;)
+        .classed(&quot;bar&quot;, true)
+        .classed(&quot;food_cost&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; &quot;bar-&quot; + clean_id(d.id))
+        .attr(&quot;x&quot;, margin.left)
+        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar)
+        .attr(&quot;width&quot;, d =&gt; x(d.food_cost))
+        .attr(&quot;height&quot;, bar_height);
+
+    bars.append(&quot;rect&quot;)
+        .classed(&quot;bar&quot;, true)
+        .classed(&quot;addl_cost&quot;, true)
+        .classed(&quot;draggable&quot;, d =&gt; d.draggable)
+        .attr(&quot;id&quot;, d =&gt; &quot;bar-&quot; + clean_id(d.id))
+        .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost))
+        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar)
+        .attr(&quot;width&quot;, d =&gt; x(d.addl_cost))
+        .attr(&quot;height&quot;, bar_height);
+
+    bars.append(&quot;text&quot;)
+        .classed(&quot;bar-label&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; &quot;label-&quot; + clean_id(d.id))
+        .attr(&quot;x&quot;, d =&gt; margin.left - margin.label)
+        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar + bar_height * 0.5)
+        .text(d =&gt; d.id);
+
+    bars.append(&quot;text&quot;)
+        .classed(&quot;bar-cost-label&quot;, true)
+        .classed(&quot;draggable&quot;, d =&gt; d.draggable)
+        .attr(&quot;id&quot;, d =&gt; &quot;cost-label-&quot; + clean_id(d.id))
+        .attr(&quot;x&quot;, d =&gt; margin.left + margin.label + x(d.food_cost + d.addl_cost))
+        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar + bar_height * 0.5)
+        .text(d =&gt; d3.format(&quot;$.2f&quot;)(d.food_cost + d.addl_cost));
+
+    if (!revealed) {
+        svg.selectAll(&quot;g.bar&quot;)
+            .filter(d =&gt; d.draggable)
+            .append(&quot;rect&quot;)
+            .classed(&quot;drag-target&quot;, true)
+            .attr(&quot;id&quot;, d =&gt; &quot;drag-target-&quot; + d.id)
+            .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost + d.addl_cost) - target_width / 2)
+            .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar)
+            .attr(&quot;width&quot;, target_width)
+            .attr(&quot;height&quot;, bar_height)
+            .call(d3.drag()
+                .on(&quot;drag&quot;, (event, d) =&gt; (d.addl_cost = x.invert(event.x - margin.left) - d.food_cost))
+                .on(&quot;drag.update&quot;, update_drag));
+    }
+}
+
+function draw_show_btn() {
+    let sect = svg.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;show-me-sect&quot;);
+
+    sect.append(&quot;rect&quot;)
+        .attr(&quot;id&quot;, &quot;show-me-cover&quot;)
+        .attr(&quot;x&quot;, 0)
+        .attr(&quot;y&quot;, margin.top + bar_height + 2 * margin.bar)
+        .attr(&quot;width&quot;, width + margin.left + margin.right)
+        .attr(&quot;height&quot;, height)
+        .style(&quot;fill&quot;, &quot;rgba(255, 255, 255, 1)&quot;);
+
+    let btn = sect.append(&quot;g&quot;)
+        .attr(&quot;id&quot;, &quot;show-me-btn&quot;)
+        .on(&quot;click&quot;, reveal_bars);
+
+    btn.append(&quot;rect&quot;)
+        .attr(&quot;x&quot;, margin.left + width / 2 - 75)
+        .attr(&quot;y&quot;, margin.top + 1.25 * bar_height + margin.bar)
+        .attr(&quot;width&quot;, 150)
+        .attr(&quot;height&quot;, 35)
+        .attr(&quot;rx&quot;, 15)
+        .style(&quot;fill&quot;, &quot;#77bdee&quot;);
+
+    btn.append(&quot;text&quot;)
+        .attr(&quot;x&quot;, margin.left + width / 2)
+        .attr(&quot;y&quot;, margin.top + 1.25 * bar_height + margin.bar + 17.5)
+        .text(&quot;Show me how I did&quot;)
+        .style(&quot;fill&quot;, &quot;white&quot;)
+        .style(&quot;text-anchor&quot;, &quot;middle&quot;)
+        .style(&quot;alignment-baseline&quot;, &quot;middle&quot;);
+}
+
+// reveal bars
+function reveal_bars() {
+    revealed = true;
+
+    svg.select(&quot;rect.drag-target&quot;).remove();
+
+    svg.select(&quot;#show-me-cover&quot;)
+        .transition()
+        .duration(500)
+        .attr(&quot;y&quot;, height)
+        .delay(200)
+        .remove();
+
+    svg.select(&quot;#show-me-btn&quot;)
+        .transition()
+        .duration(100)
+        .style(&quot;opacity&quot;, 0)
+        .delay(200)
+        .remove();
+}
+
+// update bar position
+function update_drag() {
+    svg.selectAll(&quot;rect.bar.draggable&quot;)
+        .attr(&quot;width&quot;, d =&gt; x(Math.min(19.3, Math.max(0, d.addl_cost))));
+
+    svg.selectAll(&quot;text.bar-cost-label.draggable&quot;)
+        .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost + Math.min(19.3, Math.max(0, d.addl_cost))) + margin.label)
+        .text(d =&gt; d3.format(&quot;$.2f&quot;)(d.food_cost + Math.min(19.3, Math.max(0, d.addl_cost))))
+
+    svg.selectAll(&quot;rect.drag-target&quot;)
+        .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost + Math.min(19.3, Math.max(0, d.addl_cost))) - target_width / 2);
+}
+
+// resize chart on page size change
+function resize() {
+
+    // reset width
+    width = $(&quot;#fooddelivery-viz&quot;).width() - margin.left - margin.right;
+    x.range([0, width]);
+
+    // remove existing elements
+    svg.selectAll(&quot;#x-axis, #x-axis-grid, g.bar, g#show-me-sect&quot;).remove();
+
+    // redraw
+    draw_grid();
+    draw_bars(revealed);
+    if (!revealed) draw_show_btn();
+}
+
+/*********************************/
+/*** PARSE DATA AND INIT PLOTS ***/
+/*********************************/
+
+let data = [{id: &quot;Your guess&quot;, food_cost: 10.70, addl_cost: 0.5, draggable: true},
+            {id: &quot;Chipotle website&quot;, food_cost: 10.70, addl_cost: 0.87},
+            {id: &quot;DoorDash&quot;, food_cost: 12.05, addl_cost: 5.28},
+            {id: &quot;Uber Eats&quot;, food_cost: 12.40, addl_cost: 9.31},
+            {id: &quot;GrubHub&quot;, food_cost: 12.40, addl_cost: 10.87},
+            {id: &quot;Postmates&quot;, food_cost: 12.65, addl_cost: 13.16}];
+
+data.sort(function(x, y){
+   return d3.ascending(x.food_cost + x.addl_cost, y.food_cost + y.addl_cost);
+});
+
+draw_grid();
+draw_bars(true);
+draw_show_btn();
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+$(window).resize(resize);
+
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2020-12-05T03:05:41-07:00</pubDate>
+                    <link>http://localhost:4000/projects/2020/12/05/food-delivery-costs.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2020/12/05/food-delivery-costs.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>How Has Redistricting Changed Since 2011</title>
                     <description>&lt;p&gt;There were a huge number of issues on the ballot in 2020: control of the U.S. Senate and House, &lt;a href=&quot;https://www.cnn.com/2020/11/04/politics/marijuana-legalization-2020-states/index.html&quot;&gt;legalization/decriminalization of marijuana&lt;/a&gt; and &lt;a href=&quot;https://www.cnn.com/2020/11/09/politics/oregon-decriminalize-drugs-trnd/index.html&quot;&gt;other drugs&lt;/a&gt;, potential restrictions on &lt;a href=&quot;https://www.wwltv.com/article/news/politics/elections/what-amendment-1-no-right-to-abortion-means-for-louisiana/289-9ecde885-a475-45eb-af23-20649034fd7d&quot;&gt;abortion&lt;/a&gt; and &lt;a href=&quot;https://thehill.com/opinion/technology/525114-prop-22-just-passed-in-california-now-what&quot;&gt;the gig economy&lt;/a&gt;, and, of course, the Presidency (i.e., &lt;a href=&quot;https://twitter.com/drbiden/status/1321192200584220674&quot;&gt;decency&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/DrBiden/status/1321836527123599362&quot;&gt;kindness&lt;/a&gt; among other things, according to the Biden campaign). Perhaps one of the most important things, even though it wasn’t always covered with much significance, was control for the redistricting process that is set to start following the 2020 Census. The 2020 Election was the last chance for voters across the United States to change the redistricting process in their state by altering the political control of their state’s legislature or by passing relevant ballot initiatives. With the redistricting processes and political power dynamics now mostly set, it is worth checking in on this crucial but often underreported process by comparing it to the redistricting dynamics in 2011.&lt;/p&gt;
 
@@ -291,7 +576,7 @@ An example of what 'open for surprise' might reveal
 
 &lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
 
-&lt;h2 id=&quot;georgia-covid&quot;&gt;Georgia’s COVID-19 Dashboard Trickery [July 2020]&lt;/h2&gt;
+&lt;h2 id=&quot;georgia-covid&quot;&gt;Fixing Georgia’s COVID-19 Dashboard Trickery [July 2020]&lt;/h2&gt;
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;&lt;p&gt;After &lt;a href=&quot;https://twitter.com/andishehnouraee/status/1284237474831761408&quot;&gt;someone pointed out&lt;/a&gt; some misleading data visualization practices on &lt;a href=&quot;https://dph.georgia.gov/covid-19-daily-status-report&quot;&gt;Georgia's COVID-19 dashboard&lt;/a&gt;, I made a quick comparison of what their dashboard should have showed vs. what it was showing. Georgia was showing the number of COVID-19 cases/tests/deaths by county and color-coding each county from blue to red as the numbers increased. However, they were not keeping these categories consistent, so even if a county got substantially worse over time, the map would not show that change.&lt;/p&gt;&lt;p&gt;Since making the post, Georgia has improved their dashboard's visuals to show their numbers on a continuous gradient with a consistent scale and the ability to compare across time. But this issue was only one of many with this site. Check out &lt;a href=&quot;https://www.atlantamagazine.com/great-reads/behind-georgias-covid-19-dashboard-disaster/&quot;&gt;the Atlanta Magazine article&lt;/a&gt; on the mess that is/was GA's COVID dashboard.&lt;/p&gt;&lt;/div&gt;

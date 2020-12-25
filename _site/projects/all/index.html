@@ -24,32 +24,8 @@
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
-    <!-- adobe typekit -->
-    <script src="https://use.typekit.net/jru4jkm.js"></script>
-    <script>
-    try {
-        Typekit.load({
-            async: true,
-            active: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            },
-            inactive: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            }
-        });
-    } catch(e){}
-    </script>
-
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Projects | Ben Tanen</title>
@@ -71,12 +47,12 @@ MathJax.Hub.Config({
     	<div id='side'>
     <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
+    <h1 id="title-1">Howdy</h1>
+    <h1 id="title-2">I'm Ben</h1>
 
-    <div id='site-links' class="tk-europa">
+    <div id='site-links'>
         <p><a href='/'>Home</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/'  target="_new">Resume</a></p>
+        <p><a href='/about/'  target="_new">About</a></p>
         <p><a href='/projects/all/' class="selected-link">Projects</a></p>
     </div>
 
@@ -153,6 +129,12 @@ MathJax.Hub.Config({
 
 <ul id='index-list'>
 
+    <li>
+        <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/blank.png");'>
+        </div>
+        <p class='index-date'>Dec 05 2020</p>
+        <p class='index-title'><a href='/projects/2020/12/05/food-delivery-costs.html'>Do You Know How Much Your Food Delivery Costs?</a></p>
+    </li>
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/redistricting-sankey.png");'>
@@ -161,16 +143,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2020/11/13/redistricting-changes-for-2020.html'>How Has Redistricting Changed Since 2011</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/election-funnel2.png");'>
         </div>
         <p class='index-date'>Nov 03 2020</p>
         <p class='index-title'><a href='/projects/2020/11/03/election-night-funnel.html'>Where Is Election Night 2020 Heading?</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/seam-carving-pt2.jpg");'>
@@ -179,16 +157,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2020/10/08/seam-carving-pt2.html'>Improving Twitter's Image Previews</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/seam-carving-pt1.jpg");'>
         </div>
         <p class='index-date'>Oct 08 2020</p>
         <p class='index-title'><a href='/projects/2020/10/08/seam-carving-pt1.html'>Intro to the Seam Carving Algorithm</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/twitter-posts1.png");'>
@@ -197,16 +171,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2020/09/12/recent-tweets.html'>Fixing Bad COVID-19 Maps, Mapping Musical Genres, and Other Twitter Projects</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/projects/generative-sketchbook/assets/img/thumbnails/circle-follow.png");'>
         </div>
         <p class='index-date'>Jul 06 2020</p>
         <p class='index-title'><a href='/projects/2020/07/06/generative-sketchbook.html'>Data Artwork and Creative Coding</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/spotify-clustering.png");'>
@@ -215,16 +185,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/notebooks/kmeans-music.html'>K-Means Music: Generating Clustered Playlists on Spotify</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/dem2020-delegate-map.png");'>
         </div>
         <p class='index-date'>Mar 24 2020</p>
         <p class='index-title'><a href='/projects/2020/03/24/dem2020-delegate-map.html'>Plotting the 3,979 Delegates of the 2020 Democratic Primary</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/oscars-best-picture.png");'>
@@ -233,16 +199,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2020/02/10/oscars-best-picture.html'>The Best Films That Don't Win Best Picture</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/ff-ibm-watson.png");'>
         </div>
         <p class='index-date'>Jan 08 2020</p>
         <p class='index-title'><a href='/projects/2020/01/08/ibm-watson-ff.html'>Is IBM Watson Good At Fantasy Football?</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/disney-monopoly.jpg");'>
@@ -251,16 +213,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2020/01/02/decade-of-disney.html'>The Decade of Disney</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/ff-retro-2019.png");'>
         </div>
         <p class='index-date'>Dec 31 2019</p>
         <p class='index-title'><a href='/projects/2019/12/31/2019-ff-retrospective.html'>How A Subpar Football Fan Succeeds in Fantasy Football</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/running-viz.png");'>
@@ -269,16 +227,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2019/11/22/running-visualized.html'>A Tale of Two Half Marathons</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/sad-bill.png");'>
         </div>
         <p class='index-date'>Oct 26 2019</p>
         <p class='index-title'><a href='/projects/how-bills-die/'>How A Bill Does Not Become A Law</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/electoral-college-viz.png");'>
@@ -287,16 +241,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2019/06/26/trump-electoral-college-visualized.html'>Visualizing Trump's Narrow Path to Victory</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/most-font.png");'>
         </div>
         <p class='index-date'>Jun 22 2019</p>
         <p class='index-title'><a href='/projects/2019/06/22/most-font.html'>Finding the Most Average Font</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/processing-ex3.gif");'>
@@ -305,16 +255,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2019/06/22/processing-fun.html'>Random Fun with Processing</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/oscars-popular.png");'>
         </div>
         <p class='index-date'>Aug 23 2018</p>
         <p class='index-title'><a href='/projects/2018/08/23/oscar-popular-film.html'>Popular Movies vs. Great Films at the Oscars</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/gen-art.png");'>
@@ -323,16 +269,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2018/04/22/generative-art.html'>A First Attempt At Generative Art</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/obama-trump-guns.png");'>
         </div>
         <p class='index-date'>Mar 02 2018</p>
         <p class='index-title'><a href='/projects/2018/03/02/comparing-obama-trump-on-guns.html'>How Obama and Trump Responded to School Shootings</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/fantasy-olympics-retro1.png");'>
@@ -341,16 +283,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2018/02/27/fantasy-olympics-retrospective.html'>A Retrospective on the 2018 Fantasy Olympics</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/fantasy-olympics.png");'>
         </div>
         <p class='index-date'>Feb 05 2018</p>
         <p class='index-title'><a href='/projects/2018/02/05/fantasy-olympics.html'>Gamifying the 2018 Olympic Games</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/sports-dynasties.gif");'>
@@ -359,16 +297,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2018/01/27/sports-dynasties.html'>Visualizing Cities with Sports Dynasties</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/fav2017.png");'>
         </div>
         <p class='index-date'>Jan 06 2018</p>
         <p class='index-title'><a href='/projects/2018/01/06/favorites-of-2017.html'>Favorites from 2017</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/confederate-monuments.png");'>
@@ -377,16 +311,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2017/10/26/confederate-monuments.html'>What Does the Public Think About Confederate Monuments?</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/partisan-nfl.png");'>
         </div>
         <p class='index-date'>Oct 06 2017</p>
         <p class='index-title'><a href='/projects/2017/10/06/partisanship-in-football.html'>Partisanship and the NFL</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/ff-draft.png");'>
@@ -395,16 +325,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2017/09/06/evaluating-fantasy-draft.html'>Should I Become an NFL Scout?</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/london-street-art.jpg");'>
         </div>
         <p class='index-date'>Jul 29 2017</p>
         <p class='index-title'><a href='/projects/2017/07/29/london-street-art.html'>Street Art in London</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/brain.png");'>
@@ -413,16 +339,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2017/06/23/brain-fun.html'>Random Brain Fun with Illustrator</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/huffman.gif");'>
         </div>
         <p class='index-date'>Jun 01 2017</p>
         <p class='index-title'><a href='/projects/2017/06/01/huffman-coding.html'>Explaining Adaptive Huffman Coding with Scrollytelling</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/signal-and-noise-paper.png");'>
@@ -431,16 +353,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2017/05/10/signal-and-noise-paper.html'>Decipering the Signal and the Noise</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/chaos-game.gif");'>
         </div>
         <p class='index-date'>Apr 28 2017</p>
         <p class='index-title'><a href='/projects/2017/04/28/chaos-game.html'>The Chaos Game</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/asl-lex.png");'>
@@ -449,16 +367,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2017/03/15/ASL-LEX.html'>ASL-LEX: A Visualization of American Sign Language</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/tv-monitor.gif");'>
         </div>
         <p class='index-date'>Jan 24 2017</p>
         <p class='index-title'><a href='/projects/2017/01/24/tv-monitor.html'>How I Keep Track of All My Shows</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/d3-polar.gif");'>
@@ -467,16 +381,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2017/01/08/polar-line-charts.html'>Polar Line Charts in D3</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/ultimate-ch.gif");'>
         </div>
         <p class='index-date'>Jan 02 2017</p>
         <p class='index-title'><a href='/projects/2017/01/02/ultimate-convex-hull.html'>Understanding the Kirkpatrick-Seidel Algorithm</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/drunken-world2.png");'>
@@ -485,16 +395,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2016/12/21/drunken-world.html'>Visualizing Our Drunken World</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/tufts-map.jpg");'>
         </div>
         <p class='index-date'>Nov 18 2016</p>
         <p class='index-title'><a href='/projects/2016/11/18/mapping-tufts-schedules.html'>Mapping My Life at Tufts</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/SPABB.jpg");'>
@@ -503,16 +409,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2016/11/10/stpaul-broken-bones.html'>Meet St. Paul and the Broken Bones</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/nhl-projections.gif");'>
         </div>
         <p class='index-date'>Oct 11 2016</p>
         <p class='index-title'><a href='/projects/2016/10/11/introducing-nhl-projections.html'>Introducing 2016-17 NHL Projections</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/random-d3.gif");'>
@@ -521,16 +423,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2016/09/28/random-d3-fun.html'>Random D3 Fun</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/spotify-popularity.png");'>
         </div>
         <p class='index-date'>Aug 26 2016</p>
         <p class='index-title'><a href='/projects/2016/08/26/spotify-popularity.html'>Am I Becoming More or Less Hipster?</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/usa-rio-2016.png");'>
@@ -539,16 +437,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2016/08/22/rio-2016-usa-vs-world.html'>United States vs. the World in Rio 2016</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/blank.png");'>
         </div>
         <p class='index-date'>Aug 15 2016</p>
         <p class='index-title'><a href='/projects/2016/08/15/miller-rabin.html'>Miller-Rabin Primality Test</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/stanley-cup-2016.png");'>
@@ -557,16 +451,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2016/05/15/pca-kmeans-nhl.html'>PCA and K-Means on NHL Stats</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/netflix-history.png");'>
         </div>
         <p class='index-date'>May 08 2016</p>
         <p class='index-title'><a href='/projects/2016/05/08/netflix-history.html'>Visualizing My (Unhealthy) Netflix History</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/svm-poems.png");'>
@@ -575,16 +465,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2016/05/03/svm-poetry.html'>Support Vector Machines and Poetry</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/light-painting.png");'>
         </div>
         <p class='index-date'>Apr 26 2016</p>
         <p class='index-title'><a href='/projects/2016/04/26/photography.html'>Lots of Light Painting</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/kmeans-cluster.gif");'>
@@ -593,16 +479,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2016/03/09/clustering-with-kmeans.html'>Clustering Using K-Means</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/portfolio-bullet.png");'>
         </div>
         <p class='index-date'>Dec 12 2015</p>
         <p class='index-title'><a href='/projects/2015/12/12/optimizing-hedge-ratio.html'>Minimizing Risk For An Optimal Portfolio</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/drum-tab-visualizer.gif");'>
@@ -611,16 +493,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2015/11/10/drum-tab-visualizer.html'>Building a "Rock Band" Visualizer for Drum Tab</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/jumbo-advisor.png");'>
         </div>
         <p class='index-date'>Oct 30 2015</p>
         <p class='index-title'><a href='/projects/2015/10/30/jumboadvisor.html'>Tufts Polyhack 2015: JumboAdvisor</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/lastfm-history.png");'>
@@ -629,16 +507,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2015/09/01/lastfm-scrobble-graphs.html'>Visualizing My Spotify History</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/data-is-beautiful.png");'>
         </div>
         <p class='index-date'>Aug 16 2015</p>
         <p class='index-title'><a href='/projects/2015/08/16/data-is-beautiful-1.html'>Best Of "Data is Beautiful" #1</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/censor-machine.png");'>
@@ -647,16 +521,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2015/07/06/censor-machine.html'>Random Project: Censor Machine</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/python-minesweeper.png");'>
         </div>
         <p class='index-date'>Jul 01 2015</p>
         <p class='index-title'><a href='/projects/2015/07/01/retro-python-games.html'>Old Python Games / Projects</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/gametheory-slaps.png");'>
@@ -665,16 +535,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2015/06/26/retro-game-theory.html'>Retro Post: Game Theory, The Game</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/ios-updates.gif");'>
         </div>
         <p class='index-date'>Jun 17 2015</p>
         <p class='index-title'><a href='/projects/2015/06/17/retro-ios-update.html'>Retro Post: iOS Upgrades (Circa 2013)</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/try-spotify.png");'>
@@ -683,16 +549,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2015/05/21/spotify.html'>Why Everyone Should Use (Or At Least Try) Spotify</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/rodrego.png");'>
         </div>
         <p class='index-date'>Mar 31 2015</p>
         <p class='index-title'><a href='/projects/2015/03/31/rodrego.html'>RodRego: The Simple Register Machine Simulator</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/blank.png");'>
@@ -701,16 +563,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2014/11/30/grub.html'>Grub: The Command-line GrubHub</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/blank.png");'>
         </div>
         <p class='index-date'>Nov 12 2014</p>
         <p class='index-title'><a href='/projects/2014/11/12/base64.html'>Random Project: Base64 Decoder</a></p>
     </li>
-
-
 
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/infographic.png");'>
@@ -719,15 +577,12 @@ MathJax.Hub.Config({
         <p class='index-title'><a href='/projects/2014/11/01/infographics.html'>Up-to-Date Infographics</a></p>
     </li>
 
-
-
     <li>
         <div class='index-thumbnail' style='background-image: url("/assets/img/post-thumbnails/rap-vocab.png");'>
         </div>
         <p class='index-date'>Oct 31 2014</p>
         <p class='index-title'><a href='/projects/2014/10/31/rap-data-design.html'>Rap, Data, and Design</a></p>
     </li>
-
 
 </ul>
 

@@ -24,32 +24,8 @@
     <script type="text/javascript" src="/assets/js/main.js"></script>
     <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
 
-    <!-- adobe typekit -->
-    <script src="https://use.typekit.net/jru4jkm.js"></script>
-    <script>
-    try {
-        Typekit.load({
-            async: true,
-            active: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            },
-            inactive: function() {
-                $('#side h1').css('opacity', 1);
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(1)').css('opacity', 1);
-                }, 300); 
-                setTimeout(function() { $('#landing-header h1 span:nth-of-type(2)').css('opacity', 1);
-                }, 900);
-            }
-        });
-    } catch(e){}
-    </script>
-
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
 
     <title>Fixing Bad COVID-19 Maps, Mapping Musical Genres, and Other Twitter Projects | Ben Tanen</title>
@@ -71,12 +47,12 @@ MathJax.Hub.Config({
     	<div id='side'>
     <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
     
-    <h1 id="title-1" class="tk-europa">Howdy</h1>
-    <h1 id="title-2" class="tk-europa">I'm Ben</h1>
+    <h1 id="title-1">Howdy</h1>
+    <h1 id="title-2">I'm Ben</h1>
 
-    <div id='site-links' class="tk-europa">
+    <div id='site-links'>
         <p><a href='/'>Home</a></p>
-        <p><a href='http://link.ben-tanen.com/resume/'  target="_new">Resume</a></p>
+        <p><a href='/about/'  target="_new">About</a></p>
         <p><a href='/projects/all/' >Projects</a></p>
     </div>
 
@@ -156,7 +132,7 @@ MathJax.Hub.Config({
 
 <p class="section-break">* * *</p>
 
-<h2 id="georgia-covid">Georgia’s COVID-19 Dashboard Trickery [July 2020]</h2>
+<h2 id="georgia-covid">Fixing Georgia’s COVID-19 Dashboard Trickery [July 2020]</h2>
 
 <div class="columns two">
     <div class="column"><p>After <a href="https://twitter.com/andishehnouraee/status/1284237474831761408">someone pointed out</a> some misleading data visualization practices on <a href="https://dph.georgia.gov/covid-19-daily-status-report">Georgia's COVID-19 dashboard</a>, I made a quick comparison of what their dashboard should have showed vs. what it was showing. Georgia was showing the number of COVID-19 cases/tests/deaths by county and color-coding each county from blue to red as the numbers increased. However, they were not keeping these categories consistent, so even if a county got substantially worse over time, the map would not show that change.</p><p>Since making the post, Georgia has improved their dashboard's visuals to show their numbers on a continuous gradient with a consistent scale and the ability to compare across time. But this issue was only one of many with this site. Check out <a href="https://www.atlantamagazine.com/great-reads/behind-georgias-covid-19-dashboard-disaster/">the Atlanta Magazine article</a> on the mess that is/was GA's COVID dashboard.</p></div>
