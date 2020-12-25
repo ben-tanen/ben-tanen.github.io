@@ -6,7 +6,17 @@
 <body>
 
 <div id="main-container">
+    <div id='landing-menu'>
+        <img src="/assets/img/menu.png" alt="A menu for navigating the site" />
+        <div id='site-links'>
+            <p><a class="selected-link">Home</a></p>
+            <p><a href='http://link.ben-tanen.com/resume/' target="_new">Resume</a></p>
+            <p><a href='/projects/all/'>Projects</a></p>
+        </div>
+    </div>
     <div id="viz-container">
+        <svg id="landing-viz">
+        </svg>
     </div>
     <div id="text-container">
         <div id="header-container">
@@ -32,6 +42,8 @@
         {% endfor %}
     </div>
 </div>
+
+<script src="/assets/js/landing.js"></script>
 
 </body>
 </html>

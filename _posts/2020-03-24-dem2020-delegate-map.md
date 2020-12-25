@@ -4,8 +4,8 @@ title:  "Plotting the 3,979 Delegates of the 2020 Democratic Primary"
 date:   2020-03-24 10:05:41
 thumbnail: /assets/img/post-thumbnails/dem2020-delegate-map.png
 landing-proj:  true
-landing-order: 4
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-order: 3
+landing-img:   /assets/img/proj-thumbnails/dem2020-delegate-map.png
 landing-large: false
 ---
 

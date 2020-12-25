@@ -5,7 +5,7 @@ date:   2020-11-03 10:05:41
 thumbnail: /assets/img/post-thumbnails/election-funnel2.png
 landing-proj:  true
 landing-order: 2
-landing-img:   /assets/img/post-thumbnails/election-funnel.png
+landing-img:   /assets/img/proj-thumbnails/election-night-funnel.png
 landing-large: false
 ---
 

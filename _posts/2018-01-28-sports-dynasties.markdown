@@ -4,8 +4,8 @@ title: 'Visualizing Cities with Sports Dynasties'
 date: 2018-01-28 05:00:00
 thumbnail: /assets/img/post-thumbnails/sports-dynasties.gif
 landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-order: 4
+landing-img:   /assets/img/proj-thumbnails/sports-dynasties.png
 landing-large: false
 ---
 

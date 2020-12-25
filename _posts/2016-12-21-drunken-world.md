@@ -4,8 +4,8 @@ title: 'Visualizing Our Drunken World'
 date: 2016-12-21 15:05:41
 thumbnail: /assets/img/post-thumbnails/drunken-world2.png
 landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-order: 14
+landing-img:   /assets/img/proj-thumbnails/drunken-world.png
 landing-large: false
 ---
 

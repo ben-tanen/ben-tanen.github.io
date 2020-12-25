@@ -4,8 +4,8 @@ title: 'What Does the Public Think About Confederate Monuments?'
 date: 2017-10-27 05:00:00
 thumbnail: /assets/img/post-thumbnails/confederate-monuments.png
 landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-order: 19
+landing-img:   /assets/img/proj-thumbnails/confederate-monuments.png
 landing-large: false
 ---
 

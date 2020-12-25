@@ -13,7 +13,7 @@ Enjoy!
 
 {% include section-break.html %}
 
-## Georgia's COVID-19 Dashboard Trickery [July 2020] {#georgia-covid}
+## Fixing Georgia's COVID-19 Dashboard Trickery [July 2020] {#georgia-covid}
 
 <div class="columns two">
     <div class="column"><p>After <a href="https://twitter.com/andishehnouraee/status/1284237474831761408">someone pointed out</a> some misleading data visualization practices on <a href="https://dph.georgia.gov/covid-19-daily-status-report">Georgia's COVID-19 dashboard</a>, I made a quick comparison of what their dashboard should have showed vs. what it was showing. Georgia was showing the number of COVID-19 cases/tests/deaths by county and color-coding each county from blue to red as the numbers increased. However, they were not keeping these categories consistent, so even if a county got substantially worse over time, the map would not show that change.</p><p>Since making the post, Georgia has improved their dashboard's visuals to show their numbers on a continuous gradient with a consistent scale and the ability to compare across time. But this issue was only one of many with this site. Check out <a href="https://www.atlantamagazine.com/great-reads/behind-georgias-covid-19-dashboard-disaster/">the Atlanta Magazine article</a> on the mess that is/was GA's COVID dashboard.</p></div>

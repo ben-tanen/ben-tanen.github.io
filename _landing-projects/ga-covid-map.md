@@ -1,6 +1,7 @@
 ---
 title: "Fixing Georgia's COVID-19 Dashboard Trickery"
-landing-order: 3
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+reroute-url: /projects/2020/09/12/recent-tweets.html#georgia-covid
+landing-order: 15
+landing-img:   /assets/img/proj-thumbnails/ga-covid-map.gif
 landing-large: false
 ---

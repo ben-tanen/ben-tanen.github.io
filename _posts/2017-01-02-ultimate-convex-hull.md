@@ -4,8 +4,8 @@ title: 'Understanding the Kirkpatrick-Seidel Algorithm'
 date: 2017-01-02 15:05:41
 thumbnail: /assets/img/post-thumbnails/ultimate-ch.gif
 landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-order: 13
+landing-img:   /assets/img/posts/ultimate_ch.png
 landing-large: false
 ---
 

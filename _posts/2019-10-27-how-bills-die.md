@@ -5,8 +5,8 @@ date: 2019-10-27 05:00:00
 thumbnail: /assets/img/post-thumbnails/sad-bill.png
 reroute-url: /projects/how-bills-die/
 landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-order: 8
+landing-img:   /projects/how-bills-die/img/sad-bill.png
 landing-large: false
 ---
 

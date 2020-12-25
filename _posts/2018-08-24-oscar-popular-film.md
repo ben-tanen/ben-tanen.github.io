@@ -5,8 +5,8 @@ title: "Popular Movies vs. Great Films at the Oscars"
 date: 2018-08-24 05:00:00
 thumbnail: /assets/img/post-thumbnails/oscars-popular.png
 landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
+landing-order: 17
+landing-img:   /assets/img/proj-thumbnails/oscar-popular-film.png
 landing-large: false
 ---
 

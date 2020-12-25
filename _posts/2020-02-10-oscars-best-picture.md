@@ -4,9 +4,9 @@ title:  "The Best Films That Don't Win Best Picture"
 date:   2020-02-10 15:05:41
 thumbnail: /assets/img/post-thumbnails/oscars-best-picture.png
 landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
-landing-large: true
+landing-order: 9
+landing-img:   /assets/img/proj-thumbnails/oscars-best-picture.png
+landing-large: false
 ---
 
 On Sunday, *Parasite* made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that *Parasite* would lose to [1917](https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html), even though [most critics believed](https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/) *Parasite* was the superior movie. All of this was also coming a year after [*Green Book* won](https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture) over (believed to be) superior films like *Roma*, *The Favourite*, and *BlackKlansman*. Needless to say, before *Parasite* actually won, there were low hopes that the Academy would make the best choice.
