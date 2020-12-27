@@ -7,96 +7,89 @@ let margin = {top: 10, right: 10, bottom: 10, left: 10},
     width  = $("#landing-viz").width() - margin.left - margin.right,
     height = $("#landing-viz").height() - margin.top - margin.bottom;
 
+// create empty list for data (to be filled based on viz to use)
+let data = [ ];
+
 // create svg
 let svg = d3.select("#landing-viz");
 
-// create scales
-let x = d3.scaleLinear().domain([0, 100]).range([0, width]),
-    y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
+/**********************************/
+/*** DECLARE VISUALIZATION FXNS ***/
+/**********************************/
 
-/********************************/
-/*** DECLARE HELPER FUNCTIONS ***/
-/********************************/
+let vs = [
+    {
+        init: (options) => {
+            // create list of initial positions (x, y) and connections (n) for nodes
+            data = Array.apply(null, Array(options.n_nodes)).map(d => {
+                return {x1: Math.min(Math.max(d3.randomNormal(width / 2, width / 4)(), margin.left), width - margin.right), 
+                        y1: Math.min(Math.max(d3.randomNormal(height / 2, height / 4)(), margin.top), height - margin.bottom),
+                        n: d3.randomInt(options.n_nodes)()
+                };
+            });
+            data = data.map(d => Object.assign(d, {x2: data[d.n].x1, y2: data[d.n].y1}));
 
-// viz 1 - random scrabble graph
-var duration  = 5000;
-var n_nodes   = 15,
-    positions = new Array(n_nodes);
-var randWidth  = d3.randomNormal(width / 2,  width  / 4),
-    randHeight = d3.randomNormal(height / 2, height / 4),
-    randWiggle = d3.randomNormal(0, Math.min(width, height) / 20);
+            // draw graph initially
+            svg.selectAll("circle")
+                .data(data).enter()
+                .append("circle")
+                .classed("node", true)
+                .attr("cx", d => d.x1)
+                .attr("cy", d => d.y1)
+                .attr("r", 3);
 
-function buildGraph() {
-    for (var i = 0; i < n_nodes; i++) {
-        // if there is a node already, find random pair for new node
-        if (i > 0) {
-            var t_i = Math.floor(Math.random() * svg.selectAll('circle').size()),
-                t   = d3.select(svg.selectAll('circle')._groups[0][t_i]);
+            svg.selectAll("line")
+                .data(data).enter()
+                .append("line")
+                .classed("edge", true)
+                .attr("x1", d => d.x1)
+                .attr("y1", d => d.y1)
+                .attr("x2", d => d.x2)
+                .attr("y2", d => d.y2);
+        },
+        update: (options) => {
+            // jiggle each point slightly and then update connections
+            data = data.map(d => Object.assign(d, {
+                x1: Math.min(Math.max(d.x1 + d3.randomNormal(0, width / 20)(), margin.left), width - margin.right),
+                y1: Math.min(Math.max(d.y1 + d3.randomNormal(0, height / 20)(), margin.top), height - margin.bottom)
+            }));
+            data = data.map(d => Object.assign(d, {x2: data[d.n].x1, y2: data[d.n].y1}));
+
+            // transition nodes + edges
+            svg.selectAll(".node")
+                .transition()
+                .ease(d3.easeLinear)
+                .duration(options.duration)
+                .attr("cx", d => d.x1)
+                .attr("cy", d => d.y1);
+
+            svg.selectAll(".edge")
+            .transition()
+                .ease(d3.easeLinear)
+                .duration(options.duration)
+                .attr("x1", d => d.x1)
+                .attr("y1", d => d.y1)
+                .attr("x2", d => d.x2)
+                .attr("y2", d => d.y2);
+        },
+        options: {
+            n_nodes: 15,
+            duration: 5000
         }
-
-        // add node at random position
-        var s = svg.append('circle')
-            .attr('class', 'node')
-            .attr('id', i)
-            .attr('r', 3)
-            .attr('cx', Math.min(Math.max(randWidth(),  margin.left), width - margin.right))
-            .attr('cy', Math.min(Math.max(randHeight(), margin.top), height - margin.bottom));
-
-        // connect source to target
-        if (t) {
-            svg.append('line')
-                .attr('class', 'edge')
-                .attr("x1", +s.attr("cx"))
-                .attr("y1", +s.attr("cy"))
-                .attr("x2", +t.attr("cx"))
-                .attr("y2", +t.attr("cy"))
-                .attr("s", i)
-                .attr("t", t_i);
-        }
-
-        // keep log of positions
-        positions[i] = [+s.attr("cx"), +s.attr("cy")];
     }
-
-    scrambleGraph()
-}
-
-function scrambleGraph() {
-    // for each node: move to new x + y position, based on randWiggle()
-    for (var i = 0; i < n_nodes; i++) {
-        var n = d3.select(svg.selectAll('circle')._groups[0][i]);
-
-        var x = Math.min(Math.max(positions[i][0] + randWiggle(), margin.left), width  - margin.right),
-            y = Math.min(Math.max(positions[i][1] + randWiggle(), margin.top), height - margin.bottom);
-
-        positions[i] = [x, y];
-
-        n.transition().ease(d3.easeLinear).duration(duration)
-            .attr('cx', x)
-            .attr('cy', y);
-    }
-
-    // for each edge: update based on positions
-    svg.selectAll('line')
-        .transition().ease(d3.easeLinear).duration(duration)
-        .attr("x1", function() { return +positions[+d3.select(this).attr('s')][0]; })
-        .attr("y1", function() { return +positions[+d3.select(this).attr('s')][1]; })
-        .attr("x2", function() { return +positions[+d3.select(this).attr('t')][0]; })
-        .attr("y2", function() { return +positions[+d3.select(this).attr('t')][1]; });
-}
-
-// resize chart on page size change
-function resize() {
-}
+];
 
 /******************/
 /*** INIT PLOTS ***/
 /******************/
 
-buildGraph();
-scrambleInterval = setInterval(function() {
-    scrambleGraph();
-}, duration);
+let viz = vs[0];
+
+viz.init(viz.options);
+viz.update(viz.options);
+vizInterval = setInterval(function() {
+    viz.update(viz.options);
+}, viz.options.duration);
 
 /*********************************/
 /*** PAGE AND BUTTON LISTENERS ***/
@@ -104,15 +97,15 @@ scrambleInterval = setInterval(function() {
 
 // upon leaving page, clear animation
 $(window).blur(function() {
-    clearInterval(scrambleInterval);
+    clearInterval(vizInterval);
 });
 
 // upon entering page, restart animation
 $(window).focus(function() {
-    scrambleGraph();
-    scrambleInterval = setInterval(function() {
-        scrambleGraph();
-    }, duration);
+    viz.update(viz.options);
+    vizInterval = setInterval(function() {
+        viz.update(viz.options);
+    }, viz.options.duration);
 });
 
 /*****************/
