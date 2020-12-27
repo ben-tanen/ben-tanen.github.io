@@ -115,8 +115,6 @@ $(window).focus(function() {
     }, duration);
 });
 
-// $(window).resize(resize);
-
 /*****************/
 /*** menu code ***/
 /*****************/

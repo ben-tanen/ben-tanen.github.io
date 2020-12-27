@@ -3,23 +3,45 @@ layout: page
 title:  "About"
 ---
 
-
 {% capture about %}
-<p>Hi! I'm Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms, and I aspire to use data to tell interesting stories. I graduated from Tufts University in 2017 and I currently work in data consulting at Analysis Group. In the past, I've worked as a software developer and analyst at a few different software, finance, and consulting companies.</p>
+<p>Hi! I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms. I’m a data analytics/science consultant aspiring to become a data journalist.</p>
 
-<p>I'm always looking for great music to add to <a href="http://link.ben-tanen.com/vinyl/">my collection</a> and I love chatting about filmmaking, law, and politics. On occasion, I make <a href="/projects/generative-sketchbook/">generative art sketches</a> and take <a href="http://link.ben-tanen.com/photo/">pictures</a> with my camera.</p>
+<p>I studied computer science and math at Tufts University (2013 - 2017) and since then I’ve been working in data analytics and data science consulting for the past few years. Through my work, I’ve dealt with projects about patent infringement in cars, foreign exchange trading, television showrunning, and cryptocurrencies but the majority of my work has focused on healthcare economics with a specific focus on the (over)prescribing and distribution of opioids. During the summer of 2020, I also joined <a href="https://www.data2thepeople.org/">Data 2 The People</a>, a data science consulting group helping to elect down ballot candidates in the 2020 Election and beyond.</p>
+
+<p>I currently live in Utah with my girlfriend and our dog. I love to cook and am trying to get my skills up to match my enthusiasm. I’m a huge fan of live music (I’ve been to over 100 shows) and I’m always looking for great new stuff to add to my <a href="https://www.last.fm/user/ben-tanen">digital</a> or <a href="http://link.ben-tanen.com/vinyl/">vinyl collections</a>. I love movies (catch me at Sundance and <a href="https://letterboxd.com/btanen/">on Letterboxd</a>) and am always down to chat about law and politics. When possible (i.e., pre- and post-COVID), I rock climb, ski and snowboard, and play a little pick up hockey. On occasion, I also make <a href="/projects/generative-sketchbook/">generative art sketches</a> and <a href="http://link.ben-tanen.com/photo/">take pictures with my camera</a>.</p>
 
 <p><span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently hidden" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>
 {% endcapture %}
 
-<div class="columns two">
-    <div class="column">{{ about }}</div>
-    <div class="column">
-        {% include figure.html src="/assets/img/me/face-g.JPG" alt="A picture of me with my dog, Penny" %}
-    </div>
+<div id="face-container">
+    <img src="/assets/img/me/face-g.JPG" alt="A picture of me with my dog, Penny, while riding a bike (Penny is in a basket)" />
+    <img src="/assets/img/me/face-i.JPG" alt="A picture of me with my girlfriend while we sit on a couch looking at each other" />
+    <img src="/assets/img/me/face-h.JPG" alt="A picture of me on a mountain" />
 </div>
 
+{{ about }}
+
+## Resume - [PDF version](http://link.ben-tanen.com/resume/)
+
+#### (Web version is a work in progress)
+
 <style>
+
+.post-header {
+    display: none;
+}
+
+#face-container {
+    width: 95%;
+    margin: auto;
+}
+
+#face-container img {
+    display: inline-block;
+    width: 31.5%;
+    padding-right: 1%;
+}
+
 #currently-text {
     opacity: 0;
     -webkit-transition: opacity 0.75s ease;
@@ -70,7 +92,3 @@ $(document).ready(function() {
     });
 });
 </script>
-
-## Resume - [PDF version](http://link.ben-tanen.com/resume/)
-
-#### (Work in progress)
