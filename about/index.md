@@ -34,6 +34,7 @@ title:  "About"
 #face-container {
     width: 95%;
     margin: auto;
+    margin-bottom: 8px;
 }
 
 #face-container img {
