@@ -11,6 +11,8 @@ landing-large: false
 
 On Sunday, *Parasite* made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that *Parasite* would lose to [1917](https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html), even though [most critics believed](https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/) *Parasite* was the superior movie. All of this was also coming a year after [*Green Book* won](https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture) over (believed to be) superior films like *Roma*, *The Favourite*, and *BlackKlansman*. Needless to say, before *Parasite* actually won, there were low hopes that the Academy would make the best choice.
 
+{% include figure.html autolink="yes" src="/assets/img/posts/oscars-best-picture-2019-new.jpg" alt="A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee" %}
+
 <div class='columns two'>
     <div class='column'>
         <p>Beyond the discussion of which Best Picture nominee was most deserving of the prize, many have pointed out that the Academy’s shortlist of films did not even include some of the best films of the year. Films like <i>Uncut Gems</i>, <i>The Farewell</i>, and <i>Dolemite Is My Name</i> were all <a href="https://ew.com/oscars/2020/01/13/oscar-nominations-2020-snubs-surprises/">notoriously snubbed this year</a>, though this has become somewhat of the norm at the Oscars.</p>
@@ -20,8 +22,6 @@ On Sunday, *Parasite* made history as the first foreign language film to win the
         <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Academy frequently ignores some of the best films when they nominate and award films for Best Picture. Tonight they have the chance to get it right by picking one of the best films of the year. Let’s see what happens…<br><br>More in-depth analysis coming soon.<br><br><a href="https://twitter.com/hashtag/Oscars?src=hash&amp;ref_src=twsrc%5Etfw">#Oscars</a> <a href="https://twitter.com/hashtag/Oscars2020?src=hash&amp;ref_src=twsrc%5Etfw">#Oscars2020</a><br><a href="https://t.co/fLGXAcrSTZ">pic.twitter.com/fLGXAcrSTZ</a></p>&mdash; Ben Tanen (@ben_tanen) <a href="https://twitter.com/ben_tanen/status/1226683722277191680?ref_src=twsrc%5Etfw">February 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
-
-{% include figure.html autolink="yes" src="/assets/img/posts/oscars-best-picture-2019.jpg" alt="A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee" %}
 
 Now that we have the benefit of knowing who won Best Picture, this year’s Best Picture category looked a bit like a mix of 2016 and 2018 - the best film won the big prize but many great films weren’t nominated. Most people can now rest easy knowing a worthy movie won but it's worth remembering all those great movies that did not get the recognition they deserved, this year and in years past. For those curious, see below for a full breakdown of the Best Picture nominees and other (often better) non-nominated films from the past 20 years as well as a few of my top (mildly data-driven, mildly personal) picks. See you all again in 11 months when the rage cycle starts all over again!
 
