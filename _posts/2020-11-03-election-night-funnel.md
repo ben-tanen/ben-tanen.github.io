@@ -19,6 +19,8 @@ As a means of preparing for said ton of bricks again, I decided to make a visual
 
 Let's see how this all goes! It is very unlikely that we'll know much on Election Day, but again, who knows. I'll try and keep this updated throughout the whole process and we can prepare for an incoming ton of bricks together. I'm also planning on tweeting any significant updates so keep an eye out for stuff [over there](https://twitter.com/ben_tanen/). Though, to be frank, I'm really hoping there are no big updates or surprises... I would really like to say that [I have learned to trust FiveThirtyEight and polls again.](https://www.mcsweeneys.net/articles/im-back-in-a-relationship-with-fivethirtyeights-elections-forecast-model-but-this-time-i-swear-hes-changed)
 
+*Update: see [this Twitter thread](https://twitter.com/ben_tanen/status/1323788861340700672) for my live analysis as the Election unfolded.*
+
 {% include section-break.html %}
 
 <div id="elfun2020-container">
