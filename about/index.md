@@ -31,6 +31,11 @@ title:  "About"
     display: none;
 }
 
+.main p {
+    text-align: left;
+    line-height: 1.5;
+}
+
 #face-container {
     width: 95%;
     margin: auto;
