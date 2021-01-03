@@ -6,6 +6,7 @@ categories: data project sports olympics visualization
 landing-description: making a fantasy sports game for the 2018 Winter Olympics
 thumbnail: /assets/img/post-thumbnails/fantasy-olympics.png
 excerpt_separator: <!-- more -->
+new-post-style: true
 ---
 
 I love the Olympics and the upcoming 2018 Games have me fired up. Following my first season in [a fantasy football league this year]({% post_url 2017-09-06-evaluating-fantasy-draft %}), I thought it would be a fun idea to try and make my own fantasy game for the Olympics. So with only a limited amount of knowledge of what makes a good fantasy game, I got to work on my own Fantasy Olympics.
@@ -20,13 +21,12 @@ The next logical question: how many points are awarded per medal? The quickest a
 
 <div class='columns two'>
     <div class='column'>
+        {% include figure.html src="/assets/img/posts/fantasy-olympics-point-dist.png" alt="The non-weighted and weighted point distributions" width=400 %}
+    </div>
+    <div class='column'>
         <p>In order correct for this, I decided to weight the scoring by how many events a particular sport has. Under my weighted scoring scheme, for each medal, a player is awarded $p = 4p_0 \frac{\sqrt[3]{x}}{x}$ points, where $x$ is the number of events in that particular sport and $p_0$ is either 3 for a gold medal, 2 for a silver medal, and 1 for a bronze medal. For example, if you had drafted the U.S. snowboarding team and Shaun White were to (does) win a gold, you would be awarded $4 * 3 * \frac{\sqrt[3]{10}}{10} = 2.6$ points, since there are 10 total snowboarding events. See below for the full medal breakdown by sport.</p>
 
         <p>Using this scoring scheme, we get the point distribution seen <span id="fo-chart-loc-text">on the right</span>. As a result, a team that can compete in 3 events is not hugely disadvantaged in comparison to a team that can compete in 6 events. This should (ideally) move the focus away from the number of events a team can participate in and towards the skill of a particular team.</p>
-    </div>
-
-    <div class='column'>
-        {% include figure.html src="/assets/img/posts/fantasy-olympics-point-dist.png" alt="The non-weighted and weighted point distributions" width=400 %}
     </div>
 </div>
 

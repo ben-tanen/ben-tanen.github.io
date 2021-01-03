@@ -6,6 +6,7 @@ categories: data project sports olympics visualization
 landing-description: making a fantasy sports game for the 2018 Winter Olympics
 thumbnail: /assets/img/post-thumbnails/fantasy-olympics-retro1.png
 excerpt_separator: <!-- more -->
+new-post-style: true
 ---
 
 Sunday marked the official end of the 2018 Olympics Games. Overall, they did not disappoint. There were some great moments and highlights all around. As an objectively not-objective American, I was a bit disappointed with [the United States' overall performance](https://www.theatlantic.com/entertainment/archive/2018/02/america-winter-olympics-worst-2018/554438/) but there were some amazing individual performances (shoutout to [Chloe Kim](https://www.youtube.com/watch?v=3opTwpiCZ6c), [the U.S. Women's Hockey Team](https://www.youtube.com/watch?v=dRmZUNO4Y5s), and [Jamie Anderson](https://www.nytimes.com/interactive/2018/02/12/sports/olympics/jamie-anderson-gold-slopestyle.html)).

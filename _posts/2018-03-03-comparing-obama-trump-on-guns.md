@@ -7,6 +7,7 @@ landing-proj:  true
 landing-order: 18
 landing-img:   /assets/img/proj-thumbnails/comparing-obama-trump-on-guns.png
 landing-large: false
+new-post-style: true
 ---
 
 In response to a suggestion from [Franklin Leonard](https://twitter.com/franklinleonard){:target="_blank"}, the Washington Post recently published [a video](https://www.youtube.com/watch?v=uHrvODeA8-E){:target="_blank"} providing an hour-by-hour comparison of how President Obama and President Trump responded in the wake of school shootings. The video is a very compelling piece for comparing (and contrasting) the differences in these two presidents' approaches.

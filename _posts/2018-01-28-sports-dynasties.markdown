@@ -7,6 +7,7 @@ landing-proj:  true
 landing-order: 4
 landing-img:   /assets/img/proj-thumbnails/sports-dynasties.png
 landing-large: false
+new-post-style: true
 ---
 
 Last year, after the Pittsburgh Penguins won the Stanley Cup for the second year in a row, I was very interested in the idea of existing or emerging sports dynasties. At the time, of the four major (American) sports, the winners of three of the four league champions had also previously won in the prior two years. The Patriots won the Super Bowl in 2015 and 2017, Pittsburgh won the Stanley Cup in 2016 and 2017, and the Warriors <span id="sd-footnote-1" class="footnote">won in</span> 2015 and 2017. This seemed kind of incredible to me and at the time, I was curious if this was a common occurrence and if so, if it manifested itself in any interesting ways. I got started on some visualizations to explore this but never really got anywhere.

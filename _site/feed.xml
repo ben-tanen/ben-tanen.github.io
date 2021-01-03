@@ -3466,12 +3466,6 @@ $(window).resize(function() {
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
-        &lt;p&gt;In order correct for this, I decided to weight the scoring by how many events a particular sport has. Under my weighted scoring scheme, for each medal, a player is awarded $p = 4p_0 \frac{\sqrt[3]{x}}{x}$ points, where $x$ is the number of events in that particular sport and $p_0$ is either 3 for a gold medal, 2 for a silver medal, and 1 for a bronze medal. For example, if you had drafted the U.S. snowboarding team and Shaun White were to (does) win a gold, you would be awarded $4 * 3 * \frac{\sqrt[3]{10}}{10} = 2.6$ points, since there are 10 total snowboarding events. See below for the full medal breakdown by sport.&lt;/p&gt;
-
-        &lt;p&gt;Using this scoring scheme, we get the point distribution seen &lt;span id=&quot;fo-chart-loc-text&quot;&gt;on the right&lt;/span&gt;. As a result, a team that can compete in 3 events is not hugely disadvantaged in comparison to a team that can compete in 6 events. This should (ideally) move the focus away from the number of events a team can participate in and towards the skill of a particular team.&lt;/p&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;column&quot;&gt;
         &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/fantasy-olympics-point-dist.png&quot; alt=&quot;The non-weighted and weighted point distributions&quot; width=&quot;400&quot; /&gt;
@@ -3482,6 +3476,11 @@ $(window).resize(function() {
 
 
 
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;In order correct for this, I decided to weight the scoring by how many events a particular sport has. Under my weighted scoring scheme, for each medal, a player is awarded $p = 4p_0 \frac{\sqrt[3]{x}}{x}$ points, where $x$ is the number of events in that particular sport and $p_0$ is either 3 for a gold medal, 2 for a silver medal, and 1 for a bronze medal. For example, if you had drafted the U.S. snowboarding team and Shaun White were to (does) win a gold, you would be awarded $4 * 3 * \frac{\sqrt[3]{10}}{10} = 2.6$ points, since there are 10 total snowboarding events. See below for the full medal breakdown by sport.&lt;/p&gt;
+
+        &lt;p&gt;Using this scoring scheme, we get the point distribution seen &lt;span id=&quot;fo-chart-loc-text&quot;&gt;on the right&lt;/span&gt;. As a result, a team that can compete in 3 events is not hugely disadvantaged in comparison to a team that can compete in 6 events. This should (ideally) move the focus away from the number of events a team can participate in and towards the skill of a particular team.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 

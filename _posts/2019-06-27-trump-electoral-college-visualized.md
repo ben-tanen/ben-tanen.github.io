@@ -7,6 +7,7 @@ landing-proj:  true
 landing-order: 10
 landing-img:   /assets/img/proj-thumbnails/trump-ec-viz.png
 landing-large: true
+new-post-style: true
 ---
 
 *Okay, I know...the 2016 election happened nearly 1,000 days ago and at this point re-litigating it just feels like beating a dead horse that died from beating another dead horse. But this idea was inspired by 2020 Democratic Debate coverage, and you can't always decide when inspiration strikes.*

@@ -7,6 +7,7 @@ landing-proj:  true
 landing-order: 19
 landing-img:   /assets/img/proj-thumbnails/confederate-monuments.png
 landing-large: false
+new-post-style: true
 ---
 
 I recently came across [an article](http://kut.org/post/uttt-poll-most-texas-voters-say-confederate-memorials-shouldn-t-move-0) from KUT, Austin's NPR station, about Confederate statues with the following news graphic:

@@ -19,13 +19,25 @@ img#face {
     margin: 0;
 }
 
+article p:not(.date-axis-label) {
+    max-width: 600px;
+    margin-left: max((100% - 600px - 40px) / 2, 0px);
+    text-align: left;
+    line-height: 1.5;
+}
+
+p.section-break {
+    text-align: center !important;
+}
+
 #scroll-container {
     position: relative;
-    height: 3900px;
+    height: 4200px;
 }
 
 #scroll-text-container {
     position: absolute;
+    width: 100%;
 }
 
 #scroll-text-container > * {
@@ -33,6 +45,10 @@ img#face {
     background-color: rgba(255, 255, 255, 0.8);
     position: relative;
     z-index: 2;
+}
+
+#scroll-text-container p {
+    padding: 4px 20px;
 }
 
 #scroll-text-container > *:nth-child(n + 14) {
