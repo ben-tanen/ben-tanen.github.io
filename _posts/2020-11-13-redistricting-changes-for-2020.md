@@ -7,6 +7,7 @@ landing-proj:  true
 landing-order: 1
 landing-img:   /assets/img/posts/redistricting-sankey-vert.png
 landing-large: true
+new-post-style: true
 ---
 
 There were a huge number of issues on the ballot in 2020: control of the U.S. Senate and House, [legalization/decriminalization of marijuana](https://www.cnn.com/2020/11/04/politics/marijuana-legalization-2020-states/index.html) and [other drugs](https://www.cnn.com/2020/11/09/politics/oregon-decriminalize-drugs-trnd/index.html), potential restrictions on [abortion](https://www.wwltv.com/article/news/politics/elections/what-amendment-1-no-right-to-abortion-means-for-louisiana/289-9ecde885-a475-45eb-af23-20649034fd7d) and [the gig economy](https://thehill.com/opinion/technology/525114-prop-22-just-passed-in-california-now-what), and, of course, the Presidency (i.e., [decency](https://twitter.com/drbiden/status/1321192200584220674) and [kindness](https://twitter.com/DrBiden/status/1321836527123599362) among other things, according to the Biden campaign). Perhaps one of the most important things, even though it wasn't always covered with much significance, was control for the redistricting process that is set to start following the 2020 Census. The 2020 Election was the last chance for voters across the United States to change the redistricting process in their state by altering the political control of their state's legislature or by passing relevant ballot initiatives. With the redistricting processes and political power dynamics now mostly set, it is worth checking in on this crucial but often underreported process by comparing it to the redistricting dynamics in 2011.
@@ -17,10 +18,11 @@ Coming out of the 2010 Election, after it became clear that Republicans had [ena
 
 <div class="columns two">
     <div class="column">
-        <p>In the years following, after the implications of REDMAP had become clear, groups across the country gave new attention to making the redistricting process more fair both by balancing party control in state legislatures and transferring redistricting duties to independent commissions. We can see the latter appear in the chart above as five states (accounting for 70 electoral votes and 60 districts) shifted redistricting power away from partisan legislatures and towards some kind of redistricting commission.</p>
-        <p>Heading into the 2020 Election, Democrats were hopeful that they could take back some control in state legislatures, ideally shifting redistricting power to Democrat-controlled legislatures or at the very least split governments. However, <a href="https://www.nytimes.com/2020/11/04/us/election-state-house-legislature-governors.html">Democrats performed poorly</a> in legislative races across the country at both state and federal levels and are actually projected to have lost ground.</p></div>
-    <div class="column">
         {% include figure.html autolink="yes" src="/assets/img/posts/tx-35.png" alt="A map of TX-35 Congressional district, a key example of a gerrymandered district" link="https://www.washingtonpost.com/news/wonk/wp/2014/05/15/americas-most-gerrymandered-congressional-districts/" caption="Texas' 35th Congressional district, a classic example of an extreme gerrymander, cracking communities between both San Antonio and Austin" %}
+    </div>
+    <div class="column">
+        <p>In the years following, after the implications of REDMAP had become clear, groups across the country gave new attention to making the redistricting process more fair both by balancing party control in state legislatures and transferring redistricting duties to independent commissions. We can see the latter appear in the chart above as five states (accounting for 70 electoral votes and 60 districts) shifted redistricting power away from partisan legislatures and towards some kind of redistricting commission.</p>
+        <p>Heading into the 2020 Election, Democrats were hopeful that they could take back some control in state legislatures, ideally shifting redistricting power to Democrat-controlled legislatures or at the very least split governments. However, <a href="https://www.nytimes.com/2020/11/04/us/election-state-house-legislature-governors.html">Democrats performed poorly</a> in legislative races across the country at both state and federal levels and are actually projected to have lost ground.</p>
     </div>
 </div>
 

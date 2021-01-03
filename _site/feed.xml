@@ -305,9 +305,6 @@ $(window).resize(resize);
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
-        &lt;p&gt;In the years following, after the implications of REDMAP had become clear, groups across the country gave new attention to making the redistricting process more fair both by balancing party control in state legislatures and transferring redistricting duties to independent commissions. We can see the latter appear in the chart above as five states (accounting for 70 electoral votes and 60 districts) shifted redistricting power away from partisan legislatures and towards some kind of redistricting commission.&lt;/p&gt;
-        &lt;p&gt;Heading into the 2020 Election, Democrats were hopeful that they could take back some control in state legislatures, ideally shifting redistricting power to Democrat-controlled legislatures or at the very least split governments. However, &lt;a href=&quot;https://www.nytimes.com/2020/11/04/us/election-state-house-legislature-governors.html&quot;&gt;Democrats performed poorly&lt;/a&gt; in legislative races across the country at both state and federal levels and are actually projected to have lost ground.&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;column&quot;&gt;
         &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;https://www.washingtonpost.com/news/wonk/wp/2014/05/15/americas-most-gerrymandered-congressional-districts/&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;/assets/img/posts/tx-35.png&quot; alt=&quot;A map of TX-35 Congressional district, a key example of a gerrymandered district&quot; /&gt;
@@ -322,6 +319,10 @@ Texas' 35th Congressional district, a classic example of an extreme gerrymander,
 
 
 
+    &lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;
+        &lt;p&gt;In the years following, after the implications of REDMAP had become clear, groups across the country gave new attention to making the redistricting process more fair both by balancing party control in state legislatures and transferring redistricting duties to independent commissions. We can see the latter appear in the chart above as five states (accounting for 70 electoral votes and 60 districts) shifted redistricting power away from partisan legislatures and towards some kind of redistricting commission.&lt;/p&gt;
+        &lt;p&gt;Heading into the 2020 Election, Democrats were hopeful that they could take back some control in state legislatures, ideally shifting redistricting power to Democrat-controlled legislatures or at the very least split governments. However, &lt;a href=&quot;https://www.nytimes.com/2020/11/04/us/election-state-house-legislature-governors.html&quot;&gt;Democrats performed poorly&lt;/a&gt; in legislative races across the country at both state and federal levels and are actually projected to have lost ground.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
@@ -381,6 +382,8 @@ new jBox('Tooltip', {
 &lt;/script&gt;
 
 &lt;p&gt;Let’s see how this all goes! It is very unlikely that we’ll know much on Election Day, but again, who knows. I’ll try and keep this updated throughout the whole process and we can prepare for an incoming ton of bricks together. I’m also planning on tweeting any significant updates so keep an eye out for stuff &lt;a href=&quot;https://twitter.com/ben_tanen/&quot;&gt;over there&lt;/a&gt;. Though, to be frank, I’m really hoping there are no big updates or surprises… I would really like to say that &lt;a href=&quot;https://www.mcsweeneys.net/articles/im-back-in-a-relationship-with-fivethirtyeights-elections-forecast-model-but-this-time-i-swear-hes-changed&quot;&gt;I have learned to trust FiveThirtyEight and polls again.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update: see &lt;a href=&quot;https://twitter.com/ben_tanen/status/1323788861340700672&quot;&gt;this Twitter thread&lt;/a&gt; for my live analysis as the Election unfolded.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p class=&quot;section-break&quot;&gt;* * *&lt;/p&gt;
 
@@ -683,23 +686,13 @@ An example of what 'open for surprise' might reveal
                     <title>Plotting the 3,979 Delegates of the 2020 Democratic Primary</title>
                     <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update (Apr 08, 2020):&lt;/strong&gt; &lt;a href=&quot;https://www.nytimes.com/2020/04/08/us/politics/bernie-sanders-drops-out.html&quot;&gt;Bernie Sanders is dropping out of the Democratic Primary&lt;/a&gt;, leaving Joe Biden as the sole candidate and now the presumptive Democratic nominee. As a result, this project is now no longer relevant, so I’m going to freeze it for now.&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;columns two&quot;&gt;
-    &lt;div class=&quot;column&quot; style=&quot;width: calc(45% - 15px);&quot;&gt;
-        &lt;p&gt;On March 17, Arizona, Florida, and Illinois each held their respective 2020 primaries elections. These state primaries marked the halfway point in this ongoing national primary since now more than 50% of the initial 3,979 delegates have been awarded across 30 different state contests. As of writing this, Joe Biden leads the race with 1,215 delegates while Bernie Sanders trails behind at 909 delegates. Given these current counts and the outlook for upcoming primaries, &lt;a href=&quot;https://www.economist.com/united-states/2020/03/19/joe-biden-builds-an-insurmountable-lead&quot;&gt;many&lt;/a&gt; &lt;a href=&quot;https://fivethirtyeight.com/features/election-update-bidens-delegate-lead-is-now-nearly-insurmountable/&quot;&gt;outlets&lt;/a&gt; have called Biden’s lead (nearly) insurmountable. In the lead up to Super Tuesday (March 3), Biden’s path to victory was not so clear and it actually seemed like Sanders might end up winning the nomination after he had relatively strong performances in early states like Nevada and Iowa. But at the end of the day, Biden was able to through in many of the big states that mattered and here we are.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;column&quot; style=&quot;width: calc(55% - 15px);&quot;&gt;
-        &lt;p class=&quot;fig-paragraph&quot;&gt;
+&lt;p&gt;On March 17, Arizona, Florida, and Illinois each held their respective 2020 primaries elections. These state primaries marked the halfway point in this ongoing national primary since now more than 50% of the initial 3,979 delegates have been awarded across 30 different state contests. As of writing this, Joe Biden leads the race with 1,215 delegates while Bernie Sanders trails behind at 909 delegates. Given these current counts and the outlook for upcoming primaries, &lt;a href=&quot;https://www.economist.com/united-states/2020/03/19/joe-biden-builds-an-insurmountable-lead&quot;&gt;many&lt;/a&gt; &lt;a href=&quot;https://fivethirtyeight.com/features/election-update-bidens-delegate-lead-is-now-nearly-insurmountable/&quot;&gt;outlets&lt;/a&gt; have called Biden’s lead (nearly) insurmountable. In the lead up to Super Tuesday (March 3), Biden’s path to victory was not so clear and it actually seemed like Sanders might end up winning the nomination after he had relatively strong performances in early states like Nevada and Iowa. But at the end of the day, Biden was able to through in many of the big states that mattered and here we are.&lt;/p&gt;
+
+&lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;/projects/dem2020-delegate-map/img/RPlot.jpg&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/dem2020-delegate-map/img/RPlot.jpg&quot; alt=&quot;A plot showing where Biden is expected to win relative to their total number of delegates awarded&quot; /&gt;
+    &lt;img src=&quot;/projects/dem2020-delegate-map/img/RPlot.jpg&quot; alt=&quot;A plot showing where Biden is expected to win relative to their total number of delegates awarded&quot; width=&quot;500px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
-
-
-
-
-
-    &lt;/div&gt;
-&lt;/div&gt;
 
 &lt;p&gt;If you have been following this election closely, Biden’s leading position is not all that surprising. But because this primary process is almost unbearably long, it can sometimes be hard to piece together all of the states that brought Biden and Sanders to the delegate totals that they have as well as the states that will likely help Biden secure the nomination. Thus, to help illustrate the bigger picture of these primaries, I present a visualization of all 3,979 of the delegates up for grabs, where they have gone thus far, and where they are projected to go in upcoming states.&lt;/p&gt;
 
@@ -711,7 +704,7 @@ An example of what 'open for surprise' might reveal
 
 &lt;div id=&quot;dem2020-title&quot;&gt;
     &lt;h2&gt;Delegates won (or projected to be won) by &lt;span class=&quot;biden-count&quot;&gt;Biden&lt;/span&gt;, &lt;span class=&quot;sanders-count&quot;&gt;Sanders&lt;/span&gt;, and &lt;span class=&quot;other-count&quot;&gt;Other Candidates&lt;/span&gt;&lt;/h2&gt;
-    &lt;p style=&quot;margin-bottom: 10px;&quot;&gt;&lt;i&gt;Updated on: &lt;span id=&quot;update-date&quot;&gt;...&lt;/span&gt;&lt;/i&gt;&lt;/p&gt;
+    &lt;p style=&quot;margin-bottom: 10px; margin-left: 0;&quot;&gt;&lt;i&gt;Updated on: &lt;span id=&quot;update-date&quot;&gt;...&lt;/span&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;ul&gt;
@@ -766,21 +759,15 @@ Projected results for upcoming states come from &lt;a href=&quot;https://project
                     <title>The Best Films That Don't Win Best Picture</title>
                     <description>&lt;p&gt;On Sunday, &lt;em&gt;Parasite&lt;/em&gt; made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that &lt;em&gt;Parasite&lt;/em&gt; would lose to &lt;a href=&quot;https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html&quot;&gt;1917&lt;/a&gt;, even though &lt;a href=&quot;https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/&quot;&gt;most critics believed&lt;/a&gt; &lt;em&gt;Parasite&lt;/em&gt; was the superior movie. All of this was also coming a year after &lt;a href=&quot;https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture&quot;&gt;&lt;em&gt;Green Book&lt;/em&gt; won&lt;/a&gt; over (believed to be) superior films like &lt;em&gt;Roma&lt;/em&gt;, &lt;em&gt;The Favourite&lt;/em&gt;, and &lt;em&gt;BlackKlansman&lt;/em&gt;. Needless to say, before &lt;em&gt;Parasite&lt;/em&gt; actually won, there were low hopes that the Academy would make the best choice.&lt;/p&gt;
 
-&lt;div class=&quot;columns two&quot;&gt;
-    &lt;div class=&quot;column&quot;&gt;
-        &lt;p&gt;Beyond the discussion of which Best Picture nominee was most deserving of the prize, many have pointed out that the Academy’s shortlist of films did not even include some of the best films of the year. Films like &lt;i&gt;Uncut Gems&lt;/i&gt;, &lt;i&gt;The Farewell&lt;/i&gt;, and &lt;i&gt;Dolemite Is My Name&lt;/i&gt; were all &lt;a href=&quot;https://ew.com/oscars/2020/01/13/oscar-nominations-2020-snubs-surprises/&quot;&gt;notoriously snubbed this year&lt;/a&gt;, though this has become somewhat of the norm at the Oscars.&lt;/p&gt;
-        &lt;p&gt;In an attempt to quantify all of this and mentally prepare myself for what I expected was going to be a loss for &lt;i&gt;Parasite&lt;/i&gt;, midway through the Awards, I &lt;a href=&quot;https://twitter.com/ben_tanen/status/1226683722277191680&quot;&gt;tweeted a series of charts&lt;/a&gt; showing the Best Picture nominees from the past few years stacked up against other comparable non-nominated films. These showed how many great films the Academy had overlooked when they made their nominations and how the eventual winners compared to those overlooked films. Though never perfect, it was clear that the Academy does a better job in some years than others. In 2016, though some of the nominees were worse than other non-nominated films, &lt;i&gt;Moonlight&lt;/i&gt; was considered the best of the best and won the prize to prove it. On the other hand, in 2018, nominees like &lt;i&gt;Bohemian Rhapsody&lt;/i&gt; and &lt;i&gt;Vice&lt;/i&gt; were far inferior to many, many other non-nominees, which was only made worse by the fact that &lt;i&gt;Green Book&lt;/i&gt; was generally considered one of the worst nominees that year.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;column&quot;&gt;
-        &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;The Academy frequently ignores some of the best films when they nominate and award films for Best Picture. Tonight they have the chance to get it right by picking one of the best films of the year. Let’s see what happens…&lt;br /&gt;&lt;br /&gt;More in-depth analysis coming soon.&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://twitter.com/hashtag/Oscars?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Oscars&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Oscars2020?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#Oscars2020&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;https://t.co/fLGXAcrSTZ&quot;&gt;pic.twitter.com/fLGXAcrSTZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Ben Tanen (@ben_tanen) &lt;a href=&quot;https://twitter.com/ben_tanen/status/1226683722277191680?ref_src=twsrc%5Etfw&quot;&gt;February 10, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/oscars-best-picture-2019.jpg&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/assets/img/posts/oscars-best-picture-2019.jpg&quot; alt=&quot;A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee&quot; /&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/oscars-best-picture-2019-new.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/assets/img/posts/oscars-best-picture-2019-new.jpg&quot; alt=&quot;A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee&quot; width=&quot;700px&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
+
+&lt;p&gt;Beyond the discussion of which Best Picture nominee was most deserving of the prize, many have pointed out that the Academy’s shortlist of films did not even include some of the best films of the year. Films like &lt;em&gt;Uncut Gems&lt;/em&gt;, &lt;em&gt;The Farewell&lt;/em&gt;, and &lt;em&gt;Dolemite Is My Name&lt;/em&gt; were all &lt;a href=&quot;https://ew.com/oscars/2020/01/13/oscar-nominations-2020-snubs-surprises/&quot;&gt;notoriously snubbed this year&lt;/a&gt;, though this has become somewhat of the norm at the Oscars.&lt;/p&gt;
+
+&lt;p&gt;In an attempt to quantify all of this and mentally prepare myself for what I expected was going to be a loss for &lt;em&gt;Parasite&lt;/em&gt;, midway through the Awards, I &lt;a href=&quot;https://twitter.com/ben_tanen/status/1226683722277191680&quot;&gt;tweeted a series of charts&lt;/a&gt; showing the Best Picture nominees from the past few years stacked up against other comparable non-nominated films. These showed how many great films the Academy had overlooked when they made their nominations and how the eventual winners compared to those overlooked films. Though never perfect, it was clear that the Academy does a better job in some years than others. In 2016, though some of the nominees were worse than other non-nominated films, &lt;em&gt;Moonlight&lt;/em&gt; was considered the best of the best and won the prize to prove it. On the other hand, in 2018, nominees like &lt;em&gt;Bohemian Rhapsody&lt;/em&gt; and &lt;em&gt;Vice&lt;/em&gt; were far inferior to many, many other non-nominees, which was only made worse by the fact that &lt;em&gt;Green Book&lt;/em&gt; was generally considered one of the worst nominees that year.&lt;/p&gt;
 
 &lt;p&gt;Now that we have the benefit of knowing who won Best Picture, this year’s Best Picture category looked a bit like a mix of 2016 and 2018 - the best film won the big prize but many great films weren’t nominated. Most people can now rest easy knowing a worthy movie won but it’s worth remembering all those great movies that did not get the recognition they deserved, this year and in years past. For those curious, see below for a full breakdown of the Best Picture nominees and other (often better) non-nominated films from the past 20 years as well as a few of my top (mildly data-driven, mildly personal) picks. See you all again in 11 months when the rage cycle starts all over again!&lt;/p&gt;
 

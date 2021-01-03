@@ -13,6 +13,16 @@ let data = [ ];
 // create svg
 let svg = d3.select("#landing-viz");
 
+/***************************/
+/*** DECLARE HELPER FXNS ***/
+/***************************/
+
+function distance([x1, y1], [x2, y2]) {
+    const d = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    if (d < 0) console.log([x1, y1], [x2, y2], d);
+    return d;
+}
+
 /**********************************/
 /*** DECLARE VISUALIZATION FXNS ***/
 /**********************************/
@@ -30,7 +40,7 @@ let vs = [
             data = data.map(d => Object.assign(d, {x2: data[d.n].x1, y2: data[d.n].y1}));
 
             // draw graph initially
-            svg.selectAll("circle")
+            svg.selectAll(".node")
                 .data(data).enter()
                 .append("circle")
                 .classed("node", true)
@@ -38,7 +48,7 @@ let vs = [
                 .attr("cy", d => d.y1)
                 .attr("r", 3);
 
-            svg.selectAll("line")
+            svg.selectAll(".edge")
                 .data(data).enter()
                 .append("line")
                 .classed("edge", true)
@@ -64,7 +74,7 @@ let vs = [
                 .attr("cy", d => d.y1);
 
             svg.selectAll(".edge")
-            .transition()
+                .transition()
                 .ease(d3.easeLinear)
                 .duration(options.duration)
                 .attr("x1", d => d.x1)
@@ -75,6 +85,92 @@ let vs = [
         options: {
             n_nodes: 15,
             duration: 5000
+        }
+    },
+    {
+        init: (options) => {
+            // create list of initial positions (x, y) for each bubble
+            data = Array.apply(null, Array(options.n_circ)).map(d => {
+                return {cx: Math.min(Math.max(d3.randomNormal(width / 2, width / 7)(), margin.left), width - margin.right), 
+                        cy: Math.min(Math.max(d3.randomNormal(height / 2, height / 7)(), margin.top), height - margin.bottom),
+                        v: false
+                };
+            });
+
+            // for each bubble, determine the maximum radius so as not to touch another circle
+            data[0].r = Math.max(5, d3.randomNormal(Math.min(height, width) / 15, Math.min(height, width) / 30)());
+            for (let i = 1; i < data.length; i++) {
+                
+                // sort all prev points by radial distance (center + radius) from new circle's point
+                // then take closest element
+                const closest_circ = data.slice(0, i).sort((x, y) => {
+                    const p = data[i],
+                          d1 = distance([p.cx, p.cy], [x.cx, x.cy]) - x.r,
+                          d2 = distance([p.cx, p.cy], [y.cx, y.cy]) - y.r;
+                    return d3.ascending(d1, d2);
+                })[0],
+                      closest_d = Math.max(0, distance([data[i].cx, data[i].cy], [closest_circ.cx, closest_circ.cy]) - closest_circ.r);
+
+                data[i].r = Math.max(0, Math.min(closest_d, d3.randomNormal(Math.min(height, width) / 15, Math.min(height, width) / 30)()));
+            }
+        },
+        update: (options) => {
+            // if all circles not visible, display ~75% of them
+            if (data.filter(d => d.v).length == 0) {
+                data = data.map(d => Object.assign(d, {v: Math.random() < 0.75}));
+                svg.selectAll(".bubble")
+                    .data(data.filter(d => d.v & d.r > 0)).enter()
+                    .append("circle")
+                    .classed("bubble", true)
+                    .attr("cx", d => d.cx)
+                    .attr("cy", d => d.cy)
+                    .attr("r", 0)
+                    .transition()
+                    .ease(d3.easePolyInOut)
+                    .duration(options.duration)
+                    .attr("r", d => d.r);
+
+            // 50/50 chance of revealing a new circle
+            } else if (Math.random() < 0.5 & data.filter(d => !d.v).length > 0) {
+                let hidden_cs = data.filter(d => !d.v & d.r > 0),
+                    to_show_c = hidden_cs[d3.randomInt(hidden_cs.length)()];
+                to_show_c = Object.assign(to_show_c, {v: true});
+
+                console.log("revealing");
+                console.log(to_show_c);
+
+                svg.selectAll(".bubble")
+                    .data([to_show_c]).enter()
+                    .append("circle")
+                    .classed("bubble", true)
+                    .attr("cx", d => d.cx)
+                    .attr("cy", d => d.cy)
+                    .attr("r", 0)
+                    .transition()
+                    .ease(d3.easePolyInOut)
+                    .duration(options.duration)
+                    .attr("r", d => d.r);
+
+            // ... or replacing a circle
+            } else {
+                let visible_cs = data.filter(d => d.v),
+                    to_hide_c  = visible_cs[d3.randomInt(visible_cs.length)()];
+
+                svg.selectAll(".bubble")
+                    .filter(d => d.cx == to_hide_c.cx & d.cy == to_hide_c.cy)
+                    .transition()
+                    .ease(d3.easePolyInOut)
+                    .duration(options.duration)
+                    .attr("r", 0)
+                    .delay(options.duration + 500)
+                    .remove();
+
+                to_hide_c = Object.assign(to_hide_c, {v: false});
+            }
+        },
+        options: {
+            n_circ: 15,
+            duration: 500
         }
     }
 ];

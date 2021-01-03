@@ -104,6 +104,11 @@ a:hover {
     fill: #a9a9a9;
 }
 
+.bubble {
+    fill: #eeeeee;
+    stroke: #a9a9a9;
+}
+
 /*************************/
 /*** main text styling ***/
 /*************************/
