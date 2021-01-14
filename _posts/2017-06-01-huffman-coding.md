@@ -3,7 +3,7 @@ layout: post
 title: 'Explaining Adaptive Huffman Coding with Scrollytelling'
 date: 2017-06-01 15:05:41
 thumbnail: /assets/img/post-thumbnails/huffman.gif
-landing-proj:  true
+landing-proj:  false
 landing-order: 6
 landing-img:   /assets/img/posts/huffman-coding.gif
 landing-large: false
