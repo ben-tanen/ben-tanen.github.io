@@ -7,6 +7,379 @@
             
                 
                 <item>
+                    <title>How Well Do You Remember Trump's Term In Office?</title>
+                    <description>&lt;p&gt;This week marked the close of the Trump Presidency and throughout the week, different outlets have been recollecting all of the craziness that happened in the past four plus years. &lt;a href=&quot;https://www.youtube.com/watch?v=e2FNujc0UM4&quot;&gt;The New York Times prepared such a video&lt;/a&gt; and as I was watching, I realized how warped my memory and sense of time for these events had gotten. Some events felt like years ago but were only months ago. Some I didn’t remember at all even though they felt significant at the time.&lt;/p&gt;
+
+&lt;p&gt;Given the fact that January 2021 has already felt like a lifetime and 2020 felt like a thousand lifetimes, it is fairly well agreed upon that &lt;a href=&quot;https://www.discovermagazine.com/mind/how-the-coronavirus-pandemic-is-warping-our-sense-of-time&quot;&gt;the ongoing pandemic and everything else has done a number on our sense of time&lt;/a&gt;. To test all of this, I put together a little memory exercise to see how well we all remember (or don’t remember) the endless-news-whirlwind that has been the Trump Presidency.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;To answer, drag the slider to when you think the event occurred. To start, the slider will be positioned randomly along the timeline so don’t take that as a hint. Also don’t worry about getting it exactly right, I’ll give some partial credit.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div id=&quot;trump-timeline-container&quot;&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;view-more&quot;&gt;Want more? &lt;span&gt;Click here to view the rest.&lt;/span&gt;&lt;/p&gt;
+
+&lt;style&gt;
+    #trump-timeline-container {
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    #trump-timeline-container &gt; div {
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    #trump-timeline-container &gt; div.hidden {
+        display: none;
+    }
+
+    #trump-timeline-container &gt; div:nth-last-of-type(1):not(.hidden) {
+        margin-bottom: 0;
+    }
+
+    #trump-timeline-container &gt; div &gt; p {
+        margin-bottom: 0;
+        margin-left: 50px;
+        margin-right: 50px;
+        max-width: initial;
+        width: calc(100% - 250px);
+    }
+
+    .question-text {
+        font-weight: 500;
+        color: #77bdee;
+    }
+
+    .submit-btn {
+        width: 100px;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        right: 50px;
+        background-color: #77bdee;
+        cursor: pointer;
+    }
+
+    .submit-btn.locked {
+        background-color: #eee;
+        cursor: default;
+    }
+
+    .submit-btn p {
+        text-align: center !important;
+        margin: 0;
+        padding: 3px;
+        color: white;
+    }
+
+    .trump-timeline-svg {
+        width: 100%;
+        height: 50px;
+    }
+
+    rect.timeline {
+        fill: #bbb;
+    }
+
+    rect.timeline-tick {
+        fill: #bbb;
+    }
+
+    rect.timeline.cover {
+        fill: rgba(255, 0, 0, 0.5);
+    }
+
+    g.answer-sect {
+        display: initial;
+    }
+
+    g.answer-sect.hidden {
+        display: none;
+    }
+
+    circle.slider {
+        fill: white;
+        stroke: black;
+        stroke-width: 2px;
+    }
+
+    circle.slider-target {
+        fill: rgba(255, 0, 0, 0);
+        cursor: ew-resize;
+    }
+
+    g.slider-sect.locked circle.slider-target {
+        cursor: default;
+    }
+
+    g.slider-sect.locked polygon {
+        display: none !important;
+    }
+
+    text.slider-text, text.answer-text {
+        text-anchor: middle;
+        font-size: 13px;
+        alignment-baseline: middle;
+    }
+
+    p#view-more &gt; span {
+        color: #77bdee;
+        cursor: pointer;
+    }
+
+    p#view-more &gt; span:hover {
+        text-decoration: underline;
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+/**********************/
+/*** INIT VARIABLES ***/
+/**********************/
+
+const margin = {top: 0, right: 50, bottom: 0, left: 50},
+      sect_height = 50,
+      timeline_height = 5,
+      tick_dim = [2, timeline_height * 3];
+
+// create scales
+const x = d3.scaleLinear().domain([1, 1462]).range([0, $(&quot;#trump-timeline-container&quot;).width() - margin.right - margin.left]),
+      date = d3.scaleLinear().domain([1, 1462]).range([new Date(&quot;2017-01-20&quot;), new Date(&quot;2021-01-20&quot;)]);
+
+/********************************/
+/*** DECLARE HELPER FUNCTIONS ***/
+/********************************/
+
+// format readable date
+const format_date = (date, format) =&gt; {
+    return d3.utcFormat(format ? format : &quot;%b %d, %Y&quot;)(date);
+}
+
+// format readable date difference
+const format_date_diff = (day_diff) =&gt; {
+    const years = Math.floor(day_diff / 365),
+          months = Math.floor((day_diff % 365) / (365 / 12)),
+          days = Math.round((day_diff % 365 % 30));
+
+    if (day_diff &gt; 365) return &quot;over a year&quot;;
+    else if (day_diff &gt; 320) return &quot;almost a year&quot;;
+    else if (day_diff &gt; 180) return &quot;more than 6 months&quot;
+    else if (day_diff &gt; 60) return &quot;a few months&quot;;
+    else if (day_diff &gt; 14) return &quot;a few weeks&quot;;
+    else return &quot;a few days&quot;;
+}
+
+// create components of each timeline
+const init_sects = (data) =&gt; {
+
+    const cont = d3.select(&quot;#trump-timeline-container&quot;)
+        .selectAll(&quot;#trump-timeline-container div&quot;)
+        .data(data).enter()
+        .append(&quot;div&quot;)
+        .classed(&quot;hidden&quot;, (d, i) =&gt; i &gt;= 5);
+
+    cont.append(&quot;p&quot;)
+        .classed(&quot;question-text&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .text(d =&gt; &quot;Do you remember when &quot; + d.event_description + &quot;?&quot;);
+
+    const btns = cont.append(&quot;div&quot;)
+        .classed(&quot;submit-btn&quot;, true)
+        .classed(&quot;locked&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id);
+
+    btns.append(&quot;p&quot;)
+        .text(&quot;How'd I do?&quot;);
+
+    btns.on(&quot;click&quot;, (event, d) =&gt; {
+        const tar = event.currentTarget;
+        if (!d3.select(tar).classed(&quot;locked&quot;)) {
+            const id = tar.id;
+            d3.select(tar).classed(&quot;locked&quot;, true); // lock the button
+            d3.select(&quot;g.slider-sect#&quot; + id).classed(&quot;locked&quot;, true); // lock the slider
+            d3.select(&quot;g.answer-sect#&quot; + id).classed(&quot;hidden&quot;, false); // remove the timeline cover
+            d3.select(&quot;p.grade-text#&quot; + id).text(d =&gt; {
+                const day_diff = d.event_day - Math.round(d.slider_day),
+                      formatted_day_diff = format_date_diff(Math.abs(d.event_day - d.slider_day)),
+                      early_late = day_diff &gt; 0 ? &quot;early&quot; : &quot;late&quot;;
+                if (Math.abs(day_diff) &lt; 5) return &quot;Right on the money!&quot;;
+                else if (Math.abs(day_diff) &lt; 30) return `Nice job! You were only ${formatted_day_diff} ${early_late}!`;
+                else if (Math.abs(day_diff) &lt; 90) return `Close! You were ${formatted_day_diff} ${early_late}.`;
+                else return `Not quite... you were off by ${formatted_day_diff}.`;
+            });
+        }
+    })
+
+    const svgs = cont.append(&quot;svg&quot;)
+        .classed(&quot;trump-timeline-svg&quot;, true);
+
+    cont.append(&quot;p&quot;)
+        .classed(&quot;grade-text&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .text(&quot;&quot;);
+
+    const timelines = svgs.append(&quot;g&quot;)
+        .classed(&quot;timeline-sect&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;transform&quot;, `translate(${margin.left}, ${(sect_height - timeline_height) / 2})`);
+
+    timelines.append(&quot;rect&quot;)
+        .classed(&quot;timeline&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;x&quot;, 0)
+        .attr(&quot;y&quot;, 0)
+        .attr(&quot;width&quot;, x.range()[1])
+        .attr(&quot;height&quot;, timeline_height);
+
+    timelines.selectAll(&quot;timeline-tick&quot;)
+        .data([new Date(&quot;2018-01-01&quot;), new Date(&quot;2019-01-01&quot;), new Date(&quot;2020-01-01&quot;), new Date(&quot;2021-01-01&quot;)]).enter()
+        .append(&quot;rect&quot;)
+        .classed(&quot;timeline-tick&quot;, true)
+        .attr(&quot;x&quot;, d =&gt; x(date.invert(d)) - tick_dim[0] / 2)
+        .attr(&quot;y&quot;, (timeline_height - tick_dim[1]) / 2)
+        .attr(&quot;width&quot;, tick_dim[0])
+        .attr(&quot;height&quot;, tick_dim[1]);
+
+    const answers = svgs.append(&quot;g&quot;)
+        .classed(&quot;answer-sect&quot;, true)
+        .classed(&quot;hidden&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;transform&quot;, d =&gt; `translate(${margin.left + x(d.event_day)}, ${sect_height / 2})`);
+
+    answers.append(&quot;text&quot;)
+        .classed(&quot;answer-text&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;x&quot;, 0)
+        .attr(&quot;y&quot;, -timeline_height * 3.2)
+        .text(d =&gt; format_date(d.event_date));
+
+    answers.append(&quot;rect&quot;)
+        .classed(&quot;answer-tick&quot;, true)
+        .attr(&quot;x&quot;, -tick_dim[0] / 2)
+        .attr(&quot;y&quot;, -tick_dim[1] / 2)
+        .attr(&quot;width&quot;, tick_dim[0])
+        .attr(&quot;height&quot;, tick_dim[1]);
+
+    const sliders = svgs.append(&quot;g&quot;)
+        .classed(&quot;slider-sect&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;transform&quot;, d =&gt; `translate(${margin.left + x(d.slider_day)}, ${sect_height / 2})`);
+
+    sliders.append(&quot;circle&quot;)
+        .classed(&quot;slider&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;cx&quot;, 0)
+        .attr(&quot;cy&quot;, 0)
+        .attr(&quot;r&quot;, timeline_height);
+
+    sliders.append(&quot;text&quot;)
+        .classed(&quot;slider-text&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;x&quot;, 0)
+        .attr(&quot;y&quot;, timeline_height * 3.2)
+        .text(d =&gt; format_date(date(d.slider_day)));
+
+    sliders.append(&quot;polygon&quot;)
+        .classed(&quot;slider-pointer-right&quot;, true)
+        .attr(&quot;points&quot;, `${timeline_height * 2} ${-timeline_height}, 
+                         ${timeline_height * 2 + 5} 0, 
+                         ${timeline_height * 2} ${timeline_height}`);
+    sliders.append(&quot;polygon&quot;)
+        .classed(&quot;slider-pointer-left&quot;, true)
+        .attr(&quot;points&quot;, `${-timeline_height * 2} ${-timeline_height}, 
+                         ${-timeline_height * 2 - 5} 0, ${-timeline_height * 2} 
+                         ${timeline_height}`);
+
+    sliders.append(&quot;circle&quot;)
+        .classed(&quot;slider-target&quot;, true)
+        .attr(&quot;id&quot;, d =&gt; d.event_id)
+        .attr(&quot;cx&quot;, 0)
+        .attr(&quot;cy&quot;, 0)
+        .attr(&quot;r&quot;, timeline_height * 5);
+
+    sliders.call(d3.drag()
+        .on(&quot;drag&quot;, (event, d) =&gt; {
+            const id = event.subject.event_id;
+            if (!d3.select(&quot;g.slider-sect#&quot; + id).classed(&quot;locked&quot;)) {;
+                d3.select(&quot;.submit-btn#&quot; + id).classed(&quot;locked&quot;, false);
+                return (d.slider_day = Math.max(x.domain()[0], Math.min(x.domain()[1], x.invert(event.x - margin.left))));
+            }
+        })
+        .on(&quot;drag.update&quot;, update_drag));
+}
+
+// update the position + visability of things based on drag position
+const update_drag = () =&gt; {
+    d3.selectAll(&quot;g.slider-sect&quot;)
+        .attr(&quot;transform&quot;, d =&gt; `translate(${margin.left + x(d.slider_day)}, ${sect_height / 2})`);
+
+    d3.selectAll(&quot;text.slider-text&quot;)
+        .text(d =&gt; format_date(date(d.slider_day)));
+
+    d3.selectAll(&quot;polygon.slider-pointer-left&quot;)
+        .style(&quot;display&quot;, d =&gt; (d.slider_day &gt; x.domain()[0]) ? &quot;initial&quot; : &quot;none&quot;);
+
+    d3.selectAll(&quot;polygon.slider-pointer-right&quot;)
+        .style(&quot;display&quot;, d =&gt; (d.slider_day &lt; x.domain()[1]) ? &quot;initial&quot; : &quot;none&quot;);
+}
+
+// resize chart on page size change
+const resize = () =&gt; {
+
+    x.range([0, $(&quot;#trump-timeline-container&quot;).width() - margin.right - margin.left]);
+
+    d3.selectAll(&quot;.timeline&quot;)
+        .attr(&quot;width&quot;, x.range()[1]);
+
+    d3.selectAll(&quot;.timeline-tick&quot;)
+        .attr(&quot;x&quot;, d =&gt; x(date.invert(d)) - tick_dim[0] / 2)
+
+    d3.selectAll(&quot;g.slider-sect&quot;)
+        .attr(&quot;transform&quot;, d =&gt; `translate(${margin.left + x(d.slider_day)}, ${sect_height / 2})`);
+}
+
+/*********************************/
+/*** PARSE DATA AND INIT PLOTS ***/
+/*********************************/
+
+d3.csv(&quot;/assets/data/trump-timeline.csv&quot;, (d) =&gt; {
+    return {
+        event_id: d.event_id,
+        event_description: d.event_description,
+        event_date: new Date(d.event_date),
+        event_day: +date.invert(new Date(d.event_date)).toFixed(0),
+        slider_day: d3.randomInt(x.domain()[1])(),
+        order: Math.random()
+    };
+}).then((d) =&gt; {
+    console.log(d);
+    d.sort((a, b) =&gt; d3.descending(a.order, b.order)); // sort it in some random order
+    init_sects(d); // draw initial bars
+});
+
+/*********************************/
+/*** PAGE AND BUTTON LISTENERS ***/
+/*********************************/
+
+$(window).resize(resize);
+
+d3.select(&quot;p#view-more span&quot;).on(&quot;click&quot;, () =&gt; {
+    d3.selectAll(&quot;#trump-timeline-container div&quot;).classed(&quot;hidden&quot;, false);
+    d3.select(&quot;p#view-more&quot;).remove();
+})
+
+&lt;/script&gt;
+
+</description>
+                    <pubDate>2021-01-23T03:05:41-07:00</pubDate>
+                    <link>http://localhost:4000/projects/2021/01/23/trump-timeline.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2021/01/23/trump-timeline.html</guid>
+                </item>
+                
+            
+                
+                <item>
                     <title>Catch Me on Observable</title>
                     <description>&lt;p&gt;After many months of being intrigued yet afraid of Observable, I have finally decided to dive in and check it out. For those unaware, Observable is a fantastic resource/community for anyone wanting to experiment and build things on the internet, especially for visualization and creative coding. An improvement upon Mike Bostock’s &lt;a href=&quot;https://bl.ocks.org/&quot;&gt;bl.ocks&lt;/a&gt;, Bostock and company created a wonderful and easy way to build via interactive web-enabled notebooks, which allows for quick building and easy collaboration. If you do any data visualization in D3 or generative art in p5, I would highly recommend checking it out.&lt;/p&gt;
 
@@ -23,7 +396,7 @@
 &lt;iframe width=&quot;100%&quot; height=&quot;500&quot; frameborder=&quot;0&quot; src=&quot;https://observablehq.com/embed/@ben-tanen/a-tutorial-to-using-d3-force-from-someone-who-just-learned-ho?cell=*&quot;&gt;&lt;/iframe&gt;
 
 </description>
-                    <pubDate>2021-01-13T05:05:41-05:00</pubDate>
+                    <pubDate>2021-01-13T03:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2021/01/13/observable-news.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2021/01/13/observable-news.html</guid>
                 </item>
@@ -308,7 +681,7 @@ $(window).resize(resize);
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2020-12-05T05:05:41-05:00</pubDate>
+                    <pubDate>2020-12-05T03:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2020/12/05/food-delivery-costs.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/12/05/food-delivery-costs.html</guid>
                 </item>
@@ -383,7 +756,7 @@ While many state legislature races are still undecided (as of 11/13/2020), &lt;a
 &lt;/div&gt;
 
 </description>
-                    <pubDate>2020-11-13T05:05:41-05:00</pubDate>
+                    <pubDate>2020-11-13T03:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2020/11/13/redistricting-changes-for-2020.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/11/13/redistricting-changes-for-2020.html</guid>
                 </item>
@@ -457,7 +830,7 @@ State calls come from &lt;a href=&quot;https://twitter.com/AP_Politics&quot;&gt;
 &lt;script src=&quot;/projects/election-night2020-funnel/js/main.js&quot;&gt;&lt;/script&gt;
 
 </description>
-                    <pubDate>2020-11-03T05:05:41-05:00</pubDate>
+                    <pubDate>2020-11-03T03:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2020/11/03/election-night-funnel.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/11/03/election-night-funnel.html</guid>
                 </item>
@@ -520,7 +893,7 @@ An example of what 'open for surprise' might reveal
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/_theghettomonk/status/1307686197934854147&quot;&gt;Book recommendations&lt;/a&gt;&lt;/p&gt;
 
 </description>
-                    <pubDate>2020-10-08T06:05:41-04:00</pubDate>
+                    <pubDate>2020-10-08T04:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2020/10/08/seam-carving-pt2.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/10/08/seam-carving-pt2.html</guid>
                 </item>
@@ -588,7 +961,7 @@ An example of what 'open for surprise' might reveal
 &lt;p&gt;If you want to learn more about seam carving, I would highly recommend &lt;a href=&quot;https://www.youtube.com/watch?v=rpB6zQNsbQU&quot;&gt;MIT/Grant’s original lecture&lt;/a&gt;. On the &lt;a href=&quot;https://computationalthinking.mit.edu/Fall20/&quot;&gt;course website&lt;/a&gt;, they also have &lt;a href=&quot;https://www.youtube.com/watch?v=ALcohd1q3dk&quot;&gt;a live coding session&lt;/a&gt; showing the algorithm and &lt;a href=&quot;https://github.com/mitmath/18S191/blob/68e5631f5658d779482aa546f8d324ad2b426b27/lecture_notebooks/seam_carving.jl&quot;&gt;a notebook&lt;/a&gt; (written in Julia) that you can use to play around with. I also put together my own Jupyter notebook (written in Python), which you can find in &lt;a href=&quot;https://github.com/ben-tanen/seam-carving&quot;&gt;this Github repo&lt;/a&gt;. Huge shoutout to &lt;a href=&quot;https://karthikkaranth.me/&quot;&gt;Karthik Karanth&lt;/a&gt; and &lt;a href=&quot;https://karthikkaranth.me/blog/implementing-seam-carving-with-python/&quot;&gt;his post on seam carving&lt;/a&gt;, which is where I lifted most of my python code.&lt;/p&gt;
 
 </description>
-                    <pubDate>2020-10-08T06:05:41-04:00</pubDate>
+                    <pubDate>2020-10-08T04:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2020/10/08/seam-carving-pt1.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/10/08/seam-carving-pt1.html</guid>
                 </item>
@@ -642,7 +1015,7 @@ An example of what 'open for surprise' might reveal
 &lt;/div&gt;
 
 </description>
-                    <pubDate>2020-09-12T06:05:41-04:00</pubDate>
+                    <pubDate>2020-09-12T04:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2020/09/12/recent-tweets.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/09/12/recent-tweets.html</guid>
                 </item>
@@ -681,7 +1054,7 @@ An example of what 'open for surprise' might reveal
 &lt;/div&gt;
 
 </description>
-                    <pubDate>2020-07-06T04:05:41-04:00</pubDate>
+                    <pubDate>2020-07-06T02:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2020/07/06/generative-sketchbook.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/07/06/generative-sketchbook.html</guid>
                 </item>
@@ -699,9 +1072,9 @@ An example of what 'open for surprise' might reveal
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2020-06-16T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/06/16/kmeans-music.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/06/16/kmeans-music.html</guid>
+                    <pubDate>2020-06-15T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2020/06/15/kmeans-music.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2020/06/15/kmeans-music.html</guid>
                 </item>
                 
             
@@ -772,7 +1145,7 @@ Projected results for upcoming states come from &lt;a href=&quot;https://project
 &lt;script src=&quot;/projects/dem2020-delegate-map/js/main.js&quot;&gt;&lt;/script&gt;
 
 </description>
-                    <pubDate>2020-03-24T06:05:41-04:00</pubDate>
+                    <pubDate>2020-03-24T04:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2020/03/24/dem2020-delegate-map.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/03/24/dem2020-delegate-map.html</guid>
                 </item>
@@ -1142,7 +1515,7 @@ $(window).resize(resize);
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2020-02-10T10:05:41-05:00</pubDate>
+                    <pubDate>2020-02-10T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2020/02/10/oscars-best-picture.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/02/10/oscars-best-picture.html</guid>
                 </item>
@@ -1441,7 +1814,7 @@ $('.bucket-button').click(function() {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2020-01-08T10:05:41-05:00</pubDate>
+                    <pubDate>2020-01-08T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2020/01/08/ibm-watson-ff.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/01/08/ibm-watson-ff.html</guid>
                 </item>
@@ -1833,7 +2206,7 @@ $(window).resize(resize);
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2020-01-02T10:05:41-05:00</pubDate>
+                    <pubDate>2020-01-02T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2020/01/02/decade-of-disney.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2020/01/02/decade-of-disney.html</guid>
                 </item>
@@ -1842,7 +2215,7 @@ $(window).resize(resize);
                 
                 <item>
                     <title>How A Subpar Football Fan Succeeds in Fantasy Football</title>
-                    <description>&lt;p&gt;This weekend marked the end of the NFL’s regular season and with it, the end of many fantasy football league seasons. This was my third year in a fantasy football league and quite shockingly, I ended up winning my league, which was a vast improvement on my past performances. In the past, I’ve &lt;a href=&quot;/projects/2017/09/07/evaluating-fantasy-draft.html&quot;&gt;visualized my effectiveness as a fantasy football drafter&lt;/a&gt; so to cap off this winning season, I wanted to explore what factors might have led to my success, as always, with data.&lt;/p&gt;
+                    <description>&lt;p&gt;This weekend marked the end of the NFL’s regular season and with it, the end of many fantasy football league seasons. This was my third year in a fantasy football league and quite shockingly, I ended up winning my league, which was a vast improvement on my past performances. In the past, I’ve &lt;a href=&quot;/projects/2017/09/06/evaluating-fantasy-draft.html&quot;&gt;visualized my effectiveness as a fantasy football drafter&lt;/a&gt; so to cap off this winning season, I wanted to explore what factors might have led to my success, as always, with data.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Before getting started, if you know nothing about fantasy football but are for some reason still interested in reading this, you can find a brief primer on how it works &lt;a href=&quot;http://www.nfl.com/fantasyfootball/story/0ap3000000692955/article/how-to-play-fantasy-football-a-beginners-guide&quot;&gt;here&lt;/a&gt;. On the other hand, if you know a lot about fantasy football and are curious, I was in a 12-person half PPR league with lineups of 1QB, 2RB, 2WR, 1TE, 1RB/WR/TE Flex, 1K, 1DST, and 7 bench spots.&lt;/em&gt;&lt;/p&gt;
 
@@ -1967,7 +2340,7 @@ h3 {
 &lt;/style&gt;
 
 </description>
-                    <pubDate>2019-12-31T10:05:41-05:00</pubDate>
+                    <pubDate>2019-12-31T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2019/12/31/2019-ff-retrospective.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2019/12/31/2019-ff-retrospective.html</guid>
                 </item>
@@ -1993,7 +2366,7 @@ h3 {
 &lt;/p&gt;
 
 </description>
-                    <pubDate>2019-11-22T10:05:41-05:00</pubDate>
+                    <pubDate>2019-11-22T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2019/11/22/running-visualized.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2019/11/22/running-visualized.html</guid>
                 </item>
@@ -2011,9 +2384,9 @@ h3 {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2019-10-27T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/10/27/how-bills-die.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/10/27/how-bills-die.html</guid>
+                    <pubDate>2019-10-26T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2019/10/26/how-bills-die.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2019/10/26/how-bills-die.html</guid>
                 </item>
                 
             
@@ -2421,9 +2794,9 @@ $(&quot;.slider&quot;).change(function() {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2019-06-27T00:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/06/27/trump-electoral-college-visualized.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/27/trump-electoral-college-visualized.html</guid>
+                    <pubDate>2019-06-26T22:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2019/06/26/trump-electoral-college-visualized.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/26/trump-electoral-college-visualized.html</guid>
                 </item>
                 
             
@@ -2434,7 +2807,7 @@ $(&quot;.slider&quot;).change(function() {
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
-        &lt;p&gt;In &lt;a href=&quot;/projects/2018/04/23/generative-art.html&quot;&gt;a previous post&lt;/a&gt;, I mentioned my fascination with generative art. One of my favorite creators of this art form is &lt;a href=&quot;https://twitter.com/zachlieberman&quot;&gt;Zach Lieberman&lt;/a&gt;, who is constantly experimenting with different themes and methods for producing generative art. For a series he was working on near the end of 2018, he created drawings and animations to showcase the many different fonts on his computer. This included &lt;a href=&quot;https://twitter.com/zachlieberman/status/1076926111832047616&quot;&gt;layering O’s from each font on top of one another&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/zachlieberman/status/1077173573859577858&quot;&gt;sorting I’s by their aspect ratio&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/zachlieberman/status/1078004393415491584&quot;&gt;creating a three dimensional counting stack&lt;/a&gt;. These animations are a fascinating way to highlight the differences in the design of these different fonts, but when stacking them, we also see the similarities that make up a generally shared form across fonts. This makes sense, since typographers design fonts so that a reader will recognize that E in their font is in fact an E. This recognition is heavily driven by the existence of fundamental components of any given letter (e.g., the three arms in E, the two bowls in B). When many fonts are stacked on top of one another, we can see trends and standard conventions in which components are included as well as how. I decided to explore these trends and see which fonts most closely followed these conventions and which decided to resist them.&lt;/p&gt;
+        &lt;p&gt;In &lt;a href=&quot;/projects/2018/04/22/generative-art.html&quot;&gt;a previous post&lt;/a&gt;, I mentioned my fascination with generative art. One of my favorite creators of this art form is &lt;a href=&quot;https://twitter.com/zachlieberman&quot;&gt;Zach Lieberman&lt;/a&gt;, who is constantly experimenting with different themes and methods for producing generative art. For a series he was working on near the end of 2018, he created drawings and animations to showcase the many different fonts on his computer. This included &lt;a href=&quot;https://twitter.com/zachlieberman/status/1076926111832047616&quot;&gt;layering O’s from each font on top of one another&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/zachlieberman/status/1077173573859577858&quot;&gt;sorting I’s by their aspect ratio&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/zachlieberman/status/1078004393415491584&quot;&gt;creating a three dimensional counting stack&lt;/a&gt;. These animations are a fascinating way to highlight the differences in the design of these different fonts, but when stacking them, we also see the similarities that make up a generally shared form across fonts. This makes sense, since typographers design fonts so that a reader will recognize that E in their font is in fact an E. This recognition is heavily driven by the existence of fundamental components of any given letter (e.g., the three arms in E, the two bowls in B). When many fonts are stacked on top of one another, we can see trends and standard conventions in which components are included as well as how. I decided to explore these trends and see which fonts most closely followed these conventions and which decided to resist them.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&quot;column&quot;&gt;
         &lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Love written with every font on my hard drive — happy holidays ! &lt;a href=&quot;https://twitter.com/hashtag/openframeworks?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#openframeworks&lt;/a&gt; &lt;a href=&quot;https://t.co/ZWwjivAuJa&quot;&gt;pic.twitter.com/ZWwjivAuJa&lt;/a&gt;&lt;/p&gt;&amp;mdash; zach lieberman (@zachlieberman) &lt;a href=&quot;https://twitter.com/zachlieberman/status/1077653990760951813?ref_src=twsrc%5Etfw&quot;&gt;December 25, 2018&lt;/a&gt;&lt;/blockquote&gt;
@@ -2645,16 +3018,16 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2019-06-23T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/06/23/most-font.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/23/most-font.html</guid>
+                    <pubDate>2019-06-22T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2019/06/22/most-font.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/22/most-font.html</guid>
                 </item>
                 
             
                 
                 <item>
                     <title>Random Fun with Processing</title>
-                    <description>&lt;p&gt;In the pursuit of &lt;a href=&quot;/projects/2019/06/23/most-font.html&quot;&gt;visualizing font design trends&lt;/a&gt;, I did a lot of playing around in &lt;a href=&quot;https://processing.org/&quot; target=&quot;_blank&quot;&gt;Processing&lt;/a&gt;. Here is a collection of some random animations/sketches I made while working on my latest project.&lt;/p&gt;
+                    <description>&lt;p&gt;In the pursuit of &lt;a href=&quot;/projects/2019/06/22/most-font.html&quot;&gt;visualizing font design trends&lt;/a&gt;, I did a lot of playing around in &lt;a href=&quot;https://processing.org/&quot; target=&quot;_blank&quot;&gt;Processing&lt;/a&gt;. Here is a collection of some random animations/sketches I made while working on my latest project.&lt;/p&gt;
 
 &lt;div class=&quot;columns two&quot;&gt;
     &lt;div class=&quot;column&quot;&gt;
@@ -2776,9 +3149,9 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
     &lt;/div&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2019-06-23T00:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/06/23/processing-fun.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/23/processing-fun.html</guid>
+                    <pubDate>2019-06-22T22:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2019/06/22/processing-fun.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/22/processing-fun.html</guid>
                 </item>
                 
             
@@ -2832,9 +3205,9 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
 &lt;script type=&quot;text/javascript&quot; src=&quot;/projects/oscars-popular-film/js/main.js&quot;&gt;&lt;/script&gt;
 
 </description>
-                    <pubDate>2018-08-24T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/08/24/oscar-popular-film.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/08/24/oscar-popular-film.html</guid>
+                    <pubDate>2018-08-23T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2018/08/23/oscar-popular-film.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2018/08/23/oscar-popular-film.html</guid>
                 </item>
                 
             
@@ -3069,9 +3442,9 @@ $(window).resize(function() {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2018-04-23T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/04/23/generative-art.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/04/23/generative-art.html</guid>
+                    <pubDate>2018-04-22T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2018/04/22/generative-art.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2018/04/22/generative-art.html</guid>
                 </item>
                 
             
@@ -3415,9 +3788,9 @@ $(window).resize(function() {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2018-03-03T00:00:00-05:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/03/03/comparing-obama-trump-on-guns.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/03/03/comparing-obama-trump-on-guns.html</guid>
+                    <pubDate>2018-03-02T22:00:00-07:00</pubDate>
+                    <link>http://localhost:4000/projects/2018/03/02/comparing-obama-trump-on-guns.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2018/03/02/comparing-obama-trump-on-guns.html</guid>
                 </item>
                 
             
@@ -3426,7 +3799,7 @@ $(window).resize(function() {
                     <title>A Retrospective on the 2018 Fantasy Olympics</title>
                     <description>&lt;p&gt;Sunday marked the official end of the 2018 Olympics Games. Overall, they did not disappoint. There were some great moments and highlights all around. As an objectively not-objective American, I was a bit disappointed with &lt;a href=&quot;https://www.theatlantic.com/entertainment/archive/2018/02/america-winter-olympics-worst-2018/554438/&quot;&gt;the United States’ overall performance&lt;/a&gt; but there were some amazing individual performances (shoutout to &lt;a href=&quot;https://www.youtube.com/watch?v=3opTwpiCZ6c&quot;&gt;Chloe Kim&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/watch?v=dRmZUNO4Y5s&quot;&gt;the U.S. Women’s Hockey Team&lt;/a&gt;, and &lt;a href=&quot;https://www.nytimes.com/interactive/2018/02/12/sports/olympics/jamie-anderson-gold-slopestyle.html&quot;&gt;Jamie Anderson&lt;/a&gt;).&lt;/p&gt;
 
-&lt;p&gt;Speaking of performances, I was doubly curious about how my first attempt at &lt;a href=&quot;/projects/2018/02/06/fantasy-olympics.html&quot;&gt;Fantasy Olympics rules and projections&lt;/a&gt; went. Now on the other side of the PyeongChang Games, I stand by my original set of rules for Fantasy Olympics. I think drafting teams by country and sport forms an interesting mix of teams and I think the weighted scoring system serves as a good counter-balance for fair drafting. So overall, Fantasy Olympics rules = 👍.&lt;/p&gt;
+&lt;p&gt;Speaking of performances, I was doubly curious about how my first attempt at &lt;a href=&quot;/projects/2018/02/05/fantasy-olympics.html&quot;&gt;Fantasy Olympics rules and projections&lt;/a&gt; went. Now on the other side of the PyeongChang Games, I stand by my original set of rules for Fantasy Olympics. I think drafting teams by country and sport forms an interesting mix of teams and I think the weighted scoring system serves as a good counter-balance for fair drafting. So overall, Fantasy Olympics rules = 👍.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -3469,16 +3842,16 @@ $(window).resize(function() {
 &lt;script type=&quot;text/javascript&quot; src=&quot;/projects/fantasy-olympics/js/retro-2018.js&quot;&gt;&lt;/script&gt;
 
 </description>
-                    <pubDate>2018-02-28T00:00:00-05:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/02/28/fantasy-olympics-retrospective.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/02/28/fantasy-olympics-retrospective.html</guid>
+                    <pubDate>2018-02-27T22:00:00-07:00</pubDate>
+                    <link>http://localhost:4000/projects/2018/02/27/fantasy-olympics-retrospective.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2018/02/27/fantasy-olympics-retrospective.html</guid>
                 </item>
                 
             
                 
                 <item>
                     <title>Gamifying the 2018 Olympic Games</title>
-                    <description>&lt;p&gt;I love the Olympics and the upcoming 2018 Games have me fired up. Following my first season in &lt;a href=&quot;/projects/2017/09/07/evaluating-fantasy-draft.html&quot;&gt;a fantasy football league this year&lt;/a&gt;, I thought it would be a fun idea to try and make my own fantasy game for the Olympics. So with only a limited amount of knowledge of what makes a good fantasy game, I got to work on my own Fantasy Olympics.&lt;/p&gt;
+                    <description>&lt;p&gt;I love the Olympics and the upcoming 2018 Games have me fired up. Following my first season in &lt;a href=&quot;/projects/2017/09/06/evaluating-fantasy-draft.html&quot;&gt;a fantasy football league this year&lt;/a&gt;, I thought it would be a fun idea to try and make my own fantasy game for the Olympics. So with only a limited amount of knowledge of what makes a good fantasy game, I got to work on my own Fantasy Olympics.&lt;/p&gt;
 
 &lt;p&gt;One of the initial problems I foresaw with a game for the Olympics was the average person’s familiarity with individual athletes. While everyone knows the big stars (Michael Phelps, Shaun White, etc.), most viewers would probably struggle to name more than a handful of individual athletes. There is the same issue with fantasy football and defenses. In fantasy football, most leagues remedy this by having fantasy players draft whole defenses instead of individual defensemen and I thought a similar scheme would be a good solution for my own Fantasy Olympics problem.&lt;/p&gt;
 
@@ -3590,9 +3963,9 @@ $(window).resize(function() {
 &lt;p&gt;Regardless of who wins and how accurate these projections end up being, I’m excited to watch two weeks of the best in sport. But also, go USA!&lt;/p&gt;
 
 </description>
-                    <pubDate>2018-02-06T00:00:00-05:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/02/06/fantasy-olympics.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/02/06/fantasy-olympics.html</guid>
+                    <pubDate>2018-02-05T22:00:00-07:00</pubDate>
+                    <link>http://localhost:4000/projects/2018/02/05/fantasy-olympics.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2018/02/05/fantasy-olympics.html</guid>
                 </item>
                 
             
@@ -3669,9 +4042,9 @@ $(window).resize(function() {
 &lt;script type=&quot;text/javascript&quot; src=&quot;/projects/sports-dynasties/js/main.js&quot;&gt;&lt;/script&gt;
 
 </description>
-                    <pubDate>2018-01-28T00:00:00-05:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/01/28/sports-dynasties.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/01/28/sports-dynasties.html</guid>
+                    <pubDate>2018-01-27T22:00:00-07:00</pubDate>
+                    <link>http://localhost:4000/projects/2018/01/27/sports-dynasties.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2018/01/27/sports-dynasties.html</guid>
                 </item>
                 
             
@@ -4096,9 +4469,9 @@ p.fav2017-title {
 &lt;/ol&gt;
 
 </description>
-                    <pubDate>2018-01-07T00:00:00-05:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/01/07/favorites-of-2017.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/01/07/favorites-of-2017.html</guid>
+                    <pubDate>2018-01-06T22:00:00-07:00</pubDate>
+                    <link>http://localhost:4000/projects/2018/01/06/favorites-of-2017.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2018/01/06/favorites-of-2017.html</guid>
                 </item>
                 
             
@@ -4400,9 +4773,9 @@ function clean_group_name(group) {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2017-10-27T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/10/27/confederate-monuments.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/10/27/confederate-monuments.html</guid>
+                    <pubDate>2017-10-26T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2017/10/26/confederate-monuments.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2017/10/26/confederate-monuments.html</guid>
                 </item>
                 
             
@@ -4458,9 +4831,9 @@ function clean_group_name(group) {
 &lt;p&gt;Overall, in a direct comparison, I think FiveThirtyEight’s approach is a bit more sound and likely is a more direct reflection of NFL fans’ partisan lean. However, while our specific results may vary, our overall trends and takeaways remain consistent. While some teams do tend to favor one political party more than the other, no single team is entirely made up of Democrats or Republicans. Given this mixed political representation, it is interesting to consider and observe how a team’s fan base may respond to various &lt;a href=&quot;https://en.wikipedia.org/wiki/Washington_Redskins_name_controversy&quot;&gt;political&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/U.S._national_anthem_protests_(2016%E2%80%93present)&quot;&gt;controversies&lt;/a&gt; and how that response may vary from the nationwide response. Above all though, it’s encouraging to think that, at least for now, we can’t separate or divide NFL teams into red teams and blue teams, at least as long as we’re talking about political leaning and not jersey colors.&lt;/p&gt;
 
 </description>
-                    <pubDate>2017-10-07T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/10/07/partisanship-in-football.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/10/07/partisanship-in-football.html</guid>
+                    <pubDate>2017-10-06T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2017/10/06/partisanship-in-football.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2017/10/06/partisanship-in-football.html</guid>
                 </item>
                 
             
@@ -4511,9 +4884,9 @@ function clean_group_name(group) {
 &lt;script src=&quot;/projects/fantasy-football/js/pre-season.js&quot;&gt;&lt;/script&gt;
 
 </description>
-                    <pubDate>2017-09-07T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/09/07/evaluating-fantasy-draft.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/09/07/evaluating-fantasy-draft.html</guid>
+                    <pubDate>2017-09-06T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2017/09/06/evaluating-fantasy-draft.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2017/09/06/evaluating-fantasy-draft.html</guid>
                 </item>
                 
             
@@ -4591,9 +4964,9 @@ function clean_group_name(group) {
 &lt;/div&gt;
 
 </description>
-                    <pubDate>2017-07-30T01:00:00-04:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/07/30/london-street-art.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/07/30/london-street-art.html</guid>
+                    <pubDate>2017-07-29T23:00:00-06:00</pubDate>
+                    <link>http://localhost:4000/projects/2017/07/29/london-street-art.html</link>
+                    <guid isPermaLink="true">http://localhost:4000/projects/2017/07/29/london-street-art.html</guid>
                 </item>
                 
             
@@ -4875,7 +5248,7 @@ function clean_group_name(group) {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2017-06-23T11:05:41-04:00</pubDate>
+                    <pubDate>2017-06-23T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2017/06/23/brain-fun.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/06/23/brain-fun.html</guid>
                 </item>
@@ -4900,7 +5273,7 @@ function clean_group_name(group) {
 
 &lt;p&gt;&lt;em&gt;Usability Note&lt;/em&gt;: I have noticed some rendering issues when viewing the second half of the site in Safari and Firefox &lt;span style=&quot;font-size: 9px&quot;&gt;(sorry)&lt;/span&gt;. I’m trying to figure out the issue, but for now, I would suggest viewing the site in Chrome.&lt;/p&gt;
 </description>
-                    <pubDate>2017-06-01T11:05:41-04:00</pubDate>
+                    <pubDate>2017-06-01T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2017/06/01/huffman-coding.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/06/01/huffman-coding.html</guid>
                 </item>
@@ -4923,7 +5296,7 @@ function clean_group_name(group) {
     &lt;/iframe&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2017-05-10T11:05:41-04:00</pubDate>
+                    <pubDate>2017-05-10T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2017/05/10/signal-and-noise-paper.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/05/10/signal-and-noise-paper.html</guid>
                 </item>
@@ -5088,7 +5461,7 @@ function clean_group_name(group) {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2017-04-28T11:05:41-04:00</pubDate>
+                    <pubDate>2017-04-28T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2017/04/28/chaos-game.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/04/28/chaos-game.html</guid>
                 </item>
@@ -5114,7 +5487,7 @@ function clean_group_name(group) {
 &lt;p&gt;You can read more about the project (as well as play with the visualization) &lt;a href=&quot;http://asl-lex.org/&quot; target=&quot;_new&quot;&gt;on this site&lt;/a&gt;. You can also view the underlying code for the visualization in &lt;a href=&quot;https://github.com/ben-tanen/asl-lex&quot; target=&quot;_new&quot;&gt;this Github repo&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2017-03-15T11:05:41-04:00</pubDate>
+                    <pubDate>2017-03-15T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2017/03/15/ASL-LEX.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/03/15/ASL-LEX.html</guid>
                 </item>
@@ -5138,7 +5511,7 @@ function clean_group_name(group) {
 &lt;p&gt;Since I was building this just for me, I took some shortcuts in terms of security, just for my own sanity, so I’m not planning to publish the extension on the Chrome store, at least not in the foreseeable future. Maybe that’ll be the project for next Winter Break…&lt;/p&gt;
 
 </description>
-                    <pubDate>2017-01-24T10:05:41-05:00</pubDate>
+                    <pubDate>2017-01-24T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2017/01/24/tv-monitor.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/01/24/tv-monitor.html</guid>
                 </item>
@@ -5370,7 +5743,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2017-01-08T10:05:41-05:00</pubDate>
+                    <pubDate>2017-01-08T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2017/01/08/polar-line-charts.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/01/08/polar-line-charts.html</guid>
                 </item>
@@ -5392,7 +5765,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;Feel free to check it out and let me know what you think. If anything seems confusing, unclear, or (heaven forbid) incorrect, feel free to shoot me a message. Also, if you are interested, you can find the code for the visualization &lt;a href=&quot;https://github.com/ben-tanen/ultimate-convex-hull/&quot;&gt;here on GitHub&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2017-01-02T10:05:41-05:00</pubDate>
+                    <pubDate>2017-01-02T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2017/01/02/ultimate-convex-hull.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2017/01/02/ultimate-convex-hull.html</guid>
                 </item>
@@ -5412,7 +5785,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;If you’re interested in exploring this world of alcohol, you can find &lt;a href=&quot;http://link.ben-tanen.com/drunken-world/&quot;&gt;the visualization here&lt;/a&gt;. You can also find &lt;a href=&quot;https://github.com/jadeyychan/DrunkenWorld&quot;&gt;the code here&lt;/a&gt;. Huge thanks to my team members, &lt;a href=&quot;https://jadeyychan.github.io/&quot;&gt;Jade&lt;/a&gt; and &lt;a href=&quot;https://github.com/rlrlarson&quot;&gt;Rebecca&lt;/a&gt;!&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-12-21T10:05:41-05:00</pubDate>
+                    <pubDate>2016-12-21T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2016/12/21/drunken-world.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/12/21/drunken-world.html</guid>
                 </item>
@@ -5503,7 +5876,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/div&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2016-11-18T10:05:41-05:00</pubDate>
+                    <pubDate>2016-11-18T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2016/11/18/mapping-tufts-schedules.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/11/18/mapping-tufts-schedules.html</guid>
                 </item>
@@ -5554,7 +5927,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/div&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2016-11-10T10:05:41-05:00</pubDate>
+                    <pubDate>2016-11-10T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2016/11/10/stpaul-broken-bones.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/11/10/stpaul-broken-bones.html</guid>
                 </item>
@@ -5604,7 +5977,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;Here’s to an exciting 2016-17 season and &lt;a href=&quot;https://twitter.com/search?q=lgr&quot; target=&quot;_blank&quot;&gt;#LGR&lt;/a&gt;!&lt;/p&gt;
 </description>
-                    <pubDate>2016-10-11T11:05:41-04:00</pubDate>
+                    <pubDate>2016-10-11T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/10/11/introducing-nhl-projections.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/10/11/introducing-nhl-projections.html</guid>
                 </item>
@@ -5700,7 +6073,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/script&gt;
 
 </description>
-                    <pubDate>2016-09-28T11:05:41-04:00</pubDate>
+                    <pubDate>2016-09-28T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/09/28/random-d3-fun.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/09/28/random-d3-fun.html</guid>
                 </item>
@@ -5732,7 +6105,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/p&gt;
 
 </description>
-                    <pubDate>2016-08-26T11:05:41-04:00</pubDate>
+                    <pubDate>2016-08-26T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/08/26/spotify-popularity.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/08/26/spotify-popularity.html</guid>
                 </item>
@@ -5957,7 +6330,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;&lt;strong&gt;*&lt;/strong&gt; These numbers do not include marathon swimming &lt;br /&gt; &lt;strong&gt;**&lt;/strong&gt; These numbers do not include rhythmic or trampoline gymnastics&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-08-22T11:05:41-04:00</pubDate>
+                    <pubDate>2016-08-22T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/08/22/rio-2016-usa-vs-world.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/08/22/rio-2016-usa-vs-world.html</guid>
                 </item>
@@ -6001,7 +6374,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-                    <pubDate>2016-08-15T11:05:41-04:00</pubDate>
+                    <pubDate>2016-08-15T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/08/15/miller-rabin.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/08/15/miller-rabin.html</guid>
                 </item>
@@ -6179,7 +6552,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/table&gt;
 
 </description>
-                    <pubDate>2016-05-15T11:05:41-04:00</pubDate>
+                    <pubDate>2016-05-15T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/05/15/pca-kmeans-nhl.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/05/15/pca-kmeans-nhl.html</guid>
                 </item>
@@ -6202,7 +6575,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc).&lt;/p&gt;
 </description>
-                    <pubDate>2016-05-08T11:05:41-04:00</pubDate>
+                    <pubDate>2016-05-08T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/05/08/netflix-history.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/05/08/netflix-history.html</guid>
                 </item>
@@ -6244,7 +6617,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;For anyone interested, you can find the MATLAB code for this example &lt;a href=&quot;https://github.com/ben-tanen/DataMining/tree/master/svm-poems&quot;&gt;here&lt;/a&gt; and other data mining projects &lt;a href=&quot;https://github.com/ben-tanen/data-mining&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-05-03T11:05:41-04:00</pubDate>
+                    <pubDate>2016-05-03T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/05/03/svm-poetry.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/05/03/svm-poetry.html</guid>
                 </item>
@@ -6305,7 +6678,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
     &lt;/div&gt;
 &lt;/div&gt;
 </description>
-                    <pubDate>2016-04-26T11:05:41-04:00</pubDate>
+                    <pubDate>2016-04-26T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2016/04/26/photography.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/04/26/photography.html</guid>
                 </item>
@@ -6347,7 +6720,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;If you have any questions / comments, feel free to shoot me a message. I’ll follow up with any major changes / updates in the data mining world of Ben Tanen.&lt;/p&gt;
 
 </description>
-                    <pubDate>2016-03-09T10:05:41-05:00</pubDate>
+                    <pubDate>2016-03-09T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2016/03/09/clustering-with-kmeans.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2016/03/09/clustering-with-kmeans.html</guid>
                 </item>
@@ -6385,7 +6758,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;For more detail and / or to look at the Python (using Pandas) code, you can check out the iPython notebook &lt;a href=&quot;/notebooks/optimizing-portfolio.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-12-12T10:05:41-05:00</pubDate>
+                    <pubDate>2015-12-12T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2015/12/12/optimizing-hedge-ratio.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/12/12/optimizing-hedge-ratio.html</guid>
                 </item>
@@ -6425,7 +6798,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;You can check out the code for this project &lt;a href=&quot;https://github.com/ben-tanen/drumtab-visualizer&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-11-10T10:05:41-05:00</pubDate>
+                    <pubDate>2015-11-10T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2015/11/10/drum-tab-visualizer.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/11/10/drum-tab-visualizer.html</guid>
                 </item>
@@ -6453,7 +6826,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;For more, you can see current site &lt;a href=&quot;http://ben-tanen.github.io/jumbo-advisor/&quot;&gt;here&lt;/a&gt; and the source code &lt;a href=&quot;https://github.com/ben-tanen/jumbo-advisor&quot;&gt;here&lt;/a&gt;. Any updates on this project will likely be posted here but you can also check the GitHub repo.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-10-30T11:05:41-04:00</pubDate>
+                    <pubDate>2015-10-30T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/10/30/jumboadvisor.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/10/30/jumboadvisor.html</guid>
                 </item>
@@ -6477,7 +6850,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;For more, you can see the whole iPython notebook &lt;a href=&quot;/notebooks/lastfm-scrobble.html&quot;&gt;here&lt;/a&gt; (Hurray for iPython notebooks, they’re awesome).&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-09-01T11:05:41-04:00</pubDate>
+                    <pubDate>2015-09-01T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/09/01/lastfm-scrobble-graphs.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/09/01/lastfm-scrobble-graphs.html</guid>
                 </item>
@@ -6535,7 +6908,7 @@ Markowitz bullets showing possible portfolios
 &lt;p&gt;While incredibly simplified, his analysis does seem to be leading in the general right direction for the best method to find someone in a large crowd. Then again this also seems like the perfect opportunity to use Find My Friends or a good ol’ phone call.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-08-16T11:05:41-04:00</pubDate>
+                    <pubDate>2015-08-16T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/08/16/data-is-beautiful-1.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/08/16/data-is-beautiful-1.html</guid>
                 </item>
@@ -6546,7 +6919,7 @@ Markowitz bullets showing possible portfolios
                     <title>Random Project: Censor Machine</title>
                     <description>&lt;p&gt;Do you ever need or want a simple Internet tool and it seems like it would be easier code it than find it? That is exactly what happened when I needed a beeping censor for &lt;a href=&quot;http://wmfo.org&quot;&gt;my radio show&lt;/a&gt;. Sometimes bands like to swear and I needed a button / website to defend the honor of the FCC. Thus, I made this really &lt;a href=&quot;http://ben-tanen.github.io/CensorMachine/&quot;&gt;stupid site&lt;/a&gt;. But hey, now I have it.&lt;/p&gt;
 </description>
-                    <pubDate>2015-07-06T11:05:41-04:00</pubDate>
+                    <pubDate>2015-07-06T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/07/06/censor-machine.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/07/06/censor-machine.html</guid>
                 </item>
@@ -6578,7 +6951,7 @@ Good Ol' Unix Terminal Games
 &lt;p&gt;If you’re at all interested, give them a play and maybe even play around with the code. I did make them, but I have to say “objectively” I think they’re pretty fun.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-07-01T11:05:41-04:00</pubDate>
+                    <pubDate>2015-07-01T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/07/01/retro-python-games.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/07/01/retro-python-games.html</guid>
                 </item>
@@ -6631,7 +7004,7 @@ Who doesn't love economic-based drinking games?
 
 &lt;p&gt;Any other potential prizes/punishments?&lt;/p&gt;
 </description>
-                    <pubDate>2015-06-26T11:05:41-04:00</pubDate>
+                    <pubDate>2015-06-26T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/06/26/retro-game-theory.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/06/26/retro-game-theory.html</guid>
                 </item>
@@ -6692,7 +7065,7 @@ Update - More or less is exactly what the actual implementation looks like
   &lt;p&gt;&lt;strong&gt;Retrospective Update #4&lt;/strong&gt; - This feature is sort of available. If you have your phone plugged in, you can say “Hey Siri” and it might respond to you.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-                    <pubDate>2015-06-17T11:06:41-04:00</pubDate>
+                    <pubDate>2015-06-17T09:06:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/06/17/retro-ios-update.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/06/17/retro-ios-update.html</guid>
                 </item>
@@ -6749,7 +7122,7 @@ Spotify didn't waste an inch of space on the mobile app
 &lt;p&gt;There are hundreds of different reasons to maybe choose Spotify over iTunes (or other streaming services) or vice versa. All I can claim is that these are why I switched to Spotify from iTunes after 10 years and I’ve never once looked back.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-05-21T11:06:41-04:00</pubDate>
+                    <pubDate>2015-05-21T09:06:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/05/21/spotify.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/05/21/spotify.html</guid>
                 </item>
@@ -6783,7 +7156,7 @@ The original desktop application (left) vs. the new web application (right)
 &lt;p&gt;If you want to try it out, you can find the site &lt;a href=&quot;http://proto.atech.tufts.edu/RodRego/&quot;&gt;here&lt;/a&gt;. You can also find the code on &lt;a href=&quot;https://github.com/ben-tanen/rodrego&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2015-03-31T11:06:41-04:00</pubDate>
+                    <pubDate>2015-03-31T09:06:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2015/03/31/rodrego.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2015/03/31/rodrego.html</guid>
                 </item>
@@ -6815,7 +7188,7 @@ The original desktop application (left) vs. the new web application (right)
 &lt;p&gt;Obviously this idea is a little on the ridiculous side, but who says ridiculous ideas can’t be awesome? Hey, if &lt;a href=&quot;http://r-wos.org/hacks/gti&quot;&gt;gti init&lt;/a&gt; can be a thing, why can’t Grub? Check back for any future developments into the command-line food delivery service of the future.&lt;/p&gt;
 
 </description>
-                    <pubDate>2014-11-30T10:05:41-05:00</pubDate>
+                    <pubDate>2014-11-30T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2014/11/30/grub.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2014/11/30/grub.html</guid>
                 </item>
@@ -6838,7 +7211,7 @@ The original desktop application (left) vs. the new web application (right)
 
 &lt;p&gt;Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code &lt;a href=&quot;https://github.com/ben-tanen/Base64Decode&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
-                    <pubDate>2014-11-12T10:05:41-05:00</pubDate>
+                    <pubDate>2014-11-12T08:05:41-07:00</pubDate>
                     <link>http://localhost:4000/projects/2014/11/12/base64.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2014/11/12/base64.html</guid>
                 </item>
@@ -6882,7 +7255,7 @@ My own example infographics
 &lt;p&gt;&lt;strong&gt;Update, 07/28/2017&lt;/strong&gt; - Still using the improved system but now I don’t have an about page any more…you can find the details on &lt;a href=&quot;/&quot;&gt;my home page&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                    <pubDate>2014-11-01T11:05:41-04:00</pubDate>
+                    <pubDate>2014-11-01T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2014/11/01/infographics.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2014/11/01/infographics.html</guid>
                 </item>
@@ -6916,7 +7289,7 @@ My own example infographics
 &lt;p&gt;By the way, when I said I wasn’t very well versed in rap, I wasn’t lying. Of the 104 rappers mentioned in the piece, I have only listened to (more than one song) 22 of them and a fair amount of those are simply because they are some of the biggest names in music. But now I have a good list of 82 rappers to delve into, so that’s something.&lt;/p&gt;
 
 </description>
-                    <pubDate>2014-10-31T11:05:41-04:00</pubDate>
+                    <pubDate>2014-10-31T09:05:41-06:00</pubDate>
                     <link>http://localhost:4000/projects/2014/10/31/rap-data-design.html</link>
                     <guid isPermaLink="true">http://localhost:4000/projects/2014/10/31/rap-data-design.html</guid>
                 </item>

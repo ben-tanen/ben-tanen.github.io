@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate" type="application/rss+xml" title="Ben Tanen RSS" href="/feed.xml">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    
+    <link rel="stylesheet" href="/assets/css/main.style.css">
+    
+
+    
+    <link rel="stylesheet" href="/assets/css/jBox.css">
+
+    <!-- jquery and js files -->
+    <script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/jBox.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/assets/js/run-heroku.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,500,700" rel="stylesheet"> 
+
+    <title>Finding the Most Average Font | Ben Tanen</title>
+</head>
+
+
+<body>
+    <!-- adding support for mathjx -->
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <div class='wrapper'>
+    	<div id='side'>
+    <img id='face' src='/assets/img/me/face-f.png' alt='A picture of my head' />
+    
+    <h1 id="title-1">Howdy</h1>
+    <h1 id="title-2">I'm Ben</h1>
+
+    <div id='site-links'>
+        <p><a href='/'>Home</a></p>
+        <p><a href='/about/' >About</a></p>
+        <p><a href='/projects/all/' >Projects</a></p>
+    </div>
+
+    <ul id="social-links">
+    <li id="twitter" class="social-link">
+        <a href="https://twitter.com/ben_tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M384.635,236.708c19.554-1.613,32.816-10.502,37.922-22.564c-7.055,4.333-28.952,9.057-41.044,4.558 c-0.593-2.841-1.255-5.541-1.903-7.977c-9.215-33.835-40.764-61.091-73.819-57.799c2.674-1.08,5.386-2.084,8.094-2.988 c3.638-1.303,24.987-4.777,21.625-12.312c-2.835-6.628-28.917,5.01-33.826,6.53c6.479-2.438,17.203-6.631,18.35-14.082 c-9.931,1.362-19.679,6.057-27.214,12.886c2.72-2.927,4.783-6.496,5.222-10.335c-26.493,16.924-41.967,51.042-54.488,84.139 c-9.834-9.53-18.549-17.034-26.369-21.202c-21.933-11.762-48.159-24.034-89.327-39.317c-1.264,13.621,6.736,31.731,29.789,43.774 c-4.995-0.668-14.128,0.824-21.432,2.573c2.975,15.604,12.69,28.461,38.99,34.677c-12.019,0.793-18.232,3.529-23.86,9.424 c5.474,10.852,18.832,23.625,42.863,21.002c-26.717,11.516-10.894,32.844,10.847,29.659 c-37.087,38.307-95.559,35.492-129.133,3.453c87.664,119.456,278.225,70.647,306.623-44.414 c21.273,0.184,33.784-7.368,41.539-15.693C411.823,242.782,394.057,240.632,384.635,236.708z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="github" class="social-link">
+        <a href="https://github.com/ben-tanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M373.573,231.878c1.11-7.021,1.803-14.719,1.977-23.351c-0.066-37.014-17.785-50.111-21.194-56.251 c5.021-28.044-0.831-40.801-3.554-45.168c-10.04-3.563-34.929,9.198-48.528,18.181c-22.173-6.491-69.031-5.857-86.603,1.68 c-32.422-23.216-49.57-19.676-49.57-19.676s-11.086,19.879-2.931,48.962c-10.667,13.594-18.619,23.205-18.619,48.698 c0,6.106,0.379,11.875,1.023,17.425c9.187,48.304,47.462,69.144,85.059,72.737c-5.657,4.299-12.45,12.434-13.39,21.861 c-7.108,4.596-21.408,6.115-32.528,2.619c-15.58-4.924-21.545-35.777-44.877-31.375c-5.048,0.945-4.045,4.273,0.327,7.113 c7.108,4.609,13.803,10.342,18.963,22.605c3.963,9.416,12.299,26.229,38.655,26.229c10.462,0,17.791-1.236,17.791-1.236 s0.2,23.994,0.2,33.352c0,10.77-14.534,13.793-14.534,18.959c0,2.057,4.811,2.25,8.677,2.25c7.64,0,23.536-6.363,23.536-17.557 c0-8.895,0.142-38.785,0.142-44.02c0-11.438,6.13-15.078,6.13-15.078s0.75,61.055-1.476,69.24 c-2.609,9.625-7.336,8.258-7.336,12.541c0,6.395,19.11,1.564,25.449-12.43c4.904-10.93,2.707-70.803,2.707-70.803l5.113-0.111 c0,0,0.059,27.422-0.117,39.947c-0.186,12.977-1.523,29.379,6.184,37.121c5.059,5.092,20.555,14.027,20.555,5.861 c0-4.732-10.852-8.641-10.852-21.461v-59.057c6.593,0,7.955,19.412,7.955,19.412l2.377,36.064c0,0-1.578,13.16,14.217,18.652 c5.575,1.953,17.504,2.484,18.062-0.793c0.561-3.287-14.362-8.146-14.504-18.332c-0.078-6.203,0.277-9.834,0.277-36.818 c0-26.969-3.623-36.945-16.247-44.896C328.697,291.219,366.724,274.869,373.573,231.878z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="lastfm" class="social-link">
+        <a href="https://www.last.fm/user/ben-tanen" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M222.188,296.969c-6.664,5.982-19.463,17.961-40.772,17.961c-25.132,0-49.344-22.029-49.344-57.277 c0-45.163,28.943-59.729,51.163-59.729c32.053,0,39.071,19.339,47.809,46.145l11.663,36.721 c11.651,35.614,33.507,64.244,96.521,64.244c45.169,0,75.763-13.945,75.763-50.66c0-29.744-16.761-45.163-48.083-52.511 l-23.309-5.136c-16.027-3.672-20.762-10.283-20.762-21.302c0-12.483,9.833-19.822,25.863-19.822 c17.482,0,26.955,6.609,28.416,22.396l36.418-4.405c-2.917-33.047-25.499-46.628-62.65-46.628 c-32.779,0-64.832,12.484-64.832,52.504c0,24.968,12.018,40.752,42.242,48.102l24.776,5.869 c18.575,4.41,24.76,12.121,24.76,22.771c0,13.58-13.11,19.087-37.876,19.087c-36.786,0-55.263-19.46-64.009-46.265l-12.022-36.712 c-15.287-47.731-33.336-65.357-81.78-65.357c-43.198,0-85.133,34.145-85.133,92.153c0,55.812,40.262,85.915,82.582,85.915 c30.605,0,46.152-10.756,53.739-16.271L222.188,296.969z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="linkedin" class="social-link">
+        <a href="https://www.linkedin.com/in/bentanen/" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M390.005,284.965v99.085h-57.443v-92.449c0-23.224-8.308-39.072-29.101-39.072 c-15.873,0-25.318,10.68-29.475,21.013c-1.515,3.693-1.905,8.835-1.905,14.006v96.503h-57.462c0,0,0.774-156.578,0-172.8h57.457 v24.493c-0.117,0.183-0.269,0.381-0.378,0.559h0.378v-0.559c7.634-11.757,21.267-28.553,51.782-28.553 C361.663,207.189,390.005,231.887,390.005,284.965z M154.511,127.951c-19.658,0-32.516,12.894-32.516,29.85 c0,16.586,12.486,29.872,31.753,29.872h0.384c20.039,0,32.501-13.283,32.501-29.872 C186.255,140.845,174.171,127.951,154.511,127.951z M125.407,384.05h57.441v-172.8h-57.441V384.05z"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+
+    <li id="email" class="social-link">
+        <a href="mailto:ben.tanen@gmail.com" target="_blank">
+            <svg viewBox="0 0 512 512">
+                <circle cx="256" cy="256" r="239.5"/>
+                <g fill="#FFFFFF">
+                    <path d="M256,298.711l-36.988-32.373l-105.753,90.654c3.844,3.565,9.033,5.787,14.757,5.787h255.969 c5.703,0,10.871-2.222,14.693-5.787l-105.689-90.654L256,298.711z"/>
+                    <path d="M398.742,155.01c-3.846-3.588-9.012-5.788-14.758-5.788H128.016c-5.703,0-10.87,2.222-14.714,5.83 L256,277.355L398.742,155.01z"/>
+                    <polygon points="106.51,167.972 106.51,345.396 209.723,257.688"/>
+                    <polygon points="302.277,257.688 405.49,345.396 405.49,167.908"/>
+                </g>
+            </svg>
+        </a>
+    </li>
+</ul>
+</div>
+
+    	<div class='main'>
+    		<div class="post">
+
+    <header class="post-header">
+        <h1>Finding the Most Average Font</h1>
+        <p class="post-date">Jun 22 2019
+    </header>
+
+    <article class="post-content">
+    <link rel="stylesheet" href="/projects/most-font/css/style.css" />
+
+<div class="columns two">
+    <div class="column">
+        <p>In <a href="/projects/2018/04/22/generative-art.html">a previous post</a>, I mentioned my fascination with generative art. One of my favorite creators of this art form is <a href="https://twitter.com/zachlieberman">Zach Lieberman</a>, who is constantly experimenting with different themes and methods for producing generative art. For a series he was working on near the end of 2018, he created drawings and animations to showcase the many different fonts on his computer. This included <a href="https://twitter.com/zachlieberman/status/1076926111832047616">layering O’s from each font on top of one another</a>, <a href="https://twitter.com/zachlieberman/status/1077173573859577858">sorting I’s by their aspect ratio</a>, and <a href="https://twitter.com/zachlieberman/status/1078004393415491584">creating a three dimensional counting stack</a>. These animations are a fascinating way to highlight the differences in the design of these different fonts, but when stacking them, we also see the similarities that make up a generally shared form across fonts. This makes sense, since typographers design fonts so that a reader will recognize that E in their font is in fact an E. This recognition is heavily driven by the existence of fundamental components of any given letter (e.g., the three arms in E, the two bowls in B). When many fonts are stacked on top of one another, we can see trends and standard conventions in which components are included as well as how. I decided to explore these trends and see which fonts most closely followed these conventions and which decided to resist them.</p>
+    </div>
+    <div class="column">
+        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Love written with every font on my hard drive — happy holidays ! <a href="https://twitter.com/hashtag/openframeworks?src=hash&amp;ref_src=twsrc%5Etfw">#openframeworks</a> <a href="https://t.co/ZWwjivAuJa">pic.twitter.com/ZWwjivAuJa</a></p>&mdash; zach lieberman (@zachlieberman) <a href="https://twitter.com/zachlieberman/status/1077653990760951813?ref_src=twsrc%5Etfw">December 25, 2018</a></blockquote>
+        <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div>
+
+<p><strong>Note</strong>: This post will contain some font design lingo, so if you’re relatively new to typography (like I am), you can read some basics on <a href="http://typedia.com/learn/only/anatomy-of-a-typeface/" target="_blank">these</a> <a href="https://www.fonts.com/content/learning/fontology/level-1" target="_blank">pages</a> <a href="https://material.io/design/typography/understanding-typography.html" target="_blank">for</a> <a href="http://www.happytypings.com/alphabet/" target="_blank">background</a>.</p>
+
+<p>The first step was to generate some images to show the trends in font form for each letter. To do this, I stacked partially transparent text for each letter of each font on top of one another to generate a “heatmap” of where fonts overlapped and where they didn’t.</p>
+
+<div class="img-container-container">
+    <div class="img-container">
+        <ul class="img-list" id="stacked">
+            <li><img src="/projects/most-font/img/stacked/stacked_A.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_B.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_C.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_D.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_E.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_F.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_G.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_H.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_I.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_J.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_K.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_L.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_M.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_N.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_O.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_P.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_Q.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_R.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_S.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_T.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_U.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_V.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_W.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_X.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_Y.png" /></li>
+            <li><img src="/projects/most-font/img/stacked/stacked_Z.png" /></li>
+        </ul>
+    </div>
+    <p class="scroll-hint">&larr; Scroll &rarr;</p>
+</div>
+
+<p>Looking at these heatmaps, we can see obvious trends emerge that form the basis of the letters we know and love, i.e., the heatmap for C looks like a C. But looking closely at these images, we can see the different ways that fonts can vary. A more obvious and consistent example is the use of serifs. Based on the fonts I used for this exercise, about two thirds of fonts are sans-serif, but by focusing on caps of a particular letter’s strokes, we can see the faint apparition of serifs coming from those minority serif fonts. The inclusion of serifs is an intentional design decision and from these letter heatmaps, we can see the embodiment of this design choice. These design decisions are often made across an entire font, but there are also letter-specific examples.</p>
+
+<div id="close-ups-container">
+    <div class="columns two">
+        <div class="column">
+            One such example is for the <a href="https://typedecon.com/blogs/type-glossary/stroke/" target="_blank">middle strokes</a> used in M. As seen in the close-up, fonts differ in whether to have these two middle strokes meet <a href="https://typography.guru/uploads/monthly_2016_02/M_Comparison.thumb.png.3a44c1f62b79a1d04b5d2098f4e442b8.png" target="_blank">above or on the baseline</a>. This seems to be <span id="footnote-2" class="footnote">occasionally referred</span> to as the <a href="http://www.identifont.com/identify?7+.+8J+HQ5+57D+4PV+7LD+7V+ECI+50+7B+8RT+B6G+NEY+7UW+1K9+KBY+2JR+56V+1L1+4Y+DH+1LA+97+80+8W+PAF+58C+9J+76Q+Z+4C+7P+1JZ+30D+J+26RC+4A+7W+J4T+1KU+1U6+11+7S+6X6+6XA+79+1KI+42+53K+1QY+1U+9Z" target="_blank">height of the M’s center vertex</a>. Examples of a high vertex include Courier and Tahoma, while examples of a low vertex include Futura and Avenir.
+        </div>
+        <div class="column">
+            <p class="fig-paragraph">
+    <a class="fig-link" target="_blank">
+    <img src="/projects/most-font/img/closeups/stacked_M_closeup.png" style="display: inline; border: 1px solid #a9a9a9;" />
+    </a>
+</p>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="columns two">
+        <div class="column">
+            Another example can be seen for the <a href="https://typedecon.com/blogs/type-glossary/tail/" target="_blank">tail</a> of R. While the heatmap shows a deeper red for straight tails, indicating the vast majority of fonts went in this direction, we can see some fonts that opted for an outward curved tail. For example, Helvetica uses an outwardly bowed tail for R. This design decision is portrayed for <a href="http://www.identifont.com/identify?17+.+8J+HQ5+57D+4PV+7LD+7V+ECI+50+7B+8RT+B6G+NEY+7UW+1K9+KBY+2JR+56V+1L1+4Y+DH+1LA+97+80+8W+PAF+58C+9J+76Q+Z+4C+7P+1JZ+30D+J+26RC+4A+7W+J4T+1KU+1U6+11+7S+6X6+6XA+79+1KI+42+53K+1QY+1U+9Z" target="_blank">this question</a> on Identifont. 
+        </div>
+        <div class="column">
+            <p class="fig-paragraph">
+    <a class="fig-link" target="_blank">
+    <img src="/projects/most-font/img/closeups/stacked_R_closeup.png" style="display: inline; border: 1px solid #a9a9a9;" />
+    </a>
+</p>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="columns two">
+        <div class="column">
+            We can also look at the top of J to see differences in heights among among fonts. From the heatmap, it appears as if most of the used fonts have J sitting on the <a href="https://typedecon.com/blogs/type-glossary/baseline/" target="_blank">baseline</a> with their height becoming apparent from the <a href="https://typedecon.com/blogs/type-glossary/cap-height/" target="_blank">cap height of J’s stem</a>. However, because of how these images show centered letters <span id="footnote-3" class="footnote">without consideration for the baseline</span>, the variance in heights for J are actually coming from a mix of fonts that have the letter sitting on the baseline, like Arial, and those that have <a href="http://www.identifont.com/identify?9+J+4KG+2XE+7K+3A5+3C+9L+F+20Z+773+J4S+97+1QN+8YZ+1L0+30C+B6F+1TM+6X+7UF+58C+8Z+6ZQ+2BR+PAE+4PV+76P+74+9I+8J+56V+8F+DG+26RA+8N+1KS+JPK+75+8W+7P+7W+8E+7S+6X4+6X8+8B+53K+1U6+79+1KI+1LA+1QY+7G+9Z" target="_blank">J dipping below the baseline</a>, like Gill Sans, leading to the appearance of mixed heights.
+        </div>
+        <div class="column">
+            <p class="fig-paragraph">
+    <a class="fig-link" target="_blank">
+    <img src="/projects/most-font/img/closeups/stacked_J_closeup.png" style="display: inline; border: 1px solid #a9a9a9;" />
+    </a>
+</p>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<p>Beyond showing design decisions and trends across fonts and letters, we can also use these heatmaps as a benchmark to test how “average” an individual font might be. By layering an individual font’s letter on top of a heatmap and measuring the saturation of the color inside vs. outside of the font, we get a measure for how much that letter overlaps with the standard/average form, which I’ll refer to as it’s “averageness score.” If we then sort all of our fonts/letters based on this averageness score, we can see a series of fonts that start relatively average and then diverge quite a bit from the standard.</p>
+
+<div class="img-container-container">
+    <div class="img-container">
+        <ul class="img-list" id="gif">
+            <li><img src="/projects/most-font/img/gifs/overlap-outline_A.gif" /></li>
+            <li><img src="/projects/most-font/img/gifs/overlap-outline_E.gif" /></li>
+            <li><img src="/projects/most-font/img/gifs/overlap-outline_G.gif" /></li>
+            <li><img src="/projects/most-font/img/gifs/overlap-outline_K.gif" /></li>
+            <li><img src="/projects/most-font/img/gifs/overlap-outline_W.gif" /></li>
+        </ul>
+    </div>
+    <p class="scroll-hint">&larr; Scroll &rarr;</p>
+</div>
+
+<p>Using these individual letter averageness scores, we can assess how divergent and/or unique a particular font is by taking the average score across all 26 letters. After doing this for each font, we find that the most average font is… Lucida Grande! On the other end of the spectrum, we unsurprisingly see that a variant of Wingdings is the most <em>unique</em> font. Interestingly, the font Blackoak Std came in with the second lowest average, largely driven by how wide the letters of this font is. You can see these fonts (as well as a selection of extreme examples and other notable fonts) compared to the heatmaps by clicking below.</p>
+
+<div id="font-list-container-container">
+    <div id="font-list-list-container">
+        <ul id="font-list-list">
+            <li data-font-name="LucidaGrande" class="selected"><img src="/projects/most-font/img/font-map/font-map-label-Lucida-Grande.png" /></li>
+            <li data-font-name="KozGoPro-Regular"><img src="/projects/most-font/img/font-map/font-map-label-Kozuka-Gothic-Pro.png" /></li>
+            <li data-font-name="MyriadPro-Regular"><img src="/projects/most-font/img/font-map/font-map-label-Myriad-Pro.png" /></li>
+            <li data-font-name="Tahoma"><img src="/projects/most-font/img/font-map/font-map-label-Tahoma.png" /></li>
+            <li data-font-name="ArialUnicodeMS"><img src="/projects/most-font/img/font-map/font-map-label-Arial.png" /></li>
+            <li data-font-name="Times-Roman"><img src="/projects/most-font/img/font-map/font-map-label-Times-Roman.png" /></li>
+            <li data-font-name="Helvetica"><img src="/projects/most-font/img/font-map/font-map-label-Helvetica.png" /></li>
+            <li data-font-name="Futura-Medium"><img src="/projects/most-font/img/font-map/font-map-label-Futura.png" /></li>
+            <li data-font-name="GillSans"><img src="/projects/most-font/img/font-map/font-map-label-Gill-Sans.png" /></li>
+            <li data-font-name="Montserrat-Regular"><img src="/projects/most-font/img/font-map/font-map-label-Montserrat.png" /></li>
+            <li data-font-name="Courier"><img src="/projects/most-font/img/font-map/font-map-label-Courier.png" /></li>
+            <li data-font-name="Papyrus"><img src="/projects/most-font/img/font-map/font-map-label-Papyrus.png" /></li>
+            <li data-font-name="Webdings"><img src="/projects/most-font/img/font-map/font-map-label-Webdings.png" /></li>
+            <li data-font-name="BlackoakStd"><img src="/projects/most-font/img/font-map/font-map-label-Blackoak-Std.png" /></li>
+            <li data-font-name="Wingdings3"><img src="/projects/most-font/img/font-map/font-map-label-Wingdings3.png" /></li>
+        </ul>
+    </div>
+    <p class="scroll-hint">&larr; Scroll &rarr;</p>
+    <div id="font-list-img-container">
+        <img src="/projects/most-font/img/font-map/font-map-LucidaGrande.png" />
+    </div>
+</div>
+
+<p>Now that we’ve arrived at a quantitative assessment of the most and least average fonts, it’s worth considering what these measures actually say about a font or how we should use them. If you were to be working on an eye-catching project that were to call for an eye-catching font, it is possible that you might want a font with a lower averageness score. However, for many projects, while intentional, an included font is supposed to be <a href="https://thomasbyttebier.be/blog/the-best-ui-typeface-goes-unnoticed">unnoticeable</a>. Does that mean we should be using fonts that lean towards the more average end of the spectrum? Maybe. More likely than not though, this idea of “averageness” is just another (important?) component of one’s greater considerations for a font choice. Just as there are hundreds of different choices that make up a design for a font, choosing the right font for a design often involves a number of questions. If one of those questions is “how ordinary should the font be,” you can now consult <a href="https://github.com/ben-tanen/most-font/tree/master/data">the data</a>.</p>
+
+<p class="section-break">* * *</p>
+
+<div class="methodology">
+    <p class="methodology-title">Methodology and minutia</p>
+    
+    
+    <p></p>
+    
+    <p>
+All images and gifs were generated using a combination of <a href="https://processing.org/">Processing</a> and <a href="https://www.imagemagick.org/">ImageMagick</a>.</p>
+    
+    <p>
+</p>
+    
+    <p>
+The first iteration of this project included all of the 712 fonts on my computer, but I decided to pare it down to the primary/”regular” versions of each font (e.g., keeping Helvetica, but not Helvetica Oblique or Helvetica Light), leaving a total of 255 fonts. A handful of these fonts were also primarily designed for non-Latin alphabets (for example, <a href="https://www.diwan.com/index.php/products/fonts/36-diwan-arabic-fonts">Waseem</a> was designed for Arabic), but since I was analyzing characters in the Latin alphabet, Processing often displayed these fonts using standard fonts.</p>
+    
+    <p>
+</p>
+    
+    <p>
+When initially generating letter heatmaps, Processing would frequently render fonts <span id="footnote-1" class="footnote">at inconsistent sizes and with inconsistent offsets/positions</span>. As much as font sizes are supposed to be standardized to describe a font’s height in pixels, not all fonts at centered 100 pixels will actually render centered with a height of 100 pixels (some will be taller/shorter, some will have padding, etc.). To compensate for this, I calculated the <a href="https://computersciencewiki.org/index.php/Bounding_boxes">bounding box</a> around each font/letter combination and used the dimensions of these bounding boxes to scale and translate everything back to the center at the intended height.</p>
+    
+    <p>
+</p>
+    
+    <p>
+You can find all of the code, data, and generated images from the project in <a href="https://github.com/ben-tanen/most-font">this repo</a>.</p>
+    
+    <p>
+</p>
+    
+</div>
+
+<script>
+new jBox('Tooltip', {
+  attach: '#footnote-1',
+  content: "<img src='/projects/most-font/img/stacked_H_old.png' width='100%' />"
+});
+</script>
+
+<script>
+new jBox('Tooltip', {
+  attach: '#footnote-2',
+  content: "Interestingly, in a response describing the high or low vertex, the responder captured the essence of most of these design decisions: That's just one of hundreds of type design decisions with endless amounts of gradual options."
+});
+</script>
+
+<script>
+new jBox('Tooltip', {
+  attach: '#footnote-3',
+  content: "See the methodology section below."
+});
+</script>
+
+<script>
+d3.selectAll("#font-list-list li").on("click", function() {
+    d3.selectAll("#font-list-list li").classed('selected', false);
+    d3.select(this).classed('selected', true);
+    d3.select("#font-list-img-container img").attr("src", "/projects/most-font/img/font-map/font-map-" + d3.select(this).attr("data-font-name") + ".png");
+})
+</script>
+
+
+    </article>
+
+    <div class='pagination'>
+        
+        <p id='pagination-previous'><a href='/projects/2019/06/26/trump-electoral-college-visualized.html'>&#8592; Newer Post</a></p>
+        
+
+        <p id="pagination-all"><a href="/projects/all/">View All Posts</a></p>
+
+        
+        <p id='pagination-next'><a href='/projects/2019/06/22/processing-fun.html'>Older Post &#8594;</a></p>
+        
+    </div>
+
+</div>
+
+
+    	</div>
+    </div>
+	
+</body>
+</html>
