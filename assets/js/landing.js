@@ -13,14 +13,26 @@ let data = [ ];
 // create svg
 let svg = d3.select("#landing-viz");
 
+// create x, y scales
+let x = d3.scaleLinear()
+    .domain([0, 1])
+    .range([margin.left, width - margin.right]),
+    y = d3.scaleLinear()
+    .domain([0, 1])
+    .range([margin.top, height - margin.bottom]);
+
+// keep track of iterations played
+let ix = 0;
+
+// create null elements for sim (to be filled if needed)
+let sim;
+
 /***************************/
 /*** DECLARE HELPER FXNS ***/
 /***************************/
 
-function distance([x1, y1], [x2, y2]) {
-    const d = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-    if (d < 0) console.log([x1, y1], [x2, y2], d);
-    return d;
+distance = ([x1, y1], [x2, y2]) => {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
 /**********************************/
@@ -85,6 +97,76 @@ let vs = [
         options: {
             n_nodes: 15,
             duration: 5000
+        }
+    },
+    {
+        init: (options) => {
+
+            const node_data = [...Array(options.n_nodes)]
+                .map(() => ({x: x(Math.min(Math.max(d3.randomNormal(0.5, 0.15)(), 0), 1)), 
+                             y: y(Math.min(Math.max(d3.randomNormal(0.5, 0.15)(), 0), 1))
+                            }));
+            const edge_data = [...Array(node_data.length)]
+                .map((d, i) => ({source: i, target: d3.randomInt(node_data.length)() }))
+                .filter(d => d.source != d.target);
+
+            sim = d3.forceSimulation(node_data)
+                .force("pulse", () => {
+                    node_data.forEach((node, ix) => {
+                        const node_r = distance([node.x, node.y], [x(0.5), y(0.5)]),
+                              theta = Math.atan((node.y - y(0.5)) / (node.x - x(0.5)));
+                        node.vx += -1 * Math.cos(theta) * (node.x < x(0.5) ? -1 : 1);
+                        node.vy += -1 * Math.sin(theta) * (node.x < x(0.5) ? -1 : 1);
+                    });
+                })
+                .force("orbit", () => {
+                    node_data.forEach((node, ix) => {
+                        const node_r = distance([node.x, node.y], [x(0.5), y(0.5)]),
+                              theta = Math.atan((node.y - y(0.5)) / (node.x - x(0.5))),
+                              target_x = x(0.5) + node_r * Math.cos(theta + 0.005) * (node.x < x(0.5) ? -1 : 1),
+                              target_y = y(0.5) + node_r * Math.sin(theta + 0.005) * (node.x < x(0.5) ? -1 : 1);
+                        node.x = target_x;
+                        node.y = target_y;
+                    });
+                })
+                .stop();
+
+            edges = svg.selectAll(".edge")
+                .data(edge_data).enter()
+                .append("line")
+                .classed("edge", true)
+                .attr("x1", d => node_data[d.source].x)
+                .attr("y1", d => node_data[d.source].y)
+                .attr("x2", d => node_data[d.target].x)
+                .attr("y2", d => node_data[d.target].y);
+
+            nodes = svg.selectAll(".node")
+                .data(node_data).enter()
+                .append("circle")
+                .classed("node", true)
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y)
+                .attr("r", 4);
+
+        },
+        update: (options) => {
+
+            sim.tick();
+
+            svg.selectAll(".node")
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+
+            svg.selectAll(".edge")
+                .attr("x1", d => sim.nodes()[d.source].x)
+                .attr("y1", d => sim.nodes()[d.source].y)
+                .attr("x2", d => sim.nodes()[d.target].x)
+                .attr("y2", d => sim.nodes()[d.target].y);
+
+        },
+        options: {
+            n_nodes: 20,
+            duration: 50
         }
     },
     {
@@ -183,8 +265,10 @@ let viz = vs[0];
 
 viz.init(viz.options);
 viz.update(viz.options);
+ix++;
 vizInterval = setInterval(function() {
     viz.update(viz.options);
+    ix++;
 }, viz.options.duration);
 
 /*********************************/
@@ -199,8 +283,10 @@ $(window).blur(function() {
 // upon entering page, restart animation
 $(window).focus(function() {
     viz.update(viz.options);
+    ix++;
     vizInterval = setInterval(function() {
         viz.update(viz.options);
+        ix++;
     }, viz.options.duration);
 });
 
