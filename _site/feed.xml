@@ -17,7 +17,7 @@
 &lt;div id=&quot;trump-timeline-container&quot;&gt;
 &lt;/div&gt;
 
-&lt;p id=&quot;view-more&quot;&gt;Want more? &lt;span&gt;Click here to view the rest.&lt;/span&gt;&lt;/p&gt;
+&lt;p id=&quot;view-more&quot;&gt;Want more? &lt;span&gt;Click here to view the rest&lt;/span&gt;&lt;/p&gt;
 
 &lt;style&gt;
     #trump-timeline-container {
@@ -43,12 +43,16 @@
         margin-left: 50px;
         margin-right: 50px;
         max-width: initial;
-        width: calc(100% - 250px);
+        width: calc(100% - 215px);
     }
 
     .question-text {
         font-weight: 500;
         color: #77bdee;
+    }
+
+    .grade-text {
+        width: initial !important;
     }
 
     .submit-btn {
@@ -75,7 +79,7 @@
 
     .trump-timeline-svg {
         width: 100%;
-        height: 50px;
+        height: 70px;
     }
 
     rect.timeline {
@@ -123,13 +127,20 @@
         alignment-baseline: middle;
     }
 
+    p#view-more {
+        text-align: center;
+    }
+
     p#view-more &gt; span {
-        color: #77bdee;
+        color: white;
         cursor: pointer;
+        padding: 2px 5px;
+        background-color: #77bdee;
+        border-radius: 5px;
     }
 
     p#view-more &gt; span:hover {
-        text-decoration: underline;
+        /*text-decoration: underline;*/
     }
 &lt;/style&gt;
 
@@ -139,7 +150,7 @@
 /**********************/
 
 const margin = {top: 0, right: 50, bottom: 0, left: 50},
-      sect_height = 50,
+      sect_height = 70,
       timeline_height = 5,
       tick_dim = [2, timeline_height * 3];
 
@@ -337,6 +348,9 @@ const resize = () =&gt; {
 
     d3.selectAll(&quot;g.slider-sect&quot;)
         .attr(&quot;transform&quot;, d =&gt; `translate(${margin.left + x(d.slider_day)}, ${sect_height / 2})`);
+
+    d3.selectAll(&quot;g.answer-sect&quot;)
+        .attr(&quot;transform&quot;, d =&gt; `translate(${margin.left + x(d.event_day)}, ${sect_height / 2})`);
 }
 
 /*********************************/

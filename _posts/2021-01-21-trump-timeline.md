@@ -17,7 +17,7 @@ Given the fact that January 2021 has already felt like a lifetime and 2020 felt 
 <div id="trump-timeline-container">
 </div>
 
-<p id="view-more">Want more? <span>Click here to view the rest.</span></p>
+<p id="view-more">Want more? <span>Click here to view the rest</span></p>
 
 <style>
     #trump-timeline-container {
@@ -43,12 +43,16 @@ Given the fact that January 2021 has already felt like a lifetime and 2020 felt 
         margin-left: 50px;
         margin-right: 50px;
         max-width: initial;
-        width: calc(100% - 250px);
+        width: calc(100% - 215px);
     }
 
     .question-text {
         font-weight: 500;
         color: #77bdee;
+    }
+
+    .grade-text {
+        width: initial !important;
     }
 
     .submit-btn {
@@ -75,7 +79,7 @@ Given the fact that January 2021 has already felt like a lifetime and 2020 felt 
 
     .trump-timeline-svg {
         width: 100%;
-        height: 50px;
+        height: 70px;
     }
 
     rect.timeline {
@@ -123,13 +127,20 @@ Given the fact that January 2021 has already felt like a lifetime and 2020 felt 
         alignment-baseline: middle;
     }
 
+    p#view-more {
+        text-align: center;
+    }
+
     p#view-more > span {
-        color: #77bdee;
+        color: white;
         cursor: pointer;
+        padding: 2px 5px;
+        background-color: #77bdee;
+        border-radius: 5px;
     }
 
     p#view-more > span:hover {
-        text-decoration: underline;
+        /*text-decoration: underline;*/
     }
 </style>
 <script>
@@ -138,7 +149,7 @@ Given the fact that January 2021 has already felt like a lifetime and 2020 felt 
 /**********************/
 
 const margin = {top: 0, right: 50, bottom: 0, left: 50},
-      sect_height = 50,
+      sect_height = 70,
       timeline_height = 5,
       tick_dim = [2, timeline_height * 3];
 
@@ -336,6 +347,9 @@ const resize = () => {
 
     d3.selectAll("g.slider-sect")
         .attr("transform", d => `translate(${margin.left + x(d.slider_day)}, ${sect_height / 2})`);
+
+    d3.selectAll("g.answer-sect")
+        .attr("transform", d => `translate(${margin.left + x(d.event_day)}, ${sect_height / 2})`);
 }
 
 /*********************************/
