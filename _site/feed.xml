@@ -3,7 +3,7 @@
     <channel>
         <title>Ben Tanen - Posts</title>
         <description>Recent updates from Ben Tanen</description>
-        <link>http://localhost:4000</link>
+        <link>http://ben-tanen.github.io</link>
             
                 
                 <item>
@@ -387,8 +387,8 @@ d3.select(&quot;p#view-more span&quot;).on(&quot;click&quot;, () =&gt; {
 
 </description>
                     <pubDate>2021-01-23T03:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2021/01/23/trump-timeline.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2021/01/23/trump-timeline.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2021/01/23/trump-timeline.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2021/01/23/trump-timeline.html</guid>
                 </item>
                 
             
@@ -403,7 +403,7 @@ d3.select(&quot;p#view-more span&quot;).on(&quot;click&quot;, () =&gt; {
     &lt;/a&gt;
 &lt;/p&gt;
 
-&lt;p&gt;In the last few days, I’ve been using it a place to work on my D3 chops, most notably by recreating some of my favorite visualizations from around the web (and &lt;a href=&quot;https://observablehq.com/@ben-tanen/visualizing-musical-genres-using-every-noise-at-once&quot;&gt;one of my own&lt;/a&gt;). I also finally decided to try playing around with &lt;code class=&quot;highlighter-rouge&quot;&gt;d3-force&lt;/code&gt; and ended up putting together a little tutorial (see below or &lt;a href=&quot;https://observablehq.com/@ben-tanen/a-tutorial-to-using-d3-force-from-someone-who-just-learned-ho&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;In the last few days, I’ve been using it a place to work on my D3 chops, most notably by recreating some of my favorite visualizations from around the web (and &lt;a href=&quot;https://observablehq.com/@ben-tanen/visualizing-musical-genres-using-every-noise-at-once&quot;&gt;one of my own&lt;/a&gt;). I also finally decided to try playing around with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d3-force&lt;/code&gt; and ended up putting together a little tutorial (see below or &lt;a href=&quot;https://observablehq.com/@ben-tanen/a-tutorial-to-using-d3-force-from-someone-who-just-learned-ho&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;In the weeks and months to come, I’ll keep playing around and things will pop up on my page over time. I hope to see you over there on Observable!&lt;/p&gt;
 
@@ -411,293 +411,8 @@ d3.select(&quot;p#view-more span&quot;).on(&quot;click&quot;, () =&gt; {
 
 </description>
                     <pubDate>2021-01-13T03:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2021/01/13/observable-news.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2021/01/13/observable-news.html</guid>
-                </item>
-                
-            
-                
-                <item>
-                    <title>Do You Know How Much Your Food Delivery Costs?</title>
-                    <description>&lt;div id=&quot;fooddelivery-viz&quot;&gt;
-    &lt;svg id=&quot;fooddelivery-svg&quot;&gt;&lt;/svg&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-    #fooddelivery-viz {
-        width: 100%;
-        height: 310px;
-    }
-
-    #fooddelivery-svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    rect.bar.food_cost {
-        fill: #a9a9a9;
-    }
-
-    rect.bar.addl_cost {
-        fill: orange;
-    }
-
-    rect.drag-target {
-        cursor: col-resize;
-        fill: rgba(255, 0, 0, 0);
-    }
-
-    text.bar-label {
-        fill: black;
-        text-anchor: end;
-        alignment-baseline: middle;
-    }
-
-    text.bar-cost-label {
-        fill: black;
-        text-anchor: start;
-        alignment-baseline: middle;
-    }
-
-    line.x-axis-gridline {
-        stroke: #c9c9c9;
-        stroke-dasharray: 5 5;
-    }
-
-    line.x-axis-gridline#baseline {
-        stroke: black;
-        stroke-dasharray: 0;
-    }
-
-    g#show-me-btn {
-        cursor: pointer;
-    }
-&lt;/style&gt;
-
-&lt;script&gt;
-/**********************/
-/*** INIT VARIABLES ***/
-/**********************/
-
-let margin = {top: 30, right: 60, bottom: 0, left: 120, bar: 5, label: 8},
-    width  = $(&quot;#fooddelivery-viz&quot;).width() - margin.left - margin.right,
-    height = $(&quot;#fooddelivery-viz&quot;).height() - margin.top - margin.bottom;
-
-const bar_height = 40,
-      target_width = 20;
-
-const axis_ticks = [0, 5, 10, 15, 20, 25, 30];
-
-let revealed = false;
-
-// create svg
-let svg = d3.select(&quot;#fooddelivery-svg&quot;);
-
-// create scales
-let x = d3.scaleLinear().domain([0, 30]).range([0, width]);
-
-/********************************/
-/*** DECLARE HELPER FUNCTIONS ***/
-/********************************/
-
-// take string to produce clean id
-function clean_id(str) {
-    return str.replace(&quot; &quot;, &quot;-&quot;).toLowerCase();
-}
-
-// draw grid + axis
-function draw_grid() {
-    svg.append(&quot;g&quot;)
-        .attr(&quot;id&quot;, &quot;x-axis&quot;)
-        .attr(&quot;transform&quot;, `translate(${margin.left}, ${margin.top})`)
-        .call(d3.axisTop(x)
-            .tickValues(axis_ticks)
-            .tickFormat(d3.format(&quot;$.0f&quot;)));
-
-    svg.append(&quot;g&quot;)
-        .attr(&quot;id&quot;, &quot;x-axis-grid&quot;)
-        .selectAll(&quot;line.x-axis-gridline&quot;)
-        .data(axis_ticks).enter()
-        .append(&quot;line&quot;)
-        .classed(&quot;x-axis-gridline&quot;, true)
-        .attr(&quot;id&quot;, d =&gt; d == 0 ? &quot;baseline&quot; : &quot;grid&quot;)
-        .attr(&quot;x1&quot;, d =&gt; margin.left + x(d) + 0.5)
-        .attr(&quot;x2&quot;, d =&gt; margin.left + x(d) + 0.5)
-        .attr(&quot;y1&quot;, margin.top)
-        .attr(&quot;y2&quot;, margin.top + height);
-}
-
-// draw bars
-function draw_bars() {
-    let bars = svg.selectAll(&quot;g.bar&quot;)
-        .data(data).enter()
-        .append(&quot;g&quot;)
-        .classed(&quot;bar&quot;, true);
-
-    bars.append(&quot;rect&quot;)
-        .classed(&quot;bar&quot;, true)
-        .classed(&quot;food_cost&quot;, true)
-        .attr(&quot;id&quot;, d =&gt; &quot;bar-&quot; + clean_id(d.id))
-        .attr(&quot;x&quot;, margin.left)
-        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar)
-        .attr(&quot;width&quot;, d =&gt; x(d.food_cost))
-        .attr(&quot;height&quot;, bar_height);
-
-    bars.append(&quot;rect&quot;)
-        .classed(&quot;bar&quot;, true)
-        .classed(&quot;addl_cost&quot;, true)
-        .classed(&quot;draggable&quot;, d =&gt; d.draggable)
-        .attr(&quot;id&quot;, d =&gt; &quot;bar-&quot; + clean_id(d.id))
-        .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost))
-        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar)
-        .attr(&quot;width&quot;, d =&gt; x(d.addl_cost))
-        .attr(&quot;height&quot;, bar_height);
-
-    bars.append(&quot;text&quot;)
-        .classed(&quot;bar-label&quot;, true)
-        .attr(&quot;id&quot;, d =&gt; &quot;label-&quot; + clean_id(d.id))
-        .attr(&quot;x&quot;, d =&gt; margin.left - margin.label)
-        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar + bar_height * 0.5)
-        .text(d =&gt; d.id);
-
-    bars.append(&quot;text&quot;)
-        .classed(&quot;bar-cost-label&quot;, true)
-        .classed(&quot;draggable&quot;, d =&gt; d.draggable)
-        .attr(&quot;id&quot;, d =&gt; &quot;cost-label-&quot; + clean_id(d.id))
-        .attr(&quot;x&quot;, d =&gt; margin.left + margin.label + x(d.food_cost + d.addl_cost))
-        .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar + bar_height * 0.5)
-        .text(d =&gt; d3.format(&quot;$.2f&quot;)(d.food_cost + d.addl_cost));
-
-    if (!revealed) {
-        svg.selectAll(&quot;g.bar&quot;)
-            .filter(d =&gt; d.draggable)
-            .append(&quot;rect&quot;)
-            .classed(&quot;drag-target&quot;, true)
-            .attr(&quot;id&quot;, d =&gt; &quot;drag-target-&quot; + d.id)
-            .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost + d.addl_cost) - target_width / 2)
-            .attr(&quot;y&quot;, d =&gt; margin.top + data.indexOf(d) * (bar_height + margin.bar) + margin.bar)
-            .attr(&quot;width&quot;, target_width)
-            .attr(&quot;height&quot;, bar_height)
-            .call(d3.drag()
-                .on(&quot;drag&quot;, (event, d) =&gt; (d.addl_cost = x.invert(event.x - margin.left) - d.food_cost))
-                .on(&quot;drag.update&quot;, update_drag));
-    }
-}
-
-function draw_show_btn() {
-    let sect = svg.append(&quot;g&quot;)
-        .attr(&quot;id&quot;, &quot;show-me-sect&quot;);
-
-    sect.append(&quot;rect&quot;)
-        .attr(&quot;id&quot;, &quot;show-me-cover&quot;)
-        .attr(&quot;x&quot;, 0)
-        .attr(&quot;y&quot;, margin.top + bar_height + 2 * margin.bar)
-        .attr(&quot;width&quot;, width + margin.left + margin.right)
-        .attr(&quot;height&quot;, height)
-        .style(&quot;fill&quot;, &quot;rgba(255, 255, 255, 1)&quot;);
-
-    let btn = sect.append(&quot;g&quot;)
-        .attr(&quot;id&quot;, &quot;show-me-btn&quot;)
-        .on(&quot;click&quot;, reveal_bars);
-
-    btn.append(&quot;rect&quot;)
-        .attr(&quot;x&quot;, margin.left + width / 2 - 75)
-        .attr(&quot;y&quot;, margin.top + 1.25 * bar_height + margin.bar)
-        .attr(&quot;width&quot;, 150)
-        .attr(&quot;height&quot;, 35)
-        .attr(&quot;rx&quot;, 15)
-        .style(&quot;fill&quot;, &quot;#77bdee&quot;);
-
-    btn.append(&quot;text&quot;)
-        .attr(&quot;x&quot;, margin.left + width / 2)
-        .attr(&quot;y&quot;, margin.top + 1.25 * bar_height + margin.bar + 17.5)
-        .text(&quot;Show me how I did&quot;)
-        .style(&quot;fill&quot;, &quot;white&quot;)
-        .style(&quot;text-anchor&quot;, &quot;middle&quot;)
-        .style(&quot;alignment-baseline&quot;, &quot;middle&quot;);
-}
-
-// reveal bars
-function reveal_bars() {
-    revealed = true;
-
-    svg.select(&quot;rect.drag-target&quot;).remove();
-
-    svg.select(&quot;#show-me-cover&quot;)
-        .transition()
-        .duration(500)
-        .attr(&quot;y&quot;, height)
-        .delay(200)
-        .remove();
-
-    svg.select(&quot;#show-me-btn&quot;)
-        .transition()
-        .duration(100)
-        .style(&quot;opacity&quot;, 0)
-        .delay(200)
-        .remove();
-}
-
-// update bar position
-function update_drag() {
-    svg.selectAll(&quot;rect.bar.draggable&quot;)
-        .attr(&quot;width&quot;, d =&gt; x(Math.min(19.3, Math.max(0, d.addl_cost))));
-
-    svg.selectAll(&quot;text.bar-cost-label.draggable&quot;)
-        .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost + Math.min(19.3, Math.max(0, d.addl_cost))) + margin.label)
-        .text(d =&gt; d3.format(&quot;$.2f&quot;)(d.food_cost + Math.min(19.3, Math.max(0, d.addl_cost))))
-
-    svg.selectAll(&quot;rect.drag-target&quot;)
-        .attr(&quot;x&quot;, d =&gt; margin.left + x(d.food_cost + Math.min(19.3, Math.max(0, d.addl_cost))) - target_width / 2);
-}
-
-// resize chart on page size change
-function resize() {
-
-    // reset width
-    width = $(&quot;#fooddelivery-viz&quot;).width() - margin.left - margin.right;
-    x.range([0, width]);
-
-    // remove existing elements
-    svg.selectAll(&quot;#x-axis, #x-axis-grid, g.bar, g#show-me-sect&quot;).remove();
-
-    // redraw
-    draw_grid();
-    draw_bars(revealed);
-    if (!revealed) draw_show_btn();
-}
-
-/*********************************/
-/*** PARSE DATA AND INIT PLOTS ***/
-/*********************************/
-
-let data = [{id: &quot;Your guess&quot;, food_cost: 10.70, addl_cost: 0.5, draggable: true},
-            {id: &quot;Chipotle website&quot;, food_cost: 10.70, addl_cost: 0.87},
-            {id: &quot;DoorDash&quot;, food_cost: 12.05, addl_cost: 5.28},
-            {id: &quot;Uber Eats&quot;, food_cost: 12.40, addl_cost: 9.31},
-            {id: &quot;GrubHub&quot;, food_cost: 12.40, addl_cost: 10.87},
-            {id: &quot;Postmates&quot;, food_cost: 12.65, addl_cost: 13.16}];
-
-data.sort(function(x, y){
-   return d3.ascending(x.food_cost + x.addl_cost, y.food_cost + y.addl_cost);
-});
-
-draw_grid();
-draw_bars(true);
-draw_show_btn();
-
-/*********************************/
-/*** PAGE AND BUTTON LISTENERS ***/
-/*********************************/
-
-$(window).resize(resize);
-
-&lt;/script&gt;
-
-</description>
-                    <pubDate>2020-12-05T03:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/12/05/food-delivery-costs.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/12/05/food-delivery-costs.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2021/01/13/observable-news.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2021/01/13/observable-news.html</guid>
                 </item>
                 
             
@@ -771,8 +486,8 @@ While many state legislature races are still undecided (as of 11/13/2020), &lt;a
 
 </description>
                     <pubDate>2020-11-13T03:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/11/13/redistricting-changes-for-2020.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/11/13/redistricting-changes-for-2020.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/11/13/redistricting-changes-for-2020.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/11/13/redistricting-changes-for-2020.html</guid>
                 </item>
                 
             
@@ -845,27 +560,21 @@ State calls come from &lt;a href=&quot;https://twitter.com/AP_Politics&quot;&gt;
 
 </description>
                     <pubDate>2020-11-03T03:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/11/03/election-night-funnel.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/11/03/election-night-funnel.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/11/03/election-night-funnel.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/11/03/election-night-funnel.html</guid>
                 </item>
                 
             
                 
                 <item>
                     <title>Improving Twitter's Image Previews</title>
-                    <description>&lt;p&gt;&lt;em&gt;Note: I started this post/project two weeks before it became clear that there were issues with Twitter’s image algorithm. My original plan was to jokingly propose the seam carving algorithm as an alternative to Twitter’s current system as a fix for trivial issues, but with the more recent news, I would also like to earnestly address the larger systemic issues that people have noticed. While I do think seam carving could be a useful tool for Twitter as they address these larger issues, this post is only intended to highlight how things can go very poorly if we knowingly or unknowingly use algorithms incorrectly.&lt;/em&gt;&lt;/p&gt;
+                    <description>&lt;p&gt;&lt;em&gt;Note: I started this post/project two weeks before it became clear that there were issues with Twitter’s image algorithm. My original plan was to jokingly propose the seam carving algorithm as an alternative to Twitter’s current system as a fix for trivial issues, but with the more recent news, I would also like to earnestly address the larger systemic issues that people have noticed. While I do think seam carving could be a useful tool for Twitter as they address these larger issues, this post is only intended to highlight how things can go very poorly if we knowingly or unknowingly use algorithms incorrectly. If you’re interested in reading more about this from much better folks, check out &lt;a href=&quot;](https://twitter.com/_theghettomonk/status/1307686197934854147)&quot;&gt;these books&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Also, if you don’t know what seam carving is and would like a primer, you can read &lt;a href=&quot;/projects/2020/10/08/seam-carving-pt1.html&quot;&gt;this explanation&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;For pretty much as long as we’ve had digital images, we’ve also run into the problem of trying to show pictures in non-optimal spaces. We scale images to make images bigger and often get blurry images; we crop images to fit in different shapes and end up losing part of the image. When we’re talking about a single image, we can make manual adjustments to salvage as much as possible, but when we have to do this for millions of images, we’ve got to turn to algorithms to do the job for us.&lt;/p&gt;
 
-&lt;p&gt;This is what social media sites like Facebook and Twitter have to do when they display images on our timelines. Most uploaded images are not anywhere close to the right dimensions to fit neatly into the boxes that Facebook and Twitter use to give users a quick preview of an image before they open it, so these sites have to figure out how to scale and crop images algorithmically. Most of the time, this works fine, but as with all algorithms, sometimes they run into issues, and some are worse than others.&lt;/p&gt;
-
 &lt;div class=&quot;columns two&quot;&gt;
-    &lt;div class=&quot;column&quot; style=&quot;width: calc(60% - 15px);&quot;&gt;
-        &lt;p&gt;This is what social media sites like Facebook and Twitter have to do when they display images on our timelines. Most uploaded images are not anywhere close to the right dimensions to fit neatly into the boxes that Facebook and Twitter use to give users a quick preview of an image before they open it, so these sites have to figure out how to scale and crop images algorithmically. Most of the time, this works fine, but as with all algorithms, sometimes they run into issues, and some are worse than others.&lt;/p&gt;
-        &lt;p&gt;For a while, Twitter users have been jokingly taking advantage of the platform’s flawed image preview algorithm &lt;a href=&quot;https://knowyourmeme.com/memes/open-for-a-surprise&quot;&gt;by hiding “surprises” that are only revealed after you “open for a surprise.”&lt;/a&gt; Most reveals are focused on cute animals, but there is really no telling what you’ll get until you actually open the image. Aside from the always present internet trolls, Twitter’s constrained image preview makes this gag is mostly harmless. But, as with all things algorithms and the internet, there are far more harmful instances as well.&lt;/p&gt;
-    &lt;/div&gt;
     &lt;div class=&quot;column&quot; style=&quot;width: calc(40% - 15px);&quot;&gt;
         &lt;p class=&quot;fig-paragraph&quot;&gt;
     &lt;a class=&quot;fig-link&quot; href=&quot;/assets/img/posts/open-for-surprise-giraffe.png&quot; target=&quot;_blank&quot;&gt;
@@ -882,9 +591,13 @@ An example of what 'open for surprise' might reveal
 
 
     &lt;/div&gt;
+    &lt;div class=&quot;column&quot; style=&quot;width: calc(60% - 15px);&quot;&gt;
+        &lt;p&gt;This is what social media sites like Facebook and Twitter have to do when they display images on our timelines. Most uploaded images are not anywhere close to the right dimensions to fit neatly into the boxes that Facebook and Twitter use to give users a quick preview of an image before they open it, so these sites have to figure out how to scale and crop images algorithmically. Most of the time, this works fine, but as with all algorithms, sometimes they run into issues, and some are worse than others.&lt;/p&gt;
+        &lt;p&gt;For a while, Twitter users have been jokingly taking advantage of the platform’s flawed image preview algorithm &lt;a href=&quot;https://knowyourmeme.com/memes/open-for-a-surprise&quot;&gt;by hiding “surprises” that are only revealed after you “open for a surprise.”&lt;/a&gt; Most reveals are focused on cute animals, but there is really no telling what you’ll get until you actually open the image. Aside from the always present internet trolls, Twitter’s constrained image preview makes this gag mostly harmless. But, as with all things algorithms and the internet, there are far more harmful instances as well.&lt;/p&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;p&gt;A few weeks ago, Twitter users started running experiments to see if Twitter’s algorithm had any preference for certain faces, or rather, certain skin tones or apparent genders. After many different examples tested all different combinations, it became clear that there was something very off with Twitter’s algorithmic approach for picking image previews. Folks at Twitter eventually responded and said that they had not previously found any racial or gender bias, but noted that “it’s clear that we’ve got more analysis to do.”&lt;/p&gt;
+&lt;p&gt;A few weeks ago, Twitter users started running experiments to see if Twitter’s algorithm had any preference for certain faces, or rather, certain skin tones or apparent genders. &lt;a href=&quot;https://twitter.com/sina_rawayama/status/1307506452786016257&quot;&gt;After&lt;/a&gt; &lt;a href=&quot;https://twitter.com/colinmadland/status/1307111816250748933&quot;&gt;many&lt;/a&gt; &lt;a href=&quot;https://twitter.com/neilcastle/status/1307597309862125568&quot;&gt;different&lt;/a&gt; &lt;a href=&quot;https://twitter.com/therourke/status/1307711835836219394&quot;&gt;examples&lt;/a&gt; tested all different combinations, it became clear that there was something very off with Twitter’s algorithmic approach for picking image previews. &lt;a href=&quot;https://twitter.com/lizkelley/status/1307742267193532416&quot;&gt;Folks at Twitter eventually responded&lt;/a&gt; and said that they had not previously found any racial or gender bias, but noted that “it’s clear that we’ve got more analysis to do.”&lt;/p&gt;
 
 &lt;div style=&quot;max-width: 400px; margin: auto; margin-bottom: 15px;&quot;&gt;
     &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Trying a horrible experiment...&lt;br /&gt;&lt;br /&gt;Which will the Twitter algorithm pick: Mitch McConnell or Barack Obama? &lt;a href=&quot;https://t.co/bR1GRyCkia&quot;&gt;pic.twitter.com/bR1GRyCkia&lt;/a&gt;&lt;/p&gt;&amp;mdash; Tony “Abolish (Pol)ICE” Arcieri 🦀 (@bascule) &lt;a href=&quot;https://twitter.com/bascule/status/1307440596668182528?ref_src=twsrc%5Etfw&quot;&gt;September 19, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
@@ -892,24 +605,17 @@ An example of what 'open for surprise' might reveal
 
 &lt;p&gt;This is hardly the first example–and will surely not be the last–of algorithmic bias creeping into tech unexpectedly. We know some of the steps to combat it and this is hopefully where Twitter will start. The key question behind image preview is deciding what is the most “important” part of the image, which is extremely subjective. Some will likely be inclined to say “let the computer figure it out,” but as we’ve seen time and time again, unchecked algorithms generally lead to bad and/or biased algorithms.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/bascule/status/1307440596668182528&quot;&gt;Original example&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To illustrate how what could happen when we just “let the computer figure it out,” I present a few examples where I used &lt;a href=&quot;/projects/2020/10/08/seam-carving-pt1.html&quot;&gt;a seam carving algorithm&lt;/a&gt; to geneate feed-friendly images. &lt;em&gt;TL;DR of the results:&lt;/em&gt; it’s not great…&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/sina_rawayama/status/1307506452786016257&quot;&gt;Racist example #2&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;753&quot; frameborder=&quot;0&quot; src=&quot;https://observablehq.com/embed/@ben-tanen/seam-carving-gone-wrong?cells=viewof+img%2Cviewof+method%2Cview&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/colinmadland/status/1307111816250748933&quot;&gt;Real world example, comparison to Zoom&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/neilcastle/status/1307597309862125568&quot;&gt;Algo is sexist as well as racist&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/therourke/status/1307711835836219394&quot;&gt;Meme version&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/lizkelley/status/1307742267193532416&quot;&gt;Response from Twitter&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/_theghettomonk/status/1307686197934854147&quot;&gt;Book recommendations&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;If you have any interest in trying to do this to your own Twitter images (or whatever other images), check out the code in &lt;a href=&quot;https://github.com/ben-tanen/seam-carving&quot;&gt;this repo&lt;/a&gt;.&lt;/p&gt;
 </description>
                     <pubDate>2020-10-08T04:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/10/08/seam-carving-pt2.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/10/08/seam-carving-pt2.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/10/08/seam-carving-pt2.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/10/08/seam-carving-pt2.html</guid>
                 </item>
                 
             
@@ -976,8 +682,8 @@ An example of what 'open for surprise' might reveal
 
 </description>
                     <pubDate>2020-10-08T04:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/10/08/seam-carving-pt1.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/10/08/seam-carving-pt1.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/10/08/seam-carving-pt1.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/10/08/seam-carving-pt1.html</guid>
                 </item>
                 
             
@@ -1030,8 +736,8 @@ An example of what 'open for surprise' might reveal
 
 </description>
                     <pubDate>2020-09-12T04:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/09/12/recent-tweets.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/09/12/recent-tweets.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/09/12/recent-tweets.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/09/12/recent-tweets.html</guid>
                 </item>
                 
             
@@ -1069,8 +775,8 @@ An example of what 'open for surprise' might reveal
 
 </description>
                     <pubDate>2020-07-06T02:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/07/06/generative-sketchbook.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/07/06/generative-sketchbook.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/07/06/generative-sketchbook.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/07/06/generative-sketchbook.html</guid>
                 </item>
                 
             
@@ -1087,8 +793,8 @@ An example of what 'open for surprise' might reveal
 
 </description>
                     <pubDate>2020-06-15T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/06/15/kmeans-music.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/06/15/kmeans-music.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/06/15/kmeans-music.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/06/15/kmeans-music.html</guid>
                 </item>
                 
             
@@ -1160,8 +866,8 @@ Projected results for upcoming states come from &lt;a href=&quot;https://project
 
 </description>
                     <pubDate>2020-03-24T04:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/03/24/dem2020-delegate-map.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/03/24/dem2020-delegate-map.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/03/24/dem2020-delegate-map.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/03/24/dem2020-delegate-map.html</guid>
                 </item>
                 
             
@@ -1530,8 +1236,8 @@ $(window).resize(resize);
 
 </description>
                     <pubDate>2020-02-10T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/02/10/oscars-best-picture.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/02/10/oscars-best-picture.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/02/10/oscars-best-picture.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/02/10/oscars-best-picture.html</guid>
                 </item>
                 
             
@@ -1829,8 +1535,8 @@ $('.bucket-button').click(function() {
 
 </description>
                     <pubDate>2020-01-08T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/01/08/ibm-watson-ff.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/01/08/ibm-watson-ff.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/01/08/ibm-watson-ff.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/01/08/ibm-watson-ff.html</guid>
                 </item>
                 
             
@@ -2221,8 +1927,8 @@ $(window).resize(resize);
 
 </description>
                     <pubDate>2020-01-02T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2020/01/02/decade-of-disney.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2020/01/02/decade-of-disney.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2020/01/02/decade-of-disney.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2020/01/02/decade-of-disney.html</guid>
                 </item>
                 
             
@@ -2355,8 +2061,8 @@ h3 {
 
 </description>
                     <pubDate>2019-12-31T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/12/31/2019-ff-retrospective.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/12/31/2019-ff-retrospective.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2019/12/31/2019-ff-retrospective.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2019/12/31/2019-ff-retrospective.html</guid>
                 </item>
                 
             
@@ -2381,8 +2087,8 @@ h3 {
 
 </description>
                     <pubDate>2019-11-22T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/11/22/running-visualized.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/11/22/running-visualized.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2019/11/22/running-visualized.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2019/11/22/running-visualized.html</guid>
                 </item>
                 
             
@@ -2399,8 +2105,8 @@ h3 {
 
 </description>
                     <pubDate>2019-10-26T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/10/26/how-bills-die.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/10/26/how-bills-die.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2019/10/26/how-bills-die.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2019/10/26/how-bills-die.html</guid>
                 </item>
                 
             
@@ -2809,8 +2515,8 @@ $(&quot;.slider&quot;).change(function() {
 
 </description>
                     <pubDate>2019-06-26T22:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/06/26/trump-electoral-college-visualized.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/26/trump-electoral-college-visualized.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2019/06/26/trump-electoral-college-visualized.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2019/06/26/trump-electoral-college-visualized.html</guid>
                 </item>
                 
             
@@ -3033,8 +2739,8 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
 
 </description>
                     <pubDate>2019-06-22T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/06/22/most-font.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/22/most-font.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2019/06/22/most-font.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2019/06/22/most-font.html</guid>
                 </item>
                 
             
@@ -3164,8 +2870,8 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
 &lt;/div&gt;
 </description>
                     <pubDate>2019-06-22T22:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2019/06/22/processing-fun.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2019/06/22/processing-fun.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2019/06/22/processing-fun.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2019/06/22/processing-fun.html</guid>
                 </item>
                 
             
@@ -3220,8 +2926,8 @@ d3.selectAll(&quot;#font-list-list li&quot;).on(&quot;click&quot;, function() {
 
 </description>
                     <pubDate>2018-08-23T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/08/23/oscar-popular-film.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/08/23/oscar-popular-film.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2018/08/23/oscar-popular-film.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2018/08/23/oscar-popular-film.html</guid>
                 </item>
                 
             
@@ -3457,8 +3163,8 @@ $(window).resize(function() {
 
 </description>
                     <pubDate>2018-04-22T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/04/22/generative-art.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/04/22/generative-art.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2018/04/22/generative-art.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2018/04/22/generative-art.html</guid>
                 </item>
                 
             
@@ -3803,8 +3509,8 @@ $(window).resize(function() {
 
 </description>
                     <pubDate>2018-03-02T22:00:00-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/03/02/comparing-obama-trump-on-guns.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/03/02/comparing-obama-trump-on-guns.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2018/03/02/comparing-obama-trump-on-guns.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2018/03/02/comparing-obama-trump-on-guns.html</guid>
                 </item>
                 
             
@@ -3857,8 +3563,8 @@ $(window).resize(function() {
 
 </description>
                     <pubDate>2018-02-27T22:00:00-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/02/27/fantasy-olympics-retrospective.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/02/27/fantasy-olympics-retrospective.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2018/02/27/fantasy-olympics-retrospective.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2018/02/27/fantasy-olympics-retrospective.html</guid>
                 </item>
                 
             
@@ -3978,8 +3684,8 @@ $(window).resize(function() {
 
 </description>
                     <pubDate>2018-02-05T22:00:00-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/02/05/fantasy-olympics.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/02/05/fantasy-olympics.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2018/02/05/fantasy-olympics.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2018/02/05/fantasy-olympics.html</guid>
                 </item>
                 
             
@@ -4057,8 +3763,8 @@ $(window).resize(function() {
 
 </description>
                     <pubDate>2018-01-27T22:00:00-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/01/27/sports-dynasties.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/01/27/sports-dynasties.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2018/01/27/sports-dynasties.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2018/01/27/sports-dynasties.html</guid>
                 </item>
                 
             
@@ -4484,8 +4190,8 @@ p.fav2017-title {
 
 </description>
                     <pubDate>2018-01-06T22:00:00-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2018/01/06/favorites-of-2017.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2018/01/06/favorites-of-2017.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2018/01/06/favorites-of-2017.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2018/01/06/favorites-of-2017.html</guid>
                 </item>
                 
             
@@ -4788,8 +4494,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-10-26T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/10/26/confederate-monuments.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/10/26/confederate-monuments.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/10/26/confederate-monuments.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/10/26/confederate-monuments.html</guid>
                 </item>
                 
             
@@ -4846,8 +4552,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-10-06T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/10/06/partisanship-in-football.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/10/06/partisanship-in-football.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/10/06/partisanship-in-football.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/10/06/partisanship-in-football.html</guid>
                 </item>
                 
             
@@ -4899,8 +4605,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-09-06T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/09/06/evaluating-fantasy-draft.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/09/06/evaluating-fantasy-draft.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/09/06/evaluating-fantasy-draft.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/09/06/evaluating-fantasy-draft.html</guid>
                 </item>
                 
             
@@ -4979,8 +4685,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-07-29T23:00:00-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/07/29/london-street-art.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/07/29/london-street-art.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/07/29/london-street-art.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/07/29/london-street-art.html</guid>
                 </item>
                 
             
@@ -5263,8 +4969,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-06-23T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/06/23/brain-fun.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/06/23/brain-fun.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/06/23/brain-fun.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/06/23/brain-fun.html</guid>
                 </item>
                 
             
@@ -5288,8 +4994,8 @@ function clean_group_name(group) {
 &lt;p&gt;&lt;em&gt;Usability Note&lt;/em&gt;: I have noticed some rendering issues when viewing the second half of the site in Safari and Firefox &lt;span style=&quot;font-size: 9px&quot;&gt;(sorry)&lt;/span&gt;. I’m trying to figure out the issue, but for now, I would suggest viewing the site in Chrome.&lt;/p&gt;
 </description>
                     <pubDate>2017-06-01T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/06/01/huffman-coding.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/06/01/huffman-coding.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/06/01/huffman-coding.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/06/01/huffman-coding.html</guid>
                 </item>
                 
             
@@ -5311,8 +5017,8 @@ function clean_group_name(group) {
 &lt;/div&gt;
 </description>
                     <pubDate>2017-05-10T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/05/10/signal-and-noise-paper.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/05/10/signal-and-noise-paper.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/05/10/signal-and-noise-paper.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/05/10/signal-and-noise-paper.html</guid>
                 </item>
                 
             
@@ -5476,8 +5182,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-04-28T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/04/28/chaos-game.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/04/28/chaos-game.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/04/28/chaos-game.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/04/28/chaos-game.html</guid>
                 </item>
                 
             
@@ -5502,8 +5208,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-03-15T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/03/15/ASL-LEX.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/03/15/ASL-LEX.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/03/15/ASL-LEX.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/03/15/ASL-LEX.html</guid>
                 </item>
                 
             
@@ -5526,8 +5232,8 @@ function clean_group_name(group) {
 
 </description>
                     <pubDate>2017-01-24T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/01/24/tv-monitor.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/01/24/tv-monitor.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/01/24/tv-monitor.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/01/24/tv-monitor.html</guid>
                 </item>
                 
             
@@ -5758,8 +5464,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2017-01-08T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/01/08/polar-line-charts.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/01/08/polar-line-charts.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/01/08/polar-line-charts.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/01/08/polar-line-charts.html</guid>
                 </item>
                 
             
@@ -5780,8 +5486,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2017-01-02T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2017/01/02/ultimate-convex-hull.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2017/01/02/ultimate-convex-hull.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2017/01/02/ultimate-convex-hull.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2017/01/02/ultimate-convex-hull.html</guid>
                 </item>
                 
             
@@ -5800,8 +5506,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-12-21T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/12/21/drunken-world.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/12/21/drunken-world.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/12/21/drunken-world.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/12/21/drunken-world.html</guid>
                 </item>
                 
             
@@ -5891,8 +5597,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/div&gt;
 </description>
                     <pubDate>2016-11-18T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/11/18/mapping-tufts-schedules.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/11/18/mapping-tufts-schedules.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/11/18/mapping-tufts-schedules.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/11/18/mapping-tufts-schedules.html</guid>
                 </item>
                 
             
@@ -5942,8 +5648,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/div&gt;
 </description>
                     <pubDate>2016-11-10T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/11/10/stpaul-broken-bones.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/11/10/stpaul-broken-bones.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/11/10/stpaul-broken-bones.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/11/10/stpaul-broken-bones.html</guid>
                 </item>
                 
             
@@ -5992,8 +5698,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;Here’s to an exciting 2016-17 season and &lt;a href=&quot;https://twitter.com/search?q=lgr&quot; target=&quot;_blank&quot;&gt;#LGR&lt;/a&gt;!&lt;/p&gt;
 </description>
                     <pubDate>2016-10-11T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/10/11/introducing-nhl-projections.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/10/11/introducing-nhl-projections.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/10/11/introducing-nhl-projections.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/10/11/introducing-nhl-projections.html</guid>
                 </item>
                 
             
@@ -6088,8 +5794,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-09-28T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/09/28/random-d3-fun.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/09/28/random-d3-fun.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/09/28/random-d3-fun.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/09/28/random-d3-fun.html</guid>
                 </item>
                 
             
@@ -6120,8 +5826,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-08-26T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/08/26/spotify-popularity.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/08/26/spotify-popularity.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/08/26/spotify-popularity.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/08/26/spotify-popularity.html</guid>
                 </item>
                 
             
@@ -6345,8 +6051,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-08-22T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/08/22/rio-2016-usa-vs-world.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/08/22/rio-2016-usa-vs-world.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/08/22/rio-2016-usa-vs-world.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/08/22/rio-2016-usa-vs-world.html</guid>
                 </item>
                 
             
@@ -6357,11 +6063,11 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 &lt;p&gt;I looked for a solution and repeatedly only found mention to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes&quot;&gt;Sieve of Eratosthenes&lt;/a&gt;, which is fairly intuitive and appeared to be the go-to primality test. However, in my early days of programming, I still struggled to implement the algorithm so I ultimately pushed those prime-based questions off to the side.&lt;/p&gt;
 
-&lt;p&gt;Years later, while reading Brian Christian’s and Tom Griffiths’ &lt;a href=&quot;https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365&quot;&gt;Algorithms to Live By&lt;/a&gt;, I happened across the &lt;strong&gt;Miller-Rabin Primality Test&lt;/strong&gt;, an alternative to the Sieve of Eratosthenes. The algorithm works as follows: say you wanted to test if &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; (an odd integer) is a prime number. To do so, we can first find &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;n = 2^r s + 1&lt;/script&gt;. Next, we can pick a random integer &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;1 \leq a \leq n - 1&lt;/script&gt;. With &lt;script type=&quot;math/tex&quot;&gt;a, r, s&lt;/script&gt; all defined, we next test if &lt;script type=&quot;math/tex&quot;&gt;a^s = 1 \textrm{  mod  } n&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;a^{2js} = -1 \textrm{  mod  } n&lt;/script&gt; for some &lt;script type=&quot;math/tex&quot;&gt;0 \leq j \leq r - 1&lt;/script&gt;. If either of these equalities are true, then we can say that &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; passes the test and any prime number will pass the test. It is fairly trivial to test this for pretty much any &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;. However, the trick with this algorithm is that non-prime numbers will also pass this test (return a false-positive) &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{4}&lt;/script&gt; of the time.&lt;/p&gt;
+&lt;p&gt;Years later, while reading Brian Christian’s and Tom Griffiths’ &lt;a href=&quot;https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365&quot;&gt;Algorithms to Live By&lt;/a&gt;, I happened across the &lt;strong&gt;Miller-Rabin Primality Test&lt;/strong&gt;, an alternative to the Sieve of Eratosthenes. The algorithm works as follows: say you wanted to test if \(n\) (an odd integer) is a prime number. To do so, we can first find \(r\) and \(s\) such that \(n = 2^r s + 1\). Next, we can pick a random integer \(a\) such that \(1 \leq a \leq n - 1\). With \(a, r, s\) all defined, we next test if \(a^s = 1 \textrm{  mod  } n\) or \(a^{2js} = -1 \textrm{  mod  } n\) for some \(0 \leq j \leq r - 1\). If either of these equalities are true, then we can say that \(n\) passes the test and any prime number will pass the test. It is fairly trivial to test this for pretty much any \(n\). However, the trick with this algorithm is that non-prime numbers will also pass this test (return a false-positive) \(\frac{1}{4}\) of the time.&lt;/p&gt;
 
-&lt;p&gt;To correct for this, we can try the test again with a new randomly-selected &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;. If &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; again passes the test, we know that there is a &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{4} \cdot \frac{1}{4} = \frac{1}{16}&lt;/script&gt; chance that &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is not actually a prime. Therefore, if we repeated the test &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; times successfully, we can say that there is a &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{4^N}&lt;/script&gt; chance that &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is not actually a prime number. Using this method, we can determine if a particular number is prime with fairly high certainty after only a few iterations. For example, if we repeat the test &lt;script type=&quot;math/tex&quot;&gt;N = 5&lt;/script&gt; times, we can declare &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; to be prime with 99.9% certainty. If &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; passes after &lt;script type=&quot;math/tex&quot;&gt;N = 10&lt;/script&gt; iterations, we know with 99.9999% certainty.&lt;/p&gt;
+&lt;p&gt;To correct for this, we can try the test again with a new randomly-selected \(a\). If \(n\) again passes the test, we know that there is a \(\frac{1}{4} \cdot \frac{1}{4} = \frac{1}{16}\) chance that \(n\) is not actually a prime. Therefore, if we repeated the test \(N\) times successfully, we can say that there is a \(\frac{1}{4^N}\) chance that \(n\) is not actually a prime number. Using this method, we can determine if a particular number is prime with fairly high certainty after only a few iterations. For example, if we repeat the test \(N = 5\) times, we can declare \(n\) to be prime with 99.9% certainty. If \(n\) passes after \(N = 10\) iterations, we know with 99.9999% certainty.&lt;/p&gt;
 
-&lt;p&gt;Using this, I took another crack at those pesky prime-based Project Euler problems and what do you know, it worked like a charm! While there is a very, very, very slim chance that this still returns a false-positive (I’m using &lt;script type=&quot;math/tex&quot;&gt;N = 8&lt;/script&gt; so a 0.00153% chance), given the non-critical context of the application, I’ll definitely take the speed increase over the non-100% certainty.&lt;/p&gt;
+&lt;p&gt;Using this, I took another crack at those pesky prime-based Project Euler problems and what do you know, it worked like a charm! While there is a very, very, very slim chance that this still returns a false-positive (I’m using \(N = 8\) so a 0.00153% chance), given the non-critical context of the application, I’ll definitely take the speed increase over the non-100% certainty.&lt;/p&gt;
 
 &lt;p&gt;For anyone interested, I’ve included a sample implementation in Python of the algorithm below.&lt;/p&gt;
 
@@ -6378,7 +6084,7 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
     &lt;span class=&quot;c1&quot;&gt;# test n multiple times
 &lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
@@ -6389,8 +6095,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-08-15T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/08/15/miller-rabin.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/08/15/miller-rabin.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/08/15/miller-rabin.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/08/15/miller-rabin.html</guid>
                 </item>
                 
             
@@ -6567,8 +6273,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-05-15T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/05/15/pca-kmeans-nhl.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/05/15/pca-kmeans-nhl.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/05/15/pca-kmeans-nhl.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/05/15/pca-kmeans-nhl.html</guid>
                 </item>
                 
             
@@ -6590,8 +6296,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is only the TV I’ve watched via Netflix and doesn’t include when I’ve watched shows offline (like Community, Billions, etc).&lt;/p&gt;
 </description>
                     <pubDate>2016-05-08T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/05/08/netflix-history.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/05/08/netflix-history.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/05/08/netflix-history.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/05/08/netflix-history.html</guid>
                 </item>
                 
             
@@ -6632,8 +6338,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-05-03T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/05/03/svm-poetry.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/05/03/svm-poetry.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/05/03/svm-poetry.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/05/03/svm-poetry.html</guid>
                 </item>
                 
             
@@ -6693,8 +6399,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 &lt;/div&gt;
 </description>
                     <pubDate>2016-04-26T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/04/26/photography.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/04/26/photography.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/04/26/photography.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/04/26/photography.html</guid>
                 </item>
                 
             
@@ -6735,8 +6441,8 @@ d3.csv(&quot;/assets/data/d3-radial-temp.csv&quot;, function(d) {
 
 </description>
                     <pubDate>2016-03-09T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2016/03/09/clustering-with-kmeans.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2016/03/09/clustering-with-kmeans.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2016/03/09/clustering-with-kmeans.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2016/03/09/clustering-with-kmeans.html</guid>
                 </item>
                 
             
@@ -6773,8 +6479,8 @@ Markowitz bullets showing possible portfolios
 
 </description>
                     <pubDate>2015-12-12T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/12/12/optimizing-hedge-ratio.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/12/12/optimizing-hedge-ratio.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/12/12/optimizing-hedge-ratio.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/12/12/optimizing-hedge-ratio.html</guid>
                 </item>
                 
             
@@ -6813,8 +6519,8 @@ Markowitz bullets showing possible portfolios
 
 </description>
                     <pubDate>2015-11-10T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/11/10/drum-tab-visualizer.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/11/10/drum-tab-visualizer.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/11/10/drum-tab-visualizer.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/11/10/drum-tab-visualizer.html</guid>
                 </item>
                 
             
@@ -6841,8 +6547,8 @@ Markowitz bullets showing possible portfolios
 
 </description>
                     <pubDate>2015-10-30T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/10/30/jumboadvisor.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/10/30/jumboadvisor.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/10/30/jumboadvisor.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/10/30/jumboadvisor.html</guid>
                 </item>
                 
             
@@ -6865,8 +6571,8 @@ Markowitz bullets showing possible portfolios
 
 </description>
                     <pubDate>2015-09-01T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/09/01/lastfm-scrobble-graphs.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/09/01/lastfm-scrobble-graphs.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/09/01/lastfm-scrobble-graphs.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/09/01/lastfm-scrobble-graphs.html</guid>
                 </item>
                 
             
@@ -6923,8 +6629,8 @@ Markowitz bullets showing possible portfolios
 
 </description>
                     <pubDate>2015-08-16T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/08/16/data-is-beautiful-1.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/08/16/data-is-beautiful-1.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/08/16/data-is-beautiful-1.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/08/16/data-is-beautiful-1.html</guid>
                 </item>
                 
             
@@ -6934,8 +6640,8 @@ Markowitz bullets showing possible portfolios
                     <description>&lt;p&gt;Do you ever need or want a simple Internet tool and it seems like it would be easier code it than find it? That is exactly what happened when I needed a beeping censor for &lt;a href=&quot;http://wmfo.org&quot;&gt;my radio show&lt;/a&gt;. Sometimes bands like to swear and I needed a button / website to defend the honor of the FCC. Thus, I made this really &lt;a href=&quot;http://ben-tanen.github.io/CensorMachine/&quot;&gt;stupid site&lt;/a&gt;. But hey, now I have it.&lt;/p&gt;
 </description>
                     <pubDate>2015-07-06T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/07/06/censor-machine.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/07/06/censor-machine.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/07/06/censor-machine.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/07/06/censor-machine.html</guid>
                 </item>
                 
             
@@ -6966,8 +6672,8 @@ Good Ol' Unix Terminal Games
 
 </description>
                     <pubDate>2015-07-01T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/07/01/retro-python-games.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/07/01/retro-python-games.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/07/01/retro-python-games.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/07/01/retro-python-games.html</guid>
                 </item>
                 
             
@@ -7019,8 +6725,8 @@ Who doesn't love economic-based drinking games?
 &lt;p&gt;Any other potential prizes/punishments?&lt;/p&gt;
 </description>
                     <pubDate>2015-06-26T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/06/26/retro-game-theory.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/06/26/retro-game-theory.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/06/26/retro-game-theory.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/06/26/retro-game-theory.html</guid>
                 </item>
                 
             
@@ -7080,8 +6786,8 @@ Update - More or less is exactly what the actual implementation looks like
 &lt;/blockquote&gt;
 </description>
                     <pubDate>2015-06-17T09:06:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/06/17/retro-ios-update.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/06/17/retro-ios-update.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/06/17/retro-ios-update.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/06/17/retro-ios-update.html</guid>
                 </item>
                 
             
@@ -7137,8 +6843,8 @@ Spotify didn't waste an inch of space on the mobile app
 
 </description>
                     <pubDate>2015-05-21T09:06:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/05/21/spotify.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/05/21/spotify.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/05/21/spotify.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/05/21/spotify.html</guid>
                 </item>
                 
             
@@ -7171,8 +6877,8 @@ The original desktop application (left) vs. the new web application (right)
 
 </description>
                     <pubDate>2015-03-31T09:06:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2015/03/31/rodrego.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2015/03/31/rodrego.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2015/03/31/rodrego.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2015/03/31/rodrego.html</guid>
                 </item>
                 
             
@@ -7203,8 +6909,8 @@ The original desktop application (left) vs. the new web application (right)
 
 </description>
                     <pubDate>2014-11-30T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2014/11/30/grub.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2014/11/30/grub.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2014/11/30/grub.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2014/11/30/grub.html</guid>
                 </item>
                 
             
@@ -7226,8 +6932,8 @@ The original desktop application (left) vs. the new web application (right)
 &lt;p&gt;Nothing groundbreaking but it was a fun little project. And who wouldn’t prefer doing little projects instead of sleeping? You can find the code &lt;a href=&quot;https://github.com/ben-tanen/Base64Decode&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
                     <pubDate>2014-11-12T08:05:41-07:00</pubDate>
-                    <link>http://localhost:4000/projects/2014/11/12/base64.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2014/11/12/base64.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2014/11/12/base64.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2014/11/12/base64.html</guid>
                 </item>
                 
             
@@ -7270,8 +6976,8 @@ My own example infographics
 
 </description>
                     <pubDate>2014-11-01T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2014/11/01/infographics.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2014/11/01/infographics.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2014/11/01/infographics.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2014/11/01/infographics.html</guid>
                 </item>
                 
             
@@ -7304,8 +7010,8 @@ My own example infographics
 
 </description>
                     <pubDate>2014-10-31T09:05:41-06:00</pubDate>
-                    <link>http://localhost:4000/projects/2014/10/31/rap-data-design.html</link>
-                    <guid isPermaLink="true">http://localhost:4000/projects/2014/10/31/rap-data-design.html</guid>
+                    <link>http://ben-tanen.github.io/projects/2014/10/31/rap-data-design.html</link>
+                    <guid isPermaLink="true">http://ben-tanen.github.io/projects/2014/10/31/rap-data-design.html</guid>
                 </item>
                 
             
