@@ -4,7 +4,8 @@
 /*********************/
 
 let margin = {top: 30, right: 130, bottom: 0, left: 0},
-    width  = $("#dem2020-container").width() - margin.left - margin.right;
+    width  = $("#dem2020-container").width() - margin.left - margin.right,
+    pixel_ratio = window.devicePixelRatio;
 
 // define box and label dimensions
 // and determine which set of sizes to use
@@ -24,8 +25,10 @@ $("#dem2020-container").height(dimensions.canvas_height[dimension_ix] + margin.t
 // create canvas and svg
 let canvas = d3.select("#dem2020-container").append("canvas")
         .attr("id", "dem2020-canvas")
-        .attr("width", dimensions.canvas_width[dimension_ix])
-        .attr("height", dimensions.canvas_height[0])
+        .attr("width", dimensions.canvas_width[dimension_ix] * pixel_ratio)
+        .attr("height", dimensions.canvas_height[0] * pixel_ratio)
+        .style("width", dimensions.canvas_width[dimension_ix] + "px")
+        .style("height", dimensions.canvas_height[0] + "px")
         .style("padding", `${margin.top}px ${margin.right}px ${margin.bottom}px ${margin.left}px`);
     context = canvas.node().getContext("2d"),
     svg = d3.select("#dem2020-container").append("svg")
@@ -33,6 +36,8 @@ let canvas = d3.select("#dem2020-container").append("canvas")
         .attr("width", margin.left + width + margin.right)
         .attr("height", margin.top + dimensions.canvas_height[0] + margin.bottom);
 
+// scale canvas to make elements look crisper
+context.scale(pixel_ratio, pixel_ratio);
 
 // set domains: b = box position, c = color of box
 let pos = d3.scaleLinear(),
@@ -345,9 +350,13 @@ function resize() {
     dimension_ix = (width < dimensions.canvas_width[0] ? 1 : 0) + (width < dimensions.canvas_width[1] ? 1 : 0);
 
     // if need to switch dimensions, set canvas size appropriately and redraw
-    if (canvas.attr("width") != dimensions.canvas_width[dimension_ix]) {
+    if (canvas.attr("width") != dimensions.canvas_width[dimension_ix] * pixel_ratio) {
         $("#dem2020-container").height(dimensions.canvas_height[dimension_ix] + margin.top + margin.bottom);
-        canvas.attr("width", dimensions.canvas_width[dimension_ix]);
+        canvas.attr("width", dimensions.canvas_width[dimension_ix] * pixel_ratio)
+            .style("width", dimensions.canvas_width[dimension_ix] + "px");
+
+        context = canvas.node().getContext("2d")
+        context.scale(pixel_ratio, pixel_ratio);
 
         pos.range([0, (dimensions.box_size[dimension_ix] + dimensions.box_padding[dimension_ix]) * d3.max(data, d => Math.max(d.col, d.row))]);
 
