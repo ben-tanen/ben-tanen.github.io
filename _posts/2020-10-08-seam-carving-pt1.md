@@ -21,7 +21,7 @@ For this walkthrough, let’s use the beautiful landscape image below (credit: [
 
 Now, imagine we want to show this image somewhere but we are constrained to a 3:4 space (33% taller than it is wide). Typically, we have two options: (a) show the entire image, but scale it to fit within the provided space; or (b) crop the image to fit height-wise while cutting off some portion from the sides. Neither of these approaches is optimal since we’re left with either a smaller image and wasted space above and below as we see in (a) or we have to cut parts of the image, potentially losing sections of importance, as we see in (b). At the moment, most social media companies opt to go down the cropping route, but as we’ll see in [the next post]({% post_url 2020-10-08-seam-carving-pt2 %}), it can be very difficult for social media companies to accurately crop millions of images to really show the most interesting parts.
 
-{% include figure.html autolink="yes" src="/projects/seam-carving/img/method-comp.PNG" alt="An image comparing our three methods of displaying images: (a) scaling, (b) cropping, (c) seam carving" %}
+{% include figure.html autolink="yes" src="/projects/seam-carving/img/method-comp.png" alt="An image comparing our three methods of displaying images: (a) scaling, (b) cropping, (c) seam carving" %}
 
 As an alternative, we can use the seam carving algorithm, which produces the image seen above on the right (c). When we use the seam carving algorithm on our image, we end up with something that shows all of the varied landscape that we see in the full image squeezed into the appropriately sized box. When compared to our other two approaches, seam carving seems like the obvious winner.
 

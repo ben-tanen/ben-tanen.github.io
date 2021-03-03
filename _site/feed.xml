@@ -641,8 +641,8 @@ An example of what 'open for surprise' might reveal
 &lt;p&gt;Now, imagine we want to show this image somewhere but we are constrained to a 3:4 space (33% taller than it is wide). Typically, we have two options: (a) show the entire image, but scale it to fit within the provided space; or (b) crop the image to fit height-wise while cutting off some portion from the sides. Neither of these approaches is optimal since we’re left with either a smaller image and wasted space above and below as we see in (a) or we have to cut parts of the image, potentially losing sections of importance, as we see in (b). At the moment, most social media companies opt to go down the cropping route, but as we’ll see in &lt;a href=&quot;/projects/2020/10/08/seam-carving-pt2.html&quot;&gt;the next post&lt;/a&gt;, it can be very difficult for social media companies to accurately crop millions of images to really show the most interesting parts.&lt;/p&gt;
 
 &lt;p class=&quot;fig-paragraph&quot;&gt;
-    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/method-comp.PNG&quot; target=&quot;_blank&quot;&gt;
-    &lt;img src=&quot;/projects/seam-carving/img/method-comp.PNG&quot; alt=&quot;An image comparing our three methods of displaying images: (a) scaling, (b) cropping, (c) seam carving&quot; /&gt;
+    &lt;a class=&quot;fig-link&quot; href=&quot;/projects/seam-carving/img/method-comp.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;/projects/seam-carving/img/method-comp.png&quot; alt=&quot;An image comparing our three methods of displaying images: (a) scaling, (b) cropping, (c) seam carving&quot; /&gt;
     &lt;/a&gt;
 &lt;/p&gt;
 
