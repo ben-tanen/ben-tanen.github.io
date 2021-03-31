@@ -25,7 +25,7 @@ d3.json("https://d3js.org/us-10m.v1.json", function(error, us) {
 
         var data_map = { };
         for (var i = 0; i < data.length; i++) {
-            data_map[data[i].FIPS] = {
+            data_map[(data[i]['State FIPS'] < 10 ? "0" : "") + data[i].FIPS] = {
                 'county': data[i].County,
                 'state':  data[i].State,
                 'color':  data[i].Color,
