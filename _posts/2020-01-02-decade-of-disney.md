@@ -4,7 +4,7 @@ title:  "The Decade of Disney"
 date:   2020-01-02 15:05:41
 thumbnail: /assets/img/post-thumbnails/disney-monopoly.jpg
 landing-proj:  true
-landing-order: 6
+landing-order: 25|23|20
 landing-img:   /assets/img/proj-thumbnails/decade-of-disney.png
 landing-large: false
 ---

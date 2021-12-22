@@ -4,7 +4,7 @@ title: "Visualizing Trump's Narrow Path to Victory"
 date: 2019-06-27 04:00:00
 thumbnail: /assets/img/post-thumbnails/electoral-college-viz.png
 landing-proj:  true
-landing-order: 18
+landing-order: 3|19|10
 landing-img:   /assets/img/proj-thumbnails/trump-ec-viz.png
 landing-large: true
 new-post-style: true

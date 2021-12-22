@@ -257,6 +257,32 @@ let vs = [
     }
 ];
 
+/*******************************/
+/*** DECLARE REORDERING FXNS ***/
+/*******************************/
+
+reorder = () => {
+    const cells = d3.selectAll(".proj-cell"),
+          cellOrder = cells.nodes()
+            .map((d, i) => ({ ix: i, lo: d.dataset.landing_order}))
+            .map((d) => Object.assign(d, { 
+                loc3: +d.lo.split("|")[0], 
+                loc2: +d.lo.split("|")[1], 
+                loc1: +d.lo.split("|")[2] 
+            }));
+
+    const cellWidth = +cells.style("width").replace("px", ""),
+          containerWidth = +d3.select("#proj-container").style("width").replace("px", ""),
+          nCols = Math.round(containerWidth / cellWidth);
+
+    const cellIxs = cellOrder.sort((a, b) => d3.descending(a["loc" + nCols], b["loc" + nCols])).map(d => d.ix);
+    for (let i = 0; i < cellIxs.length; i++) {
+        d3.select(cells.nodes()[cellIxs[i]]).lower();
+    }
+}
+
+reorder();
+
 /******************/
 /*** INIT PLOTS ***/
 /******************/
@@ -274,6 +300,12 @@ vizInterval = setInterval(function() {
 /*********************************/
 /*** PAGE AND BUTTON LISTENERS ***/
 /*********************************/
+
+// upon resize, potentially re-order project cells
+$(window).resize(function() {
+    console.log("resizing");
+    reorder();
+});
 
 // upon leaving page, clear animation
 $(window).blur(function() {

@@ -29,12 +29,14 @@
     </div>
     <div id="proj-container">
         <!-- collect all landing projects (from both posts and other) -->
-        {% assign landingproj1 = site.posts | where: "landing-proj", "true" | sort: 'landing-order' %}
-        {% assign landingproj2 = site.landing-projects | sort: 'landing-order' %}
-        {% assign landingproj = landingproj1 | concat: landingproj2 | sort: 'landing-order' %}
+        {% assign landingproj1 = site.posts | where: "landing-proj", "true" %}
+        {% assign landingproj2 = site.landing-projects %}
+        {% assign landingproj = landingproj1 | concat: landingproj2 %}
         <!-- iterate over all projects to create a cell on landing page -->
         {% for proj in landingproj %}
-        <div class="proj-cell {% if proj.landing-large == true %}large{% endif %}" style='background-image: url("{% if proj.landing-img %}{{ proj.landing-img }}{% else %}{{ proj.thumbnail }}{% endif %}");'>
+        <div class="proj-cell {% if proj.landing-large == true %}large{% endif %}" 
+             data-landing_order="{{ proj.landing-order }}"
+             style='background-image: url("{% if proj.landing-img %}{{ proj.landing-img }}{% else %}{{ proj.thumbnail }}{% endif %}");'>
             <a href="{% if proj.reroute-url %}{{ proj.reroute-url }}{% else %}{{ proj.url }}{% endif %}">
                 <p>{{ proj.title }}</p>
             </a>
