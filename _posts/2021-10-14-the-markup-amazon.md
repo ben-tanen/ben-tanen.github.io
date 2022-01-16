@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Amazon Puts Its Own “Brands” First Above Better-Rated Products"
-date: 2022-01-16 09:00:00
+date: 2021-10-14 09:00:00
 thumbnail: /assets/img/post-thumbnails/the-markup-amazon.png
 reroute-url: https://themarkup.org/amazons-advantage/2021/10/14/amazon-puts-its-own-brands-first-above-better-rated-products
 landing-proj:  true
