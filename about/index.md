@@ -4,26 +4,24 @@ title:  "About"
 ---
 
 {% capture about %}
-<p>Hi! I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms. I’m a data scientist with aspirations of becoming a data journalist.</p>
+<p>Hi! I’m Ben Tanen. I have a passion for thinking about, working with, and visualizing data of all forms. I’m a data scientist and data journalist looking for looking to use interesting data to tell more interesting stories.</p>
 
-<p>I graduated from Tufts University in 2017, where I studied computer science and math, and since then I’ve worked in a number of roles in data science and data analytics consulting. Through my work, I’ve dealt with projects about patent infringement in cars, foreign exchange trading, healthcare economics, television showrunning, cryptocurrencies, and the (over)prescribing of opiods. More recently I've turned to focus on podcasts in my role as a data scientist and visualization specialist at Spotify. During the summer of 2020, I also joined <a href="https://www.data2thepeople.org/">Data 2 The People</a>, a data science consulting group helping to elect down ballot candidates in the 2020 Election and beyond.</p>
+<p>I graduated from Tufts University in 2017, where I studied computer science and math, and since then I’ve worked in a number of roles in data science and data analytics consulting. Through my work, I’ve dealt with projects about patent infringement in cars, grassroots political campaigns, foreign exchange trading, streaming music editorial, healthcare economics, television showrunning, podcasts, cryptocurrencies, and the (over)prescribing of opiods. I currently focus on music and talk content as a data scientist and visualization specialist at Spotify. Prior to that, I worked at <a href="https://www.analysisgroup.com/">Analysis Group</a> and <a href="https://www.data2thepeople.org/">Data 2 The People</a>.</p>
 
-<p>I currently live in Utah with my girlfriend and our dog. I love to cook and am trying to get my skills up to match my enthusiasm. I’m a huge fan of live music (I’ve been to over 100 shows) and I’m always looking for great new stuff to add to my <a href="https://www.last.fm/user/ben-tanen">digital</a> or <a href="http://link.ben-tanen.com/vinyl/">vinyl collections</a>. I love movies (catch me at Sundance and <a href="https://letterboxd.com/btanen/">on Letterboxd</a>) and am always down to chat about law and politics. When possible (i.e., pre- and post-COVID), I rock climb, ski and snowboard, and play a little pick up hockey. On occasion, I also make <a href="/projects/generative-sketchbook/">generative art sketches</a> and <a href="http://link.ben-tanen.com/photo/">take pictures with my camera</a>.</p>
+If you're interested, you can find more info on my work experience via my resume [here](http://link.ben-tanen.com/resume/).
 
-<p><span id="currently-text">I'm currently listening to <a class="currently hidden" id="currently-music-name" target="_new">...............</a> from <span class="currently hidden" id="currently-music-artist">...............</span> and I'm reading <a class="currently hidden" id="currently-book-name" target="_new">...............</a> by <span class="currently hidden" id="currently-book-author">...............</span>.</span></p>
+<p>I currently live in Utah with my fiancée and our dog. I love to cook and am trying to get my skills up to match my enthusiasm. I’m a huge fan of live music and I’m always looking for great new stuff to add to my <a href="https://www.last.fm/user/ben-tanen">digital</a> or <a href="https://www.notion.so/btnotion/4e61be4d03ce487b857c60681029c3d9?v=9a4eb9452a984763b46455fc8c867d54">vinyl collections</a>. I love movies (catch me at Sundance and <a href="https://letterboxd.com/btanen/">on Letterboxd</a>) and am always down to chat about law and politics. When possible (i.e., pre- and post-COVID), I rock climb, ski and snowboard, and play a little pick up hockey. On occasion, I also make <a href="/projects/generative-sketchbook/">generative art sketches</a> and <a href="http://link.ben-tanen.com/photo/">take pictures with my camera</a>.</p>
+
+<p>If you're interested in knowing <b>even more</b> about me, I have a bit more on <a href="https://btnotion.notion.site/btnotion/Welcome-to-BT-Notion-23406746c8f64abaa8108e4bc75bf51f">this personal Notion site</a>. You can also find a bit more on <a href="https://twitter.com/ben_tanen/">Twitter</a>.</p>
 {% endcapture %}
 
 <div id="face-container">
-    <img src="/assets/img/me/face-g.JPG" alt="A picture of me with my dog, Penny, while riding a bike (Penny is in a basket)" />
-    <img src="/assets/img/me/face-i.JPG" alt="A picture of me with my girlfriend while we sit on a couch looking at each other" />
-    <img src="/assets/img/me/face-h.JPG" alt="A picture of me on a mountain" />
+    <img src="/assets/img/me/face-j.JPG" alt="A picture of me sitting on a rock, wearing a hoodie and overalls" />
+    <img src="/assets/img/me/face-k.JPG" alt="A picture of me sitting close with my fiancée on a bench outside on a porch" />
+    <img src="/assets/img/me/face-l.JPG" alt="A picture of my dog Penny, a small cava-poo-chon" />
 </div>
 
 {{ about }}
-
-## Resume - [PDF version](http://link.ben-tanen.com/resume/)
-
-#### (Web version is a work in progress)
 
 <style>
 

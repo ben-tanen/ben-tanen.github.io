@@ -240,7 +240,7 @@ function resize() {
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/
 
-d3.json("https://bt-dbs.herokuapp.com/getElectionFunnel2020Data", (d) => {
+d3.json("/assets/data/election-funnel-2020-data-20201119.json", (d) => {
 
     d3.select("#elfun2020-loading").style("display", "none");
     d3.selectAll("#elfun2020-title, #elfun2020-viz").style("display", "inline-block");
