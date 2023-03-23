@@ -4,7 +4,7 @@ title: 'Partisanship and the NFL'
 date: 2017-10-07 05:00:00
 thumbnail: /assets/img/post-thumbnails/partisan-nfl.png
 landing-proj:  true
-landing-order: 14|8|15
+landing-order: 23|8|16
 landing-img:   /assets/img/proj-thumbnails/partisan-nfl.png
 landing-large: false
 new-post-style: true
