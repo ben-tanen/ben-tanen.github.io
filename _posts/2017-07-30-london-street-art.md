@@ -11,7 +11,7 @@ I just got back from a trip to London and while I was there, I got to check out 
 
 Amazed by many of the works, I thought I'd share some of my personal favorites. These photos certainly don't do the art justice so if you have the opportunity to wander around London (specifically Shoreditch and Brick Lane) and see it in person, I would highly suggest it.
 
-P.S. Since this isn't the [first]({% post_url 2016-04-26-photography %}) [time]({% post_url 2016-11-10-stpaul-broken-bones %}) I've posted about pictures I've taken, I decided to put together [a dedicated page](http://link.ben-tanen.com/photo) for some of my personal favorite photos. Feel free to check it out and enjoy!
+P.S. Since this isn't the [first]({% post_url 2016-04-26-photography %}) [time]({% post_url 2016-11-10-stpaul-broken-bones %}) I've posted about pictures I've taken, I decided to put together [a dedicated page](/photography) for some of my personal favorite photos. Feel free to check it out and enjoy!
 
 <style>
     .photo-container {
