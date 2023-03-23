@@ -10,10 +10,4 @@ landing-img:   /assets/img/proj-thumbnails/the-markup-denied.png
 landing-large: true
 ---
 
-This post lives on another page and you were suppose to be re-routed, but something happened... sorry!
-
-You can find the post [here](https://themarkup.org/denied/2021/08/25/the-secret-bias-hidden-in-mortgage-approval-algorithms).
-
-<script>
-    window.location = 'https://themarkup.org/denied/2021/08/25/the-secret-bias-hidden-in-mortgage-approval-algorithms';
-</script>
+{% include reroute_page.html reroute_url="https://themarkup.org/denied/2021/08/25/the-secret-bias-hidden-in-mortgage-approval-algorithms" %}

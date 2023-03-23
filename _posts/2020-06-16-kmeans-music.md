@@ -10,10 +10,4 @@ reroute-url: /notebooks/kmeans-music.html
 excerpt_separator: <!-- more -->
 ---
 
-This post lives on another page and you were suppose to be re-routed, but something happened... sorry!
-
-You can find the post [here](/notebooks/kmeans-music.html).
-
-<script>
-    window.location = '/notebooks/kmeans-music.html';
-</script>
+{% include reroute_page.html reroute_url="/notebooks/kmeans-music.html" %}

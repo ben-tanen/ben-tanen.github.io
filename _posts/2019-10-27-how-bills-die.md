@@ -10,10 +10,4 @@ landing-img:   /projects/how-bills-die/img/sad-bill.png
 landing-large: false
 ---
 
-This post lives on another page and you were suppose to be re-routed, but something happened... sorry!
-
-You can find the post [here](/projects/how-bills-die/).
-
-<script>
-    window.location = '/projects/how-bills-die/';
-</script>
+{% include reroute_page.html reroute_url="/projects/how-bills-die/" %}
