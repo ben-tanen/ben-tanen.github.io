@@ -4,7 +4,7 @@ title:  "How A Subpar Football Fan Succeeds in Fantasy Football"
 date:   2019-12-31 15:05:41
 thumbnail: /assets/img/post-thumbnails/ff-retro-2019.png
 landing-proj:  true
-landing-order: 8|24|23
+landing-order: 26|25|21
 landing-img:   /assets/img/proj-thumbnails/2019-ff-retro.png
 landing-large: false
 ---

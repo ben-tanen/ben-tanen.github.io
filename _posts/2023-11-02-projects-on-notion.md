@@ -3,7 +3,7 @@ layout: post
 title:  "Small Projects over on Notion, Batch #1"
 date:   2023-11-02 10:05:41
 landing-proj:  false
-new-post-style: false
+new-post-style: true
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png
 ---
 

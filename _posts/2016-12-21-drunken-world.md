@@ -4,7 +4,7 @@ title: 'Visualizing Our Drunken World'
 date: 2016-12-21 15:05:41
 thumbnail: /assets/img/post-thumbnails/drunken-world2.png
 landing-proj:  true
-landing-order: 18|26|26
+landing-order: 27|14|27
 landing-img:   /assets/img/proj-thumbnails/drunken-world.png
 landing-large: false
 ---

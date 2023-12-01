@@ -4,7 +4,7 @@ title: 'Should I Become an NFL Scout?'
 date: 2017-09-07 05:00:00
 thumbnail: /assets/img/post-thumbnails/ff-draft.png
 landing-proj:  true
-landing-order: 24|22|19
+landing-order: 15|23|17
 landing-img:   /assets/img/proj-thumbnails/ff-draft.png
 landing-large: false
 ---
