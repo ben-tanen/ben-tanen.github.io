@@ -10,6 +10,10 @@
     text-align: center;
 }
 
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+    text-align: center;
+}
+
 p.fig-paragraph {
     max-width: 100%;
     margin-left: 0;
