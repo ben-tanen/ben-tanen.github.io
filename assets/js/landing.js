@@ -302,18 +302,18 @@ vizInterval = setInterval(function() {
 /*********************************/
 
 // upon resize, potentially re-order project cells
-$(window).resize(function() {
+$(window).on("resize", () => {
     console.log("resizing");
     reorder();
 });
 
 // upon leaving page, clear animation
-$(window).blur(function() {
+$(window).on("blur", () => {
     clearInterval(vizInterval);
 });
 
 // upon entering page, restart animation
-$(window).focus(function() {
+$(window).on("focus", () => {
     viz.update(viz.options);
     ix++;
     vizInterval = setInterval(function() {
@@ -326,6 +326,6 @@ $(window).focus(function() {
 /*** menu code ***/
 /*****************/
 
-$('#landing-menu img').click(function() {
+$('#landing-menu img').on("click", () => {
     $('#site-links').slideToggle();
 });
