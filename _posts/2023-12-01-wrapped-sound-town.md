@@ -31,7 +31,6 @@ To my surprise, when the story went live at the end of November, it kind of took
 
 <div class="columns two">
     <div class="column">
-        <p>How exactly Sound Town works is a secret I'll never tell (unless you get a job at Spotify and ask me), but for those interested, you can read a bit on how it works in <a href="https://newsroom.spotify.com/2023-12-01/wrapped-sound-town-berkeley-burlington-cambridge/">this Spotify "For The Record" PR blog</a> or <a href="#">this Spotify Engineering blog that I helped write</a>.</p>
         <p>I hope y'all enjoyed Sound Town, wherever you ended up! And if you're interested in doing what we've called "Sound Town: Hardcore Mode", you can always move there to fully commit to the bit. I'll be moving to Hobart, Australia, so see you down south!</p>
         <p>Since I had a thoroughly good time reading the internet when Wrapped came out this year, I'll leave you with some of my favorite Sound Town related memes for you to enjoy. Thanks all for being funny!</p>
     </div>
