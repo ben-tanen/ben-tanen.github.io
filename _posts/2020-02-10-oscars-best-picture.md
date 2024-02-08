@@ -10,7 +10,9 @@ landing-large: false
 new-post-style: true
 ---
 
-On Sunday, *Parasite* made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that *Parasite* would lose to [1917](https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html), even though [most critics believed](https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/) *Parasite* was the superior movie. All of this was also coming a year after [*Green Book* won](https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture) over (believed to be) superior films like *Roma*, *The Favourite*, and *BlackKlansman*. Needless to say, before *Parasite* actually won, there were low hopes that the Academy would make the best choice.
+
+
+On Sunday, *Parasite* made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that *Parasite* would lose to [*1917*](https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html), even though [most critics believed](https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/) *Parasite* was the superior movie. All of this was also coming a year after [*Green Book* won](https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture) over (believed to be) superior films like *Roma*, *The Favourite*, and *BlackKlansman*. Needless to say, before *Parasite* actually won, there were low hopes that the Academy would make the best choice.
 
 {% include figure.html autolink="yes" src="/assets/img/posts/oscars-best-picture-2019-new.jpg" alt="A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee" width="700px" %}
 
@@ -20,9 +22,11 @@ In an attempt to quantify all of this and mentally prepare myself for what I exp
 
 Now that we have the benefit of knowing who won Best Picture, this year’s Best Picture category looked a bit like a mix of 2016 and 2018 - the best film won the big prize but many great films weren’t nominated. Most people can now rest easy knowing a worthy movie won but it's worth remembering all those great movies that did not get the recognition they deserved, this year and in years past. For those curious, see below for a full breakdown of the Best Picture nominees and other (often better) non-nominated films from the past 20 years as well as a few of my top (mildly data-driven, mildly personal) picks. See you all again in 11 months when the rage cycle starts all over again!
 
+***Update (Feb 8, 2024):** I decided to revisit this and update the graphic to include data for 2020 - 2023. I also re-wrote my code, which should allow me to more easily refresh this for many years to come!*
+
 <div id="d3-obp-container">
     <div id="d3-obp-title">
-        <h3>Best Picture nominees vs. other comparable non-nominated films, 2000 - 2019</h3>
+        <h3>Best Picture nominees vs. other comparable non-nominated films, <span id="d3-obp-title-min-year">2000</span> - <span id="d3-obp-title-max-year">2023</span></h3>
     </div>
     <svg id="d3-obp">
     </svg>
@@ -45,7 +49,7 @@ Now that we have the benefit of knowing who won Best Picture, this year’s Best
 - 2002: *Spirited Away*, *Adaptation.*
 
 {% capture methodology-note %}
-Best Picture nominees were taken from <a href="http://awardsdatabase.oscars.org/">the Official Academy Awards Database</a> and then matched to their respective titles on <a href="https://www.metacritic.com/">Metacritic</a>. All films that were ranked higher than the lowest scoring Best Picture nominee (based on <a href="https://www.metacritic.com/browse/movies/score/metascore/year/filtered?year_selected=2019&sort=desc">Metacritic's Best Movies By Year list</a>) were included.
+Best Picture nominees were taken from <a href="http://awardsdatabase.oscars.org/">the Official Academy Awards Database</a> and then matched to their respective titles on <a href="https://www.metacritic.com/">Metacritic</a>. All films that were ranked higher than the lowest scoring Best Picture nominee (based on <a href="https://www.metacritic.com/browse/movies/score/metascore/year/filtered?year_selected=2019&sort=desc">Metacritic's Best Movies By Year list</a>) were included (as of Feb 8, 2024).
 
 Some films on Metacritic's list likely did not qualify for Best Picture nominations (e.g., <i>Apocalypse Now: Final Cut</i>, an extended version of the 1979 film, was released in 2019 but likely would not qualify). However, the Academy's qualifications have changed over time and <a href="https://www.liveabout.com/qualifying-for-best-picture-oscar-4071766">generally require information submitted by studios directly to the Academy</a>, which can be difficult to find online. Therefore, for the sake of completeness, all films listed on Metacritic were included.
 
@@ -60,7 +64,7 @@ The film's year indicates the year of release, not the year of the Oscars ceremo
 
 #d3-obp {
     width: 100%;
-    height: 4000px;
+    height: 4800px;
 }
 
 #d3-obp-title h3 {
@@ -129,7 +133,7 @@ circle.film.oscars-win {
 
 let obp_svg = d3.select("#d3-obp");
 
-let margin = {top: 180, right: 105, bottom: 65, left: 40},
+let margin = {top: 200, right: 105, bottom: 65, left: 40},
     width  = $("#d3-obp").width() - margin.left - margin.right,
     height = $("#d3-obp").height() - margin.top - margin.bottom,
     is_mobile = (width >= 470 ? false : true);
@@ -309,7 +313,7 @@ function resize() {
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/
 
-d3.csv("/assets/data/metacritic-topmovies-byyear.csv", (d) => {
+d3.csv("/projects/oscars-best-picture/data/metacritic-topmovies-byyear-2000to2023.csv", (d) => {
     d.year = +d.year;
     d.metacritic_score = +d.metacritic_score;
     d.metacritic_rank = +d.metacritic_rank;
@@ -335,6 +339,11 @@ d3.csv("/assets/data/metacritic-topmovies-byyear.csv", (d) => {
     render_statlines();
     render_legend();
     render_points();
+
+    // update title with latest years
+    d3.extent(data, (d) => d.year).map((d, i) => {
+        d3.select(`#d3-obp-title-${i == 0 ? "min" : "max"}-year`).text(d);
+    })
 });
 
 /*********************************/
