@@ -24,9 +24,11 @@ Now that we have the benefit of knowing who won Best Picture, this year’s Best
 
 ***Update (Feb 8, 2024):** I decided to revisit this and update the graphic to include data for 2020 - 2023. I also re-wrote my code, which should allow me to more easily refresh this for many years to come!*
 
+***Update (Mar 3, 2025):** Just pushed an update for the 2024 Oscars - congrats to Anora for the win!*
+
 <div id="d3-obp-container">
     <div id="d3-obp-title">
-        <h3>Best Picture nominees vs. other comparable non-nominated films, <span id="d3-obp-title-min-year">2000</span> - <span id="d3-obp-title-max-year">2023</span></h3>
+        <h3>Best Picture nominees vs. other comparable non-nominated films, <span id="d3-obp-title-min-year">2000</span> - <span id="d3-obp-title-max-year">2024</span></h3>
     </div>
     <svg id="d3-obp">
     </svg>
@@ -49,7 +51,7 @@ Now that we have the benefit of knowing who won Best Picture, this year’s Best
 - 2002: *Spirited Away*, *Adaptation.*
 
 {% capture methodology-note %}
-Best Picture nominees were taken from <a href="http://awardsdatabase.oscars.org/">the Official Academy Awards Database</a> and then matched to their respective titles on <a href="https://www.metacritic.com/">Metacritic</a>. All films that were ranked higher than the lowest scoring Best Picture nominee (based on <a href="https://www.metacritic.com/browse/movies/score/metascore/year/filtered?year_selected=2019&sort=desc">Metacritic's Best Movies By Year list</a>) were included (as of Feb 8, 2024).
+Best Picture nominees were taken from <a href="http://awardsdatabase.oscars.org/">the Official Academy Awards Database</a> and then matched to their respective titles on <a href="https://www.metacritic.com/">Metacritic</a>. All films that were ranked higher than the lowest scoring Best Picture nominee (based on <a href="https://www.metacritic.com/browse/movies/score/metascore/year/filtered?year_selected=2019&sort=desc">Metacritic's Best Movies By Year list</a>) were included (as of Feb 20, 2025).
 
 Some films on Metacritic's list likely did not qualify for Best Picture nominations (e.g., <i>Apocalypse Now: Final Cut</i>, an extended version of the 1979 film, was released in 2019 but likely would not qualify). However, the Academy's qualifications have changed over time and <a href="https://www.liveabout.com/qualifying-for-best-picture-oscar-4071766">generally require information submitted by studios directly to the Academy</a>, which can be difficult to find online. Therefore, for the sake of completeness, all films listed on Metacritic were included.
 
@@ -185,7 +187,7 @@ function render_statlines() {
         .attr("y", (d) => margin.top + y(d) - 62);
 
     sl1.selectAll("tspan")
-        .data((d) => `${data.filter((e) => e.year === d & e.oscars_nom === 0).length} non-nominated\nfilms were better\nthan the lowest\nscoring nominee`.split("\n")).enter()
+        .data((d) => `${data.filter((e) => e.year === d & e.oscars_nom === 0 & e.metacritic_score > e.min_oscar_nom_metacritic_score).length} non-nominated\nfilms were better\nthan the lowest\nscoring nominee`.split("\n")).enter()
         .append("tspan")
         .text((d) => d)
         .attr("x", margin.left + width + 5)
@@ -199,7 +201,7 @@ function render_statlines() {
         .attr("y", (d) => margin.top + y(d) + 10);
 
     sl2.selectAll("tspan")
-        .data((d) => `${data.filter((e) => e.year === d & e.oscars_nom === 0 & e.metacritic_rank < e.oscar_win_rank).length} non-nominated\nfilms were better\nthan the Best\nPicture winner`.split("\n")).enter()
+        .data((d) => `${data.filter((e) => e.year === d & e.oscars_nom === 0 & e.metacritic_score > e.oscar_win_metacritic_score).length} non-nominated\nfilms were better\nthan the Best\nPicture winner`.split("\n")).enter()
         .append("tspan")
         .text((d) => d)
         .attr("x", margin.left + width + 5)
@@ -313,7 +315,7 @@ function resize() {
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/
 
-d3.csv("/projects/oscars-best-picture/data/metacritic-topmovies-byyear-2000to2023.csv", (d) => {
+d3.csv("/projects/oscars-best-picture/data/metacritic-topmovies-byyear-2000to2024.csv", (d) => {
     d.year = +d.year;
     d.metacritic_score = +d.metacritic_score;
     d.metacritic_rank = +d.metacritic_rank;
