@@ -262,22 +262,37 @@ let vs = [
 /*******************************/
 
 reorder = () => {
+
+    // determine number of columns to render
+     // and get all cells + parse out landing_order + landing_large
     const cells = d3.selectAll(".proj-cell"),
-          cellOrder = cells.nodes()
-            .map((d, i) => ({ ix: i, lo: d.dataset.landing_order}))
-            .map((d) => Object.assign(d, { 
-                loc3: +d.lo.split("|")[0], 
-                loc2: +d.lo.split("|")[1], 
-                loc1: +d.lo.split("|")[2] 
-            }));
-
-    const cellWidth = +cells.style("width").replace("px", ""),
+          cellWidth = +cells.style("width").replace("px", ""),
           containerWidth = +d3.select("#proj-container").style("width").replace("px", ""),
-          nCols = Math.round(containerWidth / cellWidth);
+          nCols = Math.round(containerWidth / cellWidth),
+          cellOrder = cells.nodes()
+            .map((d, i) => ({ 
+                ix: i, 
+                lo: +d.dataset.landing_order, 
+                lg: d.dataset.landing_large === "true",
+                nm: d.dataset.project 
+            }))
+            .sort((a, b) => d3.ascending(a.lo, b.lo));
 
-    const cellIxs = cellOrder.sort((a, b) => d3.descending(a["loc" + nCols], b["loc" + nCols])).map(d => d.ix);
-    for (let i = 0; i < cellIxs.length; i++) {
-        d3.select(cells.nodes()[cellIxs[i]]).lower();
+    // add elements into position in order
+    let positions = Array.from({ length: nCols }, () => []);
+    for (let i = 0; i < cellOrder.length; i++) {
+        const c = cellOrder[i],
+              colToAdd = positions
+            .map((d, i) => ({ i: i, l: d.length }))
+            .sort((a, b) => d3.ascending(a.l, b.l) || d3.ascending(a.i, b.i))[0].i;
+        positions[colToAdd] = positions[colToAdd].concat(Array.from({ length: c.lg ? 2 : 1 }, () => c.ix ));
+    }
+
+    // flatten column positions, dedupe, and then shuffle order of cells on page
+    const flatPositions = positions.flat();
+          uniquePositions = flatPositions.filter((d, i) => flatPositions.indexOf(d) === i);
+    for (let i = uniquePositions.length; i >= 0; i--) {
+        d3.select(cells.nodes()[uniquePositions[i]]).lower();
     }
 }
 

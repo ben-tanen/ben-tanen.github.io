@@ -35,6 +35,7 @@
         <!-- iterate over all projects to create a cell on landing page -->
         {% for proj in landingproj %}
         <div class="proj-cell {% if proj.landing-large == true %}large{% endif %}" 
+             data-landing_large="{{ proj.landing-large }}"
              data-landing_order="{{ proj.landing-order }}"
              style='background-image: url("{% if proj.landing-img %}{{ proj.landing-img }}{% else %}{{ proj.thumbnail }}{% endif %}");'>
             <a href="{% if proj.reroute-url %}{{ proj.reroute-url }}{% else %}{{ proj.url }}{% endif %}">

@@ -11,7 +11,7 @@ with open("assets/data/landing-proj-order.csv") as f_csv:
         try:
             with open(p_proj, mode = "r") as f_proj:
                 txt_old = f_proj.read()
-            txt_new = re.sub("landing-order: (\")?([0-9]|\|)+(\")?", "landing-order: %s|%s|%s" % (row[2], row[3], row[4]), txt_old)
+            txt_new = re.sub("landing-order: (\")?([0-9]|\|)+(\")?", "landing-order: %s" % (row[4]), txt_old)
             with open(p_proj, mode = "w") as f_proj:
                 f_proj.write(txt_new)
             print("UPDATED: %s" % p_proj)

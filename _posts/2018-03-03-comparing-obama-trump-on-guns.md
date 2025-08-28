@@ -4,7 +4,7 @@ title: 'How Obama and Trump Responded to School Shootings'
 date: 2018-03-03 05:00:00
 thumbnail: /assets/img/post-thumbnails/obama-trump-guns.png
 landing-proj:  true
-landing-order: 25|22|19
+landing-order: 19
 landing-img:   /assets/img/proj-thumbnails/comparing-obama-trump-on-guns.png
 landing-large: false
 new-post-style: true
