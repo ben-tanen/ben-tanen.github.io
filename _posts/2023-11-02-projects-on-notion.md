@@ -4,7 +4,7 @@ title:  "Small Projects over on Notion, Batch #1"
 date:   2023-11-02 10:05:41
 landing-proj:  false
 new-post-style: true
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png
+thumbnail: /assets/img/post-thumbnails/notion.png
 ---
 
 Hello! It seems like I'm getting into a routine of posting an annual message about what I have (or haven't) been working on in the last year. Well, here we are again!

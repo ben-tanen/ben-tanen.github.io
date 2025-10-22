@@ -2,7 +2,7 @@
 layout: post
 title:  "How Well Do You Remember Trump's Term In Office?"
 date:   2021-01-23 10:05:41
-thumbnail: https://img.thedailybeast.com/image/upload/dpr_2.0/c_crop,h_675,w_675,x_0,y_0/c_limit,w_128/d_placeholder_euli9k,fl_lossy,q_auto/v1604365790/200103-Trump-loses-tease_a8zeme
+thumbnail: /assets/img/post-thumbnails/trump-timeline.jpeg
 landing-proj: false
 new-post-style: true
 d3v: v6
