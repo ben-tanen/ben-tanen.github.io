@@ -1,5 +1,5 @@
 const clientId = "9b5e61a0dd144744930212f2af73076b";
-const redirectUri = "http://127.0.0.1:4000/projects/2025/10/20/album-progress.html";
+const redirectUri = `http://${window.location.href.includes("ben-tanen.com") ? "ben-tanen.com" : "127.0.0.1:4000"}/projects/2025/10/20/album-progress.html`;
 const scopes = [
     "user-read-playback-state",
     "user-read-currently-playing"
