@@ -2,3 +2,5 @@ test
 .jekyll-cache
 .DS_Store
 _site/
+Gemfile
+Gemfile.lock

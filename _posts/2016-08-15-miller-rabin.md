@@ -5,6 +5,13 @@ date:   2016-08-15 15:05:41
 categories: algorithm probability
 ---
 
+<script>
+MathJax = {
+  tex: {inlineMath: [['$$','$$'], ['\\(','\\)']]}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 Back when I started messing around with code, I was told to try out [Project Euler](https://projecteuler.net/) to improve my coding skills (something I suggest everyone do). I was able to progress fairly well along but I always struggled with the questions involving prime numbers because I could never get my code to run efficiently on them.
 
 I looked for a solution and repeatedly only found mention to the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes), which is fairly intuitive and appeared to be the go-to primality test. However, in my early days of programming, I still struggled to implement the algorithm so I ultimately pushed those prime-based questions off to the side.
