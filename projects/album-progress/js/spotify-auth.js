@@ -1,5 +1,5 @@
 const clientId = "9b5e61a0dd144744930212f2af73076b";
-const redirectUri = `https://${window.location.href.includes("ben-tanen.com") ? "ben-tanen.com" : "127.0.0.1:4000"}/projects/2025/10/20/album-progress.html`;
+const redirectUri = `${window.location.protocol}//${window.location.href.includes("ben-tanen.com") ? "ben-tanen.com" : "127.0.0.1:4000"}/projects/2025/10/20/album-progress.html`;
 const scopes = [
     "user-read-playback-state",
     "user-read-currently-playing"
@@ -73,9 +73,66 @@ async function handleCallback() {
     const data = await response.json();
     if (data.access_token) {
         localStorage.setItem("access_token", data.access_token);
+        if (data.refresh_token) localStorage.setItem("refresh_token", data.refresh_token);
+        localStorage.setItem("expires_at", String(Date.now() + data.expires_in * 1000));
         window.history.replaceState({}, document.title, redirectUri);
     } else {
         console.error("Token exchange failed:", data);
     }
     return data;
+}
+
+function isTokenValid() {
+    const token = localStorage.getItem("access_token");
+    const expiresAt = localStorage.getItem("expires_at");
+    if (!token || !expiresAt) return false;
+    return Date.now() < Number(expiresAt) - 60000;
+}
+
+async function refreshAccessToken() {
+    const refreshToken = localStorage.getItem("refresh_token");
+    if (!refreshToken) return null;
+
+    const body = new URLSearchParams({
+        client_id: clientId,
+        grant_type: "refresh_token",
+        refresh_token: refreshToken,
+    });
+
+    try {
+        const response = await fetch("https://accounts.spotify.com/api/token", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body,
+        });
+
+        const data = await response.json();
+        if (data.access_token) {
+            localStorage.setItem("access_token", data.access_token);
+            if (data.refresh_token) localStorage.setItem("refresh_token", data.refresh_token);
+            localStorage.setItem("expires_at", String(Date.now() + data.expires_in * 1000));
+            return data.access_token;
+        }
+    } catch (e) {
+        console.error("Token refresh failed:", e);
+    }
+
+    clearTokens();
+    return null;
+}
+
+async function getValidToken() {
+    if (isTokenValid()) return localStorage.getItem("access_token");
+
+    const refreshToken = localStorage.getItem("refresh_token");
+    if (refreshToken) return await refreshAccessToken();
+
+    return null;
+}
+
+function clearTokens() {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+    localStorage.removeItem("expires_at");
+    localStorage.removeItem("code_verifier");
 }

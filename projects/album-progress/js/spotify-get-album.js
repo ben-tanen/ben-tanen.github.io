@@ -24,7 +24,7 @@ function extractAlbumId(uriOrId) {
 }
 
 async function getAlbumById(id, currentTrack = {trackDiscNumber: 0, trackNumber: 0, trackProgressMs: 0, trackProgressPct: 0}) {
-    const token = localStorage.getItem("access_token");
+    const token = await getValidToken();
     if (!token) {
         alert("Not logged in yet!");
         return;
@@ -57,7 +57,7 @@ async function getAlbumById(id, currentTrack = {trackDiscNumber: 0, trackNumber:
 }
 
 async function getCurrentAlbum() {
-    const token = localStorage.getItem("access_token");
+    const token = await getValidToken();
     if (!token) {
         alert("Not logged in yet!");
         return;

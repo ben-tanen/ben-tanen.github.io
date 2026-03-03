@@ -16,8 +16,8 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
 
 <div id="album-progress-form">
     <button id="album-progress-login-btn">Log in with Spotify</button>
-    <button id="album-progress-current-btn">Get Current Album</button>
-    <form id="album-progress-input-form">
+    <button id="album-progress-current-btn" class="hidden">Get Current Album</button>
+    <form id="album-progress-input-form" class="hidden">
         <label for="album-uri">Search for Album by URI:</label>
         <input type="text" id="album-progress-input-uri" />
         <button type="submit">Get Album Info</button>
@@ -52,7 +52,10 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
         margin-top: 20px;
     }
 
-    div#album-progress-container.hidden {
+    div#album-progress-container.hidden,
+    #album-progress-login-btn.hidden,
+    #album-progress-current-btn.hidden,
+    #album-progress-input-form.hidden {
         display: none;
     }
 
@@ -85,6 +88,13 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
 <script src="/projects/album-progress/js/spotify-auth.js"></script>
 <script src="/projects/album-progress/js/spotify-get-album.js"></script>
 <script>
+    function updateAuthUI() {
+        const loggedIn = isTokenValid();
+        document.getElementById("album-progress-login-btn").classList.toggle("hidden", loggedIn);
+        document.getElementById("album-progress-current-btn").classList.toggle("hidden", !loggedIn);
+        document.getElementById("album-progress-input-form").classList.toggle("hidden", !loggedIn);
+    }
+
     document.getElementById("album-progress-login-btn").addEventListener("click", login);
     document.getElementById("album-progress-current-btn").addEventListener("click", getCurrentAlbum);
     document.getElementById("album-progress-input-form").addEventListener("submit", async (e) => {
@@ -97,5 +107,5 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
             alert("Enter a Spotify Album URI...");
         }
     });
-    handleCallback();
+    handleCallback().then(() => updateAuthUI());
 </script>
