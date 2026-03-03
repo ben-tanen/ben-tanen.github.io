@@ -57,8 +57,6 @@ function main() {
 
 function drawChart(data) {
 
-    console.log(data);
-    
     var simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function(d) { return d.index }))
         .force("collide",d3.forceCollide( function(d){return d.r + 8 }).iterations(16) )

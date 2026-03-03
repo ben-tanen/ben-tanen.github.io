@@ -218,8 +218,6 @@ let vs = [
                     to_show_c = hidden_cs[d3.randomInt(hidden_cs.length)()];
                 to_show_c = Object.assign(to_show_c, {v: true});
 
-                console.log("revealing");
-                console.log(to_show_c);
 
                 svg.selectAll(".bubble")
                     .data([to_show_c]).enter()
@@ -318,7 +316,6 @@ vizInterval = setInterval(function() {
 
 // upon resize, potentially re-order project cells
 $(window).on("resize", () => {
-    console.log("resizing");
     reorder();
 });
 
