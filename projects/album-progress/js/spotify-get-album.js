@@ -41,16 +41,16 @@ async function getAlbumById(id, currentTrack = {trackDiscNumber: 0, trackNumber:
     d3.select("div#album-progress-container").classed("hidden", false);
     createAlbumHeader(
         album = {
-            name: data.name, 
+            name: data.name,
             id: data.id
-        }, 
-        artist = data.artists.map(a => a.name).join(", "), 
+        },
+        artist = data.artists.map(a => a.name).join(", "),
         nTracks = {
-            progress: currentTrackNumber,
+            progress: currentTrackNumber > 0 ? (currentTrackNumber - 1) + currentTrack.trackProgressPct : 0,
             total: tracks.length
-        }, 
+        },
         duration = {
-            progress: d3.sum(tracks, d => d.trackDurationMs * (d.trackNumber <= currentTrackNumber ? 1 : 0)),
+            progress: d3.sum(tracks, d => d.trackDurationMs * (d.trackNumber < currentTrackNumber ? 1 : 0)) + currentTrack.trackProgressMs,
             total: tracks.map(d => d.trackDurationMs).reduce((ps, a) => ps + a, 0)
         });
     createTrackList(tracks, currentTrack = { ...currentTrack, trackNumber: currentTrackNumber });
@@ -179,11 +179,29 @@ function createTrackList(tracks, currentTrack = {}) {
         .attr("transform", (d, i) => `translate(${vizPadding.left}, ${vizPadding.top + scale(d3.sum(tracks.filter((d1, i1) => i1 < i), d1 => d1.trackDurationMs))})`);
 
     const rs = gs.append("rect")
+        .attr("class", "track-pill")
         .attr("x", 0)
         .attr("y", 0)
         .attr("width", pillDimensions.width)
         .attr("height", d => scale(d.trackDurationMs) - pillDimensions.padding)
         .attr("ry", 5);
+
+    const playingG = gs.filter(d => d.trackNumber == currentTrack.trackNumber);
+    playingG.append("clipPath")
+        .attr("id", "playing-pill-clip")
+        .append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", pillDimensions.width)
+        .attr("height", d => scale(d.trackDurationMs) - pillDimensions.padding)
+        .attr("ry", 5);
+    playingG.append("rect")
+        .attr("class", "progress-fill")
+        .attr("clip-path", "url(#playing-pill-clip)")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", pillDimensions.width)
+        .attr("height", d => (scale(d.trackDurationMs) - pillDimensions.padding) * (currentTrack.trackProgressPct || 0));
 
     const ts = gs.append("text")
         .attr("x", pillDimensions.width + pillDimensions.padding)
@@ -203,11 +221,11 @@ function createTrackList(tracks, currentTrack = {}) {
               playing_gs_data = svg.selectAll("g.track-group.playing").data();
         updateHeaderProgress(
             nTracks = {
-                progress: (playing_gs_data.length + played_gs_data.length),
+                progress: played_gs_data.length + playing_gs_data.length,
                 total: all_gs_data.length
             },
             duration = {
-                progress: d3.sum(playing_gs_data, d => d.trackDurationMs) + d3.sum(played_gs_data, d => d.trackDurationMs),
+                progress: d3.sum(played_gs_data, d => d.trackDurationMs) + d3.sum(playing_gs_data, d => d.trackDurationMs),
                 total: d3.sum(all_gs_data, d => d.trackDurationMs)
             }
         );

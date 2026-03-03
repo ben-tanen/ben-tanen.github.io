@@ -16,12 +16,13 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
 
 <div id="album-progress-form">
     <button id="album-progress-login-btn">Log in with Spotify</button>
-    <button id="album-progress-current-btn" class="hidden">Get Current Album</button>
-    <form id="album-progress-input-form" class="hidden">
-        <label for="album-uri">Search for Album by URI:</label>
-        <input type="text" id="album-progress-input-uri" />
-        <button type="submit">Get Album Info</button>
-    </form>
+    <div id="album-progress-actions" class="hidden">
+        <button id="album-progress-current-btn">Get Current Album</button>
+        <form id="album-progress-input-form">
+            <input type="text" id="album-progress-input-uri" placeholder="spotify:album:..." />
+            <button type="submit">Search</button>
+        </form>
+    </div>
 </div>
 
 <div id="album-progress-container" class="hidden">
@@ -38,14 +39,41 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
         max-width: 600px;
     }
 
-    div#album-progress-form button {
-        margin-top: 5px;
-        padding: 10px 20px;
+    div#album-progress-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    div#album-progress-form button,
+    div#album-progress-actions button {
+        padding: 8px 16px;
         border: none;
         border-radius: 30px;
         color: white;
         background-color: #20D760;
         cursor: pointer;
+        white-space: nowrap;
+    }
+
+    #album-progress-input-form {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    #album-progress-input-uri {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        font-size: 0.9em;
+        width: 180px;
+        outline: none;
+    }
+
+    #album-progress-input-uri:focus {
+        border-color: #20D760;
     }
 
     div#album-progress-container {
@@ -54,8 +82,7 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
 
     div#album-progress-container.hidden,
     #album-progress-login-btn.hidden,
-    #album-progress-current-btn.hidden,
-    #album-progress-input-form.hidden {
+    #album-progress-actions.hidden {
         display: none;
     }
 
@@ -72,11 +99,19 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
         width: 100%;
     }
 
-    g.track-group.played rect {
+    g.track-group.played rect.track-pill {
         fill: #77bdee;
     }
 
-    g.track-group.playing rect {
+    rect.track-pill {
+        fill: #999;
+    }
+
+    rect.progress-fill {
+        fill: transparent;
+    }
+
+    g.track-group.playing rect.progress-fill {
         fill: #20D760;
     }
 
@@ -91,8 +126,7 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
     function updateAuthUI() {
         const loggedIn = isTokenValid();
         document.getElementById("album-progress-login-btn").classList.toggle("hidden", loggedIn);
-        document.getElementById("album-progress-current-btn").classList.toggle("hidden", !loggedIn);
-        document.getElementById("album-progress-input-form").classList.toggle("hidden", !loggedIn);
+        document.getElementById("album-progress-actions").classList.toggle("hidden", !loggedIn);
     }
 
     document.getElementById("album-progress-login-btn").addEventListener("click", login);
