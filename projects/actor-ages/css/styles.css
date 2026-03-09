@@ -186,6 +186,7 @@ a:hover {
 .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    max-width: 100%;
     margin: 12px 0 24px;
 }
 
