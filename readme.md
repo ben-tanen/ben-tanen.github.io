@@ -10,7 +10,7 @@ This is my personal website. It includes a collection of my work from over the y
 bundle install
 
 # serve with secrets injected from 1Password
-op run --env-file=.env -- jekyll serve
+op run --env-file=.env -- jekyll serve -w
 ```
 
 The `_plugins/inject_secrets.rb` plugin replaces `__SECRET_NAME__` placeholders in built files with matching environment variables. The `.env` file uses `op://` references so secrets are resolved at runtime via 1Password.
