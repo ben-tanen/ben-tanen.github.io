@@ -4,7 +4,10 @@ Views.search = function(container) {
         { key: 'tv', label: 'TV Shows' },
         { key: 'person', label: 'Actors' },
     ];
-    let activeCategory = 'movie';
+    // read initial state from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    let activeCategory = categories.some(c => c.key === urlParams.get('type'))
+        ? urlParams.get('type') : 'movie';
     let debounceTimer = null;
 
     Utils.setTitle(null);
@@ -19,7 +22,10 @@ Views.search = function(container) {
             activeCategory = cat.key;
             tabs.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            if (input.value.trim()) doSearch(input.value.trim());
+            if (input.value.trim()) {
+                updateURL(input.value.trim());
+                doSearch(input.value.trim());
+            }
         });
         tabs.appendChild(tab);
     });
@@ -35,7 +41,10 @@ Views.search = function(container) {
             resultsList.innerHTML = '';
             return;
         }
-        debounceTimer = setTimeout(() => doSearch(query), 300);
+        debounceTimer = setTimeout(() => {
+            updateURL(query);
+            doSearch(query);
+        }, 300);
     });
 
     const searchContainer = Utils.el('div', 'search-container');
@@ -50,6 +59,18 @@ Views.search = function(container) {
 
     // auto-focus the input
     input.focus();
+
+    // restore search from URL params
+    const initialQuery = urlParams.get('q');
+    if (initialQuery) {
+        input.value = initialQuery;
+        doSearch(initialQuery);
+    }
+
+    function updateURL(query) {
+        const params = new URLSearchParams({ q: query, type: activeCategory });
+        history.replaceState(null, '', CONFIG.BASE_PATH + '/?' + params.toString());
+    }
 
     async function doSearch(query) {
         resultsList.innerHTML = '<li class="loading">Searching...</li>';

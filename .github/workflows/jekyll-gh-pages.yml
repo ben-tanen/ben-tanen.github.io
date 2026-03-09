@@ -31,7 +31,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       # Replace __SECRET_NAME__ placeholders in source files with actual secret values.
-      # To add a new secret: (1) add to env, (2) add to the for loop, (3) use __SECRET_NAME__ in code.
+      # To add a new secret: (1) add to env below, (2) add to the for loop, (3) run `gh secret set <NAME>`,
+      # (4) add to .env for local dev, (5) use __NAME__ as placeholder in code.
       - name: Inject secrets
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
