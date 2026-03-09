@@ -30,6 +30,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # Replace __SECRET_NAME__ placeholders in source files with actual secret values.
+      # To add a new secret: (1) add to env, (2) add to the for loop, (3) use __SECRET_NAME__ in code.
+      - name: Inject secrets
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          for secret in TMDB_API_KEY; do
+            find . -type f \( -name "*.js" -o -name "*.html" -o -name "*.json" \) \
+              -exec sed -i "s|__${secret}__|${!secret}|g" {} +
+          done
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

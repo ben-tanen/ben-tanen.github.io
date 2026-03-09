@@ -1,0 +1,56 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor Ages</title>
+    <link rel="stylesheet" href="/projects/actor-ages/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <a href="/" class="header-avatar-link">
+            <img src="/assets/img/me/face-f.png" alt="Ben Tanen" class="header-avatar">
+        </a>
+        <div class="header-text">
+            <h1><a href="/projects/actor-ages/" id="home-link">Actor Ages</a></h1>
+            <a href="/projects/2026/03/08/actor-ages.html" class="header-about">About</a>
+        </div>
+    </header>
+    <main id="app">
+        <div class="loading">Loading...</div>
+    </main>
+
+    <footer class="site-footer">
+        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TMDB" class="tmdb-logo">
+        </a>
+        <span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
+    </footer>
+
+    <script src="/projects/actor-ages/js/config.js"></script>
+    <script src="/projects/actor-ages/js/utils.js"></script>
+    <script src="/projects/actor-ages/js/api.js"></script>
+    <script>const Views = {};</script>
+    <script src="/projects/actor-ages/js/views/search.js"></script>
+    <script src="/projects/actor-ages/js/views/movie.js"></script>
+    <script src="/projects/actor-ages/js/views/show.js"></script>
+    <script src="/projects/actor-ages/js/views/episode.js"></script>
+    <script src="/projects/actor-ages/js/views/showActor.js"></script>
+    <script src="/projects/actor-ages/js/views/person.js"></script>
+    <script src="/projects/actor-ages/js/router.js"></script>
+    <script>
+        // home link uses client-side routing
+        document.getElementById('home-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            Router.navigate('/');
+        });
+
+        // initialize router
+        Router.init(document.getElementById('app'));
+    </script>
+</body>
+</html>
