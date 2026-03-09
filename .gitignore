@@ -4,4 +4,3 @@ test
 _site/
 Gemfile
 Gemfile.lock
-.env
