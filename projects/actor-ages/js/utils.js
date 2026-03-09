@@ -110,7 +110,9 @@ const Utils = {
         });
         table.appendChild(tbody);
 
-        return table;
+        const wrap = this.el('div', 'table-wrap');
+        wrap.appendChild(table);
+        return wrap;
     },
 
     // show a loading spinner in the container with optional step progress
