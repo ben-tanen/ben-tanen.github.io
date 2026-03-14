@@ -79,6 +79,7 @@ Views.person = async function(container, personId) {
                         id: show.id,
                         name: show.name,
                         characters: [],
+                        creditIds: [],
                         firstAirDate: show.first_air_date,
                         episodeCount: show.episode_count || 0,
                     });
@@ -87,22 +88,44 @@ Views.person = async function(container, personId) {
                 if (show.character && !entry.characters.includes(show.character)) {
                     entry.characters.push(show.character);
                 }
+                if (show.credit_id) {
+                    entry.creditIds.push(show.credit_id);
+                }
+            });
+
+            // fetch credit details to find actual first appearance dates
+            const allCreditIds = [...showMap.values()].flatMap(s => s.creditIds);
+            const creditDetails = await API.getCredits(allCreditIds);
+
+            // for each show, find the earliest episode air date from credit details
+            showMap.forEach(show => {
+                let earliestDate = null;
+                for (const creditId of show.creditIds) {
+                    const detail = creditDetails[creditId];
+                    if (!detail || !detail.media || !detail.media.episodes) continue;
+                    for (const ep of detail.media.episodes) {
+                        if (ep.air_date && (!earliestDate || ep.air_date < earliestDate)) {
+                            earliestDate = ep.air_date;
+                        }
+                    }
+                }
+                show.firstAppearance = earliestDate || show.firstAirDate;
             });
 
             const rows = [...showMap.values()].map(show => {
                 const nameLink = Utils.link(`/show/${show.id}/actor/${personId}`, show.name);
-                const age = Utils.calculateAge(person.birthday, show.firstAirDate);
+                const age = Utils.calculateAge(person.birthday, show.firstAppearance);
                 const ageEl = Utils.el('span', 'age-value', age !== null ? String(age) : 'Unknown');
                 return [
                     nameLink,
                     show.characters.join(', ') || 'Unknown',
                     String(show.episodeCount || '?'),
-                    Utils.formatDate(show.firstAirDate),
+                    Utils.formatDate(show.firstAppearance),
                     ageEl,
                 ];
             });
             wrapper.appendChild(Utils.buildTable(
-                ['Show', 'Character(s)', 'Episodes', 'First Aired', 'Age at Start'],
+                ['Show', 'Character(s)', 'Episodes', 'First Appearance', 'Age at First App.'],
                 rows
             ));
         }

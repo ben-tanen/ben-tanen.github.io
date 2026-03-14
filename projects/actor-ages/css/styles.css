@@ -156,6 +156,11 @@ a:hover {
     text-align: center;
 }
 
+.search-result-thumb-link {
+    display: block;
+    text-decoration: none;
+}
+
 .search-result-thumb {
     width: 100%;
     aspect-ratio: 2 / 3;

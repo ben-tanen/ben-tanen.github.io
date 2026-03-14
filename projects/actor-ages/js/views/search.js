@@ -116,15 +116,17 @@ Views.search = function(container) {
 
                 const imgPath = result.poster_path || result.profile_path;
                 const imgUrl = Utils.imgUrl(imgPath, 'w185');
+                const thumbLink = Utils.link(path, '', 'search-result-thumb-link');
                 if (imgUrl) {
                     const thumb = Utils.el('img', 'search-result-thumb');
                     thumb.src = imgUrl;
                     thumb.alt = titleText;
-                    li.appendChild(thumb);
+                    thumbLink.appendChild(thumb);
                 } else {
                     const placeholder = Utils.el('div', 'search-result-thumb placeholder');
-                    li.appendChild(placeholder);
+                    thumbLink.appendChild(placeholder);
                 }
+                li.appendChild(thumbLink);
 
                 const textWrapper = Utils.el('div', 'search-result-text');
                 const link = Utils.link(path, titleText, 'search-result-title');

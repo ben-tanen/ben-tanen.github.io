@@ -89,6 +89,29 @@ const API = {
         return this._fetch(`/person/${id}/combined_credits`);
     },
 
+    getCredit(creditId) {
+        return this._fetch(`/credit/${creditId}`);
+    },
+
+    // batch fetch credit details with concurrency limit
+    async getCredits(creditIds) {
+        const results = {};
+        const uniqueIds = [...new Set(creditIds.filter(Boolean))];
+        const batchSize = 8;
+
+        for (let i = 0; i < uniqueIds.length; i += batchSize) {
+            const batch = uniqueIds.slice(i, i + batchSize);
+            const credits = await Promise.all(
+                batch.map(id => this.getCredit(id).catch(() => null))
+            );
+            batch.forEach((id, idx) => {
+                if (credits[idx]) results[id] = credits[idx];
+            });
+        }
+
+        return results;
+    },
+
     // batch fetch person details with concurrency limit
     async getPeople(ids) {
         const results = {};
