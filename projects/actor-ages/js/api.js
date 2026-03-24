@@ -2,11 +2,11 @@ const API = {
     // localStorage cache with TTL
     _cacheGet(key) {
         try {
-            const item = localStorage.getItem('actor-ages:' + key);
+            const item = sessionStorage.getItem('actor-ages:' + key);
             if (!item) return null;
             const parsed = JSON.parse(item);
             if (Date.now() > parsed.expiry) {
-                localStorage.removeItem('actor-ages:' + key);
+                sessionStorage.removeItem('actor-ages:' + key);
                 return null;
             }
             return parsed.data;
@@ -17,7 +17,7 @@ const API = {
 
     _cacheSet(key, data) {
         try {
-            localStorage.setItem('actor-ages:' + key, JSON.stringify({
+            sessionStorage.setItem('actor-ages:' + key, JSON.stringify({
                 data,
                 expiry: Date.now() + CONFIG.CACHE_TTL_MS,
             }));

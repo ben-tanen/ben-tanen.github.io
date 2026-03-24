@@ -18,8 +18,9 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
     <button id="album-progress-login-btn">Log in with Spotify</button>
     <div id="album-progress-actions" class="hidden">
         <button id="album-progress-current-btn">Get Current Album</button>
+        <button id="album-progress-playlist-btn" class="hidden">Get Current Playlist</button>
         <form id="album-progress-input-form">
-            <input type="text" id="album-progress-input-uri" placeholder="spotify:album:..." />
+            <input type="text" id="album-progress-input-uri" placeholder="Spotify URI" />
             <button type="submit">Search</button>
         </form>
     </div>
@@ -82,7 +83,8 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
 
     div#album-progress-container.hidden,
     #album-progress-login-btn.hidden,
-    #album-progress-actions.hidden {
+    #album-progress-actions.hidden,
+    #album-progress-playlist-btn.hidden {
         display: none;
     }
 
@@ -131,15 +133,22 @@ I recognize this is a fairly dumb and somewhat pointless tool (I probably should
 
     document.getElementById("album-progress-login-btn").addEventListener("click", login);
     document.getElementById("album-progress-current-btn").addEventListener("click", getCurrentAlbum);
+    document.getElementById("album-progress-playlist-btn").addEventListener("click", getCurrentPlaylist);
     document.getElementById("album-progress-input-form").addEventListener("submit", async (e) => {
         e.preventDefault();
         const uri = document.getElementById("album-progress-input-uri").value.trim();
-        if (uri.length > 0) {
+        if (uri.length === 0) {
+            alert("Enter a Spotify Album or Playlist URI...");
+        } else if (uri.includes("playlist")) {
+            const playlistId = extractPlaylistId(uri);
+            await getPlaylistById(playlistId, null);
+        } else {
             const albumId = extractAlbumId(uri);
             await getAlbumById(albumId);
-        } else {
-            alert("Enter a Spotify Album URI...");
         }
     });
-    handleCallback().then(() => updateAuthUI());
+    handleCallback().then(() => {
+        updateAuthUI();
+        checkPlaybackContext();
+    });
 </script>

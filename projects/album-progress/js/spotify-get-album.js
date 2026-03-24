@@ -18,8 +18,40 @@ function truncateString(string, maxLength) {
 
 // GET DATA FROM SPOTIFY
 
+let _detectedPlaylistId = null;
+let _lastPlaybackData = null;
+
+async function checkPlaybackContext() {
+    const token = await getValidToken();
+    if (!token) return;
+
+    try {
+        const res = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        if (res.status === 204 || res.status > 400) return;
+
+        const data = await res.json();
+        if (!data.item) return;
+
+        _lastPlaybackData = data;
+        const playlistBtn = document.getElementById("album-progress-playlist-btn");
+        if (data.context && data.context.type === "playlist") {
+            _detectedPlaylistId = extractPlaylistId(data.context.uri);
+            playlistBtn.classList.remove("hidden");
+        }
+    } catch (e) {
+        console.error("Playback check failed:", e);
+    }
+}
+
 function extractAlbumId(uriOrId) {
       const match = uriOrId.match(/spotify:album:([a-zA-Z0-9]+)/);
+      return match ? match[1] : uriOrId;
+}
+
+function extractPlaylistId(uriOrId) {
+      const match = uriOrId.match(/spotify:playlist:([a-zA-Z0-9]+)/);
       return match ? match[1] : uriOrId;
 }
 
@@ -74,8 +106,19 @@ async function getCurrentAlbum() {
 
     const data = await res.json();
     if (!data.item) {
-        alert("No curently playing info found.");
+        alert("No currently playing info found.");
         return;
+    }
+
+    // detect playlist context and show/hide playlist button
+    _lastPlaybackData = data;
+    const playlistBtn = document.getElementById("album-progress-playlist-btn");
+    if (data.context && data.context.type === "playlist") {
+        _detectedPlaylistId = extractPlaylistId(data.context.uri);
+        playlistBtn.classList.remove("hidden");
+    } else {
+        _detectedPlaylistId = null;
+        playlistBtn.classList.add("hidden");
     }
 
     const currentAlbumId = extractAlbumId(data.item.album.uri);
@@ -126,13 +169,104 @@ async function getAllTracks(data, token) {
     return [allTracks, discs];
 }
 
+// GET PLAYLIST DATA FROM SPOTIFY
+
+async function getCurrentPlaylist() {
+    if (!_detectedPlaylistId || !_lastPlaybackData) {
+        alert("No playlist detected. Try 'Get Current Album' first while playing a playlist.");
+        return;
+    }
+    await getPlaylistById(_detectedPlaylistId, _lastPlaybackData);
+}
+
+async function getPlaylistById(id, playbackData) {
+    const token = await getValidToken();
+    if (!token) {
+        alert("Not logged in yet!");
+        return;
+    }
+
+    const res = await fetch(`https://api.spotify.com/v1/playlists/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const data = await res.json();
+    const tracks = await getAllPlaylistTracks(data.tracks, token);
+
+    // find current track by matching track ID (if playback data available)
+    let currentTrackNumber = 0, currentTrack;
+    if (playbackData && playbackData.item) {
+        const currentTrackIndex = tracks.findIndex(t => t.trackId === playbackData.item.id);
+        currentTrackNumber = currentTrackIndex >= 0 ? currentTrackIndex + 1 : 0;
+        currentTrack = {
+            trackNumber: currentTrackNumber,
+            trackProgressMs: playbackData.progress_ms,
+            trackProgressPct: playbackData.progress_ms / playbackData.item.duration_ms
+        };
+    } else {
+        currentTrack = { trackNumber: 0, trackProgressMs: 0, trackProgressPct: 0 };
+    }
+
+    d3.select("div#album-progress-container").classed("hidden", false);
+    createPlaylistHeader(
+        { name: data.name, id: data.id, owner: data.owner.display_name },
+        nTracks = {
+            progress: currentTrackNumber > 0 ? (currentTrackNumber - 1) + currentTrack.trackProgressPct : 0,
+            total: tracks.length
+        },
+        duration = {
+            progress: d3.sum(tracks, d => d.trackDurationMs * (d.trackNumber < currentTrackNumber ? 1 : 0)) + currentTrack.trackProgressMs,
+            total: d3.sum(tracks, d => d.trackDurationMs)
+        }
+    );
+    createTrackList(tracks, currentTrack);
+}
+
+function parsePlaylistTracks(items, startIndex) {
+    return items
+        .filter(item => item.track && item.track.id)
+        .map((item, i) => ({
+            trackName: item.track.name,
+            trackArtist: item.track.artists.map(a => a.name).join(", "),
+            trackUri: item.track.uri,
+            trackId: item.track.id,
+            trackDiscNumber: 1,
+            trackNumber: startIndex + i + 1,
+            trackDurationMs: item.track.duration_ms
+        }));
+}
+
+async function getAllPlaylistTracks(data, token) {
+    let allTracks = parsePlaylistTracks(data.items, 0);
+
+    let next = data.next;
+    while (next) {
+        const res = await fetch(next, {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        const pageData = await res.json();
+        allTracks.push(...parsePlaylistTracks(pageData.items, allTracks.length));
+        next = pageData.next;
+    }
+
+    return allTracks;
+}
+
 // CREATE VISUALIZATION
 
 function createAlbumHeader(album, artist, nTracks, duration) {
     d3.select("a#album-progress-title-link")
-        .attr("href", `https://play.spotify.com/album/${album.id}`)
+        .attr("href", `https://open.spotify.com/album/${album.id}`)
         .text(album.name);
     d3.select("p#album-progress-artist").text(artist);
+    updateHeaderProgress(nTracks, duration);
+}
+
+function createPlaylistHeader(playlist, nTracks, duration) {
+    d3.select("a#album-progress-title-link")
+        .attr("href", `https://open.spotify.com/playlist/${playlist.id}`)
+        .text(playlist.name);
+    d3.select("p#album-progress-artist").text(`by ${playlist.owner}`);
     updateHeaderProgress(nTracks, duration);
 }
 
@@ -158,9 +292,7 @@ function createTrackList(tracks, currentTrack = {}) {
         padding: 3
     }
 
-    const totalDurationMs = d3.sum(tracks, d => d.trackDurationMs),
-          minTrackDurationMs = d3.min(tracks, d => d.trackDurationMs),
-          allTracksOver30s = minTrackDurationMs >= 30e3;
+    const totalDurationMs = d3.sum(tracks, d => d.trackDurationMs);
 
     const svg = d3.select("svg#album-progress-viz");
 
@@ -207,7 +339,12 @@ function createTrackList(tracks, currentTrack = {}) {
         .attr("x", pillDimensions.width + pillDimensions.padding)
         .attr("y", d => (scale(d.trackDurationMs) - pillDimensions.padding) / 2)
         .style("alignment-baseline", "middle")
-        .text(d => `${d.trackNumber}: ${truncateString(d.trackName, 50)} (${convertMsToHMS(d.trackDurationMs)})`);
+        .text(d => {
+            const name = d.trackArtist
+                ? `${truncateString(d.trackName, 30)} - ${truncateString(d.trackArtist, 20)}`
+                : truncateString(d.trackName, 50);
+            return `${d.trackNumber}: ${name} (${convertMsToHMS(d.trackDurationMs)})`;
+        });
 
     gs.on("click", (event, d) => {
         const g = d3.select(gs.filter((d1) => d1.trackNumber == d.trackNumber).node());
