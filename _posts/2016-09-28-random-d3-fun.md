@@ -2,7 +2,6 @@
 layout: post
 title:  'Random D3 Fun'
 date:   2016-09-28 15:05:41
-categories: d3 random design
 thumbnail: /assets/img/post-thumbnails/random-d3.gif
 ---
 

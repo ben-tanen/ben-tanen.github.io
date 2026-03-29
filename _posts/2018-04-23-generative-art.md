@@ -2,10 +2,7 @@
 layout: post
 title: 'A First Attempt At Generative Art'
 date: 2018-04-23 05:00:00
-categories: data visualization project art generative graphic
-landing-description: an attempt at making generative art
 thumbnail: /assets/img/post-thumbnails/gen-art.png
-excerpt_separator: <!-- more -->
 ---
 
 <div id="d3-gen-art-container">

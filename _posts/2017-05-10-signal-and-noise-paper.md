@@ -2,7 +2,6 @@
 layout: post
 title: 'Decipering the Signal and the Noise'
 date: 2017-05-10 15:05:41
-categories: paper school
 thumbnail: /assets/img/post-thumbnails/signal-and-noise-paper.png
 ---
 

@@ -2,7 +2,6 @@
 layout: post
 title:  'Lots of Light Painting'
 date:   2016-04-26 15:05:41
-categories: photography
 thumbnail: /assets/img/post-thumbnails/light-painting.png
 ---
 

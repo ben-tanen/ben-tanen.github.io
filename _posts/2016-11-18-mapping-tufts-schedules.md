@@ -2,7 +2,6 @@
 layout: post
 title: 'Mapping My Life at Tufts'
 date: 2016-11-18 15:05:41
-categories: project data tufts school visualization
 thumbnail: /assets/img/post-thumbnails/tufts-map.jpg
 ---
 

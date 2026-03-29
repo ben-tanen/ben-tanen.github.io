@@ -2,7 +2,6 @@
 layout: post
 title:  "Up-to-Date Infographics"
 date:   2014-11-01 15:05:41
-categories: jekyll update
 thumbnail: /assets/img/post-thumbnails/infographic.png
 ---
 

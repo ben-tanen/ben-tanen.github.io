@@ -2,7 +2,6 @@
 layout: post
 title:  "Old Python Games / Projects"
 date:   2015-07-01 15:05:41
-categories: python projects retro
 thumbnail: /assets/img/post-thumbnails/python-minesweeper.png
 ---
 

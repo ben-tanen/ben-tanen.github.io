@@ -2,7 +2,6 @@
 layout: post
 title:  'Support Vector Machines and Poetry'
 date:   2016-05-3 15:05:41
-categories: project data matlab classification
 thumbnail: /assets/img/post-thumbnails/svm-poems.png
 ---
 

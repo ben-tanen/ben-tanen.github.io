@@ -2,7 +2,6 @@
 layout: post
 title:  'United States vs. the World in Rio 2016'
 date:   2016-08-22 15:05:41
-categories: data project olympics rio usa
 thumbnail: /assets/img/post-thumbnails/usa-rio-2016.png
 ---
 

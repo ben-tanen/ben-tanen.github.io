@@ -2,7 +2,6 @@
 layout: post
 title:  'Building a "Rock Band" Visualizer for Drum Tab'
 date:   2015-11-10 15:05:41
-categories: project python drums music
 thumbnail: /assets/img/post-thumbnails/drum-tab-visualizer.gif
 ---
 

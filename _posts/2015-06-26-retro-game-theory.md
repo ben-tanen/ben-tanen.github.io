@@ -2,7 +2,6 @@
 layout: post
 title:  "Retro Post: Game Theory, The Game"
 date:   2015-06-26 15:05:41
-categories: economics model game
 thumbnail: /assets/img/post-thumbnails/gametheory-slaps.png
 ---
 

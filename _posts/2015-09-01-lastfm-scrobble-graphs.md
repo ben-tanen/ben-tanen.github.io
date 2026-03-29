@@ -2,7 +2,6 @@
 layout: post
 title:  'Visualizing My Spotify History'
 date:   2015-09-01 15:05:41
-categories: project data spotify
 thumbnail: /assets/img/post-thumbnails/lastfm-history.png
 ---
 

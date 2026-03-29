@@ -2,7 +2,6 @@
 layout: post
 title:  "Rap, Data, and Design"
 date:   2014-10-31 15:05:41
-categories: rap design pudding
 thumbnail: /assets/img/post-thumbnails/rap-vocab.png
 ---
 

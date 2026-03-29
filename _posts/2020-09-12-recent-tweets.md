@@ -2,8 +2,6 @@
 layout: post
 title:  "Fixing Bad COVID-19 Maps, Mapping Musical Genres, and Other Twitter Projects"
 date:   2020-09-12 10:05:41
-categories: project data visualization twitter
-show-on-landing: false
 thumbnail: /assets/img/post-thumbnails/twitter-posts1.png
 ---
 

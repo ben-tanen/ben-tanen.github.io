@@ -2,7 +2,6 @@
 layout: post
 title:  'Introducing 2016-17 NHL Projections'
 date:   2016-10-11 15:05:41
-categories: hockey nhl-projections data project matlab
 thumbnail: /assets/img/post-thumbnails/nhl-projections.gif
 ---
 

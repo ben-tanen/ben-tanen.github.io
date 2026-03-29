@@ -2,7 +2,6 @@
 layout: post
 title:  "Random Project: Censor Machine"
 date:   2015-07-06 15:05:41
-categories: random project html censor fcc
 thumbnail: /assets/img/post-thumbnails/censor-machine.png
 ---
 

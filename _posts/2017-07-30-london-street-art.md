@@ -2,8 +2,6 @@
 layout: post
 title: 'Street Art in London'
 date: 2017-07-30 05:00:00
-categories: art travel photography
-landing-description: street art in London
 thumbnail: /assets/img/post-thumbnails/london-street-art.jpg
 ---
 

@@ -2,7 +2,6 @@
 layout: post
 title: 'How I Keep Track of All My Shows'
 date: 2017-01-24 15:05:41
-categories: project tv chrome
 thumbnail: /assets/img/post-thumbnails/tv-monitor.gif
 ---
 

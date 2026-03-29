@@ -2,10 +2,7 @@
 layout: post
 title: "Random Fun with Processing"
 date: 2019-06-23 04:00:00
-categories: data visualization project processing
-landing-description: random illustrations done with processing
 thumbnail: /assets/img/post-thumbnails/processing-ex3.gif
-excerpt_separator: <!-- more -->
 ---
 
 In the pursuit of [visualizing font design trends]({% post_url 2019-06-23-most-font %}), I did a lot of playing around in [Processing](https://processing.org/){:target="_blank"}. Here is a collection of some random animations/sketches I made while working on my latest project.

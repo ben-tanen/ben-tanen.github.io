@@ -2,7 +2,6 @@
 layout: post
 title:  'Best Of "Data is Beautiful" #1'
 date:   2015-08-16 15:05:41
-categories: random data bestof
 thumbnail: /assets/img/post-thumbnails/data-is-beautiful.png
 ---
 

@@ -2,7 +2,6 @@
 layout: post
 title:  'Tufts Polyhack 2015: JumboAdvisor'
 date:   2015-10-30 15:05:41
-categories: project tufts advisement-report
 thumbnail: /assets/img/post-thumbnails/jumbo-advisor.png
 ---
 

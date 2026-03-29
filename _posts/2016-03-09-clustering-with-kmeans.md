@@ -2,7 +2,6 @@
 layout: post
 title:  'Clustering Using K-Means'
 date:   2016-03-09 15:05:41
-categories: project data matlab clustering
 thumbnail: /assets/img/post-thumbnails/kmeans-cluster.gif
 ---
 

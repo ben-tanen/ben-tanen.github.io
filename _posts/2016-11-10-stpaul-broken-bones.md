@@ -2,7 +2,6 @@
 layout: post
 title:  'Meet St. Paul and the Broken Bones'
 date:   2016-11-10 15:05:41
-categories: photography
 thumbnail: /assets/img/post-thumbnails/SPABB.jpg
 ---
 

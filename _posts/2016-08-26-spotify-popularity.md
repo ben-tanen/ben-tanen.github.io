@@ -2,7 +2,6 @@
 layout: post
 title:  'Am I Becoming More or Less Hipster?'
 date:   2016-08-26 15:05:41
-categories: project data spotify popularity
 thumbnail: /assets/img/post-thumbnails/spotify-popularity.png
 ---
 

@@ -2,7 +2,6 @@
 layout: post
 title:  "Retro Post: iOS Upgrades (Circa 2013)"
 date:   2015-06-17 15:06:41
-categories: ios upgrade UI UX
 thumbnail: /assets/img/post-thumbnails/ios-updates.gif
 ---
 

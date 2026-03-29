@@ -2,7 +2,6 @@
 layout: post
 title:  'PCA and K-Means on NHL Stats'
 date:   2016-05-15 15:05:41
-categories: project data matlab nhl hockey nhl-projections
 thumbnail: /assets/img/post-thumbnails/stanley-cup-2016.png
 ---
 
