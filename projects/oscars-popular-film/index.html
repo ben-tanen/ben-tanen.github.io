@@ -1,12 +1,16 @@
 ---
 layout: main
 title: Popular Movies vs. Great Films at the Oscars
+date: 2018-08-24
 minimal: yes
 ---
 
 <link rel="stylesheet" href="css/main.style.css">
 
-<h1>{{ page.title }}</h1>
+<header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="post-date">{{ page.date | date: "%b %d %Y" }}</p>
+</header>
 
 <p>In August 2018, the Academy of Motion Picture Arts and Sciences <a href="https://www.hollywoodreporter.com/race/academy-plans-three-hour-oscars-telecast-adds-popular-film-category-1133138">announced</a> the addition of a new category for “outstanding achievement in popular film” for the 2019 Oscars. Dubbed as the “Popcorn Oscar,” the category is one of a few efforts the Academy is trying to rally more interest in their annual awards show, which has been losing viewership in recent years. This year’s category will likely feature <i>Black Panther</i>, <i>Mission: Impossible - Fallout</i>, and <i>Avengers: Infinity Wars</i>, some of the years highest grossing films.</p>
 
@@ -31,10 +35,10 @@ minimal: yes
         <div class="text-cell">
             <p>Beyond using our SVM to retroactively classify movies, we can also use it to predict how the Academy may categorize and nominate movies for the upcoming 2019 Oscars. For this, we can consider some of the most popular and thus far highest grossing films of 2018 as well as some films that have been getting early buzz as likely Oscar contenders.</p>
 
-            <p class="step-trigger" data-step=2>On the popular side, let's consider <span class="intext-title">Black Panther</span>, <span class="intext-title">Mission: Impossible - Fallout</span>, <span class="intext-title">Avengers: Infinity Wars</span>, <span class="intext-title">Incredibles 2</span>, and <span class="intext-title">Jurassic World: Fallen Kingdom</span>. Based on <a href="https://www.indiewire.com/2018/04/2019-oscars-best-picture-predictions-1201954918/">picks from "the experts"</a>, let's consider <span class="intext-title">Leave No Trace</span> and <span class="intext-title">BlacKkKlansman</span>, though most of the likely contenders have not yet come out and thus their box office pull is unknown.
+            <p class="step-trigger" data-step=2>On the popular side, let's consider <span class="intext-title">Black Panther</span>, <span class="intext-title">Mission: Impossible - Fallout</span>, <span class="intext-title">Avengers: Infinity Wars</span>, <span class="intext-title">Incredibles 2</span>, and <span class="intext-title">Jurassic World: Fallen Kingdom</span>. Based on <a href="https://www.indiewire.com/2018/04/2019-oscars-best-picture-predictions-1201954918/">picks from "the experts"</a>, let's consider <span class="intext-title">Leave No Trace</span> and <span class="intext-title">BlacKkKlansman</span>, though most of the likely contenders have not yet come out and thus their box office pull is unknown.</p>
         </div>
 
-        <p>Our 2018 films primarily fall where we would expect, with all of our likely Best Picture picks in the top left and the top grossing scattered more to the right. The one exception is <span class="intext-title">Mission: Impossible - Fallout</span>, which falls cleanly in <span style="color: rgb(244, 196, 4)">Best Picture</span> territory. However, while our SVM predicts it might be a Best Picture nominee, I would be <b>shocked</b> if the Academy nominated the action-heavy Tom Cruise film for Best Picture.
+        <p>Our 2018 films primarily fall where we would expect, with all of our likely Best Picture picks in the top left and the top grossing scattered more to the right. The one exception is <span class="intext-title">Mission: Impossible - Fallout</span>, which falls cleanly in <span style="color: rgb(244, 196, 4)">Best Picture</span> territory. However, while our SVM predicts it might be a Best Picture nominee, I would be <b>shocked</b> if the Academy nominated the action-heavy Tom Cruise film for Best Picture.</p>
 
         <p>On the other side, while it is safely outside of the <span style="color: rgb(244, 196, 4)">Best Picture</span> segment due to its high box office gross, <span class="intext-title">Black Panther</span> has obviously gotten a lot of buzz and has been heavily discussed as a likely Best Picture nominee. The cultural significance and phenomenon behind the film (plus the Academy's desire to not have another #OscarsSoWhite) does make it likely for Black Panther to overcome the norm of this divide.</p>
 
