@@ -30,7 +30,7 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv").then(function(data) {
         
         var row_str = "<tr>";
         for (key in datum) {
-            if (key == "Country") row_str += `<td><img class="flag-icon" src="https://lipis.github.io/flag-icon-css/flags/4x3/${datum["Country Code"].toLowerCase()}.svg" />${datum["Country"]}</td>`;
+            if (key == "Country") row_str += `<td><img class="flag-icon" src="/projects/fantasy-olympics/flags/${datum["Country Code"].toLowerCase()}.svg" />${datum["Country"]}</td>`;
             else if (key == "" || key == "Country Code") continue;
             else if (key == "total") row_str += `<td>${clean_predict_num(datum[key])}</td>`;
             else if (clean_predict_num(datum[key]) != "-") row_str += `<td class="predict_cell" data-team="${datum["Country"]}" data-sport="${key}">${clean_predict_num(datum[key])}</td>`;
