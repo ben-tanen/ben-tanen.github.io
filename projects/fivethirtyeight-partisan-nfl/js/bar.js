@@ -7,7 +7,7 @@ var bar_margin = {top: 70, right: 100, bottom: 5, left: 100, bar: 5},
 
 var bar_selector = "Vote";
 
-d3.csv("/projects/fivethirtyeight-partisan-nfl/data/bar-data.csv", function(error, data) {
+d3.csv("/projects/fivethirtyeight-partisan-nfl/data/bar-data.csv").then(function(data) {
 
 	bar_size = (bar_height - (bar_margin.bar * (data.length - 1))) / data.length;
 

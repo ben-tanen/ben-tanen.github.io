@@ -5,7 +5,6 @@ date:   2021-01-23 10:05:41
 thumbnail: /assets/img/post-thumbnails/trump-timeline.jpeg
 landing-proj: false
 new-post-style: true
-d3v: v6
 ---
 
 This week marked the close of the Trump Presidency and throughout the week, different outlets have been recollecting all of the craziness that happened in the past four plus years. [The New York Times prepared such a video](https://www.youtube.com/watch?v=e2FNujc0UM4) and as I was watching, I realized how warped my memory and sense of time for these events had gotten. Some events felt like years ago but were only months ago. Some I didn't remember at all even though they felt significant at the time.

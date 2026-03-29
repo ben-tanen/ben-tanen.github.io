@@ -128,7 +128,7 @@ function render_map() {
         .projection(projection);
 
     // generate map
-    d3.json("/projects/sports-dynasties/data/maps/usa-and-canada.json", function(error, topo) {
+    d3.json("/projects/sports-dynasties/data/maps/usa-and-canada.json").then(function(topo) {
         regions = topojson.feature(topo, topo.objects.collection).features
 
         // add states from topojson

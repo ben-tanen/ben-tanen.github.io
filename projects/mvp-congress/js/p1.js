@@ -134,7 +134,7 @@ d3.csv("/projects/mvp-congress/data/sample-mvp-congress.csv", function(d) {
     d.year = +d.year;
     d.status = +d.status;
     return d;
-}, function(error, d) {
+}).then(function(d) {
     // console.log(d);
 });
 

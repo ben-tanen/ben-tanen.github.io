@@ -325,8 +325,7 @@ d3.csv("/projects/oscars-best-picture/data/metacritic-topmovies-byyear-2000to202
     d.oscar_win_rank = +d.oscar_win_rank;
     d.tie_rank = +d.tie_rank;
     return d;
-}, (e, d) => {
-    if (e) throw e;
+}).then((d) => {
 
     // limit to relevant data and store for later
     d = d.filter((d) => d.metacritic_rank <= d.min_oscar_nom_rank);

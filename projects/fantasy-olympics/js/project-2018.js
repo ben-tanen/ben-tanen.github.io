@@ -22,7 +22,7 @@ function clean_country_name(country_name) {
 /*** PARSE DATA AND INIT PLOT ***/
 /********************************/
 
-d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) {
+d3.csv("/projects/fantasy-olympics/data/predictions.csv").then(function(data) {
 
     // add prediction data to table
     for (var i = 0; i < data.length; i++) {
@@ -41,7 +41,7 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv", function(error, data) 
     }
 
     // build historical data lookup
-    d3.csv("/projects/fantasy-olympics/data/g_lookup.csv", function(error, data) {
+    d3.csv("/projects/fantasy-olympics/data/g_lookup.csv").then(function(data) {
         for (var i = 0; i < data.length; i++) {
             datum = data[i];
             c3 = datum["Code-3"];

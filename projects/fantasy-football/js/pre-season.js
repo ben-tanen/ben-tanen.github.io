@@ -25,8 +25,7 @@ d3.csv("/projects/fantasy-football/data/ag-ff-draft.csv", function(d) {
     d.mock         = +d.mock;
     d.fantasy_pros = +d.fantasy_pros;
     return d;
-}, function(error, data) {
-    if (error) throw error;
+}).then(function(data) {
 
     // shrinking data if on mobile (so not as much packed all in)
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -120,7 +119,7 @@ d3.csv("/projects/fantasy-football/data/ag-ff-draft.csv", function(d) {
 
     // on hover, highlight corresponding dots and display legend information
     ff_svg.selectAll('.dot')
-        .on("mouseover", function() {
+        .on("mouseover", function(event) {
             let id = d3.select(this).attr('id'),
                 ix = +id.split("-")[id.split("-").length - 1];
             
@@ -144,7 +143,7 @@ d3.csv("/projects/fantasy-football/data/ag-ff-draft.csv", function(d) {
             else                                        var consensus_rating = "Neutral";
             ff_svg.select("#consensus-text").text("(" + consensus_rating + " pick)");
         })
-        .on("mouseout", function() {
+        .on("mouseout", function(event) {
             ff_svg.selectAll('.dot:not(.AG)').style("fill","none");
             ff_svg.selectAll('.dot.AG').style("stroke","none");
             ff_svg.selectAll(".legend-text").style("display","none");

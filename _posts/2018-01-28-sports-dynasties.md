@@ -71,6 +71,7 @@ As a bit of a post-script, I also wanted to include one of the original visualiz
 
 <link rel="stylesheet" href="/projects/sports-dynasties/css/style.css">
 
+<script type="text/javascript" src='/assets/js/lib/topojson.v2.min.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/bar.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/dot.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/map.js'></script>

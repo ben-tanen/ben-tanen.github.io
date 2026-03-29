@@ -107,8 +107,7 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
     d.month = +d.month;
     d.value = +d.v2;
     return d;
-}, function(error, data) {
-    if (error) throw error;
+}).then(function(data) {
 
     var [t_min, t_max] = d3.extent(data, function(d) { return d.month; }),
         [r_min, r_max] = d3.extent(data, function(d) { return d.value;   });
@@ -173,16 +172,14 @@ d3.csv("/assets/data/d3-radial-temp.csv", function(d) {
         .attr("transform", `translate(${width / 2 + margin.left + 8}, ${height + margin.top + 8}) rotate(180)`)
         .text("Jul");
 
-    $("#d3-polar-container").ready(function() {
-        polar_svg.append("text")
-            .attr("class", "play-text")
-            .style("font-size", text_size + "em")
-            .attr("transform", "translate(" + 10 + "," + 35 + ")")
-            .text("Play");
-    });
+    polar_svg.append("text")
+        .attr("class", "play-text")
+        .style("font-size", text_size + "em")
+        .attr("transform", "translate(" + 10 + "," + 35 + ")")
+        .text("Play");
 
     /* animate on click */
-    polar_svg.select(".play-text").on("click", function() {
+    polar_svg.select(".play-text").on("click", function(event) {
         /* clear paths and axis */
         polar_svg.selectAll(".line").remove();
         polar_svg.select("#axis").remove();

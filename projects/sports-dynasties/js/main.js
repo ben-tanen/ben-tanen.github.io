@@ -13,9 +13,7 @@ var data = {
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/
 
-d3.csv("/projects/sports-dynasties/data/team-data.csv", function(d) {
-    return d;
-}, function(error, d) {
+d3.csv("/projects/sports-dynasties/data/team-data.csv").then(function(d) {
     for (var i = 0; i < d.length; i++) {
         var di     = d[i],
             league = di.league,

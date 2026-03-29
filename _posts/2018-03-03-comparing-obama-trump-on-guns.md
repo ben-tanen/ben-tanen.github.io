@@ -108,7 +108,7 @@ d3.csv("/assets/data/trump-obama-gun-comp-data.csv", function(d) {
     d.alt_wrap_width = +d.alt_wrap_width;
     d.event_id = +d.event_id;
     return d;
-}, function(error, d) {
+}).then(function(d) {
 
     // add headers
     ot_gun_svg.append('text')

@@ -384,35 +384,31 @@ d3.csv("/projects/dem2020-delegate-map/data/delegate-map_" + update_date + ".csv
     d.primary = d.primary === "TRUE";
     d.nth_del = +d.nth_del;
     return d;
-}, (e, d) => {
-    if (e) throw e;
+}).then((d) => {
 
     // store data for later
     for (let i = 0; i < d.length; i++) data.push(d[i]);
 
     // aggregate data for use in labels
-    data_agg = d3.nest()
-        .key(d => d.state)
-        .rollup(d => { 
+    data_agg = Array.from(d3.rollup(data, d => {
             return {
                 state_abb: d3.max(d, d => d.state_abb),
                 date: d3.max(d, d => d.date),
                 primary: d3.max(d, d => d.primary),
-                biden_delegates: Math.round(d3.sum(d, d => d.biden_share) * 10) / 10, 
+                biden_delegates: Math.round(d3.sum(d, d => d.biden_share) * 10) / 10,
                 sanders_delegates: Math.round(d3.sum(d, d => d.sanders_share) * 10) / 10,
                 other_delegates: Math.round(d3.sum(d, d => d.other_share) * 10) / 10,
                 total_delegates: d.length
-            } 
-        })
-        .entries(data);
+            }
+        }, d => d.state), ([key, value]) => ({key, value}));
 
     // set domain for scales
     pos.domain([1, d3.max(data, d => Math.max(d.col, d.row))])
         .range([0, (dimensions.box_size[dimension_ix] + dimensions.box_padding[dimension_ix]) * d3.max(data, d => Math.max(d.col, d.row))]);
 
     // get unique values for candidates and states
-    candidates = d3.set(data.map(d => d.candidate)).values();
-    states = d3.set(data.map(d => d.state)).values();
+    candidates = [...new Set(data.map(d => d.candidate))];
+    states = [...new Set(data.map(d => d.state))];
 
     // draw elements
     render_canvas_grid();

@@ -21,6 +21,7 @@ Inspired by FiveThirtyEight's piece, I figured that using this map from Facebook
 </div>
 <link rel="stylesheet" href="/projects/fivethirtyeight-partisan-nfl/css/map.style.css">
 <link rel="stylesheet" href="/projects/fivethirtyeight-partisan-nfl/css/small-map.style.css">
+<script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
 <script type="text/javascript" src="/projects/fivethirtyeight-partisan-nfl/js/map.js"></script>
 
 <!-- more -->

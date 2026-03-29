@@ -105,25 +105,16 @@ function render_group_by_plot(d, transition) {
     render_d = d;
 
     // group by data accordingly
-    if (group_by == "Country") {
-        render_d = d3.nest()
-            .key(function(d) { return d.Full_Country; })
-            .rollup(function(v) { return {
-                Difference: d3.sum(v, function(d) { return d.Actual; }) - d3.sum(v, function(d) { return d.Projected; }),
-                Actual: d3.sum(v, function(d) { return d.Actual; }),
-                Projected: d3.sum(v, function(d) { return d.Projected; })
-            }; })
-            .entries(data);
+    function rollupFn(v) { return {
+        Difference: d3.sum(v, function(d) { return d.Actual; }) - d3.sum(v, function(d) { return d.Projected; }),
+        Actual: d3.sum(v, function(d) { return d.Actual; }),
+        Projected: d3.sum(v, function(d) { return d.Projected; })
+    }; }
 
+    if (group_by == "Country") {
+        render_d = Array.from(d3.rollup(data, rollupFn, function(d) { return d.Full_Country; }), ([key, value]) => ({key, value}));
     } else if (group_by == "Sport") {
-        render_d = d3.nest()
-            .key(function(d) { return d.Sport; })
-            .rollup(function(v) { return {
-                Difference: d3.sum(v, function(d) { return d.Actual; }) - d3.sum(v, function(d) { return d.Projected; }),
-                Actual: d3.sum(v, function(d) { return d.Actual; }),
-                Projected: d3.sum(v, function(d) { return d.Projected; })
-            }; })
-            .entries(data);
+        render_d = Array.from(d3.rollup(data, rollupFn, function(d) { return d.Sport; }), ([key, value]) => ({key, value}));
     }
 
     // sort grouped data
@@ -188,7 +179,7 @@ d3.csv("/projects/fantasy-olympics/data/2018-results-diff.csv", function(d) {
     d.Projected  = +d.Projected;
     d.Actual     = +d.Actual;
     return d;
-}, function(error, d) {
+}).then(function(d) {
     data = d;
     render_group_by_plot(data, true);
 

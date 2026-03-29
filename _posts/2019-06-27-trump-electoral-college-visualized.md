@@ -369,8 +369,7 @@ d3.csv("/assets/data/election2016-results.csv", (d) => {
     d.ecvotes = +(d.winner === "Trump" ? d.ecvotes_trump : d.ecvotes_clinton);
     d.votemargin = +d.votemargin;
     return d;
-}, (e, d) => {
-    if (e) throw e;
+}).then((d) => {
 
     // store data for later
     for (var i = 0; i < d.length; i++) data.push(d[i]);

@@ -317,7 +317,7 @@ d3.csv("/projects/oscars-popular-film/data/movies.csv", function(d) {
     d.metacritic_rating = +d.metacritic_rating;
     d.mean_rating = +d.mean_rating;
     return d;
-}, function(error, d) {
+}).then(function(d) {
     for (var i = 0; i < d.length; i++) data.push(d[i]);
 
     oscars_x = d3.scaleLinear()

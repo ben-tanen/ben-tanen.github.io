@@ -5,7 +5,6 @@ date:   2025-10-20 10:05:41
 thumbnail: /assets/img/post-thumbnails/album-progress.png
 landing-proj: false
 new-post-style: true
-d3v: v6
 ---
 
 A few weeks ago, I decided I wanted to try and fill in some gaps in my musical knowledge, listening to the albums and artists I had always heard about but never had actually given a listen to. My starting list was already fairly long, but because I struggle with a nasty case of "completionisim" (made up word for those of us that feel the need to 100% every video game we play), I've also decided to supplement my list with as many of the "greatest albums of all time" lists as I can find. I'm working on an additional project to try comparing and visualizing those lists, but in the meantime, I'm just working through my ever-growing list of albums and artists.

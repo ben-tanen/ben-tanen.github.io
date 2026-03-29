@@ -236,8 +236,7 @@ d3.csv("/projects/fantasy-football/data/ff-ibm-watson-projections.csv", (d) => {
     d.bucket_size = +d.bucket_size;
     d.accuracy = +d.accuracy;
     return d;
-}, (e, d) => {
-    if (e) throw e;
+}).then((d) => {
 
     // store data for later
     for (let i = 0; i < d.length; i++) data.push(d[i]);

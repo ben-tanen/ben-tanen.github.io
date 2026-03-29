@@ -281,8 +281,7 @@ d3.csv("/assets/data/top-movies-from-2010s.csv", (d) => {
     d.starwars = +d.starwars;
     d.pixar = +d.pixar;
     return d;
-}, (e, d) => {
-    if (e) throw e;
+}).then((d) => {
 
     // store data for later
     for (let i = 0; i < d.length; i++) data.push(d[i]);

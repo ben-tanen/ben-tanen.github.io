@@ -196,7 +196,7 @@ viz_fns[viz_ix](colors, parseInt($("#range_span").val()));
 
 // on color step slider update
 d3.select('#range_span')
-    .on("input", function() {
+    .on("input", function(event) {
         svg.selectAll('rect, path').remove();
 
         viz_fns[viz_ix](colors, parseInt($("#range_span").val()));
@@ -204,7 +204,7 @@ d3.select('#range_span')
 
 // on viz type radio update
 d3.selectAll('input[name="viz-type"]')
-    .on("change", function() {
+    .on("change", function(event) {
         svg.selectAll('rect, path').remove();
 
         if (d3.select(this).attr('value') == "radial") viz_ix = 1;

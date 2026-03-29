@@ -153,7 +153,7 @@ function draw_scenario_cells() {
         .attr("y", d => margin.top + (d.n_states_called - 1) * row_height + (is_compact() ? 0 : call_data[d.n_states_called - 1].days_after_ed * margin.day))
         .attr("width", d => x(d.n_sims))
         .attr("height", row_height)
-        .on("mouseenter", function(cell) {
+        .on("mouseenter", function(event, cell) {
             d3.selectAll(".colored-cell").classed("colored-cell", false);
             d3.selectAll(".scenario-cell")
                 .filter(d => cell.winners.substr(0, d.winners.length) === d.winners)
@@ -240,7 +240,7 @@ function resize() {
 /*** PARSE DATA AND INIT PLOTS ***/
 /*********************************/
 
-d3.json("/assets/data/election-funnel-2020-data-20201119.json", (d) => {
+d3.json("/assets/data/election-funnel-2020-data-20201119.json").then((d) => {
 
     d3.select("#elfun2020-loading").style("display", "none");
     d3.selectAll("#elfun2020-title, #elfun2020-viz").style("display", "inline-block");

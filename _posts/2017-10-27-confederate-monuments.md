@@ -71,7 +71,7 @@ d3.csv("/assets/data/kut-poll-data.csv", function(d) {
     d.move = +d.move;
     d.unsure = +d.unsure;
     return d;
-}, function(error, d) {
+}).then(function(d) {
     for (var i = 0; i < d.length; i++) data.push(d[i]);
 
     bar_size = (height - (margin.bar * (data.length - 1))) / data.length;

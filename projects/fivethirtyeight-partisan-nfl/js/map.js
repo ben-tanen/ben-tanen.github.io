@@ -17,11 +17,9 @@ var scale_factor = (map_view_width >= 960 ? 1 : map_view_width / 960);
 var map_path = d3.geoPath().projection(scale(scale_factor));
 $('#d3-nfl-map-container').height(600 * scale_factor);
 
-d3.json("https://d3js.org/us-10m.v1.json", function(error, us) {
-    if (error) throw error;
+d3.json("https://d3js.org/us-10m.v1.json").then(function(us) {
 
-    d3.csv("/projects/fivethirtyeight-partisan-nfl/data/map-data.csv", function(error, data) {
-        if (error) throw error;
+    d3.csv("/projects/fivethirtyeight-partisan-nfl/data/map-data.csv").then(function(data) {
 
         var data_map = { };
         for (var i = 0; i < data.length; i++) {
@@ -45,7 +43,7 @@ d3.json("https://d3js.org/us-10m.v1.json", function(error, us) {
             .attr("d", map_path)
             .style("fill", function(d) {
                 return data_map[d.id].color;
-            }).on("mouseover", function(d) {
+            }).on("mouseover", function(event, d) {
                 var datum = data_map[d.id];
                 map_tooltip.html(`<p><b>${datum.county}, ${datum.state}${datum.state == "Alaska" ? "*" : ""}</b></p>
                                   <p>Voted for ${datum.pct_clinton > datum.pct_trump ? "Clinton" : "Trump"} with 
@@ -53,7 +51,7 @@ d3.json("https://d3js.org/us-10m.v1.json", function(error, us) {
                                   <p>${datum.team} Fans</p>`)
                     .transition().duration(100)
                     .style("opacity", 1);
-            }).on("mouseout", function(d) {
+            }).on("mouseout", function(event, d) {
                 map_tooltip.transition().duration(100)
                     .style("opacity", 0)
             })

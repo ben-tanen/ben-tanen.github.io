@@ -73,7 +73,7 @@ I'm currently taking (and loving) a data visualization course, so naturally, I'm
     }
 
     /* toggle alignment */
-    random_svg.on("click", function() {
+    random_svg.on("click", function(event) {
         for (var i = 0; i < circles.length; i++) {
             var c  = circles[i];
             var cn = +c.attr("group");

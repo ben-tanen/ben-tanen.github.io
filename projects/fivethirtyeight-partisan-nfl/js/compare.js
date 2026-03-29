@@ -23,7 +23,7 @@ d3.csv("/projects/fivethirtyeight-partisan-nfl/data/compare-data.csv", function(
     d['Vote Lean']  = +(+d['Vote Lean'] * 100).toFixed(2);
     d['FiveThirtyEight Lean'] = +d.fivethirtyeight;
     return d;
-}, function(error, data) {
+}).then(function(data) {
 	compare_x.domain(d3.extent(data, function(d) { return d[lean_type + ' Lean']; })).nice();
 	compare_y.domain(d3.extent(data, function(d) { return d['FiveThirtyEight Lean']; })).nice();
 

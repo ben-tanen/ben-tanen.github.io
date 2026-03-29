@@ -177,7 +177,7 @@ d3.csv("data/2019-10-21_bill-counts-by-day-long.csv", (d) => {
     d.N_chamber = +d.N_chamber;
     d.N_curr = +d.N_curr;
     return d;
-}, (error, d) => {
+}).then((d) => {
     // store data (necessary?)
     for (let i = 0; i < d.length; i++) {
         if (d[i].status_bucket == "E. VOTE") d[i].N_curr = 0;
@@ -186,7 +186,7 @@ d3.csv("data/2019-10-21_bill-counts-by-day-long.csv", (d) => {
 
     // adjust scale domain based on data
     x.domain(d3.extent(data, (d) => d.N));
-    y.domain(d3.map(data.filter((d) => d.chamber_curr != "b"), (d) => d.status_bucket).keys().sort());
+    y.domain([...new Set(data.filter((d) => d.chamber_curr != "b").map((d) => d.status_bucket))].sort());
     date.range(d3.extent(data, (d) => new Date(d.date)));
     curr_date = d3.min(data, (d) => d.date);
 
