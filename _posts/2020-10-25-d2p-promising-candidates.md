@@ -5,7 +5,7 @@ date: 2020-10-25 09:00:00
 thumbnail: /assets/img/post-thumbnails/d2p-donate.png
 reroute-url: https://www.data2thepeople.org/post/dems-donate-where-your-money-can-make-the-biggest-impact
 landing-proj:  true
-landing-order: 23
+landing-order: 27
 landing-img:   /assets/img/proj-thumbnails/d2p-donate.png
 landing-large: false
 ---
