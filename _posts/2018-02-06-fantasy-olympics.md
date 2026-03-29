@@ -6,7 +6,7 @@ thumbnail: /assets/img/post-thumbnails/fantasy-olympics.png
 new-post-style: true
 ---
 
-I love the Olympics and the upcoming 2018 Games have me fired up. Following my first season in [a fantasy football league this year]({% post_url 2017-09-06-evaluating-fantasy-draft %}), I thought it would be a fun idea to try and make my own fantasy game for the Olympics. So with only a limited amount of knowledge of what makes a good fantasy game, I got to work on my own Fantasy Olympics.
+I love the Olympics and the upcoming 2018 Games have me fired up. Following my first season in [a fantasy football league this year]({% post_url 2017-09-07-evaluating-fantasy-draft %}), I thought it would be a fun idea to try and make my own fantasy game for the Olympics. So with only a limited amount of knowledge of what makes a good fantasy game, I got to work on my own Fantasy Olympics.
 
 One of the initial problems I foresaw with a game for the Olympics was the average person's familiarity with individual athletes. While everyone knows the big stars (Michael Phelps, Shaun White, etc.), most viewers would probably struggle to name more than a handful of individual athletes. There is the same issue with fantasy football and defenses. In fantasy football, most leagues remedy this by having fantasy players draft whole defenses instead of individual defensemen and I thought a similar scheme would be a good solution for my own Fantasy Olympics problem.
 
