@@ -4,7 +4,6 @@ title:  "The Best Films That Don't Win Best Picture"
 date:   2020-02-10 15:05:41
 thumbnail: /assets/img/post-thumbnails/oscars-best-picture.png
 related-proj:  oscars-best-picture
-new-post-style: true
 ---
 
 

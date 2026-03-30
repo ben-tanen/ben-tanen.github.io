@@ -3,7 +3,6 @@ layout: post
 title:  "Data Artwork and Creative Coding"
 date:   2020-07-06 08:05:41
 thumbnail: /projects/generative-sketchbook/assets/img/thumbnails/circle-follow.png
-new-post-style: true
 ---
 
 *TL;DR: I put together [a sketchbook](/projects/generative-sketchbook/) of generative art and creative coding sketches I've done. I plan on adding to it periodically.*

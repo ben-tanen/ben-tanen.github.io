@@ -137,6 +137,14 @@ h3 {
     position: relative;
 }
 
+.post-header h1, .post-header p {
+    text-align: center;
+}
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+    text-align: center;
+}
+
 /*
 .post-meta {
     position: absolute;
@@ -161,9 +169,12 @@ h3 {
 */
 
 .main p {
-	text-align: justify;
+	text-align: left;
 	margin: 0 0 15px 0;
     font-size: 17px;
+    max-width: 600px;
+    margin-left: max((100% - 600px) / 2, 0px);
+    line-height: 1.5;
 }
 
 .main h1 {
@@ -195,6 +206,13 @@ h3 {
 .main ul, .main ol {
 	padding-left: 50px;
 	margin-bottom: 8px;
+    max-width: 570px;
+    margin-left: max((100% - 570px) / 2, 30px);
+}
+
+.post-content div ol, .post-content div ul {
+    max-width: none;
+    margin-left: 0;
 }
 
 .main hr {
@@ -202,10 +220,11 @@ h3 {
 }
 
 blockquote {
-	padding: 0 30px 0 15px;
-	margin-left: 30px;
+	padding: 0 15px 0 15px;
 	border-left: 3px #a9a9a9 solid;
 	color: #888888;
+    max-width: 550px;
+    margin-left: max((100% - 550px) / 2, 30px);
 }
 
 .youtube-vid {
@@ -219,8 +238,10 @@ blockquote {
 /*** figure styling ***/
 /**********************/
 
-.fig-paragraph {
+p.fig-paragraph {
     text-align: center !important;
+    max-width: 100%;
+    margin-left: 0;
 }
 
 .fig-link {
@@ -459,6 +480,10 @@ tbody td:nth-of-type(1) {
     position: absolute;
     right: 0;
     font-size: 1em;
+}
+
+div.pagination p {
+    margin-left: 0;
 }
 
 /*********************/

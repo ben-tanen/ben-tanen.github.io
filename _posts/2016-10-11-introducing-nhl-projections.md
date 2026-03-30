@@ -3,7 +3,6 @@ layout: post
 title:  'Introducing 2016-17 NHL Projections'
 date:   2016-10-11 15:05:41
 thumbnail: /assets/img/post-thumbnails/nhl-projections.gif
-new-post-style: true
 ---
 
 Last year as the 2015-16 NHL season came to a close, I built a fairly simplistic MATLAB model in an effort to (hopefully accurately) simulate the season. The model was built to take in some amount of past game data and use this to predict game-by-game performances over the entire season, resulting in season-long performances for each team. If you're interested, you can read [the original model report](/projects/nhl-projections/files/NHL_Projections-Full_Report.pdf){:target="_blank"} as well as check out [the code](https://github.com/ben-tanen/nhl-playoff-projections/){:target="_blank"}.

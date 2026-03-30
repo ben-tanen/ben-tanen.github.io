@@ -3,7 +3,6 @@ layout: post
 title: 'How I Keep Track of All My Shows'
 date: 2017-01-24 15:05:41
 thumbnail: /assets/img/post-thumbnails/tv-monitor.gif
-new-post-style: true
 ---
 
 As I've [previously mentioned]({% post_url 2016-05-08-netflix-history %}), I do enjoy watching TV and Netflix from time to time. However, since I've opted to go cable-less, it's a bit of a struggle to stay on top of when a new episode of one of my shows comes out. As a result, and because I clearly had way too much time on my hands, I decided to make **TV Monitor**, a little Chrome extension that keeps track of all of this for me.

@@ -4,7 +4,6 @@ title: "Visualizing Trump's Narrow Path to Victory"
 date: 2019-06-27 04:00:00
 thumbnail: /assets/img/post-thumbnails/electoral-college-viz.png
 related-proj:  trump-electoral-college-visualized
-new-post-style: true
 ---
 
 *Okay, I know...the 2016 election happened nearly 1,000 days ago and at this point re-litigating it just feels like beating a dead horse that died from beating another dead horse. But this idea was inspired by 2020 Democratic Debate coverage, and you can't always decide when inspiration strikes.*

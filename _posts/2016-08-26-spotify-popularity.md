@@ -3,7 +3,6 @@ layout: post
 title:  'Am I Becoming More or Less Hipster?'
 date:   2016-08-26 15:05:41
 thumbnail: /assets/img/post-thumbnails/spotify-popularity.png
-new-post-style: true
 ---
 
 After years of using their services, I finally decided to check out [Spotify's Web API](https://developer.spotify.com/web-api/) in preparation for some upcoming hackathons. I decided to poke around in some of the API's data (after having previously used Last.FM's data to [visualize my Spotify usage](2015/09/01/lastfm-scrobble-graphs.html){:target="_blank"}) and I was intrigued by the "popularity" metric that Spotify served up for each song. While I'm not sure how exactly Spotify calculates this unit-less number, I imagine it has to do with the number of recent plays worldwide.

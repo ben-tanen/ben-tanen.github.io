@@ -3,7 +3,6 @@ layout: post
 title:  "Is IBM Watson Good At Fantasy Football?"
 date:   2020-01-08 15:05:41
 thumbnail: /assets/img/post-thumbnails/ff-ibm-watson.png
-new-post-style: true
 ---
 
 In the years since [IBM's Watson supercomputer infamously appeared on *Jeopardy!*](https://www.nytimes.com/2011/02/17/science/17jeopardy-watson.html) in 2011, Watson has become a household name and one of the most well-known examples of artificial intelligence in the real world. Much of this fame has come from IBM's continued marketing that integrates and showcases Watson in a variety of real-world applications. An example is [IBM's recent partnership with ESPN](https://www.ibm.com/sports/fantasy/) to bring Watson's AI capabilities to ESPN's fantasy football system in the form of player-by-player performance projections. [Per IBM's marketing materials](https://www.youtube.com/watch?v=uDeP5b3iKfU) for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete's stats and are also frequently used in discussions on [ESPN's fantasy-driven shows](https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show).

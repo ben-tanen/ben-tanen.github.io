@@ -3,7 +3,6 @@ layout: post
 title: 'Mapping My Life at Tufts'
 date: 2016-11-18 15:05:41
 thumbnail: /assets/img/post-thumbnails/tufts-map.jpg
-new-post-style: true
 ---
 
 Over the last few years, my schedules have varied quite a bit and it has caused me to inhabit certain areas of campus on a weekly basis. As my classes became more specialized, I realized I was spending most of my time between three or four main locations. Wanting to confirm my suspicion, I decided to map out and visualize each of my schedules from semester to semester, which you can see below.

@@ -3,7 +3,6 @@ layout: post
 title: 'Gamifying the 2018 Olympic Games'
 date: 2018-02-06 05:00:00
 thumbnail: /assets/img/post-thumbnails/fantasy-olympics.png
-new-post-style: true
 ---
 
 I love the Olympics and the upcoming 2018 Games have me fired up. Following my first season in [a fantasy football league this year]({% post_url 2017-09-07-evaluating-fantasy-draft %}), I thought it would be a fun idea to try and make my own fantasy game for the Olympics. So with only a limited amount of knowledge of what makes a good fantasy game, I got to work on my own Fantasy Olympics.
