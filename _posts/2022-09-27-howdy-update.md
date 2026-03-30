@@ -2,7 +2,6 @@
 layout: post
 title:  "Howdy! It's Been Awhile"
 date:   2022-09-27 10:05:41
-new-post-style: false
 ---
 
 Hi! Hello! Howdy! It has been a minute since I've written a new post for this site (approx. 881,280 minutes to be more percise). The radio silence has largely been due to a number of life changes that have left me working on personal side projects quite a bit less and thus posting here less. I do have a number of "irons in the fire" as they say, but since who knows when they'll be ready to go, I figured I would just share a mass update on all that has been going on in the last 18 months or so.

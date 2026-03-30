@@ -63,6 +63,8 @@ You can view the full list of projections used <a href="/projects/fantasy-footba
     margin: 5px 0 0 0;
     text-align: center;
     font-size: 14px;
+    max-width: none;
+    margin-left: 0;
 }
 
 .bucket-button {

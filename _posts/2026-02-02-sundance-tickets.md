@@ -3,7 +3,6 @@ layout: post
 title:  How To Get (Good) Tickets for Sundance Film Festival
 date:   2026-02-02 10:00:00
 thumbnail: /assets/img/post-thumbnails/sundance-egyptian.webp
-new-post-style: true
 ---
 
 The 2026 Sundance Film Festival wrapped up yesterday, and with that, Sundance now sadly departs Utah for Boulder in 2027 and beyond. As a Utah resident and a regular attendee since 2018, this move to Colorado pains me deeply for many reasons. Beyond the obvious, I am pained because after many years of learning and adapting to the quirks of the Sundance Film Festival ticket game, I finally locked in on my strategy to secure an optimal line-up for the festival. This strategy includes:

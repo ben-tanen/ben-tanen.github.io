@@ -3,7 +3,6 @@ layout: post
 title:  "Catch Me on Observable"
 date:   2021-01-13 10:05:41
 thumbnail: /assets/img/post-thumbnails/observable.png
-new-post-style: true
 ---
 
 After many months of being intrigued yet afraid of Observable, I have finally decided to dive in and check it out. For those unaware, Observable is a fantastic resource/community for anyone wanting to experiment and build things on the internet, especially for visualization and creative coding. An improvement upon Mike Bostock's [bl.ocks](https://bl.ocks.org/), Bostock and company created a wonderful and easy way to build via interactive web-enabled notebooks, which allows for quick building and easy collaboration. If you do any data visualization in D3 or generative art in p5, I would highly recommend checking it out.

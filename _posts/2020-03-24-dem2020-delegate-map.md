@@ -4,7 +4,6 @@ title:  "Plotting the 3,979 Delegates of the 2020 Democratic Primary"
 date:   2020-03-24 10:05:41
 thumbnail: /assets/img/post-thumbnails/dem2020-delegate-map.png
 related-proj:  dem2020-delegate-map
-new-post-style: true
 ---
 
 ***Update (Apr 08, 2020):** [Bernie Sanders is dropping out of the Democratic Primary](https://www.nytimes.com/2020/04/08/us/politics/bernie-sanders-drops-out.html), leaving Joe Biden as the sole candidate and now the presumptive Democratic nominee. As a result, this project is now no longer relevant, so I'm going to freeze it for now.*

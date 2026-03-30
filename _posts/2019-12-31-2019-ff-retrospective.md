@@ -16,7 +16,7 @@ The first and probably the most important factor of any successful fantasy footb
 
 What these show is a visual representation of how strong each team was in a particular position and, as a whole, how well-balanced their team was. For example, if we look at Slick Rick, we see that he had the best RBs in the league (he generally played Christian McCaffery and Mark Ingram, who both had knockout seasons). However, he was somewhat weaker (relatively) in terms of defenses, though this is obviously one of the least significant positions. If we measure how strong each team is across all of these positions relative to the rest of the league, we can get a numerical measure of the overall team. For example, if we look at Slick Rick, strong RBs, WRs, and TE + medium QB + weak K and DST comes out to a team score of 6.86.
 
-<ul id="radar-chart-container">
+<div><ul id="radar-chart-container">
     <li><img src="/projects/fantasy-football/img/2019-radar-charts/1-slick-rick.png" alt="" class="radar-chart-img"></li>
     <li><img src="/projects/fantasy-football/img/2019-radar-charts/2-team-silverhart.png" alt="" class="radar-chart-img"></li>
     <li><img src="/projects/fantasy-football/img/2019-radar-charts/3-team-cadow.png" alt="" class="radar-chart-img"></li>
@@ -29,7 +29,7 @@ What these show is a visual representation of how strong each team was in a part
     <li><img src="/projects/fantasy-football/img/2019-radar-charts/10-ags-reckoning.png" alt="" class="radar-chart-img"></li>
     <li><img src="/projects/fantasy-football/img/2019-radar-charts/11-stickshift-rick.png" alt="" class="radar-chart-img"></li>
     <li><img src="/projects/fantasy-football/img/2019-radar-charts/12-revenge-tour.png" alt="" class="radar-chart-img"></li>
-</ul>
+</ul></div>
 
 What these show is that these measures of team strength align relatively closely to each team’s ultimate performance in the league. While not exact, those with higher team scores ended near the top of the rankings while those with lower scores ended near the bottom. There are obviously some exceptions and other factors that play into a season’s performance (some discussed below), but a strong and well-rounded team seems to be a substantial part.
 
