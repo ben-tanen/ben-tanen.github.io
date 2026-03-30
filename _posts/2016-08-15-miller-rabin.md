@@ -2,6 +2,7 @@
 layout: post
 title:  'Miller-Rabin Primality Test'
 date:   2016-08-15 15:05:41
+new-post-style: true
 ---
 
 <script>

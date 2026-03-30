@@ -4,6 +4,7 @@ title: 'Visualizing Our Drunken World'
 date: 2016-12-21 15:05:41
 thumbnail: /assets/img/post-thumbnails/drunken-world2.png
 related-proj:  drunken-world
+new-post-style: true
 ---
 
 For my final project of my data visualization class this semester, my team decided to explore alcohol consumption around the world and over time. There exist certain stereotypes about which countries drink which types of alcohol - the French with their wine, Russians and their vodka, etc. - and we wanted to build a platform to either confirm or debunk these stereotypes. In a greater sense, we hoped to explore when and how alcohol has been part of culture and history. And thus, [Our Drunken World](https://jadeyychan.github.io/DrunkenWorld/){:target="_blank"} was born!
