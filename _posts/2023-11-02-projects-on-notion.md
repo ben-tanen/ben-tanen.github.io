@@ -2,7 +2,6 @@
 layout: post
 title:  "Small Projects over on Notion, Batch #1"
 date:   2023-11-02 10:05:41
-landing-proj:  false
 new-post-style: true
 thumbnail: /assets/img/post-thumbnails/notion.png
 ---

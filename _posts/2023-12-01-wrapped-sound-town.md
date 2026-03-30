@@ -4,10 +4,7 @@ title:  "2023 Wrapped: Sound Town"
 date:   2023-12-01 10:05:41
 thumbnail: /assets/img/proj-thumbnails/2023-wrapped-sound-town.png
 new-post-style: true
-landing-proj:  true
-landing-order: 1
-landing-img:   /assets/img/proj-thumbnails/2023-wrapped-sound-town.png
-landing-large: true
+related-proj:  wrapped-sound-town
 ---
 
 For the past 8+ months, I had the very cool experience of working on the Spotify Wrapped team for 2023, focusing on user personalization data. Through this team focuses on crafting the logic and stories that you and I see in the 2023 Wrapped experience, including brand new stories. This year included a new story called "Sound Town," which aimed to identify and connect each user with the city that listened most similarly to the user.

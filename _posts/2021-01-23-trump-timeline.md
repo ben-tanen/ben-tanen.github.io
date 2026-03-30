@@ -3,7 +3,6 @@ layout: post
 title:  "How Well Do You Remember Trump's Term In Office?"
 date:   2021-01-23 10:05:41
 thumbnail: /assets/img/post-thumbnails/trump-timeline.jpeg
-landing-proj: false
 new-post-style: true
 ---
 

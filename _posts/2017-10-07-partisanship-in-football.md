@@ -3,10 +3,7 @@ layout: post
 title: 'Partisanship and the NFL'
 date: 2017-10-07 05:00:00
 thumbnail: /assets/img/post-thumbnails/partisan-nfl.png
-landing-proj:  true
-landing-order: 15
-landing-img:   /assets/img/proj-thumbnails/partisan-nfl.png
-landing-large: false
+related-proj:  partisanship-in-football
 new-post-style: true
 ---
 

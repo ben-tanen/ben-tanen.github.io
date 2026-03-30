@@ -3,7 +3,6 @@ layout: post
 title:  "Catch Me on Observable"
 date:   2021-01-13 10:05:41
 thumbnail: /assets/img/post-thumbnails/observable.png
-landing-proj:  false
 new-post-style: true
 ---
 

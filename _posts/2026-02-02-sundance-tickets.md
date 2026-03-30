@@ -3,7 +3,6 @@ layout: post
 title:  How To Get (Good) Tickets for Sundance Film Festival
 date:   2026-02-02 10:00:00
 thumbnail: /assets/img/post-thumbnails/sundance-egyptian.webp
-landing-proj: false
 new-post-style: true
 ---
 

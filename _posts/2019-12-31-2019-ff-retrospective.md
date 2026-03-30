@@ -3,10 +3,7 @@ layout: post
 title:  "How A Subpar Football Fan Succeeds in Fantasy Football"
 date:   2019-12-31 15:05:41
 thumbnail: /assets/img/post-thumbnails/ff-retro-2019.png
-landing-proj:  true
-landing-order: 24
-landing-img:   /assets/img/proj-thumbnails/2019-ff-retro.png
-landing-large: false
+related-proj:  2019-ff-retrospective
 ---
 
 This weekend marked the end of the NFL’s regular season and with it, the end of many fantasy football league seasons. This was my third year in a fantasy football league and quite shockingly, I ended up winning my league, which was a vast improvement on my past performances. In the past, I’ve [visualized my effectiveness as a fantasy football drafter]({% post_url 2017-09-07-evaluating-fantasy-draft %}) so to cap off this winning season, I wanted to explore what factors might have led to my success, as always, with data.

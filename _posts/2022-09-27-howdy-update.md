@@ -2,7 +2,6 @@
 layout: post
 title:  "Howdy! It's Been Awhile"
 date:   2022-09-27 10:05:41
-landing-proj:  false
 new-post-style: false
 ---
 

@@ -29,17 +29,27 @@
         <p>I also like to keep lists of some of my favorite things from other folks, whether they are <a href="https://btnotion.notion.site/ccb6582646834f6ea4194817c2470ab4" target="_blank">dope charts</a> or <a href="https://btnotion.notion.site/efc8a2cb977049a3a026cc7f03837268" target="_blank">other stuff from around the internet</a>, over on <a href="https://btnotion.notion.site/" target="_blank">my public Notion page</a>.</p>
     </div>
     <div id="proj-container">
-        <!-- collect all landing projects (from both posts and other) -->
-        {% assign landingproj1 = site.posts | where: "landing-proj", "true" %}
-        {% assign landingproj2 = site.landing-projects %}
-        {% assign landingproj = landingproj1 | concat: landingproj2 %}
-        <!-- iterate over all projects to create a cell on landing page -->
-        {% for proj in landingproj %}
-        <div class="proj-cell {% if proj.landing-large == true %}large{% endif %}" 
+        <!-- iterate over all landing projects -->
+        {% for proj in site.landing-projects %}
+        {% assign proj_link = nil %}
+        {% if proj.related-post %}
+            {% assign related_slug = proj.related-post | split: "-" | slice: 3, 100 | join: "-" %}
+            {% assign related = site.posts | where: "slug", related_slug | first %}
+            {% if related.reroute-url %}
+                {% assign proj_link = related.reroute-url %}
+            {% else %}
+                {% assign proj_link = related.url %}
+            {% endif %}
+        {% elsif proj.reroute-url %}
+            {% assign proj_link = proj.reroute-url %}
+        {% else %}
+            {% raise_error "Landing project '{{ proj.title }}' has no related-post or reroute-url" %}
+        {% endif %}
+        <div class="proj-cell {% if proj.landing-large == true %}large{% endif %}"
              data-landing_large="{{ proj.landing-large }}"
              data-landing_order="{{ proj.landing-order }}"
-             style='background-image: url("{% if proj.landing-img %}{{ proj.landing-img }}{% else %}{{ proj.thumbnail }}{% endif %}");'>
-            <a href="{% if proj.reroute-url %}{{ proj.reroute-url }}{% else %}{{ proj.url }}{% endif %}">
+             style='background-image: url("{{ proj.landing-img }}");'>
+            <a href="{{ proj_link }}">
                 <p>{{ proj.title }}</p>
             </a>
         </div>

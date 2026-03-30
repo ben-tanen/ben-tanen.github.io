@@ -2,7 +2,6 @@
 layout: post
 title:  "Intro to the Seam Carving Algorithm"
 date:   2020-10-08 10:05:41
-landing-proj: false
 new-post-style: true
 thumbnail: /assets/img/post-thumbnails/seam-carving-pt1.jpg
 ---

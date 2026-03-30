@@ -3,10 +3,7 @@ layout: post
 title:  "How Has Redistricting Changed Since 2011"
 date:   2020-11-13 10:05:41
 thumbnail: /assets/img/post-thumbnails/redistricting-sankey.png
-landing-proj:  true
-landing-order: 9
-landing-img:   /assets/img/posts/redistricting-sankey-vert.png
-landing-large: true
+related-proj:  redistricting-changes-for-2020
 new-post-style: true
 ---
 

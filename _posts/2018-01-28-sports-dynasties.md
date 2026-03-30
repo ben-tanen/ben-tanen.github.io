@@ -3,10 +3,7 @@ layout: post
 title: 'Visualizing Cities with Sports Dynasties'
 date: 2018-01-28 05:00:00
 thumbnail: /assets/img/post-thumbnails/sports-dynasties.gif
-landing-proj:  true
-landing-order: 29
-landing-img:   /assets/img/proj-thumbnails/sports-dynasties.png
-landing-large: false
+related-proj:  sports-dynasties
 new-post-style: true
 ---
 
