@@ -4,6 +4,7 @@ title:  "The Decade of Disney"
 date:   2020-01-02 15:05:41
 thumbnail: /assets/img/post-thumbnails/disney-monopoly.jpg
 related-proj:  decade-of-disney
+new-post-style: true
 ---
 
 <div class='columns two'>

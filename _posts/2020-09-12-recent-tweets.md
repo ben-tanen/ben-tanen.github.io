@@ -3,6 +3,7 @@ layout: post
 title:  "Fixing Bad COVID-19 Maps, Mapping Musical Genres, and Other Twitter Projects"
 date:   2020-09-12 10:05:41
 thumbnail: /assets/img/post-thumbnails/twitter-posts1.png
+new-post-style: true
 ---
 
 Over the last few months, I've worked on a few smaller projects that I didn't think warranted full individual posts on this site, so I just shared them as smaller threads on Twitter directly. But in order to keep this site as a comprehensive collection of the work I've done, I've decided to make a list compiling this recent work. Some might say this is double dipping on the same content, but my site, my rules! Of course, if you want to see this kind of work first, you should just [follow me on Twitter](https://twitter.com/ben_tanen) 🙂
