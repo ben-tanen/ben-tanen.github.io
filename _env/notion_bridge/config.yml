@@ -1,0 +1,11 @@
+notion:
+  post_db_id: "3320ec74530b80d2a250da33abd8d2b5"
+  project_db_id: "3320ec74530b807d986adce94cc125ff"
+  api_version: "2026-03-11"
+
+site:
+  url: "https://ben-tanen.com"
+  posts_dir: "_posts"
+  projects_dir: "_landing-projects"
+  post_thumbnails_dir: "assets/img/post-thumbnails"
+  proj_thumbnails_dir: "assets/img/proj-thumbnails"

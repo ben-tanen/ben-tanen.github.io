@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Improving Twitter's Image Previews"
-date:   2020-10-08 10:05:41
+date:   2020-10-08 11:05:41
 new-post-style: true
 thumbnail: /assets/img/post-thumbnails/seam-carving-pt2.jpg
 ---
