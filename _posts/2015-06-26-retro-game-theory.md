@@ -3,6 +3,7 @@ layout: post
 title:  "Retro Post: Game Theory, The Game"
 date:   2015-06-26 15:05:41
 thumbnail: /assets/img/post-thumbnails/gametheory-slaps.png
+new-post-style: true
 ---
 
 This retro post came from my senior year of high school when I was taking AP Economics. Who doesn't love turning economics into drinking games?

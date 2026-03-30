@@ -3,6 +3,7 @@ layout: post
 title:  'Best Of "Data is Beautiful" #1'
 date:   2015-08-16 15:05:41
 thumbnail: /assets/img/post-thumbnails/data-is-beautiful.png
+new-post-style: true
 ---
 
 As I briefly mentioned in a [previous post]({% post_url 2014-10-31-rap-data-design %}), I am a big fan of well-designed representations of data. If you're also a fan of this "art form" then you should be an avid follower of the subreddit [/r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful). If you've never seen it, it's a must read.
