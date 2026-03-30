@@ -3,6 +3,7 @@ layout: post
 title: 'The Chaos Game'
 date: 2017-04-28 15:05:41
 thumbnail: /assets/img/post-thumbnails/chaos-game.gif
+new-post-style: true
 ---
 
 After watching [this recent video from Numberphile](https://www.youtube.com/watch?v=kbKtFN71Lfs), I decided to throw together my own little visualizer of [the chaos game](https://en.wikipedia.org/wiki/Chaos_game).

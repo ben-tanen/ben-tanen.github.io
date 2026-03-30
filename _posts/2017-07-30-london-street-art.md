@@ -3,6 +3,7 @@ layout: post
 title: 'Street Art in London'
 date: 2017-07-30 05:00:00
 thumbnail: /assets/img/post-thumbnails/london-street-art.jpg
+new-post-style: true
 ---
 
 I just got back from a trip to London and while I was there, I got to check out of some London's pretty incredible street art. I was taken around parts of the city by an artist trying to break into the street art scene so he was able to share some additional information on the pieces. It was very cool to hear some of the background on the artist(s) behind each piece and the general culture in the street scene. It certainly added an extra layer to the compositions and their significance in London as a whole.
