@@ -3,6 +3,7 @@ layout: post
 title: "Random Fun with Processing"
 date: 2019-06-23 04:00:00
 thumbnail: /assets/img/post-thumbnails/processing-ex3.gif
+new-post-style: true
 ---
 
 In the pursuit of [visualizing font design trends]({% post_url 2019-06-23-most-font %}), I did a lot of playing around in [Processing](https://processing.org/){:target="_blank"}. Here is a collection of some random animations/sketches I made while working on my latest project.

@@ -19,6 +19,11 @@
     margin-left: max((100% - 570px) / 2, 30px);
 }
 
+.post-content div ol, .post-content div ul {
+    max-width: none;
+    margin-left: 0;
+}
+
 .main blockquote {
     max-width: 550px;
     margin-left: max((100% - 550px) / 2, 30px);
