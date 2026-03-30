@@ -3,6 +3,7 @@ layout: post
 title: 'A First Attempt At Generative Art'
 date: 2018-04-23 05:00:00
 thumbnail: /assets/img/post-thumbnails/gen-art.png
+new-post-style: true
 ---
 
 <div id="d3-gen-art-container">
