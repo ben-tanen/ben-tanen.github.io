@@ -38,14 +38,17 @@ def parse_image_caption(caption: str) -> dict[str, str]:
     if not caption:
         return {}
 
+    # Unescape Notion's pipe escaping before parsing
+    caption = caption.replace("\\|", "|")
+
     # No pipes and no leading "key:" → entire caption is plain alt text
     if "|" not in caption and not re.match(r'^[a-z-]+\s*:', caption):
         return {"alt": caption.strip()}
 
     params = {}
-    parts = re.split(r'(?<!\\)\|', caption)  # split on unescaped pipes
+    parts = caption.split("|")
     for part in parts:
-        part = part.strip().replace("\\|", "|")  # unescape literal pipes
+        part = part.strip()
         if ":" in part:
             key, value = part.split(":", 1)
             params[key.strip()] = value.strip()
@@ -54,6 +57,13 @@ def parse_image_caption(caption: str) -> dict[str, str]:
             if part:
                 params[part.strip()] = "true"
     return params
+
+
+def _quote_param(value: str) -> str:
+    """Quote a value for a Liquid include tag, choosing quotes to avoid escaping."""
+    if '"' in value:
+        return f"'{value}'"
+    return f'"{value}"'
 
 
 def build_figure_include(src: str, params: dict[str, str]) -> str:
@@ -66,11 +76,11 @@ def build_figure_include(src: str, params: dict[str, str]) -> str:
     param_order = ["alt", "caption", "link", "autolink", "width", "style"]
     for key in param_order:
         if key in params:
-            parts.append(f'{key}="{params[key]}"')
+            parts.append(f'{key}={_quote_param(params[key])}')
     # Any remaining params not in the standard order
     for key, value in params.items():
         if key not in param_order:
-            parts.append(f'{key}="{value}"')
+            parts.append(f'{key}={_quote_param(value)}')
 
     return '{%% include figure.html %s %%}' % " ".join(parts)
 
@@ -100,7 +110,7 @@ def apply_transforms(markdown: str) -> tuple[str, list[str]]:
 
     # Transform 2: images → figure includes
     # Match markdown images: ![alt](url)
-    img_pattern = re.compile(r'^!\[([^\]]*)\]\(([^)]+)\)\s*$', re.MULTILINE)
+    img_pattern = re.compile(r'^[ \t]*!\[([^\]]*)\]\(([^)]+)\)\s*$', re.MULTILINE)
 
     def transform_image(match: re.Match) -> str:
         alt_text = match.group(1)
@@ -110,23 +120,72 @@ def apply_transforms(markdown: str) -> tuple[str, list[str]]:
 
     markdown = img_pattern.sub(transform_image, markdown)
 
+    # Transform 3: raw code blocks → inline content (strip fences)
+    # Allows leading whitespace (tabs/spaces) for fences inside columns.
+    # Runs before block spacing and columns so content is unwrapped first.
+    markdown = re.sub(
+        r'^[ \t]*```(?:raw|plain text|plaintext|text)\n(.*?)[ \t]*```',
+        lambda m: m.group(1).rstrip('\n'),
+        markdown,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+
+    # Transform 4: columns → div.columns layout
+    # Runs after raw transform so column contents are already unwrapped.
+    markdown = _transform_columns(markdown)
+
     # Normalize block spacing: ensure blank lines between blocks.
     # Notion's markdown API uses single \n between blocks, but Jekyll/kramdown
     # needs \n\n to treat them as separate block-level elements.
     # Process only outside of fenced code blocks to preserve their formatting.
     markdown = _add_block_spacing(markdown)
 
-    # Transform 3: raw code blocks → inline content (strip fences)
-    # Matches "raw", "plain text", "plaintext", "text" language tags.
-    # Runs after block spacing so the raw content's internal newlines are preserved.
-    markdown = re.sub(
-        r'^```(?:raw|plain text|plaintext|text)\n(.*?)```$',
-        lambda m: m.group(1).rstrip('\n'),
-        markdown,
-        flags=re.MULTILINE | re.DOTALL,
-    )
+    # Strip <unknown> tags (Notion embed blocks the API can't convert)
+    unknown_tags = re.findall(r'<unknown\s[^>]*alt="([^"]*)"[^>]*/>', markdown)
+    if unknown_tags:
+        unknowns.extend(f"unsupported embed: {alt}" for alt in unknown_tags)
+    markdown = re.sub(r'<unknown\s[^>]*/>\n?', '', markdown)
+
+    # Strip <empty-block/> tags
+    markdown = re.sub(r'<empty-block/>\n?', '', markdown)
 
     return markdown, unknowns
+
+
+_COLUMN_COUNT_WORDS = {1: "one", 2: "two", 3: "three", 4: "four"}
+
+
+def _transform_columns(markdown: str) -> str:
+    """Convert Notion <columns> XML to div.columns HTML layout."""
+
+    def replace_columns(match: re.Match) -> str:
+        inner = match.group(1)
+        # Extract each <column> content
+        columns = re.findall(
+            r'<column>\s*(.*?)\s*</column>',
+            inner,
+            flags=re.DOTALL,
+        )
+        count_word = _COLUMN_COUNT_WORDS.get(len(columns), str(len(columns)))
+        parts = [f'<div class="columns {count_word}">']
+        for col in columns:
+            # Strip leading tabs from Notion's column indentation
+            lines = col.strip().splitlines()
+            lines = [line.lstrip('\t') for line in lines]
+            content = '\n'.join(lines)
+            parts.append(f'    <div class="column">')
+            for line in content.splitlines():
+                parts.append(f'        {line}' if line.strip() else '')
+            parts.append(f'    </div>')
+        parts.append('</div>')
+        return '\n'.join(parts)
+
+    return re.sub(
+        r'<columns>\s*(.*?)\s*</columns>',
+        replace_columns,
+        markdown,
+        flags=re.DOTALL,
+    )
 
 
 def _add_block_spacing(markdown: str) -> str:

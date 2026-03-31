@@ -10,6 +10,7 @@ Usage:
 
 import argparse
 import os
+import re
 from pathlib import Path
 
 import httpx
@@ -109,6 +110,103 @@ def fetch_page_markdown(token: str, api_version: str, page_id: str) -> dict:
     )
     r.raise_for_status()
     return r.json()
+
+
+# ---------------------------------------------------------------------------
+# Unknown embed resolution
+# ---------------------------------------------------------------------------
+
+# Embed types we know how to handle, keyed by alt text from <unknown> tags
+_TWEET_URL_RE = re.compile(r'https?://(?:x\.com|twitter\.com)/\w+/status/(\d+)')
+
+
+def _clean_embed_url(url: str) -> str:
+    """Strip tracking params from embed URLs and normalize domains."""
+    url = url.split("?")[0]
+    # Twitter widgets.js requires twitter.com, not x.com
+    url = url.replace("https://x.com/", "https://twitter.com/")
+    return url
+
+
+def _extract_caption(block: dict) -> str:
+    """Extract plain text from a block's caption rich_text array."""
+    caption_parts = block.get(block["type"], {}).get("caption", [])
+    return "".join(part.get("plain_text", "") for part in caption_parts)
+
+
+def _build_tweet_include(url: str, caption: str) -> str:
+    """Build a tweet include tag, optionally with text and author from caption.
+
+    Caption format: "tweet text\\n\\n- Author Name (@handle)"
+    """
+    parts = [f'url="{url}"']
+
+    if caption:
+        # Split on last "- Author" line
+        lines = caption.rstrip().rsplit("\n", 1)
+        if len(lines) == 2 and lines[1].strip().startswith("- "):
+            text = lines[0].strip().replace("\n", " ")
+            author = lines[1].strip()[2:]  # strip "- " prefix
+            parts.append(f'text="{text}"')
+            parts.append(f'author="{author}"')
+        else:
+            text = caption.strip().replace("\n", " ")
+            parts.append(f'text="{text}"')
+
+    return '{%% include tweet.html %s %%}' % " ".join(parts)
+
+
+def resolve_unknown_embeds(
+    markdown: str,
+    unknown_block_ids: list[str],
+    token: str,
+    api_version: str,
+) -> str:
+    """Fetch unknown embed blocks and replace <unknown> tags with rendered output.
+
+    Known embed types (tweets, etc.) get transformed. Unknown ones are left as-is
+    for the transform pipeline to flag.
+    """
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Notion-Version": api_version,
+    }
+
+    for block_id in unknown_block_ids:
+        throttle()
+        r = httpx.get(
+            f"https://api.notion.com/v1/blocks/{block_id}",
+            headers=headers,
+            timeout=30,
+        )
+        if r.status_code != 200:
+            continue
+
+        block = r.json()
+        block_type = block.get("type")
+        if block_type != "embed":
+            continue
+
+        embed_url = block.get("embed", {}).get("url", "")
+        clean_url = _clean_embed_url(embed_url)
+
+        # Find the <unknown> tag for this block ID
+        # The URL in the tag contains the block ID (without hyphens)
+        block_id_nohyphens = block_id.replace("-", "")
+        unknown_pattern = re.compile(
+            rf'<unknown\s[^>]*url="[^"]*{block_id_nohyphens}[^"]*"[^>]*alt="([^"]*)"[^>]*/>'
+        )
+        match = unknown_pattern.search(markdown)
+        if not match:
+            continue
+
+        alt = match.group(1)
+        if alt == "tweet" and _TWEET_URL_RE.search(embed_url):
+            caption = _extract_caption(block)
+            replacement = _build_tweet_include(clean_url, caption)
+            markdown = markdown[:match.start()] + replacement + markdown[match.end():]
+
+    return markdown
 
 
 # ---------------------------------------------------------------------------
@@ -325,10 +423,12 @@ def sync_post(
     # Fetch markdown
     md_response = fetch_page_markdown(token, api_version, post["notion_id"])
 
-    if md_response.get("unknown_block_ids"):
-        return f"unsupported blocks: {len(md_response['unknown_block_ids'])} unknown block(s)"
-
     markdown = md_response.get("markdown", "")
+
+    # Resolve <unknown> embed blocks by fetching their actual URLs from the API
+    unknown_ids = md_response.get("unknown_block_ids", [])
+    if unknown_ids:
+        markdown = resolve_unknown_embeds(markdown, unknown_ids, token, api_version)
 
     # Download inline images and rewrite URLs
     posts_img_dir = REPO_ROOT / "assets" / "img" / "posts"
