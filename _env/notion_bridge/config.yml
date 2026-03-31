@@ -9,3 +9,6 @@ site:
   projects_dir: "_landing-projects"
   post_thumbnails_dir: "assets/img/post-thumbnails"
   proj_thumbnails_dir: "assets/img/proj-thumbnails"
+
+block_transforms:
+  divider: "{% include section-break.html %}"

@@ -5,153 +5,23 @@ Reads _posts/ and _landing-projects/ frontmatter, checks for existing Notion pag
 by slug, and creates missing ones with properties + covers + relations.
 
 Usage:
-    op run --env-file=_env/.env -- uv run python3 _env/notion_bridge/backfill.py [--dry-run]
+    op run --env-file=_env/.env -- uv run --project _env/notion_bridge python3 _env/notion_bridge/backfill.py [--dry-run]
 """
 
 import argparse
 import os
 import re
-import time
-from pathlib import Path
 
-import httpx
-import frontmatter
-import yaml
 from notion_client import Client
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
-
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-CONFIG_PATH = Path(__file__).resolve().parent / "config.yml"
-
-
-def load_config():
-    with open(CONFIG_PATH) as f:
-        return yaml.safe_load(f)
+from config import load_config, REPO_ROOT
+from notion_api import throttled_request, get_pages_by_slug, build_cover_url
+from jekyll import parse_posts, parse_projects
 
 
 # ---------------------------------------------------------------------------
-# Jekyll parsing
+# Notion page creation (backfill-specific)
 # ---------------------------------------------------------------------------
-
-
-def parse_jekyll_posts(posts_dir: Path) -> list[dict]:
-    """Parse all _posts/*.md files and return frontmatter data."""
-    posts = []
-    for f in sorted(posts_dir.glob("*.md")):
-        post = frontmatter.load(f)
-        stem = f.stem  # e.g., "2023-12-01-wrapped-sound-town"
-        m = re.match(r"(\d{4}-\d{2}-\d{2})-(.+)", stem)
-        if not m:
-            print(f"  ⚠ Skipping {f.name}: can't parse date from filename")
-            continue
-        date_str, slug = m.groups()
-        posts.append({
-            "filename": f.name,
-            "stem": stem,
-            "slug": slug,
-            "date": date_str,
-            "title": post.get("title", ""),
-            "reroute_url": post.get("reroute-url"),
-            "related_proj": post.get("related-proj"),
-            "thumbnail": post.get("thumbnail"),
-            "draft": post.get("draft", False),
-        })
-    return posts
-
-
-def parse_jekyll_projects(projects_dir: Path) -> list[dict]:
-    """Parse all _landing-projects/*.md files and return frontmatter data."""
-    projects = []
-    for f in sorted(projects_dir.glob("*.md")):
-        proj = frontmatter.load(f)
-        slug = f.stem
-        projects.append({
-            "filename": f.name,
-            "slug": slug,
-            "title": proj.get("title", ""),
-            "landing_order": proj.get("landing-order"),
-            "landing_img": proj.get("landing-img"),
-            "landing_large": proj.get("landing-large", False),
-            "reroute_url": proj.get("reroute-url"),
-            "related_post": proj.get("related-post"),
-        })
-    return projects
-
-
-# ---------------------------------------------------------------------------
-# Notion helpers
-# ---------------------------------------------------------------------------
-
-# Throttle to ~3 requests/sec
-_last_request_time = 0.0
-
-
-def throttle():
-    global _last_request_time
-    elapsed = time.time() - _last_request_time
-    if elapsed < 0.35:
-        time.sleep(0.35 - elapsed)
-    _last_request_time = time.time()
-
-
-def throttled_request(fn, *args, **kwargs):
-    throttle()
-    return fn(*args, **kwargs)
-
-
-def query_notion_database(token: str, db_id: str) -> list[dict]:
-    """Query all pages in a Notion DB using the REST API directly."""
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Notion-Version": "2022-06-28",
-        "Content-Type": "application/json",
-    }
-    pages = []
-    cursor = None
-    while True:
-        body = {"page_size": 100}
-        if cursor:
-            body["start_cursor"] = cursor
-        throttle()
-        r = httpx.post(
-            f"https://api.notion.com/v1/databases/{db_id}/query",
-            headers=headers,
-            json=body,
-        )
-        r.raise_for_status()
-        data = r.json()
-        pages.extend(data["results"])
-        if not data.get("has_more"):
-            break
-        cursor = data["next_cursor"]
-    return pages
-
-
-def get_existing_notion_pages(token: str, db_id: str) -> dict[str, dict]:
-    """Query all pages in a Notion DB and return a dict keyed by slug."""
-    results = query_notion_database(token, db_id)
-    pages = {}
-    for page in results:
-        slug_prop = page["properties"].get("Slug", {})
-        rich_text = slug_prop.get("rich_text", [])
-        if rich_text:
-            slug = rich_text[0]["plain_text"]
-            pages[slug] = page
-    return pages
-
-
-def build_cover_url(site_url: str, img_path: str | None) -> str | None:
-    """Convert a local image path to a full URL on the live site."""
-    if not img_path:
-        return None
-    # Some paths are already absolute URLs
-    if img_path.startswith("http"):
-        return img_path
-    # Strip leading slash and build URL
-    return f"{site_url}/{img_path.lstrip('/')}"
 
 
 def create_post_page(
@@ -170,7 +40,6 @@ def create_post_page(
         "Draft?": {"checkbox": post["draft"]},
     }
     if post["reroute_url"]:
-        # Resolve relative URLs to absolute for Notion
         url = post["reroute_url"]
         if url.startswith("/"):
             url = f"{site_url}{url}"
@@ -255,18 +124,15 @@ def main():
     notion = Client(auth=token)
 
     # Parse Jekyll files
-    posts = parse_jekyll_posts(REPO_ROOT / config["site"]["posts_dir"])
-    projects = parse_jekyll_projects(REPO_ROOT / config["site"]["projects_dir"])
+    posts = parse_posts(REPO_ROOT / config["site"]["posts_dir"])
+    projects = parse_projects(REPO_ROOT / config["site"]["projects_dir"])
     print(f"Found {len(posts)} posts and {len(projects)} projects in Jekyll repo\n")
 
     # Get existing Notion pages (always fetch, even in dry-run, for accurate counts)
     print("Fetching existing Notion pages...")
-    existing_posts = get_existing_notion_pages(token, post_db_id)
-    existing_projects = get_existing_notion_pages(token, proj_db_id)
+    existing_posts = get_pages_by_slug(token, post_db_id)
+    existing_projects = get_pages_by_slug(token, proj_db_id)
     print(f"  {len(existing_posts)} posts and {len(existing_projects)} projects already in Notion\n")
-
-    # Build slug -> project mapping for relation resolution
-    project_by_slug = {p["slug"]: p for p in projects}
 
     # Phase 1: Create project pages first (posts may reference them)
     print("--- PROJECTS ---")
@@ -310,7 +176,6 @@ def main():
     print()
 
     # Phase 3: Back-patch project relations to posts
-    # (projects created in Phase 1 didn't have post IDs yet for related-post)
     print("--- LINKING PROJECTS → POSTS ---")
     linked = 0
     for proj in projects:
