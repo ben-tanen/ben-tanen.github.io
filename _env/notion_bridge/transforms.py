@@ -116,6 +116,16 @@ def apply_transforms(markdown: str) -> tuple[str, list[str]]:
     # Process only outside of fenced code blocks to preserve their formatting.
     markdown = _add_block_spacing(markdown)
 
+    # Transform 3: raw code blocks → inline content (strip fences)
+    # Matches "raw", "plain text", "plaintext", "text" language tags.
+    # Runs after block spacing so the raw content's internal newlines are preserved.
+    markdown = re.sub(
+        r'^```(?:raw|plain text|plaintext|text)\n(.*?)```$',
+        lambda m: m.group(1).rstrip('\n'),
+        markdown,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+
     return markdown, unknowns
 
 
