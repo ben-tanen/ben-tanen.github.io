@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Notion CMS bridge for ben-tanen.github.io"
 requires-python = ">=3.11"
 dependencies = [
+    "markdown>=3.10.2",
     "notion-client>=2.0.0",
     "python-frontmatter>=1.0.0",
     "pyyaml>=6.0",

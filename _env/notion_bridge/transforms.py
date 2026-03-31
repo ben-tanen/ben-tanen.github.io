@@ -51,7 +51,12 @@ def parse_image_caption(caption: str) -> dict[str, str]:
         part = part.strip()
         if ":" in part:
             key, value = part.split(":", 1)
-            params[key.strip()] = value.strip()
+            value = value.strip()
+            # Strip markdown link syntax: [text](url) → url
+            md_link = re.match(r'^\[([^\]]*)\]\(([^)]+)\)$', value)
+            if md_link:
+                value = md_link.group(2)
+            params[key.strip()] = value
         else:
             # Bare key (boolean flag)
             if part:
@@ -90,8 +95,16 @@ def build_figure_include(src: str, params: dict[str, str]) -> str:
 # ---------------------------------------------------------------------------
 
 
-def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]:
+def apply_transforms(
+    markdown: str,
+    site_url: str = "",
+    post_stem_by_page_id: dict[str, str] | None = None,
+) -> tuple[str, list[str]]:
     """Apply all block transforms to markdown content.
+
+    Args:
+        post_stem_by_page_id: map of Notion page ID (no hyphens) → Jekyll filename
+            stem (e.g. "2022-09-27-howdy-update"). Used to resolve inter-post links.
 
     Returns (transformed_markdown, list_of_unknown_block_descriptions).
     """
@@ -110,7 +123,9 @@ def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]
 
     # Transform 2: images → figure includes
     # Match markdown images: ![alt](url)
-    img_pattern = re.compile(r'^[ \t]*!\[([^\]]*)\]\(([^)]+)\)\s*$', re.MULTILINE)
+    # Alt text group handles one level of bracket nesting (for markdown links
+    # inside Notion image captions, e.g. link: [text](url) | width: 600)
+    img_pattern = re.compile(r'^[ \t]*!\[((?:[^\[\]]|\[[^\]]*\])*)\]\(([^)]+)\)\s*$', re.MULTILINE)
 
     def transform_image(match: re.Match) -> str:
         alt_text = match.group(1)
@@ -131,7 +146,7 @@ def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]
     # Allows leading whitespace (tabs/spaces) for fences inside columns.
     markdown = re.sub(
         r'^[ \t]*```(?:raw|plain text|plaintext|text)\n(.*?)[ \t]*```',
-        lambda m: m.group(1).rstrip('\n'),
+        lambda m: '\n' + m.group(1).rstrip('\n'),
         markdown,
         flags=re.MULTILINE | re.DOTALL,
     )
@@ -156,7 +171,37 @@ def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]
         markdown = markdown.replace(f"]({site_url}/", "](/")
         markdown = markdown.replace(f'href="{site_url}/', 'href="/')
 
-    # Transform 6: footnote markers → <span> tags
+    # Transform 6: merge fragmented italic/bold markers around links
+    # Notion's markdown API breaks *text [link](url) text* into
+    # *text *[*link*](url)* text* — merge them back together.
+    # Pattern matches the exact fragmentation: *[*...*](url)* or **[**...**](url)**
+    markdown = re.sub(
+        r'(\*{1,2})\[(\1)(.*?)\2\]\(([^)]+)\)\1',
+        r'[\3](\4)',
+        markdown,
+    )
+
+    # Transform 7: resolve Notion page links
+    # Notion markdown exports inter-page links as (/hex-id?pvs=25)
+    if post_stem_by_page_id is None:
+        post_stem_by_page_id = {}
+    notion_link_pattern = re.compile(r'\[([^\]]*)\]\(/([0-9a-f]{32})\?[^)]*\)')
+    unresolved_notion_links = []
+
+    def resolve_notion_link(match: re.Match) -> str:
+        text = match.group(1)
+        page_id = match.group(2)
+        stem = post_stem_by_page_id.get(page_id)
+        if stem:
+            return f'[{text}]({{% post_url {stem} %}})'
+        unresolved_notion_links.append(page_id)
+        return match.group(0)
+
+    markdown = notion_link_pattern.sub(resolve_notion_link, markdown)
+    if unresolved_notion_links:
+        unknowns.append(f"unresolved Notion page links: {', '.join(unresolved_notion_links)}")
+
+    # Transform 7: footnote markers → <span> tags
     # `{{footnote-N}}` content `{{end-footnote}}` → <span id="footnote-N" class="footnote">content</span>
     # Markers are wrapped in backticks in Notion to prevent formatting interference
     markdown = re.sub(
@@ -172,8 +217,9 @@ def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]
 _COLUMN_COUNT_WORDS = {1: "one", 2: "two", 3: "three", 4: "four"}
 
 
-def _transform_columns(markdown: str) -> str:
+def _transform_columns(text: str) -> str:
     """Convert Notion <columns> XML to div.columns HTML layout."""
+    import markdown as md
 
     def replace_columns(match: re.Match) -> str:
         inner = match.group(1)
@@ -190,6 +236,11 @@ def _transform_columns(markdown: str) -> str:
             lines = col.strip().splitlines()
             lines = [line.lstrip('\t') for line in lines]
             content = '\n'.join(lines)
+            # If column has markdown (not figure includes or raw HTML),
+            # render it to HTML so it works inside HTML divs
+            is_markdown = '{%' not in content and '<' not in content
+            if is_markdown:
+                content = md.markdown(content)
             parts.append(f'    <div class="column">')
             for line in content.splitlines():
                 parts.append(f'        {line}' if line.strip() else '')
@@ -200,7 +251,7 @@ def _transform_columns(markdown: str) -> str:
     return re.sub(
         r'<columns>\s*(.*?)\s*</columns>',
         replace_columns,
-        markdown,
+        text,
         flags=re.DOTALL,
     )
 
@@ -247,11 +298,31 @@ def _build_methodology(content: str) -> str:
 {{% include methodology-note.html content=methodology-note %}}"""
 
 
+_LIST_ITEM_RE = re.compile(r'^[ \t]*[-*+] |^[ \t]*\d+\. ')
+
+
 def _add_block_spacing(markdown: str) -> str:
-    """Add blank lines between blocks, but leave code block interiors untouched."""
+    """Add blank lines between blocks, but leave code block interiors untouched.
+
+    Consecutive list items (at any depth) stay single-spaced to avoid kramdown
+    rendering them as "loose" lists with <p> tags.
+    """
     parts = markdown.split('```')
     for i in range(0, len(parts), 2):
-        # Even-indexed parts are outside code fences — normalize spacing
-        parts[i] = re.sub(r'\n(?!\n)', '\n\n', parts[i])
+        lines = parts[i].split('\n')
+        result = [lines[0]] if lines else []
+        for j in range(1, len(lines)):
+            prev_is_list = bool(_LIST_ITEM_RE.match(lines[j - 1]))
+            curr_is_list = bool(_LIST_ITEM_RE.match(lines[j]))
+            # Keep single newline between consecutive list items
+            if prev_is_list and curr_is_list:
+                result.append(lines[j])
+            # Don't double already-blank lines
+            elif lines[j] == '' or lines[j - 1] == '':
+                result.append(lines[j])
+            else:
+                result.append('')
+                result.append(lines[j])
+        parts[i] = '\n'.join(result)
         parts[i] = re.sub(r'\n{3,}', '\n\n', parts[i])
     return '```'.join(parts)

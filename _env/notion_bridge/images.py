@@ -93,7 +93,9 @@ def rewrite_image_urls(
     Errors are per-image; the caller decides whether to hard-block.
     """
     errors = []
-    img_pattern = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
+    # Alt text group handles one level of bracket nesting (for markdown links
+    # inside Notion image captions, e.g. link: [text](url) | width: 600)
+    img_pattern = re.compile(r'!\[((?:[^\[\]]|\[[^\]]*\])*)\]\(([^)]+)\)')
 
     def replace_image(match: re.Match) -> str:
         alt_text = match.group(1)

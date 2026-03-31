@@ -397,6 +397,7 @@ def sync_post(
     meta: dict,
     dirty_files: set[str],
     project_slug_by_id: dict[str, str],
+    post_stem_by_page_id: dict[str, str] | None = None,
     dry_run: bool = False,
 ) -> str | None:
     """Sync a single post from Notion to Jekyll.
@@ -436,8 +437,12 @@ def sync_post(
     if img_errors:
         return f"image download failed: {'; '.join(img_errors)}"
 
-    # Apply block transforms (divider → section-break, image → figure include)
-    markdown, unknowns = apply_transforms(markdown, site_url=config["site"]["url"])
+    # Apply block transforms (divider → section-break, image → figure include, etc.)
+    markdown, unknowns = apply_transforms(
+        markdown,
+        site_url=config["site"]["url"],
+        post_stem_by_page_id=post_stem_by_page_id,
+    )
     if unknowns:
         return f"unsupported blocks after transform: {unknowns}"
 
@@ -558,31 +563,45 @@ def main():
         if last_edited_after:
             print(f"Filtering to pages edited after {last_edited_after}")
 
-    # Fetch Notion pages (filtered at the API level when possible)
+    # Fetch ALL pages (unfiltered) to build complete lookup maps.
+    # Needed for inter-post link resolution (Notion page links → {% post_url %})
+    # and relation resolution (post → project, project → post).
     print("Fetching Notion pages...")
-    post_pages = get_pages_by_slug(
-        token, post_db_id,
-        last_edited_after=last_edited_after,
-        slug_filter=slug_filter,
-    )
-    project_pages = get_pages_by_slug(
-        token, proj_db_id,
-        last_edited_after=last_edited_after,
-        slug_filter=slug_filter,
-    )
-    print(f"  {len(post_pages)} posts, {len(project_pages)} projects from Notion\n")
-
-    # Extract properties from all pages
-    posts = [extract_post_properties(p) for p in post_pages.values()]
-    projects = [extract_project_properties(p) for p in project_pages.values()]
+    all_post_pages = get_pages_by_slug(token, post_db_id)
+    all_project_pages = get_pages_by_slug(token, proj_db_id)
+    all_posts = [extract_post_properties(p) for p in all_post_pages.values()]
+    all_projects = [extract_project_properties(p) for p in all_project_pages.values()]
 
     # Build lookup maps for relation resolution
-    # project: notion_id → slug
-    project_slug_by_id = {p["notion_id"]: p["slug"] for p in projects}
-    # post: notion_id → filename stem (e.g., "2026-02-02-sundance-tickets")
+    project_slug_by_id = {p["notion_id"]: p["slug"] for p in all_projects}
     post_stem_by_id = {
-        p["notion_id"]: f"{p['date'][:10]}-{p['slug']}" for p in posts if p["date"]
+        p["notion_id"]: f"{p['date'][:10]}-{p['slug']}" for p in all_posts if p["date"]
     }
+    # page_id without hyphens → filename stem (for Notion markdown page links)
+    post_stem_by_page_id = {
+        pid.replace("-", ""): stem for pid, stem in post_stem_by_id.items()
+    }
+
+    # Filter to pages that need syncing
+    if slug_filter or last_edited_after:
+        post_pages = get_pages_by_slug(
+            token, post_db_id,
+            last_edited_after=last_edited_after,
+            slug_filter=slug_filter,
+        )
+        project_pages = get_pages_by_slug(
+            token, proj_db_id,
+            last_edited_after=last_edited_after,
+            slug_filter=slug_filter,
+        )
+    else:
+        post_pages = all_post_pages
+        project_pages = all_project_pages
+    print(f"  {len(post_pages)} posts, {len(project_pages)} projects from Notion\n")
+
+    # Extract properties from pages to sync
+    posts = [extract_post_properties(p) for p in post_pages.values()]
+    projects = [extract_project_properties(p) for p in project_pages.values()]
 
     # Check for slug collisions
     post_collisions = check_slug_collisions(posts, "post")
@@ -633,7 +652,8 @@ def main():
 
             error = sync_post(
                 post, token, api_version, config, meta, dirty_files,
-                project_slug_by_id, dry_run=args.dry_run,
+                project_slug_by_id, post_stem_by_page_id,
+                dry_run=args.dry_run,
             )
             if error:
                 skipped.append(("post", post["slug"], error))
