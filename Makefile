@@ -46,9 +46,11 @@ endif
 #   make run                           serve with watch + livereload (default)
 #   make run DRAFTS=1                  include _drafts/ posts
 #   make run NOWATCH=1                 disable watch and livereload
+#   make run VERBOSE=1                 verbose output
 run:
 	op run --env-file=_env/.env -- jekyll serve \
 		$(if $(NOWATCH),,-w --livereload) \
-		$(if $(DRAFTS),--drafts)
+		$(if $(DRAFTS),--drafts) \
+		$(if $(VERBOSE),--verbose)
 
 .PHONY: sync test run

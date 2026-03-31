@@ -14,6 +14,7 @@ bundle install
 make run
 make run DRAFTS=1          # include _drafts/ posts
 make run NOWATCH=1         # disable watch and livereload
+make run VERBOSE=1         # verbose output
 ```
 
 ### Notion CMS sync
