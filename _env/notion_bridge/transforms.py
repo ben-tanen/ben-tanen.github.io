@@ -120,9 +120,15 @@ def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]
 
     markdown = img_pattern.sub(transform_image, markdown)
 
+    # Normalize block spacing: ensure blank lines between blocks.
+    # Notion's markdown API uses single \n between blocks, but Jekyll/kramdown
+    # needs \n\n to treat them as separate block-level elements.
+    # Process only outside of fenced code blocks to preserve their formatting.
+    markdown = _add_block_spacing(markdown)
+
     # Transform 3: raw code blocks → inline content (strip fences)
+    # Runs AFTER block spacing so raw content's internal newlines are preserved.
     # Allows leading whitespace (tabs/spaces) for fences inside columns.
-    # Runs before block spacing and columns so content is unwrapped first.
     markdown = re.sub(
         r'^[ \t]*```(?:raw|plain text|plaintext|text)\n(.*?)[ \t]*```',
         lambda m: m.group(1).rstrip('\n'),
@@ -131,14 +137,7 @@ def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]
     )
 
     # Transform 4: columns → div.columns layout
-    # Runs after raw transform so column contents are already unwrapped.
     markdown = _transform_columns(markdown)
-
-    # Normalize block spacing: ensure blank lines between blocks.
-    # Notion's markdown API uses single \n between blocks, but Jekyll/kramdown
-    # needs \n\n to treat them as separate block-level elements.
-    # Process only outside of fenced code blocks to preserve their formatting.
-    markdown = _add_block_spacing(markdown)
 
     # Transform 5: callouts with known emojis
     markdown = _transform_callouts(markdown)
@@ -156,6 +155,16 @@ def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]
     if site_url:
         markdown = markdown.replace(f"]({site_url}/", "](/")
         markdown = markdown.replace(f'href="{site_url}/', 'href="/')
+
+    # Transform 6: footnote markers → <span> tags
+    # `{{footnote-N}}` content `{{end-footnote}}` → <span id="footnote-N" class="footnote">content</span>
+    # Markers are wrapped in backticks in Notion to prevent formatting interference
+    markdown = re.sub(
+        r'`\{\{footnote-(\w+)\}\}`(.*?)`\{\{end-footnote\}\}`',
+        r'<span id="footnote-\1" class="footnote">\2</span>',
+        markdown,
+        flags=re.DOTALL,
+    )
 
     return markdown, unknowns
 
