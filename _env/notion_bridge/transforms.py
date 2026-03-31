@@ -90,7 +90,7 @@ def build_figure_include(src: str, params: dict[str, str]) -> str:
 # ---------------------------------------------------------------------------
 
 
-def apply_transforms(markdown: str) -> tuple[str, list[str]]:
+def apply_transforms(markdown: str, site_url: str = "") -> tuple[str, list[str]]:
     """Apply all block transforms to markdown content.
 
     Returns (transformed_markdown, list_of_unknown_block_descriptions).
@@ -140,6 +140,9 @@ def apply_transforms(markdown: str) -> tuple[str, list[str]]:
     # Process only outside of fenced code blocks to preserve their formatting.
     markdown = _add_block_spacing(markdown)
 
+    # Transform 5: callouts with known emojis
+    markdown = _transform_callouts(markdown)
+
     # Strip <unknown> tags (Notion embed blocks the API can't convert)
     unknown_tags = re.findall(r'<unknown\s[^>]*alt="([^"]*)"[^>]*/>', markdown)
     if unknown_tags:
@@ -148,6 +151,11 @@ def apply_transforms(markdown: str) -> tuple[str, list[str]]:
 
     # Strip <empty-block/> tags
     markdown = re.sub(r'<empty-block/>\n?', '', markdown)
+
+    # Localize absolute URLs back to relative paths
+    if site_url:
+        markdown = markdown.replace(f"]({site_url}/", "](/")
+        markdown = markdown.replace(f'href="{site_url}/', 'href="/')
 
     return markdown, unknowns
 
@@ -186,6 +194,48 @@ def _transform_columns(markdown: str) -> str:
         markdown,
         flags=re.DOTALL,
     )
+
+
+# Callout emoji → transform handler mapping
+_CALLOUT_TRANSFORMS = {
+    "🔍": "methodology",
+}
+
+
+def _transform_callouts(markdown: str) -> str:
+    """Convert Notion callout blocks with known emojis to Jekyll HTML."""
+
+    def replace_callout(match: re.Match) -> str:
+        icon = match.group(1)
+        content = match.group(2).strip()
+
+        handler = _CALLOUT_TRANSFORMS.get(icon)
+        if not handler:
+            # Unknown callout — leave as-is (will render as plain text)
+            return match.group(0)
+
+        if handler == "methodology":
+            return _build_methodology(content)
+
+        return match.group(0)
+
+    return re.sub(
+        r'<callout\s+icon="([^"]*)"[^>]*>\s*(.*?)\s*</callout>',
+        replace_callout,
+        markdown,
+        flags=re.DOTALL,
+    )
+
+
+def _build_methodology(content: str) -> str:
+    """Build methodology section using Jekyll capture/include pattern."""
+    # Convert <br><br> to double newlines for paragraph separation
+    content = re.sub(r'<br>\s*<br>', '\n\n', content)
+    content = content.strip()
+    return f"""{{% capture methodology-note %}}
+{content}
+{{% endcapture %}}
+{{% include methodology-note.html content=methodology-note %}}"""
 
 
 def _add_block_spacing(markdown: str) -> str:

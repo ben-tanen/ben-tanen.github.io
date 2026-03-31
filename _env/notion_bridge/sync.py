@@ -437,7 +437,7 @@ def sync_post(
         return f"image download failed: {'; '.join(img_errors)}"
 
     # Apply block transforms (divider → section-break, image → figure include)
-    markdown, unknowns = apply_transforms(markdown)
+    markdown, unknowns = apply_transforms(markdown, site_url=config["site"]["url"])
     if unknowns:
         return f"unsupported blocks after transform: {unknowns}"
 
