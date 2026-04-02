@@ -6,6 +6,7 @@ notion:
 site:
   url: "https://ben-tanen.com"
   posts_dir: "_posts"
+  drafts_dir: "_drafts"
   projects_dir: "_landing-projects"
   post_thumbnails_dir: "assets/img/post-thumbnails"
   proj_thumbnails_dir: "assets/img/proj-thumbnails"

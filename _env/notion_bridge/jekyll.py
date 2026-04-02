@@ -31,6 +31,31 @@ def parse_posts(posts_dir: Path) -> list[dict]:
     return posts
 
 
+def parse_drafts(drafts_dir: Path) -> list[dict]:
+    """Parse all _drafts/*.md files and return frontmatter data."""
+    drafts = []
+    if not drafts_dir.exists():
+        return drafts
+    for f in sorted(drafts_dir.glob("*.md")):
+        post = frontmatter.load(f)
+        slug = f.stem  # drafts are just "slug.md", no date prefix
+        date_str = post.get("date")
+        if date_str:
+            date_str = str(date_str)[:10]
+        drafts.append({
+            "filename": f.name,
+            "stem": slug,
+            "slug": slug,
+            "date": date_str,
+            "title": post.get("title", ""),
+            "reroute_url": post.get("reroute-url"),
+            "related_proj": post.get("related-proj"),
+            "thumbnail": post.get("thumbnail"),
+            "draft": True,
+        })
+    return drafts
+
+
 def parse_projects(projects_dir: Path) -> list[dict]:
     """Parse all _landing-projects/*.md files and return frontmatter data."""
     projects = []

@@ -22,6 +22,7 @@ from sync_meta import (
     load_sync_meta,
     save_sync_meta,
     get_last_synced_at,
+    get_synced_status,
     get_oldest_sync_time,
     update_synced,
     page_needs_sync,
@@ -54,6 +55,12 @@ def _relation_ids(prop: dict) -> list[str]:
     return [r["id"] for r in prop.get("relation", [])]
 
 
+def _select_value(prop: dict) -> str | None:
+    """Extract name from a Notion select property."""
+    sel = prop.get("select")
+    return sel["name"] if sel else None
+
+
 def extract_post_properties(page: dict) -> dict:
     """Extract post properties from a Notion page."""
     props = page["properties"]
@@ -64,7 +71,7 @@ def extract_post_properties(page: dict) -> dict:
         "title": _title_value(props.get("Title", {})) or "",
         "slug": _rich_text_value(props.get("Slug", {})) or "",
         "date": date_prop["start"] if date_prop else None,
-        "draft": props.get("Draft?", {}).get("checkbox", False),
+        "status": _select_value(props.get("Status", {})) or "Draft",
         "reroute_url": props.get("Reroute URL", {}).get("url"),
         "related_project_ids": _relation_ids(props.get("Related Project", {})),
         "cover": page.get("cover"),
@@ -328,8 +335,8 @@ def write_jekyll_file(path: Path, frontmatter_data: dict, body: str = ""):
 def validate_post(post: dict) -> str | None:
     """Validate required post properties. Returns error string or None."""
     if not post["slug"]:
-        return f"post '{post['title']}' has no slug"
-    if not post["date"]:
+        return f"post '{post['title'] or post['notion_id']}' has no slug"
+    if not post["date"] and post["status"] == "Published":
         return f"post '{post['slug']}' has no date"
     if not post["title"]:
         return f"post with slug '{post['slug']}' has no title"
@@ -389,6 +396,36 @@ def check_slug_collisions(items: list[dict], label: str) -> dict[str, str]:
 # ---------------------------------------------------------------------------
 
 
+def _cleanup_old_post_file(post: dict, config: dict, meta: dict, dry_run: bool = False):
+    """Remove the old file when a post's status has changed.
+
+    Compares current status to the previously synced status and deletes
+    the file at the old location if the output path would differ.
+    """
+    prev_status = get_synced_status(meta, "posts", post["notion_id"])
+    if not prev_status or prev_status == post["status"]:
+        return
+
+    slug = post["slug"]
+    date_str = post["date"]
+    date_prefix = date_str[:10] if date_str else ""
+
+    # Resolve where the old file would have been
+    if prev_status == "Staged":
+        old_path = REPO_ROOT / config["site"]["drafts_dir"] / f"{slug}.md"
+    elif prev_status == "Published":
+        old_path = REPO_ROOT / config["site"]["posts_dir"] / f"{date_prefix}-{slug}.md"
+    else:
+        return  # was Draft — no file to clean up
+
+    if old_path.exists():
+        if dry_run:
+            print(f"  [DRY RUN] Would delete old file: {old_path.name}")
+        else:
+            old_path.unlink()
+            print(f"  ✓ Cleaned up old file: {old_path.name}")
+
+
 def sync_post(
     post: dict,
     token: str,
@@ -407,10 +444,11 @@ def sync_post(
     slug = post["slug"]
     date_str = post["date"]
 
-    # Determine output path — extract YYYY-MM-DD from date (may include time)
-    date_prefix = date_str[:10]  # "2026-02-02" from "2026-02-02" or "2026-02-02T12:00:00..."
-    if post["draft"]:
-        out_path = REPO_ROOT / config["site"]["posts_dir"].replace("_posts", "_drafts") / f"{slug}.md"
+    # Determine output path based on status
+    date_prefix = date_str[:10]
+    status = post["status"]
+    if status == "Staged":
+        out_path = REPO_ROOT / config["site"]["drafts_dir"] / f"{slug}.md"
     else:
         out_path = REPO_ROOT / config["site"]["posts_dir"] / f"{date_prefix}-{slug}.md"
 
@@ -469,15 +507,16 @@ def sync_post(
     # Build frontmatter and write
     fm_data = build_post_frontmatter(post, thumbnail_path, project_slug, site_url=config["site"]["url"])
 
+    rel_path = out_path.relative_to(REPO_ROOT)
     if dry_run:
-        print(f"  [DRY RUN] Would write post: {out_path.name}")
+        print(f"  [DRY RUN] Would write post: {rel_path}")
         return None
 
     write_jekyll_file(out_path, fm_data, markdown)
-    print(f"  ✓ Synced post: {out_path.name}")
+    print(f"  ✓ Synced post: {rel_path}")
 
     # Update sync metadata
-    update_synced(meta, "posts", post["notion_id"], slug)
+    update_synced(meta, "posts", post["notion_id"], slug, status=status)
     return None
 
 
@@ -641,13 +680,23 @@ def main():
             # Validation
             val_error = validate_post(post)
             if val_error:
-                skipped.append(("post", post["slug"] or post["notion_id"], val_error))
-                print(f"  ✗ Skipped {post['slug']}: {val_error}")
+                post_label = post["slug"] or post["title"] or post["notion_id"]
+                skipped.append(("post", post_label, val_error))
+                print(f"  ✗ Skipped {post_label}: {val_error}")
                 continue
 
             if post["slug"] in post_collisions:
                 skipped.append(("post", post["slug"], post_collisions[post["slug"]]))
                 print(f"  ✗ Skipped {post['slug']}: {post_collisions[post['slug']]}")
+                continue
+
+            # Clean up old file if status changed
+            _cleanup_old_post_file(post, config, meta, dry_run=args.dry_run)
+
+            # Skip Draft posts — don't sync, just record status
+            if post["status"] == "Draft":
+                update_synced(meta, "posts", post["notion_id"], post["slug"], status="Draft")
+                print(f"  ⊘ Skipped draft: {post['slug']}")
                 continue
 
             error = sync_post(

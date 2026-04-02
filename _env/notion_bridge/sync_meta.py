@@ -30,14 +30,22 @@ def get_last_synced_at(meta: dict, collection: str, page_id: str) -> str | None:
     return meta.get(collection, {}).get(page_id, {}).get("last_synced_at")
 
 
-def update_synced(meta: dict, collection: str, page_id: str, slug: str):
+def get_synced_status(meta: dict, collection: str, page_id: str) -> str | None:
+    """Get the last synced status for a page, or None if never synced."""
+    return meta.get(collection, {}).get(page_id, {}).get("status")
+
+
+def update_synced(meta: dict, collection: str, page_id: str, slug: str, status: str | None = None):
     """Mark a page as just synced (sets last_synced_at to now)."""
     if collection not in meta:
         meta[collection] = {}
-    meta[collection][page_id] = {
+    entry = {
         "slug": slug,
         "last_synced_at": datetime.now(timezone.utc).isoformat(),
     }
+    if status:
+        entry["status"] = status
+    meta[collection][page_id] = entry
 
 
 def get_oldest_sync_time(meta: dict) -> str | None:

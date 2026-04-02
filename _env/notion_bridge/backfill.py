@@ -16,7 +16,7 @@ from notion_client import Client
 
 from config import load_config, REPO_ROOT
 from notion_api import throttled_request, get_pages_by_slug, build_cover_url
-from jekyll import parse_posts, parse_projects
+from jekyll import parse_posts, parse_drafts, parse_projects
 
 
 # ---------------------------------------------------------------------------
@@ -36,9 +36,10 @@ def create_post_page(
     properties = {
         "Title": {"title": [{"text": {"content": post["title"]}}]},
         "Slug": {"rich_text": [{"text": {"content": post["slug"]}}]},
-        "Date": {"date": {"start": post["date"]}},
-        "Draft?": {"checkbox": post["draft"]},
+        "Status": {"select": {"name": "Staged" if post["draft"] else "Published"}},
     }
+    if post["date"]:
+        properties["Date"] = {"date": {"start": post["date"]}}
     if post["reroute_url"]:
         url = post["reroute_url"]
         if url.startswith("/"):
@@ -125,8 +126,10 @@ def main():
 
     # Parse Jekyll files
     posts = parse_posts(REPO_ROOT / config["site"]["posts_dir"])
+    drafts = parse_drafts(REPO_ROOT / config["site"]["drafts_dir"])
+    posts = posts + drafts
     projects = parse_projects(REPO_ROOT / config["site"]["projects_dir"])
-    print(f"Found {len(posts)} posts and {len(projects)} projects in Jekyll repo\n")
+    print(f"Found {len(posts)} posts ({len(drafts)} drafts) and {len(projects)} projects in Jekyll repo\n")
 
     # Get existing Notion pages (always fetch, even in dry-run, for accurate counts)
     print("Fetching existing Notion pages...")
