@@ -16,20 +16,16 @@ The first and probably the most important factor of any successful fantasy footb
 
 What these show is a visual representation of how strong each team was in a particular position and, as a whole, how well-balanced their team was. For example, if we look at Slick Rick, we see that he had the best RBs in the league (he generally played Christian McCaffery and Mark Ingram, who both had knockout seasons). However, he was somewhat weaker (relatively) in terms of defenses, though this is obviously one of the least significant positions. If we measure how strong each team is across all of these positions relative to the rest of the league, we can get a numerical measure of the overall team. For example, if we look at Slick Rick, strong RBs, WRs, and TE + medium QB + weak K and DST comes out to a team score of 6.86.
 
-<div><ul id="radar-chart-container">
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/1-slick-rick.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/2-team-silverhart.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/3-team-cadow.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/4-team-halvorsen.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/5-team-tanen.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/6-team-ario.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/7-rookie-of-the-year.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/8-i-am-for-real.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/9-nuke-city.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/10-ags-reckoning.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/11-stickshift-rick.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/12-revenge-tour.png" alt="" class="radar-chart-img"></li>
-</ul></div>
+{% assign teams = "slick-rick,team-silverhart,team-cadow,team-halvorsen,team-tanen,team-ario,rookie-of-the-year,i-am-for-real,nuke-city,ags-reckoning,stickshift-rick,revenge-tour" | split: "," %}
+<div>
+    <ul id="radar-chart-container">
+    {% for team in teams %}
+        <li>
+            <img src="/projects/fantasy-football/img/2019-radar-charts/{{ forloop.index }}-{{ team }}.png" alt="" class="radar-chart-img">
+        </li>
+    {% endfor %}
+    </ul>
+</div>
 
 What these show is that these measures of team strength align relatively closely to each team’s ultimate performance in the league. While not exact, those with higher team scores ended near the top of the rankings while those with lower scores ended near the bottom. There are obviously some exceptions and other factors that play into a season’s performance (some discussed below), but a strong and well-rounded team seems to be a substantial part.
 
@@ -48,7 +44,6 @@ Looking back on the season, I did relatively well when it came to setting my lin
 Diving into specifics, I was curious if there were any players that I consistently overplayed (played even if they weren’t the best) or underplayed (players that deserved to be played more than they did). When it comes to overplayed players, I played Tom Brady (QB) ten times throughout the season, which was a mistake 40% of the time. As a Patriots fan, I obviously am slightly biased towards TB12, but Tom also had a tough season that made it hard to predict when he’d make a good starter. On the other end of the spectrum, I definitely underplayed both Latavius Murray (RB) and Ronald Jones II (RB), who sat on my bench 13 and 12 weeks respectively even though they should have played in 40% of those weeks. Sorry Latavius and Ronald...
 
 Want to know who was never a mistake to play? Julio Jones. I played him 14 times and even though he didn’t have as killer of a season as in past years, he was worth the start each and every time. Absolute all-star.
-
 
 ### Effective waiver wire activity
 
@@ -81,40 +76,6 @@ All these numbers tell a pretty consistent story - I got quite lucky with my sch
 
 So how does a subpar football fan end up winning their fantasy football league? All it takes is a solid team, well-informed waiver wire pick-ups, near ideal rosters, and a hefty helping of luck. It also doesn’t hurt to have Julio Jones and Derrick Henry.
 
-<style>
-h3 {
-    color: #77bdee;
-}
-
-#radar-chart-container {
-    width: 100%;
-    padding: 0;
-}
-
-#radar-chart-container li {
-    list-style: none;
-    display: inline-block;
-    margin-right: 10px;
-    width: calc(33% - 13px);
-}
-
-.radar-chart-img {
-    width: 100%;
-    margin: 0;
-}
-
-@media (max-width: 950px) {
-    #radar-chart-container li {
-        width: calc(50% - 13px);
-    }
-}
-
-@media (max-width: 475px) {
-    #radar-chart-container li {
-        width: 100%;
-    }
-}
-
-</style>
+<link rel="stylesheet" href="projects/fantasy-football/css/2019-retrospective.style.css" />
 
 
