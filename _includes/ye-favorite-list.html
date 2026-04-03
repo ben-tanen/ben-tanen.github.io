@@ -5,7 +5,15 @@
         <div class="ye-fav-item">
             <div class="ye-fav-icon" style='background-image: url("/projects/ye-favorites/img/{{ include.year }}/{{ item.icon }}");'></div>
             <div class="ye-fav-text">
-                {% if item.title_html %}<p class="ye-fav-title">{{ item.title_html }}</p>{% else %}<a target="_blank" href="{{ item.link }}"><p class="ye-fav-title">{{ item.title }}</p></a>{% endif %}
+                {% if item.title_html %}
+                <p class="ye-fav-title {{ item.type }}">{{ item.title_html }}</p>
+                {% else %}
+                {% if item.link %}
+                <p class="ye-fav-title {{ item.type }}"><a target="_blank" href="{{ item.link }}">{{ item.title }}</a></p>
+                {% else %}
+                <p class="ye-fav-title {{ item.type }}">{{ item.title }}</p>
+                {% endif %}
+                {% endif %}
                 <p>
                     <i>{{ item.description }}</i>{% if item.commentary %} &middot; {{ item.commentary }}{% endif %}
                 </p>

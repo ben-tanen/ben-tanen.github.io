@@ -40,8 +40,45 @@ div.ye-fav-text p {
 p.ye-fav-title {
     font-size: 21px;
     font-weight: 400;
-    color: #77bdee;
     text-align: left;
+}
+
+p.ye-fav-title a {
+    color: inherit;
+    text-decoration-color: inherit;
+}
+
+p.ye-fav-title.article,
+p.ye-fav-title.book {
+    color: #F7A278;
+}
+
+p.ye-fav-title.game {
+    color: #331832;
+}
+
+p.ye-fav-title.film {
+    color: #114B5F;
+}
+
+p.ye-fav-title.music {
+    color: #35CE8D;
+}
+
+p.ye-fav-title.other {
+    color: black;
+}
+
+p.ye-fav-title.podcast {
+    color: #566531;
+}
+
+p.ye-fav-title.show {
+    color: #D81159;
+}
+
+p.ye-fav-title.video {
+    color: #77BDEE;
 }
 
 @media (max-width: 910px) {
