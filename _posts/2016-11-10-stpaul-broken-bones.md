@@ -11,38 +11,20 @@ Through some killer [freeform radio hook ups](http://www.wmfo.org/){:target="_bl
 
 Since I was lucky enough to get a photo pass to their show, I thought I'd also share some of my personal favorite photos. I'd like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!
 
-<style>
-    .photo-container {
-    }
-
-    .photo-container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
-
-    .sub-photo-container {
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-</style>
+<link rel="stylesheet" href="/projects/photography/css/photo-grid.css" />
 
 <div class='photo-container'>
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/SPABB4.jpg' />
+        <img src='/projects/photography/img/SPABB4.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/SPABB2.jpg' />
+        <img src='/projects/photography/img/SPABB2.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/SPABB3.jpg' />
-        <img src='/assets/img/posts/SPABB5.jpg' />
+        <img src='/projects/photography/img/SPABB3.jpg' />
+        <img src='/projects/photography/img/SPABB5.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/SPABB1.jpg' />
+        <img src='/projects/photography/img/SPABB1.jpg' />
     </div>
 </div>

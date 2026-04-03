@@ -11,67 +11,39 @@ Amazed by many of the works, I thought I'd share some of my personal favorites. 
 
 P.S. Since this isn't the [first]({% post_url 2016-04-26-photography %}) [time]({% post_url 2016-11-10-stpaul-broken-bones %}) I've posted about pictures I've taken, I decided to put together [a dedicated page](/photography) for some of my personal favorite photos. Feel free to check it out and enjoy!
 
-<style>
-    .photo-container {
-    }
-
-    .photo-container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
-
-    .sub-photo-container {
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    .sub-photo-container.wide {
-        width: calc(98% + 5px);
-    }
-
-</style>
+<link rel="stylesheet" href="/projects/photography/css/photo-grid.css" />
 
 <div class='photo-container'>
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-1.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-1.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-9.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-9.jpg' />
     </div>
-
     <div class='sub-photo-container wide'>
-        <img src="/assets/img/posts/LDN-streetart-2.jpg" />
+        <img src="/projects/photography/img/LDN-streetart-2.jpg" />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-7.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-7.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-3.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-3.jpg' />
     </div>
-
     <div class='sub-photo-container wide'>
-        <img src="/assets/img/posts/LDN-streetart-4.jpg" />
+        <img src="/projects/photography/img/LDN-streetart-4.jpg" />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-8.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-8.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-5.jpg' />
-        <img src='/assets/img/posts/LDN-streetart-6.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-5.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-6.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-10.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-10.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/LDN-streetart-11.jpg' />
+        <img src='/projects/photography/img/LDN-streetart-11.jpg' />
     </div>
 </div>
 
