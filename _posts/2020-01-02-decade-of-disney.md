@@ -12,7 +12,7 @@ related-proj:  decade-of-disney
         <p>Given the unprecedented and frankly somewhat scary implications of the Verge’s article, it’s worth exploring the meaning of and context around this 80% figure. This percentage reflects that Disney produced eight of the top ten highest grossing films in 2019, which they were able to secure once <i>Star Wars: The Rise of Skywalker</i> moved into the #10 spot after its big opening week (as of writing this, it has since moved up to the #6 spot). The seven other films included a mix of Marvel movies (<i>Avengers: Endgame</i>, <i>Captain Marvel</i>, <i>Spider-Man: Far From Home</i>), animated pictures (<i>Toy Story 4</i>, <i>Frozen II</i>), and remakes (<i>The Lion King</i>, <i>Aladdin</i>). The two non-Disney films were <i>Joker</i> and <i>It Chapter Two</i>, which came in at the #9 and #10 spots, respectively.</p>
     </div>
     <div class='column'>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Disney produced an unprecedented 80 percent of the top box office hits this year <a href="https://t.co/9XMvqzEtMp">https://t.co/9XMvqzEtMp</a> <a href="https://t.co/rdtS96LRrl">pic.twitter.com/rdtS96LRrl</a></p>&mdash; The Verge (@verge) <a href="https://twitter.com/verge/status/1209312002054742016?ref_src=twsrc%5Etfw">December 24, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        {% include tweet.html url="https://twitter.com/verge/status/1209312002054742016" text="Disney produced an unprecedented 80 percent of the top box office hits this year https://trib.al/68MTnrw" author="@verge" %}
     </div>
 </div>
 

@@ -21,9 +21,7 @@ While a significant part of the course focused on the technical details of creat
 
 By the way, I *do* realize I may or may not be undergoing my data viz midlife crisis, but art is fun and cool so who cares!
 
-<div style="max-width: 500px; margin: auto">
-    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Pick your own dataviz midlife crisis:<br>- do algorithmic art<br>- get a pen plotter<br>- collect esoteric, historical dataviz books<br>- participate in unpaid marketing for tableau every Monday, in hopes of making zen so the void in your heart can finally be filled</p>&mdash; Frank ⌁ (@FrankElavsky) <a href="https://twitter.com/FrankElavsky/status/1278398313495007232?ref_src=twsrc%5Etfw">July 1, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+{% include tweet.html url="https://twitter.com/FrankElavsky/status/1278398313495007232" text="Pick your own dataviz midlife crisis:<br/>- do algorithmic art<br/>- get a pen plotter<br/>- collect esoteric, historical dataviz books<br/>- participate in unpaid marketing for tableau every Monday, in hopes of making zen so the void in your heart can finally be filled" author="@FrankElavsky" %}
 
 
 
