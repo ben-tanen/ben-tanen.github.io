@@ -400,6 +400,72 @@ class TestUrlLocalization:
 
 
 # ---------------------------------------------------------------------------
+# Video transforms
+# ---------------------------------------------------------------------------
+
+
+class TestVideoTransform:
+    def test_youtube_standard_url(self):
+        md = '<video src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></video>'
+        result, _ = apply_transforms(md)
+        assert '{% include youtube.html id="dQw4w9WgXcQ" %}' in result
+
+    def test_youtube_short_url(self):
+        md = '<video src="https://youtu.be/dQw4w9WgXcQ"></video>'
+        result, _ = apply_transforms(md)
+        assert '{% include youtube.html id="dQw4w9WgXcQ" %}' in result
+
+    def test_youtube_with_tracking_params(self):
+        md = '<video src="https://youtu.be/dQw4w9WgXcQ?si=abc123"></video>'
+        result, _ = apply_transforms(md)
+        assert '{% include youtube.html id="dQw4w9WgXcQ" %}' in result
+
+    def test_youtube_with_start_time(self):
+        md = '<video src="https://youtu.be/dQw4w9WgXcQ?si=abc123&t=201"></video>'
+        result, _ = apply_transforms(md)
+        assert 'id="dQw4w9WgXcQ"' in result
+        assert 'start="201"' in result
+
+    def test_youtube_start_time_standard_url(self):
+        md = '<video src="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=60"></video>'
+        result, _ = apply_transforms(md)
+        assert 'id="dQw4w9WgXcQ"' in result
+        assert 'start="60"' in result
+
+    def test_youtube_with_caption_params(self):
+        md = '<video src="https://youtu.be/dQw4w9WgXcQ">width: 400 | height: 225</video>'
+        result, _ = apply_transforms(md)
+        assert 'id="dQw4w9WgXcQ"' in result
+        assert 'width="400"' in result
+        assert 'height="225"' in result
+
+    def test_youtube_allowfullscreen_param(self):
+        md = '<video src="https://youtu.be/dQw4w9WgXcQ">width: 400 | allowfullscreen</video>'
+        result, _ = apply_transforms(md)
+        assert 'allowfullscreen="true"' in result
+        assert 'width="400"' in result
+
+    def test_local_video(self):
+        md = '<video src="/assets/video/posts/my-video-abc123.mov"></video>'
+        result, _ = apply_transforms(md)
+        assert '{% include video.html src="/assets/video/posts/my-video-abc123.mov" %}' in result
+
+    def test_local_video_with_dimensions(self):
+        md = '<video src="/assets/video/posts/my-video.mp4">width: 640 | height: 360</video>'
+        result, _ = apply_transforms(md)
+        assert 'video.html' in result
+        assert 'src="/assets/video/posts/my-video.mp4"' in result
+        assert 'width="640"' in result
+        assert 'height="360"' in result
+
+    def test_unresolved_file_url_passthrough(self):
+        """file:// URLs that weren't resolved by sync should pass through."""
+        md = '<video src="file://%7B%22source%22%3A%22attachment%22%7D"></video>'
+        result, _ = apply_transforms(md)
+        assert '<video src="file://' in result
+
+
+# ---------------------------------------------------------------------------
 # Unknown/empty block stripping
 # ---------------------------------------------------------------------------
 

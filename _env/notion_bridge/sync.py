@@ -29,7 +29,7 @@ from sync_meta import (
     get_dirty_files,
     check_local_edit,
 )
-from images import download_and_save, rewrite_image_urls
+from images import content_hash, download_and_save, rewrite_image_urls
 from transforms import apply_transforms
 
 
@@ -214,6 +214,163 @@ def resolve_unknown_embeds(
             markdown = markdown[:match.start()] + replacement + markdown[match.end():]
 
     return markdown
+
+
+# ---------------------------------------------------------------------------
+# Video block resolution
+# ---------------------------------------------------------------------------
+
+_YOUTUBE_URL_RE = re.compile(
+    r'https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)'
+)
+
+# Matches <video src="...">...</video> tags from Notion's markdown API.
+# Capture groups: (1) src URL, (2) inner content (for caption text if any).
+_VIDEO_TAG_RE = re.compile(r'<video\s+src="([^"]*)">(.*?)</video>', re.DOTALL)
+
+
+def resolve_video_blocks(
+    markdown: str,
+    token: str,
+    api_version: str,
+    page_id: str,
+    slug: str,
+    dest_dir: Path,
+) -> tuple[str, list[str]]:
+    """Resolve <video> tags from Notion's markdown export.
+
+    - YouTube/external URLs: rewrite src to the clean URL (transform handles the rest)
+    - Uploaded files: fetch the S3 URL via blocks API, download locally, rewrite src
+
+    Returns (transformed_markdown, list_of_errors).
+    """
+    errors = []
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Notion-Version": api_version,
+    }
+
+    # Fetch all video blocks for this page so we can match file:// attachment IDs
+    # to their actual S3 download URLs.
+    video_blocks = _fetch_video_blocks(page_id, headers)
+
+    def replace_video(match: re.Match) -> str:
+        src = match.group(1)
+        caption = match.group(2).strip()
+
+        # YouTube / external URL — pass through for the transform pipeline
+        if _YOUTUBE_URL_RE.search(src):
+            return match.group(0)
+
+        # Uploaded file — decode the file:// URL to find the attachment ID,
+        # look it up in the video blocks we fetched, download it.
+        if src.startswith("file://"):
+            attachment_id = _extract_attachment_id(src)
+            if not attachment_id:
+                errors.append(f"Could not parse video attachment ID from: {src[:80]}")
+                return ""
+
+            download_url = _find_video_url(attachment_id, video_blocks)
+            if not download_url:
+                errors.append(f"No video block found for attachment {attachment_id}")
+                return ""
+
+            try:
+                _, rel_path = _download_video(download_url, slug, dest_dir)
+                return f'<video src="{rel_path}">{caption}</video>'
+            except Exception as e:
+                errors.append(f"Failed to download video {attachment_id}: {e}")
+                return match.group(0)
+
+        # Unknown video src format — leave for transform to flag
+        return match.group(0)
+
+    markdown = _VIDEO_TAG_RE.sub(replace_video, markdown)
+    return markdown, errors
+
+
+def _fetch_video_blocks(page_id: str, headers: dict) -> list[dict]:
+    """Fetch all video-type child blocks for a page."""
+    blocks = []
+    cursor = None
+    while True:
+        throttle()
+        url = f"https://api.notion.com/v1/blocks/{page_id}/children?page_size=100"
+        if cursor:
+            url += f"&start_cursor={cursor}"
+        r = httpx.get(url, headers=headers, timeout=30)
+        if r.status_code != 200:
+            break
+        data = r.json()
+        blocks.extend(b for b in data["results"] if b.get("type") == "video")
+        if not data.get("has_more"):
+            break
+        cursor = data["next_cursor"]
+    return blocks
+
+
+def _extract_attachment_id(file_url: str) -> str | None:
+    """Extract the attachment UUID from a Notion file:// encoded URL."""
+    from urllib.parse import unquote
+    decoded = unquote(file_url)
+    # The decoded URL contains JSON with "attachment:<uuid>:filename"
+    m = re.search(r'attachment:([0-9a-f-]{36})', decoded)
+    return m.group(1) if m else None
+
+
+def _find_video_url(attachment_id: str, video_blocks: list[dict]) -> str | None:
+    """Find the S3 download URL for an attachment ID in fetched video blocks."""
+    for block in video_blocks:
+        video = block.get("video", {})
+        if video.get("type") != "file":
+            continue
+        file_url = video.get("file", {}).get("url", "")
+        # The S3 URL path contains the attachment UUID
+        if attachment_id in file_url:
+            return file_url
+    return None
+
+
+def _download_video(url: str, slug: str, dest_dir: Path) -> tuple[str, str]:
+    """Download a video file, save with content-hash name, return (filename, rel_path)."""
+    r = httpx.get(url, timeout=120, follow_redirects=True)
+    r.raise_for_status()
+
+    # Determine extension from content-type or URL
+    content_type = r.headers.get("content-type", "")
+    ext = _video_ext(content_type, url)
+
+    h = content_hash(r.content)
+    filename = f"{slug}-{h}{ext}"
+    dest = dest_dir / filename
+
+    if not dest.exists():
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(r.content)
+
+    rel_path = f"/{dest.relative_to(REPO_ROOT)}"
+    return filename, rel_path
+
+
+_VIDEO_MIME_MAP = {
+    "video/mp4": ".mp4",
+    "video/quicktime": ".mov",
+    "video/webm": ".webm",
+    "video/ogg": ".ogv",
+}
+
+
+def _video_ext(content_type: str, url: str) -> str:
+    """Determine video file extension from content-type or URL."""
+    for mime, ext in _VIDEO_MIME_MAP.items():
+        if mime in content_type:
+            return ext
+    # Fall back to URL path
+    path = url.split("?")[0]
+    m = re.search(r'\.(\w{3,4})$', path)
+    if m:
+        return f".{m.group(1).lower()}"
+    return ".mp4"
 
 
 # ---------------------------------------------------------------------------
@@ -474,6 +631,15 @@ def sync_post(
     markdown, img_errors = rewrite_image_urls(markdown, slug, posts_img_dir)
     if img_errors:
         return f"image download failed: {'; '.join(img_errors)}"
+
+    # Resolve <video> tags: download uploaded files, clean YouTube URLs
+    if "<video " in markdown:
+        video_dir = REPO_ROOT / "assets" / "video" / "posts"
+        markdown, video_errors = resolve_video_blocks(
+            markdown, token, api_version, post["notion_id"], slug, video_dir,
+        )
+        if video_errors:
+            return f"video download failed: {'; '.join(video_errors)}"
 
     # Apply block transforms (divider → section-break, image → figure include, etc.)
     markdown, unknowns = apply_transforms(

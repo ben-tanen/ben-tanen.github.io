@@ -158,6 +158,16 @@ class TestNotionAPISnapshot:
         raw = _fetch_test_page()
         assert 'alt="tweet"/>' in raw
 
+    def test_youtube_video_format(self):
+        """Verify YouTube videos use <video src="..."></video> tags."""
+        raw = _fetch_test_page()
+        assert '<video src="https://youtu.be/' in raw
+
+    def test_uploaded_video_format(self):
+        """Verify uploaded videos use <video src="file://..."></video> tags."""
+        raw = _fetch_test_page()
+        assert '<video src="file://' in raw
+
     def test_plain_text_code_block_format(self):
         """Verify plain text code blocks use ```plain text fences."""
         raw = _fetch_test_page()

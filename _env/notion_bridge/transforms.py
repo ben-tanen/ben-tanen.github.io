@@ -157,6 +157,9 @@ def apply_transforms(
     # Transform 5: callouts with known emojis
     markdown = _transform_callouts(markdown)
 
+    # Transform 6: video tags
+    markdown = _transform_videos(markdown)
+
     # Strip <unknown> tags (Notion embed blocks the API can't convert)
     unknown_tags = re.findall(r'<unknown\s[^>]*alt="([^"]*)"[^>]*/>', markdown)
     if unknown_tags:
@@ -212,6 +215,82 @@ def apply_transforms(
     )
 
     return markdown, unknowns
+
+
+# ---------------------------------------------------------------------------
+# Video transforms
+# ---------------------------------------------------------------------------
+
+_YOUTUBE_ID_RE = re.compile(
+    r'https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)'
+)
+
+_VIDEO_TAG_RE = re.compile(r'<video\s+src="([^"]*)">(.*?)</video>', re.DOTALL)
+
+
+def _parse_video_caption(caption: str) -> dict[str, str]:
+    """Parse video caption into key-value params using the same syntax as images."""
+    return parse_image_caption(caption)
+
+
+def _extract_youtube_start(url: str) -> str | None:
+    """Extract start time (t param) from a YouTube URL."""
+    from urllib.parse import urlparse, parse_qs
+    parsed = urlparse(url)
+    params = parse_qs(parsed.query)
+    t = params.get("t", [None])[0]
+    return t
+
+
+def _build_youtube_include(video_id: str, params: dict[str, str]) -> str:
+    """Build {% include youtube.html id="..." %} with optional params."""
+    parts = [f'id="{video_id}"']
+    for key in ("start", "width", "height", "allowfullscreen"):
+        if key in params:
+            parts.append(f'{key}={_quote_param(params[key])}')
+    # Any extra params
+    for key, value in params.items():
+        if key not in ("start", "width", "height", "allowfullscreen"):
+            parts.append(f'{key}={_quote_param(value)}')
+    return '{%% include youtube.html %s %%}' % " ".join(parts)
+
+
+def _build_video_include(src: str, params: dict[str, str]) -> str:
+    """Build {% include video.html src="..." %} with optional params."""
+    parts = [f'src="{src}"']
+    for key in ("width", "height", "controls"):
+        if key in params:
+            parts.append(f'{key}={_quote_param(params[key])}')
+    for key, value in params.items():
+        if key not in ("width", "height", "controls"):
+            parts.append(f'{key}={_quote_param(value)}')
+    return '{%% include video.html %s %%}' % " ".join(parts)
+
+
+def _transform_videos(markdown: str) -> str:
+    """Convert <video> tags to YouTube includes or HTML5 video elements."""
+
+    def replace_video(match: re.Match) -> str:
+        src = match.group(1)
+        caption = match.group(2).strip()
+        params = _parse_video_caption(caption)
+
+        # YouTube URL → include
+        yt_match = _YOUTUBE_ID_RE.search(src)
+        if yt_match:
+            start = _extract_youtube_start(src)
+            if start and "start" not in params:
+                params["start"] = start
+            return _build_youtube_include(yt_match.group(1), params)
+
+        # Local/resolved video file → video include
+        if src.startswith("/"):
+            return _build_video_include(src, params)
+
+        # Unresolved — leave as-is
+        return match.group(0)
+
+    return _VIDEO_TAG_RE.sub(replace_video, markdown)
 
 
 _COLUMN_COUNT_WORDS = {1: "one", 2: "two", 3: "three", 4: "four"}

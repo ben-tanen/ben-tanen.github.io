@@ -1,0 +1,3 @@
+<p class="fig-paragraph">
+<video src="{{ include.src }}" {% if include.width %}width="{{ include.width }}"{% endif %} {% if include.height %}height="{{ include.height }}"{% endif %} {% unless include.controls == false %}controls{% endunless %}></video>
+</p>

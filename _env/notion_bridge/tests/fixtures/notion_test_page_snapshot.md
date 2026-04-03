@@ -1,5 +1,5 @@
 <!-- snapshot metadata
-  captured: 2026-03-31
+  captured: 2026-04-02
   notion_api_version: 2026-03-11
   page_id: 3340ec74-530b-8046-a9e3-efce5d67c2a1
   notes: S3 image URLs normalized to {{S3_IMAGE_N}} placeholders
@@ -133,3 +133,5 @@ The text above and below this are in sync blocks!
 <synced_block_reference url="https://www.notion.so/3340ec74530b8046a9e3efce5d67c2a1#3340ec74530b80cd88b8fb738fe83ccd">
 	This is a sync block! It’ll show up with the other sync block below!
 </synced_block_reference>
+<video src="https://youtu.be/iTRtho0A9K0?si=89oz6aKZrPoDJDMO"></video>
+<video src="file://%7B%22source%22%3A%22attachment%3A1a9a3454-1cc3-4077-a570-7412380771c4%3AScreen_Recording_2026-04-02_at_8.47.55_PM.mov%22%2C%22permissionRecord%22%3A%7B%22table%22%3A%22block%22%2C%22id%22%3A%223370ec74-530b-8083-95a6-f2291f9bbb1d%22%2C%22spaceId%22%3A%22c0f8a935-ec47-4956-a269-d63bcada25b8%22%7D%7D"></video>
