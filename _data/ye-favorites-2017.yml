@@ -1,0 +1,212 @@
+- title: The Little of Visualisation Design
+  link: http://www.visualisingdata.com/2016/03/little-visualisation-design/
+  icon: little-vis-design.png
+  description: Article series from Andy Kirk
+- title: No Burden
+  link: https://www.last.fm/music/Lucy+Dacus/No+Burden
+  icon: no-burden.jpg
+  description: Album by Lucy Dacus
+- title: The Unlikley Odds of Making It Big
+  link: https://pudding.cool/2017/01/making-it-big/
+  icon: making-it-big.png
+  description: Article by The Pudding
+  commentary: This was my introduction to the awesome work from The Pudding. The team over there are writing great pieces with great visualizations. There's a reason this isn't the only piece from them on this list.
+- title: The Disaster Artist
+  link: https://www.youtube.com/watch?v=cMKX2tE5Luk
+  icon: disaster-artist.jpeg
+  description: Film
+- title: Broad City, Season 4
+  link: http://www.cc.com/shows/broad-city
+  icon: broad-city.jpg
+  description: TV series
+- title: Slate Political Gabfest
+  link: http://www.slate.com/articles/podcasts/gabfest.html
+  icon: gabfest.jpg
+  description: Podcast from Slate
+- title_html: 'Black Panther <a target="_blank" href="https://www.youtube.com/watch?v=dxWvtMOGAhw">Teaser</a> and <a target="_blank" href="https://www.youtube.com/watch?v=xjDjIWPwcPU">Theatrical</a> Trailers'
+  icon: black-panther.png
+  description: Videos from Marvel
+  commentary: These trailers have made me so excited for Black Panther. Marvel seems to know what they're doing. I loved the minimal but effective use of Run The Jewels.
+- title: Get Out
+  link: https://www.youtube.com/watch?v=sRfnevzM9kQ
+  icon: get-out.jpg
+  description: Film
+- title: 7 Ways to Maximize Misery
+  link: https://www.youtube.com/watch?v=LO1mTELoj6o
+  icon: max-misery.png
+  description: Video from CGP Grey
+- title: Black Mirror
+  link: https://www.youtube.com/watch?v=5ELQ6u_5YYM
+  icon: black-mirror.jpg
+  description: TV series
+- title: "Good, Evil, Ugly, Beautiful: Help Us Make a 'Game of Thrones' Chart"
+  link: https://www.nytimes.com/interactive/2017/08/09/upshot/game-of-thrones-chart.html
+  icon: got-chart.png
+  description: Article from the New York Times
+- title: Hot Ones
+  link: https://www.youtube.com/playlist?list=PLAzrgbu8gEMIIK3r4Se1dOZWSZzUSadfZ
+  icon: hot-ones.png
+  description: Video series from First We Feast
+- title: Coco
+  link: https://www.youtube.com/watch?v=xlnPHQ3TLX8
+  icon: coco.jpeg
+  description: Film
+- title: "Analyzing the Gender Representation of 34,476 Comic Book Characters"
+  link: https://pudding.cool/2017/07/comics/
+  icon: gender-rep.png
+  description: Article from The Pudding
+- title: ShortSided
+  link: https://www.youtube.com/channel/UCSXWt3Q5KZPTo_3Xjh-gkVQ
+  icon: brett-novak.jpg
+  description: Video series from Brett Novak
+  commentary: 'Brett has been putting out awesome videos for years and this year was no exception. To best sum up the series, check out <a target="_blank" href="https://www.youtube.com/watch?v=wvrd3i8PRkk">the 100th episode video</a>.'
+- title: Master of None, Season 2
+  link: https://www.netflix.com/title/80049714
+  icon: master-of-none.jpg
+  description: TV series
+- title: Stanley Cup Playoffs Ad
+  link: https://www.youtube.com/watch?v=tsdimctaOh4
+  icon: stanley-cup.png
+  description: Video from the NHL
+- title: We asked 8 Senate Republicans to explain what their health bill is trying to do
+  link: https://www.vox.com/policy-and-politics/2017/6/16/15810524/senate-ahca-explain-please
+  icon: senators.jpg
+  description: Article from Vox
+  commentary: This was one of many pieces that Vox put out in this style. They were all fascinating and generally not in the most encouraging way.
+- title: Strikethrough
+  link: https://www.youtube.com/playlist?list=PLJ8cMiYb3G5cghzLdchzalWpQJnhRYZgO
+  icon: strike-through.jpg
+  description: Video series from Vox
+  commentary: "Carlos's series has been a very interesting and necessary critique of the media, especially given the events and coverage of the year."
+- title: Why underdogs do better in hockey than basketball
+  link: https://www.youtube.com/watch?v=HNlgISa9Giw
+  icon: vox-hockey-luck.png
+  description: Video from Vox
+- title: Visual Trumpery
+  link: https://visualtrumperytour.wordpress.com/
+  icon: trumpery.jpg
+  description: Lecture from Alberto Cairo
+- title: "How far is too far? An analysis of driving times to abortion clinics in the US"
+  link: https://pudding.cool/2017/09/clinics/
+  icon: how-far.png
+  description: Article from The Pudding
+- title: Blade Runner 2049
+  link: https://www.youtube.com/watch?v=gCcx85zbxz4
+  icon: blade-runner.jpg
+  description: Film
+- title: No Devil
+  link: https://www.last.fm/music/San+Fermin/_/No+Devil
+  icon: no-devil.jpeg
+  description: Single from San Fermin
+- title: Born A Crime
+  link: https://www.amazon.com/Born-Crime-Stories-African-Childhood/dp/0399588175
+  icon: born-a-crime.jpg
+  description: Book from Trevor Noah
+  commentary: I would highly recommend listening to the audiobook for this with Trevor reading it himself. It ends up being Trevor just sharing his own life story.
+- title: District
+  link: http://polytrope.com/district/
+  icon: district.jpg
+  description: Article from Polytrope
+- title: Dunkirk
+  link: https://www.youtube.com/watch?v=F-eMt3SrfFU
+  icon: dunkirk.jpg
+  description: Film
+  commentary: Watch this with the best sound system you can find.
+- title: "Here's every total solar eclipse happening in your lifetime. Is this year your best chance?"
+  link: https://www.washingtonpost.com/graphics/national/eclipse/
+  icon: eclipse.png
+  description: Article from the Washington Post
+- title: Game of Thrones, Season 7
+  link: https://www.youtube.com/watch?v=giYeaKsXnsI
+  icon: got.jpeg
+  description: TV series
+- title: '"Kevin Durant, Debate This" Ad'
+  link: https://www.youtube.com/watch?v=GbiyIb1B3UQ
+  icon: kd-ad.png
+  description: Video from Nike
+- title: 100 Days
+  link: https://www.youtube.com/channel/UC1RVRAdiSH4qxjBgxm_plng
+  icon: 100-days.jpg
+  description: Video series from John Green and Chris Waters
+- title: "You Draw It: What Got Better or Worse During Obama's Presidency"
+  link: https://www.nytimes.com/interactive/2017/01/15/us/politics/you-draw-obama-legacy.html
+  icon: draw-it.png
+  description: Article from the New York Times
+- title: Falling is Learning
+  link: http://flowingdata.com/2017/09/28/falling-is-learning/
+  icon: falling.jpg
+  description: Article from Nathan Yau
+- title: Saturday Night Live
+  link: https://www.youtube.com/user/SaturdayNightLive
+  icon: snl.jpg
+  description: TV series
+  commentary: 'The crew over at 30 Rock churned out gem after gem in 2017. Examples include "<a target="_blank" href="https://www.youtube.com/watch?v=Pn8pwoNWseM">Pepsi Commercial</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=sJJWxvVldog">Guy Who Bought A Boat</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=wbIXmB2ZLmA">Welcome Video</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=jVhlJNJopOQ">Papyrus</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=PgfiXtvej7Q">Meet Cute</a>", and <a target="_blank" href="https://www.youtube.com/watch?v=SEN1pcn3oAw">all of Pete Davidson''s stuff</a>.'
+- title: Datasaurs
+  link: https://twitter.com/Datasaurs
+  icon: datasaurs.jpg
+  description: Twitter account
+- title: Why the Republican Party wins when robots take your job
+  link: https://pudding.cool/2017/07/jobs/
+  icon: rep-jobs.png
+  description: Article from The Pudding
+- title: "Promise Me, Dad"
+  link: https://www.amazon.com/Promise-Me-Dad-Hardship-Purpose/dp/1250171679
+  icon: biden.jpeg
+  description: Book from Joe Biden
+- title: "La La Land Mia & Sebastian's Theme Guitar Cover"
+  link: https://www.youtube.com/watch?v=t3O6vA0UL3k
+  icon: la-la-cover.png
+  description: Video from AcousticTrench
+  commentary: This was one of the most calming videos I watched this year. The cute dog definitely helped.
+- title: Primitive Technology
+  link: https://www.youtube.com/channel/UCAL3JXZSzSm8AlZyD3nQdBA
+  icon: primitive-tech.jpg
+  description: YouTube channel
+- title: Baby Driver
+  link: https://www.youtube.com/watch?v=zTvJJnoWIPk
+  icon: baby-driver.jpg
+  description: Film
+- title: Fact-Checking President Trump Through His First 100 Days
+  link: https://www.nytimes.com/2017/04/29/us/politics/fact-checking-president-trump-through-his-first-100-days.html
+  icon: trump.jpg
+  description: Article from the New York Times
+- title: The Meyerowitz Stories (New and Selected)
+  link: https://www.youtube.com/watch?v=czyMIIm12JY
+  icon: the-meyerowitz-stories.jpg
+  description: Film
+- title: The Weatherman
+  link: https://www.last.fm/music/Gregory+Alan+Isakov/The+Weatherman
+  icon: weatherman.jpg
+  description: Album from Gregory Alan Isakov
+  commentary: "I know this didn't technically come out in 2017, but this was for sure my album of the year."
+- title: Binging with Babish
+  link: https://www.youtube.com/user/bgfilms
+  icon: binging-with-babish.jpg
+  description: Video series from Andrew Rea
+- title: La La Land
+  link: https://www.youtube.com/watch?v=0pdqf4P9MB8
+  icon: la-la-land.jpg
+  description: Film
+  commentary: "I know it's now kind of a faux pas to like this movie (I liked Moonlight <b>also</b>), but I couldn't help it. I admit it lacked originality in the story side, but I don't think anyone can deny it's style and production value, which is 100% what did it for me."
+- title: Fatal Force
+  link: https://www.washingtonpost.com/graphics/national/police-shootings-2017/
+  icon: fatal-force.png
+  description: Article from the Washington Post
+  commentary: 'With the continued gun violence in 2017, there was (unfortunately) a lot of stellar coverage to highlight the violence, this being one of the best. See also <a href="https://www.axios.com/the-human-toll-of-mass-shootings-1513305915-ea3561a2-a9f2-4459-b6b6-49fc61d0febb.html">this piece from Axios</a>.'
+- title: "Why You Shouldn't Be An Artist"
+  link: https://www.youtube.com/watch?v=1hcUoOFhxMM
+  icon: artist.png
+  description: Video from Simon Cade
+- title: "Max Joseph's Videos"
+  link: https://www.youtube.com/user/maxjosephdirector
+  icon: max-joseph.jpg
+  description: YouTube channel
+  commentary: 'Max made some great content in 2017, including (but not limited to) "<a target="_blank" href="https://www.youtube.com/watch?v=N0MCrZlbYUM">What Makes Us American</a>", "<a target="_blank" href="https://www.youtube.com/watch?v=mlCflbej6EM">From Dream to Reality</a>", and "<a target="_blank" href="https://www.youtube.com/watch?v=gRRvjZ_XNog">DICKS</a>" (don''t worry, that last one is SFW).'
+- title: The Incredible True Story
+  link: https://www.last.fm/music/Logic/The+Incredible+True+Story
+  icon: logic.jpeg
+  description: Album from Logic
+- title: The Royal Ocean Film Society
+  link: https://www.youtube.com/channel/UCWq-qJSudqKrzquTVep9Jwg
+  icon: royal-ocean.jpg
+  description: YouTube channel

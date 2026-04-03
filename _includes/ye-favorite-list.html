@@ -1,0 +1,18 @@
+{% assign data_series_key = "ye-favorites-" | append: include.year %}
+<ol class="ye-fav-list" id="{{ include.year }}-ye-fav-list">
+{% for item in site.data[data_series_key] %}
+    <li>
+        <div class="ye-fav-item">
+            <div class="ye-fav-icon" style='background-image: url("/projects/ye-favorites/img/{{ include.year }}/{{ item.icon }}");'></div>
+            <div class="ye-fav-text">
+                {% if item.title_html %}<p class="ye-fav-title">{{ item.title_html }}</p>{% else %}<a target="_blank" href="{{ item.link }}"><p class="ye-fav-title">{{ item.title }}</p></a>{% endif %}
+                <p>
+                    <i>{{ item.description }}</i>{% if item.commentary %} &middot; {{ item.commentary }}{% endif %}
+                </p>
+            </div>
+        </div>
+    </li>
+{% endfor %}
+</ol>
+
+<link rel="stylesheet" href="/projects/ye-favorites/css/main.style.css" />
