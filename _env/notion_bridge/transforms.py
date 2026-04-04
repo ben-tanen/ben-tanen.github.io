@@ -146,7 +146,7 @@ def apply_transforms(
     # Allows leading whitespace (tabs/spaces) for fences inside columns.
     markdown = re.sub(
         r'^[ \t]*```(?:raw|plain text|plaintext|text)\n(.*?)[ \t]*```',
-        lambda m: '\n' + m.group(1).rstrip('\n'),
+        lambda m: '\n' + m.group(1).rstrip('\n') + '\n',
         markdown,
         flags=re.MULTILINE | re.DOTALL,
     )
@@ -159,6 +159,12 @@ def apply_transforms(
 
     # Transform 6: video tags
     markdown = _transform_videos(markdown)
+
+    # Transform: HTML tables → markdown pipe tables
+    markdown = _transform_html_tables(markdown)
+
+    # Transform: unescape \$ → $
+    markdown = markdown.replace(r'\$', '$')
 
     # Strip <unknown> tags (Notion embed blocks the API can't convert)
     unknown_tags = re.findall(r'<unknown\s[^>]*alt="([^"]*)"[^>]*/>', markdown)
@@ -189,6 +195,7 @@ def apply_transforms(
     if post_stem_by_page_id is None:
         post_stem_by_page_id = {}
     notion_link_pattern = re.compile(r'\[([^\]]*)\]\(/([0-9a-f]{32})\?[^)]*\)')
+    notion_href_pattern = re.compile(r'href="/([0-9a-f]{32})\?[^"]*"')
     unresolved_notion_links = []
 
     def resolve_notion_link(match: re.Match) -> str:
@@ -200,7 +207,16 @@ def apply_transforms(
         unresolved_notion_links.append(page_id)
         return match.group(0)
 
+    def resolve_notion_href(match: re.Match) -> str:
+        page_id = match.group(1)
+        stem = post_stem_by_page_id.get(page_id)
+        if stem:
+            return f'href="{{% post_url {stem} %}}"'
+        unresolved_notion_links.append(page_id)
+        return match.group(0)
+
     markdown = notion_link_pattern.sub(resolve_notion_link, markdown)
+    markdown = notion_href_pattern.sub(resolve_notion_href, markdown)
     if unresolved_notion_links:
         unknowns.append(f"unresolved Notion page links: {', '.join(unresolved_notion_links)}")
 
@@ -265,6 +281,38 @@ def _build_video_include(src: str, params: dict[str, str]) -> str:
         if key not in ("width", "height", "controls"):
             parts.append(f'{key}={_quote_param(value)}')
     return '{%% include video.html %s %%}' % " ".join(parts)
+
+
+def _transform_html_tables(markdown: str) -> str:
+    """Convert Notion HTML tables to markdown pipe tables."""
+    # Only match Notion-generated tables (have header-row attribute)
+    table_pattern = re.compile(
+        r'<table\s+header-row="true">\s*(.*?)\s*</table>',
+        re.DOTALL,
+    )
+
+    def convert_table(match: re.Match) -> str:
+        body = match.group(1)
+        rows = re.findall(r'<tr>\s*(.*?)\s*</tr>', body, re.DOTALL)
+        if not rows:
+            return match.group(0)
+
+        table_rows = []
+        for row in rows:
+            cells = re.findall(r'<td>(.*?)</td>', row, re.DOTALL)
+            cells = [c.strip() for c in cells]
+            table_rows.append('| ' + ' | '.join(cells) + ' |')
+
+        if len(table_rows) < 2:
+            return match.group(0)
+
+        # insert separator after header row
+        num_cols = len(re.findall(r'<td>', rows[0]))
+        separator = '| ' + ' | '.join(['--'] * num_cols) + ' |'
+        result = [table_rows[0], separator] + table_rows[1:]
+        return '\n'.join(result)
+
+    return table_pattern.sub(convert_table, markdown)
 
 
 def _transform_videos(markdown: str) -> str:
@@ -404,4 +452,10 @@ def _add_block_spacing(markdown: str) -> str:
                 result.append(lines[j])
         parts[i] = '\n'.join(result)
         parts[i] = re.sub(r'\n{3,}', '\n\n', parts[i])
-    return '```'.join(parts)
+    # Ensure blank lines around code fences
+    rejoined = '```'.join(parts)
+    # Add blank line before opening fence (has language tag or is bare opening)
+    rejoined = re.sub(r'([^\n])\n(```\w)', r'\1\n\n\2', rejoined)
+    # Add blank line after closing fence (bare ``` followed by non-fence text)
+    rejoined = re.sub(r'(```)\n([^\n`])', r'\1\n\n\2', rejoined)
+    return rejoined
