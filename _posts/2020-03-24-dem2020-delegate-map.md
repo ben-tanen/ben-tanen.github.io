@@ -3,11 +3,7 @@ layout: post
 title:  "Plotting the 3,979 Delegates of the 2020 Democratic Primary"
 date:   2020-03-24 10:05:41
 thumbnail: /assets/img/post-thumbnails/dem2020-delegate-map.png
-landing-proj:  true
-landing-order: 12
-landing-img:   /assets/img/proj-thumbnails/dem2020-delegate-map.png
-landing-large: false
-new-post-style: true
+related-proj:  dem2020-delegate-map
 ---
 
 ***Update (Apr 08, 2020):** [Bernie Sanders is dropping out of the Democratic Primary](https://www.nytimes.com/2020/04/08/us/politics/bernie-sanders-drops-out.html), leaving Joe Biden as the sole candidate and now the presumptive Democratic nominee. As a result, this project is now no longer relevant, so I'm going to freeze it for now.*
@@ -24,16 +20,7 @@ I hope everyone is staying safe and healthy. And remember to wash your hands.
 
 <br />
 
-<div id="dem2020-title">
-    <h2>Delegates won (or projected to be won) by <span class="biden-count">Biden</span>, <span class="sanders-count">Sanders</span>, and <span class="other-count">Other Candidates</span></h2>
-    <p style="margin-bottom: 10px; margin-left: 0;"><i>Updated on: <span id="update-date">...</span></i></p>
-</div>
-
-* Based on current counts and future projections, Biden is expected to win <span id="biden-total-del">...</span> total delegates. Sanders is expected to win <span id="sanders-total-del">...</span> total delegates.
-* <span id="largest-remaining-state">...</span> is the largest state to not yet hold their primary election. Biden is expected to win <span id="biden-largest-remaining-state-del">...</span> of the <span id="largest-remaining-state-total-del">...</span> total delegates available in <span id="largest-remaining-state">...</span>.
-* Biden is expected to clinch his winning 1991st delegate from <span id="winning-del-state">...</span> in <span id="winning-del-state-days">...</span> days.
-
-<div id="dem2020-container"></div>
+{% include_file /projects/dem2020-delegate-map/html/viz.html %}
 
 {% capture methodology-note %}
 States are organized from top to bottom by date of primary/caucus and then alphabetically. Dates for primaries and caucuses come from <a href="https://www.npr.org/2020/02/10/799979293/how-many-delegates-do-the-2020-presidential-democratic-candidates-have">NPR</a>. Due to concerns around the COVID-19, multiple states (e.g., Ohio, Conecticut) have postponed their original dates. The most recent proposed postponement date is shown.

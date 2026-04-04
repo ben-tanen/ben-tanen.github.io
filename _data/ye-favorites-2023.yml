@@ -1,0 +1,259 @@
+- title: Past Lives
+  link: https://letterboxd.com/film/past-lives/
+  icon: past-lives.jpg
+  description: Film
+  type: film
+- title: How To with John Wilson
+  link: https://www.imdb.com/title/tt10801534/
+  icon: how-to.jpg
+  description: TV series
+  type: show
+- title: Search Engine
+  link: https://www.searchengine.show/
+  icon: search-engine.webp
+  description: Podcast
+  type: podcast
+- title: Jet Lag (S5)
+  link: https://www.youtube.com/playlist?list=PLB7ZcpBcwdC4SeH7qNw05wgU03HlRGiiS
+  icon: jet-lag.webp
+  description: YouTube series
+  type: video
+- title: GUTS
+  link: https://open.spotify.com/album/1xJHno7SmdVtZAtXbdbDZp
+  icon: guts.jpg
+  description: Album by Olivia Rodrigo
+  type: music
+- title: Aftersun
+  link: https://letterboxd.com/film/aftersun/
+  icon: aftersun.jpg
+  description: Film
+  type: film
+- title: You Look Like a Thing and I Love You
+  link: https://www.goodreads.com/book/show/44286534-you-look-like-a-thing-and-i-love-you
+  icon: you-look-like-a-thing.jpg
+  description: Book by Janelle Shane
+  type: book
+- title: The Bear (S2)
+  link: https://www.themoviedb.org/tv/136315
+  icon: the-bear.jpg
+  description: TV series
+  type: show
+- title: 'The Last of Us: Part 2'
+  link: https://www.igdb.com/games/the-last-of-us-part-ii
+  icon: tlou2.webp
+  description: Video Game
+  type: game
+- title: the record
+  link: https://open.spotify.com/album/0e9GjrztzBw8oMC6n2CDeI
+  icon: the-record.jpg
+  description: Album by boygenius
+  type: music
+- title: The Iron Claw
+  link: https://letterboxd.com/film/the-iron-claw/
+  icon: the-iron-claw.jpg
+  description: Film
+  type: film
+- title: Extremely Online
+  link: https://www.goodreads.com/book/show/101160112-extremely-online
+  icon: extremely-online.jpg
+  description: Book by Taylor Lorenz
+  type: book
+- title: Beef
+  link: https://www.themoviedb.org/tv/154385
+  icon: beef.jpg
+  description: TV series
+  type: show
+- title: The Climate Denier's Playbook
+  link: https://open.spotify.com/show/4XTuqjvNZL7TeYqeeEI2hb
+  icon: the-climate-denier-s-playbook.jpg
+  description: Podcast
+  type: podcast
+- title: Roll for the Galaxy
+  link: https://boardgamegeek.com/boardgame/132531/roll-for-the-galaxy
+  icon: roll-for-the-galaxy.jpg
+  description: Board Game
+  type: game
+- title: Technology Connections
+  link: https://www.youtube.com/@TechnologyConnections
+  icon: technology-connections.jpg
+  description: YouTube channel
+  type: video
+- title: May December
+  link: https://letterboxd.com/film/may-december/
+  icon: may-december.jpg
+  description: Film
+  type: film
+- title: Gen V
+  link: https://www.themoviedb.org/tv/205715
+  icon: gen-v.jpg
+  description: TV series
+  type: show
+- title: Talk to Me
+  link: https://letterboxd.com/film/talk-to-me/
+  icon: talk-to-me.jpg
+  description: Film
+  type: film
+- title: Oppenheimer
+  link: https://letterboxd.com/film/oppenheimer/
+  icon: oppenheimer.jpg
+  description: Film
+  type: film
+- title: Jury Duty
+  link: https://www.themoviedb.org/tv/222023
+  icon: jury-duty.jpg
+  description: TV series
+  type: show
+- title: Barbie
+  link: https://boxd.it/bCLK
+  icon: barbie.jpg
+  description: Film
+  type: film
+- title: 'Bo Burnham''s Inside: Autofictional Authenticity, Netflix & Youtube Aesthetics'
+  link: https://www.youtube.com/watch?v=j0_CocjBaaM
+  icon: bo-burnham-s-inside-autofictional-authenticity-netflix-youtube-aesthetics.jpg
+  description: Video from The Lesser Feat
+  type: video
+- title: The Last of Us
+  link: https://www.themoviedb.org/tv/100088
+  icon: the-last-of-us.jpg
+  description: TV series
+  type: show
+- title: Appaloosa Bones
+  link: https://open.spotify.com/album/73VuXbDamMLEdq8Yzd79dM
+  icon: appaloosa-bones.jpg
+  description: Album by Gregory Alan Isakov
+  type: music
+- title: Theater Camp
+  link: https://boxd.it/Bfbm
+  icon: theatre-camp.jpg
+  description: Film
+  type: film
+- title: Killers of The Flower Moon
+  link: https://boxd.it/gHp0
+  icon: killers-of-the-flower-moon.jpg
+  description: Film
+  type: film
+- title: Spider-Man 2
+  link: https://www.igdb.com/games/marvels-spider-man-2spid
+  icon: spiderman2.webp
+  description: Video Game
+  type: game
+- title: For All Mankind (S1 - S3)
+  link: https://www.themoviedb.org/tv/87917
+  icon: for-all-mankind.jpg
+  description: TV series
+  type: show
+- title: Saltburn
+  link: https://boxd.it/z4eg
+  icon: saltburn.jpg
+  description: Film
+  type: film
+- title: Calling Bullshit
+  link: https://www.goodreads.com/book/show/48889983-calling-bullshit
+  icon: calling-bullshit.jpg
+  description: Book by Carl Bergstrom
+  type: book
+- title: Defunctland
+  link: https://www.youtube.com/@Defunctland
+  icon: defunctland.jpg
+  description: YouTube channel
+  commentary: 'Specifically <a href="https://www.youtube.com/watch?v=9yjZpBq1XBE"
+    target="_blank">"Disney''s FastPass: A Complicated History"</a> and <a href="https://www.youtube.com/watch?v=b_rjBWmc1iQ"
+    target="_blank">"Disney Channel''s Theme: A History Mystery"</a>'
+  type: video
+- title: Fair Play
+  link: https://boxd.it/yirc
+  icon: fair-play.jpg
+  description: Film
+  type: film
+- title: 'Star Wars Jedi: Survivor'
+  link: https://www.igdb.com/games/star-wars-jedi-survivor
+  icon: jedi-survivor.webp
+  description: Video Game
+  type: game
+- title: 'Dissect S3 and Last Song Standing S2: Frank Ocean'
+  link: https://open.spotify.com/show/2b025hq3gJ17tQdxS3aV43
+  icon: dissect-s3-and-last-song-standing-s2-frank-ocean.jpg
+  description: Podcasts from Cole Cuchna
+  type: podcast
+- title: Succession (S4)
+  link: https://www.themoviedb.org/tv/76331
+  icon: succession.jpg
+  description: TV series
+  type: show
+- title: Higher
+  link: https://open.spotify.com/album/6kcZ35GY84A3FBIcIKVqTW
+  icon: higher.jpg
+  description: Album by Chris Stapleton
+  type: music
+- title: The School of Life
+  link: https://www.youtube.com/@theschooloflifetv
+  icon: the-school-of-life.jpg
+  description: YouTube channel
+  type: video
+- title: Triangle of Sadness
+  link: https://boxd.it/hXlq
+  icon: triangle-of-sadness.jpg
+  description: Film
+  type: film
+- title: Calypso
+  link: https://www.goodreads.com/book/show/38348476-calypso
+  icon: calypso.jpg
+  description: Book by David Sedaris
+  type: book
+- title: Barry (S4)
+  link: https://www.themoviedb.org/tv/73107
+  icon: barry.jpg
+  description: TV series
+  type: show
+- title: Folding Ideas
+  link: https://www.youtube.com/@FoldingIdeas
+  icon: folding-ideas.jpg
+  description: YouTube channel
+  commentary: Specifically <a href="https://www.youtube.com/watch?v=YQ_xWvX1n9g" target="_blank">"Line
+    Goes Up"</a>, <a href="https://www.youtube.com/watch?v=5pYeoZaoWrA" target="_blank">"This
+    is Financial Advice"</a>, <a href="https://www.youtube.com/watch?v=JTfhYyTuT44"
+    target="_blank">"In Search Of A Flat Earth"</a>
+  type: video
+- title: Guardians of the Galaxy, Vol. 3
+  link: https://boxd.it/fVNI
+  icon: guardians-of-the-galaxy-vol-3.jpg
+  description: Film
+  type: film
+- title: Hard Fork
+  link: https://open.spotify.com/show/44fllCS2FTFr2x2kjP9xeT
+  icon: hard-fork.jpg
+  description: Podcast
+  type: podcast
+- title: 'Youtube: Manufacturing Authenticity (For Fun and Profit!)'
+  link: https://www.youtube.com/watch?v=8FJEtCvb2Kw&list=LL&index=4
+  icon: youtube-manufacturing-authenticity-for-fun-and-profit.jpg
+  description: Video from Lindsay Ellis
+  type: video
+- title: The Curse
+  link: https://www.themoviedb.org/tv/114655
+  icon: the-curse.jpg
+  description: TV series
+  type: show
+- title: Shredders
+  link: https://www.igdb.com/games/shredders
+  icon: shredders.webp
+  description: Game
+  type: game
+- title: Survivor (S45)
+  link: https://www.themoviedb.org/tv/14658
+  icon: survivor.jpg
+  description: TV series
+  type: show
+- title: Cody Trains
+  link: https://www.youtube.com/@itscodytrains/videos
+  icon: cody-trains.jpg
+  description: YouTube channel
+  type: video
+- title_html: 'Roald Dahl Shorts: <a href="https://letterboxd.com/film/the-wonderful-story-of-henry-sugar/"
+    target="_blank">The Wonderful Story of Henry Sugar</a>, <a href="https://letterboxd.com/film/poison-2023/"
+    target="_blank">Poison</a>'
+  link:
+  icon: henry-sugar.jpg
+  description: Short films from Wes Anderson
+  type: film

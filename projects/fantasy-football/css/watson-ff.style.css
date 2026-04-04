@@ -1,0 +1,58 @@
+#d3-ff-ibm-container {
+    width: 100%;
+}
+
+#d3-ff-ibm {
+    width: 100%;
+    height: 400px;
+}
+
+#d3-ff-ibm-title h3 {
+    text-align: center;
+    color: #77bdee;
+}
+
+#d3-ff-ibm-title p {
+    margin: 5px 0 0 0;
+    text-align: center;
+    font-size: 14px;
+    max-width: none;
+    margin-left: 0;
+}
+
+.bucket-button {
+    padding: 1px 5px;
+    margin: 0 2px;
+    background-color: #bfbfbf;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.bucket-button.selected {
+    background-color: #77bdee;
+}
+
+text.axis-label {
+    text-anchor: middle;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+text#guideline-label {
+    fill: #bfbfbf;
+}
+
+line#guideline {
+    stroke: #bfbfbf;
+    stroke-dasharray: 3 3;
+}
+
+circle.bucket {
+    fill: #77bdee;
+    stroke: black;
+}
+
+span.tooltip-highlight {
+    font-weight: bold;
+}

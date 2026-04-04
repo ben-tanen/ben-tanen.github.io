@@ -3,11 +3,7 @@ layout: post
 title:  "Where Is Election Night 2020 Heading?"
 date:   2020-11-03 10:05:41
 thumbnail: /assets/img/post-thumbnails/election-funnel2.png
-landing-proj:  true
-landing-order: 13
-landing-img:   /assets/img/proj-thumbnails/election-night-funnel.png
-landing-large: false
-new-post-style: true
+related-proj:  election-night-funnel
 ---
 
 Well, today is the day! After weeks of voting (and [weeks of challenges](https://www.axios.com/texas-harris-county-drive-thru-voting-5a874c81-b927-48e7-8dcb-3bc1d5d76f6b.html) [to how](https://www.cnn.com/2020/10/26/politics/wisconsin-mail-in-voting-deadline-supreme-court/index.html) [people can vote](https://www.reuters.com/article/us-usa-election-court-pennsylvania/u-s-supreme-court-deals-blow-to-republicans-in-pennsylvania-north-carolina-vote-by-mail-fights-idUSKBN27D37H)), we have finally arrived at the beginning of the end. As of writing this, polls on the East Coast are beginning to close and shortly after, we will start getting calls from various states about winners and losers. 
@@ -24,36 +20,14 @@ Let's see how this all goes! It is very unlikely that we'll know much on Electio
 
 {% include section-break.html %}
 
-<div id="elfun2020-container">
-    <div id="elfun2020-loading">
-        <img id="loading-spinner" src='/assets/img/loading.gif' />
-    </div>
-    <div class="columns two" id="elfun2020-title">
-        <div class="column" style="width: calc(75% - 15px);">
-            <h3><b>Contests called:</b> <span id="states-called">...</span> of 56</h3>
-            <h3><b>Scenarios remaining:</b> <span id="scenarios-remaining">...</span> of 100</h3>
-            <h3><b>EV range remaining:</b> <span style="color: #77bdee">Biden <span id="ev-range-biden">...</span></span>, <span style="color: #ff6e6c">Trump <span id="ev-range-trump">...</span></span></h3>
-            <p style="margin-top: 5px"><i>Last updated: <span id="update-datetime">...</span></i></p>
-        </div>
-        <div class="column" style="width: calc(25% - 5px);">
-            <ul id="elfun2020-view-select">
-                <li class="selected">Full view</li>
-                <li id="compact">Compact view</li>
-            </ul>
-        </div>
-    </div>
-    <div id="elfun2020-viz">
-        <svg id="elfun2020-svg"></svg>
-    </div>
-</div>
+{% include_file /projects/election-night2020-funnel/html/viz.html %}
+<link rel="stylesheet" href="/projects/election-night2020-funnel/css/main.style.css" />
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+<script src='/projects/election-night2020-funnel/js/main.js'></script>
 
 {% capture methodology-note %}
 State calls come from <a href="https://twitter.com/AP_Politics">the Associated Press</a>, including when the calls are made, and are ordered by time of the call. These calls are compared against the 100 scenarios that FiveThirtyEight has highlighted on <a href="https://projects.fivethirtyeight.com/2020-election-forecast/">its (now frozen) Presidential Election Forecast</a> and each scenario is marked as viable if it includes the same state-by-state calls as the AP. Electoral vote ranges are calculated based on the remaining viable scenarios.
 {% endcapture %}
 {% include methodology-note.html content=methodology-note break='yes' %}
-
-<link rel="stylesheet" href="/projects/election-night2020-funnel/css/main.style.css" />
-<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
-<script src='/projects/election-night2020-funnel/js/main.js'></script>
 
 

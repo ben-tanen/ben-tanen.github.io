@@ -1,0 +1,263 @@
+- title: HiFi Lounges
+  link: https://www.b-sidehifi.com/
+  icon: hi-fi-lounge.jpg
+  description: Vibe
+  commentary: Shout out to B-Side HiFi in Provo, UT!
+  type: other
+- title: Dracula [1897]
+  link: https://www.goodreads.com/book/show/36475023-dracula
+  icon: dracula.jpg
+  description: Book by Bram Stoker
+  type: book
+- title: Hal & Harper
+  link: https://www.themoviedb.org/tv/245640
+  icon: hal-harper.jpg
+  description: TV series
+  type: show
+- title: Skate.
+  link: https://www.igdb.com/games/skate--1
+  icon: skate.webp
+  description: Video Game
+  type: game
+- title: Train Dreams
+  link: https://boxd.it/LdDo
+  icon: train-dreams.jpg
+  description: Film
+  type: film
+- title: moisturizer
+  link: https://open.spotify.com/album/3YVnHpyms4rLr3fXS0ROQy
+  icon: moisturizer.jpg
+  description: Album by Wet Leg
+  type: music
+- title: The Shawshank Redemption [1994]
+  link: https://boxd.it/2aHi
+  icon: the-shawshank-redemption.jpg
+  description: Film
+  type: film
+- title: LUX
+  link: https://open.spotify.com/album/3SUEJULSGgBDG1j4GQhfYY
+  icon: lux.jpg
+  description: Album by ROSALÍA
+  type: music
+- title: One Battle After Another
+  link: https://boxd.it/DUHM
+  icon: one-battle-after-another.jpg
+  description: Film
+  commentary: 'Mega-bonus of catching up on the other works of Paul Thomas Anderson:
+    Boogie Nights, There Will Be Blood, The Master, Phantom Thread'
+  type: film
+- title: Can't Get Much Higher Substack
+  link: https://www.cantgetmuchhigher.com/
+  icon: cant-get-much-higher.webp
+  description: Article by Chris Dalla Riva
+  type: article
+- title: Small Data
+  link: https://www.youtube.com/watch?v=eDr6_cMtfdA
+  icon: small-data.jpg
+  description: Video by KRAZAM
+  type: video
+- title: '"1001 Albums You Must Hear Before You Die" Generator'
+  link: https://1001albumsgenerator.com/
+  icon: 1001-albums.jpg
+  description: Website
+  commentary: This is a cool project (who doesn't love lists of albums!) but this
+    is also just a great example of a site that does its purpose very well without
+    needing a ton of extra frills
+  type: other
+- title: Nickel Boys [2024]
+  link: https://boxd.it/CStQ
+  icon: nickel-boys.jpg
+  description: Film
+  type: film
+- title: Pink Moon [1972]
+  link: https://open.spotify.com/album/5mwOo1zikswhmfHvtqVSXg
+  icon: pink-moon.jpg
+  description: Album by Nick Drake
+  type: music
+- title: BOBCBC
+  link: https://youtube.com/watch?v=nCX0Qx6CWsU
+  icon: bobcbc.jpg
+  description: Video by QUASI SKATEBOARDS
+  type: video
+- title: Adolescence
+  link: https://www.themoviedb.org/tv/249042
+  icon: adolescence.jpg
+  description: TV series
+  type: show
+- title: Thelma & Louise [1991]
+  link: https://boxd.it/28Ew
+  icon: thelma-louise.jpg
+  description: Film
+  type: film
+- title: List Apps
+  link:
+  icon: sequel.avif
+  description: Websites + Tools
+  commentary: <a href="https://letterboxd.com/" target="_blank">Letterboxd</a> for
+    movies, <a href="https://apps.apple.com/us/app/musicbox-catalog-and-organize/id1614730313"
+    target="_blank">MusicBox</a> for music, <a href="https://www.getsequel.app/" target="_blank">Sequel</a>
+    for TV shows & video games, <a href="https://raindrop.io/" target="_blank">Raindrop.io</a>
+    for articles & websites
+  type: other
+- title: I Deleted My Second Brain
+  link: https://www.youtube.com/watch?v=CjSWwmg-JRM
+  icon: delete-second-brain.jpg
+  description: Article / Video by Joan Westenberg
+  type: article
+- title: Can we really blame social media? A research showdown.
+  link: https://youtube.com/watch?v=WTbpdzMC20I
+  icon: can-we-really-blame-social-media-a-research-showdown.jpg
+  description: Video by Howtown
+  type: video
+- title: Sentimental Value
+  link: https://boxd.it/GwcG
+  icon: sentimental-value.jpg
+  description: Film
+  type: film
+- title: Exploration & Epiphany
+  link: https://youtube.com/watch?v=_BrFKp-U8GI
+  icon: exploration-epiphany.jpg
+  description: Video by Paul Dancstep & 3Blue1Brown
+  type: video
+- title: I'm Still Here [2024]
+  link: https://boxd.it/BPEO
+  icon: i-m-still-here.jpg
+  description: Film
+  type: film
+- title: Sorry, Baby
+  link: https://boxd.it/JKNi
+  icon: sorry-baby.jpg
+  description: Film
+  type: film
+- title: The Running Man [1982]
+  link: https://www.goodreads.com/book/show/28274420-the-running-man
+  icon: the-running-man.jpg
+  description: Book by <s>Stephen King</s> Richard Bachman
+  type: book
+- title: Sinners
+  link: https://boxd.it/KQMM
+  icon: sinners.jpg
+  description: Film
+  type: film
+- title: Fog of World
+  link: https://fogofworld.app/
+  icon: fog-of-world.svg
+  description: App
+  type: game
+- title: Sing Sing [2024]
+  link: https://boxd.it/HIBA
+  icon: sing-sing.jpg
+  description: Film
+  type: film
+- title: A Clap Reviewer's Guide To The Universe
+  link: https://youtube.com/watch?v=AMpX1OhPw_c
+  icon: a-clap-reviewer-s-guide-to-the-universe.jpg
+  description: Video by The Solomon Society
+  type: video
+- title: Bugonia
+  link: https://boxd.it/qeWY
+  icon: bugonia.jpg
+  description: Film
+  type: film
+- title: I Tried To Make Something In America
+  link: https://youtube.com/watch?v=3ZTGwcHQfLY
+  icon: i-tried-to-make-something-in-america.jpg
+  description: Video by Smarter Every Day
+  type: video
+- title: Heat [1995]
+  link: https://boxd.it/2bg8
+  icon: heat.jpg
+  description: Film
+  type: film
+- title: Baby
+  link: https://open.spotify.com/album/3hKlec1wgYVJcI0YvwCFJB
+  icon: baby.jpg
+  description: Album by Dijon
+  type: music
+- title: The Rehearsal S2
+  link: https://www.themoviedb.org/tv/204284
+  icon: the-rehearsal.jpg
+  description: TV series
+  type: show
+- title: Pride & Prejudice [2005]
+  link: https://boxd.it/24u8
+  icon: pride-prejudice.jpg
+  description: Film
+  type: film
+- title: Robot Dreams [2023]
+  link: https://boxd.it/vBZm
+  icon: robot-dreams.jpg
+  description: Film
+  type: film
+- title: A Few Good Men [1992]
+  link: https://boxd.it/29nw
+  icon: a-few-good-men.jpg
+  description: Film
+  type: film
+- title: Getting Killed
+  link: https://open.spotify.com/album/0eeXb23yMW6EaIgm63xxPC
+  icon: getting-killed.jpg
+  description: Album by Geese
+  commentary: 'Bonus: "3D Country", from Geese'
+  type: music
+- title: The Studio
+  link: https://www.themoviedb.org/tv/247767
+  icon: the-studio.jpg
+  description: TV series
+  type: show
+- title: Point Break [1991]
+  link: https://boxd.it/2958
+  icon: point-break.jpg
+  description: Film
+  type: film
+- title: Project Hail Mary [2021]
+  link: https://www.goodreads.com/book/show/54906250-project-hail-mary
+  icon: project-hail-mary.jpg
+  description: Book by Andy Weir
+  type: book
+- title: 28 Years Later
+  link: https://boxd.it/FEGM
+  icon: 28-years-later.jpg
+  description: Film
+  type: film
+- title: 'Ambient 1: Music For Airports [1978]'
+  link: https://open.spotify.com/album/063f8Ej8rLVTz9KkjQKEMa
+  icon: ambient-1-music-for-airports.jpg
+  description: Album by Brian Eno
+  type: music
+- title: The Pitt
+  link: https://www.themoviedb.org/tv/250307
+  icon: the-pitt.jpg
+  description: TV series
+  type: show
+- title: Trainspotting [1996]
+  link: https://boxd.it/29XY
+  icon: trainspotting.jpg
+  description: Film
+  commentary: 'Bonus: T2 Trainspotting [2017]'
+  type: film
+- title: Almost Famous [2000]
+  link: https://boxd.it/29CQ
+  icon: almost-famous.jpg
+  description: Film
+  type: film
+- title: The Disintegration Loops [2002]
+  link: https://open.spotify.com/album/5fmPy3XmYD0BJKEr86a3Cu
+  icon: the-disintegration-loops.jpg
+  description: Album by William Basinski
+  type: music
+- title: Severance S2
+  link: https://www.themoviedb.org/tv/95396
+  icon: severance.jpg
+  description: TV series
+  type: show
+- title: The Big Picture
+  link: https://open.spotify.com/show/6mTel3azvnK8isLs4VujvF
+  icon: the-big-picture.jpg
+  description: Podcast
+  type: podcast
+- title: SABLE, fABLE
+  link: https://open.spotify.com/album/3L3UjpXtom6T0Plt1j6l1T
+  icon: sable-fable.jpg
+  description: Album by Bon Iver
+  type: music

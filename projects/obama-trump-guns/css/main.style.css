@@ -1,0 +1,58 @@
+#d3-obama-trump-gun-response {
+    width: 100%;
+    height: 2000px;
+}
+
+.footnote {
+    color: #77bdee;
+    cursor: pointer;
+}
+
+.footnote:hover {
+    text-decoration: underline;
+}
+
+.jBox-Tooltip{
+    font-family: 'Yantramanav', 'sans-serif';
+    max-width: 300px;
+}
+
+text.header {
+    font-size: 24px;
+    text-anchor: middle;
+}
+
+line#center-line {
+    stroke: #dadede;
+    stroke-width: 2;
+}
+
+line.marker-line-day {
+    stroke: #dadede;
+    stroke-width: 1;
+}
+
+line.marker-line {
+    stroke: #a4a4a4;
+    stroke-width: 1;
+}
+
+circle.marker-circle {
+    stroke: gray;
+    fill: #dadede;
+}
+
+text.marker-text-day {
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+text.time-string, text.desc-string {
+    font-size: 12px;
+}
+
+.time-string.Obama, .desc-string.Obama { text-anchor: end; }
+.time-string.Trump, .desc-string.Trump { text-anchor: start; }
+
+.header.Obama, .time-string.Obama { fill: #77bdee; }
+.header.Trump, .time-string.Trump { fill: #ff6e6c; }

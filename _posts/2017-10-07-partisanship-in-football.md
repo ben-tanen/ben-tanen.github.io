@@ -3,11 +3,7 @@ layout: post
 title: 'Partisanship and the NFL'
 date: 2017-10-07 05:00:00
 thumbnail: /assets/img/post-thumbnails/partisan-nfl.png
-landing-proj:  true
-landing-order: 15
-landing-img:   /assets/img/proj-thumbnails/partisan-nfl.png
-landing-large: false
-new-post-style: true
+related-proj:  partisanship-in-football
 ---
 
 A few weeks ago, FiveThirtyEight published [an article](https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/) analyzing the political leaning of each NFL team based on results from a poll of 2,290 football fans. They then compared each team's political leaning to the political leaning of the media market that said team covered (ex: Miami Dolphins' market makes up the southern tip of Florida). Reading this article reminded me of [a map from the Facebook Data Science team](https://www.theatlantic.com/technology/archive/2014/09/the-geography-of-nfl-fandom/379729/) that broke down the football fandoms of each county in the United States. For this map, the Facebook team determined each county's top team by seeing which team was the most "liked" among Facebook users from that county. 

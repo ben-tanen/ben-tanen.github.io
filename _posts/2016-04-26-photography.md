@@ -9,50 +9,30 @@ Before I became all lame, I use to be fairly into photography. I was never super
 
 I haven't been able to take many photos recently but I felt like sharing some of my personal favorites from the past few years. I hope to maybe add some more as time goes on.
 
-<style>
-    .photo-container {
-    }
-
-    .photo-container img {
-        margin: 0;
-        padding: 5px 5px 0 0;
-    }
-
-    .sub-photo-container {
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-</style>
+<link rel="stylesheet" href="/projects/photography/css/photo-grid.css" />
 
 <div class='photo-container'>
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/photography-pic1.jpg' />
-        <img src='/assets/img/posts/photography-pic11.jpg' />
+        <img src='/projects/photography/img/photography-pic1.jpg' />
+        <img src='/projects/photography/img/photography-pic11.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/photography-pic2.jpg' />
+        <img src='/projects/photography/img/photography-pic2.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/photography-pic4.jpg' />
-        <img src='/assets/img/posts/photography-pic5.jpg' />
+        <img src='/projects/photography/img/photography-pic4.jpg' />
+        <img src='/projects/photography/img/photography-pic5.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/photography-pic6.jpg' />
-        <img src='/assets/img/posts/photography-pic7.jpg' />
+        <img src='/projects/photography/img/photography-pic6.jpg' />
+        <img src='/projects/photography/img/photography-pic7.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/photography-pic9.jpg' />
-        <img src='/assets/img/posts/photography-pic8.jpg' />
+        <img src='/projects/photography/img/photography-pic9.jpg' />
+        <img src='/projects/photography/img/photography-pic8.jpg' />
     </div>
-
     <div class='sub-photo-container'>
-        <img src='/assets/img/posts/photography-pic10.jpg' />
-        <img src='/assets/img/posts/photography-pic3.jpg' />
+        <img src='/projects/photography/img/photography-pic10.jpg' />
+        <img src='/projects/photography/img/photography-pic3.jpg' />
     </div>
 </div>

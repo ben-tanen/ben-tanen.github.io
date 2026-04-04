@@ -1,0 +1,85 @@
+div#album-progress-form, div#album-progress-container {
+    margin: auto;
+    max-width: 600px;
+}
+
+div#album-progress-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+div#album-progress-form button,
+div#album-progress-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    background-color: #20D760;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#album-progress-input-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#album-progress-input-uri {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 0.9em;
+    width: 180px;
+    outline: none;
+}
+
+#album-progress-input-uri:focus {
+    border-color: #20D760;
+}
+
+div#album-progress-container {
+    margin-top: 20px;
+}
+
+div#album-progress-container.hidden,
+#album-progress-login-btn.hidden,
+#album-progress-actions.hidden,
+#album-progress-playlist-btn.hidden {
+    display: none;
+}
+
+div#album-progress-container p {
+    margin-bottom: 5px;
+}
+
+p#album-progress-title {
+    weight: 700;
+    font-size: 1.2em;
+}
+
+svg#album-progress-viz {
+    width: 100%;
+}
+
+g.track-group.played rect.track-pill {
+    fill: #77bdee;
+}
+
+rect.track-pill {
+    fill: #999;
+}
+
+rect.progress-fill {
+    fill: transparent;
+}
+
+g.track-group.playing rect.progress-fill {
+    fill: #20D760;
+}
+
+g {
+    cursor: pointer;
+}

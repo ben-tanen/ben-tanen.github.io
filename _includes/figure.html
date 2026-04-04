@@ -5,8 +5,8 @@
         {% endif %}
         target="_blank">
     <img src="{{include.src}}"  
-        {% if include.alt %}alt="{{include.alt}}"
-        {% elsif include.caption %}alt="{{include.caption}}"
+        {% if include.alt %}alt="{{include.alt | escape}}"
+        {% elsif include.caption %}alt="{{include.caption | escape}}"
         {% endif %}
         {% if include.width %}width="{{include.width}}"{% endif %}
         {% if include.style %}style="{{include.style}}"{% endif %}
@@ -16,7 +16,7 @@
 
 {% if include.caption %}
 <figcaption>
-{{include.caption}}
+{{include.caption | markdownify | remove: '<p>' | remove: '</p>'}}
 </figcaption>
 {% endif %}
 

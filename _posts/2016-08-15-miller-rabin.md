@@ -23,7 +23,7 @@ Using this, I took another crack at those pesky prime-based Project Euler proble
 
 For anyone interested, I've included a sample implementation in Python of the algorithm below.
 
-{% highlight python %}
+```python
 # takes in a number n and a number of iterations iters
 # to test if n is prime with (1 - (1 / 4^iters)) certainty
 def miller_rabin(n, iters):
@@ -45,7 +45,7 @@ def miller_rabin(n, iters):
             elif (j == s - 1):
                 return False
     return True
-{% endhighlight %}
+```
 
 
 

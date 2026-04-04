@@ -3,10 +3,7 @@ layout: post
 title:  "The Decade of Disney"
 date:   2020-01-02 15:05:41
 thumbnail: /assets/img/post-thumbnails/disney-monopoly.jpg
-landing-proj:  true
-landing-order: 18
-landing-img:   /assets/img/proj-thumbnails/decade-of-disney.png
-landing-large: false
+related-proj:  decade-of-disney
 ---
 
 <div class='columns two'>
@@ -15,7 +12,7 @@ landing-large: false
         <p>Given the unprecedented and frankly somewhat scary implications of the Verge’s article, it’s worth exploring the meaning of and context around this 80% figure. This percentage reflects that Disney produced eight of the top ten highest grossing films in 2019, which they were able to secure once <i>Star Wars: The Rise of Skywalker</i> moved into the #10 spot after its big opening week (as of writing this, it has since moved up to the #6 spot). The seven other films included a mix of Marvel movies (<i>Avengers: Endgame</i>, <i>Captain Marvel</i>, <i>Spider-Man: Far From Home</i>), animated pictures (<i>Toy Story 4</i>, <i>Frozen II</i>), and remakes (<i>The Lion King</i>, <i>Aladdin</i>). The two non-Disney films were <i>Joker</i> and <i>It Chapter Two</i>, which came in at the #9 and #10 spots, respectively.</p>
     </div>
     <div class='column'>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Disney produced an unprecedented 80 percent of the top box office hits this year <a href="https://t.co/9XMvqzEtMp">https://t.co/9XMvqzEtMp</a> <a href="https://t.co/rdtS96LRrl">pic.twitter.com/rdtS96LRrl</a></p>&mdash; The Verge (@verge) <a href="https://twitter.com/verge/status/1209312002054742016?ref_src=twsrc%5Etfw">December 24, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        {% include tweet.html url="https://twitter.com/verge/status/1209312002054742016" text="Disney produced an unprecedented 80 percent of the top box office hits this year https://trib.al/68MTnrw" author="@verge" %}
     </div>
 </div>
 
@@ -41,13 +38,9 @@ Beyond the number of top 10 movies that Disney produced, it is worth considering
         <p>It hasn't always been this way. In the decades prior to the 2010s, Disney averaged just 15% of the top grossing films, which was much more comparable to other major studios like Warner Bros. and Universal. In fact, prior to the 2010s, Disney was the top studio in only the 1990s, which was a period known as <a href="https://en.wikipedia.org/wiki/Disney_Renaissance">the Disney Renaissance</a>. And still, even during the booming years of Disney classics like <i>The Lion King</i>, <i>Toy Story</i>, and <i>Beauty and the Beast</i>, Disney only captured 25% of the top box office.</p>
     </div>
     <div class="column">
-        <div id="d3-dod-container">
-            <div id="d3-dod-title">
-                <h3>Top <span id="title-n-movies">50</span> Domestic Box Office Grosses for Movies Released Between 2010 and 2019</h3>
-            </div>
-            <svg id="d3-dod">
-            </svg>
-        </div>
+        {% include_file /projects/decade-of-disney/html/viz.html %}
+        <link rel="stylesheet" href="/projects/decade-of-disney/css/main.style.css" />
+        <script src='/projects/decade-of-disney/js/main.js'></script>
     </div>
 </div>
 
@@ -65,241 +58,5 @@ Box office gross was not adjusted for inflation.
 Movies were determined to be released by Disney based on the "Distributor" field from <a href="https://www.boxofficemojo.com/year/2019/?grossesOption=totalGrosses">Box Office Mojo</a>. However, Disney has earned money from films for which they are not distributor (examples include the latest Spider-Man films in <a href="https://www.cnbc.com/2019/09/27/sony-and-disney-reach-deal-to-continue-spider-man-movie-partnership.html">their joint production deal with Sony</a>). The Verge correctly considered <i>Spider-Man: Far From Home</i> as being produced by Marvel (and thus Disney) and thus counted the film in their analysis when stating eight out of ten films from 2019 were produced by Disney.
 {% endcapture %}
 {% include methodology-note.html content=methodology-note break='yes' %}
-
-<style>
-#d3-dod-container {
-    width: 100%;
-}
-
-#d3-dod {
-    width: 100%;
-    height: 875px;
-}
-
-#d3-dod-title h3 {
-    text-align: center;
-    color: #77bdee;
-}
-
-text.axis-label {
-    text-anchor: middle;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-text#y-axis-label {
-    text-anchor: start;
-}
-
-rect.bar {
-    fill: #dadada;
-}
-
-rect.bar.disney {
-    fill: #77bdee;
-}
-
-rect.bar-overlay {
-    fill: rgba(0, 0, 0, 0);
-}
-
-text.bar-label {
-    font-size: 12px;
-    text-anchor: end;
-    fill: #a9a9a9;
-}
-
-text.bar-label.disney {
-    fill: white;
-}
-
-img.tooltip-logo {
-    width: 120px;
-}
-
-</style>
-
-<script>
-
-/*********************/
-/*** INIT VARIABLE ***/
-/*********************/
-
-let dod_svg = d3.select("#d3-dod");
-
-let margin = {top: 25, right: 10, bottom: 10, left: 25},
-    width  = $("#d3-dod").width() - margin.left - margin.right,
-    height = $("#d3-dod").height() - margin.top - margin.bottom,
-    is_mobile = (width >= 470 ? false : true);
-
-// create empty list to store data
-let data = [ ];
-
-let n_movies = 50;
-
-// set domains: x = box office gross, y = rank
-let x = d3.scaleLinear().domain([0, 1e9]).range([0, width]),
-    y = d3.scaleLinear().domain([0.5, n_movies + 0.5]).range([0, height]);
-
-/********************************/
-/*** DECLARE HELPER FUNCTIONS ***/
-/********************************/
-
-function strip_title(title) {
-    return title.replace(/[^a-z0-9]/gmi, "");
-}
-
-function render_axis() {
-    dod_svg.append("g")
-        .attr("id", "x-axis")
-        .attr("transform", `translate(${margin.left}, ${margin.top})`)
-        .call(d3.axisTop(x).ticks(5).tickFormat((d) => d3.format("$.0s")(d).replace("G", "B")));
-
-    dod_svg.append("g")
-        .attr("id", "y-axis")
-        .attr("transform", `translate(${margin.left}, ${margin.top})`)
-        .call(d3.axisLeft(y).ticks(10).tickSizeOuter(0));
-
-    /*
-    dod_svg.append('text')
-        .classed("axis-label", true)
-        .attr("id", "x-axis-label")
-        .attr("transform", `translate(${margin.left + width / 2}, ${margin.top - 25})`)
-        .text("Domestic Box Office Gross");
-    */
-
-    dod_svg.append('text')
-        .classed("axis-label", true)
-        .attr("id", "y-axis-label")
-        .attr("transform", `translate(${margin.left - 15}, ${margin.top}), rotate(90)`)
-        .text("Rank");
-}
-
-function render_bars(n = n_movies, animate = false) {
-
-    // limit data
-    let data_lim = data.filter((d) => d.decaderank <= n);
-
-    // create bars
-    let bars = dod_svg.selectAll("rect.bar")
-        .data(data_lim).enter()
-        .append("rect")
-        .classed("bar", true)
-        .classed("disney", (d) => d.disney === 1)
-        .attr("id", (d) => "bar" + strip_title(d.title))
-        .attr("x", margin.left + 1)
-        .attr("y", (d) => margin.top + y(d.decaderank - 0.5) + 1)
-        .attr("width", 0)
-        .attr("height", y(2) - y(1) - 1);
-
-    // animate (if desired)
-    if (animate) bars.transition().duration(200).attr("width", (d) => x(d.gross));
-    else bars.attr("width", (d) => x(d.gross));
-
-    // add text
-    dod_svg.selectAll("text.bar-label")
-        .data(data_lim).enter()
-        .append("text")
-        .classed("bar-label", true)
-        .classed("disney", (d) => d.disney === 1)
-        .attr("id", (d) => "label" + strip_title(d.title))
-        .attr("x", (d) => margin.left + x(d.gross) - 5)
-        .attr("y", (d) => margin.top + y(d.decaderank - 0.5) + 1)
-        .attr("dy", (y(2) - y(1)) / 2 + 3)
-        .text((d) => d.title);
-
-    // if text is too long, shorten it
-    dod_svg.selectAll("text.bar-label")
-        .each(function(d) {
-            if (this.getComputedTextLength() > x(d.gross) * 0.8) {
-                let scale_factor = (x(d.gross) * 0.8) / this.getComputedTextLength();
-                d3.select(this).text(d.title.substring(0, Math.floor(d.title.length * scale_factor) - 3) + "...");
-            }
-        })
-
-    // create bar overlays for tooltips
-    dod_svg.selectAll("rect.bar-overlay")
-        .data(data_lim).enter()
-        .append("rect")
-        .classed("bar-overlay", true)
-        .attr("id", (d) => "bar" + strip_title(d.title))
-        .attr("x", margin.left + 1)
-        .attr("y", (d) => margin.top + y(d.decaderank - 0.5) + 1)
-        .attr("width", (d) => x(d.gross))
-        .attr("height", y(2) - y(1) - 1);
-
-    // add tooltips for bars
-    new jBox("Tooltip", {
-        attach: "rect.bar-overlay",
-        content: "...",
-        position: {
-            x: 'right',
-            y: 'center'
-        },
-        outside: 'x',
-        onOpen: function() {
-            let d = d3.select(this.source[0]).data()[0];
-
-            // add logo to tooltip
-            if (d.disney === 1 & d.marvel === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-marvel-logo.png' /></p>";
-            else if (d.disney === 1 & d.starwars === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-star-wars-logo.png' /></p>";
-            else if (d.disney === 1 & d.pixar === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-pixar-logo.png' /></p>";
-            else if (d.disney === 1) img_str = "<p><img class='tooltip-logo' src='/assets/img/posts/disney-logo.png' /></p>";
-            else img_str = ""; 
-
-            // set content
-            this.setContent(`${img_str}<p>${d.title} (${d.year}): ${d3.format("$,d")(d.gross)}</p>`);
-        }
-    });
-}
-
-function resize() {
-
-    // delete existing elements
-    dod_svg.selectAll("#x-axis, #y-axis, text.axis-label, rect.bar, text.bar-label, rect.bar-overlay").remove();
-
-    // update width properties and scales
-    width = $("#d3-dod").width() - margin.left - margin.right;
-    x.range([0, width]);
-
-    // rerender
-    render_axis();
-    render_bars();
-}
-
-/*********************************/
-/*** PARSE DATA AND INIT PLOTS ***/
-/*********************************/
-
-d3.csv("/assets/data/top-movies-from-2010s.csv", (d) => {
-    d.year = +d.year;
-    d.yearrank = +d.yearrank;
-    d.decaderank = +d.decaderank;
-    d.gross = +d.gross;
-    d.disney = +d.disney;
-    d.marvel = +d.marvel;
-    d.starwars = +d.starwars;
-    d.pixar = +d.pixar;
-    return d;
-}).then((d) => {
-
-    // store data for later
-    for (let i = 0; i < d.length; i++) data.push(d[i]);
-
-    // update chart title if necessary
-    d3.select("#title-n-movies").text(n_movies);
-
-    // draw axis and bars
-    render_axis();
-    render_bars();
-});
-
-/*********************************/
-/*** PAGE AND BUTTON LISTENERS ***/
-/*********************************/
-
-$(window).resize(resize);
-
-</script>
 
 

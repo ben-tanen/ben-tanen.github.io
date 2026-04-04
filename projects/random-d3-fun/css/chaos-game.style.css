@@ -1,0 +1,38 @@
+    #chaos-game-container {
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    #chaos-game-options {
+        width: 300px;
+        margin: auto;
+    }
+
+    #chaos-game-options form {
+        width: 205px;
+        margin: auto;
+        padding-top: 5px;
+    }
+
+    #chaos-game-options form input {
+        cursor: pointer;
+    }
+
+    #chaos-game-options form input:nth-of-type(n+2) {
+        margin-left: 20px;
+    }
+
+    #chaos-game-options p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #chaos-game-start {
+        color: #77bdee;
+        cursor: pointer;
+    }
+
+    #chaos-game-start:hover {
+        text-decoration: underline;
+    }

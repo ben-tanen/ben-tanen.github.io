@@ -3,8 +3,6 @@ layout: post
 title:  "So Are Those \"Teens\" on TV Actually Teens?"
 date:   2026-03-08 10:00:00
 thumbnail: /assets/img/post-thumbnails/whas.webp
-landing-proj: false
-new-post-style: true
 ---
 
 During a recent re-watch of The O.C. with my wife, I repeatedly found myself hearing full-grown adults saying something like, "Ugh, it's so crazy being 15!". As a well-known trope in TV and movies featuring "teens," I always got a chuckle out of these moments, and I am regularly Googling to figure out how old the actor really was at the time an episode or movie aired. This typically means first Googling something like "zack stevens the oc" to find out the actor's name (Michael Cassidy), then Googling them to find out their birthday (March 20, 1983), then heading to IMDb for the specific episode to figure out the airdate (May 12, 2005), and then doing the mental math to figure out that this supposed 16-year-old was actually 22 years old.
