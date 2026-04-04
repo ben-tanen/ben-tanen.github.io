@@ -16,7 +16,7 @@
 
 {% if include.caption %}
 <figcaption>
-{{include.caption}}
+{{include.caption | markdownify | remove: '<p>' | remove: '</p>'}}
 </figcaption>
 {% endif %}
 

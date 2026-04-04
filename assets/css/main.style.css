@@ -137,7 +137,7 @@ h3 {
     position: relative;
 }
 
-.post-header h1, .post-header p {
+.post-header h1, .main .post-header p {
     text-align: center;
 }
 
@@ -206,8 +206,12 @@ h3 {
 .main ul, .main ol {
 	padding-left: 50px;
 	margin-bottom: 8px;
-    max-width: 570px;
-    margin-left: max((100% - 570px) / 2, 30px);
+}
+
+.post-content ul, .post-content ol {
+	padding-left: 25px;
+    max-width: 600px;
+    margin-left: max((100% - 600px) / 2, 0px);
 }
 
 .post-content div ol, .post-content div ul {
