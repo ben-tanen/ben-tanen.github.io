@@ -70,26 +70,3 @@ d3.csv("/projects/sports-dynasties/data/team-data.csv").then(function(d) {
     render_dotchart();
     render_map();
 });
-
-/*********************************/
-/*** PAGE AND BUTTON LISTENERS ***/
-/*********************************/
-
-// init footnote
-new jBox('Tooltip', {
-    attach: '#sd-footnote-1',
-    offset: {y: 5},
-    content: "Totally random sidenote: it's really annoying how the NHL, MLB, and NFL all have special names for their championships / trophies, but the NBA just has <i>the NBA championship</i>. Just seems silly to me."
-});
-
-new jBox('Tooltip', {
-    attach: '#sd-footnote-2',
-    offset: {y: 5},
-    content: "A question not commonly asked by anyone from NYC or Boston."
-});
-
-new jBox('Tooltip', {
-    attach: '#sd-footnote-3',
-    offset: {y: 5},
-    content: "We're coming for you New York!"
-});

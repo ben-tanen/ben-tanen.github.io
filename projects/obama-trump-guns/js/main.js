@@ -1,8 +1,3 @@
-new jBox('Tooltip', {
-  attach: '#footnote-1',
-  content: "I used transcribed versions of the Washington Post's chyrons for each event's time and description. Some of the descriptions were slightly edited for clarity in this alternate format. Whenever an explicit time was not given (e.g., evening), I used an approximate time."
-});
-
 var ot_gun_svg = d3.select("#d3-obama-trump-gun-response");
 
 var margin = {top: 25, right: 15, bottom: 25, left: 15},

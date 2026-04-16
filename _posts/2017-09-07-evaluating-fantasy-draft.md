@@ -33,5 +33,4 @@ But speculating how good I might have drafted is pointless when I'm comparing it
 <link rel="stylesheet" href="/projects/fantasy-football/css/pre-season.style.css">
 <script src="/projects/fantasy-football/js/pre-season.js"></script>
 
-
-
+{% include footnote-content.html id="footnote-1" content="At the time of me pulling this data and Mr. Hess making this pick, Ezekiel Elliott was due to serve a six-game suspension, making for a risky pick regardless of Elliott's ability. Hess didn't seem to care about that and went with him anyway. Minutes later, it was announced that Elliott would not have to serve the six-game suspension while his case was undergoing an appeal." %}

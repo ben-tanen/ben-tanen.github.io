@@ -22,6 +22,20 @@
     <script type="text/javascript" src="/assets/js/lib/enter-view.min.js"></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('template.footnote-tooltip').forEach(function(tmpl) {
+                var target = document.getElementById(tmpl.dataset.for);
+                if (!target) return;
+                new jBox('Tooltip', {
+                    attach: target,
+                    offset: {y: 5},
+                    content: tmpl.innerHTML
+                });
+            });
+        });
+    </script>
+
     {% if page.mathjax %}
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     {% endif %}

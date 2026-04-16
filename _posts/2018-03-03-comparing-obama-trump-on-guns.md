@@ -10,8 +10,8 @@ In response to a suggestion from [Franklin Leonard](https://twitter.com/franklin
 
 The video did a great job juxtaposing Obama's and Trump's intraday activities and responses (comparing Obama's first day of response to Trump's, etc.), but I felt it was hard to compare the actual timing of each event. I decided to re-visualize <span id="footnote-1" class="footnote">this information</span> into one single timeline to (hopefully) present a slightly different effect.
 
-<!-- more -->
-
 {% include_file /projects/obama-trump-guns/html/viz.html %}
 <link rel="stylesheet" href="/projects/obama-trump-guns/css/main.style.css" />
 <script src='/projects/obama-trump-guns/js/main.js'></script>
+
+{% include footnote-content.html id="footnote-1" content="I used transcribed versions of the Washington Post's chyrons for each event's time and description. Some of the descriptions were slightly edited for clarity in this alternate format. Whenever an explicit time was not given (e.g., evening), I used an approximate time." %}

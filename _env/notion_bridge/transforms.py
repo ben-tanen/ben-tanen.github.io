@@ -191,6 +191,9 @@ def apply_transforms(
     if has_equations:
         flags["mathjax"] = True
 
+    # Validate footnote pairs while markers and callouts are still in raw form
+    unknowns.extend(_validate_footnote_pairs(markdown))
+
     # Transform: inline span markers → <span> tags
     # Must run BEFORE columns: md.markdown() converts backticks to <code> tags,
     # which breaks the backtick-wrapped marker pattern.
@@ -430,6 +433,7 @@ def _transform_columns(text: str) -> str:
 # Callout emoji → transform handler mapping
 _CALLOUT_TRANSFORMS = {
     "🔍": "methodology",
+    "🦶🏼": "footnote",
 }
 
 
@@ -447,6 +451,9 @@ def _transform_callouts(markdown: str) -> str:
 
         if handler == "methodology":
             return _build_methodology(content)
+
+        if handler == "footnote":
+            return _build_footnote(content)
 
         return match.group(0)
 
@@ -467,6 +474,131 @@ def _build_methodology(content: str) -> str:
 {content}
 {{% endcapture %}}
 {{% include methodology-note.html content=methodology-note %}}"""
+
+
+_FOOTNOTE_ID_RE = re.compile(r'^#([\w-]+)\s*$')
+
+
+def _build_footnote(content: str) -> str:
+    """Build footnote tooltip using Jekyll capture/include pattern.
+
+    Expects the first non-empty line to be `#<id>` identifying the footnote,
+    with the rest being the tooltip body (markdown).
+    """
+    # Normalize line separators so the first-line id parse works regardless
+    # of whether Notion emitted <br> tags or real newlines
+    content = re.sub(r'<br>\s*<br>', '\n\n', content)
+    content = re.sub(r'<br>', '\n', content)
+    content = content.strip()
+
+    lines = content.split('\n', 1)
+    id_match = _FOOTNOTE_ID_RE.match(lines[0].strip())
+    if not id_match:
+        # Malformed — surface as an HTML comment so it's visible during review
+        return f'<!-- malformed footnote callout: missing #id on first line -->'
+
+    footnote_id = id_match.group(1)
+    body = lines[1].strip() if len(lines) > 1 else ''
+
+    capture_var = f"footnote-{footnote_id}-content"
+    return (
+        f"{{% capture {capture_var} %}}\n"
+        f"{body}\n"
+        f"{{% endcapture %}}\n"
+        f'{{% include footnote-content.html id="{footnote_id}" '
+        f"content={capture_var} %}}"
+    )
+
+
+_SPAN_MARKER_RE = re.compile(
+    r'`\{\{span([^}]*)\}\}`(.*?)`\{\{/span\}\}`',
+    flags=re.DOTALL,
+)
+_FOOTNOTE_CALLOUT_RE = re.compile(
+    r'<callout\s+icon="🦶🏼"[^>]*>\s*(.*?)\s*</callout>',
+    flags=re.DOTALL,
+)
+_HTML_SPAN_TAG_RE = re.compile(r'<span\s+[^>]*>', flags=re.IGNORECASE)
+_HTML_ATTR_RE = re.compile(r'''(\w+)=["']([^"']*)["']''')
+_FENCED_CODE_BLOCK_RE = re.compile(
+    r'^[ \t]*```[^\n]*\n.*?[ \t]*```',
+    flags=re.MULTILINE | re.DOTALL,
+)
+
+
+def _validate_footnote_pairs(markdown: str) -> list[str]:
+    """Cross-check footnote span references against 🦶🏼 callouts.
+
+    References can be either `{{span.footnote#id}}` markers or raw
+    `<span class="footnote" id="...">` tags (which Notion users write by
+    dropping HTML inside a raw/plain-text fenced code block). Raw code blocks
+    are already unwrapped by the time this runs; remaining fenced blocks are
+    stripped here so example HTML inside them isn't treated as a live ref.
+    """
+    issues: list[str] = []
+
+    # Strip remaining fenced code blocks so spans shown as literal code
+    # (not meant to render as HTML) don't produce false-positive orphans
+    scan_source = _FENCED_CODE_BLOCK_RE.sub('', markdown)
+
+    # Collect footnote span reference ids
+    span_ids: set[str] = set()
+    for m in _SPAN_MARKER_RE.finditer(scan_source):
+        attrs = m.group(1)
+        has_footnote_class = False
+        span_id = None
+        for attr_match in _SPAN_ATTR_RE.finditer(attrs):
+            if attr_match.group(1):
+                span_id = attr_match.group(1)
+            elif attr_match.group(2) == ".footnote":
+                has_footnote_class = True
+        if has_footnote_class and span_id:
+            span_ids.add(span_id)
+
+    # Also collect ids from raw <span class="footnote" id="..."> tags
+    for m in _HTML_SPAN_TAG_RE.finditer(scan_source):
+        attrs = dict(_HTML_ATTR_RE.findall(m.group(0)))
+        classes = attrs.get('class', '').split()
+        if 'footnote' not in classes:
+            continue
+        span_id = attrs.get('id')
+        if span_id:
+            span_ids.add(span_id)
+
+    # Collect footnote callout ids
+    callout_ids: list[str] = []
+    for m in _FOOTNOTE_CALLOUT_RE.finditer(scan_source):
+        raw = m.group(1)
+        raw = re.sub(r'<br>\s*<br>', '\n\n', raw)
+        raw = re.sub(r'<br>', '\n', raw)
+        first_line = raw.strip().split('\n', 1)[0].strip()
+        id_match = _FOOTNOTE_ID_RE.match(first_line)
+        if id_match:
+            callout_ids.append(id_match.group(1))
+        else:
+            issues.append(
+                f"footnote callout missing or malformed #id on first line: {first_line!r}"
+            )
+
+    # Duplicate callout ids
+    seen: dict[str, int] = {}
+    for cid in callout_ids:
+        seen[cid] = seen.get(cid, 0) + 1
+    for cid, count in seen.items():
+        if count > 1:
+            issues.append(f"duplicate footnote callout id: #{cid} ({count} callouts)")
+
+    callout_id_set = set(callout_ids)
+
+    # Orphan span refs (marker without matching callout)
+    for sid in sorted(span_ids - callout_id_set):
+        issues.append(f"footnote span #{sid} has no matching 🦶🏼 callout")
+
+    # Orphan callouts (callout without matching marker)
+    for cid in sorted(callout_id_set - span_ids):
+        issues.append(f"footnote callout #{cid} has no matching span reference")
+
+    return issues
 
 
 _NOTION_INLINE_EQ_RE = re.compile(r'\$`([^`]+)`\$')

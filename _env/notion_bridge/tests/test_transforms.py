@@ -21,6 +21,7 @@ from transforms import (
     _transform_callouts,
     _transform_equations,
     _build_methodology,
+    _validate_footnote_pairs,
 )
 
 
@@ -329,6 +330,115 @@ class TestCallouts:
         content = "Paragraph one<br><br>Paragraph two"
         result = _build_methodology(content)
         assert "Paragraph one\n\nParagraph two" in result
+
+    def test_footnote_callout(self):
+        md = '<callout icon="🦶🏼" color="default">#footnote-1\n\nTooltip body goes here.</callout>'
+        result = _transform_callouts(md)
+        assert "{% capture footnote-footnote-1-content %}" in result
+        assert "Tooltip body goes here." in result
+        assert '{% include footnote-content.html id="footnote-1" content=footnote-footnote-1-content %}' in result
+
+    def test_footnote_callout_with_markdown_body(self):
+        md = '<callout icon="🦶🏼">#fn-1\n\nBody with [a link](https://example.com) inside.</callout>'
+        result = _transform_callouts(md)
+        assert "Body with [a link](https://example.com) inside." in result
+        assert 'id="fn-1"' in result
+
+    def test_footnote_callout_br_separated(self):
+        md = '<callout icon="🦶🏼">#footnote-2<br><br>Body after br.</callout>'
+        result = _transform_callouts(md)
+        assert "Body after br." in result
+        assert 'id="footnote-2"' in result
+
+    def test_footnote_malformed_id(self):
+        md = '<callout icon="🦶🏼">no id here\n\nBody.</callout>'
+        result = _transform_callouts(md)
+        assert "malformed footnote callout" in result
+
+
+# ---------------------------------------------------------------------------
+# Footnote pair validation
+# ---------------------------------------------------------------------------
+
+
+class TestFootnotePairValidation:
+    def test_matched_pair(self):
+        md = (
+            "Text `{{span.footnote#footnote-1}}`reference`{{/span}}` more.\n\n"
+            '<callout icon="🦶🏼">#footnote-1\n\nTooltip.</callout>'
+        )
+        assert _validate_footnote_pairs(md) == []
+
+    def test_orphan_span(self):
+        md = "Text `{{span.footnote#fn-1}}`ref`{{/span}}` no callout."
+        issues = _validate_footnote_pairs(md)
+        assert any("#fn-1" in i and "no matching 🦶🏼 callout" in i for i in issues)
+
+    def test_orphan_callout(self):
+        md = '<callout icon="🦶🏼">#fn-2\n\nBody.</callout>'
+        issues = _validate_footnote_pairs(md)
+        assert any("#fn-2" in i and "no matching span reference" in i for i in issues)
+
+    def test_duplicate_callout_ids(self):
+        md = (
+            "`{{span.footnote#fn-1}}`ref`{{/span}}`\n\n"
+            '<callout icon="🦶🏼">#fn-1\n\nFirst.</callout>\n\n'
+            '<callout icon="🦶🏼">#fn-1\n\nSecond.</callout>'
+        )
+        issues = _validate_footnote_pairs(md)
+        assert any("duplicate footnote callout id: #fn-1" in i for i in issues)
+
+    def test_malformed_callout_id(self):
+        md = '<callout icon="🦶🏼">not-an-id\n\nBody.</callout>'
+        issues = _validate_footnote_pairs(md)
+        assert any("malformed" in i.lower() for i in issues)
+
+    def test_non_footnote_span_ignored(self):
+        # Span without the .footnote class should not be treated as a footnote reference
+        md = "`{{span#other.highlight}}`content`{{/span}}`"
+        assert _validate_footnote_pairs(md) == []
+
+    def test_raw_html_span_matched(self):
+        # Raw <span class="footnote" id="..."> tags should also count as references
+        md = (
+            '<span class="footnote" id="fn-1">ref</span>\n\n'
+            '<callout icon="🦶🏼">#fn-1\n\nBody.</callout>'
+        )
+        assert _validate_footnote_pairs(md) == []
+
+    def test_raw_html_span_attr_order_insensitive(self):
+        md = (
+            '<span id="fn-1" class="footnote">ref</span>\n\n'
+            '<callout icon="🦶🏼">#fn-1\n\nBody.</callout>'
+        )
+        assert _validate_footnote_pairs(md) == []
+
+    def test_raw_html_span_multiple_classes(self):
+        md = (
+            '<span class="highlight footnote" id="fn-1">ref</span>\n\n'
+            '<callout icon="🦶🏼">#fn-1\n\nBody.</callout>'
+        )
+        assert _validate_footnote_pairs(md) == []
+
+    def test_raw_html_span_without_footnote_class_ignored(self):
+        md = '<span class="highlight" id="other">x</span>'
+        assert _validate_footnote_pairs(md) == []
+
+    def test_code_block_spans_not_treated_as_refs(self):
+        # Spans inside a fenced code block meant to display literal HTML
+        # should not count as live footnote references
+        md = (
+            "Here's example HTML:\n\n"
+            '```html\n'
+            '<span class="footnote" id="fn-example">x</span>\n'
+            '```\n'
+        )
+        assert _validate_footnote_pairs(md) == []
+
+    def test_apply_transforms_surfaces_issues(self):
+        md = "`{{span.footnote#fn-1}}`ref`{{/span}}`"
+        _, unknowns, _ = apply_transforms(md)
+        assert any("#fn-1" in u for u in unknowns)
 
 
 # ---------------------------------------------------------------------------

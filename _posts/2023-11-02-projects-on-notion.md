@@ -13,13 +13,6 @@ I actually asked the team over at [The Pudding](https://pudding.cool/) about thi
 
 I was starting projects and then stopping because I struggled to materialize my work into a more polished story that felt warranted of <span id="footnote-1" class="footnote">*a whole new page* on my website</span>. But sometimes the real treasures are the real friends we made (read as, code / data analysis I wrote) along the way. So, in the spirit of lowering the bar, I'm going to start putting some smaller and/or partial projects over on Notion and I'll periodically share a combined update with them here.
 
-<script>
-new jBox('Tooltip', {
-  attach: '#footnote-1',
-  content: "I am clearly overthinking and overestimating the 'quality' associated with this blog that no one reads..."
-});
-</script>
-
 So, to kick it off, here's a collection of smaller projects that I have been working on in the last few years that felt like they needed wrapping up:
 
 1. Inspired by my fiancée's "California" playlist, I used Spotify's API to see how often artists are making songs about each U.S. state. TL;DR: New York takes the top spot! => check it out on [Notion](https://www.notion.so/btnotion/What-are-the-most-sung-about-states-c5a4d86090e140c191922f3cf5251da1?pvs=4) or [Observable](https://observablehq.com/d/e291342a195d36c9).
@@ -31,3 +24,5 @@ So, to kick it off, here's a collection of smaller projects that I have been wor
 7. I really, really liked [Harry Steven's Observable notebook](https://observablehq.com/@harrystevens/directly-labelling-lines) outlining his approach for intelligently labeling lines in a plot, so for my own educational purposes, I decided to recreate it in my own tutorial. Feel free to check it out on [Observable](https://www.notion.so/btnotion/How-to-Directly-Labeling-Lines-be78dfb984fd4c1e8a3bdff3ff9fac34?pvs=4)
 
 That's all for now - see y'all again in a year (or hopefully sooner)!
+
+{% include footnote-content.html id="footnote-1" content="I am clearly overthinking and overestimating the \"quality\" associated with this blog that no one reads..." %}

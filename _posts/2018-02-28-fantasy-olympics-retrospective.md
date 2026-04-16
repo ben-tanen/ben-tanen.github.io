@@ -32,6 +32,4 @@ Overall, while I did make some mistakes, I'm not too upset with the results I go
 <link rel="stylesheet" href="/projects/fantasy-olympics/css/retro-2018.style.css">
 <script type="text/javascript" src="/projects/fantasy-olympics/js/retro-2018.js"></script>
 
-
-
-
+{% include footnote-content.html id="footnote-1" content="This analysis includes teams that were projected to earn points or who did earn points. Thus if a team was not projected to win and they did not win, they are not included." %}

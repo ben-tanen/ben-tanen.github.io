@@ -64,3 +64,6 @@ As a bit of a post-script, I also wanted to include one of the original visualiz
 <script type="text/javascript" src='/projects/sports-dynasties/js/map.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/main.js'></script>
 
+{% include footnote-content.html id="sd-footnote-1" content="Totally random sidenote: it's really annoying how the NHL, MLB, and NFL all have special names for their championships / trophies, but the NBA just has <i>the NBA championship</i>. Just seems silly to me." %}
+{% include footnote-content.html id="sd-footnote-2" content="A question not commonly asked by anyone from NYC or Boston." %}
+{% include footnote-content.html id="sd-footnote-3" content="We're coming for you New York!" %}
