@@ -10,8 +10,6 @@ Over the years, I've always been interested in the idea of fantasy football but 
 
 First, by suggestion of the [New York Times](https://www.nytimes.com/2017/08/24/sports/fantasy-football-draft-guide-beginners.html), I consulted [Fantasy Pros](https://www.fantasypros.com/) and [5th Down Fantasy](https://www.5thdownfantasy.com/). To supplement these fairly reliable yet relatively standard sources, I thought I would try out a little crowd sourcing experiment of my own. Since I would be competing against other humans, I thought it would be interesting to see how the general masses valued certain players. To assess this, I entered a bunch of different mock drafts on ESPN and recorded the picks as the people and auto-draft did their things. I then compiled the data from each of these drafts, along with the Fantasy Pros and 5th Down suggestions, and made a handy little draft guide.
 
-<!-- more -->
-
 {% include figure.html src="/assets/img/posts/ff-spreadsheet.png" width="600px" %}
 
 The point of this guide was to show me if a particular player was a good or bad pick at the time. For example, if I was getting ready to make the 19th overall pick and I see that Jay Ajayi was taken with the 16.9th average pick, that would be a good sign that Ajayi is a worthwhile pick. On the other hand, if its the 44th overall pick and I'm interested in picking up Carlos Hyde, I could see that Fifth Down doesn't think he should go until the 61th pick, prompting me to look into someone else.
@@ -20,16 +18,9 @@ During the actual draft, I ended up following the guide's directions for the mos
 
 I was then curious how the rest of my league did at their drafting. Did my league follow conventional expert opinion like me or did some people opt to try out their own strategies? What better way to answer that question than with a nice visualization!
 
-<div id='d3-ff-container'>
-    <svg id="d3-ff"></svg>
-    <div id="d3-ff-buttons">
-        <button type="button" id="fantasy-pros">Fantasy Pros</button>
-        <button type="button" id="fifth-down">5th Down Fantasy</button>
-        <button type="button" id="mock">ESPN Mock Drafts</button>
-    </div>
-</div>
+{% include_file projects/fantasy-football/html/preseason-ff-viz.html %}
 
-This chart looks at where we drafted a particular player relative to where the pros and masses would have drafted them. The <span style="color: rgb(169,169,169)">gray baseline</span> represents how we drafted players and the colored dots represent when the pros and masses would have drafted a specific player. For example, with the 48th pick, Team Silver picked up Emmanuel Sanders. <span style="color: #23ce6b">Fantasy Pros</span> and the <span style="color: #ff4cc8">ESPN mock drafts</span> felt that was a relatively sound pick, thus we see their dots close to the baseline. But <span style="color: #77bdee">5th Down Fantasy</span> didn't think Sanders should go until the 86th pick so we see their dot significantly above the baseline. On the other side, <span style="color: #77bdee">5th Down Fantasy</span> thought Sammy Watkins, who Team Davis took with the 61st pick, should go with the 32nd pick, thus we see their dot significantly below the baseline.
+This chart looks at where we drafted a particular player relative to where the pros and masses would have drafted them. The <span class="ff-preseason-baseline">gray baseline</span> represents how we drafted players and the colored dots represent when the pros and masses would have drafted a specific player. For example, with the 48th pick, Team Silver picked up Emmanuel Sanders. <span class="ff-preseason-fantasypros">Fantasy Pros</span> and the <span class="ff-preseason-espn">ESPN mock drafts</span> felt that was a relatively sound pick, thus we see their dots close to the baseline. But <span class="ff-preseason-5thdown">5th Down Fantasy</span> didn't think Sanders should go until the 86th pick so we see their dot significantly above the baseline. On the other side, <span class="ff-preseason-5thdown">5th Down Fantasy</span> thought Sammy Watkins, who Team Davis took with the 61st pick, should go with the 32nd pick, thus we see their dot significantly below the baseline.
 
 As expected, it looks like my league started out sticking with the conventional wisdom, not really diverging from the experts and masses until the 4th or 5th round (except for <span id="footnote-1" class="footnote">Ezekiel Elliott as the 17th pick</span>). Even from there, the cone of variance grew at a fairly reasonable rate. Beyond this, I see three notable takeaways:
 
