@@ -20,8 +20,6 @@ Inspired by FiveThirtyEight's piece, I figured that using this map from Facebook
 <script type="text/javascript" src="/assets/js/lib/topojson.v2.min.js"></script>
 <script type="text/javascript" src="/projects/fivethirtyeight-partisan-nfl/js/map.js"></script>
 
-<!-- more -->
-
 This mapping then naturally leads to a proxy of how each team's fans voted in the 2016 Presidential Election. By tallying up the votes cast in each county and aggregating them based on a preferred NFL team, we get a vote share and therefore political lean for each of the 32 NFL teams, which can be broken down based on the number of votes cast or the total population of each county.
 
 <div id='d3-nfl-bar-container'>
@@ -36,7 +34,7 @@ This mapping then naturally leads to a proxy of how each team's fans voted in th
 
 Based on this calculation of political leaning, the top five most Democratic teams are the Raiders, the 49ers, the Redskins, the Patriots, and the Giants (or the Eagles, depending on if you look at votes cast or total population). On the other end of the political spectrum, the Titans, the Bengals, the Chiefs, the Colts, and the Saints (or the Jaguars) made up the five most Republican teams.
 
-When comparing these results to FiveThirtyEight's, there do however seem to be some notable differences. FiveThirtyEight categorized five (Raiders, 49ers, Redskins, Giants, Eagles) of our top six Democratic teams as having a more Democratic fan base and similarly categorized five (Titans, Bengals, Chiefs, Colts, Jaguars) of our top six Republican teams as have more Republican fan bases, so we at least got those right. However, the scale of these teams' partisan lean changes quite a bit between analyses. For example, in our analysis, we found that Saints fans had a partisan lean of <span style="color: rgb(239, 64, 86)">R+10.02</span> (when using total population), while FiveThirtyEight found them to have a <span style="color: rgb(91, 155, 213)">D+12.2</span>.
+When comparing these results to FiveThirtyEight's, there do however seem to be some notable differences. FiveThirtyEight categorized five (Raiders, 49ers, Redskins, Giants, Eagles) of our top six Democratic teams as having a more Democratic fan base and similarly categorized five (Titans, Bengals, Chiefs, Colts, Jaguars) of our top six Republican teams as have more Republican fan bases, so we at least got those right. However, the scale of these teams' partisan lean changes quite a bit between analyses. For example, in our analysis, we found that Saints fans had a partisan lean of <span class="nfl-bar-label rep">R+10.02</span> (when using total population), while FiveThirtyEight found them to have a <span class="nfl-bar-label dem">D+12.2</span>.
 
 <!-- 
 <div id='d3-nfl-compare-container'>
