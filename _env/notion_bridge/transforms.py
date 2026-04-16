@@ -191,6 +191,17 @@ def apply_transforms(
     if has_equations:
         flags["mathjax"] = True
 
+    # Transform: inline span markers → <span> tags
+    # Must run BEFORE columns: md.markdown() converts backticks to <code> tags,
+    # which breaks the backtick-wrapped marker pattern.
+    # `{{span#id.class1.class2}}`content`{{/span}}` → <span id="id" class="class1 class2">content</span>
+    markdown = re.sub(
+        r'`\{\{span([^}]*)\}\}`(.*?)`\{\{/span\}\}`',
+        _replace_span_marker,
+        markdown,
+        flags=re.DOTALL,
+    )
+
     # Transform 4: columns → div.columns layout
     markdown = _transform_columns(markdown)
 
@@ -259,17 +270,6 @@ def apply_transforms(
     markdown = notion_href_pattern.sub(resolve_notion_href, markdown)
     if unresolved_notion_links:
         unknowns.append(f"unresolved Notion page links: {', '.join(unresolved_notion_links)}")
-
-    # Transform 7: inline span markers → <span> tags
-    # `{{span#id.class1.class2}}`content`{{/span}}` → <span id="id" class="class1 class2">content</span>
-    # Supports #id and/or .class (both optional), multiple .classes allowed
-    # Markers are wrapped in backticks in Notion to prevent formatting interference
-    markdown = re.sub(
-        r'`\{\{span([^}]*)\}\}`(.*?)`\{\{/span\}\}`',
-        _replace_span_marker,
-        markdown,
-        flags=re.DOTALL,
-    )
 
     return markdown, unknowns, flags
 
@@ -405,8 +405,11 @@ def _transform_columns(text: str) -> str:
             lines = [line.lstrip('\t') for line in lines]
             content = '\n'.join(lines)
             # If column has markdown (not figure includes or raw HTML),
-            # render it to HTML so it works inside HTML divs
-            is_markdown = '{%' not in content and '<' not in content
+            # render it to HTML so it works inside HTML divs.
+            # Ignore inline <span> tags from the span marker transform —
+            # they're inline elements that md.markdown() passes through fine.
+            content_for_check = re.sub(r'</?span[^>]*>', '', content)
+            is_markdown = '{%' not in content_for_check and '<' not in content_for_check
             if is_markdown:
                 content = md.markdown(content)
             parts.append(f'    <div class="column">')

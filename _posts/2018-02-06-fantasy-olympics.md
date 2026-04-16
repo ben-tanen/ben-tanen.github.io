@@ -23,7 +23,7 @@ The next logical question: how many points are awarded per medal? The quickest a
     <div class='column'>
         <p>In order correct for this, I decided to weight the scoring by how many events a particular sport has. Under my weighted scoring scheme, for each medal, a player is awarded \(p = 4p_0 \frac{\sqrt[3]{x}}{x}\) points, where \(x\) is the number of events in that particular sport and \(p_0\) is either 3 for a gold medal, 2 for a silver medal, and 1 for a bronze medal. For example, if you had drafted the U.S. snowboarding team and Shaun White were to (does) win a gold, you would be awarded \(4 * 3 * \frac{\sqrt[3]{10}}{10} = 2.6\) points, since there are 10 total snowboarding events. See below for the full medal breakdown by sport.</p>
 
-        <p>Using this scoring scheme, we get the point distribution seen <span id="fo-chart-loc-text">on the right</span>. As a result, a team that can compete in 3 events is not hugely disadvantaged in comparison to a team that can compete in 6 events. This should (ideally) move the focus away from the number of events a team can participate in and towards the skill of a particular team.</p>
+        <p>Using this scoring scheme, we get the point distribution seen <span id="fo-chart-loc-text">on the left</span>. As a result, a team that can compete in 3 events is not hugely disadvantaged in comparison to a team that can compete in 6 events. This should (ideally) move the focus away from the number of events a team can participate in and towards the skill of a particular team.</p>
     </div>
 </div>
 
