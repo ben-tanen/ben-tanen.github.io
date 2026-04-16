@@ -26,7 +26,6 @@ curl -X GET \
   "https://api.eventive.org/event_buckets/67a0f8057aa6eac072bf986b/events" \
   -H "Authorization: Basic YOUR_AUTH_TOKEN"
 ```
-
 `YOUR_AUTH_TOKEN` can be found pretty easily from simply inspecting the requests made to the Sundance website once you’re logged in.
 
 {% include figure.html src="/assets/img/posts/sundance-tickets-24f13087.png" alt="A screenshot of the Sundance Film Festival website with the Network inspector panel open, showing details of the requests made to the SFF `events` API, including the Authorization token" %}

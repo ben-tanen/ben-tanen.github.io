@@ -1,0 +1,12 @@
+---
+layout: post
+title: Favorites from 2023
+date: '2024-01-05 12:00:00'
+thumbnail: /assets/img/post-thumbnails/favorites-of-2023-56271bea.jpg
+---
+
+[In late 2017/early 2018]({% post_url 2018-01-07-favorites-of-2017 %}), inspired by [this Patrick H. Willems video](https://www.youtube.com/watch?v=ydroQn6IbpU), I decided to make [a list of my 50 favorite things from 2017](/projects/2018/01/07/favorites-of-2017.html). Top N movie, TV show, music, etc. lists were and are all the rage, but I’ve always liked this concept of a mix media list to just talk about good things.
+
+So I decided to re-visit the concept and thus I present, again in no particular order, my top 50 things that came out and/or I enjoyed in 2023:
+
+{% include ye-favorite-list.html year="2023" %}

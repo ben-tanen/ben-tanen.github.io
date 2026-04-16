@@ -520,6 +520,12 @@ def check_suspicious_content(
     if not existing_path.exists():
         return None
     existing = existing_path.read_text()
+    # Strip YAML frontmatter so we compare body-to-body — new_content from
+    # Notion is body-only, so a file with just frontmatter (e.g. reroute posts)
+    # would otherwise always be flagged as "has content"
+    fm_match = re.match(r'^---\n.*?\n---\s*', existing, re.DOTALL)
+    if fm_match:
+        existing = existing[fm_match.end():]
     if not existing.strip():
         return None
     if not new_content.strip():

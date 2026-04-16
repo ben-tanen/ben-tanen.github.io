@@ -1,17 +1,17 @@
 ---
 layout: post
-title: 'A First Attempt At Generative Art'
-date: 2018-04-23 05:00:00
-thumbnail: /assets/img/post-thumbnails/gen-art.png
+title: A First Attempt At Generative Art
+date: '2018-04-23 12:00:00'
+thumbnail: /assets/img/post-thumbnails/generative-art-9dd36895.png
 ---
 
 {% include_file /projects/generative-sketchbook/html/generative-art.html %}
 <link rel="stylesheet" href="/projects/generative-sketchbook/css/generative-art.css" />
 <script src="/projects/generative-sketchbook/js/generative-art.js"></script>
 
-A recent trip to [the Boston MFA](https://www.mfa.org/){:target="_blank"} inspired me to try making more art for art's sake. I've never been particularly crafty with a pencil or paint brush so I decided my artistic medium would have to be digital. I've been fascinated by generative art ([the dot is black](http://thedotisblack.com/){:target="_blank"} has always been a quality source for interesting pieces) so I thought I would take a whack at it.
+A recent trip to [the Boston MFA](https://www.mfa.org/) inspired me to try making more art for art's sake. I've never been particularly crafty with a pencil or paint brush so I decided my artistic medium would have to be digital. I've been fascinated by generative art ([the dot is black](http://thedotisblack.com/) has always been a quality source for interesting pieces) so I thought I would take a whack at it.
 
-Wikipedia says [generative art](https://en.wikipedia.org/wiki/Generative_art){:target="_blank"} must be created partially or entirely using an autonomous system, but I prefer [Anders Hoff's definition](http://inconvergent.net/thoughts-on-generative-art/){:target="_blank"} of the art form: 
+Wikipedia says [generative art](https://en.wikipedia.org/wiki/Generative_art) must be created partially or entirely using an autonomous system, but I prefer [Anders Hoff's definition](http://inconvergent.net/thoughts-on-generative-art/) of the art form:
 
 > "I would argue that it does not really matter whether you are generating characters, dialogue or environments for a computer game, geometry as part of a building, digital or analogue art, a musical composition, or a poem. In all cases you are using a system of some kind to help you along. Either towards a specific goal, some unidentified result, or somewhere in-between. To me the main point is usually to experiment with a small system that consists of a set of relatively simple rules."
 

@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 'Partisanship and the NFL'
-date: 2017-10-07 05:00:00
-thumbnail: /assets/img/post-thumbnails/partisan-nfl.png
-related-proj:  partisanship-in-football
+title: Partisanship and the NFL
+date: '2017-10-07 12:00:00'
+thumbnail: /assets/img/post-thumbnails/partisanship-in-football-47b86b2d.png
+related-proj: partisanship-in-football
 ---
 
-A few weeks ago, FiveThirtyEight published [an article](https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/) analyzing the political leaning of each NFL team based on results from a poll of 2,290 football fans. They then compared each team's political leaning to the political leaning of the media market that said team covered (ex: Miami Dolphins' market makes up the southern tip of Florida). Reading this article reminded me of [a map from the Facebook Data Science team](https://www.theatlantic.com/technology/archive/2014/09/the-geography-of-nfl-fandom/379729/) that broke down the football fandoms of each county in the United States. For this map, the Facebook team determined each county's top team by seeing which team was the most "liked" among Facebook users from that county. 
+A few weeks ago, FiveThirtyEight published [an article](https://fivethirtyeight.com/features/how-every-nfl-teams-fans-lean-politically/) analyzing the political leaning of each NFL team based on results from a poll of 2,290 football fans. They then compared each team's political leaning to the political leaning of the media market that said team covered (ex: Miami Dolphins' market makes up the southern tip of Florida). Reading this article reminded me of [a map from the Facebook Data Science team](https://www.theatlantic.com/technology/archive/2014/09/the-geography-of-nfl-fandom/379729/) that broke down the football fandoms of each county in the United States. For this map, the Facebook team determined each county's top team by seeing which team was the most "liked" among Facebook users from that county.
 
 Inspired by FiveThirtyEight's piece, I figured that using this map from Facebook and the actual voting results from the 2016 Presidential Election, it might be possible to re-create an analysis similar to FiveThirtyEight's, but with a twist. Instead of using survey results from 2,290 fans, I would be calculating leanings using county-by-county fandom and voting results. The first step was to recreate the Facebook team's map so that each county's voting record could be lined up with their preferred team, which you can see below. You can also click on the map to see it in higher resolution.
 
@@ -49,6 +49,3 @@ These varying results are primarily due to clear differences in methodology betw
 An example of where this difference in approach manifests itself is for the Patriots and their fan base. Based on our county-by-county fandom map, Maine, Vermont, New Hampshire, Massachusetts (duh), and most of Connecticut are all made up of mostly Patriots fans, and in 2016, [all five of these states](https://www.nytimes.com/elections/results/president) went in favor of Clinton. However, while Massachusetts, Vermont, and Connecticut are fairly blue states, Patriots fans from New Hampshire and Maine (and [other pockets of the U.S.](https://fivethirtyeight.com/features/who-hates-the-patriots-the-most/)) may tend to lean quite a bit more conservative and yet may not necessarily be represented as overwhelmingly as their more populated counterparts.
 
 Overall, in a direct comparison, I think FiveThirtyEight's approach is a bit more sound and likely is a more direct reflection of NFL fans' partisan lean. However, while our specific results may vary, our overall trends and takeaways remain consistent. While some teams do tend to favor one political party more than the other, no single team is entirely made up of Democrats or Republicans. Given this mixed political representation, it is interesting to consider and observe how a team's fan base may respond to various [political](https://en.wikipedia.org/wiki/Washington_Redskins_name_controversy) [controversies](https://en.wikipedia.org/wiki/U.S._national_anthem_protests_(2016%E2%80%93present)) and how that response may vary from the nationwide response. Above all though, it's encouraging to think that, at least for now, we can't separate or divide NFL teams into red teams and blue teams, at least as long as we're talking about political leaning and not jersey colors.
-
-
-

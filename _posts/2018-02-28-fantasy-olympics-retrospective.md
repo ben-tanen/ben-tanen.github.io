@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'A Retrospective on the 2018 Fantasy Olympics'
-date: 2018-02-28 05:00:00
-thumbnail: /assets/img/post-thumbnails/fantasy-olympics-retro1.png
+title: A Retrospective on the 2018 Fantasy Olympics
+date: '2018-02-28 12:00:00'
+thumbnail: /assets/img/post-thumbnails/fantasy-olympics-retrospective-51c72b91.png
 ---
 
 Sunday marked the official end of the 2018 Olympics Games. Overall, they did not disappoint. There were some great moments and highlights all around. As an objectively not-objective American, I was a bit disappointed with [the United States' overall performance](https://www.theatlantic.com/entertainment/archive/2018/02/america-winter-olympics-worst-2018/554438/) but there were some amazing individual performances (shoutout to [Chloe Kim](https://www.youtube.com/watch?v=3opTwpiCZ6c), [the U.S. Women's Hockey Team](https://www.youtube.com/watch?v=dRmZUNO4Y5s), and [Jamie Anderson](https://www.nytimes.com/interactive/2018/02/12/sports/olympics/jamie-anderson-gold-slopestyle.html)).
@@ -11,7 +11,7 @@ Speaking of performances, I was doubly curious about how my first attempt at [Fa
 
 Now onto the projections. My projections were based on a very rudimentary and naive model so I had *very* little hope for these results. But at the end of the day, I don't think they were *that* awful. On average, I was off by about 0.3 points per team (meaning I generally overestimated performances), but in absolute terms, I was off by 2.5 points per team. When the typical medaling team earned 6.4 points per event, being off by 2.5 points means I was about 39% off the mark on average.
 
-But enough with averages - what about the spread? I decided to look at the spread of how my projections fared by team (by country and sport), by sport, and by country, leading to the visualization below. 
+But enough with averages - what about the spread? I decided to look at the spread of how my projections fared by team (by country and sport), by sport, and by country, leading to the visualization below.
 
 {% include_file projects/fantasy-olympics/html/retro-viz.html %}
 
@@ -27,9 +27,12 @@ Overall, while I did make some mistakes, I'm not too upset with the results I go
 
 **Retrospective note (on the retrospective):** FiveThirtyEight had [their own projection model](https://fivethirtyeight.com/features/a-decent-second-week-saved-the-u-s-from-olympic-catastrophe/) and they recently published their results. I decided to see how my results compared to theirs (see below for a quick chart). As **far** better modelers than me, I was expecting their results to blow mine out of the water, and you know what, they kind of do. Our results are on two different scales (theirs are measured by number of medals expected, mine are measured by expected Fantasy Olympic points) so direct comparison is probably not the best analysis, but it is interesting to see that we get similar trends, likely driven by performances that were just truly unexpected. This comparison also further points out how much I messed up Germany (points furthest to the right). Sorry Germany...
 
-{% include figure.html src="/assets/img/posts/fantasy-olympics-538-retro.png" alt="A chart comparing FiveThirtyEight's projections to mine" %}
+{% include figure.html src="/assets/img/posts/fantasy-olympics-retrospective-e821a302.png" alt="A chart comparing FiveThirtyEight's projections to mine" %}
 
 <link rel="stylesheet" href="/projects/fantasy-olympics/css/retro-2018.style.css">
 <script type="text/javascript" src="/projects/fantasy-olympics/js/retro-2018.js"></script>
 
-{% include footnote-content.html id="footnote-1" content="This analysis includes teams that were projected to earn points or who did earn points. Thus if a team was not projected to win and they did not win, they are not included." %}
+{% capture footnote-footnote-1-content %}
+This analysis includes teams that were projected to earn points or who did earn points. Thus if a team was not projected to win and they did not win, they are not included.
+{% endcapture %}
+{% include footnote-content.html id="footnote-1" content=footnote-footnote-1-content %}

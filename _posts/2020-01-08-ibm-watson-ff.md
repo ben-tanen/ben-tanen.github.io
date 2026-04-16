@@ -1,17 +1,17 @@
 ---
 layout: post
-title:  "Is IBM Watson Good At Fantasy Football?"
-date:   2020-01-08 15:05:41
-thumbnail: /assets/img/post-thumbnails/ff-ibm-watson.png
+title: Is IBM Watson Good At Fantasy Football?
+date: '2020-01-08 12:00:00'
+thumbnail: /assets/img/post-thumbnails/ibm-watson-ff-ba74ee4e.png
 ---
 
-In the years since [IBM's Watson supercomputer infamously appeared on *Jeopardy!*](https://www.nytimes.com/2011/02/17/science/17jeopardy-watson.html) in 2011, Watson has become a household name and one of the most well-known examples of artificial intelligence in the real world. Much of this fame has come from IBM's continued marketing that integrates and showcases Watson in a variety of real-world applications. An example is [IBM's recent partnership with ESPN](https://www.ibm.com/sports/fantasy/) to bring Watson's AI capabilities to ESPN's fantasy football system in the form of player-by-player performance projections. [Per IBM's marketing materials](https://www.youtube.com/watch?v=uDeP5b3iKfU) for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete's stats and are also frequently used in discussions on [ESPN's fantasy-driven shows](https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show).
+In the years since [IBM's Watson supercomputer infamously appeared ](https://www.nytimes.com/2011/02/17/science/17jeopardy-watson.html)on *Jeopardy!* in 2011, Watson has become a household name and one of the most well-known examples of artificial intelligence in the real world. Much of this fame has come from IBM's continued marketing that integrates and showcases Watson in a variety of real-world applications. An example is [IBM's recent partnership with ESPN](https://www.ibm.com/sports/fantasy/) to bring Watson's AI capabilities to ESPN's fantasy football system in the form of player-by-player performance projections. [Per IBM's marketing materials](https://www.youtube.com/watch?v=uDeP5b3iKfU) for the project, Watson was trained to predict weekly scoring ranges for players to indicate their upsides and downsides as well as the projected likelihood that a player will exceed or fall below these thresholds. These projections are shown to fantasy football players when viewing a specific athlete's stats and are also frequently used in discussions on [ESPN's fantasy-driven shows](https://www.espn.com/watch/series/e2d4e77d-6242-42d3-a6db-e749751f0ef4/the-fantasy-show).
 
-<div class='columns two'>
-    <div class='column'>
-        {% include figure.html src="/assets/img/posts/ibm-watson-proj-ex.jpg" alt="An example of Watson's player projections." %}
+<div class="columns two">
+    <div class="column">
+        {% include figure.html src="/assets/img/posts/ibm-watson-ff-a03857c9.png" alt="An example of Watson's player projections." %}
     </div>
-    <div class='column'>
+    <div class="column">
         <p>For the 2019 season, Watson made projections for hundreds of players across 17 weeks, which amounts to thousands of distinct player projections. For each projection, a player is given two point thresholds (an upside or "boom" threshold and a downside or "bust" threshold) that indicate how strong of a week Watson projects for that player. Watson also assigns probabilities for these thresholds and the overall likelihood of a player having a good or bad week. For example, in week 5, Watson gave Patrick Mahomes a boom threshold of 28.3 points and a bust threshold of 10.0 points, where each had an 8% chance of occurring. This means that, based on Watson's projections, Mahomes had an 8% chance of having a great week (scoring 28.3 or more points), an 8% chance of having a bad week (scoring 10 or fewer points), and 84% chance of scoring somewhere in between - he ultimately went on to score 18.5 points.</p>
     </div>
 </div>
@@ -32,9 +32,11 @@ Given all of this, it is worth asking: is this a good use of Watson? From a stri
 
 However, as much as Watson and its applications are depicted as data science projects, I don't think IBM assesses Watson's success from a data science perspective. Instead, by [all reasonable accounts](https://gizmodo.com/why-everyone-is-hating-on-watson-including-the-people-w-1797510888), Watson is actually a very expensive marketing tool. Watson's work with ESPN never appears to be marketed as the next great tool for fantasy football players to dominate in leagues but rather as the next great tool that ESPN could use to keep users engaged. Watson's success is likely not measured by its calibration or accuracy, but rather how much money it can make for ESPN and how many new clients it can bring in for IBM. Watson has certainly developed the capabilities to do some remarkable things - beating Ken Jennings is no laughing matter - but more than anything, Watson's work at ESPN serves as a shiny example of all the things that other business could potentially accomplish if they pay lots of money to IBM.
 
+{% include section-break.html %}
+
 {% capture methodology-note %}
 IBM Watson's weekly player projections were scraped from ESPN for weeks 1 - 16 of the 2019 season. ESPN did not report projections for all players in all weeks, both when the player was not likely to play or when the player did not have enough relevant data available to make a projection. If the player had no projection for week 16, it was not possible to view Watson's projections for the player in prior weeks, so these data are not reflected. In total, 2930 player-weeks of data were used, where each player-week had three projections, resulting in 8790 total projections assessed.
 
-You can view the full list of projections used <a href="/projects/fantasy-football/data/ibm-watson-ff-projections-2019.csv">here</a>. Watson's point projections reflect <a href="https://www.nbcsports.com/bayarea/49ers/what-ppr-means-fantasy-football-and-three-picks-target-draft">PPR</a> scoring.
+	You can view the full list of projections used [here](/projects/fantasy-football/data/ibm-watson-ff-projections-2019.csv). Watson's point projections reflect [PPR](https://www.nbcsports.com/bayarea/49ers/what-ppr-means-fantasy-football-and-three-picks-target-draft) scoring.
 {% endcapture %}
-{% include methodology-note.html content=methodology-note break='yes' %}
+{% include methodology-note.html content=methodology-note %}

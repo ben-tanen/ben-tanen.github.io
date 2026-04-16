@@ -1,0 +1,10 @@
+---
+layout: post
+title: Favorites from 2025
+date: '2026-01-03 12:00:00'
+thumbnail: /assets/img/post-thumbnails/favorites-of-2025-12d57e12.jpg
+---
+
+It is the end of 2025, so here I am [again]({% post_url 2025-01-04-favorites-of-2024 %}) making a list of my favorite things from the year. So in no particular order, here are my 50 favorite <span color="blue">TV shows</span>, <span color="green">movies</span>, <span color="orange">music</span>, <span color="pink">podcasts</span>, <span color="yellow">games</span>, <span color="purple">articles/books</span>, <span color="red">YouTube videos</span>, and more:
+
+{% include ye-favorite-list.html year="2025" %}

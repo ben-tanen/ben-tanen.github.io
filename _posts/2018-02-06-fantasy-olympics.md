@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'Gamifying the 2018 Olympic Games'
-date: 2018-02-06 05:00:00
-thumbnail: /assets/img/post-thumbnails/fantasy-olympics.png
+title: Gamifying the 2018 Olympic Games
+date: '2018-02-06 12:00:00'
+thumbnail: /assets/img/post-thumbnails/fantasy-olympics-1f4b45ff.png
 mathjax: true
 ---
 
@@ -12,17 +12,14 @@ One of the initial problems I foresaw with a game for the Olympics was the avera
 
 So, instead of drafting a bunch of individual athletes, Fantasy Olympics players pick from teams of athletes by nationality and sport. For example, instead of drafting individual speed skaters, you might draft the speed skating team from the Netherlands (an excellent pick, given that they won 19 total medals at the Sochi games). You would then be awarded points for any medals won by any Dutch speed skaters.
 
-<!-- more -->
+The next logical question: how many points are awarded per medal? The quickest and simplest scheme that comes to mind would be to award 3 points per gold, 2 points per silver, and 1 point per bronze. However, while simple, this scheme would offer a significant advantage to teams participating in sports with a large number of events. Using this scoring scheme, players would probably opt to pick a lower-skill alpine skiing team (with 11 total events to participate in) over an all-star hockey team (with only 2 total events to participate in).
 
-The next logical question: how many points are awarded per medal? The quickest and simplest scheme that comes to mind would be to award 3 points per gold, 2 points per silver, and 1 point per bronze. However, while simple, this scheme would offer a significant advantage to teams participating in sports with a large number of events. Using this scoring scheme, players would probably opt to pick a lower-skill alpine skiing team (with 11 total events to participate in) over an all-star hockey team (with only 2 total events to participate in). 
-
-<div class='columns two'>
-    <div class='column'>
-        {% include figure.html src="/assets/img/posts/fantasy-olympics-point-dist.png" alt="The non-weighted and weighted point distributions" width=400 %}
+<div class="columns two">
+    <div class="column">
+        {% include figure.html src="/assets/img/posts/fantasy-olympics-fd6371a3.png" alt="The non-weighted and weighted point distributions" width="400" %}
     </div>
-    <div class='column'>
+    <div class="column">
         <p>In order correct for this, I decided to weight the scoring by how many events a particular sport has. Under my weighted scoring scheme, for each medal, a player is awarded \(p = 4p_0 \frac{\sqrt[3]{x}}{x}\) points, where \(x\) is the number of events in that particular sport and \(p_0\) is either 3 for a gold medal, 2 for a silver medal, and 1 for a bronze medal. For example, if you had drafted the U.S. snowboarding team and Shaun White were to (does) win a gold, you would be awarded \(4 * 3 * \frac{\sqrt[3]{10}}{10} = 2.6\) points, since there are 10 total snowboarding events. See below for the full medal breakdown by sport.</p>
-
         <p>Using this scoring scheme, we get the point distribution seen <span id="fo-chart-loc-text">on the left</span>. As a result, a team that can compete in 3 events is not hugely disadvantaged in comparison to a team that can compete in 6 events. This should (ideally) move the focus away from the number of events a team can participate in and towards the skill of a particular team.</p>
     </div>
 </div>
@@ -101,10 +98,8 @@ For my projections, I went with a fairly straight forward regression based on ea
 <link rel="stylesheet" href="/projects/fantasy-olympics/css/project-2018.style.css">
 <script type="text/javascript" src="/projects/fantasy-olympics/js/project-2018.js"></script>
 
-Based on these 182 total projections, the top five picks would be the German Luge team (16.14 points), the Dutch Speed Skating team (15.89 points), the Canadian Ice Hockey teams (13.41 points), the Norwegian Cross-Country Skiing team (13.08 points), and the Korean Short Track Speed Skating team (12.64 points). Based purely on my knowledge from past Olympics, these projections seem fairly accurate, which is a good sign. The Dutch speed skaters crushed in Sochi, Germany is [always a top luge contender](https://www.usatoday.com/story/sports/olympics/2018/01/10/germany-again-will-be-the-team-to-catch-in-olympic-luge/109334518/){:target="_new"}, and, I mean, [it's](https://www.youtube.com/watch?v=allADNXAAMA){:target="_new"} [Canada](https://www.youtube.com/watch?v=G7DeQbTzPE8){:target="_new"} [and](https://www.youtube.com/watch?v=NqBHav5puKA){:target="_new"} [hockey](https://www.youtube.com/watch?v=MB-5_bgqRZU){:target="_new"}.
+Based on these 182 total projections, the top five picks would be the German Luge team (16.14 points), the Dutch Speed Skating team (15.89 points), the Canadian Ice Hockey teams (13.41 points), the Norwegian Cross-Country Skiing team (13.08 points), and the Korean Short Track Speed Skating team (12.64 points). Based purely on my knowledge from past Olympics, these projections seem fairly accurate, which is a good sign. The Dutch speed skaters crushed in Sochi, Germany is [always a top luge contender](https://www.usatoday.com/story/sports/olympics/2018/01/10/germany-again-will-be-the-team-to-catch-in-olympic-luge/109334518/), and, I mean, [it's](https://www.youtube.com/watch?v=allADNXAAMA) [Canada](https://www.youtube.com/watch?v=G7DeQbTzPE8) [and](https://www.youtube.com/watch?v=NqBHav5puKA) [hockey](https://www.youtube.com/watch?v=MB-5_bgqRZU).
 
 The United States is the top overall projected country, but we shall see if that proves to be correct. Sochi was a bit of a disappointment for the U.S. team, coming in fourth for overall medals, though Vancouver was a bit better. Let's hope they can pull it out in South Korea.
 
 Regardless of who wins and how accurate these projections end up being, I'm excited to watch two weeks of the best in sport. But also, go USA!
-
-

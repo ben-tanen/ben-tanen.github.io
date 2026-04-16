@@ -1,16 +1,14 @@
 ---
 layout: post
-title:  "The Best Films That Don't Win Best Picture"
-date:   2020-02-10 15:05:41
-thumbnail: /assets/img/post-thumbnails/oscars-best-picture.png
-related-proj:  oscars-best-picture
+title: The Best Films That Don't Win Best Picture
+date: '2020-02-10 12:00:00'
+thumbnail: /assets/img/post-thumbnails/oscars-best-picture-5d9f50c1.png
+related-proj: oscars-best-picture
 ---
 
+On Sunday, *Parasite* made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that *Parasite* would lose to [*1917*](https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html), even though [most critics believed](https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/) *Parasite* was the superior movie. All of this was also coming a year after [*Green Book*](https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture) won over (believed to be) superior films like *Roma*, *The Favourite*, and *BlackKlansman*. Needless to say, before *Parasite* actually won, there were low hopes that the Academy would make the best choice.
 
-
-On Sunday, *Parasite* made history as the first foreign language film to win the highly coveted Best Picture award at this year’s Academy Awards. The film is a magnificent achievement and was, in my opinion, the right choice. However, in the weeks leading up to the ceremony, it was highly speculated that *Parasite* would lose to [*1917*](https://www.nytimes.com/2020/02/06/movies/oscars-2020-nominations-predictions.html), even though [most critics believed](https://www.cnet.com/news/oscars-2020-predictions-1917-parasite-joker-once-upon-a-time-in-hollywood/) *Parasite* was the superior movie. All of this was also coming a year after [*Green Book* won](https://www.vox.com/culture/2019/2/25/18239309/oscars-2019-green-book-best-picture) over (believed to be) superior films like *Roma*, *The Favourite*, and *BlackKlansman*. Needless to say, before *Parasite* actually won, there were low hopes that the Academy would make the best choice.
-
-{% include figure.html autolink="yes" src="/assets/img/posts/oscars-best-picture-2019-new.jpg" alt="A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee" width="700px" %}
+{% include figure.html src="/assets/img/posts/oscars-best-picture-558ff771.png" alt="A visualization of some of the best movies of 2019, colored based on if they were a Best Picture nominee" autolink="yes" width="700" %}
 
 Beyond the discussion of which Best Picture nominee was most deserving of the prize, many have pointed out that the Academy’s shortlist of films did not even include some of the best films of the year. Films like *Uncut Gems*, *The Farewell*, and *Dolemite Is My Name* were all [notoriously snubbed this year](https://ew.com/oscars/2020/01/13/oscar-nominations-2020-snubs-surprises/), though this has become somewhat of the norm at the Oscars.
 
@@ -42,11 +40,13 @@ Now that we have the benefit of knowing who won Best Picture, this year’s Best
 - 2006: *Children of Men*, *Borat*
 - 2002: *Spirited Away*, *Adaptation.*
 
+{% include section-break.html %}
+
 {% capture methodology-note %}
-Best Picture nominees were taken from <a href="http://awardsdatabase.oscars.org/">the Official Academy Awards Database</a> and then matched to their respective titles on <a href="https://www.metacritic.com/">Metacritic</a>. All films that were ranked higher than the lowest scoring Best Picture nominee (based on <a href="https://www.metacritic.com/browse/movies/score/metascore/year/filtered?year_selected=2019&sort=desc">Metacritic's Best Movies By Year list</a>) were included (as of Feb 20, 2025).
+Best Picture nominees were taken from [the Official Academy Awards Database](http://awardsdatabase.oscars.org/) and then matched to their respective titles on [Metacritic](https://www.metacritic.com/). All films that were ranked higher than the lowest scoring Best Picture nominee (based on [Metacritic's Best Movies By Year list](https://www.metacritic.com/browse/movies/score/metascore/year/filtered?year_selected=2019&sort=desc)) were included (as of Feb 20, 2025).
 
-Some films on Metacritic's list likely did not qualify for Best Picture nominations (e.g., <i>Apocalypse Now: Final Cut</i>, an extended version of the 1979 film, was released in 2019 but likely would not qualify). However, the Academy's qualifications have changed over time and <a href="https://www.liveabout.com/qualifying-for-best-picture-oscar-4071766">generally require information submitted by studios directly to the Academy</a>, which can be difficult to find online. Therefore, for the sake of completeness, all films listed on Metacritic were included.
+	Some films on Metacritic's list likely did not qualify for Best Picture nominations (e.g., *Apocalypse Now: Final Cut*, an extended version of the 1979 film, was released in 2019 but likely would not qualify). However, the Academy's qualifications have changed over time and [generally require information submitted by studios directly to the Academy](https://www.liveabout.com/qualifying-for-best-picture-oscar-4071766), which can be difficult to find online. Therefore, for the sake of completeness, all films listed on Metacritic were included.
 
-The film's year indicates the year of release, not the year of the Oscars ceremony associated with the film.
+	The film's year indicates the year of release, not the year of the Oscars ceremony associated with the film.
 {% endcapture %}
-{% include methodology-note.html content=methodology-note break='yes' %}
+{% include methodology-note.html content=methodology-note %}

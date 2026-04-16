@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  'Clustering Using K-Means'
-date:   2016-03-09 15:05:41
-thumbnail: /assets/img/post-thumbnails/kmeans-cluster.gif
+title: Clustering Using K-Means
+date: '2016-03-09 12:00:00'
+thumbnail: /assets/img/post-thumbnails/clustering-with-kmeans-34cc6291.gif
 ---
 
 This semester, I'm taking a special topics course on data mining through the Tufts Math department. Up until now, we had primarily focused on the moderately complex math behind [PCA analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). However, we are starting to move onto look at new types of data analysis / clustering and today's topic was **k-means clustering**. This sort of analysis deals with much less complex math (at least it does thus far) and from a CS student's perspective, is much easier to rationalize. It's a fairly simple algorithm and it does have some cool results.
@@ -17,16 +17,12 @@ During lecture, my professor was showing us some plots from before and after clu
 
 Initially, the code generates *k* normally-distributed random clusters of data of *r* data points each (*kr* = *n* total data points). These points are known to be in clusters by the user (we made it that way) but the computer doesn't necessarily known that. For an example, see the two plots below. The plot on the left is colored according to the known clustering while the plot on the right is what is known by the computer - nothing.
 
-{% include figure.html autolink="yes" src="/assets/img/posts/kmeans-before-after.png" alt="Graphs comparing the known and unknown clusters in some random data" width="700px" %}
+{% include figure.html src="/assets/img/posts/clustering-with-kmeans-3edc18ea.png" alt="Graphs comparing the known and unknown clusters in some random data" autolink="yes" width="700px" %}
 
 The first iteration is done by making a random guess for the location of the *k* (four in this case) centroids. From here, we can follow the algorithm above until we converge on the answer. Generally, this convergence is approximately constant time (though theoretically it is linear) and so far I haven't seen any examples that require more than 8 iterations. Below, you can see an example of the algorithm and the ultimate goal of this little project:
 
-{% include figure.html autolink="yes" src="/assets/img/posts/kmeans-cluster.gif" alt="A GIF visualizing the k-means clustering algorithm" width="450px" %}
+{% include figure.html src="/assets/img/posts/clustering-with-kmeans-6a769ed1.gif" alt="A GIF visualizing the k-means clustering algorithm" autolink="yes" width="450px" %}
 
-If you have any interest in playing around, you can find my MATLAB code [here](https://github.com/ben-tanen/data-mining/tree/master/kmeans) in [a new GitHub repo](https://github.com/ben-tanen/data-mining) for my data mining work. It should work for all reasonable values of *k* (clusters) and *r* (data points per cluster). I'll be honest and say that my MATLAB code leaves a bit to be desired but it's working so that's mostly all that matters. 
+If you have any interest in playing around, you can find my MATLAB code [here](https://github.com/ben-tanen/data-mining/tree/master/kmeans) in [a new GitHub repo](https://github.com/ben-tanen/data-mining) for my data mining work. It should work for all reasonable values of *k* (clusters) and *r* (data points per cluster). I'll be honest and say that my MATLAB code leaves a bit to be desired but it's working so that's mostly all that matters.
 
 If you have any questions / comments, feel free to shoot me a message. I'll follow up with any major changes / updates in the data mining world of Ben Tanen.
-
-
-
-

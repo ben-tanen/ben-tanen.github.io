@@ -1,8 +1,483 @@
 {
   "posts": {
+    "3320ec74-530b-802f-b054-d782c9aec536": {
+      "last_synced_at": "2026-04-16T21:12:49.351362+00:00",
+      "slug": "album-progress",
+      "status": "Published"
+    },
     "3320ec74-530b-803b-b390-cb67f81236e0": {
-      "last_synced_at": "2026-03-31T03:18:51.493280+00:00",
+      "last_synced_at": "2026-04-16T20:47:39.947621+00:00",
       "slug": "sundance-tickets"
+    },
+    "3320ec74-530b-8058-b146-dbf7303304c6": {
+      "last_synced_at": "2026-04-16T21:12:51.028615+00:00",
+      "slug": "actor-ages",
+      "status": "Published"
+    },
+    "3320ec74-530b-80f1-a1dd-f42de849486a": {
+      "last_synced_at": "2026-04-16T21:12:58.407140+00:00",
+      "slug": "wrapped-sound-town",
+      "status": "Published"
+    },
+    "3330ec74-530b-8100-a561-ed9d1058f1d1": {
+      "last_synced_at": "2026-04-16T21:12:59.082182+00:00",
+      "slug": "introducing-nhl-projections",
+      "status": "Published"
+    },
+    "3330ec74-530b-8102-886a-f383ad95e8f9": {
+      "last_synced_at": "2026-04-16T21:12:59.834645+00:00",
+      "slug": "wrapped-one-show-winner",
+      "status": "Published"
+    },
+    "3330ec74-530b-810f-a466-e2edc6fbdf7d": {
+      "last_synced_at": "2026-04-16T21:13:00.154249+00:00",
+      "slug": "random-d3-fun",
+      "status": "Published"
+    },
+    "3330ec74-530b-811b-9b72-fdb04efa41a1": {
+      "last_synced_at": "2026-04-16T21:13:01.954569+00:00",
+      "slug": "fantasy-olympics-retrospective",
+      "status": "Published"
+    },
+    "3330ec74-530b-811d-b8d5-e9b2ff3c8493": {
+      "last_synced_at": "2026-04-16T21:13:02.337877+00:00",
+      "slug": "the-markup-livers-race",
+      "status": "Published"
+    },
+    "3330ec74-530b-8122-a58a-dd50e073790c": {
+      "last_synced_at": "2026-04-16T21:13:02.514333+00:00",
+      "slug": "miller-rabin",
+      "status": "Published"
+    },
+    "3330ec74-530b-8127-be11-ecfe238cd4e6": {
+      "last_synced_at": "2026-04-16T21:13:02.988029+00:00",
+      "slug": "censor-machine",
+      "status": "Published"
+    },
+    "3330ec74-530b-8128-b77f-c75f45f5a36a": {
+      "last_synced_at": "2026-04-16T21:13:04.186982+00:00",
+      "slug": "svm-poetry",
+      "status": "Published"
+    },
+    "3330ec74-530b-812a-9586-e1c351f5bd27": {
+      "last_synced_at": "2026-04-16T21:13:04.506445+00:00",
+      "slug": "trump-electoral-college-visualized",
+      "status": "Published"
+    },
+    "3330ec74-530b-812c-aa5d-f589f7f5fe7a": {
+      "last_synced_at": "2026-04-16T21:13:05.103458+00:00",
+      "slug": "lastfm-scrobble-graphs",
+      "status": "Published"
+    },
+    "3330ec74-530b-8131-afab-eb4bad0337a4": {
+      "last_synced_at": "2026-04-16T21:13:12.212278+00:00",
+      "slug": "processing-fun",
+      "status": "Published"
+    },
+    "3330ec74-530b-8134-bc9c-f5434a4bc065": {
+      "last_synced_at": "2026-04-16T21:13:13.746116+00:00",
+      "slug": "tv-monitor",
+      "status": "Published"
+    },
+    "3330ec74-530b-8138-a812-ccdf3074bacd": {
+      "last_synced_at": "2026-04-16T21:13:14.055590+00:00",
+      "slug": "comparing-obama-trump-on-guns",
+      "status": "Published"
+    },
+    "3330ec74-530b-813c-bec0-dc1cbbc1e5b7": {
+      "last_synced_at": "2026-04-16T21:13:15.283206+00:00",
+      "slug": "confederate-monuments",
+      "status": "Published"
+    },
+    "3330ec74-530b-8141-9ac4-ea8c435200f8": {
+      "last_synced_at": "2026-04-16T21:13:19.850387+00:00",
+      "slug": "most-font",
+      "status": "Published"
+    },
+    "3330ec74-530b-8142-a89e-f4d2c3347a29": {
+      "last_synced_at": "2026-04-16T21:13:20.295392+00:00",
+      "slug": "generative-art",
+      "status": "Published"
+    },
+    "3330ec74-530b-8147-b177-f1a0065343a5": {
+      "last_synced_at": "2026-04-16T21:13:20.627840+00:00",
+      "slug": "projects-on-notion",
+      "status": "Published"
+    },
+    "3330ec74-530b-8149-a8e4-e6107b5c26ab": {
+      "last_synced_at": "2026-04-16T21:13:29.452499+00:00",
+      "slug": "seam-carving-pt1",
+      "status": "Published"
+    },
+    "3330ec74-530b-814c-bb44-eda74be69589": {
+      "last_synced_at": "2026-04-16T21:13:30.542493+00:00",
+      "slug": "seam-carving-pt2",
+      "status": "Published"
+    },
+    "3330ec74-530b-8152-826a-fd28227ebf62": {
+      "last_synced_at": "2026-04-16T21:13:30.979295+00:00",
+      "slug": "oscar-popular-film",
+      "status": "Published"
+    },
+    "3330ec74-530b-8156-9988-d8b1774e3372": {
+      "last_synced_at": "2026-04-16T21:13:31.818542+00:00",
+      "slug": "how-bills-die",
+      "status": "Published"
+    },
+    "3330ec74-530b-815b-b342-d752199c6187": {
+      "last_synced_at": "2026-04-16T21:13:33.322957+00:00",
+      "slug": "redistricting-changes-for-2020",
+      "status": "Published"
+    },
+    "3330ec74-530b-815c-90c5-c6b93195dbff": {
+      "last_synced_at": "2026-04-16T21:13:33.666070+00:00",
+      "slug": "favorites-of-2017",
+      "status": "Published"
+    },
+    "3330ec74-530b-815c-9897-dc9ee012e281": {
+      "last_synced_at": "2026-04-16T21:13:33.993691+00:00",
+      "slug": "the-markup-amazon",
+      "status": "Published"
+    },
+    "3330ec74-530b-815c-bd26-da5cfd1dbd23": {
+      "last_synced_at": "2026-04-16T21:13:34.321892+00:00",
+      "slug": "stpaul-broken-bones",
+      "status": "Published"
+    },
+    "3330ec74-530b-815f-9941-e58209592884": {
+      "last_synced_at": "2026-04-16T21:13:35.082392+00:00",
+      "slug": "rap-data-design",
+      "status": "Published"
+    },
+    "3330ec74-530b-8165-ac64-e7813bccd752": {
+      "last_synced_at": "2026-04-16T21:13:35.422536+00:00",
+      "slug": "the-markup-denied",
+      "status": "Published"
+    },
+    "3330ec74-530b-816b-8490-e5b0d67b8030": {
+      "last_synced_at": "2026-04-16T21:13:36.011713+00:00",
+      "slug": "netflix-history",
+      "status": "Published"
+    },
+    "3330ec74-530b-816b-b358-e594d35c6005": {
+      "last_synced_at": "2026-04-16T21:13:38.412299+00:00",
+      "slug": "recent-tweets",
+      "status": "Published"
+    },
+    "3330ec74-530b-816f-91b0-eb1591d525d9": {
+      "last_synced_at": "2026-04-16T21:13:38.748435+00:00",
+      "slug": "signal-and-noise-paper",
+      "status": "Published"
+    },
+    "3330ec74-530b-8170-9763-e9464cba2cb3": {
+      "last_synced_at": "2026-04-16T21:13:41.203273+00:00",
+      "slug": "generative-sketchbook",
+      "status": "Published"
+    },
+    "3330ec74-530b-8171-80bc-df6a32434a73": {
+      "last_synced_at": "2026-04-16T21:13:42.668470+00:00",
+      "slug": "pca-kmeans-nhl",
+      "status": "Published"
+    },
+    "3330ec74-530b-8171-89b7-e8d978b4a8d2": {
+      "last_synced_at": "2026-04-16T21:13:42.890896+00:00",
+      "slug": "base64",
+      "status": "Published"
+    },
+    "3330ec74-530b-8179-8d9a-e7df7a02ae67": {
+      "last_synced_at": "2026-04-16T21:13:43.822810+00:00",
+      "slug": "ibm-watson-ff",
+      "status": "Published"
+    },
+    "3330ec74-530b-8182-a053-d845fc56ac59": {
+      "last_synced_at": "2026-04-16T21:13:44.192018+00:00",
+      "slug": "polar-line-charts",
+      "status": "Published"
+    },
+    "3330ec74-530b-8185-9db0-eae71ef09e37": {
+      "last_synced_at": "2026-04-16T21:13:45.219669+00:00",
+      "slug": "optimizing-hedge-ratio",
+      "status": "Published"
+    },
+    "3330ec74-530b-8187-86eb-dac2fe28dc1b": {
+      "last_synced_at": "2026-04-16T21:13:46.423473+00:00",
+      "slug": "retro-game-theory",
+      "status": "Published"
+    },
+    "3330ec74-530b-818a-97d8-c552b8c07938": {
+      "last_synced_at": "2026-04-16T21:13:48.145650+00:00",
+      "slug": "fantasy-olympics",
+      "status": "Published"
+    },
+    "3330ec74-530b-818e-95ee-d9461acd39e3": {
+      "last_synced_at": "2026-04-16T21:13:48.352488+00:00",
+      "slug": "grub",
+      "status": "Published"
+    },
+    "3330ec74-530b-819b-ba3c-ec2b756fb519": {
+      "last_synced_at": "2026-04-16T21:13:49.548199+00:00",
+      "slug": "oscars-best-picture",
+      "status": "Published"
+    },
+    "3330ec74-530b-819c-afb8-c55801ac5975": {
+      "last_synced_at": "2026-04-16T21:13:50.267971+00:00",
+      "slug": "ultimate-convex-hull",
+      "status": "Published"
+    },
+    "3330ec74-530b-81a0-862a-dd5977a60241": {
+      "last_synced_at": "2026-04-16T21:13:51.530254+00:00",
+      "slug": "infographics",
+      "status": "Published"
+    },
+    "3330ec74-530b-81a1-9e00-ed725aaaaef3": {
+      "last_synced_at": "2026-04-16T21:13:53.688713+00:00",
+      "slug": "data-is-beautiful-1",
+      "status": "Published"
+    },
+    "3330ec74-530b-81a3-b8b8-c6bf3284f5d7": {
+      "last_synced_at": "2026-04-16T21:13:54.944802+00:00",
+      "slug": "huffman-coding",
+      "status": "Published"
+    },
+    "3330ec74-530b-81a5-8b53-ec022d9111e2": {
+      "last_synced_at": "2026-04-16T21:13:56.394422+00:00",
+      "slug": "spotify",
+      "status": "Published"
+    },
+    "3330ec74-530b-81a9-ba76-ccec26046dbf": {
+      "last_synced_at": "2026-04-16T21:13:56.732153+00:00",
+      "slug": "partisanship-in-football",
+      "status": "Published"
+    },
+    "3330ec74-530b-81b1-a7a0-d8114b0dfb42": {
+      "last_synced_at": "2026-04-16T21:14:01.139998+00:00",
+      "slug": "retro-python-games",
+      "status": "Published"
+    },
+    "3330ec74-530b-81b3-aa2d-e1c7f756a1fd": {
+      "last_synced_at": "2026-04-16T21:14:02.101243+00:00",
+      "slug": "observable-news",
+      "status": "Published"
+    },
+    "3330ec74-530b-81b7-bb28-de87a12c5b23": {
+      "last_synced_at": "2026-04-16T21:14:03.020001+00:00",
+      "slug": "ASL-LEX",
+      "status": "Published"
+    },
+    "3330ec74-530b-81ba-992b-e15647bd228c": {
+      "last_synced_at": "2026-04-16T21:14:03.734219+00:00",
+      "slug": "rio-2016-usa-vs-world",
+      "status": "Published"
+    },
+    "3330ec74-530b-81bc-8758-f8371104523a": {
+      "last_synced_at": "2026-04-16T21:14:04.764316+00:00",
+      "slug": "clustering-with-kmeans",
+      "status": "Published"
+    },
+    "3330ec74-530b-81bc-9e37-c21053bd093d": {
+      "last_synced_at": "2026-04-16T21:14:06.203864+00:00",
+      "slug": "drum-tab-visualizer",
+      "status": "Published"
+    },
+    "3330ec74-530b-81c0-816b-e6037f25cbdd": {
+      "last_synced_at": "2026-04-16T21:14:06.500610+00:00",
+      "slug": "photography",
+      "status": "Published"
+    },
+    "3330ec74-530b-81c6-b2d3-d5f09539a42b": {
+      "last_synced_at": "2026-04-16T21:14:07.391787+00:00",
+      "slug": "jumboadvisor",
+      "status": "Published"
+    },
+    "3330ec74-530b-81c9-8145-c2709b42140d": {
+      "last_synced_at": "2026-04-16T21:14:08.913910+00:00",
+      "slug": "retro-ios-update",
+      "status": "Published"
+    },
+    "3330ec74-530b-81c9-a0a5-d65fb9813a82": {
+      "last_synced_at": "2026-04-16T21:14:09.401988+00:00",
+      "slug": "d2p-promising-candidates",
+      "status": "Published"
+    },
+    "3330ec74-530b-81cf-acdf-c10bea2b6342": {
+      "last_synced_at": "2026-04-16T21:14:10.443260+00:00",
+      "slug": "rodrego",
+      "status": "Published"
+    },
+    "3330ec74-530b-81d1-8309-d0a550cd1437": {
+      "last_synced_at": "2026-04-16T21:14:11.237112+00:00",
+      "slug": "sports-dynasties",
+      "status": "Published"
+    },
+    "3330ec74-530b-81d4-9aa5-c1b34fef668d": {
+      "last_synced_at": "2026-04-16T21:14:12.568182+00:00",
+      "slug": "spotify-popularity",
+      "status": "Published"
+    },
+    "3330ec74-530b-81d5-80c4-d2910b157888": {
+      "last_synced_at": "2026-04-16T21:14:13.705421+00:00",
+      "slug": "dem2020-delegate-map",
+      "status": "Published"
+    },
+    "3330ec74-530b-81da-a871-f120660779a4": {
+      "last_synced_at": "2026-04-16T21:14:16.012133+00:00",
+      "slug": "2019-ff-retrospective",
+      "status": "Published"
+    },
+    "3330ec74-530b-81db-a9a0-e91e7a8fcfa9": {
+      "last_synced_at": "2026-04-16T21:14:16.637631+00:00",
+      "slug": "drunken-world",
+      "status": "Published"
+    },
+    "3330ec74-530b-81dc-a614-f232892ee2cb": {
+      "last_synced_at": "2026-04-16T21:14:17.052627+00:00",
+      "slug": "mapping-tufts-schedules",
+      "status": "Published"
+    },
+    "3330ec74-530b-81dd-8c46-e0272c1ac0d0": {
+      "last_synced_at": "2026-04-16T21:14:17.530732+00:00",
+      "slug": "the-markup-livers",
+      "status": "Published"
+    },
+    "3330ec74-530b-81eb-9d9e-cbd2b7ac2f71": {
+      "last_synced_at": "2026-04-16T21:14:17.867607+00:00",
+      "slug": "howdy-update",
+      "status": "Published"
+    },
+    "3330ec74-530b-81ec-a818-fd0ac3accc18": {
+      "last_synced_at": "2026-04-16T21:14:19.308489+00:00",
+      "slug": "election-night-funnel",
+      "status": "Published"
+    },
+    "3330ec74-530b-81ee-a6fd-c43d6efa060c": {
+      "last_synced_at": "2026-04-16T21:14:19.661816+00:00",
+      "slug": "trump-timeline",
+      "status": "Published"
+    },
+    "3330ec74-530b-81ef-8734-e3df6b2ba3f2": {
+      "last_synced_at": "2026-04-16T21:14:20.691471+00:00",
+      "slug": "decade-of-disney",
+      "status": "Published"
+    },
+    "3330ec74-530b-81ef-ac5b-e4c4dc333911": {
+      "last_synced_at": "2026-04-16T21:14:21.050811+00:00",
+      "slug": "brain-fun",
+      "status": "Published"
+    },
+    "3330ec74-530b-81f8-a8f7-d83c405ee67b": {
+      "last_synced_at": "2026-04-16T21:14:21.710402+00:00",
+      "slug": "chaos-game",
+      "status": "Published"
+    },
+    "3330ec74-530b-81f9-8955-cf601df09b4f": {
+      "last_synced_at": "2026-04-16T21:14:23.037867+00:00",
+      "slug": "running-visualized",
+      "status": "Published"
+    },
+    "3330ec74-530b-81f9-acfb-de4034a42252": {
+      "last_synced_at": "2026-04-16T21:14:23.410009+00:00",
+      "slug": "kmeans-music",
+      "status": "Published"
+    },
+    "3330ec74-530b-81fc-b0af-d7cc19411d64": {
+      "last_synced_at": "2026-04-16T21:14:24.201714+00:00",
+      "slug": "evaluating-fantasy-draft",
+      "status": "Published"
+    },
+    "3330ec74-530b-81ff-8aff-e2a54521e44d": {
+      "last_synced_at": "2026-04-16T21:14:24.809478+00:00",
+      "slug": "london-street-art",
+      "status": "Published"
+    },
+    "3350ec74-530b-802e-9b1f-d346f8a0ad82": {
+      "last_synced_at": "2026-04-16T21:14:24.809501+00:00",
+      "slug": "claude-write-like-bt",
+      "status": "Draft"
+    },
+    "3360ec74-530b-8072-ba98-f0918df63d33": {
+      "last_synced_at": "2026-04-16T21:14:24.809506+00:00",
+      "slug": "best-gh-rb-setlist",
+      "status": "Draft"
+    },
+    "3360ec74-530b-80e3-b1cb-c19cd76ef5f8": {
+      "last_synced_at": "2026-04-16T21:14:26.433905+00:00",
+      "slug": "kalshi-rt-score",
+      "status": "Staged"
+    },
+    "3370ec74-530b-8007-80a7-c0a82ad550d7": {
+      "last_synced_at": "2026-04-16T21:14:27.641592+00:00",
+      "slug": "yt-captions",
+      "status": "Staged"
+    },
+    "3370ec74-530b-8009-a0a2-c2a2186b260a": {
+      "last_synced_at": "2026-04-16T21:14:28.720789+00:00",
+      "slug": "election-night-2024",
+      "status": "Staged"
+    },
+    "3370ec74-530b-8028-97a5-fb8ad39d8d7b": {
+      "last_synced_at": "2026-04-16T21:14:28.720824+00:00",
+      "slug": "fun-with-d3-force",
+      "status": "Draft"
+    },
+    "3370ec74-530b-8035-ae53-f04dc0b0ac22": {
+      "last_synced_at": "2026-04-16T21:14:29.932385+00:00",
+      "slug": "favorites-of-2023",
+      "status": "Staged"
+    },
+    "3370ec74-530b-803b-aae7-e8b5f802c278": {
+      "last_synced_at": "2026-04-16T21:14:29.932440+00:00",
+      "slug": "color-vinyl",
+      "status": "Draft"
+    },
+    "3370ec74-530b-8040-ae41-ebc42d094a51": {
+      "last_synced_at": "2026-04-16T21:14:30.663937+00:00",
+      "slug": "favorites-of-2025",
+      "status": "Staged"
+    },
+    "3370ec74-530b-8046-b16c-d99f79195eb5": {
+      "last_synced_at": "2026-04-16T21:14:33.439165+00:00",
+      "slug": "presidents-timeline",
+      "status": "Staged"
+    },
+    "3370ec74-530b-8047-b10c-fc59fe115889": {
+      "last_synced_at": "2026-04-16T21:14:43.439068+00:00",
+      "slug": "paris-olympics-score-boards",
+      "status": "Staged"
+    },
+    "3370ec74-530b-8054-8087-e8ad6cc91b83": {
+      "last_synced_at": "2026-04-16T21:14:44.644921+00:00",
+      "slug": "directly-labeling-lines",
+      "status": "Staged"
+    },
+    "3370ec74-530b-8059-be9d-fc17d4dde116": {
+      "last_synced_at": "2026-04-16T21:14:48.264674+00:00",
+      "slug": "survivor-50-recency-bias",
+      "status": "Staged"
+    },
+    "3370ec74-530b-806d-a764-e72cedc429cf": {
+      "last_synced_at": "2026-04-16T21:14:49.698179+00:00",
+      "slug": "snl-an-golden-era",
+      "status": "Staged"
+    },
+    "3370ec74-530b-80b1-8b03-d346be6038b6": {
+      "last_synced_at": "2026-04-16T21:14:50.481316+00:00",
+      "slug": "split-ticket-senators",
+      "status": "Staged"
+    },
+    "3370ec74-530b-80c6-a18c-d7389c745686": {
+      "last_synced_at": "2026-04-16T21:14:52.243365+00:00",
+      "slug": "favorites-of-2024",
+      "status": "Staged"
+    },
+    "3370ec74-530b-80e7-b979-d69cee2fe53d": {
+      "last_synced_at": "2026-04-16T21:14:54.600924+00:00",
+      "slug": "top-letterboxd-filmmakers",
+      "status": "Staged"
+    },
+    "3430ec74-530b-80a4-a224-e56c5666c968": {
+      "last_synced_at": "2026-04-16T21:14:54.601003+00:00",
+      "slug": "big-picture-boom-or-bust-2026",
+      "status": "Draft"
     }
   },
   "projects": {
@@ -55,7 +530,7 @@
       "slug": "d2p-promising-candidates"
     },
     "3330ec74-530b-815f-9dbf-c73ea64d93ad": {
-      "last_synced_at": "2026-03-31T03:19:32.372202+00:00",
+      "last_synced_at": "2026-04-16T21:14:55.095236+00:00",
       "slug": "drunken-world"
     },
     "3330ec74-530b-8169-8a45-d5ca728327b8": {

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  'Miller-Rabin Primality Test'
-date:   2016-08-15 15:05:41
+title: Miller-Rabin Primality Test
+date: '2016-08-15 12:00:00'
 mathjax: true
 ---
 
@@ -40,10 +40,3 @@ def miller_rabin(n, iters):
                 return False
     return True
 ```
-
-
-
-
-
-
-

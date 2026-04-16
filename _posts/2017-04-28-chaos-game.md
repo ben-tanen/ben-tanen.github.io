@@ -1,15 +1,13 @@
 ---
 layout: post
-title: 'The Chaos Game'
-date: 2017-04-28 15:05:41
-thumbnail: /assets/img/post-thumbnails/chaos-game.gif
+title: The Chaos Game
+date: '2017-04-28 12:00:00'
+thumbnail: /assets/img/post-thumbnails/chaos-game-d31d48d7.gif
 ---
 
 After watching [this recent video from Numberphile](https://www.youtube.com/watch?v=kbKtFN71Lfs), I decided to throw together my own little visualizer of [the chaos game](https://en.wikipedia.org/wiki/Chaos_game).
 
 To briefly explain the game, we basically start by randomly placing some "bases" on our board and a single starting point that is within those bases. We then randomly select one of our bases and move our point half way closer to our chosen base. We can repeat this operation endlessly, or until something starts to form. The cool part of this game is what forms when we mark our moves. Our seemingly random behavior actually begins to form a [fractal](https://en.wikipedia.org/wiki/Fractal)!
-
-<!-- more -->
 
 {% include_file /projects/random-d3-fun/html/chaos-game-viz.html %}
 <link rel="stylesheet" href="/projects/random-d3-fun/css/chaos-game.style.css" />

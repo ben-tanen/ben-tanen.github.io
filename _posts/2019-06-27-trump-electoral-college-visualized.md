@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Visualizing Trump's Narrow Path to Victory"
-date: 2019-06-27 04:00:00
-thumbnail: /assets/img/post-thumbnails/electoral-college-viz.png
-related-proj:  trump-electoral-college-visualized
+title: Visualizing Trump's Narrow Path to Victory
+date: '2019-06-27 12:00:00'
+thumbnail: /assets/img/post-thumbnails/trump-electoral-college-visualized-db61cd8d.png
+related-proj: trump-electoral-college-visualized
 ---
 
 *Okay, I know...the 2016 election happened nearly 1,000 days ago and at this point re-litigating it just feels like beating a dead horse that died from beating another dead horse. But this idea was inspired by 2020 Democratic Debate coverage, and you can't always decide when inspiration strikes.*
@@ -20,4 +20,4 @@ To do so, let's imagine the presidential election is like a tower building conte
 
 By building these towers, we get another view of Trump's decisive yet narrow win. At the top of Trump's tower (pun half intended), we see four states - Florida, Wisconsin, Pennsylvania, and Michigan - that he clinched with less than a 2% margin, yet they accounted for nearly 25% of his total electoral votes. On the other side, Clinton won Minnesota and New Hampshire by less than 2%, yet those only accounted for 6% of her total electoral votes. By playing around with these battleground states (see the sliders above), we can see that all it takes is a bit of nudging to flip just two of these narrow-win states and swing the election for Clinton.
 
-These narrow wins helped push Trump toward victory, so they're worth considering now. The window of 2% margin puts 25% of Trump's electoral votes easily within [a normal polling error](https://fivethirtyeight.com/features/trump-is-just-a-normal-polling-error-behind-clinton/){:target="_blank"}, which doesn't inspire much confidence when it comes to building a strong win. You wouldn't want a building to be constructed so that 25% of it could topple over with the slightest gust, so the same should go for your electoral politics. This may be something for the Biden/Sanders/Harris/Warren/... team to consider.
+These narrow wins helped push Trump toward victory, so they're worth considering now. The window of 2% margin puts 25% of Trump's electoral votes easily within [a normal polling error](https://fivethirtyeight.com/features/trump-is-just-a-normal-polling-error-behind-clinton/), which doesn't inspire much confidence when it comes to building a strong win. You wouldn't want a building to be constructed so that 25% of it could topple over with the slightest gust, so the same should go for your electoral politics. This may be something for the Biden/Sanders/Harris/Warren/... team to consider.

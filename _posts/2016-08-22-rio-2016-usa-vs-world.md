@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  'United States vs. the World in Rio 2016'
-date:   2016-08-22 15:05:41
-thumbnail: /assets/img/post-thumbnails/usa-rio-2016.png
+title: United States vs. the World in Rio 2016
+date: '2016-08-22 12:00:00'
+thumbnail: /assets/img/post-thumbnails/rio-2016-usa-vs-world-499cde26.png
 ---
 
 The 2016 Summer Olympics finished last night after two spectacular weeks of competition. For anyone watching, it was fairly apparent that the United States did quite will during the Games, taking home the most medals with 121 total medals and 46 gold medals (51 total and 20 gold medals more than second place China). While this isn't a particularly surprising result (the United States is consistently a top contender in the Olympics), it is interesting to wonder why the U.S. is able to perform so well.
@@ -53,12 +53,4 @@ Finally, we can end by looking at the interesting sport of gymnastics. Gymnastic
 
 So the numbers seem to indicate that the U.S. maybe does birth some very successful athletes. We will see how this might continue in Pyeongchang, Tokyo, and beyond.
 
-**\*** These numbers do not include marathon swimming <br /> **\*\*** These numbers do not include rhythmic or trampoline gymnastics
-
-
-
-
-
-
-
-
+**\*** These numbers do not include marathon swimming<br>**\*\*** These numbers do not include rhythmic or trampoline gymnastics

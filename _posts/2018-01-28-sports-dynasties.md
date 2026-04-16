@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'Visualizing Cities with Sports Dynasties'
-date: 2018-01-28 05:00:00
-thumbnail: /assets/img/post-thumbnails/sports-dynasties.gif
-related-proj:  sports-dynasties
+title: Visualizing Cities with Sports Dynasties
+date: '2018-01-28 12:00:00'
+thumbnail: /assets/img/post-thumbnails/sports-dynasties-f8106a1a.gif
+related-proj: sports-dynasties
 ---
 
 Last year, after the Pittsburgh Penguins won the Stanley Cup for the second year in a row, I was very interested in the idea of existing or emerging sports dynasties. At the time, of the four major (American) sports, the winners of three of the four league champions had also previously won in the prior two years. The Patriots won the Super Bowl in 2015 and 2017, Pittsburgh won the Stanley Cup in 2016 and 2017, and the Warriors <span id="sd-footnote-1" class="footnote">won in</span> 2015 and 2017. This seemed kind of incredible to me and at the time, I was curious if this was a common occurrence and if so, if it manifested itself in any interesting ways. I got started on some visualizations to explore this but never really got anywhere.
@@ -19,7 +19,7 @@ To get a lay for the land, I was first curious about the number of total champio
 
 As expected, New York dominated, primarily driven by their World Series wins. I was pretty shocked that Montreal, with only a single team, came in third. In fact, when accounting for the number of teams per city, Canadian cities reign supreme, with Montreal and Toronto coming in first and second respectively. As a Bostonian, I do have to point out that while New York does have more championships than Boston, this is largely because of all the teams New York has. On a per team basis, Boston has 6.2 championships per team, beating out New York's measly 5.6 per team.
 
-Yet pure number of wins doesn’t necessarily indicate dynasties. For a dynasty, it’s all about sustained excellence, but that is hard to define algorithmically; you kind of [know it when you see it](https://en.wikipedia.org/wiki/I_know_it_when_I_see_it). For my purposes, I defined a dynasty as any span when a city won five championships with no more than a year gap between wins. For example, Boston from 2002 - 2008 would be a dynasty with their three Super Bowl, 2007 World Series, and 2008 NBA championship wins. Boston has also won four championships since 2011, but because of the three year gap from 2008 to 2011, the dynasty (by my defintion) wouldn't include these four most recent wins. However, a Patriots win on Sunday would make for a new ongoing dynasty including the four wins since 2011.
+Yet pure number of wins doesn’t necessarily indicate dynasties. For a dynasty, it’s all about sustained excellence, but that is hard to define algorithmically; you kind of [know it when you see it](https://en.wikipedia.org/wiki/I_know_it_when_I_see_it). For my purposes, I defined a dynasty as any span when a city won five championships with no more than a year gap between wins. For example, Boston from 2002 - 2008 would be a dynasty with their three Super Bowl, 2007 World Series, and 2008 NBA championship wins. Boston has also won four championships since 2011, but because of the three year gap from 2008 to 2011, the dynasty (by my definition) wouldn't include these four most recent wins. However, a Patriots win on Sunday would make for a new ongoing dynasty including the four wins since 2011.
 
 So, based on that definition, when and where were there dynasties?
 
@@ -31,7 +31,7 @@ So, based on that definition, when and where were there dynasties?
 Since 1903, there have been 15 dynasties across New York (4), Boston (3), Montreal (2), San Francisco (2), Toronto (1), Minneapolis (1), Los Angeles (1), and Edmonton (1). The longest dynasty was Boston's 15 championship run from 1957 - 1976, pretty much entirely driven by Celtics during [the Bill Russell era](https://en.wikipedia.org/wiki/Boston_Celtics#1957%E2%80%931969:_The_Bill_Russell_era). The most recent dynasty is in San Francisco, which is ongoing, and given [the Warriors' performance thus far this season](https://projects.fivethirtyeight.com/2018-nba-predictions/), it's possible it may continue. As I mentioned, if the Patriots beat the Eagles, that would also make <span id="sd-footnote-3" class="footnote">another Boston dynasty</span>.
 
 | City | Dynasty | Years | Wins |
-| --- | --- | --- | --- |
+| -- | -- | -- | -- |
 | Boston, MA | 1912 - 1918 | 7 | 5 |
 | New York, NY | 1936 - 1943 | 8 | 7 |
 | Toronto, CAN | 1945 - 1951 | 7 | 5 |
@@ -64,6 +64,17 @@ As a bit of a post-script, I also wanted to include one of the original visualiz
 <script type="text/javascript" src='/projects/sports-dynasties/js/map.js'></script>
 <script type="text/javascript" src='/projects/sports-dynasties/js/main.js'></script>
 
-{% include footnote-content.html id="sd-footnote-1" content="Totally random sidenote: it's really annoying how the NHL, MLB, and NFL all have special names for their championships / trophies, but the NBA just has <i>the NBA championship</i>. Just seems silly to me." %}
-{% include footnote-content.html id="sd-footnote-2" content="A question not commonly asked by anyone from NYC or Boston." %}
-{% include footnote-content.html id="sd-footnote-3" content="We're coming for you New York!" %}
+{% capture footnote-sd-footnote-1-content %}
+Totally random sidenote: it's really annoying how the NHL, MLB, and NFL all have special names for their championships / trophies, but the NBA just has *the NBA championship*. Just seems silly to me.
+{% endcapture %}
+{% include footnote-content.html id="sd-footnote-1" content=footnote-sd-footnote-1-content %}
+
+{% capture footnote-sd-footnote-2-content %}
+A question not commonly asked by anyone from NYC or Boston.
+{% endcapture %}
+{% include footnote-content.html id="sd-footnote-2" content=footnote-sd-footnote-2-content %}
+
+{% capture footnote-sd-footnote-3-content %}
+We're coming for you New York!
+{% endcapture %}
+{% include footnote-content.html id="sd-footnote-3" content=footnote-sd-footnote-3-content %}

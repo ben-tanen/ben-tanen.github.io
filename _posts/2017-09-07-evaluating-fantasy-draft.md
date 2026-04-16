@@ -1,16 +1,16 @@
 ---
 layout: post
-title: 'Should I Become an NFL Scout?'
-date: 2017-09-07 05:00:00
-thumbnail: /assets/img/post-thumbnails/ff-draft.png
-related-proj:  evaluating-fantasy-draft
+title: Should I Become an NFL Scout?
+date: '2017-09-07 12:00:00'
+thumbnail: /assets/img/post-thumbnails/evaluating-fantasy-draft-7b032e28.png
+related-proj: evaluating-fantasy-draft
 ---
 
 Over the years, I've always been interested in the idea of fantasy football but I had never committed to a league. This year, I decided to take the plunge and try out my own fantasy team. While I would consider myself a fan of football, I knew I didn't know enough about the whole league to really stand a chance at putting together a *good* fantasy team. So I decided I would just rely on the advice of the pros.
 
 First, by suggestion of the [New York Times](https://www.nytimes.com/2017/08/24/sports/fantasy-football-draft-guide-beginners.html), I consulted [Fantasy Pros](https://www.fantasypros.com/) and [5th Down Fantasy](https://www.5thdownfantasy.com/). To supplement these fairly reliable yet relatively standard sources, I thought I would try out a little crowd sourcing experiment of my own. Since I would be competing against other humans, I thought it would be interesting to see how the general masses valued certain players. To assess this, I entered a bunch of different mock drafts on ESPN and recorded the picks as the people and auto-draft did their things. I then compiled the data from each of these drafts, along with the Fantasy Pros and 5th Down suggestions, and made a handy little draft guide.
 
-{% include figure.html src="/assets/img/posts/ff-spreadsheet.png" width="600px" %}
+{% include figure.html src="/assets/img/posts/evaluating-fantasy-draft-4db8a0f5.png" alt="A screenshot of my fantasy draft tracking spreadsheet, including columns for expected draft position based on different sources (ESPN, Fantasy Pros, 5th Down Fantasy)" width="600px" %}
 
 The point of this guide was to show me if a particular player was a good or bad pick at the time. For example, if I was getting ready to make the 19th overall pick and I see that Jay Ajayi was taken with the 16.9th average pick, that would be a good sign that Ajayi is a worthwhile pick. On the other hand, if its the 44th overall pick and I'm interested in picking up Carlos Hyde, I could see that Fifth Down doesn't think he should go until the 61th pick, prompting me to look into someone else.
 
@@ -24,13 +24,16 @@ This chart looks at where we drafted a particular player relative to where the p
 
 As expected, it looks like my league started out sticking with the conventional wisdom, not really diverging from the experts and masses until the 4th or 5th round (except for <span id="footnote-1" class="footnote">Ezekiel Elliott as the 17th pick</span>). Even from there, the cone of variance grew at a fairly reasonable rate. Beyond this, I see three notable takeaways:
 
-* I picked the most similarly to the pros and masses, which makes sense.
-* Our draft overall looks most similar to the average ESPN mock draft, which also makes sense.
-* Our draft overall looks least similar to 5th Down Fantasy's suggestions, but I guess those non-traditional picks are what makes them [stand out in a crowd](https://www.fantasypros.com/nfl/accuracy/2009-2015.php?year=2011#overall).
+- I picked the most similarly to the pros and masses, which makes sense.
+- Our draft overall looks most similar to the average ESPN mock draft, which also makes sense.
+- Our draft overall looks least similar to 5th Down Fantasy's suggestions, but I guess those non-traditional picks are what makes them [stand out in a crowd](https://www.fantasypros.com/nfl/accuracy/2009-2015.php?year=2011#overall).
 
 But speculating how good I might have drafted is pointless when I'm comparing it to the speculations of other people. The only way to really see how I did is to see how the upcoming season goes. So 🤞 fingers crossed I somehow picked well and can bring home [the Shiva](http://theleague.wikia.com/wiki/The_Shiva_Bowl_Trophy).
 
 <link rel="stylesheet" href="/projects/fantasy-football/css/pre-season.style.css">
 <script src="/projects/fantasy-football/js/pre-season.js"></script>
 
-{% include footnote-content.html id="footnote-1" content="At the time of me pulling this data and Mr. Hess making this pick, Ezekiel Elliott was due to serve a six-game suspension, making for a risky pick regardless of Elliott's ability. Hess didn't seem to care about that and went with him anyway. Minutes later, it was announced that Elliott would not have to serve the six-game suspension while his case was undergoing an appeal." %}
+{% capture footnote-footnote-1-content %}
+At the time of me pulling this data and Mr. Hess making this pick, Ezekiel Elliott was due to serve a six-game suspension, making for a risky pick regardless of Elliott's ability. Hess didn't seem to care about that and went with him anyway. Minutes later, it was announced that Elliott would not have to serve the six-game suspension while his case was undergoing an appeal.
+{% endcapture %}
+{% include footnote-content.html id="footnote-1" content=footnote-footnote-1-content %}
