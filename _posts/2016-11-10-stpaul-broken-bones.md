@@ -11,20 +11,7 @@ Through some killer [freeform radio hook ups](http://www.wmfo.org/){:target="_bl
 
 Since I was lucky enough to get a photo pass to their show, I thought I'd also share some of my personal favorite photos. I'd like to draw your attention to the fantastic dramatics of Paul Janeway and away from the sub-par photography. Enjoy!
 
-<link rel="stylesheet" href="/projects/photography/css/photo-grid.css" />
-
-<div class='photo-container'>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/SPABB4.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/SPABB2.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/SPABB3.jpg' />
-        <img src='/projects/photography/img/SPABB5.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/SPABB1.jpg' />
-    </div>
-</div>
+{% include photo-grid.html
+   format="/projects/photography/img/SPABB%s.jpg"
+   layout="4 | 2 | 3,5 | 1"
+%}

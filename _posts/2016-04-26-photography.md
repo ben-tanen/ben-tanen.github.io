@@ -9,30 +9,7 @@ Before I became all lame, I use to be fairly into photography. I was never super
 
 I haven't been able to take many photos recently but I felt like sharing some of my personal favorites from the past few years. I hope to maybe add some more as time goes on.
 
-<link rel="stylesheet" href="/projects/photography/css/photo-grid.css" />
-
-<div class='photo-container'>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/photography-pic1.jpg' />
-        <img src='/projects/photography/img/photography-pic11.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/photography-pic2.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/photography-pic4.jpg' />
-        <img src='/projects/photography/img/photography-pic5.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/photography-pic6.jpg' />
-        <img src='/projects/photography/img/photography-pic7.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/photography-pic9.jpg' />
-        <img src='/projects/photography/img/photography-pic8.jpg' />
-    </div>
-    <div class='sub-photo-container'>
-        <img src='/projects/photography/img/photography-pic10.jpg' />
-        <img src='/projects/photography/img/photography-pic3.jpg' />
-    </div>
-</div>
+{% include photo-grid.html
+   format="/projects/photography/img/photography-pic%s.jpg"
+   layout="1,11 | 2 | 4,5 | 6,7 | 9,8 | 10,3"
+%}

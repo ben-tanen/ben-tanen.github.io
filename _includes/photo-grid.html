@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/projects/photography/css/photo-grid.css" />
+
+<div class='photo-container'>
+{% assign groups = include.layout | split: "|" %}
+{% for group in groups %}
+    {% if group contains "!" %}
+        {% assign wide = true %}
+        {% assign trimmed = group | remove: "!" | strip %}
+    {% else %}
+        {% assign wide = false %}
+        {% assign trimmed = group | strip %}
+    {% endif %}
+    {% assign photos = trimmed | split: "," %}
+    <div class='sub-photo-container{% if wide %} wide{% endif %}'>
+    {% for photo_id in photos %}
+        {% assign id = photo_id | strip %}
+        <img src='{{ include.format | replace: "%s", id }}' />
+    {% endfor %}
+    </div>
+{% endfor %}
+</div>
