@@ -1,6 +1,7 @@
 var map;
-var markers = [ ];
-var paths   = [ ];
+var markers  = [ ];
+var paths    = [ ];
+var hitboxes = [ ];
 var init_lat =  42.40590729507824;
 var init_lng = -71.11821966743469;
 var exclude_meals = true;
@@ -9,14 +10,14 @@ var exclude_home  = true;
 includes = {
     "Athletics": false,
     "Clubs": false,
-    "Food": true,    
+    "Food": true,
     "Home": true,
     "School": true,
     "Work": false,
 }
 
 colors = {
-    "F13": "#872f9c", // purple 
+    "F13": "#872f9c", // purple
     "S14": "#ffa83c", // light pink
     "F14": "#328DDF", // darker blue
     "S15": "#49E9E7", // teal
@@ -27,17 +28,58 @@ colors = {
 };
 
 function init_map() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: init_lat, lng: init_lng},
+    map = L.map('map', {
+        center: [init_lat, init_lng],
         zoom: 16,
-        disableDefaultUI: true,
-        styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"color":"#323232"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#4e4e4e"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":"-100"},{"lightness":"30"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"simplified"},{"gamma":"0.00"},{"lightness":"74"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"lightness":"3"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+        zoomControl: false
     });
 
-    map.controls[google.maps.ControlPosition.LEFT_TOP].push($('#legend')[0]);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
 
+    var LegendControl = L.Control.extend({
+        options: { position: 'topleft' },
+        onAdd: function() { return document.getElementById('legend'); }
+    });
+    map.addControl(new LegendControl());
+
+    add_hitboxes();
     draw_paths(get_checked_semesters());
+    bring_hitboxes_to_front();
+}
 
+function add_hitboxes() {
+    for (var name in locations) {
+        (function(location) {
+            var hitbox = L.circleMarker([location['lat'], location['lng']], {
+                radius: 20,
+                fillOpacity: 0,
+                opacity: 0,
+                weight: 0
+            }).addTo(map);
+
+            // default SVG pointer-events is visiblePainted, which ignores
+            // fully-transparent shapes — force fill so the invisible hitbox
+            // still catches mouse events
+            hitbox.getElement().style.pointerEvents = 'fill';
+
+            hitbox.on('mouseover', function() {
+                $('#legend h4').html('<i style="font-size: 15px;">' + location['name'] + '</i><br />' + location['description']);
+            });
+            hitbox.on('mouseout', function() {
+                $('#legend h4').html('');
+            });
+
+            hitboxes.push(hitbox);
+        })(locations[name]);
+    }
+}
+
+function bring_hitboxes_to_front() {
+    for (var i = 0; i < hitboxes.length; i++) hitboxes[i].bringToFront();
 }
 
 function get_checked_semesters() {
@@ -53,8 +95,8 @@ function get_checked_semesters() {
 
 function update_paths() {
     // clear existing paths and markers
-    for (var i = 0; i < markers.length; i++) markers[i].setMap(null);
-    for (var i = 0; i < paths.length; i++) paths[i].setMap(null);
+    for (var i = 0; i < markers.length; i++) map.removeLayer(markers[i]);
+    for (var i = 0; i < paths.length; i++) map.removeLayer(paths[i]);
     markers = [ ];
     paths = [ ];
 
@@ -67,6 +109,7 @@ function update_paths() {
     }
 
     draw_paths(get_checked_semesters());
+    bring_hitboxes_to_front();
 }
 
 function draw_paths(semesters) {
@@ -91,21 +134,17 @@ function draw_paths(semesters) {
 
             // add positions for marker and path
             add_marker(location, rnd_dlat, rnd_dlng, color);
-            schedule_coordinates.push({"lat": location["lat"] + rnd_dlat, "lng": location["lng"] + rnd_dlng});
+            schedule_coordinates.push([location["lat"] + rnd_dlat, location["lng"] + rnd_dlng]);
         }
 
         if (schedule_coordinates.length > 0) {
-            schedule_coordinates.push({"lat": schedule_coordinates[0]["lat"], "lng": schedule_coordinates[0]["lng"]});
-        
-            schedule_path = new google.maps.Polyline({
-                path: schedule_coordinates,
-                geodesic: true,
-                strokeColor: color,
-                strokeOpacity: 0.5,
-                strokeWeight: 1
-            });
+            schedule_coordinates.push([schedule_coordinates[0][0], schedule_coordinates[0][1]]);
 
-            schedule_path.setMap(map);
+            var schedule_path = L.polyline(schedule_coordinates, {
+                color: color,
+                opacity: 0.5,
+                weight: 1
+            }).addTo(map);
 
             paths.push(schedule_path);
         }
@@ -115,32 +154,15 @@ function draw_paths(semesters) {
 }
 
 function add_marker(location, dlat, dlng, color) {
-    var latlng = new google.maps.LatLng(location['lat'] + dlat, location['lng'] + dlng);
-
-    var marker = new google.maps.Marker({
-        position: latlng,
-        map: map,
-        icon: {
-            path: google.maps.SymbolPath.CIRCLE,
-            fillColor: color,
-            fillOpacity: .7,
-            scale: 5,
-            strokeColor: 'white',
-            strokeWeight: .3
-        },
-    });
+    var marker = L.circleMarker([location['lat'] + dlat, location['lng'] + dlng], {
+        radius: 5,
+        fillColor: color,
+        fillOpacity: 0.7,
+        color: 'white',
+        weight: 0.3
+    }).addTo(map);
 
     markers.push(marker);
-
-    marker.addListener('mouseover', function() {
-        $('#legend h4').html('<i style="font-size: 15px;">' + location['name'] + '</i><br />' + location['description']);
-    });
-
-    marker.addListener('mouseout', function() {
-        $('#legend h4').html('');
-    })
-
-
 }
 
 function init_checkboxes() {
