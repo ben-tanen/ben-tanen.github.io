@@ -642,7 +642,7 @@ def sync_post(
             return f"video download failed: {'; '.join(video_errors)}"
 
     # Apply block transforms (divider → section-break, image → figure include, etc.)
-    markdown, unknowns = apply_transforms(
+    markdown, unknowns, transform_flags = apply_transforms(
         markdown,
         site_url=config["site"]["url"],
         post_stem_by_page_id=post_stem_by_page_id,
@@ -672,6 +672,8 @@ def sync_post(
 
     # Build frontmatter and write
     fm_data = build_post_frontmatter(post, thumbnail_path, project_slug, site_url=config["site"]["url"])
+    if transform_flags.get("mathjax"):
+        fm_data["mathjax"] = True
 
     rel_path = out_path.relative_to(REPO_ROOT)
     if dry_run:

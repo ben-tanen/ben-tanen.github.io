@@ -91,6 +91,38 @@ def build_figure_include(src: str, params: dict[str, str]) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Inline span markers
+# ---------------------------------------------------------------------------
+
+_SPAN_ATTR_RE = re.compile(r'(?:#([\w-]+))|(\.[\w-]+)')
+
+
+def _replace_span_marker(match: re.Match) -> str:
+    """Convert a {{span...}} marker to an HTML <span> tag.
+
+    Parses CSS-selector-style attributes: #id and .class (multiple allowed).
+    """
+    attrs_str = match.group(1)
+    content = match.group(2)
+
+    span_id = None
+    classes = []
+    for m in _SPAN_ATTR_RE.finditer(attrs_str):
+        if m.group(1):
+            span_id = m.group(1)
+        elif m.group(2):
+            classes.append(m.group(2)[1:])  # strip leading dot
+
+    parts = ["<span"]
+    if span_id:
+        parts.append(f' id="{span_id}"')
+    if classes:
+        parts.append(f' class="{" ".join(classes)}"')
+    parts.append(f">{content}</span>")
+    return "".join(parts)
+
+
+# ---------------------------------------------------------------------------
 # Main transform pipeline
 # ---------------------------------------------------------------------------
 
@@ -99,17 +131,18 @@ def apply_transforms(
     markdown: str,
     site_url: str = "",
     post_stem_by_page_id: dict[str, str] | None = None,
-) -> tuple[str, list[str]]:
+) -> tuple[str, list[str], dict[str, bool]]:
     """Apply all block transforms to markdown content.
 
     Args:
         post_stem_by_page_id: map of Notion page ID (no hyphens) → Jekyll filename
             stem (e.g. "2022-09-27-howdy-update"). Used to resolve inter-post links.
 
-    Returns (transformed_markdown, list_of_unknown_block_descriptions).
+    Returns (transformed_markdown, list_of_unknown_block_descriptions, flags).
     """
     transforms = load_block_transforms()
     unknowns = []
+    flags = {}
 
     # Transform 1: dividers
     divider_replacement = transforms.get("divider", "{% include section-break.html %}")
@@ -146,10 +179,17 @@ def apply_transforms(
     # Allows leading whitespace (tabs/spaces) for fences inside columns.
     markdown = re.sub(
         r'^[ \t]*```(?:raw|plain text|plaintext|text)\n(.*?)[ \t]*```',
-        lambda m: '\n' + m.group(1).rstrip('\n') + '\n',
+        lambda m: m.group(1).rstrip('\n'),
         markdown,
         flags=re.MULTILINE | re.DOTALL,
     )
+
+    # Transform: Notion inline equations $`...`$ → \\(...\\) for MathJax
+    # Must run BEFORE columns: column markdown is rendered via md.markdown(),
+    # which halves the escaping (\\( → \(), giving MathJax the \(...\) it expects.
+    markdown, has_equations = _transform_equations(markdown)
+    if has_equations:
+        flags["mathjax"] = True
 
     # Transform 4: columns → div.columns layout
     markdown = _transform_columns(markdown)
@@ -220,17 +260,18 @@ def apply_transforms(
     if unresolved_notion_links:
         unknowns.append(f"unresolved Notion page links: {', '.join(unresolved_notion_links)}")
 
-    # Transform 7: footnote markers → <span> tags
-    # `{{footnote-N}}` content `{{end-footnote}}` → <span id="footnote-N" class="footnote">content</span>
+    # Transform 7: inline span markers → <span> tags
+    # `{{span#id.class1.class2}}`content`{{/span}}` → <span id="id" class="class1 class2">content</span>
+    # Supports #id and/or .class (both optional), multiple .classes allowed
     # Markers are wrapped in backticks in Notion to prevent formatting interference
     markdown = re.sub(
-        r'`\{\{footnote-(\w+)\}\}`(.*?)`\{\{end-footnote\}\}`',
-        r'<span id="footnote-\1" class="footnote">\2</span>',
+        r'`\{\{span([^}]*)\}\}`(.*?)`\{\{/span\}\}`',
+        _replace_span_marker,
         markdown,
         flags=re.DOTALL,
     )
 
-    return markdown, unknowns
+    return markdown, unknowns, flags
 
 
 # ---------------------------------------------------------------------------
@@ -423,6 +464,18 @@ def _build_methodology(content: str) -> str:
 {content}
 {{% endcapture %}}
 {{% include methodology-note.html content=methodology-note %}}"""
+
+
+_NOTION_INLINE_EQ_RE = re.compile(r'\$`([^`]+)`\$')
+
+
+def _transform_equations(markdown: str) -> tuple[str, bool]:
+    r"""Convert Notion inline equations $`...`$ → \\(...\\) for MathJax.
+
+    Double-escaped so kramdown passes \(...\) through to the HTML output.
+    """
+    result, count = _NOTION_INLINE_EQ_RE.subn(r'\\\\(\1\\\\)', markdown)
+    return result, count > 0
 
 
 _LIST_ITEM_RE = re.compile(r'^[ \t]*[-*+] |^[ \t]*\d+\. ')

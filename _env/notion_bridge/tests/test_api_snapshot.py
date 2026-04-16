@@ -134,10 +134,10 @@ class TestNotionAPISnapshot:
         assert "*where *[*" in raw
 
     def test_footnote_markers_preserved(self):
-        """Verify backtick-wrapped footnote markers pass through."""
+        """Verify backtick-wrapped span/footnote markers pass through."""
         raw = _fetch_test_page()
-        assert "`{{footnote-1}}`" in raw
-        assert "`{{end-footnote}}`" in raw
+        assert "`{{span.footnote#footnote-1}}`" in raw
+        assert "`{{/span}}`" in raw
 
     def test_columns_xml_format(self):
         """Verify columns use <columns>/<column> XML tags."""

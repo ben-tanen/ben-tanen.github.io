@@ -1,5 +1,5 @@
 <!-- snapshot metadata
-  captured: 2026-04-02
+  captured: 2026-04-15
   notion_api_version: 2026-03-11
   page_id: 3340ec74-530b-8046-a9e3-efce5d67c2a1
   notes: S3 image URLs normalized to {{S3_IMAGE_N}} placeholders
@@ -9,7 +9,7 @@
 ### This is an H3
 #### This is an H4
 This is some plain text! And [here is a link in that text](https://ben-tanen.com/)! And [here’s a link to a different Notion page](/23406746c8f64abaa8108e4bc75bf51f?pvs=25)! And [here’s a link to a different Notion page that is part of the CMS DBs](/3320ec74530b8058b146dbf7303304c6?pvs=25)! And [here’s ](https://ben-tanen.com/)[*a link*](https://ben-tanen.com/)[ with ](https://ben-tanen.com/)[**some**](https://ben-tanen.com/)[ styling ](https://ben-tanen.com/)[~~inside~~](https://ben-tanen.com/)[ of it](https://ben-tanen.com/)! And [here’s another link with styling, where using the ](https://ben-tanen.com/)[`inline code block`](https://ben-tanen.com/)[ should mess up the link](https://ben-tanen.com/)! And here’s some text *where *[*the text has italics wrapped around the whole link*](https://ben-tanen.com/)* (plus more outside)*. And [here’s a link with localization stuff for ben-tanen.com](https://ben-tanen.com/projects/2023/12/01/wrapped-sound-town.html)!
-This text block is a test of the `{{footnote-1}}`footnote system I’ve implemented`{{end-footnote}}`. Here’s another version where `{{footnote-2}}`the footnote has [a link](https://ben-tanen.com/) inside it`{{end-footnote}}` and `{{footnote-3}}`[another where the footnote body is entirely link](https://ben-tanen.com/)`{{end-footnote}}`!
+This text block is a test of the `{{span.footnote#footnote-1}}`footnote system I’ve implemented`{{/span}}`. Here’s another version where `{{span.footnote#footnote-2}}`the footnote has [a link](https://ben-tanen.com/) inside it`{{/span}}` and `{{span.footenote#footnote-3}}`[another where the footnote body is entirely link](https://ben-tanen.com/)`{{/span}}`!
 Here is <span color="red_bg">some</span> <span color="gray_bg">more</span> <span color="orange">text</span> with <span color="purple">coloring</span> <span color="blue">applied</span>!
 - This is part of a bulleted list!
 - And a second bullet!
