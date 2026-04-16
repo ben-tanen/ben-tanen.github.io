@@ -1,0 +1,117 @@
+overall_tbl:
+  - team: USA
+    photo: wj9uZvn_vZrelLFGH8fnPA
+    athletes: 555
+    sports: 30
+    medals: 121
+    golds: 46
+    medals_per_event: '0.395'
+    golds_per_event: '0.150'
+    medals_per_athlete: '0.218'
+    golds_per_athlete: '0.083'
+  - team: CHN
+    photo: 8Cr5Gw-79PpIX2rIEZ7Pvg
+    athletes: 416
+    sports: 26
+    medals: 70
+    golds: 26
+    medals_per_event: '0.229'
+    golds_per_event: '0.085'
+    medals_per_athlete: '0.168'
+    golds_per_athlete: '0.063'
+  - team: GBR
+    photo: 6HRpt1RF_AbDUftxgVUoEw
+    athletes: 366
+    sports: 25
+    medals: 67
+    golds: 27
+    medals_per_event: '0.219'
+    golds_per_event: '0.088'
+    medals_per_athlete: '0.183'
+    golds_per_athlete: '0.074'
+
+swimming_tbl:
+  - team: USA
+    photo: wj9uZvn_vZrelLFGH8fnPA
+    athletes: 45
+    medals: 33
+    golds: 16
+    medals_per_athlete: '0.750'
+    golds_per_athlete: '0.364'
+    golds_per_medal: '0.485'
+  - team: AUS
+    photo: jSgw5z0EPOLzdUi-Aomq7Q
+    athletes: 37
+    medals: 10
+    golds: 3
+    medals_per_athlete: '0.270'
+    golds_per_athlete: '0.081'
+    golds_per_medal: '0.300'
+  - team: HUN
+    photo: YEm-U_1zHCmIknmK5sNcIg
+    athletes: 35
+    medals: 7
+    golds: 3
+    medals_per_athlete: '0.200'
+    golds_per_athlete: '0.086'
+    golds_per_medal: '0.429'
+
+track_tbl:
+  - team: USA
+    photo: wj9uZvn_vZrelLFGH8fnPA
+    athletes: 129
+    medals: 32
+    golds: 13
+    medals_per_athlete: '0.250'
+    golds_per_athlete: '0.102'
+    golds_per_medal: '0.406'
+  - team: KEN
+    photo: qNdn2A-NP605UMyeKE5S4A
+    athletes: 48
+    medals: 13
+    golds: 6
+    medals_per_athlete: '0.271'
+    golds_per_athlete: '0.125'
+    golds_per_medal: '0.462'
+  - team: JAM
+    photo: 4HCKfsNJNHDY-vWSEzLbeQ
+    athletes: 56
+    medals: 11
+    golds: 6
+    medals_per_athlete: '0.196'
+    golds_per_athlete: '0.107'
+    golds_per_medal: '0.545'
+
+gymnastics_tbl:
+  - team: USA
+    photo: wj9uZvn_vZrelLFGH8fnPA
+    athletes: 10
+    medals: 13
+    golds: 4
+    medals_per_athlete: '1.300'
+    golds_per_athlete: '0.400'
+    golds_per_medal: '0.308'
+  - team: GBR
+    photo: 6HRpt1RF_AbDUftxgVUoEw
+    athletes: 10
+    medals: 6
+    golds: 2
+    medals_per_athlete: '0.600'
+    golds_per_athlete: '0.200'
+    golds_per_medal: '0.333'
+  - team: JPN
+    photo: by4OltvtZz7taxuQtkiP3A
+    athletes: 10
+    medals: 3
+    golds: 2
+    medals_per_athlete: '0.300'
+    golds_per_athlete: '0.200'
+    golds_per_medal: '0.667'
+  - team: RUS
+    photo: 5Y6kOqiOIv2C1sP9C_BWtA
+    athletes: 10
+    medals: 8
+    golds: 1
+    medals_per_athlete: '0.800'
+    golds_per_athlete: '0.100'
+    golds_per_medal: '0.125'
