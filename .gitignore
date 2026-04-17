@@ -5,4 +5,5 @@ _site/
 Gemfile
 Gemfile.lock
 _env/notion_bridge/.venv/
+_env/notion_bridge/conflicts/
 __pycache__/

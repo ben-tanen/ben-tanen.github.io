@@ -41,9 +41,14 @@ def get_synced_status(meta: dict, collection: str, page_id: str) -> str | None:
     return meta.get(collection, {}).get(page_id, {}).get("status")
 
 
+def bytes_content_hash(data: bytes) -> str:
+    """Return sha256 hex digest of an in-memory byte string."""
+    return hashlib.sha256(data).hexdigest()
+
+
 def file_content_hash(path: Path) -> str:
     """Return sha256 hex digest of the file's contents."""
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return bytes_content_hash(path.read_bytes())
 
 
 def update_synced(
@@ -84,6 +89,48 @@ def get_oldest_sync_time(meta: dict) -> str | None:
             if ts and (oldest is None or ts < oldest):
                 oldest = ts
     return oldest
+
+
+def resolve_post_path(slug: str, config: dict) -> Path | None:
+    """Find the local Jekyll file for a post by slug (checks _posts/ then _drafts/)."""
+    posts_dir = REPO_ROOT / config["site"]["posts_dir"]
+    drafts_dir = REPO_ROOT / config["site"]["drafts_dir"]
+    matches = sorted(posts_dir.glob(f"*-{slug}.md"))
+    if matches:
+        return matches[-1]
+    draft = drafts_dir / f"{slug}.md"
+    if draft.exists():
+        return draft
+    return None
+
+
+def resolve_project_path(slug: str, config: dict) -> Path | None:
+    """Find the local Jekyll file for a project by slug."""
+    path = REPO_ROOT / config["site"]["projects_dir"] / f"{slug}.md"
+    return path if path.exists() else None
+
+
+def get_locally_divergent_ids(meta: dict, collection: str, config: dict) -> set[str]:
+    """Return the page IDs whose local file hash differs from the stored hash.
+
+    Used to force-include pages in a sync run even when Notion's last_edited_time
+    says they haven't changed — lets three-way check surface local-only edits.
+    """
+    resolver = resolve_post_path if collection == "posts" else resolve_project_path
+    divergent = set()
+    for page_id, entry in meta.get(collection, {}).items():
+        stored_hash = entry.get("last_synced_hash")
+        if not stored_hash:
+            continue
+        slug = entry.get("slug")
+        if not slug:
+            continue
+        path = resolver(slug, config)
+        if path is None or not path.exists():
+            continue
+        if file_content_hash(path) != stored_hash:
+            divergent.add(page_id)
+    return divergent
 
 
 def page_needs_sync(

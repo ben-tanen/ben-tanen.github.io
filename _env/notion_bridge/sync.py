@@ -9,6 +9,7 @@ Usage:
 """
 
 import argparse
+import difflib
 import os
 import re
 from pathlib import Path
@@ -21,10 +22,13 @@ from notion_api import throttle, get_pages_by_slug
 from sync_meta import (
     load_sync_meta,
     save_sync_meta,
+    bytes_content_hash,
+    file_content_hash,
     get_last_synced_at,
     get_last_synced_hash,
     get_synced_status,
     get_oldest_sync_time,
+    get_locally_divergent_ids,
     update_synced,
     page_needs_sync,
     get_dirty_files,
@@ -475,14 +479,45 @@ def _match_key_order(new_data: dict, existing_path: Path) -> dict:
     return ordered
 
 
-def write_jekyll_file(path: Path, frontmatter_data: dict, body: str = ""):
-    """Write a Jekyll file with YAML frontmatter and optional body."""
+CONFLICTS_DIR = REPO_ROOT / "_env" / "notion_bridge" / "conflicts"
+
+
+def write_conflict_diff(slug: str, local_bytes: bytes, projected_bytes: bytes) -> Path:
+    """Write a unified diff between local and projected content to conflicts/<slug>.diff.
+
+    Returns the path written. Directory is created on demand.
+    """
+    CONFLICTS_DIR.mkdir(parents=True, exist_ok=True)
+    diff_path = CONFLICTS_DIR / f"{slug}.diff"
+    local_lines = local_bytes.decode("utf-8", errors="replace").splitlines(keepends=True)
+    projected_lines = projected_bytes.decode("utf-8", errors="replace").splitlines(keepends=True)
+    diff = difflib.unified_diff(
+        local_lines,
+        projected_lines,
+        fromfile=f"local/{slug}",
+        tofile=f"notion/{slug}",
+    )
+    diff_path.write_text("".join(diff))
+    return diff_path
+
+
+def render_jekyll_bytes(path: Path, frontmatter_data: dict, body: str = "") -> bytes:
+    """Serialize a Jekyll file's content to bytes without writing it.
+
+    Key order is reconciled against the existing file at `path` (if any) so
+    the rendered output is deterministic and matches what write_jekyll_file
+    would produce.
+    """
     frontmatter_data = _match_key_order(frontmatter_data, path)
     post = fm.Post(body, **frontmatter_data)
+    return (fm.dumps(post, sort_keys=False, width=9999) + "\n").encode("utf-8")
+
+
+def write_jekyll_file(path: Path, frontmatter_data: dict, body: str = ""):
+    """Write a Jekyll file with YAML frontmatter and optional body."""
+    content = render_jekyll_bytes(path, frontmatter_data, body)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w") as f:
-        f.write(fm.dumps(post, sort_keys=False, width=9999))
-        f.write("\n")
+    path.write_bytes(content)
 
 
 # ---------------------------------------------------------------------------
@@ -616,11 +651,16 @@ def sync_post(
     else:
         out_path = REPO_ROOT / config["site"]["posts_dir"] / f"{date_prefix}-{slug}.md"
 
-    # Check local edit
+    # Capture local state before deciding what to do with the file
     last_synced = get_last_synced_at(meta, "posts", post["notion_id"])
-    last_hash = get_last_synced_hash(meta, "posts", post["notion_id"])
-    if out_path.exists():
-        local_edit = check_local_edit(out_path, last_synced, dirty_files, last_hash)
+    stored_hash = get_last_synced_hash(meta, "posts", post["notion_id"])
+    local_hash = file_content_hash(out_path) if out_path.exists() else None
+
+    # Legacy entries (no stored hash) fall back to git-based detection and
+    # short-circuit before we spend API calls. Hash-based entries defer the
+    # decision until we've rendered Notion's projected content below.
+    if out_path.exists() and stored_hash is None:
+        local_edit = check_local_edit(out_path, last_synced, dirty_files, None)
         if local_edit:
             return f"local edit detected: {local_edit}"
 
@@ -684,12 +724,39 @@ def sync_post(
         fm_data["mathjax"] = True
 
     rel_path = out_path.relative_to(REPO_ROOT)
+
+    # Render projected content without writing so we can compare against local
+    projected_bytes = render_jekyll_bytes(out_path, fm_data, markdown)
+    projected_hash = bytes_content_hash(projected_bytes)
+
+    # Three-way decision for hash-tracked entries with a local file
+    if stored_hash is not None and local_hash is not None and local_hash != stored_hash:
+        if local_hash == projected_hash:
+            # Benign: local already matches Notion's current state
+            if dry_run:
+                print(f"  [DRY RUN] Already in sync: {rel_path}")
+                return None
+            print(f"  ≈ Already in sync: {rel_path}")
+            update_synced(meta, "posts", post["notion_id"], slug, status=status, file_path=out_path)
+            return None
+        diff_path = write_conflict_diff(slug, out_path.read_bytes(), projected_bytes)
+        diff_rel = diff_path.relative_to(REPO_ROOT)
+        return (
+            f"local edit detected: {rel_path} differs from both last-synced "
+            f"version and current Notion projection — diff: {diff_rel}"
+        )
+
     if dry_run:
-        print(f"  [DRY RUN] Would write post: {rel_path}")
+        action = "Would write post" if local_hash != projected_hash else "Up to date"
+        print(f"  [DRY RUN] {action}: {rel_path}")
         return None
 
-    write_jekyll_file(out_path, fm_data, markdown)
-    print(f"  ✓ Synced post: {rel_path}")
+    if local_hash != projected_hash:
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_bytes(projected_bytes)
+        print(f"  ✓ Synced post: {rel_path}")
+    else:
+        print(f"  = Up to date: {rel_path}")
 
     # Update sync metadata
     update_synced(meta, "posts", post["notion_id"], slug, status=status, file_path=out_path)
@@ -711,11 +778,15 @@ def sync_project(
     slug = project["slug"]
     out_path = REPO_ROOT / config["site"]["projects_dir"] / f"{slug}.md"
 
-    # Check local edit
+    # Capture local state before deciding what to do with the file
     last_synced = get_last_synced_at(meta, "projects", project["notion_id"])
-    last_hash = get_last_synced_hash(meta, "projects", project["notion_id"])
-    if out_path.exists():
-        local_edit = check_local_edit(out_path, last_synced, dirty_files, last_hash)
+    stored_hash = get_last_synced_hash(meta, "projects", project["notion_id"])
+    local_hash = file_content_hash(out_path) if out_path.exists() else None
+
+    # Legacy entries (no stored hash) fall back to git-based detection and
+    # short-circuit. Hash-based entries defer decision until we render below.
+    if out_path.exists() and stored_hash is None:
+        local_edit = check_local_edit(out_path, last_synced, dirty_files, None)
         if local_edit:
             return f"local edit detected: {local_edit}"
 
@@ -734,15 +805,40 @@ def sync_project(
     if project["related_post_ids"]:
         post_stem = post_stem_by_id.get(project["related_post_ids"][0])
 
-    # Build frontmatter and write (no body content for projects)
+    # Build frontmatter (no body content for projects)
     fm_data = build_project_frontmatter(project, landing_img_path, post_stem, site_url=config["site"]["url"])
 
+    # Render projected content without writing so we can compare against local
+    projected_bytes = render_jekyll_bytes(out_path, fm_data)
+    projected_hash = bytes_content_hash(projected_bytes)
+
+    # Three-way decision for hash-tracked entries with a local file
+    if stored_hash is not None and local_hash is not None and local_hash != stored_hash:
+        if local_hash == projected_hash:
+            if dry_run:
+                print(f"  [DRY RUN] Already in sync: {out_path.name}")
+                return None
+            print(f"  ≈ Already in sync: {out_path.name}")
+            update_synced(meta, "projects", project["notion_id"], slug, file_path=out_path)
+            return None
+        diff_path = write_conflict_diff(slug, out_path.read_bytes(), projected_bytes)
+        diff_rel = diff_path.relative_to(REPO_ROOT)
+        return (
+            f"local edit detected: {out_path.name} differs from both last-synced "
+            f"version and current Notion projection — diff: {diff_rel}"
+        )
+
     if dry_run:
-        print(f"  [DRY RUN] Would write project: {out_path.name}")
+        action = "Would write project" if local_hash != projected_hash else "Up to date"
+        print(f"  [DRY RUN] {action}: {out_path.name}")
         return None
 
-    write_jekyll_file(out_path, fm_data)
-    print(f"  ✓ Synced project: {out_path.name}")
+    if local_hash != projected_hash:
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_bytes(projected_bytes)
+        print(f"  ✓ Synced project: {out_path.name}")
+    else:
+        print(f"  = Up to date: {out_path.name}")
 
     # Update sync metadata
     update_synced(meta, "projects", project["notion_id"], slug, file_path=out_path)
@@ -770,11 +866,25 @@ def main():
     # Load sync metadata
     meta = load_sync_meta()
 
+    # Detect locally-divergent files: Notion may not have changed for these,
+    # but the local hash differs from what we last wrote. Forcing them into
+    # the sync run lets the three-way check surface conflicts.
+    divergent_post_ids = get_locally_divergent_ids(meta, "posts", config)
+    divergent_project_ids = get_locally_divergent_ids(meta, "projects", config)
+    if divergent_post_ids or divergent_project_ids:
+        print(
+            f"Detected local divergence: "
+            f"{len(divergent_post_ids)} post(s), {len(divergent_project_ids)} project(s)"
+        )
+
     # Determine query filters
     slug_filter = args.slug or None
-    # Use oldest sync time to filter DB queries (unless --force or --slug)
+    # Use oldest sync time to filter DB queries (unless --force, --slug, or
+    # local divergence exists — in which case we need to fetch those pages
+    # from Notion regardless of their edit-time)
     last_edited_after = None
-    if not args.force and not slug_filter:
+    has_divergence = bool(divergent_post_ids or divergent_project_ids)
+    if not args.force and not slug_filter and not has_divergence:
         last_edited_after = get_oldest_sync_time(meta)
         if last_edited_after:
             print(f"Filtering to pages edited after {last_edited_after}")
@@ -827,17 +937,24 @@ def main():
     dirty_files = get_dirty_files()
 
     # Filter to changed pages (unless --force or --slug)
+    # A page is included if either Notion has new edits OR local has diverged
     if args.force or slug_filter:
         changed_posts = posts
         changed_projects = projects
     else:
         changed_posts = [
             p for p in posts
-            if page_needs_sync(p["last_edited"], get_last_synced_at(meta, "posts", p["notion_id"]))
+            if (
+                page_needs_sync(p["last_edited"], get_last_synced_at(meta, "posts", p["notion_id"]))
+                or p["notion_id"] in divergent_post_ids
+            )
         ]
         changed_projects = [
             p for p in projects
-            if page_needs_sync(p["last_edited"], get_last_synced_at(meta, "projects", p["notion_id"]))
+            if (
+                page_needs_sync(p["last_edited"], get_last_synced_at(meta, "projects", p["notion_id"]))
+                or p["notion_id"] in divergent_project_ids
+            )
         ]
 
     print(f"Posts to sync: {len(changed_posts)}")
