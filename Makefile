@@ -48,7 +48,7 @@ endif
 #   make run NOWATCH=1                 disable watch and livereload
 #   make run VERBOSE=1                 verbose output
 run:
-	op run --env-file=_env/.env -- jekyll serve \
+	op run --env-file=_env/.env -- bundle exec jekyll serve \
 		$(if $(NOWATCH),,-w --livereload) \
 		$(if $(DRAFTS),--drafts) \
 		$(if $(VERBOSE),--verbose)
