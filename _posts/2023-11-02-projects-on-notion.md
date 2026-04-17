@@ -22,7 +22,7 @@ So, to kick it off, here's a collection of smaller projects that I have been wor
 5. A came across a TikTok a few years ago that highlighted how Clinton, G.W. Bush, Trump, and Biden were also born within a few years of each other, which was quite surprising to me. I decided to explore the presidential timeline a bit, which you can check out ~~on Notion~~ [here]({% post_url 2023-11-01-presidents-timeline %}).
 6. I really, really liked [Harry Steven's Observable notebook](https://observablehq.com/@harrystevens/directly-labelling-lines) outlining his approach for intelligently labeling lines in a plot, so for my own educational purposes, I decided to recreate it in my own tutorial. Feel free to check it out on [Observable](https://www.notion.so/btnotion/How-to-Directly-Labeling-Lines-be78dfb984fd4c1e8a3bdff3ff9fac34?pvs=4)
 
-**UPDATE (04/03/2026)** - Since I connected my website to a Notion-based CMS, it made it infinitely easier to post directly to my site instead of Notion, so that’s where most of the above posts now live!
+**UPDATE (04/16/2026)** - Since I connected my website to [a Notion-based CMS](https://github.com/ben-tanen/ben-tanen.github.io/pull/5), it made it infinitely easier to post directly to my site instead of Notion, so that’s where most of the above posts now live!
 
 That's all for now - see y'all again in a year (or hopefully sooner)!
 
