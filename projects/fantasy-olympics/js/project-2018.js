@@ -90,11 +90,11 @@ d3.csv("/projects/fantasy-olympics/data/predictions.csv").then(function(data) {
 /*********************************/
 
 // set text directing where static chart is
-if ($(window).width() <= 900) $('#fo-chart-loc-text').html('below');
-else $('#fo-chart-loc-text').html('on the right');
+if ($(window).width() <= 900) $('#fo-chart-loc-text').html('above');
+else $('#fo-chart-loc-text').html('on the left');
 
 $(window).resize(function() {
-    if ($(window).width() <= 900) $('#fo-chart-loc-text').html('below');
-    else $('#fo-chart-loc-text').html('on the right');
+    if ($(window).width() <= 900) $('#fo-chart-loc-text').html('above');
+    else $('#fo-chart-loc-text').html('on the left');
 });
 

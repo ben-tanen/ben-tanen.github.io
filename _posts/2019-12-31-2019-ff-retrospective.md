@@ -1,12 +1,9 @@
 ---
 layout: post
-title:  "How A Subpar Football Fan Succeeds in Fantasy Football"
-date:   2019-12-31 15:05:41
-thumbnail: /assets/img/post-thumbnails/ff-retro-2019.png
-landing-proj:  true
-landing-order: 24
-landing-img:   /assets/img/proj-thumbnails/2019-ff-retro.png
-landing-large: false
+title: How A Subpar Football Fan Succeeds in Fantasy Football
+date: '2019-12-31 12:00:00'
+thumbnail: /assets/img/post-thumbnails/2019-ff-retrospective-c68f3ce9.png
+related-proj: 2019-ff-retrospective
 ---
 
 This weekend marked the end of the NFL’s regular season and with it, the end of many fantasy football league seasons. This was my third year in a fantasy football league and quite shockingly, I ended up winning my league, which was a vast improvement on my past performances. In the past, I’ve [visualized my effectiveness as a fantasy football drafter]({% post_url 2017-09-07-evaluating-fantasy-draft %}) so to cap off this winning season, I wanted to explore what factors might have led to my success, as always, with data.
@@ -19,20 +16,16 @@ The first and probably the most important factor of any successful fantasy footb
 
 What these show is a visual representation of how strong each team was in a particular position and, as a whole, how well-balanced their team was. For example, if we look at Slick Rick, we see that he had the best RBs in the league (he generally played Christian McCaffery and Mark Ingram, who both had knockout seasons). However, he was somewhat weaker (relatively) in terms of defenses, though this is obviously one of the least significant positions. If we measure how strong each team is across all of these positions relative to the rest of the league, we can get a numerical measure of the overall team. For example, if we look at Slick Rick, strong RBs, WRs, and TE + medium QB + weak K and DST comes out to a team score of 6.86.
 
-<ul id="radar-chart-container">
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/1-slick-rick.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/2-team-silverhart.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/3-team-cadow.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/4-team-halvorsen.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/5-team-tanen.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/6-team-ario.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/7-rookie-of-the-year.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/8-i-am-for-real.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/9-nuke-city.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/10-ags-reckoning.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/11-stickshift-rick.png" alt="" class="radar-chart-img"></li>
-    <li><img src="/projects/fantasy-football/img/2019-radar-charts/12-revenge-tour.png" alt="" class="radar-chart-img"></li>
-</ul>
+{% assign teams = "slick-rick,team-silverhart,team-cadow,team-halvorsen,team-tanen,team-ario,rookie-of-the-year,i-am-for-real,nuke-city,ags-reckoning,stickshift-rick,revenge-tour" | split: "," %}
+<div>
+    <ul id="radar-chart-container">
+    {% for team in teams %}
+        <li>
+            <img src="/projects/fantasy-football/img/2019-radar-charts/{{ forloop.index }}-{{ team }}.png" alt="" class="radar-chart-img">
+        </li>
+    {% endfor %}
+    </ul>
+</div>
 
 What these show is that these measures of team strength align relatively closely to each team’s ultimate performance in the league. While not exact, those with higher team scores ended near the top of the rankings while those with lower scores ended near the bottom. There are obviously some exceptions and other factors that play into a season’s performance (some discussed below), but a strong and well-rounded team seems to be a substantial part.
 
@@ -44,7 +37,7 @@ A crucial question that will rack the brains of most fantasy football owners is 
 
 Given this, I was curious how I did throughout the season when it came to setting my line-ups. How close to ideal were my line-ups? How many times did I lose because I benched the wrong players? Were there any players that I consistently played but should have benched or vice versa?
 
-{% include figure.html autolink="yes" src="/projects/fantasy-football/img/2019-optimal-lineup.jpg" alt="A visualization of how my actual vs. ideal line-ups compares" %}
+{% include figure.html src="/assets/img/posts/2019-ff-retrospective-dffd4a4f.png" alt="A visualization of how my actual vs. ideal line-ups compares" autolink="yes" %}
 
 Looking back on the season, I did relatively well when it came to setting my line-ups. I set the best possible line-up twice and for 10 of the 16 weeks, I set line-ups that scored at least 90% of the ideal maximum score for a given week. More importantly, setting the ideal line-up in a given week would have only made a difference between winning or losing twice (Week 3 and Week 7), which means I set optimal *enough* of line-ups.
 
@@ -52,12 +45,11 @@ Diving into specifics, I was curious if there were any players that I consistent
 
 Want to know who was never a mistake to play? Julio Jones. I played him 14 times and even though he didn’t have as killer of a season as in past years, he was worth the start each and every time. Absolute all-star.
 
-
 ### Effective waiver wire activity
 
-This year, I made frequent use of our league’s waiver wire, thinking I could successfully [stream](http://www.fantasywired.com/daily-fantasy-sports-faq/what-is-streaming-in-fantasy-football-14565.htm) players or pluck a soon-to-be superstar before anyone else takes notice. In fact, I did this the most among anyone else in my league with 37 waiver wire transactions. Some absolutely paid off (go Ryan Tannehill!) and some did not (\*cough\* [Chris Herndon](https://www.reddit.com/r/DynastyFF/comments/bl08ph/discussion_chris_herndon_hype_train/)), so I wondered if all of this waiver wire activity did in fact produce well-timed picks.
+This year, I made frequent use of our league’s waiver wire, thinking I could successfully [stream](http://www.fantasywired.com/daily-fantasy-sports-faq/what-is-streaming-in-fantasy-football-14565.htm) players or pluck a soon-to-be superstar before anyone else takes notice. In fact, I did this the most among anyone else in my league with 37 waiver wire transactions. Some absolutely paid off (go Ryan Tannehill!) and some did not (*cough cough* [Chris Herndon](https://www.reddit.com/r/DynastyFF/comments/bl08ph/discussion_chris_herndon_hype_train/)), so I wondered if all of this waiver wire activity did in fact produce well-timed picks.
 
-{% include figure.html autolink="yes" src="/projects/fantasy-football/img/2019-waiver-wire.jpg" alt="A visualization showing the average points earned from a player on my roster vs. not on my roster" %}
+{% include figure.html src="/assets/img/posts/2019-ff-retrospective-b4c47c37.png" alt="A visualization showing the average points earned from a player on my roster vs. not on my roster" autolink="yes" %}
 
 If I look at the average performance of these players when they were on my roster vs. not rostered (either on the waiver wire or on another team), it seems like I was generally making good pick ups. Many of these are kickers and defenses since I generally subscribed to the streaming strategy (pick up a player for a week based on their upcoming matchup). Overall, their rostered averages were generally higher so it seems like I was able to properly time these pick-ups and the strategy was a general success. Many thanks to [Fantasy Pros](https://www.fantasypros.com/nfl/) for their insights.
 
@@ -74,50 +66,14 @@ Finally and perhaps most importantly, we have something that has absolutely noth
 
 Before even diving too much into the data, the ease of my schedule was pretty apparent from simply looking at the total points scored for and against by each team. Overall, I ranked 8th in our league for total points scored, which along with the above discussions indicates I had a fine but not knock-out team. However, I ranked 1st in our league for total points scored against, which means that my opponents on average generally underperformed.
 
-{% include figure.html autolink="yes" src="/projects/fantasy-football/img/2019-easy-schedule.jpg" alt="A visualization showing the matchups and performances for each team against Team Tanen" %}
+{% include figure.html src="/assets/img/posts/2019-ff-retrospective-97c5f76c.png" alt="A visualization showing the matchups and performances for each team against Team Tanen" autolink="yes" %}
 
 When we delve into the weekly data and look at each team’s weekly scores relative to their season average, we can see that I played teams on worse than average weeks 63% (10 / 16) of the time. In fact, 31% (5 / 16) of my games were played against teams in their worst three weeks for the season. If we rank each team’s weekly scores and then take an average of those weeks that I played them, I played teams on their 10th best week, which isn't great for them.
 
-All these numbers tell a pretty consistent story - I got quite lucky with my schedule for the season. And obviously I’d like to claim that my winning season was due entirely to my strong team or my well-timed waiver wire pick-ups, but I won’t deny that an easy schedule helped out quite a bit. It’s impossible to say if that ended up being **the** reason I ultimately won, but just in case, I’ll be sure to thank my league mates for going easy on me. 
+All these numbers tell a pretty consistent story - I got quite lucky with my schedule for the season. And obviously I’d like to claim that my winning season was due entirely to my strong team or my well-timed waiver wire pick-ups, but I won’t deny that an easy schedule helped out quite a bit. It’s impossible to say if that ended up being **the** reason I ultimately won, but just in case, I’ll be sure to thank my league mates for going easy on me.
 
 {% include section-break.html %}
 
 So how does a subpar football fan end up winning their fantasy football league? All it takes is a solid team, well-informed waiver wire pick-ups, near ideal rosters, and a hefty helping of luck. It also doesn’t hurt to have Julio Jones and Derrick Henry.
 
-<style>
-h3 {
-    color: #77bdee;
-}
-
-#radar-chart-container {
-    width: 100%;
-    padding: 0;
-}
-
-#radar-chart-container li {
-    list-style: none;
-    display: inline-block;
-    margin-right: 10px;
-    width: calc(33% - 13px);
-}
-
-.radar-chart-img {
-    width: 100%;
-    margin: 0;
-}
-
-@media (max-width: 950px) {
-    #radar-chart-container li {
-        width: calc(50% - 13px);
-    }
-}
-
-@media (max-width: 475px) {
-    #radar-chart-container li {
-        width: 100%;
-    }
-}
-
-</style>
-
-
+<link rel="stylesheet" href="/projects/fantasy-football/css/2019-retrospective.style.css" />

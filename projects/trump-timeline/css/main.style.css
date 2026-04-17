@@ -1,0 +1,122 @@
+#trump-timeline-container {
+    width: 100%;
+    margin: 30px 0;
+}
+
+#trump-timeline-container > div {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#trump-timeline-container > div.hidden {
+    display: none;
+}
+
+#trump-timeline-container > div:nth-last-of-type(1):not(.hidden) {
+    margin-bottom: 0;
+}
+
+#trump-timeline-container > div > p {
+    margin-bottom: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    max-width: initial;
+    width: calc(100% - 215px);
+}
+
+.question-text {
+    font-weight: 500;
+    color: #77bdee;
+}
+
+.grade-text {
+    width: initial !important;
+}
+
+.submit-btn {
+    width: 100px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    background-color: #77bdee;
+    cursor: pointer;
+}
+
+.submit-btn.locked {
+    background-color: #eee;
+    cursor: default;
+}
+
+.submit-btn p {
+    text-align: center !important;
+    margin: 0;
+    padding: 3px;
+    color: white;
+}
+
+.trump-timeline-svg {
+    width: 100%;
+    height: 70px;
+}
+
+rect.timeline {
+    fill: #bbb;
+}
+
+rect.timeline-tick {
+    fill: #bbb;
+}
+
+rect.timeline.cover {
+    fill: rgba(255, 0, 0, 0.5);
+}
+
+g.answer-sect {
+    display: initial;
+}
+
+g.answer-sect.hidden {
+    display: none;
+}
+
+circle.slider {
+    fill: white;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+circle.slider-target {
+    fill: rgba(255, 0, 0, 0);
+    cursor: ew-resize;
+}
+
+g.slider-sect.locked circle.slider-target {
+    cursor: default;
+}
+
+g.slider-sect.locked polygon {
+    display: none !important;
+}
+
+text.slider-text, text.answer-text {
+    text-anchor: middle;
+    font-size: 13px;
+    alignment-baseline: middle;
+}
+
+p#view-more {
+    text-align: center;
+}
+
+p#view-more > span {
+    color: white;
+    cursor: pointer;
+    padding: 2px 5px;
+    background-color: #77bdee;
+    border-radius: 5px;
+}
+
+p#view-more > span:hover {
+    /*text-decoration: underline;*/
+}

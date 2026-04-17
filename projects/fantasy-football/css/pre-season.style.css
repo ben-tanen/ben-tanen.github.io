@@ -41,7 +41,8 @@
 #d3-ff-buttons button {
     margin-bottom: 5px;
     max-width: 116.67px;
-    height: 100%;
+    height: 45px;
+    vertical-align: top;
     color: white;
     border: 0;
     border-radius: 5px;
@@ -78,4 +79,20 @@ button#mock {
 .jBox-Tooltip{
     font-family: 'Yantramanav', 'sans-serif';
     max-width: 300px;
+}
+
+span.ff-preseason-baseline {
+    color: rgb(169,169,169);
+}
+
+span.ff-preseason-fantasypros {
+    color: #23ce6b;
+}
+
+span.ff-preseason-espn {
+    color: #ff4cc8;
+}
+
+span.ff-preseason-5thdown {
+    color: #77bdee;
 }

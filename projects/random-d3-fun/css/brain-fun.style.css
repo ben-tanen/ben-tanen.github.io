@@ -1,0 +1,19 @@
+    #brain-viz-container {
+        width: 325px;
+        margin: auto;
+    }
+
+    #brain-viz {
+        width: 100%;
+        height: auto;
+    }
+
+    #brain-viz line {
+        fill: none;
+        stroke: #77bdee;
+        stroke-width: 3;
+    }
+
+    #brain-viz circle:not(#background-circle) {
+        fill: #77bdee;
+    }

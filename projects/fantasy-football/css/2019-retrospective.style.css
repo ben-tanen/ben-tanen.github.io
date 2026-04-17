@@ -1,0 +1,32 @@
+h3 {
+    color: #77bdee;
+}
+
+#radar-chart-container {
+    width: 100%;
+    padding: 0;
+}
+
+#radar-chart-container li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+    width: calc(33% - 13px);
+}
+
+.radar-chart-img {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 950px) {
+    #radar-chart-container li {
+        width: calc(50% - 13px);
+    }
+}
+
+@media (max-width: 475px) {
+    #radar-chart-container li {
+        width: 100%;
+    }
+}

@@ -1,0 +1,112 @@
+#d3-2016-electoral-college-paths-container {
+    margin-bottom: 15px;
+}
+
+.slider-container {
+    width: calc(33% - 2px);
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.slider-container p {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.slider-margin-text.trump {
+    color: #ff6e6c;
+}
+
+.slider-margin-text.clinton {
+    color: #77bdee;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: #dedede;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: gray;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: gray;
+  cursor: pointer;
+}
+
+#d3-2016-electoral-college-paths {
+    width: 100%;
+    height: 600px;
+}
+
+rect.trump {
+    fill: #ff6e6c;
+    cursor: pointer;
+}
+
+rect.clinton {
+    fill: #77bdee;
+    cursor: pointer;
+}
+
+.ecvotes-cumu-text {
+    font-size: 25px;
+    fill: black;
+}
+
+.ecvotes-cumu-text#trump {
+    fill: #ff6e6c;
+}
+
+.ecvotes-cumu-text#clinton {
+    text-anchor: end;
+    fill: #77bdee;
+}
+
+#x-axis-trump text, #x-axis-clinton text {
+    text-anchor: middle;
+    fill: black;
+}
+
+#y-axis .tick text {
+    text-anchor: middle;
+}
+
+#y-axis .tick rect {
+    fill: white;
+}
+
+#line270 {
+    stroke-width: 1;
+    stroke: gray;
+}
+
+#line270-caption {
+    font-size: 12px;
+    fill: gray;
+}
+
+@media (max-width: 400px) {
+    .ecvotes-cumu-text {
+        font-size: 18px;
+    }
+}

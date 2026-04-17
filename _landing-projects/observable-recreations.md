@@ -1,7 +1,7 @@
 ---
-title: "Recreating Data Graphics on Observable"
+title: Recreating Data Graphics on Observable
 reroute-url: https://observablehq.com/collection/@ben-tanen/recreations
 landing-order: 20
-landing-img:   /assets/img/proj-thumbnails/observable-recreations.png
+landing-img: /assets/img/proj-thumbnails/observable-recreations-cbc4ffaf.png
 landing-large: false
 ---

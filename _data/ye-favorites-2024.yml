@@ -1,0 +1,240 @@
+- title: Perfect Days
+  link: https://boxd.it/ATh8
+  icon: perfect-days.jpg
+  description: Film
+  type: film
+- title: The Curse
+  link: https://www.themoviedb.org/tv/114655
+  icon: the-curse.jpg
+  description: TV series
+  type: show
+- title: John Dickerson's Naval Gazing
+  link: https://open.spotify.com/show/0I0u98mHmARuUQIsB0VUs4
+  icon: john-dickerson-s-naval-gazing.jpg
+  description: Podcast
+  type: podcast
+- title: Dune [1965]
+  link: https://www.goodreads.com/book/show/44767458-dune
+  icon: dune.jpg
+  description: Book by Frank Herbert
+  type: book
+- title: Challengers
+  link: https://boxd.it/zld0
+  icon: challengers.jpg
+  description: Film
+  type: film
+- title: Can Olive Garden compete with the nation of Italy?
+  link: https://www.youtube.com/watch?v=iNWxDuVgWp8
+  icon: can-olive-garden-compete-with-the-nation-of-italy.jpg
+  description: Video by Eddy Burback
+  type: video
+- title: Faith Crisis Pt 1
+  link: https://open.spotify.com/album/0NxJjIo7cyOfhcW4Eh6j1z
+  icon: faith-crisis-pt-1.jpg
+  description: Album by Middle Kids
+  type: music
+- title: Models All The Way Down
+  link: https://knowingmachines.org/models-all-the-way
+  icon: models-all-the-way-down.png
+  description: Article by Knowing Machines
+  type: article
+- title: Nosferatu
+  link: https://boxd.it/f5eG
+  icon: nosferatu.jpg
+  description: Film
+  type: film
+- title: Agatha All Along
+  link: https://www.themoviedb.org/tv/138501
+  icon: agatha-all-along.jpg
+  description: TV series
+  type: show
+- title: Death of the Follower & the Future of Creativity on the Web
+  link: https://youtube.com/watch?v=hwn6-8XpIuE
+  icon: death-of-the-follower-the-future-of-creativity-on-the-web.jpg
+  description: Video by Jack Conte
+  type: video
+- title: Is Excel immortal?
+  link: https://benn.substack.com/p/is-excel-immortal
+  icon: is-excel-immortal.webp
+  description: Article by Benn Stancil
+  type: article
+- title: 'Dune: Part Two'
+  link: https://boxd.it/pUfA
+  icon: dune-part-two.jpg
+  description: Film
+  type: film
+- title: The Lonely Island and Seth Meyers Podcast
+  link: https://open.spotify.com/show/2jKBZHnSn6wLezZjggpKHy
+  icon: the-lonely-island-and-seth-meyers-podcast.jpg
+  description: Podcast
+  type: podcast
+- title: 'Filterworld: How Algorithms Flattened Culture'
+  link: https://www.goodreads.com/book/show/134119018-filterworld
+  icon: filterworld.jpg
+  description: Book by Kyle Chayka
+  type: book
+- title: My Old Ass
+  link: https://boxd.it/zLP0
+  icon: my-old-ass.jpg
+  description: Film
+  type: film
+- title: Election Touchscreen Map Takes Deeper Look Inside Key Swing Voter
+  link: https://youtube.com/watch?v=9qI0LTmSr38
+  icon: election-touchscreen-map-takes-deeper-look-inside-key-swing-voter.jpg
+  description: Video by Onion News Network
+  type: video
+- title: God of War [2018]
+  link: https://www.igdb.com/games/god-of-war--1
+  icon: god-of-war.webp
+  description: Video Game
+  type: game
+- title: The Holdovers
+  link: https://boxd.it/vHza
+  icon: the-holdovers.jpg
+  description: Film
+  type: film
+- title: 'Recoding America: Why Government Is Failing in the Digital Age'
+  link: https://www.goodreads.com/book/show/74831609-recoding-america
+  icon: recoding-america.jpg
+  description: Book by Jennifer Pahlka
+  type: book
+- title: English Teacher
+  link: https://www.themoviedb.org/tv/258902
+  icon: english-teacher.jpg
+  description: TV series
+  type: show
+- title: Anora
+  link: https://boxd.it/Egcw
+  icon: anora.jpg
+  description: Film
+  type: film
+- title: Why The Curse is Such A Brilliant Show
+  link: https://youtube.com/watch?v=nYHwQ234S1s
+  icon: why-the-curse-is-such-a-brilliant-show.jpg
+  description: Video by Thomas Flight
+  type: video
+- title: Crying in H Mart [2021]
+  link: https://www.goodreads.com/book/show/54814676-crying-in-h-mart
+  icon: crying-in-hmart.jpg
+  description: Book by Michelle Zauner
+  type: book
+- title: A Different Man
+  link: https://boxd.it/BoEC
+  icon: a-different-man.jpg
+  description: Film
+  type: film
+- title: The Weekly Show with John Stewart
+  link: https://open.spotify.com/show/0sxpFsg449GC8TPtrRVCUW
+  icon: the-weekly-show-with-john-stewart.jpg
+  description: Podcast
+  type: podcast
+- title: Every Stand-Up Special Intro
+  link: https://youtube.com/watch?v=6Qt3WW5VdKs
+  icon: every-stand-up-special-intro.jpg
+  description: Video by Almost Friday TV
+  type: video
+- title: Thelma
+  link: https://boxd.it/DOou
+  icon: thelma.jpg
+  description: Film
+  type: film
+- title: You are not a commercial for yourself
+  link: https://www.blackbirdspyplane.com/p/you-are-not-a-commercial-for-yourself
+  icon: you-are-not-a-commercial.webp
+  description: Article by Blackbird Spyplane
+  type: article
+- title: Weird Faith
+  link: https://open.spotify.com/album/40hflv8qjnNzLA2ZrFA3yv
+  icon: weird-faith.jpg
+  description: Album by Madi Diaz
+  type: music
+- title: Dìdi
+  link: https://letterboxd.com/film/didi-2024/
+  icon: d-di.jpg
+  description: Film
+  type: film
+- title: Decoder with Nilay Patel
+  link: https://open.spotify.com/show/47jQcyRcrM1EoV0sU39N9F
+  icon: decoder-with-nilay-patel.jpg
+  description: Podcast
+  type: podcast
+- title: Sisyphus and the Impossible Dream
+  link: https://youtube.com/watch?v=9IiTdSnmS7E
+  icon: sisyphus-and-the-impossible-dream.jpg
+  description: Video by Casey Neistat
+  type: video
+- title: Will & Harper
+  link: https://boxd.it/K5eo
+  icon: will-harper.jpg
+  description: Film
+  type: film
+- title: 'Test Your Focus: Can You Spend 10 Minutes With One Painting?'
+  link: https://www.nytimes.com/interactive/2024/07/20/upshot/attention-experiment.html
+  icon: test-your-focus.png
+  description: Article series from The New York Times
+  type: article
+- title: Mr. & Mrs. Smith
+  link: https://www.themoviedb.org/tv/118642
+  icon: mr-mrs-smith.jpg
+  description: TV series
+  type: show
+- title: It's Whats Inside
+  link: https://boxd.it/DOV4
+  icon: it-s-whats-inside.jpg
+  description: Film
+  type: film
+- title: I Will Fucking Piledrive You If You Mention AI Again
+  link: https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/
+  icon: i-will-piledrive-you.jpg
+  description: Article by Nikhil Suresh
+  type: article
+- title: Hollywood's Obsession with Ambition
+  link: https://youtube.com/watch?v=BucSbzYXqKM
+  icon: hollywood-s-obsession-with-ambition.jpg
+  description: Video by Thomas Flight
+  type: video
+- title: My Cousin Vinny [1992]
+  link: https://boxd.it/1WpO
+  icon: my-cousin-vinny.jpg
+  description: Film
+  type: film
+- title: Survivor 47
+  link: https://www.themoviedb.org/tv/14658
+  icon: survivor-47.jpg
+  description: TV series
+  type: show
+- title: SKATE BREAK
+  link: https://youtube.com/watch?v=EsvnrTr4fGs
+  icon: skate-break.jpg
+  description: Video by Swatch
+  type: video
+- title: Erin Brockovich [2000]
+  link: https://boxd.it/2al2
+  icon: erin-brockovich.jpg
+  description: Film
+  type: film
+- title: Is My Blue Your Blue?
+  link: https://ismy.blue/
+  icon: ismyblue.png
+  description: Article
+  type: article
+- title: The Great American Bar Scene
+  link: https://open.spotify.com/album/3w7pEn5Ai1DCRG2FqFNIbB
+  icon: the-great-american-bar-scene.jpg
+  description: Album by Zach Bryan
+  type: music
+- title: Sideways [2004]
+  link: https://boxd.it/1Y5c
+  icon: sideways.jpg
+  description: Film
+  type: film
+- title: Bo Burnham Tried To Warn Us
+  link: https://www.youtube.com/watch?v=I89Lz7CdLuM
+  icon: bo-burnham-tried-to-warn-us.jpg
+  description: Video by lvl 1 rock
+  type: video
+- title: The Talented Mr. Ripley [1999]
+  link: https://boxd.it/2924
+  icon: the-talented-mr-ripley.jpg
+  description: Film
+  type: film

@@ -1,10 +1,11 @@
-{% if include.break %}{% include section-break.html %}{% endif %}
-
 <div class='methodology'>
     <p class='methodology-title'>Methodology and minutia</p>
     {% assign desc = include.content | newline_to_br | split: '<br />' %}
     {% for member in desc %}
-    <p>{{ member }}</p>
+    {% assign trimmed = member | strip %}
+    {% if trimmed != '' %}
+    <p markdown="1">{{ trimmed }}</p>
+    {% endif %}
     {% endfor %}
 </div>
 

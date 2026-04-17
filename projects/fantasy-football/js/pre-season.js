@@ -1,8 +1,3 @@
-new jBox('Tooltip', {
-  attach: '#footnote-1',
-  content: "At the time of me pulling this data and Mr. Hess making this pick, Ezekiel Elliott was due to serve a six-game suspension, making for a risky pick regardless of Elliott's ability. Hess didn't seem to care about that and went with him anyway. Minutes later, it was announced that Elliott would not have to serve the six-game suspension while his case was undergoing an appeal."
-});
-
 var sources = ["fifth-down", "fantasy-pros", "mock"]
 
 var margin = {top: 20, right: 20, bottom: 40, left: 50},

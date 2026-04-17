@@ -1,0 +1,17 @@
+.photo-container {
+}
+
+.photo-container img {
+    margin: 0;
+    padding: 5px 5px 0 0;
+}
+
+.sub-photo-container {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sub-photo-container.wide {
+    width: calc(98% + 5px);
+}

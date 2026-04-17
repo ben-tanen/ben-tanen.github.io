@@ -259,8 +259,3 @@ $(window).resize(function() {
     render_group_by_plot(data, false);
 });
 
-// init footnote
-new jBox('Tooltip', {
-    attach: '#footnote-1',
-    content: "This analysis includes teams that were projected to earn points or who did earn points. Thus if a team was not projected to win and they did not win, they are not included."
-});

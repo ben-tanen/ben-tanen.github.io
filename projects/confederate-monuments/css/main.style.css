@@ -1,0 +1,20 @@
+#d3-confederate-poll {
+    width: 100%;
+    height: 290px;
+}
+
+text.pct-label {
+    fill: #36393a;
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+rect.legend {
+    width: 15px;
+    height: 15px;
+}
+
+.remove    { fill: #e95946; }
+.move      { fill: #42b0a1; }
+.leave-add { fill: #f9a545; }
+.leave     { fill: #a6a6a6; }

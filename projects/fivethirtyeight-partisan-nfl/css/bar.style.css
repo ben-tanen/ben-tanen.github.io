@@ -32,3 +32,11 @@
 #d3-nfl-bar-buttons button.selected {
 	background: #77bdee;
 }
+
+span.nfl-bar-label.dem {
+    color: #77bdee;
+}
+
+span.nfl-bar-label.rep {
+    color: rgb(239, 64, 86);
+}

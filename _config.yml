@@ -13,7 +13,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - readme.md
-  - update-landing-proj-order.py
+  - _env/
 markdown: kramdown
 permalink: /projects/:year/:month/:day/:title.html
 

@@ -1,13 +1,8 @@
 ---
 layout: post
-title: "K-Means Music: Generating Clustered Playlists on Spotify"
-date: 2020-06-16 05:00:00
-thumbnail: /assets/img/post-thumbnails/spotify-clustering.png
+title: 'K-Means Music: Generating Clustered Playlists on Spotify'
+date: '2020-06-16 12:00:00'
+thumbnail: /assets/img/post-thumbnails/kmeans-music-24655e25.png
 reroute-url: /notebooks/kmeans-music.html
-landing-proj:  true
-landing-order: 23
-landing-img:   /assets/img/post-thumbnails/spotify-clustering.png
-landing-large: false
+related-proj: kmeans-music
 ---
-
-{% include reroute_page.html reroute_url="/notebooks/kmeans-music.html" %}

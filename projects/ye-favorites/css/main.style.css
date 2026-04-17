@@ -1,0 +1,88 @@
+ol.ye-fav-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ol.ye-fav-list li {
+    margin: 7px 0;
+    display: inline-block;
+    width: 100%;
+    /*width: calc(50% - 5px);*/
+    vertical-align: top;
+}
+
+div.ye-fav-item {
+    min-height: 60px;
+    position: relative;
+}
+
+div.ye-fav-icon {
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    background: no-repeat center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+div.ye-fav-text {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 8px 5px 68px;
+    margin-top: 5px;
+}
+
+div.ye-fav-text p {
+    margin: 0;
+}
+
+p.ye-fav-title {
+    font-size: 21px;
+    font-weight: 400;
+    text-align: left;
+}
+
+p.ye-fav-title a {
+    color: inherit;
+    text-decoration-color: inherit;
+}
+
+p.ye-fav-title.article,
+p.ye-fav-title.book {
+    color: #F7A278;
+}
+
+p.ye-fav-title.game {
+    color: #331832;
+}
+
+p.ye-fav-title.film {
+    color: #114B5F;
+}
+
+p.ye-fav-title.music {
+    color: #35CE8D;
+}
+
+p.ye-fav-title.other {
+    color: black;
+}
+
+p.ye-fav-title.podcast {
+    color: #566531;
+}
+
+p.ye-fav-title.show {
+    color: #D81159;
+}
+
+p.ye-fav-title.video {
+    color: #77BDEE;
+}
+
+@media (max-width: 910px) {
+    ol.ye-fav-list li {
+        width: 100%;
+    }
+}

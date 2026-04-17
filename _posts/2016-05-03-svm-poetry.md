@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  'Support Vector Machines and Poetry'
-date:   2016-05-3 15:05:41
-thumbnail: /assets/img/post-thumbnails/svm-poems.png
+title: Support Vector Machines and Poetry
+date: '2016-05-03 12:00:00'
+thumbnail: /assets/img/post-thumbnails/svm-poetry-56943542.png
 ---
 
 My tales of data mining continue and this time, they're about [support vector machines](http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html). These fancy little classifiers are particularly awesome when it comes to aiding a computer in distinguishing between two (or more) groups of data. I previously wrote about [k-means clustering]({% post_url 2016-03-09-clustering-with-kmeans %}) which is a great way to quickly cluster some existing data. However, when it comes to classifying new data points, clustering isn't a fantastic method.
@@ -17,14 +17,12 @@ It's pretty obvious to anyone who speaks English or German which language these 
 
 Using this information as the main "features" of our data, we can compute and define a hyperplane (or in this case, a line) to find if there is a meaningful division between English and German given the "features" we are analyzing (for more on the math behind this, see [here](http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html)). If we compute and plot this for ten different excerpts, we get the following:
 
-{% include figure.html src="/assets/img/posts/svm-poems.png" alt="A graph showing our poems and our SVM" width="450px" %}
+{% include figure.html src="/assets/img/posts/svm-poetry-5ede3da6.png" alt="A graph showing our poems and our SVM" width="450px" %}
 
-We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another *new* excerpt: 
+We can see that, for the most part, German poems end up on the left side of the line and English poems end up on the right, indicating at least a mildly significant relationship in our features. To further test it, we can try another *new* excerpt:
 
 > *Hat der alte Hexenmeister sich doch einmal wegbege*
 
 If we go ahead and plot this (seen above in magenta), we can see that this obviously German poem is again partitioned as expected without needing to update our hyperplane. Hurray, math works!
 
 For anyone interested, you can find the MATLAB code for this example [here](https://github.com/ben-tanen/DataMining/tree/master/svm-poems) and other data mining projects [here](https://github.com/ben-tanen/data-mining).
-
-

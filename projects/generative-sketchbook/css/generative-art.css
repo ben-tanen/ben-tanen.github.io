@@ -1,0 +1,18 @@
+#d3-gen-art-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+#d3-gen-art {
+    width: 100%;
+}
+
+#d3-gen-art-controls p {
+    width: calc(50% - 5px);
+    display: inline-block;
+}
+
+#viz-type-2 {
+    margin-left: 10px;
+}
