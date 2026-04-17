@@ -482,6 +482,25 @@ def _match_key_order(new_data: dict, existing_path: Path) -> dict:
 CONFLICTS_DIR = REPO_ROOT / "_env" / "notion_bridge" / "conflicts"
 
 
+def prune_slug_orphans(slug: str, dirs: list[Path], reference_text: str) -> list[Path]:
+    """Delete <slug>-*.* files in `dirs` whose filename isn't referenced in
+    reference_text.
+
+    Image files follow the <slug>-<hash>.<ext> naming convention, so scoping
+    the scan to files prefixed with the slug prevents touching another page's
+    images. Returns the list of deleted paths.
+    """
+    deleted = []
+    for d in dirs:
+        if not d.exists():
+            continue
+        for path in d.glob(f"{slug}-*"):
+            if path.is_file() and path.name not in reference_text:
+                path.unlink()
+                deleted.append(path)
+    return deleted
+
+
 def write_conflict_diff(slug: str, local_bytes: bytes, projected_bytes: bytes) -> Path:
     """Write a unified diff between local and projected content to conflicts/<slug>.diff.
 
@@ -755,6 +774,16 @@ def sync_post(
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_bytes(projected_bytes)
         print(f"  ✓ Synced post: {rel_path}")
+        pruned = prune_slug_orphans(
+            slug,
+            [
+                REPO_ROOT / "assets" / "img" / "posts",
+                REPO_ROOT / config["site"]["post_thumbnails_dir"],
+            ],
+            projected_bytes.decode("utf-8", errors="replace"),
+        )
+        for p in pruned:
+            print(f"    ⌫ Pruned orphan: {p.relative_to(REPO_ROOT)}")
     else:
         print(f"  = Up to date: {rel_path}")
 
@@ -837,6 +866,13 @@ def sync_project(
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_bytes(projected_bytes)
         print(f"  ✓ Synced project: {out_path.name}")
+        pruned = prune_slug_orphans(
+            slug,
+            [REPO_ROOT / config["site"]["proj_thumbnails_dir"]],
+            projected_bytes.decode("utf-8", errors="replace"),
+        )
+        for p in pruned:
+            print(f"    ⌫ Pruned orphan: {p.relative_to(REPO_ROOT)}")
     else:
         print(f"  = Up to date: {out_path.name}")
 
