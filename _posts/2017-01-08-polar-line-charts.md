@@ -5,7 +5,7 @@ date: '2017-01-08 12:00:00'
 thumbnail: /assets/img/post-thumbnails/polar-line-charts-c593c03a.gif
 ---
 
-A few weeks ago, I came across [this very interesting (and very scary) visualization](http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif)of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.
+A few weeks ago, I came across [this very interesting (and very scary) visualization](http://blogs.reading.ac.uk/climate-lab-book/files/2016/05/spiral_optimized.gif) of the change in global temperatures over the last two centuries. I was particularly impressed with their choice to use a polar chart to show annual changes as opposed to the traditional chart choices.
 
 Since [D3 and Mike Bostock](https://bost.ocks.org/mike/) have generally implemented every type of chart imaginable, I was surprised that I couldn't find anything like this sort of polar line chart that I could use for other data sets. As a result, I decided to code it up myself, which you can see below. What better data to show of the chart than the original climate data so that is what you see below.
 

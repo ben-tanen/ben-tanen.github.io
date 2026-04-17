@@ -9,7 +9,7 @@ In the lead up to *Saturday Night Live*’s 50th Anniversary special, the SNL Yo
 
 {% include youtube.html id="j_7Qg1c6-S4" %}
 
-In watching the promo, I noticed a significant number of the highlighted cast members were from the early 2000s to early 2010s era(s), which happens to align with my era of SNL (the years when I was in grade school and first became familiar with SNL) and what Seth Meyers has frequently called “*an* *\[sic\]* golden era” on throughout [*The Lonely Island and Seth Meyers Podcast*](https://open.spotify.com/show/2jKBZHnSn6wLezZjggpKHy) (a thoroughly enjoyable podcast for any fan of Seth or the Lonely Island). I wanted to confirm my suspicions and what better way than to visualize it with a chart 🙂
+In watching the promo, I noticed a significant number of the highlighted cast members were from the early 2000s to early 2010s era(s), which happens to align with my era of SNL (the years when I was in grade school and first became familiar with SNL) and what Seth Meyers has frequently called “*an* *\[sic\]* golden era” throughout [*The Lonely Island and Seth Meyers Podcast*](https://open.spotify.com/show/2jKBZHnSn6wLezZjggpKHy) (a thoroughly enjoyable podcast for any fan of Seth or the Lonely Island). I wanted to confirm my suspicions and what better way than to visualize it with a chart. 🙂
 
 {% include figure.html src="/assets/img/posts/snl-an-golden-era-74c116e8.png" autolink="yes" %}
 

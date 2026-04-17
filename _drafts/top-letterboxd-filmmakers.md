@@ -15,7 +15,7 @@ Letterboxd does surface some of this information within their Pro Stats page - a
 
 But this only focuses absolute number of films. Even though I’ve seen 22 of Samuel L. Jackson’s films, that’s only a measly 10% of his total filmography! So that begs the question: are there any actors/filmmakers that I have unknowingly watching most, if not all, of their filmography?
 
-To answer that, I cracked out the ol’ Python scraping code and got to digging. And the results were… ultimately not *super* interesting, thus why I’m writing here. I did learn a few minor nuggets of information, but it wasn’t the crazy insightful analysis that I was expecting to warrant a few hours of work. Nevertheless, here are a few nuggets that I learned from this minor project:
+To answer that, I cracked out the ol’ Python scraping code and got to digging. And the results were… ultimately not *super* interesting. I did learn a few minor nuggets of information, but it wasn’t the crazy insightful analysis that I was expecting to warrant a few hours of work. Nevertheless, here are a few nuggets that I learned from this minor project:
 
 - I have watched 100% of the filmographies of 1,738 different actors, writers, directors, etc. 
 	- Of those, 95% of those people have only one film, thus making the 100% easy to achieve. 
@@ -23,7 +23,6 @@ To answer that, I cracked out the ol’ Python scraping code and got to digging.
 - Focusing on filmmakers with 5+ films, I have the highest completion rates for:
 	- [J.J. Abrams (director)](https://letterboxd.com/director/jj-abrams/), 100% = 6/6 films
 	- [John Morris (actor)](https://letterboxd.com/actor/john-morris-3/), 100% = 5/5 films
-		- TIL: He voiced Andy in all four Toy Story films and “Santa Boy” in The Nightmare Before Christmas.
 	- [Bo Burnham (director)](https://letterboxd.com/director/bo-burnham/), 88.9% = 8/9 films
 		- I’ve never watched Chris Rock’s Tamborine, but since Bo is one of my favorites, I guess I should for the 100%.
 	- [John Mulaney (writer)](https://letterboxd.com/writer/john-mulaney/), 87.5% = 7/8 films
@@ -41,6 +40,6 @@ To answer that, I cracked out the ol’ Python scraping code and got to digging.
 		- TIL: Apparently a writer on many of my favorite Pixar movies!
 	- Jeff Pidgeon (actor), 61.1% = 11/18 films
 		- TIL: Apparently a voice actor in many of my favorite Pixar movies, including the Aliens in the Toy Story movies.
-- Among all filmmakers, I have the lowest completion rate for Mel Blanc, who is apparently credited with 1,034 different films, primarily from his work as voices of Bugs Bunny, Daffy Duck, Porky Pig, and other Looney Tunes characters during the “Golden Age of American animation”. I have only seen 2, or 0.2%, of his filmography.
+- Among all filmmakers, I have the lowest completion rate for Mel Blanc, who is apparently credited with 1,034 different films, primarily from his work as voices of Bugs Bunny, Daffy Duck, Porky Pig, and other Looney Tunes characters during the “Golden Age of American animation.” I have only seen 2, or 0.2%, of his filmography.
 
 So that’s what I learned! Now that I have this information, I might have some directed watching for the next few weeks, including about 1032 films including Mel Blanc!

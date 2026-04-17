@@ -1,5 +1,6 @@
 """Change detection via .sync-meta.json and git-based local edit checks."""
 
+import hashlib
 import json
 import subprocess
 from datetime import datetime, timezone
@@ -30,13 +31,35 @@ def get_last_synced_at(meta: dict, collection: str, page_id: str) -> str | None:
     return meta.get(collection, {}).get(page_id, {}).get("last_synced_at")
 
 
+def get_last_synced_hash(meta: dict, collection: str, page_id: str) -> str | None:
+    """Get the last_synced_hash for a page, or None if not recorded."""
+    return meta.get(collection, {}).get(page_id, {}).get("last_synced_hash")
+
+
 def get_synced_status(meta: dict, collection: str, page_id: str) -> str | None:
     """Get the last synced status for a page, or None if never synced."""
     return meta.get(collection, {}).get(page_id, {}).get("status")
 
 
-def update_synced(meta: dict, collection: str, page_id: str, slug: str, status: str | None = None):
-    """Mark a page as just synced (sets last_synced_at to now)."""
+def file_content_hash(path: Path) -> str:
+    """Return sha256 hex digest of the file's contents."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def update_synced(
+    meta: dict,
+    collection: str,
+    page_id: str,
+    slug: str,
+    status: str | None = None,
+    file_path: Path | None = None,
+):
+    """Mark a page as just synced (sets last_synced_at to now).
+
+    If file_path is provided, also records a content hash (last_synced_hash)
+    so subsequent syncs can detect whether the file has been locally edited
+    without depending on git timestamps.
+    """
     if collection not in meta:
         meta[collection] = {}
     entry = {
@@ -45,6 +68,8 @@ def update_synced(meta: dict, collection: str, page_id: str, slug: str, status: 
     }
     if status:
         entry["status"] = status
+    if file_path is not None and file_path.exists():
+        entry["last_synced_hash"] = file_content_hash(file_path)
     meta[collection][page_id] = entry
 
 
@@ -123,10 +148,16 @@ def check_local_edit(
     file_path: Path,
     last_synced_at: str | None,
     dirty_files: set[str],
+    last_synced_hash: str | None = None,
 ) -> str | None:
     """Check if a Jekyll file has been locally modified since last sync.
 
     Returns a reason string if the file should be blocked, or None if safe.
+
+    When last_synced_hash is recorded, the check is purely content-based —
+    if the current file hash matches the recorded hash, the file is unchanged
+    regardless of git history. Falls back to the timestamp-based git check
+    when no hash is recorded (migration path for pre-existing meta entries).
     """
     if last_synced_at is None:
         # Never synced — no local edit conflict possible
@@ -134,6 +165,16 @@ def check_local_edit(
 
     rel_path = str(file_path.relative_to(REPO_ROOT))
 
+    # Hash-based check (preferred) — ignores spurious commit timestamps and
+    # only reports a local edit if the file content has actually diverged
+    if last_synced_hash is not None:
+        if not file_path.exists():
+            return None
+        if file_content_hash(file_path) != last_synced_hash:
+            return f"local content in {rel_path} differs from last synced version"
+        return None
+
+    # Legacy fallback: no hash recorded yet (pre-hash sync-meta entry)
     # Check 1: uncommitted changes
     if rel_path in dirty_files:
         return f"uncommitted local changes to {rel_path}"

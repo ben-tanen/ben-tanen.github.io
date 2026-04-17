@@ -22,6 +22,7 @@ from sync_meta import (
     load_sync_meta,
     save_sync_meta,
     get_last_synced_at,
+    get_last_synced_hash,
     get_synced_status,
     get_oldest_sync_time,
     update_synced,
@@ -617,8 +618,9 @@ def sync_post(
 
     # Check local edit
     last_synced = get_last_synced_at(meta, "posts", post["notion_id"])
+    last_hash = get_last_synced_hash(meta, "posts", post["notion_id"])
     if out_path.exists():
-        local_edit = check_local_edit(out_path, last_synced, dirty_files)
+        local_edit = check_local_edit(out_path, last_synced, dirty_files, last_hash)
         if local_edit:
             return f"local edit detected: {local_edit}"
 
@@ -690,7 +692,7 @@ def sync_post(
     print(f"  ✓ Synced post: {rel_path}")
 
     # Update sync metadata
-    update_synced(meta, "posts", post["notion_id"], slug, status=status)
+    update_synced(meta, "posts", post["notion_id"], slug, status=status, file_path=out_path)
     return None
 
 
@@ -711,8 +713,9 @@ def sync_project(
 
     # Check local edit
     last_synced = get_last_synced_at(meta, "projects", project["notion_id"])
+    last_hash = get_last_synced_hash(meta, "projects", project["notion_id"])
     if out_path.exists():
-        local_edit = check_local_edit(out_path, last_synced, dirty_files)
+        local_edit = check_local_edit(out_path, last_synced, dirty_files, last_hash)
         if local_edit:
             return f"local edit detected: {local_edit}"
 
@@ -742,7 +745,7 @@ def sync_project(
     print(f"  ✓ Synced project: {out_path.name}")
 
     # Update sync metadata
-    update_synced(meta, "projects", project["notion_id"], slug)
+    update_synced(meta, "projects", project["notion_id"], slug, file_path=out_path)
     return None
 
 
