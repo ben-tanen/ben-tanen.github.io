@@ -484,16 +484,16 @@
       "status": "Staged"
     },
     "3370ec74-530b-8007-80a7-c0a82ad550d7": {
-      "last_synced_at": "2026-04-16T21:14:27.641592+00:00",
+      "last_synced_at": "2026-04-17T05:44:14.345881+00:00",
       "last_synced_hash": "b539c0f94ea76489f904bc0a7d8433928998e0b8028b9dcf5aef7155e17f0569",
       "slug": "yt-captions",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-8009-a0a2-c2a2186b260a": {
-      "last_synced_at": "2026-04-16T21:14:28.720789+00:00",
+      "last_synced_at": "2026-04-17T05:44:15.281040+00:00",
       "last_synced_hash": "0f865736598007eb675d7a667ec17f92459426e77b7e2ac121278fa289655c38",
       "slug": "election-night-2024",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-8028-97a5-fb8ad39d8d7b": {
       "last_synced_at": "2026-04-16T21:14:28.720824+00:00",
@@ -501,10 +501,10 @@
       "status": "Draft"
     },
     "3370ec74-530b-8035-ae53-f04dc0b0ac22": {
-      "last_synced_at": "2026-04-16T21:14:29.932385+00:00",
+      "last_synced_at": "2026-04-17T05:44:15.755701+00:00",
       "last_synced_hash": "8475186ee5500b4bb67f95ca2611e85e721c87c620fc667dbe8059c4da4bbfde",
       "slug": "favorites-of-2023",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-803b-aae7-e8b5f802c278": {
       "last_synced_at": "2026-04-16T21:14:29.932440+00:00",
@@ -512,58 +512,58 @@
       "status": "Draft"
     },
     "3370ec74-530b-8040-ae41-ebc42d094a51": {
-      "last_synced_at": "2026-04-16T21:14:30.663937+00:00",
+      "last_synced_at": "2026-04-17T05:44:21.448497+00:00",
       "last_synced_hash": "64cb76bc8bd015432cfceab027e57acc71a82cc6542e5c533c0e83944c398c62",
       "slug": "favorites-of-2025",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-8046-b16c-d99f79195eb5": {
-      "last_synced_at": "2026-04-16T21:14:33.439165+00:00",
+      "last_synced_at": "2026-04-17T05:44:22.578270+00:00",
       "last_synced_hash": "168da0715791a15b45451794571ea947bf0c907fa3465dfd455b96022c5e6d91",
       "slug": "presidents-timeline",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-8047-b10c-fc59fe115889": {
-      "last_synced_at": "2026-04-16T21:14:43.439068+00:00",
+      "last_synced_at": "2026-04-17T05:44:31.465743+00:00",
       "last_synced_hash": "0807f30058681ef9a7f2b5332395dad033283d6669922cabf3c7f944faa9339a",
       "slug": "paris-olympics-score-boards",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-8054-8087-e8ad6cc91b83": {
-      "last_synced_at": "2026-04-16T21:14:44.644921+00:00",
+      "last_synced_at": "2026-04-17T05:44:32.498553+00:00",
       "last_synced_hash": "5d64d02b0f46026ec941e69f98bfd2c875737ddb35ac2b7dfcdf21f932a1f002",
       "slug": "directly-labeling-lines",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-8059-be9d-fc17d4dde116": {
-      "last_synced_at": "2026-04-16T21:14:48.264674+00:00",
+      "last_synced_at": "2026-04-17T05:44:35.595180+00:00",
       "last_synced_hash": "3a9473e67bb53445147dfac4a049cf13691f928833702d62ac187fe3498b07a1",
       "slug": "survivor-50-recency-bias",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-806d-a764-e72cedc429cf": {
-      "last_synced_at": "2026-04-17T01:58:21.475611+00:00",
+      "last_synced_at": "2026-04-17T05:44:36.850125+00:00",
       "last_synced_hash": "e243ee6dfe2d03c092670d1743d90a48bc527621d9ebca7b36807927e2194d7e",
       "slug": "snl-an-golden-era",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-80b1-8b03-d346be6038b6": {
-      "last_synced_at": "2026-04-17T01:58:22.208268+00:00",
+      "last_synced_at": "2026-04-17T05:44:37.596857+00:00",
       "last_synced_hash": "b7542c6f9d8ba177d23684c5b2009345f0be0c8f3d3183150e025dfd5d1efdd4",
       "slug": "split-ticket-senators",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-80c6-a18c-d7389c745686": {
-      "last_synced_at": "2026-04-17T01:58:23.742330+00:00",
+      "last_synced_at": "2026-04-17T05:44:38.177120+00:00",
       "last_synced_hash": "85c34220d0f2257ece71971df5214e246e153366737708aca121240879936d71",
       "slug": "favorites-of-2024",
-      "status": "Staged"
+      "status": "Published"
     },
     "3370ec74-530b-80e7-b979-d69cee2fe53d": {
-      "last_synced_at": "2026-04-17T01:58:25.906500+00:00",
+      "last_synced_at": "2026-04-17T05:44:39.896171+00:00",
       "last_synced_hash": "f8d871835794087240432033b98a76699bdbc17ea960671918c1bf58ca7e2dd2",
       "slug": "top-letterboxd-filmmakers",
-      "status": "Staged"
+      "status": "Published"
     },
     "3430ec74-530b-80a4-a224-e56c5666c968": {
       "last_synced_at": "2026-04-16T21:14:54.601003+00:00",
