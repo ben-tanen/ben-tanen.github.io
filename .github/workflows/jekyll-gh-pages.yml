@@ -1,4 +1,8 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+# Build and deploy the Jekyll site to GitHub Pages.
+#
+# Uses ruby/setup-ruby + `bundle exec jekyll build` rather than
+# actions/jekyll-build-pages, because that action runs Jekyll with --safe
+# which blocks custom _plugins/*.rb (e.g. include_file.rb, raise_error.rb).
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
@@ -27,8 +31,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
       # Replace __SECRET_NAME__ placeholders in source files with actual secret values.
       # To add a new secret: (1) add to env below, (2) add to the for loop, (3) run `gh secret set <NAME>`,
@@ -42,10 +52,9 @@ jobs:
               -exec sed -i "s|__${secret}__|${!secret}|g" {} +
           done
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
