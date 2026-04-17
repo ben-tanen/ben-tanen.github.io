@@ -27,6 +27,20 @@ jobs:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
         run: uv run --project _env/notion_bridge python3 _env/notion_bridge/cli.py
 
+      # Surface any conflict diffs the bridge emitted, so they're visible in
+      # the Actions log instead of stranded in a gitignored directory.
+      - name: Surface conflict diffs
+        if: always()
+        run: |
+          if [ -d _env/notion_bridge/conflicts ] && [ -n "$(ls -A _env/notion_bridge/conflicts 2>/dev/null)" ]; then
+            echo "::group::Conflict diffs"
+            for f in _env/notion_bridge/conflicts/*.diff; do
+              echo "--- $f ---"
+              cat "$f"
+            done
+            echo "::endgroup::"
+          fi
+
       - name: Commit and push changes
         id: commit
         run: |
