@@ -4,7 +4,9 @@
         {% elsif include.autolink %}href="{{include.src}}"
         {% endif %}
         target="_blank">
-    <img src="{{include.src}}"  
+    <img src="{{include.src}}"
+        loading="lazy"
+        decoding="async"
         {% if include.alt %}alt="{{include.alt | escape}}"
         {% elsif include.caption %}alt="{{include.caption | escape}}"
         {% endif %}

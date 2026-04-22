@@ -14,7 +14,7 @@
     <div class='sub-photo-container{% if wide %} wide{% endif %}'>
     {% for photo_id in photos %}
         {% assign id = photo_id | strip %}
-        <img src='{{ include.format | replace: "%s", id }}' />
+        <img src='{{ include.format | replace: "%s", id }}' loading="lazy" decoding="async" />
     {% endfor %}
     </div>
 {% endfor %}
