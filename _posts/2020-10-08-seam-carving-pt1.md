@@ -2,7 +2,7 @@
 layout: post
 title: Intro to the Seam Carving Algorithm
 date: '2020-10-08T09:00:00.000-06:00'
-thumbnail: /assets/img/post-thumbnails/seam-carving-pt1-8780b69f.jpg
+thumbnail: /assets/img/post-thumbnails/seam-carving-pt1-82d6be3b.jpg
 ---
 
 *This is an introductory tutorial to the seam carving algorithm, which I use in the next post to "improve" the way Twitter crops images. If you want to skip over the explanation and go straight to the application, click [here]({% post_url 2020-10-08-seam-carving-pt2 %}).*

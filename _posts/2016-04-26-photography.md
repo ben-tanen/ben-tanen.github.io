@@ -2,7 +2,7 @@
 layout: post
 title: Lots of Light Painting
 date: '2016-04-26 12:00:00'
-thumbnail: /assets/img/post-thumbnails/photography-0ff1e3ea.png
+thumbnail: /assets/img/post-thumbnails/photography-7c7addb4.png
 ---
 
 Before I became all lame, I use to be fairly into photography. I was never superb myself but I loved to experiment with things. I adored light painting and spent hours trying to make cool patterns with some fancy glow sticks.

@@ -2,7 +2,7 @@
 layout: post
 title: Plotting the 3,979 Delegates of the 2020 Democratic Primary
 date: '2020-03-24 12:00:00'
-thumbnail: /assets/img/post-thumbnails/dem2020-delegate-map-401e39c1.png
+thumbnail: /assets/img/post-thumbnails/dem2020-delegate-map-ae3c979b.png
 related-proj: dem2020-delegate-map
 ---
 

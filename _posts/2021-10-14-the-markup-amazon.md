@@ -2,7 +2,7 @@
 layout: post
 title: Amazon Puts Its Own “Brands” First Above Better-Rated Products
 date: '2021-10-14 12:00:00'
-thumbnail: /assets/img/post-thumbnails/the-markup-amazon-ab0c5a0b.png
+thumbnail: /assets/img/post-thumbnails/the-markup-amazon-d630e583.png
 reroute-url: https://themarkup.org/amazons-advantage/2021/10/14/amazon-puts-its-own-brands-first-above-better-rated-products
 related-proj: the-markup-amazon
 ---

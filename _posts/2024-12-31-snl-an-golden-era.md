@@ -2,7 +2,7 @@
 layout: post
 title: Highlighting “An Golden Era” via SNL’s 50th Anniversary Promo
 date: '2024-12-31 12:00:00'
-thumbnail: /assets/img/post-thumbnails/snl-an-golden-era-a6428c51.png
+thumbnail: /assets/img/post-thumbnails/snl-an-golden-era-0416534d.png
 ---
 
 In the lead up to *Saturday Night Live*’s 50th Anniversary special, the SNL YouTube channel put out [this video](https://www.youtube.com/watch?v=j_7Qg1c6-S4) highlighting the auditions of some of the all-time great cast members from SNL history, including the likes of Dan Aykroyd, Dana Carvey, Kristen Wigg, and Kate McKinnon.

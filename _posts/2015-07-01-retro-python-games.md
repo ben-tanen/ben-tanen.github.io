@@ -2,7 +2,7 @@
 layout: post
 title: Old Python Games / Projects
 date: '2015-07-01 12:00:00'
-thumbnail: /assets/img/post-thumbnails/retro-python-games-be0e693c.png
+thumbnail: /assets/img/post-thumbnails/retro-python-games-78243fbf.png
 ---
 
 After posting my two most recent retro posts ([#1]({% post_url 2015-06-17-retro-ios-update %}), [#2]({% post_url 2015-06-26-retro-game-theory %})), I thought I'd post some of my older projects as well. When I was learning Python, I sort of had a fascination with making games as can be seen by most of these projects.

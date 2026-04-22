@@ -2,7 +2,7 @@
 layout: post
 title: Visualizing My (Unhealthy) Netflix History
 date: '2016-05-08 12:00:00'
-thumbnail: /assets/img/post-thumbnails/netflix-history-2a0f18c9.png
+thumbnail: /assets/img/post-thumbnails/netflix-history-c628797b.png
 ---
 
 TV is pretty incredible, and I'll admit I might binge-watch from time to time. In fact, I've been binge-watching since before it was cool - I watched all of The Office on Netflix back in 2009 when there were only 4 season available. So I decided to see what this history of binge-watching looked like.

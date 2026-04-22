@@ -2,7 +2,7 @@
 layout: post
 title: How Obama and Trump Responded to School Shootings
 date: '2018-03-03 12:00:00'
-thumbnail: /assets/img/post-thumbnails/comparing-obama-trump-on-guns-efc39b94.png
+thumbnail: /assets/img/post-thumbnails/comparing-obama-trump-on-guns-e424a8ce.png
 related-proj: comparing-obama-trump-on-guns
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Should I Become an NFL Scout?
 date: '2017-09-07 12:00:00'
-thumbnail: /assets/img/post-thumbnails/evaluating-fantasy-draft-7b032e28.png
+thumbnail: /assets/img/post-thumbnails/evaluating-fantasy-draft-d2c42ece.png
 related-proj: evaluating-fantasy-draft
 ---
 

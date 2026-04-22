@@ -2,7 +2,7 @@
 layout: post
 title: What Does the Public Think About Confederate Monuments?
 date: '2017-10-27 12:00:00'
-thumbnail: /assets/img/post-thumbnails/confederate-monuments-ff900e91.png
+thumbnail: /assets/img/post-thumbnails/confederate-monuments-0f63ef52.png
 related-proj: confederate-monuments
 ---
 

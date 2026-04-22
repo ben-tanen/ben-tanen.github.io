@@ -2,7 +2,7 @@
 layout: post
 title: When Were All The Presidents Alive?
 date: '2023-11-01T17:00:00.000-06:00'
-thumbnail: /assets/img/post-thumbnails/presidents-timeline-93d26659.png
+thumbnail: /assets/img/post-thumbnails/presidents-timeline-0775dc47.png
 ---
 
 A few months ago, I came across a TikTok that showed how Bill Clinton, (born Aug 19, 1946), George W. Bush (born Jul 6, 1946), Donald Trump (born Jun 14, 1946), and Joe Biden (born Nov 20, 1942) were all born within four years of each other and the first three were actually born within three months of each other. It felt like a fun fact in general, but it also emphasized how old both Trump + Biden were when they became president.

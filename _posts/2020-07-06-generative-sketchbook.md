@@ -2,7 +2,7 @@
 layout: post
 title: Data Artwork and Creative Coding
 date: '2020-07-06 12:00:00'
-thumbnail: /assets/img/post-thumbnails/generative-sketchbook-aafade17.png
+thumbnail: /assets/img/post-thumbnails/generative-sketchbook-a7658a65.png
 ---
 
 *TL;DR: I put together [a sketchbook](/projects/generative-sketchbook/) of generative art and creative coding sketches I've done. I plan on adding to it periodically.*

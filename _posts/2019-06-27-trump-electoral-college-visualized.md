@@ -2,7 +2,7 @@
 layout: post
 title: Visualizing Trump's Narrow Path to Victory
 date: '2019-06-27 12:00:00'
-thumbnail: /assets/img/post-thumbnails/trump-electoral-college-visualized-db61cd8d.png
+thumbnail: /assets/img/post-thumbnails/trump-electoral-college-visualized-105ff0a2.png
 related-proj: trump-electoral-college-visualized
 ---
 

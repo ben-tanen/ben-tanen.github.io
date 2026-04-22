@@ -2,7 +2,7 @@
 layout: post
 title: How Has Redistricting Changed Since 2011
 date: '2020-11-13 12:00:00'
-thumbnail: /assets/img/post-thumbnails/redistricting-changes-for-2020-8eddb4eb.png
+thumbnail: /assets/img/post-thumbnails/redistricting-changes-for-2020-bc4ebfcb.png
 related-proj: redistricting-changes-for-2020
 ---
 

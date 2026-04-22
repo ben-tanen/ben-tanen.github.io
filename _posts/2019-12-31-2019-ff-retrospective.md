@@ -2,7 +2,7 @@
 layout: post
 title: How A Subpar Football Fan Succeeds in Fantasy Football
 date: '2019-12-31 12:00:00'
-thumbnail: /assets/img/post-thumbnails/2019-ff-retrospective-c68f3ce9.png
+thumbnail: /assets/img/post-thumbnails/2019-ff-retrospective-bfe8c894.png
 related-proj: 2019-ff-retrospective
 ---
 

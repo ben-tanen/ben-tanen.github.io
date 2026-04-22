@@ -2,7 +2,7 @@
 layout: post
 title: Minimizing Risk For An Optimal Portfolio
 date: '2015-12-12 12:00:00'
-thumbnail: /assets/img/post-thumbnails/optimizing-hedge-ratio-96562fe9.png
+thumbnail: /assets/img/post-thumbnails/optimizing-hedge-ratio-3d32a32a.png
 ---
 
 For an interview, I was recently assigned the task of determining the ideal optimized hedge ratio of a portfolio of 3 - 5 different equity instruments. I approached this by attempting to reduce the risk, which is generally measured as variance or volatility, of the portfolio (this theory / approach was further backed up by this [paper](http://dahl.mines.edu/tech1503.pdf)).

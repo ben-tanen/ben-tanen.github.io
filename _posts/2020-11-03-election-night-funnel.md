@@ -2,7 +2,7 @@
 layout: post
 title: Where Is Election Night 2020 Heading?
 date: '2020-11-03 12:00:00'
-thumbnail: /assets/img/post-thumbnails/election-night-funnel-81d450fa.png
+thumbnail: /assets/img/post-thumbnails/election-night-funnel-5876b78f.png
 related-proj: election-night-funnel
 ---
 

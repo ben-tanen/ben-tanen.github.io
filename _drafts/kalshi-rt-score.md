@@ -2,7 +2,7 @@
 layout: post
 title: Prediction Markets on Rotten Tomato Scores is the Synthetic CDO of 2026
 date: '2026-04-02 12:00:00'
-thumbnail: /assets/img/post-thumbnails/kalshi-rt-score-fc8f60ba.jpg
+thumbnail: /assets/img/post-thumbnails/kalshi-rt-score-8eff328c.jpg
 ---
 
 Throughout 2025, before I largely stopped using TikTok, I was being inundated with ads from Kalshi, the prediction market / gamble-on-whatever-you-want app that you are probably already well aware of. It got to the point that it felt like literally every ad I got on TikTok was from Kalshi exclusively. One of the more common ads I was getting was this one where they discuss betting on whether *M3GAN 2.0* would have a Rotten Tomatoes score over/under 75%.

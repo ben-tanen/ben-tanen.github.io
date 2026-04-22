@@ -2,7 +2,7 @@
 layout: post
 title: PCA and K-Means on NHL Stats
 date: '2016-05-15 12:00:00'
-thumbnail: /assets/img/post-thumbnails/pca-kmeans-nhl-23460e35.png
+thumbnail: /assets/img/post-thumbnails/pca-kmeans-nhl-dec0ebfc.png
 ---
 
 After all this learning of PCA and [k-means clustering]({% post_url 2016-03-09-clustering-with-kmeans %}), I wanted to try a small test to see how they would work on some real data. I pulled a bunch of stats for the 30 NHL teams and wanted to see how those could be used to categorize each team making (or not making) the Stanley Cup Playoffs. First I reduced the data to just the key features (using PCA) and then tried clustering from that. And what do you know, it worked!

@@ -2,7 +2,7 @@
 layout: post
 title: 'Small Projects over on Notion, Batch #1'
 date: '2023-11-02T12:00:00.000-06:00'
-thumbnail: /assets/img/post-thumbnails/projects-on-notion-da801d65.png
+thumbnail: /assets/img/post-thumbnails/projects-on-notion-5548c8a1.png
 ---
 
 Hello! It seems like I'm getting into a routine of posting an annual message about what I have (or haven't) been working on in the last year. Well, here we are again!

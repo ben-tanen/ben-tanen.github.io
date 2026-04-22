@@ -2,7 +2,7 @@
 layout: post
 title: Who Are My Top Letterboxd Filmmakers?
 date: '2023-11-01T14:00:00.000-06:00'
-thumbnail: /assets/img/post-thumbnails/top-letterboxd-filmmakers-a33186d3.jpg
+thumbnail: /assets/img/post-thumbnails/top-letterboxd-filmmakers-28a43240.jpg
 ---
 
 I have been a fairly avid user of Letterboxd for nearly five years now - [throw me a follow!](https://letterboxd.com/btanen/) I’ve liked the community aspects of the app but I especially love the data logging aspect, where I know what exactly I watched and when. With that plus Letterboxd’s catalog of film metadata on actors, directors, writers, etc. involved with each movie, I’ve always been a bit curious to know which actors and/or filmmakers I have unknowingly watched a lot from. 

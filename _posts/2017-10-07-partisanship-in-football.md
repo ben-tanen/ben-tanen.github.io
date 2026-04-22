@@ -2,7 +2,7 @@
 layout: post
 title: Partisanship and the NFL
 date: '2017-10-07 12:00:00'
-thumbnail: /assets/img/post-thumbnails/partisanship-in-football-47b86b2d.png
+thumbnail: /assets/img/post-thumbnails/partisanship-in-football-320e9ee5.png
 related-proj: partisanship-in-football
 ---
 

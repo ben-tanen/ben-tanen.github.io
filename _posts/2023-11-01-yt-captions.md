@@ -2,7 +2,7 @@
 layout: post
 title: Why Are Good Captions So Rare On YouTube?
 date: '2023-11-01T15:00:00.000-06:00'
-thumbnail: /assets/img/post-thumbnails/yt-captions-fa787391.jpg
+thumbnail: /assets/img/post-thumbnails/yt-captions-cc0fe5db.jpg
 ---
 
 Though I am not hard of hearing, I typically like to have captions on when I watch TV, movies, or YouTube. Unfortunately, I’ve come to find how crappy many different captions are: in TV/movies, the captions can be filled with typos or can be so poorly synced with the audio it becomes distracting; in YouTube videos you’re typically stuck with auto-generated captions.

@@ -2,7 +2,7 @@
 layout: post
 title: Up-to-Date Infographics
 date: '2014-11-01 12:00:00'
-thumbnail: /assets/img/post-thumbnails/infographics-7aaa797b.png
+thumbnail: /assets/img/post-thumbnails/infographics-4610bb69.png
 ---
 
 When I first started working with web design, [Kerem Suer’s](http://www.kerem.co/) website had a lot of features that inspired me. One of these features was his use of [infographics](https://web.archive.org/web/20130114231739/http://kerem.co/). It was a clever way to relay fairly insignificant information in an interesting way. I wanted to implement something similar and for the past few years I’ve been taking a (failing) whack at it.

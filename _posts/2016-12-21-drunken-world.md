@@ -2,7 +2,7 @@
 layout: post
 title: Visualizing Our Drunken World
 date: '2016-12-21 12:00:00'
-thumbnail: /assets/img/post-thumbnails/drunken-world-c0fbd2ec.png
+thumbnail: /assets/img/post-thumbnails/drunken-world-c113d7a9.png
 related-proj: drunken-world
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Visualizing Scores at the 2024 Paris Olympics
 date: '2024-08-10 12:00:00'
-thumbnail: /assets/img/post-thumbnails/paris-olympics-score-boards-fbdebe05.jpg
+thumbnail: /assets/img/post-thumbnails/paris-olympics-score-boards-0251379a.jpg
 ---
 
 Tomorrow (Aug 11, 2024) marks the end of the 2024 Paris Olympics, which have kept me thoroughly entertained for the last two weeks. I would consider myself an at-most casual sports fan normally, but I’ve always been a pretty big Olympics fan (see [my](/projects/2016/08/22/rio-2016-usa-vs-world.html) [previous](/projects/2018/02/06/fantasy-olympics.html) [posts](/projects/2018/02/28/fantasy-olympics-retrospective.html)) so when the games are on, I am following along in some shape or form pretty much constantly.

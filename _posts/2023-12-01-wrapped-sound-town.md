@@ -2,7 +2,7 @@
 layout: post
 title: '2023 Wrapped: Sound Town'
 date: '2023-12-01 12:00:00'
-thumbnail: /assets/img/post-thumbnails/wrapped-sound-town-5e5a2b07.png
+thumbnail: /assets/img/post-thumbnails/wrapped-sound-town-4070f62e.png
 related-proj: wrapped-sound-town
 ---
 

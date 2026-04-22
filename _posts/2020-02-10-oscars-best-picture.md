@@ -2,7 +2,7 @@
 layout: post
 title: The Best Films That Don't Win Best Picture
 date: '2020-02-10 12:00:00'
-thumbnail: /assets/img/post-thumbnails/oscars-best-picture-5d9f50c1.png
+thumbnail: /assets/img/post-thumbnails/oscars-best-picture-1bc6db85.png
 related-proj: oscars-best-picture
 ---
 

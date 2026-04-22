@@ -2,7 +2,7 @@
 layout: post
 title: 'Tufts Polyhack 2015: JumboAdvisor'
 date: '2015-10-30 12:00:00'
-thumbnail: /assets/img/post-thumbnails/jumboadvisor-b4a486a0.png
+thumbnail: /assets/img/post-thumbnails/jumboadvisor-4bd72f5e.png
 ---
 
 Figuring out what courses to take as a college student can be a slightly confusing process. What classes count for what requirements? What requirements do I even need for my major? What will my college career look like with all these courses?

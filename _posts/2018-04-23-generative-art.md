@@ -2,7 +2,7 @@
 layout: post
 title: A First Attempt At Generative Art
 date: '2018-04-23 12:00:00'
-thumbnail: /assets/img/post-thumbnails/generative-art-9dd36895.png
+thumbnail: /assets/img/post-thumbnails/generative-art-6a6b163a.png
 ---
 
 {% include_file /projects/generative-sketchbook/html/generative-art.html %}

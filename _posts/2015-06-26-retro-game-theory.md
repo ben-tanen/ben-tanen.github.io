@@ -2,7 +2,7 @@
 layout: post
 title: 'Retro Post: Game Theory, The Game'
 date: '2015-06-26 12:00:00'
-thumbnail: /assets/img/post-thumbnails/retro-game-theory-668f2384.png
+thumbnail: /assets/img/post-thumbnails/retro-game-theory-57110fda.png
 ---
 
 This retro post came from my senior year of high school when I was taking AP Economics. Who doesn't love turning economics into drinking games?

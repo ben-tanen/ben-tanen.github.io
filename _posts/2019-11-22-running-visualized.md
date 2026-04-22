@@ -2,7 +2,7 @@
 layout: post
 title: A Tale of Two Half Marathons
 date: '2019-11-22 12:00:00'
-thumbnail: /assets/img/post-thumbnails/running-visualized-a170c96c.png
+thumbnail: /assets/img/post-thumbnails/running-visualized-24762a50.png
 related-proj: running-visualized
 ---
 

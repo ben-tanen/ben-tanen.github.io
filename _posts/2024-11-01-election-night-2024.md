@@ -2,7 +2,7 @@
 layout: post
 title: Where Is Election Night 2024 Heading?
 date: '2024-11-01 12:00:00'
-thumbnail: /assets/img/post-thumbnails/election-night-2024-f8752fc3.png
+thumbnail: /assets/img/post-thumbnails/election-night-2024-37596d3a.png
 ---
 
 In the lead up to Election Night 2020, I made [”Where Is Election Night 2020 Heading?”]({% post_url 2020-11-03-election-night-funnel %}), a live updating graphic to keep track how much reality aligned with FiveThirtyEight’s forecast. Amongst all of the chaos, this was my data-viz-nerd way of making sense of it all…

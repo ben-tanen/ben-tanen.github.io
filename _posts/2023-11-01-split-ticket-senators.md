@@ -2,7 +2,7 @@
 layout: post
 title: Where Did All The “Split Ticket Senators” Go?
 date: '2023-11-01T13:00:00.000-06:00'
-thumbnail: /assets/img/post-thumbnails/split-ticket-senators-9ba477af.png
+thumbnail: /assets/img/post-thumbnails/split-ticket-senators-13c417c4.png
 ---
 
 In 2021, [John Dickerson tweeted](https://twitter.com/jdickerson/status/1382872170943156227) about the modern rarity of what I call “split ticket senators” (e.g., a Republican senator elected in the same year their state voted for a Democrat for president), which I found interesting. I wanted to further explore the concept, which started out by using [more data](https://electionlab.mit.edu/data) to look at the trend over time.

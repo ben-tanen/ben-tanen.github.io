@@ -1,497 +1,498 @@
 {
   "posts": {
     "3320ec74-530b-802f-b054-d782c9aec536": {
-      "last_synced_at": "2026-04-16T21:12:49.351362+00:00",
-      "last_synced_hash": "5dc4aa944802a1b63c0fe1d71eeb1f7034b488b394fd20fab5c83c63a15a452f",
+      "last_synced_at": "2026-04-22T22:23:24.575930+00:00",
+      "last_synced_hash": "cbe14f9601f1fabb0dc9958d96b79cefae7ff1ed4a01e01ffd84f6add3fe812b",
       "slug": "album-progress",
       "status": "Published"
     },
     "3320ec74-530b-803b-b390-cb67f81236e0": {
-      "last_synced_at": "2026-04-16T20:47:39.947621+00:00",
-      "last_synced_hash": "be72f87a7d5496885ec62d60f7c030675fcec981e9c0e9ad27153325bdd87ee3",
-      "slug": "sundance-tickets"
+      "last_synced_at": "2026-04-22T22:23:26.489065+00:00",
+      "last_synced_hash": "d6a835a43ed1d7036c7ddf1bbc5e86d60db72f1e1cd9067c2d88cd9e35c746a0",
+      "slug": "sundance-tickets",
+      "status": "Published"
     },
     "3320ec74-530b-8058-b146-dbf7303304c6": {
-      "last_synced_at": "2026-04-16T21:12:51.028615+00:00",
-      "last_synced_hash": "de89fb2848d09bf85962a8b5187f1d31d832a01929c9160d7c99492373fcbf09",
+      "last_synced_at": "2026-04-22T22:23:27.823632+00:00",
+      "last_synced_hash": "f97d910767e6f873036e0113b546ad7e0206e1c00e6f63bf457f86dad6e3cdb7",
       "slug": "actor-ages",
       "status": "Published"
     },
     "3320ec74-530b-80f1-a1dd-f42de849486a": {
-      "last_synced_at": "2026-04-16T21:12:58.407140+00:00",
-      "last_synced_hash": "ea6b20702a84b5738cb181c95b7fea3ee35e5d5992098e96e7462c4023917214",
+      "last_synced_at": "2026-04-22T22:23:35.032185+00:00",
+      "last_synced_hash": "d7aefd1857955035304220272c9a7ce48fa1ac2a1307fc57d4cdc96b999cc714",
       "slug": "wrapped-sound-town",
       "status": "Published"
     },
     "3330ec74-530b-8100-a561-ed9d1058f1d1": {
-      "last_synced_at": "2026-04-16T21:12:59.082182+00:00",
+      "last_synced_at": "2026-04-22T22:23:35.721817+00:00",
       "last_synced_hash": "cd7e2cd8bc78954c0dce3fbe362be6e69bfa1ad15ac7d1547b95a5210f9a3733",
       "slug": "introducing-nhl-projections",
       "status": "Published"
     },
     "3330ec74-530b-8102-886a-f383ad95e8f9": {
-      "last_synced_at": "2026-04-16T21:12:59.834645+00:00",
-      "last_synced_hash": "46e9f638282bf78a832fd25c9179ed663508b0abc2e97560fdb3dd66339128d7",
+      "last_synced_at": "2026-04-22T22:23:36.182651+00:00",
+      "last_synced_hash": "8246f9ef2fdf9343f96c2d2626a24244596f342e364d518b0df98b1b0f097551",
       "slug": "wrapped-one-show-winner",
       "status": "Published"
     },
     "3330ec74-530b-810f-a466-e2edc6fbdf7d": {
-      "last_synced_at": "2026-04-16T21:13:00.154249+00:00",
+      "last_synced_at": "2026-04-22T22:23:36.574533+00:00",
       "last_synced_hash": "c87643e767748fcaffed584ee8a0c9d208889c347b956e0eb3f09655b81e30df",
       "slug": "random-d3-fun",
       "status": "Published"
     },
     "3330ec74-530b-811b-9b72-fdb04efa41a1": {
-      "last_synced_at": "2026-04-16T21:13:01.954569+00:00",
-      "last_synced_hash": "d13800d676b2ed364233ad70f914050dd0f541603521b6510fdeb640e7656a9d",
+      "last_synced_at": "2026-04-22T22:23:37.374760+00:00",
+      "last_synced_hash": "f8e4efce1310ba62ea56fb6c97fb58550c2e02fb93f8b895104ca7c5f8696ff6",
       "slug": "fantasy-olympics-retrospective",
       "status": "Published"
     },
     "3330ec74-530b-811d-b8d5-e9b2ff3c8493": {
-      "last_synced_at": "2026-04-16T21:13:02.337877+00:00",
-      "last_synced_hash": "1ab696c638826eb7923cf8d13b3553700220dc2bc50e63d7d032449315542ec5",
+      "last_synced_at": "2026-04-22T22:23:37.743047+00:00",
+      "last_synced_hash": "548fc647b7cea9ac6bc16dfca7b8f0ab4d4a2837f89107282c80c3ab43b5d972",
       "slug": "the-markup-livers-race",
       "status": "Published"
     },
     "3330ec74-530b-8122-a58a-dd50e073790c": {
-      "last_synced_at": "2026-04-16T21:13:02.514333+00:00",
+      "last_synced_at": "2026-04-22T22:23:37.982822+00:00",
       "last_synced_hash": "f308794e2de593cb191bfd3650b473b037105ec24e119883f2e5f29ffe3923ce",
       "slug": "miller-rabin",
       "status": "Published"
     },
     "3330ec74-530b-8127-be11-ecfe238cd4e6": {
-      "last_synced_at": "2026-04-16T21:13:02.988029+00:00",
-      "last_synced_hash": "fffa283509b7a18c1a4bc0b86696d970c181bdcb9046f89712dcb14e22ba55b1",
+      "last_synced_at": "2026-04-22T22:23:38.518143+00:00",
+      "last_synced_hash": "8be88bd5921730c94da48baf6422b57cfffb60724f479d0ebd94c72c7cce2198",
       "slug": "censor-machine",
       "status": "Published"
     },
     "3330ec74-530b-8128-b77f-c75f45f5a36a": {
-      "last_synced_at": "2026-04-16T21:13:04.186982+00:00",
-      "last_synced_hash": "9108fe01f0efc9b7bb484b46c14461ae3014f94a56b0c79dce2999b2a701c1be",
+      "last_synced_at": "2026-04-22T22:23:39.162396+00:00",
+      "last_synced_hash": "a1fe792bbdffad1f62a920dda750c79f2b6100b2cf813badd0a4c5c015b5d026",
       "slug": "svm-poetry",
       "status": "Published"
     },
     "3330ec74-530b-812a-9586-e1c351f5bd27": {
-      "last_synced_at": "2026-04-16T21:13:04.506445+00:00",
-      "last_synced_hash": "2649e1389850b9a2e80cac4efcc1cca8f7d8633d59e9bacb237534312a3bcf0f",
+      "last_synced_at": "2026-04-22T22:23:39.567738+00:00",
+      "last_synced_hash": "0430abfaeeee0a9d977d4e1186c1be9bb2085fb454d84df415955842f0fddd81",
       "slug": "trump-electoral-college-visualized",
       "status": "Published"
     },
     "3330ec74-530b-812c-aa5d-f589f7f5fe7a": {
-      "last_synced_at": "2026-04-16T21:13:05.103458+00:00",
-      "last_synced_hash": "da52ee5879c869eb1fa87b207f20e6ce3ecab954f4ace798d4527d82f8bfad53",
+      "last_synced_at": "2026-04-22T22:23:40.371757+00:00",
+      "last_synced_hash": "df014cdf3f302a1b14c376a099b3a50c122f5469dba5cabb75b0d7f6c308b3b4",
       "slug": "lastfm-scrobble-graphs",
       "status": "Published"
     },
     "3330ec74-530b-8131-afab-eb4bad0337a4": {
-      "last_synced_at": "2026-04-16T21:13:12.212278+00:00",
+      "last_synced_at": "2026-04-22T22:23:47.356640+00:00",
       "last_synced_hash": "3371f610ffa2e5c7ab2feda77dddc2b32fd4e27971af19a5da302002d430864b",
       "slug": "processing-fun",
       "status": "Published"
     },
     "3330ec74-530b-8134-bc9c-f5434a4bc065": {
-      "last_synced_at": "2026-04-16T21:13:13.746116+00:00",
+      "last_synced_at": "2026-04-22T22:23:49.220872+00:00",
       "last_synced_hash": "a056780ab09328de9a1bc51586549753822c0e59c7cc9dcfaf23ae29e7365f84",
       "slug": "tv-monitor",
       "status": "Published"
     },
     "3330ec74-530b-8138-a812-ccdf3074bacd": {
-      "last_synced_at": "2026-04-16T21:13:14.055590+00:00",
-      "last_synced_hash": "b7d91cf279846dce0cc14a53a165ae710dce2e630e66cbd0abc1c37dfe8d9829",
+      "last_synced_at": "2026-04-22T22:23:49.739546+00:00",
+      "last_synced_hash": "619ce974e2143d8b6229a4d3e3cd3ba893a093f5941eba9258fea87658e4154c",
       "slug": "comparing-obama-trump-on-guns",
       "status": "Published"
     },
     "3330ec74-530b-813c-bec0-dc1cbbc1e5b7": {
-      "last_synced_at": "2026-04-16T21:13:15.283206+00:00",
-      "last_synced_hash": "97ecc79f6feedf5087db747c6daa68a559c8316472c46d8d7a431e875256b5ba",
+      "last_synced_at": "2026-04-22T22:23:50.932746+00:00",
+      "last_synced_hash": "4dc0efec55c8890df60fe84d1399192546953a93e31f1bc7c2d8ba1b0d8d59f3",
       "slug": "confederate-monuments",
       "status": "Published"
     },
     "3330ec74-530b-8141-9ac4-ea8c435200f8": {
-      "last_synced_at": "2026-04-16T21:13:19.850387+00:00",
-      "last_synced_hash": "8fe34275c36504936bbff839c54d180078352b6297196dc0599508a232efc628",
+      "last_synced_at": "2026-04-22T22:23:51.673886+00:00",
+      "last_synced_hash": "5464a74d239aadee6c9074dfb2d931ab53dd273d37da88897a4c4ab2483f0569",
       "slug": "most-font",
       "status": "Published"
     },
     "3330ec74-530b-8142-a89e-f4d2c3347a29": {
-      "last_synced_at": "2026-04-16T21:13:20.295392+00:00",
-      "last_synced_hash": "d8c115fd68ae99ee3fe4d228c06cca16c7844df850619d7ebb08540eb330555c",
+      "last_synced_at": "2026-04-22T22:23:52.095070+00:00",
+      "last_synced_hash": "0f2ccd5b46284943931ba1a2092b795d138270f41a26e1b423d0165d0f5911e4",
       "slug": "generative-art",
       "status": "Published"
     },
     "3330ec74-530b-8147-b177-f1a0065343a5": {
-      "last_synced_at": "2026-04-17T05:15:45.511552+00:00",
-      "last_synced_hash": "5da6a2d21a195849357528877f198c62b74a6201cbac3b69c730d3d7f7bf961c",
+      "last_synced_at": "2026-04-22T22:23:52.509932+00:00",
+      "last_synced_hash": "f85235ff48fa484dfd04cc99ac61cd8a77c8294983808c1f8cef1eb709e07c1c",
       "slug": "projects-on-notion",
       "status": "Published"
     },
     "3330ec74-530b-8149-a8e4-e6107b5c26ab": {
-      "last_synced_at": "2026-04-16T21:13:29.452499+00:00",
-      "last_synced_hash": "b6868bf287b3ed0ff8606f1389ec786624706b19a38c4fa5e2865534d5db1cac",
+      "last_synced_at": "2026-04-22T22:24:03.987679+00:00",
+      "last_synced_hash": "ee64c0880c53c166a6b4ab48d8cd04eb139532b2c99409fffcec8b29243be8c6",
       "slug": "seam-carving-pt1",
       "status": "Published"
     },
     "3330ec74-530b-814c-bb44-eda74be69589": {
-      "last_synced_at": "2026-04-16T21:13:30.542493+00:00",
-      "last_synced_hash": "93db0c3d01bcfd19a28663927b97faf12e87a9af3f7fe2c7459f890db8c2172c",
+      "last_synced_at": "2026-04-22T22:24:05.700950+00:00",
+      "last_synced_hash": "74689da9251099bd52c310a48bb7ef2eb5949402153d82b196799e34bb8567e0",
       "slug": "seam-carving-pt2",
       "status": "Published"
     },
     "3330ec74-530b-8152-826a-fd28227ebf62": {
-      "last_synced_at": "2026-04-16T21:13:30.979295+00:00",
-      "last_synced_hash": "26455cd17e1d1c0b09be04d1668c58cec87c30061111b84f67409ba41956d183",
+      "last_synced_at": "2026-04-22T22:24:06.086928+00:00",
+      "last_synced_hash": "b8d004de52c7e5bcc74de078bd73c411aaade45aa029dba8f3d71d532c58ae1d",
       "slug": "oscar-popular-film",
       "status": "Published"
     },
     "3330ec74-530b-8156-9988-d8b1774e3372": {
-      "last_synced_at": "2026-04-16T21:13:31.818542+00:00",
-      "last_synced_hash": "bf0d7c7c02d6aa56a30bc24d238ca84d316926045e1d66753efe8b88c8187825",
+      "last_synced_at": "2026-04-22T22:24:06.485706+00:00",
+      "last_synced_hash": "fbb24418713453d8bc8c16064d62f5e23892c8d05a15d43b9c08237b6744770d",
       "slug": "how-bills-die",
       "status": "Published"
     },
     "3330ec74-530b-815b-b342-d752199c6187": {
-      "last_synced_at": "2026-04-16T21:13:33.322957+00:00",
-      "last_synced_hash": "76811a56b0425860635b3ea7600de58133f865134ce7bc481adea712e1854000",
+      "last_synced_at": "2026-04-22T22:24:08.861578+00:00",
+      "last_synced_hash": "e6a0c7adce4251cdef4d0f23fbb50d8909f9b20b8515c12d34064865dab9f9a9",
       "slug": "redistricting-changes-for-2020",
       "status": "Published"
     },
     "3330ec74-530b-815c-90c5-c6b93195dbff": {
-      "last_synced_at": "2026-04-16T21:13:33.666070+00:00",
-      "last_synced_hash": "a8002ec3631a83e514720ad6338f74e7710315d3fe88aa02769e134295189735",
+      "last_synced_at": "2026-04-22T22:24:09.256321+00:00",
+      "last_synced_hash": "8a6266da781473eb74d462338cfeffa2354e521e7004512dedad04a5a1ec1c53",
       "slug": "favorites-of-2017",
       "status": "Published"
     },
     "3330ec74-530b-815c-9897-dc9ee012e281": {
-      "last_synced_at": "2026-04-16T21:13:33.993691+00:00",
-      "last_synced_hash": "d95e017aa28c11f74b2271e087d60a5156ddcd9a295d6ac56da691b8e701f0da",
+      "last_synced_at": "2026-04-22T22:24:09.660008+00:00",
+      "last_synced_hash": "4d227db666e336c97a896cfb473e7bfb158efe8ca2688df47f14c46616cadca2",
       "slug": "the-markup-amazon",
       "status": "Published"
     },
     "3330ec74-530b-815c-bd26-da5cfd1dbd23": {
-      "last_synced_at": "2026-04-16T21:13:34.321892+00:00",
-      "last_synced_hash": "bf87cf2784cbfcbc88d3f8d7111e1c10472999bf9a77b36f72baa941172d5b5d",
+      "last_synced_at": "2026-04-22T22:24:10.115582+00:00",
+      "last_synced_hash": "a0c7e8ab636a497b13e217147a4b8deec313735f282961deb3ecf7dfd206d708",
       "slug": "stpaul-broken-bones",
       "status": "Published"
     },
     "3330ec74-530b-815f-9941-e58209592884": {
-      "last_synced_at": "2026-04-16T21:13:35.082392+00:00",
-      "last_synced_hash": "6ad1c072f0d48782f6c3f191f3549c710b42d194b4ced019c8e9444bddd7f428",
+      "last_synced_at": "2026-04-22T22:24:10.967256+00:00",
+      "last_synced_hash": "09ba449ee2e6887193360206043e8c71920ad7d810cd61dc772a3520a0a37220",
       "slug": "rap-data-design",
       "status": "Published"
     },
     "3330ec74-530b-8165-ac64-e7813bccd752": {
-      "last_synced_at": "2026-04-16T21:13:35.422536+00:00",
-      "last_synced_hash": "88e1b4f4514f83dce9c10e1c519c9d0fb6cf7d63f84ce2f677ee8fc07cd3717d",
+      "last_synced_at": "2026-04-22T22:24:11.345249+00:00",
+      "last_synced_hash": "fe453294866dda5cef9402d6844ee3c4de7d956edf39c43485ec068d524de1a3",
       "slug": "the-markup-denied",
       "status": "Published"
     },
     "3330ec74-530b-816b-8490-e5b0d67b8030": {
-      "last_synced_at": "2026-04-16T21:13:36.011713+00:00",
-      "last_synced_hash": "e908aa1cd76b617f3e3c6714ce53d8fc0073ed0085d96c293aced97f9c9de67c",
+      "last_synced_at": "2026-04-22T22:24:12.311515+00:00",
+      "last_synced_hash": "5d87ec5c805ab8e57f15626b036627a3ab59dd71592fdb9611f98b2403d7e700",
       "slug": "netflix-history",
       "status": "Published"
     },
     "3330ec74-530b-816b-b358-e594d35c6005": {
-      "last_synced_at": "2026-04-16T21:13:38.412299+00:00",
-      "last_synced_hash": "2e58fa85060305f6f690068357b39d75be6c236a4a9ad1533506fbda94c2bd0b",
+      "last_synced_at": "2026-04-22T22:24:14.966145+00:00",
+      "last_synced_hash": "9c6b5e1c912d4fe28b7ca15c52f9d52245b1963cbe0e5d9d5518d453eeda1bf9",
       "slug": "recent-tweets",
       "status": "Published"
     },
     "3330ec74-530b-816f-91b0-eb1591d525d9": {
-      "last_synced_at": "2026-04-16T21:13:38.748435+00:00",
-      "last_synced_hash": "b8b7fe9df231e76f90cfd6ed241604616e2cfc3c7ed53fe1cf0411c5ed783f49",
+      "last_synced_at": "2026-04-22T22:24:16.045562+00:00",
+      "last_synced_hash": "3258394d2d1577fa4c3ab73a68165346a2778445d0396596ff4a7b13b1a56e2a",
       "slug": "signal-and-noise-paper",
       "status": "Published"
     },
     "3330ec74-530b-8170-9763-e9464cba2cb3": {
-      "last_synced_at": "2026-04-16T21:13:41.203273+00:00",
-      "last_synced_hash": "5c8f574c594fc1dba5f3574e465c5642080fadc75d403b461698454e1a6a03ba",
+      "last_synced_at": "2026-04-22T22:24:17.104154+00:00",
+      "last_synced_hash": "c586c704b301513e114d4274104db2535772b6cd6d6bfe8fb4e879bf594877e4",
       "slug": "generative-sketchbook",
       "status": "Published"
     },
     "3330ec74-530b-8171-80bc-df6a32434a73": {
-      "last_synced_at": "2026-04-16T21:13:42.668470+00:00",
-      "last_synced_hash": "40388430d509add0798a83f88aa7aa4c96276f236d43db33f46f6ac616df76cb",
+      "last_synced_at": "2026-04-22T22:24:17.526957+00:00",
+      "last_synced_hash": "951a5110a8a37a001de0f23d94fe650b8b164c5a6c23e30d721ba41deaaa0692",
       "slug": "pca-kmeans-nhl",
       "status": "Published"
     },
     "3330ec74-530b-8171-89b7-e8d978b4a8d2": {
-      "last_synced_at": "2026-04-16T21:13:42.890896+00:00",
+      "last_synced_at": "2026-04-22T22:24:17.753523+00:00",
       "last_synced_hash": "5a2bf83072231908429be9db48c71313080b1292c4ec88e264c0b183a3b3e53e",
       "slug": "base64",
       "status": "Published"
     },
     "3330ec74-530b-8179-8d9a-e7df7a02ae67": {
-      "last_synced_at": "2026-04-17T05:15:46.600661+00:00",
-      "last_synced_hash": "8c540b6259b7228fdf61022b684ca0aee64bcadcb6013974a5942c10e7fbf880",
+      "last_synced_at": "2026-04-22T22:24:18.638539+00:00",
+      "last_synced_hash": "8f8ef8065953ab7ea1f9faba756e9f0a0f06cf0fa020188a3f3eeef994fe79b6",
       "slug": "ibm-watson-ff",
       "status": "Published"
     },
     "3330ec74-530b-8182-a053-d845fc56ac59": {
-      "last_synced_at": "2026-04-17T01:58:14.777078+00:00",
+      "last_synced_at": "2026-04-22T22:24:19.136660+00:00",
       "last_synced_hash": "0ef8c9e4862c84cff929dd613fa8baee356dcb67f8d5657d1aeb55dfc1415715",
       "slug": "polar-line-charts",
       "status": "Published"
     },
     "3330ec74-530b-8185-9db0-eae71ef09e37": {
-      "last_synced_at": "2026-04-16T21:13:45.219669+00:00",
-      "last_synced_hash": "67abc4c6848bd507b17db847eeddb301f9457b8d1239514626bf62bb996e4312",
+      "last_synced_at": "2026-04-22T22:24:20.176750+00:00",
+      "last_synced_hash": "3d64fe7fe6ee2067f1707a13e940d077596158340142aed9930f8f2c84df19c1",
       "slug": "optimizing-hedge-ratio",
       "status": "Published"
     },
     "3330ec74-530b-8187-86eb-dac2fe28dc1b": {
-      "last_synced_at": "2026-04-16T21:13:46.423473+00:00",
-      "last_synced_hash": "5d3662cfeb6f0353c5ea0e1c9074d3d0a5e325cb19339d9a4e874240e30fd194",
+      "last_synced_at": "2026-04-22T22:24:21.540416+00:00",
+      "last_synced_hash": "8a639876beb351a897cc8b230167b4ed5f1631fecb129e6ee329cb8658c379a6",
       "slug": "retro-game-theory",
       "status": "Published"
     },
     "3330ec74-530b-818a-97d8-c552b8c07938": {
-      "last_synced_at": "2026-04-16T21:13:48.145650+00:00",
-      "last_synced_hash": "c1285faf39263c8cf6a220c38c6ed3c8cbfcf720a2ee6f60fcf1e61b71110fb7",
+      "last_synced_at": "2026-04-22T22:24:22.604051+00:00",
+      "last_synced_hash": "fb28d2d3ed39ce1180e4cfa66da2c241d34b0ae8f5371857055c514a54d6f01b",
       "slug": "fantasy-olympics",
       "status": "Published"
     },
     "3330ec74-530b-818e-95ee-d9461acd39e3": {
-      "last_synced_at": "2026-04-16T21:13:48.352488+00:00",
+      "last_synced_at": "2026-04-22T22:24:22.869785+00:00",
       "last_synced_hash": "daf74af61b9d118076c482f18773a3eaf8ebbdae533a4ffa2db89bc65f29c12d",
       "slug": "grub",
       "status": "Published"
     },
     "3330ec74-530b-819b-ba3c-ec2b756fb519": {
-      "last_synced_at": "2026-04-17T01:58:16.035067+00:00",
-      "last_synced_hash": "c8b6489b9a74c9504eabed186b844a315e58b6b50fcd5759367048af91d7187e",
+      "last_synced_at": "2026-04-22T22:24:23.881213+00:00",
+      "last_synced_hash": "efd5aa4a6050f181d688f551b4a01189f5979818daa7b0f030a40635263f8595",
       "slug": "oscars-best-picture",
       "status": "Published"
     },
     "3330ec74-530b-819c-afb8-c55801ac5975": {
-      "last_synced_at": "2026-04-17T01:58:17.049581+00:00",
+      "last_synced_at": "2026-04-22T22:24:24.670243+00:00",
       "last_synced_hash": "e9587fa1f7a2f5913fb6f0844499c09c04c44b3d5ff9f74dc086a4b982b130c2",
       "slug": "ultimate-convex-hull",
       "status": "Published"
     },
     "3330ec74-530b-81a0-862a-dd5977a60241": {
-      "last_synced_at": "2026-04-16T21:13:51.530254+00:00",
-      "last_synced_hash": "13e333ffdd926b4e901c822a695713b4107645c174b8bdb9d145919dd80b9960",
+      "last_synced_at": "2026-04-22T22:24:25.794466+00:00",
+      "last_synced_hash": "ce65a09037c492ca7e5f0f6e9f37f7cb9a96249e6d68667957688583e0d71f0a",
       "slug": "infographics",
       "status": "Published"
     },
     "3330ec74-530b-81a1-9e00-ed725aaaaef3": {
-      "last_synced_at": "2026-04-16T21:13:53.688713+00:00",
-      "last_synced_hash": "eb49e666224a9367fbfc8fda75fe0ca41d735c8ad96a03bbf003c696f298ba58",
+      "last_synced_at": "2026-04-22T22:24:28.052859+00:00",
+      "last_synced_hash": "a66c86187a433ec1be42a182d196efc4c40b2a4f9263c36401ba4c6ed84bf37e",
       "slug": "data-is-beautiful-1",
       "status": "Published"
     },
     "3330ec74-530b-81a3-b8b8-c6bf3284f5d7": {
-      "last_synced_at": "2026-04-16T21:13:54.944802+00:00",
+      "last_synced_at": "2026-04-22T22:24:29.283708+00:00",
       "last_synced_hash": "ed1bc5285e94101522122e4e10f07b5f8bba1d8c72f5879eddab155d1cdd8df7",
       "slug": "huffman-coding",
       "status": "Published"
     },
     "3330ec74-530b-81a5-8b53-ec022d9111e2": {
-      "last_synced_at": "2026-04-16T21:13:56.394422+00:00",
-      "last_synced_hash": "33abb76112c54ea8300d8e44434aa1d3216f9ff6d92687575c55195d640711dc",
+      "last_synced_at": "2026-04-22T22:24:30.395867+00:00",
+      "last_synced_hash": "7e7501e441c382dbfb945939abb2c31394e7afaad9bfa0d00ef2c468b1b4519d",
       "slug": "spotify",
       "status": "Published"
     },
     "3330ec74-530b-81a9-ba76-ccec26046dbf": {
-      "last_synced_at": "2026-04-16T21:13:56.732153+00:00",
-      "last_synced_hash": "afbe4b5073db933c810e42c8f9f867399ede2ed05ac52cfe3626167788e2a12e",
+      "last_synced_at": "2026-04-22T22:24:30.817082+00:00",
+      "last_synced_hash": "d8fe16271c53eb5acf0d879b7d9b65648ddb85a5057b21d3da74b4cbdedc6534",
       "slug": "partisanship-in-football",
       "status": "Published"
     },
     "3330ec74-530b-81b1-a7a0-d8114b0dfb42": {
-      "last_synced_at": "2026-04-16T21:14:01.139998+00:00",
-      "last_synced_hash": "60eb63e1858f3db8e768fce52639411ab2a5266cdd217bd76cfcc2badb2e1b37",
+      "last_synced_at": "2026-04-22T22:24:31.733410+00:00",
+      "last_synced_hash": "7ed47717d53cb2c7aaf0baf240e3b825025bd32b5960fd720d748258f64bf590",
       "slug": "retro-python-games",
       "status": "Published"
     },
     "3330ec74-530b-81b3-aa2d-e1c7f756a1fd": {
-      "last_synced_at": "2026-04-16T21:14:02.101243+00:00",
-      "last_synced_hash": "2a76c4e2afcda21599ed15560dcf824757d6c7fa31d491341e58d5933e4cf60e",
+      "last_synced_at": "2026-04-22T22:24:32.641970+00:00",
+      "last_synced_hash": "6f1dd982e353e8b67bfde566202d6ec2f1371e293d19a47086d96f56c64afa0e",
       "slug": "observable-news",
       "status": "Published"
     },
     "3330ec74-530b-81b7-bb28-de87a12c5b23": {
-      "last_synced_at": "2026-04-16T21:14:03.020001+00:00",
-      "last_synced_hash": "d052f11b644f7bca450902ca634d0dc1592c7096f98cb8d83e4f07da48cbe05c",
+      "last_synced_at": "2026-04-22T22:24:33.356360+00:00",
+      "last_synced_hash": "686dfb815766c80df3ad87255e5bcaa8a8f908aa9d16977eb0be87138af8157f",
       "slug": "ASL-LEX",
       "status": "Published"
     },
     "3330ec74-530b-81ba-992b-e15647bd228c": {
-      "last_synced_at": "2026-04-16T21:14:03.734219+00:00",
-      "last_synced_hash": "44dd94bb6469a9b7caa0faa7051fee812c3d98d6077993b6e03bdfdc345f2085",
+      "last_synced_at": "2026-04-22T22:24:33.736857+00:00",
+      "last_synced_hash": "db3e1347fc861caa0a0ab7241637e3d0d5b9c9a1b34cc5359f7a4030a3286b08",
       "slug": "rio-2016-usa-vs-world",
       "status": "Published"
     },
     "3330ec74-530b-81bc-8758-f8371104523a": {
-      "last_synced_at": "2026-04-16T21:14:04.764316+00:00",
+      "last_synced_at": "2026-04-22T22:24:34.666220+00:00",
       "last_synced_hash": "f179ac8698ff751bf3d0bdce3ee36eb931b430676c9883601bf3945c3a731ce0",
       "slug": "clustering-with-kmeans",
       "status": "Published"
     },
     "3330ec74-530b-81bc-9e37-c21053bd093d": {
-      "last_synced_at": "2026-04-16T21:14:06.203864+00:00",
+      "last_synced_at": "2026-04-22T22:24:36.676810+00:00",
       "last_synced_hash": "aa7ff1b134816abf324e85604e6cfa22b42f152ac32f34871e9d0a1465bba878",
       "slug": "drum-tab-visualizer",
       "status": "Published"
     },
     "3330ec74-530b-81c0-816b-e6037f25cbdd": {
-      "last_synced_at": "2026-04-16T21:14:06.500610+00:00",
-      "last_synced_hash": "5656cb10a47eef52d027431142434916bfb25a18c5afc420984f44d05579a200",
+      "last_synced_at": "2026-04-22T22:24:37.217206+00:00",
+      "last_synced_hash": "91a9595da47820284600590775bb37b420fbf8cbf2b99089093aa2d407c57c4c",
       "slug": "photography",
       "status": "Published"
     },
     "3330ec74-530b-81c6-b2d3-d5f09539a42b": {
-      "last_synced_at": "2026-04-16T21:14:07.391787+00:00",
-      "last_synced_hash": "0929e83dbb5688295180bcf2eafb55b04fb70c0d264e986d42bc55e2fc4b8271",
+      "last_synced_at": "2026-04-22T22:24:38.033185+00:00",
+      "last_synced_hash": "3ca6879095ac5d72d7959eef82882665c4d069ecd71ebb3a248236203a693b9f",
       "slug": "jumboadvisor",
       "status": "Published"
     },
     "3330ec74-530b-81c9-8145-c2709b42140d": {
-      "last_synced_at": "2026-04-16T21:14:08.913910+00:00",
+      "last_synced_at": "2026-04-22T22:24:39.650176+00:00",
       "last_synced_hash": "5ac65b2fc3b9c73bb2821de68baa3aa27b777f2a73df8d368ab2fdb3528cab9a",
       "slug": "retro-ios-update",
       "status": "Published"
     },
     "3330ec74-530b-81c9-a0a5-d65fb9813a82": {
-      "last_synced_at": "2026-04-16T21:14:09.401988+00:00",
-      "last_synced_hash": "64af4c535dcaa7139fe0620fb2026a2ec393ffe15bb7af9ca22aaa8e181b72c5",
+      "last_synced_at": "2026-04-22T22:24:40.136083+00:00",
+      "last_synced_hash": "3971f866476c4ac8a477f3c9be70870bbd0c1fb8c855cc4e5c4bb7b792ff376d",
       "slug": "d2p-promising-candidates",
       "status": "Published"
     },
     "3330ec74-530b-81cf-acdf-c10bea2b6342": {
-      "last_synced_at": "2026-04-16T21:14:10.443260+00:00",
-      "last_synced_hash": "923713fc4f24f0971a4905a982f07c54a7c497b7ecfccdd591ece855ba7bdd40",
+      "last_synced_at": "2026-04-22T22:24:41.526402+00:00",
+      "last_synced_hash": "19064425fd8e8ebf9bbfd6b2318164a1a9611ec86645e310dd1702f073ee8a58",
       "slug": "rodrego",
       "status": "Published"
     },
     "3330ec74-530b-81d1-8309-d0a550cd1437": {
-      "last_synced_at": "2026-04-16T21:14:11.237112+00:00",
+      "last_synced_at": "2026-04-22T22:24:45.139971+00:00",
       "last_synced_hash": "50edb9df1198f84ef73fb9329980d5246cdd92649c5b013209dbbad9633a3932",
       "slug": "sports-dynasties",
       "status": "Published"
     },
     "3330ec74-530b-81d4-9aa5-c1b34fef668d": {
-      "last_synced_at": "2026-04-16T21:14:12.568182+00:00",
-      "last_synced_hash": "fc76d0def4cde28a9007ccac03da53d57bbd664c1b5393a2c5077c673db331bc",
+      "last_synced_at": "2026-04-22T22:24:46.618125+00:00",
+      "last_synced_hash": "23eefb112e3ccc0970ed8cdb125aa781e41b9ddc42308c80cc120b43386d7027",
       "slug": "spotify-popularity",
       "status": "Published"
     },
     "3330ec74-530b-81d5-80c4-d2910b157888": {
-      "last_synced_at": "2026-04-16T21:14:13.705421+00:00",
-      "last_synced_hash": "08f4158a34e8c669ac17d7aba823aeecf753bfc9beacec0ef7a879ba2d30a388",
+      "last_synced_at": "2026-04-22T22:24:47.661236+00:00",
+      "last_synced_hash": "84235c236caaafd03d7f683cb2c9ebf0aff6fc69fc77a5354feeb6f145dd8cd4",
       "slug": "dem2020-delegate-map",
       "status": "Published"
     },
     "3330ec74-530b-81da-a871-f120660779a4": {
-      "last_synced_at": "2026-04-16T21:14:16.012133+00:00",
-      "last_synced_hash": "9ba60472abe0da62d454da28d53300e56c1cf09739f2da37996f93500144bbe7",
+      "last_synced_at": "2026-04-22T22:24:50.175830+00:00",
+      "last_synced_hash": "96ed52f2f9bdc26b49c128880fb54be9e90940c292797e626dcfbef3d830bd93",
       "slug": "2019-ff-retrospective",
       "status": "Published"
     },
     "3330ec74-530b-81db-a9a0-e91e7a8fcfa9": {
-      "last_synced_at": "2026-04-16T21:14:16.637631+00:00",
-      "last_synced_hash": "d97cb2704baceeef2dd5c66b62d955cb1d1b0edb04f67c52f88d779d1f8c063d",
+      "last_synced_at": "2026-04-22T22:24:50.867950+00:00",
+      "last_synced_hash": "b2e29f610c85801c8583accea327bbfc9a40b47863a8aaa4c9779320d6157f9b",
       "slug": "drunken-world",
       "status": "Published"
     },
     "3330ec74-530b-81dc-a614-f232892ee2cb": {
-      "last_synced_at": "2026-04-16T21:14:17.052627+00:00",
-      "last_synced_hash": "7f10631cb3d233969864b52add4922fb615dca5f72ce5b44d193d55c8971814c",
+      "last_synced_at": "2026-04-22T22:24:51.230724+00:00",
+      "last_synced_hash": "59f1977dbc25f9d7ec530f8b6984406a9a2845fb160dc2e432ad127c676f17ce",
       "slug": "mapping-tufts-schedules",
       "status": "Published"
     },
     "3330ec74-530b-81dd-8c46-e0272c1ac0d0": {
-      "last_synced_at": "2026-04-16T21:14:17.530732+00:00",
-      "last_synced_hash": "7a0c1571bfb4dd86129dd7d41e4d3c1d7bf463b383f487e4dd2372122bd21d45",
+      "last_synced_at": "2026-04-22T22:24:51.922750+00:00",
+      "last_synced_hash": "f838e7e2927ac8c0f78a68485fba98d164e1b484d1c82d4c72aa1493617d14db",
       "slug": "the-markup-livers",
       "status": "Published"
     },
     "3330ec74-530b-81eb-9d9e-cbd2b7ac2f71": {
-      "last_synced_at": "2026-04-16T21:14:17.867607+00:00",
+      "last_synced_at": "2026-04-22T22:24:52.244111+00:00",
       "last_synced_hash": "257064770a1dcfadf22f53c83729132023da677d28daf307d82f06d948eced74",
       "slug": "howdy-update",
       "status": "Published"
     },
     "3330ec74-530b-81ec-a818-fd0ac3accc18": {
-      "last_synced_at": "2026-04-16T21:14:19.308489+00:00",
-      "last_synced_hash": "b3535e1d764eb8a7a7b56fe6a69d47ef9865faada3c8a69831c80311292ce3cc",
+      "last_synced_at": "2026-04-22T22:24:52.711037+00:00",
+      "last_synced_hash": "19d0f71f60c569b6a285ba3e4825bad2aed33921bdf482cde841b2dddb7e1ccb",
       "slug": "election-night-funnel",
       "status": "Published"
     },
     "3330ec74-530b-81ee-a6fd-c43d6efa060c": {
-      "last_synced_at": "2026-04-16T21:14:19.661816+00:00",
-      "last_synced_hash": "220638854d781bab4517411bc4023a73c30e20e1ad544ace93843a61e4cd4917",
+      "last_synced_at": "2026-04-22T22:24:53.103597+00:00",
+      "last_synced_hash": "4567f92011e3bfbc6abda6c3db6fa9558ce8b5d95f3ec8a8858a9f655f9d045a",
       "slug": "trump-timeline",
       "status": "Published"
     },
     "3330ec74-530b-81ef-8734-e3df6b2ba3f2": {
-      "last_synced_at": "2026-04-17T01:58:18.319812+00:00",
-      "last_synced_hash": "3a2b6e0b2a95956f32074ae36185d90813e4e09c9eb27a5f16518592087b8b00",
+      "last_synced_at": "2026-04-22T22:24:54.157297+00:00",
+      "last_synced_hash": "fa0c3217700161d95c78b4a8da972c390200b32eaf5f63b23103c5e93523bacf",
       "slug": "decade-of-disney",
       "status": "Published"
     },
     "3330ec74-530b-81ef-ac5b-e4c4dc333911": {
-      "last_synced_at": "2026-04-16T21:14:21.050811+00:00",
-      "last_synced_hash": "b5535150f0a9517d1cdc42289c0beccdf01a084c3fa190fec9b53cc4a8caeece",
+      "last_synced_at": "2026-04-22T22:24:54.525450+00:00",
+      "last_synced_hash": "2cce8dfd139ecacbac673fa37a0cf047fd7f5f46c6707bbe7149288fb192932a",
       "slug": "brain-fun",
       "status": "Published"
     },
     "3330ec74-530b-81f8-a8f7-d83c405ee67b": {
-      "last_synced_at": "2026-04-16T21:14:21.710402+00:00",
+      "last_synced_at": "2026-04-22T22:24:55.064217+00:00",
       "last_synced_hash": "191bb237d2156e3c5434b8739faed42d6363a5ceabfd6ded12ba4b7b7b106358",
       "slug": "chaos-game",
       "status": "Published"
     },
     "3330ec74-530b-81f9-8955-cf601df09b4f": {
-      "last_synced_at": "2026-04-16T21:14:23.037867+00:00",
-      "last_synced_hash": "64ffa6f57d084ee2da5b9161469ff253139bf29083bde4dc40dab435a29697ec",
+      "last_synced_at": "2026-04-22T22:24:56.414234+00:00",
+      "last_synced_hash": "14cb974bd1524ac7d103468d95dcf47be7521d93c857631a4f61a9e7884d261e",
       "slug": "running-visualized",
       "status": "Published"
     },
     "3330ec74-530b-81f9-acfb-de4034a42252": {
-      "last_synced_at": "2026-04-16T21:14:23.410009+00:00",
-      "last_synced_hash": "75daf119f84fee0c9dc7c558bc6f7685777fff0baeceda225aa4da897a0ce4c1",
+      "last_synced_at": "2026-04-22T22:24:56.781632+00:00",
+      "last_synced_hash": "562a3ced4e289194c4f21aaf9c6b9c00d05963c37417058c9f129978c8ef1e8a",
       "slug": "kmeans-music",
       "status": "Published"
     },
     "3330ec74-530b-81fc-b0af-d7cc19411d64": {
-      "last_synced_at": "2026-04-16T21:14:24.201714+00:00",
-      "last_synced_hash": "0a166f10f1efd0976da9053c4f22e65b661ffc36fc30e6a684ba6396042da71a",
+      "last_synced_at": "2026-04-22T22:24:58.945627+00:00",
+      "last_synced_hash": "996642e08b5864356edf127c86a6e23f242ff3c7276aa35a44fb0a4e999a5311",
       "slug": "evaluating-fantasy-draft",
       "status": "Published"
     },
     "3330ec74-530b-81ff-8aff-e2a54521e44d": {
-      "last_synced_at": "2026-04-16T21:14:24.809478+00:00",
-      "last_synced_hash": "3ca6dde6b3a9944c0f8c5fbf7c23c21f25e2a0b6654b07aa22768a9ba9b7cc87",
+      "last_synced_at": "2026-04-22T22:25:00.482291+00:00",
+      "last_synced_hash": "f716b5b91a952f31993b0ea945f776ada3a30990c330b4974ff8c3b84dce15a6",
       "slug": "london-street-art",
       "status": "Published"
     },
     "3350ec74-530b-802e-9b1f-d346f8a0ad82": {
-      "last_synced_at": "2026-04-22T09:42:04.536703+00:00",
+      "last_synced_at": "2026-04-22T22:25:00.482440+00:00",
       "slug": "claude-write-like-bt",
       "status": "Draft"
     },
     "3360ec74-530b-8072-ba98-f0918df63d33": {
-      "last_synced_at": "2026-04-18T09:24:13.072822+00:00",
+      "last_synced_at": "2026-04-22T22:25:00.482451+00:00",
       "slug": "best-gh-rb-setlist",
       "status": "Draft"
     },
     "3360ec74-530b-80e3-b1cb-c19cd76ef5f8": {
-      "last_synced_at": "2026-04-17T05:15:49.381964+00:00",
-      "last_synced_hash": "74bbb242ea94c16b5798b7ee142b16774ef83c379103839397235c9cb0bb22e1",
+      "last_synced_at": "2026-04-22T22:25:02.152197+00:00",
+      "last_synced_hash": "20d232318fb4c835956391823d75f354b89de0f36f434eabc03e693d2d0827ef",
       "slug": "kalshi-rt-score",
       "status": "Staged"
     },
     "3370ec74-530b-8007-80a7-c0a82ad550d7": {
-      "last_synced_at": "2026-04-17T05:44:14.345881+00:00",
-      "last_synced_hash": "b539c0f94ea76489f904bc0a7d8433928998e0b8028b9dcf5aef7155e17f0569",
+      "last_synced_at": "2026-04-22T22:25:02.962700+00:00",
+      "last_synced_hash": "735810a3456214b5c96e3e5dcf82887e5690b3aa26a54f7d0c7328e3a7a3efd6",
       "slug": "yt-captions",
       "status": "Published"
     },
     "3370ec74-530b-8009-a0a2-c2a2186b260a": {
-      "last_synced_at": "2026-04-17T05:44:15.281040+00:00",
-      "last_synced_hash": "0f865736598007eb675d7a667ec17f92459426e77b7e2ac121278fa289655c38",
+      "last_synced_at": "2026-04-22T22:25:03.786769+00:00",
+      "last_synced_hash": "012c916a70f72e0a4f2d5eb60b8b0de0bda2d8c9bfd790f4de5f0cbd20b8cae9",
       "slug": "election-night-2024",
       "status": "Published"
     },
@@ -501,99 +502,99 @@
       "status": "Draft"
     },
     "3370ec74-530b-8035-ae53-f04dc0b0ac22": {
-      "last_synced_at": "2026-04-17T05:44:15.755701+00:00",
-      "last_synced_hash": "8475186ee5500b4bb67f95ca2611e85e721c87c620fc667dbe8059c4da4bbfde",
+      "last_synced_at": "2026-04-22T22:25:04.164105+00:00",
+      "last_synced_hash": "956736b2de36efd28a79e62e66b18e8eee8ad41fc6710792fd68a7715495461a",
       "slug": "favorites-of-2023",
       "status": "Published"
     },
     "3370ec74-530b-803b-aae7-e8b5f802c278": {
-      "last_synced_at": "2026-04-16T21:14:29.932440+00:00",
+      "last_synced_at": "2026-04-22T22:25:04.164208+00:00",
       "slug": "color-vinyl",
       "status": "Draft"
     },
     "3370ec74-530b-8040-ae41-ebc42d094a51": {
-      "last_synced_at": "2026-04-17T05:44:21.448497+00:00",
-      "last_synced_hash": "64cb76bc8bd015432cfceab027e57acc71a82cc6542e5c533c0e83944c398c62",
+      "last_synced_at": "2026-04-22T22:25:04.581135+00:00",
+      "last_synced_hash": "82c1bd74276ae10ee67fe1598e794e92c0c6fd439afabb3c39c2a76d8f3785fd",
       "slug": "favorites-of-2025",
       "status": "Published"
     },
     "3370ec74-530b-8046-b16c-d99f79195eb5": {
-      "last_synced_at": "2026-04-17T05:44:22.578270+00:00",
-      "last_synced_hash": "168da0715791a15b45451794571ea947bf0c907fa3465dfd455b96022c5e6d91",
+      "last_synced_at": "2026-04-22T22:25:05.791460+00:00",
+      "last_synced_hash": "badd9f0f99c6a89750574bdcb15d1c03e6795bef5a670cbe2ecfa8f5c0605122",
       "slug": "presidents-timeline",
       "status": "Published"
     },
     "3370ec74-530b-8047-b10c-fc59fe115889": {
-      "last_synced_at": "2026-04-17T05:44:31.465743+00:00",
-      "last_synced_hash": "0807f30058681ef9a7f2b5332395dad033283d6669922cabf3c7f944faa9339a",
+      "last_synced_at": "2026-04-22T22:25:15.218612+00:00",
+      "last_synced_hash": "252b4c30266a159905826000f0e9b8514ae7ca57eab76be76e678c9ea97c03d8",
       "slug": "paris-olympics-score-boards",
       "status": "Published"
     },
     "3370ec74-530b-8054-8087-e8ad6cc91b83": {
-      "last_synced_at": "2026-04-17T05:44:32.498553+00:00",
-      "last_synced_hash": "5d64d02b0f46026ec941e69f98bfd2c875737ddb35ac2b7dfcdf21f932a1f002",
+      "last_synced_at": "2026-04-22T22:25:16.007952+00:00",
+      "last_synced_hash": "54145d77b3816378090021826baca29614d5d75c06c7aefff7d2bddffeb18143",
       "slug": "directly-labeling-lines",
       "status": "Published"
     },
     "3370ec74-530b-8059-be9d-fc17d4dde116": {
-      "last_synced_at": "2026-04-17T05:44:35.595180+00:00",
-      "last_synced_hash": "3a9473e67bb53445147dfac4a049cf13691f928833702d62ac187fe3498b07a1",
+      "last_synced_at": "2026-04-22T22:25:19.092291+00:00",
+      "last_synced_hash": "dfb4eb5c6740f6d57ed5961f164cc23de1e26d23d808ffb85532d7ace5cb0025",
       "slug": "survivor-50-recency-bias",
       "status": "Published"
     },
     "3370ec74-530b-806d-a764-e72cedc429cf": {
-      "last_synced_at": "2026-04-17T05:44:36.850125+00:00",
-      "last_synced_hash": "e243ee6dfe2d03c092670d1743d90a48bc527621d9ebca7b36807927e2194d7e",
+      "last_synced_at": "2026-04-22T22:25:20.131077+00:00",
+      "last_synced_hash": "40ed1832985e62a19041fcb69c02fcb709918407951be7ea851d83aa43cbf7a0",
       "slug": "snl-an-golden-era",
       "status": "Published"
     },
     "3370ec74-530b-80b1-8b03-d346be6038b6": {
-      "last_synced_at": "2026-04-17T05:44:37.596857+00:00",
-      "last_synced_hash": "b7542c6f9d8ba177d23684c5b2009345f0be0c8f3d3183150e025dfd5d1efdd4",
+      "last_synced_at": "2026-04-22T22:25:20.826910+00:00",
+      "last_synced_hash": "496b5bb3a52f28fd8801906aa516c2e906d5d6722b323afb74f4df4fca8498d4",
       "slug": "split-ticket-senators",
       "status": "Published"
     },
     "3370ec74-530b-80c6-a18c-d7389c745686": {
-      "last_synced_at": "2026-04-17T05:44:38.177120+00:00",
-      "last_synced_hash": "85c34220d0f2257ece71971df5214e246e153366737708aca121240879936d71",
+      "last_synced_at": "2026-04-22T22:25:21.376402+00:00",
+      "last_synced_hash": "5c7ac0b17c06583be90b9c40a8367f4667760f71a58d228243fbe6d5492ae690",
       "slug": "favorites-of-2024",
       "status": "Published"
     },
     "3370ec74-530b-80e7-b979-d69cee2fe53d": {
-      "last_synced_at": "2026-04-17T05:44:39.896171+00:00",
-      "last_synced_hash": "f8d871835794087240432033b98a76699bdbc17ea960671918c1bf58ca7e2dd2",
+      "last_synced_at": "2026-04-22T22:25:23.279112+00:00",
+      "last_synced_hash": "38b29b23f637c993848f2b3f4f08847e08343e98cfbdbf12f8bba3ddbaace100",
       "slug": "top-letterboxd-filmmakers",
       "status": "Published"
     },
     "3430ec74-530b-80a4-a224-e56c5666c968": {
-      "last_synced_at": "2026-04-16T21:14:54.601003+00:00",
+      "last_synced_at": "2026-04-22T22:25:23.279202+00:00",
       "slug": "big-picture-boom-or-bust-2026",
       "status": "Draft"
     },
     "3450ec74-530b-800f-acaa-ff3a27263503": {
-      "last_synced_at": "2026-04-18T09:24:13.072847+00:00",
+      "last_synced_at": "2026-04-22T22:25:23.279213+00:00",
       "slug": "new-notion-cms",
       "status": "Draft"
     },
     "3450ec74-530b-8040-822e-f26efbf3e6c9": {
-      "last_synced_at": "2026-04-18T09:24:13.072856+00:00",
+      "last_synced_at": "2026-04-22T22:25:23.279220+00:00",
       "slug": "best-albums-comparison",
       "status": "Draft"
     },
     "3450ec74-530b-80ad-82c0-d728d342e411": {
-      "last_synced_at": "2026-04-18T09:24:13.072862+00:00",
+      "last_synced_at": "2026-04-22T22:25:23.279227+00:00",
       "slug": "mysterious-olympics-axis",
       "status": "Draft"
     }
   },
   "projects": {
     "3320ec74-530b-80d0-ad2b-ffc70cd74d9d": {
-      "last_synced_at": "2026-03-31T03:19:30.255789+00:00",
+      "last_synced_at": "2026-04-22T22:25:23.770378+00:00",
       "last_synced_hash": "4470e5f092ade26e6710cf45332ed42deca43fdbb1c596d2f33dfa7bb9d70b60",
       "slug": "d3-force"
     },
     "3320ec74-530b-80f6-9e7c-f6f6ff0b852c": {
-      "last_synced_at": "2026-03-31T03:19:30.593833+00:00",
+      "last_synced_at": "2026-04-22T22:25:24.156019+00:00",
       "last_synced_hash": "8a6db20964161fbc3d6da6f33572420a0738f7b60f5fb717bc4f039cc507d24c",
       "slug": "wrapped-sound-town"
     },
@@ -658,7 +659,7 @@
       "slug": "2019-ff-retrospective"
     },
     "3330ec74-530b-8170-ac56-d6d0db46267c": {
-      "last_synced_at": "2026-03-31T03:19:32.848662+00:00",
+      "last_synced_at": "2026-04-22T22:25:26.459957+00:00",
       "last_synced_hash": "30b6395a9e38a50259f2014df05188a95a2759a9b97f6e35835b15479d013855",
       "slug": "spotify-genre-map"
     },
@@ -713,7 +714,7 @@
       "slug": "election-night-funnel"
     },
     "3330ec74-530b-81d1-a4a3-c09ac6c49392": {
-      "last_synced_at": "2026-03-31T03:19:34.931327+00:00",
+      "last_synced_at": "2026-04-22T22:25:28.204526+00:00",
       "last_synced_hash": "1e1353b24270c2c8f26d313e292c06cce60e0538c1d7181f0e3ecb886dc24cb5",
       "slug": "how-bills-die"
     },

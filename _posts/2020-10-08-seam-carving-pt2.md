@@ -2,7 +2,7 @@
 layout: post
 title: Improving Twitter's Image Previews
 date: '2020-10-08T09:30:00.000-06:00'
-thumbnail: /assets/img/post-thumbnails/seam-carving-pt2-0fb6d446.jpg
+thumbnail: /assets/img/post-thumbnails/seam-carving-pt2-ae2f95b3.jpg
 ---
 
 *Note: I started this post/project two weeks before it became clear that there were issues with Twitter’s image algorithm. My original plan was to jokingly propose the seam carving algorithm as an alternative to Twitter’s current system as a fix for trivial issues, but with the more recent news, I would also like to earnestly address the larger systemic issues that people have noticed. While I do think seam carving could be a useful tool for Twitter as they address these larger issues, this post is only intended to highlight how things can go very poorly if we knowingly or unknowingly use algorithms incorrectly. If you're interested in reading more about this from much better folks, check out [these books](https://twitter.com/_theghettomonk/status/1307686197934854147).*

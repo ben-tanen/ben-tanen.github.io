@@ -2,7 +2,7 @@
 layout: post
 title: Visualizing My Spotify History
 date: '2015-09-01 12:00:00'
-thumbnail: /assets/img/post-thumbnails/lastfm-scrobble-graphs-67a3d746.png
+thumbnail: /assets/img/post-thumbnails/lastfm-scrobble-graphs-19477643.png
 ---
 
 As most people do, I go through phases of musical interests. I'll listen to one artist for a week and then switch to someone different the next. I thought it would be cool to visualize these phases and the shifts in my listening, you know, just for fun. So using Last.fm's scrobbling data, [this handy script](https://gist.github.com/bitmorse/5201491), and some Python / pandas, I was able to see just what I was listening to over the past few years.

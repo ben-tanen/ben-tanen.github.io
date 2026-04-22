@@ -2,7 +2,7 @@
 layout: post
 title: The Decade of Disney
 date: '2020-01-02 12:00:00'
-thumbnail: /assets/img/post-thumbnails/decade-of-disney-8b23e2e5.jpg
+thumbnail: /assets/img/post-thumbnails/decade-of-disney-f9b7073c.jpg
 related-proj: decade-of-disney
 ---
 

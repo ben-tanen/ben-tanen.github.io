@@ -2,7 +2,7 @@
 layout: post
 title: Gamifying the 2018 Olympic Games
 date: '2018-02-06 12:00:00'
-thumbnail: /assets/img/post-thumbnails/fantasy-olympics-1f4b45ff.png
+thumbnail: /assets/img/post-thumbnails/fantasy-olympics-450ffff2.png
 mathjax: true
 ---
 
