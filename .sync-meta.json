@@ -589,152 +589,152 @@
   },
   "projects": {
     "3320ec74-530b-80d0-ad2b-ffc70cd74d9d": {
-      "last_synced_at": "2026-04-22T22:25:23.770378+00:00",
+      "last_synced_at": "2026-04-22T22:34:38.744571+00:00",
       "last_synced_hash": "4470e5f092ade26e6710cf45332ed42deca43fdbb1c596d2f33dfa7bb9d70b60",
       "slug": "d3-force"
     },
     "3320ec74-530b-80f6-9e7c-f6f6ff0b852c": {
-      "last_synced_at": "2026-04-22T22:25:24.156019+00:00",
+      "last_synced_at": "2026-04-22T22:34:38.977610+00:00",
       "last_synced_hash": "8a6db20964161fbc3d6da6f33572420a0738f7b60f5fb717bc4f039cc507d24c",
       "slug": "wrapped-sound-town"
     },
     "3330ec74-530b-8101-a58b-eb1e2a3fedf5": {
-      "last_synced_at": "2026-03-31T03:19:30.742621+00:00",
+      "last_synced_at": "2026-04-22T22:34:39.133853+00:00",
       "last_synced_hash": "113d4f88eeb54cc749cfc07ad8a3a9c342bd733b3154a5c0c57bde23f2c58401",
       "slug": "oscar-popular-film"
     },
     "3330ec74-530b-810b-b98a-c4f2dec3ace1": {
-      "last_synced_at": "2026-03-31T03:19:30.880741+00:00",
+      "last_synced_at": "2026-04-22T22:34:39.293525+00:00",
       "last_synced_hash": "487b0fbcce78806020e7d71c4d9a2b325e4fee7ff1cafae85950f33cfb3eb528",
       "slug": "trump-electoral-college-visualized"
     },
     "3330ec74-530b-810f-9dc5-e34aedee6019": {
-      "last_synced_at": "2026-03-31T03:19:31.025874+00:00",
+      "last_synced_at": "2026-04-22T22:34:39.522729+00:00",
       "last_synced_hash": "ad9caee87b355d4f1be854169de9ceac96781a881ec8c57e2120d4b606444e54",
       "slug": "the-markup-denied"
     },
     "3330ec74-530b-8129-8b09-faef88722b95": {
-      "last_synced_at": "2026-03-31T03:19:31.179739+00:00",
+      "last_synced_at": "2026-04-22T22:34:39.780935+00:00",
       "last_synced_hash": "cf563480af4a87acff205aec2af000a246f39121c389d4a9ef73041a706bbf23",
       "slug": "redistricting-changes-for-2020"
     },
     "3330ec74-530b-812a-939e-d6f53c48b4dd": {
-      "last_synced_at": "2026-03-31T03:19:31.313184+00:00",
+      "last_synced_at": "2026-04-22T22:34:39.926519+00:00",
       "last_synced_hash": "4ea08041b86cc71bdf2a1698a45fbb98a7789b03f390624ff122bea41a32d4d6",
       "slug": "confederate-monuments"
     },
     "3330ec74-530b-812a-abd1-fdd013a11edb": {
-      "last_synced_at": "2026-03-31T03:19:31.565649+00:00",
+      "last_synced_at": "2026-04-22T22:34:40.344449+00:00",
       "last_synced_hash": "fc439bb6c6aec583da44f11b0bc6bfb0ac6457ce9e6dfe89c341193ded8a85ba",
       "slug": "observable-recreations"
     },
     "3330ec74-530b-812f-96e6-ccb185a1367c": {
-      "last_synced_at": "2026-03-31T03:19:31.697947+00:00",
+      "last_synced_at": "2026-04-22T22:34:40.504270+00:00",
       "last_synced_hash": "15415350863ee0db20e3092a154a39463c1ce343f721a528efbbc5f6df20631b",
       "slug": "most-font"
     },
     "3330ec74-530b-813e-99da-f0eabb28faab": {
-      "last_synced_at": "2026-03-31T03:19:31.865368+00:00",
+      "last_synced_at": "2026-04-22T22:34:41.073894+00:00",
       "last_synced_hash": "6a4ed22c3421da003a95a1a71e941992f7312b3dc181eed0b15f386e45ea982b",
       "slug": "dem2020-delegate-map"
     },
     "3330ec74-530b-814b-94f8-df8052249921": {
-      "last_synced_at": "2026-03-31T03:19:32.056222+00:00",
+      "last_synced_at": "2026-04-22T22:36:56.772942+00:00",
       "last_synced_hash": "dcc0b6cc37a286c8156302088566b81221927ff31649e12cfd72af23a038a8fd",
       "slug": "ga-covid-map"
     },
     "3330ec74-530b-8150-a4a1-d2205e85e2d6": {
-      "last_synced_at": "2026-03-31T03:19:32.228489+00:00",
+      "last_synced_at": "2026-04-22T22:34:41.937133+00:00",
       "last_synced_hash": "bc3ff09bb072c886f09439089be32c0089db6009fb4c9a34dfd48ffbbb0ba40d",
       "slug": "d2p-promising-candidates"
     },
     "3330ec74-530b-815f-9dbf-c73ea64d93ad": {
-      "last_synced_at": "2026-04-16T21:14:55.095236+00:00",
+      "last_synced_at": "2026-04-22T22:34:42.089209+00:00",
       "last_synced_hash": "b69c5cc41f5d23e9ed065b1911178beebea66a119865882bca01a2da714f13c3",
       "slug": "drunken-world"
     },
     "3330ec74-530b-8169-8a45-d5ca728327b8": {
-      "last_synced_at": "2026-03-31T03:19:32.556172+00:00",
+      "last_synced_at": "2026-04-22T22:34:42.487234+00:00",
       "last_synced_hash": "455a6b409da5e7f2ee3b79e878ac0e62286431a46329a69c323039e6eae687e4",
       "slug": "2019-ff-retrospective"
     },
     "3330ec74-530b-8170-ac56-d6d0db46267c": {
-      "last_synced_at": "2026-04-22T22:25:26.459957+00:00",
+      "last_synced_at": "2026-04-22T22:34:43.636961+00:00",
       "last_synced_hash": "30b6395a9e38a50259f2014df05188a95a2759a9b97f6e35835b15479d013855",
       "slug": "spotify-genre-map"
     },
     "3330ec74-530b-817f-bb33-d7c1603873e2": {
-      "last_synced_at": "2026-03-31T03:19:33.028137+00:00",
+      "last_synced_at": "2026-04-22T22:34:43.821497+00:00",
       "last_synced_hash": "c052b0f5042225a6cda4219585feb6200fc5942c44494a3e371ad4e485845fec",
       "slug": "oscars-best-picture"
     },
     "3330ec74-530b-818f-940f-c59fb4857388": {
-      "last_synced_at": "2026-03-31T03:19:33.237142+00:00",
+      "last_synced_at": "2026-04-22T22:34:44.092646+00:00",
       "last_synced_hash": "8cd0384ec42bd46abe6e83d8c902b1557d3e07931e16e0bb0fc8cbe96f98bbae",
       "slug": "decade-of-disney"
     },
     "3330ec74-530b-8194-a3bd-cad5a520bffd": {
-      "last_synced_at": "2026-03-31T03:19:33.425210+00:00",
+      "last_synced_at": "2026-04-22T22:34:44.398211+00:00",
       "last_synced_hash": "d1c11fb5310c492349ba9b23fe19dfbe821b036079d022edc373c71479d6b1c8",
       "slug": "the-markup-amazon"
     },
     "3330ec74-530b-8197-9848-c70b50016c52": {
-      "last_synced_at": "2026-03-31T03:19:33.661936+00:00",
+      "last_synced_at": "2026-04-22T22:34:44.579166+00:00",
       "last_synced_hash": "1fb4e6e833a56fded2bcd6c655eb146a488f4a34e30a6a5be1ecf4eb53085d51",
       "slug": "comparing-obama-trump-on-guns"
     },
     "3330ec74-530b-819d-9798-c6927ff0f8f5": {
-      "last_synced_at": "2026-03-31T03:19:33.863821+00:00",
+      "last_synced_at": "2026-04-22T22:34:44.894479+00:00",
       "last_synced_hash": "cda737f277556dc8ebcf2aab9a33e53784c7d420850284c4636a3371fe100607",
       "slug": "ASL-LEX"
     },
     "3330ec74-530b-81a1-9ba0-cc1b0b2ac2b1": {
-      "last_synced_at": "2026-03-31T03:19:34.055124+00:00",
+      "last_synced_at": "2026-04-22T22:34:45.065159+00:00",
       "last_synced_hash": "1d97784ea6bd86bdfe783bb595ef5096f6eaf1d3345b33f72d978e124cff5b32",
       "slug": "sports-dynasties"
     },
     "3330ec74-530b-81b0-8258-f6e590273988": {
-      "last_synced_at": "2026-03-31T03:19:34.229355+00:00",
+      "last_synced_at": "2026-04-22T22:34:45.265266+00:00",
       "last_synced_hash": "02a82423aac4f462656db5255cb9c4e13006a222792eccc7203bb8b2a306144b",
       "slug": "the-markup-livers"
     },
     "3330ec74-530b-81b9-9f8b-c5b3a4f7253c": {
-      "last_synced_at": "2026-03-31T03:19:34.394572+00:00",
+      "last_synced_at": "2026-04-22T22:34:45.411547+00:00",
       "last_synced_hash": "7f484ab8158e66fe0dbb595e896e573f25d7e76f5ee5444da7aeb003e2dab67a",
       "slug": "kmeans-music"
     },
     "3330ec74-530b-81bc-ba97-f99a2a9c68b5": {
-      "last_synced_at": "2026-03-31T03:19:34.565927+00:00",
+      "last_synced_at": "2026-04-22T22:34:45.676677+00:00",
       "last_synced_hash": "160cbc060a819b9cf8564ce28d9002894a9cc05815e7ddafd93a39dcb4d0338f",
       "slug": "partisanship-in-football"
     },
     "3330ec74-530b-81d0-9843-ffe73d0e38f8": {
-      "last_synced_at": "2026-03-31T03:19:34.771537+00:00",
+      "last_synced_at": "2026-04-22T22:34:45.852581+00:00",
       "last_synced_hash": "19b01f926560c90e4be56ad6b57a7128e83030e67dbea8da8cf9b27d6c4eb6a0",
       "slug": "election-night-funnel"
     },
     "3330ec74-530b-81d1-a4a3-c09ac6c49392": {
-      "last_synced_at": "2026-04-22T22:25:28.204526+00:00",
+      "last_synced_at": "2026-04-22T22:34:46.016681+00:00",
       "last_synced_hash": "1e1353b24270c2c8f26d313e292c06cce60e0538c1d7181f0e3ecb886dc24cb5",
       "slug": "how-bills-die"
     },
     "3330ec74-530b-81d8-8f34-c92e2d0cebec": {
-      "last_synced_at": "2026-03-31T03:19:35.165462+00:00",
+      "last_synced_at": "2026-04-22T22:34:46.195296+00:00",
       "last_synced_hash": "2a172bd0b7c73fa13b9243158ab0333d1782fe827f863d049586083f0265d92e",
       "slug": "ultimate-convex-hull"
     },
     "3330ec74-530b-81db-8ae0-cf3d24f15116": {
-      "last_synced_at": "2026-03-31T03:19:35.544120+00:00",
+      "last_synced_at": "2026-04-22T22:34:46.886191+00:00",
       "last_synced_hash": "0acfb7e3d2f4e0e473088cb9d4b59d0badc778ed11ee92171c5663fbc6860ca5",
       "slug": "huffman-coding"
     },
     "3330ec74-530b-81dd-a3fc-c712f55ffa68": {
-      "last_synced_at": "2026-03-31T03:19:35.709999+00:00",
+      "last_synced_at": "2026-04-22T22:34:47.073488+00:00",
       "last_synced_hash": "62552c1afb8b1c677fb387579d89d7d41bf68340f4207033067dcb2a5da8ef3a",
       "slug": "evaluating-fantasy-draft"
     },
     "3330ec74-530b-81ef-99f3-f28794975cef": {
-      "last_synced_at": "2026-03-31T03:19:35.917390+00:00",
+      "last_synced_at": "2026-04-22T22:34:47.304994+00:00",
       "last_synced_hash": "3f17ab7f02f33223235723d7c1cbba38fcded9637d17f83c8aaefe4e52dae6be",
       "slug": "running-visualized"
     }
