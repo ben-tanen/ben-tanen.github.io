@@ -483,18 +483,19 @@ CONFLICTS_DIR = REPO_ROOT / "_env" / "notion_bridge" / "conflicts"
 
 
 def prune_slug_orphans(slug: str, dirs: list[Path], reference_text: str) -> list[Path]:
-    """Delete <slug>-*.* files in `dirs` whose filename isn't referenced in
-    reference_text.
+    """Delete <slug>-<8hex>.<ext> files in `dirs` whose filename isn't
+    referenced in reference_text.
 
-    Image files follow the <slug>-<hash>.<ext> naming convention, so scoping
-    the scan to files prefixed with the slug prevents touching another page's
-    images. Returns the list of deleted paths.
+    The glob is pinned to the 8-hex-char content-hash suffix produced by
+    images.download_and_save so that a shorter slug does not match files
+    belonging to a longer slug (e.g. "the-markup-livers" must not match
+    "the-markup-livers-race-*.jpg"). Returns the list of deleted paths.
     """
     deleted = []
     for d in dirs:
         if not d.exists():
             continue
-        for path in d.glob(f"{slug}-*"):
+        for path in d.glob(f"{slug}-????????.*"):
             if path.is_file() and path.name not in reference_text:
                 path.unlink()
                 deleted.append(path)
