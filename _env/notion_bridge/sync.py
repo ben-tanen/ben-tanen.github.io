@@ -635,7 +635,7 @@ def _cleanup_old_post_file(post: dict, config: dict, meta: dict, dry_run: bool =
     elif prev_status == "Published":
         old_path = REPO_ROOT / config["site"]["posts_dir"] / f"{date_prefix}-{slug}.md"
     else:
-        return  # was Draft — no file to clean up
+        return  # non-syncable prior status (Draft, Graveyard, etc.) — no file to clean up
 
     if old_path.exists():
         if dry_run:
@@ -663,13 +663,17 @@ def sync_post(
     slug = post["slug"]
     date_str = post["date"]
 
-    # Determine output path based on status
+    # Determine output path based on status. Only "Published" and "Staged"
+    # are syncable; the main loop should have skipped any other status before
+    # reaching here.
     date_prefix = date_str[:10]
     status = post["status"]
-    if status == "Staged":
+    if status == "Published":
+        out_path = REPO_ROOT / config["site"]["posts_dir"] / f"{date_prefix}-{slug}.md"
+    elif status == "Staged":
         out_path = REPO_ROOT / config["site"]["drafts_dir"] / f"{slug}.md"
     else:
-        out_path = REPO_ROOT / config["site"]["posts_dir"] / f"{date_prefix}-{slug}.md"
+        return f"unsupported status '{status}' reached sync_post (should have been skipped)"
 
     # Capture local state before deciding what to do with the file
     last_synced = get_last_synced_at(meta, "posts", post["notion_id"])
@@ -1024,10 +1028,13 @@ def main():
             # Clean up old file if status changed
             _cleanup_old_post_file(post, config, meta, dry_run=args.dry_run)
 
-            # Skip Draft posts — don't sync, just record status
-            if post["status"] == "Draft":
-                update_synced(meta, "posts", post["notion_id"], post["slug"], status="Draft")
-                print(f"  ⊘ Skipped draft: {post['slug']}")
+            # Only "Published" and "Staged" are syncable. Anything else
+            # (Draft, Graveyard, or any future status) is recorded but not
+            # written to the site. Cleanup above handles removing the prior
+            # file when transitioning out of Published/Staged.
+            if post["status"] not in ("Published", "Staged"):
+                update_synced(meta, "posts", post["notion_id"], post["slug"], status=post["status"])
+                print(f"  ⊘ Skipped {post['status'].lower()}: {post['slug']}")
                 continue
 
             error = sync_post(
