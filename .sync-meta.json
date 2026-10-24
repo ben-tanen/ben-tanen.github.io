@@ -583,8 +583,13 @@
       "status": "Draft"
     },
     "3450ec74-530b-80ad-82c0-d728d342e411": {
-      "last_synced_at": "2026-05-27T10:30:29.115011+00:00",
+      "last_synced_at": "2026-10-24T13:13:52.982695+00:00",
       "slug": "mysterious-olympics-axis",
+      "status": "Draft"
+    },
+    "4020ec74-530b-8062-840a-e9af3a97b47c": {
+      "last_synced_at": "2026-10-24T13:13:52.982675+00:00",
+      "slug": "wrapped-musical-color-palette",
       "status": "Draft"
     }
   },
